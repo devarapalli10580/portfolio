@@ -5,25 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artifact 1 – AI Lab No-Code Chatbot Assistant</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS Styles -->
+  <!-- Embedded CSS -->
   <style>
-    /* =======================
-       RESET & BASE STYLES
-    ========================== */
+    /* ===============================
+       GLOBAL RESET & BASE STYLES
+    ================================= */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9fafb;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
     img {
       max-width: 100%;
@@ -33,381 +30,441 @@
       text-decoration: none;
       color: inherit;
     }
+    ul {
+      list-style: none;
+    }
 
-    /* =======================
-       COLOR VARIABLES
-    ========================== */
+    /* ===============================
+       COLOR PALETTE
+    ================================= */
     :root {
-      --primary-blue: #2563eb;
-      --primary-green: #10b981;
-      --accent-orange: #f59e0b;
-      --light-bg: #f3f4f6;
-      --dark-text: #111827;
+      --blue: #2563eb;
+      --blue-dark: #1e40af;
+      --green: #16a34a;
+      --orange: #ea580c;
+      --light-bg: #ffffff;
+      --light-gray: #f1f5f9;
+      --dark-text: #1e293b;
       --transition: all 0.3s ease;
     }
 
-    /* =======================
+    /* ===============================
        HEADER & NAV
-    ========================== */
+    ================================= */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+      background: linear-gradient(90deg, var(--blue), var(--green));
       color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     header h1 {
       font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-weight: bold;
     }
     nav ul {
       display: flex;
-      list-style: none;
       gap: 1.5rem;
     }
     nav ul li a {
       color: white;
       font-weight: 600;
+      font-size: 1rem;
       transition: var(--transition);
     }
     nav ul li a:hover {
-      color: var(--accent-orange);
+      color: var(--orange);
     }
 
-    /* =======================
+    /* ===============================
        HERO SECTION
-    ========================== */
+    ================================= */
     .hero {
-      margin-top: 80px;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--primary-blue), var(--accent-orange));
+      background: linear-gradient(135deg, var(--blue), var(--green));
       color: white;
       text-align: center;
-      border-radius: 12px;
-      animation: fadeIn 1.5s ease-in-out;
+      padding: 3rem 1rem;
     }
     .hero h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
     .hero p {
       font-size: 1.2rem;
       max-width: 700px;
-      margin: 0 auto;
-      margin-bottom: 1.5rem;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: var(--primary-green);
-      color: white;
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      font-weight: bold;
-      transition: var(--transition);
-    }
-    .btn-primary:hover {
-      background: var(--accent-orange);
-      transform: scale(1.05);
+      margin: auto;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* =======================
-       PROJECT DETAILS
-    ========================== */
-    .project-details {
-      padding: 4rem 2rem;
-      background: var(--light-bg);
-      border-radius: 12px;
+    /* ===============================
+       MAIN CONTAINER
+    ================================= */
+    .container {
+      width: 90%;
+      max-width: 1200px;
       margin: 2rem auto;
-      max-width: 1100px;
     }
-    .project-details h3 {
-      color: var(--primary-blue);
+
+    /* ===============================
+       ASSIGNMENT DETAILS
+    ================================= */
+    .assignment-details h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: var(--blue);
     }
-    .project-details p {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    /* =======================
-       TECH STACK SECTION
-    ========================== */
-    .tech-stack {
-      margin-top: 3rem;
-    }
-    .tech-stack h4 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: var(--primary-green);
-    }
-    .progress-bar {
-      margin: 0.8rem 0;
-      background: #e5e7eb;
-      border-radius: 8px;
-      height: 18px;
+    .accordion {
+      background: var(--light-gray);
+      border-radius: 10px;
       overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-    .progress {
-      height: 100%;
-      text-align: right;
-      padding-right: 5px;
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+    }
+    .accordion-header {
+      background: var(--blue);
       color: white;
-      font-size: 0.85rem;
-      font-weight: bold;
-      border-radius: 8px;
+      padding: 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .blue-bar { background: var(--primary-blue); }
-    .green-bar { background: var(--primary-green); }
-    .orange-bar { background: var(--accent-orange); }
+    .accordion-header:hover {
+      background: var(--blue-dark);
+    }
+    .accordion-content {
+      background: white;
+      display: none;
+      padding: 1rem 1.5rem;
+      line-height: 1.7;
+      color: var(--dark-text);
+    }
+    .accordion-header.active + .accordion-content {
+      display: block;
+    }
 
-    /* =======================
+    /* ===============================
+       TABS
+    ================================= */
+    .tabs {
+      margin: 2rem 0;
+    }
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .tab-buttons button {
+      background: var(--green);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .tab-buttons button.active {
+      background: var(--orange);
+    }
+    .tab-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* ===============================
        IMAGE GALLERY
-    ========================== */
+    ================================= */
     .gallery {
-      margin: 3rem 0;
+      margin: 2rem 0;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
     }
     .gallery img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
     .gallery img:hover {
       transform: scale(1.05);
-      cursor: pointer;
     }
-
-    /* =======================
-       VIDEO SECTION
-    ========================== */
-    .video-section {
-      margin-top: 4rem;
-      text-align: center;
-    }
-    .video-section iframe {
-      width: 80%;
-      height: 400px;
-      border-radius: 12px;
-      border: 4px solid var(--primary-green);
-    }
-
-    /* =======================
-       FAQ SECTION
-    ========================== */
-    .faq {
-      margin: 4rem auto;
-      max-width: 900px;
-    }
-    .faq h3 {
-      font-size: 2rem;
-      color: var(--primary-blue);
-      margin-bottom: 1rem;
-    }
-    .accordion {
-      background: white;
-      margin: 0.5rem 0;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      cursor: pointer;
-      font-weight: bold;
-      position: relative;
-    }
-    .accordion::after {
-      content: '+';
-      position: absolute;
-      right: 20px;
-      font-size: 1.5rem;
-      color: var(--primary-blue);
-    }
-    .accordion.active::after {
-      content: '-';
-    }
-    .panel {
-      display: none;
-      padding: 1rem;
-      font-size: 1rem;
-      background: #f9fafb;
-      border-left: 4px solid var(--primary-green);
-      margin-bottom: 0.5rem;
-    }
-
-    /* =======================
-       CONTACT CTA
-    ========================== */
-    .contact-cta {
-      background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-      border-radius: 12px;
-      margin-top: 4rem;
-    }
-    .contact-cta h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .contact-cta a {
-      background: var(--primary-blue);
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 1rem;
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
       transition: var(--transition);
     }
-    .contact-cta a:hover {
-      background: white;
-      color: var(--primary-blue);
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
     }
 
-    /* =======================
+    /* ===============================
+       CONTACT FORM
+    ================================= */
+    .contact {
+      background: var(--light-gray);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 3rem;
+    }
+    .contact h2 {
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+    .contact form {
+      display: grid;
+      gap: 1rem;
+    }
+    .contact input, .contact textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .contact button {
+      background: var(--blue);
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* ===============================
        FOOTER
-    ========================== */
+    ================================= */
     footer {
-      background: var(--primary-blue);
+      background: var(--blue-dark);
       color: white;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 4rem;
+      padding: 1rem;
+      margin-top: 3rem;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 2.2rem; }
-      .video-section iframe { width: 100%; height: 280px; }
+    /* ===============================
+       DARK MODE
+    ================================= */
+    .dark-mode {
+      background: #1e293b;
+      color: #f1f5f9;
+    }
+    .dark-mode .accordion-header {
+      background: var(--green);
+    }
+    .dark-mode .tab-buttons button {
+      background: var(--orange);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <h1>Artifact 1: AI Lab No-Code Chatbot Assistant</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#project-details">Details</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>Artifact 1: No-Code AI Chatbot</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <h2>AI Lab No-Code Chatbot Assistant</h2>
-  <p>Empowering users to build intelligent chatbots without writing a single line of code. Hosted on the Mizou.com platform, this project showcases simplicity, innovation, and AI-driven efficiency.</p>
-  <a href="#project-details" class="btn-primary">Learn More</a>
-</section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>AI Lab – No-Code Chatbot Assistant</h2>
+    <p>
+      This artifact demonstrates an AI-powered chatbot creation platform built for non-programmers.
+      It enables users to design, customize, and deploy chatbots seamlessly.
+    </p>
+  </section>
 
-<!-- PROJECT DETAILS -->
-<section class="project-details" id="project-details">
-  <h3>Project Overview</h3>
-  <p>The AI Lab No-Code Chatbot Assistant is an innovative platform enabling individuals and businesses to create and deploy intelligent chatbots without coding expertise. It uses a visual drag-and-drop interface combined with advanced NLP models for seamless conversation flows.</p>
+  <main class="container">
+    <!-- ASSIGNMENT DETAILS -->
+    <section class="assignment-details" id="assignment">
+      <h2>Assignment Details</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">Objective <span>+</span></div>
+          <div class="accordion-content">
+            <p>
+              The objective was to develop an AI chatbot creation tool without requiring coding skills.
+              The system simplifies deployment and supports NLP integration.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">Learning Outcomes <span>+</span></div>
+          <div class="accordion-content">
+            <ul>
+              <li>Understand AI chatbot design principles</li>
+              <li>Explore NLP integration</li>
+              <li>Enhance UX for non-technical users</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">Tools Used <span>+</span></div>
+          <div class="accordion-content">
+            <p>React.js, Node.js, Dialogflow, TensorFlow Lite</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h4>Main Features:</h4>
-  <ul>
-    <li>Drag-and-drop chatbot builder</li>
-    <li>Integrated NLP and AI-driven conversation flows</li>
-    <li>Supports multiple languages</li>
-    <li>Cloud deployment with zero technical setup</li>
-  </ul>
+    <!-- TABS -->
+    <section class="tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-target="tab1">Steps</button>
+        <button class="tab-btn" data-target="tab2">Challenges</button>
+        <button class="tab-btn" data-target="tab3">Solutions</button>
+      </div>
+      <div class="tab-content">
+        <div class="tab-panel active" id="tab1">
+          <h3>Development Steps</h3>
+          <ol>
+            <li>Defined user personas and requirements</li>
+            <li>Built UI with React.js for drag-and-drop interface</li>
+            <li>Integrated NLP for chatbot training</li>
+            <li>Deployed using cloud services</li>
+          </ol>
+        </div>
+        <div class="tab-panel" id="tab2">
+          <h3>Challenges</h3>
+          <p>Ensuring smooth NLP integration and supporting multiple languages was challenging.</p>
+        </div>
+        <div class="tab-panel" id="tab3">
+          <h3>Solutions</h3>
+          <p>Used pre-trained models and scalable architecture to manage complexities.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Tech Stack -->
-  <div class="tech-stack">
-    <h4>Technology Stack & Skills</h4>
-    <div class="progress-bar"><div class="progress blue-bar" style="width:90%;">React.js</div></div>
-    <div class="progress-bar"><div class="progress green-bar" style="width:85%;">Node.js</div></div>
-    <div class="progress-bar"><div class="progress orange-bar" style="width:80%;">NLP Models</div></div>
-  </div>
-</section>
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+      <img src="images/artifact1-step1.jpg" alt="Step 1 UI" />
+      <img src="images/artifact1-step2.jpg" alt="Step 2 Bot Setup" />
+      <img src="images/artifact1-dashboard.jpg" alt="Dashboard" />
+    </section>
 
-<!-- IMAGE GALLERY -->
-<section class="gallery" id="gallery">
-  <img src="images/artifact1-1.jpg" alt="Chatbot UI Screenshot">
-  <img src="images/artifact1-2.jpg" alt="Drag and Drop Builder">
-  <img src="images/artifact1-3.jpg" alt="AI NLP Integration">
-</section>
+    <div class="lightbox" id="lightbox">
+      <span class="close-lightbox">&times;</span>
+      <img src="" alt="Enlarged Image" />
+    </div>
 
-<!-- VIDEO SECTION -->
-<section class="video-section">
-  <h3>Project Demo Video</h3>
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-</section>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
-<!-- FAQ SECTION -->
-<section class="faq" id="faq">
-  <h3>Frequently Asked Questions</h3>
-  <div class="accordion">What is the AI Lab No-Code Chatbot Assistant?</div>
-  <div class="panel">It's a platform that lets you create chatbots without writing any code, using a simple drag-and-drop interface.</div>
+  <footer>
+    &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.
+  </footer>
 
-  <div class="accordion">Which technologies were used?</div>
-  <div class="panel">React.js, Node.js, TensorFlow, and Dialogflow for NLP.</div>
-
-  <div class="accordion">Can this chatbot handle multiple languages?</div>
-  <div class="panel">Yes, it supports multilingual capabilities for global reach.</div>
-</section>
-
-<!-- CONTACT CTA -->
-<section class="contact-cta" id="contact">
-  <h3>Want to Learn More?</h3>
-  <p>Reach out to discuss this project or explore collaboration opportunities.</p>
-  <a href="mailto:tone_satya@yahoo.co.in">Contact Me</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-</footer>
-
-<!-- JAVASCRIPT -->
-<script>
-  // Accordion functionality for FAQ
-  const accordions = document.querySelectorAll('.accordion');
-  accordions.forEach((accordion) => {
-    accordion.addEventListener('click', function () {
-      this.classList.toggle('active');
-      const panel = this.nextElementSibling;
-      if (panel.style.display === 'block') {
-        panel.style.display = 'none';
-      } else {
-        panel.style.display = 'block';
-      }
-    });
-  });
-
-  // Smooth Scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+  <!-- Embedded JavaScript -->
+  <script>
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        if (header.classList.contains('active')) {
+          content.style.display = 'block';
+        } else {
+          content.style.display = 'none';
+        }
       });
     });
-  });
-</script>
 
+    // Tabs functionality
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        panels.forEach(panel => panel.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+      });
+    });
+    document.querySelector('.close-lightbox').addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    // Contact form validation
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for contacting me!');
+    });
+  </script>
 </body>
 </html>
