@@ -7,179 +7,148 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/script.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <meta name="description" content="Professional portfolio of Naga Venkata Satyanarayana Devarapalli showcasing AI, machine learning, data analytics projects and skills." />
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-container">
-      <a href="index.html" class="logo" aria-label="Naga Venkata Satyanarayana Devarapalli Portfolio Home">
-        <img src="images/logo.png" alt="NVSD Logo" />
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Portfolio Logo" />
       </a>
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="#about">About Me</a></li>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#artifacts">Artifacts</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="hero">
-    <div class="container hero-container">
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content container">
       <div class="hero-text">
-        <h1>Hello, I'm <span class="highlight">Naga Venkata Satyanarayana Devarapalli</span></h1>
-        <p class="hero-tagline">Master of Science in Artificial Intelligence – Data Analytics</p>
-        <p>
-          Passionate about transforming data into actionable insights and building intelligent AI solutions.
-          Welcome to my professional portfolio where I showcase my expertise in AI, machine learning, data visualization, and cloud technologies.
+        <h1>Hello, I'm <span>Naga Venkata Satyanarayana</span></h1>
+        <p class="tagline">Master's Student in Artificial Intelligence & Data Analytics</p>
+        <p class="intro">
+          Passionate about leveraging AI and data to create impactful solutions. Explore my work in AI-driven projects, machine learning, and data visualization.
         </p>
-        <a href="#artifacts" class="btn-primary">Explore My Work</a>
+        <a href="#artifacts" class="btn-primary">View My Projects</a>
       </div>
       <div class="hero-image">
-        <img src="images/hero-ai-analytics.jpg" alt="AI and Data Analytics Concept" />
+        <img src="images/hero-ai-analytics.jpg" alt="AI and Data Analytics" />
       </div>
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section class="about-section" id="about" tabindex="0">
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-section">
     <div class="container">
       <h2>About Me</h2>
       <p>
-        I am a dedicated graduate student and data enthusiast with over 12 years of experience in Business Intelligence, Data Analytics, and Machine Learning.
-        Currently pursuing my Master’s degree at Indiana Wesleyan University, I combine technical expertise with creative problem-solving to deliver insightful and effective solutions.
+        I am a graduate student at Indiana Wesleyan University specializing in Artificial Intelligence and Data Analytics.
+        With 12+ years of professional experience in BI, Data Analytics, and Cloud Platforms, I combine business insight with technical expertise to build robust AI solutions.
       </p>
-      <p>
-        My background spans diverse industries, enabling me to adapt quickly and understand business needs deeply. I am proficient in using Power BI, Python, SQL, Azure, and AWS for end-to-end analytics and AI solutions.
-      </p>
-      <p>
-        Driven by a commitment to continuous learning and innovation, I enjoy exploring the latest AI techniques and data science methodologies to stay at the forefront of technology.
-      </p>
-
-      <div class="bio-details">
-        <div class="bio-item">
+      <div class="about-grid">
+        <div class="about-card">
           <h3>Education</h3>
-          <p><strong>Indiana Wesleyan University</strong><br />Master of Science in Artificial Intelligence – Data Analytics (Expected 2025)</p>
+          <p><strong>Indiana Wesleyan University</strong><br />M.S. in AI – Data Analytics</p>
         </div>
-        <div class="bio-item">
+        <div class="about-card">
           <h3>Experience</h3>
-          <p>12+ years in Business Intelligence, Performance Testing, and Data Analytics roles</p>
+          <p>12+ years in BI, Performance Testing, and Data Analytics across multiple industries.</p>
         </div>
-        <div class="bio-item">
-          <h3>Technical Skills</h3>
+        <div class="about-card">
+          <h3>Key Strengths</h3>
           <ul>
-            <li>Power BI, Tableau, DAX, M Query</li>
-            <li>Python (Pandas, Scikit-learn, NumPy)</li>
-            <li>SQL Server, T-SQL, PL/SQL</li>
-            <li>Cloud Platforms: Azure, AWS</li>
-            <li>Machine Learning Algorithms & Statistical Modeling</li>
+            <li>AI & Machine Learning</li>
+            <li>Data Visualization & BI Tools</li>
+            <li>Cloud Deployment (Azure, AWS)</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section class="skills-section" id="skills" tabindex="0">
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills-section">
     <div class="container">
-      <h2>Technical Skills & Tools</h2>
-      <p>
-        I specialize in a blend of data visualization, machine learning, and cloud computing technologies.
-        Below are the core skills and tools I regularly work with:
-      </p>
-
+      <h2>Technical Skills</h2>
+      <p>My core competencies include advanced analytics, machine learning, and cloud-based solutions.</p>
       <div class="skills-grid">
-        <div class="skill-card">
-          <img src="images/powerbi-logo.png" alt="Power BI Logo" />
+        <div class="skill-item">
+          <img src="images/powerbi-logo.png" alt="Power BI" />
           <h3>Power BI</h3>
-          <p>Building interactive dashboards and scorecards using advanced DAX and M languages.</p>
+          <p>Interactive dashboards & advanced DAX measures.</p>
         </div>
-        <div class="skill-card">
-          <img src="images/python-logo.png" alt="Python Logo" />
+        <div class="skill-item">
+          <img src="images/python-logo.png" alt="Python" />
           <h3>Python</h3>
-          <p>Data analysis, machine learning modeling, and automation scripting with libraries like Pandas and Scikit-learn.</p>
+          <p>Machine Learning, Data Wrangling & Automation.</p>
         </div>
-        <div class="skill-card">
-          <img src="images/sql-logo.png" alt="SQL Server Logo" />
+        <div class="skill-item">
+          <img src="images/sql-logo.png" alt="SQL" />
           <h3>SQL</h3>
-          <p>Complex querying, data warehousing, and ETL process design using T-SQL and PL/SQL.</p>
+          <p>Complex queries, ETL, and performance tuning.</p>
         </div>
-        <div class="skill-card">
-          <img src="images/azure-logo.png" alt="Microsoft Azure Logo" />
-          <h3>Microsoft Azure</h3>
-          <p>Cloud deployment, data services, and AI infrastructure management.</p>
-        </div>
-        <div class="skill-card">
-          <img src="images/aws-logo.png" alt="AWS Logo" />
-          <h3>AWS</h3>
-          <p>Experience with cloud infrastructure and data pipeline automation.</p>
+        <div class="skill-item">
+          <img src="images/azure-logo.png" alt="Azure" />
+          <h3>Azure</h3>
+          <p>Data Services, AI Tools & Cloud Deployment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Artifacts Section -->
-  <section class="artifacts-section" id="artifacts" tabindex="0">
+  <!-- ARTIFACTS SECTION -->
+  <section id="artifacts" class="artifacts-section">
     <div class="container">
       <h2>My Artifacts</h2>
-      <p>
-        Here are some of the key projects and academic works that showcase my capabilities in AI, machine learning, and data visualization.
-      </p>
-
-      <div class="artifact-cards">
-        <article class="artifact-card">
-          <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot Logo" />
-          <h3>Eco-Coach Chatbot Project</h3>
-          <p>
-            Developed a conversational AI chatbot designed to promote eco-friendly habits using natural language processing techniques.
-          </p>
-          <a href="artifact1.html" class="btn-primary">View Details</a>
-        </article>
-
-        <article class="artifact-card">
-          <img src="images/timeline-logo.JPG" alt="AI/ML Timeline Logo" />
-          <h3>AI/ML Timeline Presentation</h3>
-          <p>
-            Created an interactive timeline presentation illustrating the evolution of artificial intelligence and machine learning research.
-          </p>
-          <a href="artifact2.html" class="btn-primary">View Details</a>
-        </article>
-
-        <article class="artifact-card">
-          <img src="images/schoolai-logo.JPG" alt="SchoolAI-Assisted Learning Logo" />
-          <h3>SchoolAI-Assisted Learning Experience</h3>
-          <p>
-            Documented an AI-supported learning journey that enhanced my understanding of machine learning training methods through interactive tools.
-          </p>
-          <a href="artifact3.html" class="btn-primary">View Details</a>
-        </article>
+      <div class="artifact-grid">
+        <div class="artifact-card">
+          <img src="images/chatbot-logo.JPG" alt="Chatbot" />
+          <h3>Artifact 1</h3>
+          <p>Eco-Coach Chatbot using NLP for sustainability education.</p>
+          <a href="artifact1.html" class="btn-secondary">View Details</a>
+        </div>
+        <div class="artifact-card">
+          <img src="images/timeline-logo.JPG" alt="Timeline" />
+          <h3>Artifact 2</h3>
+          <p>AI/ML Evolution Timeline Presentation with interactive design.</p>
+          <a href="artifact2.html" class="btn-secondary">View Details</a>
+        </div>
+        <div class="artifact-card">
+          <img src="images/schoolai-logo.JPG" alt="SchoolAI" />
+          <h3>Artifact 3</h3>
+          <p>SchoolAI chatbot-driven interactive learning experience.</p>
+          <a href="artifact3.html" class="btn-secondary">View Details</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact-section" id="contact" tabindex="0">
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
     <div class="container">
       <h2>Contact Me</h2>
-      <p>Feel free to reach out if you'd like to collaborate, discuss opportunities, or learn more about my work.</p>
-
-      <ul class="contact-info">
-        <li><strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
-        <li><strong>Phone:</strong> +1 (123) 456-7890</li>
-        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/naga-venkata-satyanarayana" target="_blank" rel="noopener">linkedin.com/in/naga-venkata-satyanarayana</a></li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/devarapalli10580" target="_blank" rel="noopener">github.com/devarapalli10580</a></li>
+      <p>Let's connect! Reach me via email or social media links below.</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
+        <li>LinkedIn: <a href="#">linkedin.com/in/naga</a></li>
+        <li>GitHub: <a href="#">github.com/devarapalli10580</a></li>
       </ul>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <div class="container footer-container">
+    <div class="container">
       <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All rights reserved</p>
     </div>
   </footer>
