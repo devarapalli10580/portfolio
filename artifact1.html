@@ -1,255 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Professional Portfolio Artifact 1 | ChatBox Creator Bot</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f3f8ff;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    line-height: 1.6;
-  }
-  header {
-    background: #004b8d;
-    color: #fff;
-    padding: 25px 40px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-  }
-  nav {
-    background: #0077cc;
-    padding: 12px 0;
-    text-align: center;
-  }
-  nav a {
-    color: white;
-    margin: 0 20px;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  nav a:hover,
-  nav a.active {
-    background-color: #005a99;
-  }
-  main {
-    max-width: 900px;
-    margin: 40px auto 80px auto;
-    background: white;
-    padding: 35px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 22px rgb(0 75 141 / 0.15);
-  }
-  h1, h2, h3 {
-    color: #004b8d;
-    margin-top: 30px;
-    margin-bottom: 15px;
-  }
-  h1 {
-    font-size: 36px;
-  }
-  h2 {
-    font-size: 26px;
-    border-bottom: 3px solid #ff6a00;
-    padding-bottom: 8px;
-  }
-  h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
-  p {
-    font-size: 17px;
-    margin-bottom: 18px;
-  }
-  ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
-  }
-  ul li {
-    margin-bottom: 10px;
-  }
-  .section-box {
-    background: #eaf4fc;
-    border-left: 6px solid #ff6a00;
-    padding: 18px 22px;
-    margin-bottom: 35px;
-    border-radius: 6px;
-  }
-  .btn-back {
-    display: inline-block;
-    background-color: #ff6a00;
-    color: white;
-    padding: 12px 28px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-  }
-  .btn-back:hover {
-    background-color: #cc5500;
-  }
-  footer {
-    text-align: center;
-    padding: 18px 10px;
-    font-size: 14px;
-    color: #666;
-  }
-  /* Responsive */
-  @media(max-width:600px) {
-    main {
-      padding: 25px 20px;
-      margin: 20px auto 40px auto;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifact 1 – AI Lab No-Code Chatbot Assistant</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Styles -->
+  <style>
+    /* =======================
+       RESET & BASE STYLES
+    ========================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    nav a {
-      margin: 0 8px;
-      padding: 8px 10px;
-      font-size: 14px;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-  }
-</style>
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =======================
+       COLOR VARIABLES
+    ========================== */
+    :root {
+      --primary-blue: #2563eb;
+      --primary-green: #10b981;
+      --accent-orange: #f59e0b;
+      --light-bg: #f3f4f6;
+      --dark-text: #111827;
+      --transition: all 0.3s ease;
+    }
+
+    /* =======================
+       HEADER & NAV
+    ========================== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+      color: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    nav ul li a:hover {
+      color: var(--accent-orange);
+    }
+
+    /* =======================
+       HERO SECTION
+    ========================== */
+    .hero {
+      margin-top: 80px;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--primary-blue), var(--accent-orange));
+      color: white;
+      text-align: center;
+      border-radius: 12px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary-green);
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+    .btn-primary:hover {
+      background: var(--accent-orange);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =======================
+       PROJECT DETAILS
+    ========================== */
+    .project-details {
+      padding: 4rem 2rem;
+      background: var(--light-bg);
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 1100px;
+    }
+    .project-details h3 {
+      color: var(--primary-blue);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .project-details p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    /* =======================
+       TECH STACK SECTION
+    ========================== */
+    .tech-stack {
+      margin-top: 3rem;
+    }
+    .tech-stack h4 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--primary-green);
+    }
+    .progress-bar {
+      margin: 0.8rem 0;
+      background: #e5e7eb;
+      border-radius: 8px;
+      height: 18px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      text-align: right;
+      padding-right: 5px;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .blue-bar { background: var(--primary-blue); }
+    .green-bar { background: var(--primary-green); }
+    .orange-bar { background: var(--accent-orange); }
+
+    /* =======================
+       IMAGE GALLERY
+    ========================== */
+    .gallery {
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    /* =======================
+       VIDEO SECTION
+    ========================== */
+    .video-section {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .video-section iframe {
+      width: 80%;
+      height: 400px;
+      border-radius: 12px;
+      border: 4px solid var(--primary-green);
+    }
+
+    /* =======================
+       FAQ SECTION
+    ========================== */
+    .faq {
+      margin: 4rem auto;
+      max-width: 900px;
+    }
+    .faq h3 {
+      font-size: 2rem;
+      color: var(--primary-blue);
+      margin-bottom: 1rem;
+    }
+    .accordion {
+      background: white;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+    }
+    .accordion::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+    }
+    .accordion.active::after {
+      content: '-';
+    }
+    .panel {
+      display: none;
+      padding: 1rem;
+      font-size: 1rem;
+      background: #f9fafb;
+      border-left: 4px solid var(--primary-green);
+      margin-bottom: 0.5rem;
+    }
+
+    /* =======================
+       CONTACT CTA
+    ========================== */
+    .contact-cta {
+      background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-radius: 12px;
+      margin-top: 4rem;
+    }
+    .contact-cta h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .contact-cta a {
+      background: var(--primary-blue);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: var(--transition);
+    }
+    .contact-cta a:hover {
+      background: white;
+      color: var(--primary-blue);
+    }
+
+    /* =======================
+       FOOTER
+    ========================== */
+    footer {
+      background: var(--primary-blue);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.2rem; }
+      .video-section iframe { width: 100%; height: 280px; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-  Professional Portfolio Artifact 1 - ChatBox Creator Bot
+  <h1>Artifact 1: AI Lab No-Code Chatbot Assistant</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#project-details">Details</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="artifact1.html" class="active">Artifact 1</a>
-  <a href="artifact2.html">Artifact 2</a>
-  <a href="artifact3.html">Artifact 3</a>
-</nav>
+<!-- HERO SECTION -->
+<section class="hero">
+  <h2>AI Lab No-Code Chatbot Assistant</h2>
+  <p>Empowering users to build intelligent chatbots without writing a single line of code. Hosted on the Mizou.com platform, this project showcases simplicity, innovation, and AI-driven efficiency.</p>
+  <a href="#project-details" class="btn-primary">Learn More</a>
+</section>
 
-<main>
+<!-- PROJECT DETAILS -->
+<section class="project-details" id="project-details">
+  <h3>Project Overview</h3>
+  <p>The AI Lab No-Code Chatbot Assistant is an innovative platform enabling individuals and businesses to create and deploy intelligent chatbots without coding expertise. It uses a visual drag-and-drop interface combined with advanced NLP models for seamless conversation flows.</p>
 
-  <h1>Introduction</h1>
-  <p>Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. As part of my academic and professional growth, I am building a comprehensive professional portfolio to showcase my technical capabilities, creative thinking, and collaborative skills.</p>
-  <p>This portfolio is designed to highlight real-world applications of AI/ML, reflecting my learning journey and the impact of my contributions. The artifact presented here stems from Workshop 1’s AI Lab activity, where I actively participated in the ideation, design, and testing of an AI assistant chatbot for no-code chatbot development. The experience was an excellent opportunity to practice design thinking, prompt engineering, and AI deployment in a collaborative team environment.</p>
-
-  <h2>Artifact Description</h2>
-
-  <h3>Overview:</h3>
-  <p>The featured artifact is a conversational AI assistant – the <strong>ChatBox Creator Bot</strong> – designed to help users, especially non-programmers, create and deploy custom chatbots without any coding knowledge. The bot was built using <strong>Mizou.com</strong>, a no-code platform that allows easy prototyping and deployment of chatbot flows.</p>
-  <p>The chatbot acts as a mentor and guide, enabling users to construct their own bots by walking them through features such as tone selection, FAQ design, visual flow planning, and integration into web platforms. It supports both beginners and small business owners looking to adopt conversational AI solutions.</p>
-
-  <h3>Problem Solved:</h3>
-  <p>Many individuals with innovative ideas often face a steep learning curve in implementing chatbots due to lack of technical expertise. This AI assistant addresses that issue by simplifying the development process into intuitive conversations. It provides visual instructions, examples, templates, and hands-on walkthroughs to help users build personalized chatbots.</p>
-
-  <h3>Tool Used:</h3>
-  <p><strong>Platform:</strong> Mizou.com</p>
-  <p><strong>Bot Name:</strong> ChatBox Creator Bot</p>
-  <p><strong>Live Preview:</strong> <a href="https://mizou.com" target="_blank" rel="noopener">Click here to preview</a></p>
-
-  <h2>Design Thinking Applied</h2>
-
-  <h3>Empathize:</h3>
-  <p>We conducted interviews with college peers, small business owners, and entrepreneurs to understand their biggest challenges in chatbot development. Most cited technical jargon, interface complexity, and uncertainty about use cases as primary barriers.</p>
-
-  <h3>Define:</h3>
-  <p>How might we help non-coders build functional chatbots quickly and confidently without writing code?</p>
-
-  <h3>Ideate:</h3>
-  <p>As a team, we brainstormed 12+ features. Key ideas included:</p>
+  <h4>Main Features:</h4>
   <ul>
-    <li>Interactive FAQ builder</li>
-    <li>Tone selector (casual, formal, friendly, etc.)</li>
-    <li>Visual flowchart previews</li>
-    <li>Multilingual templates</li>
-    <li>User success checklist</li>
+    <li>Drag-and-drop chatbot builder</li>
+    <li>Integrated NLP and AI-driven conversation flows</li>
+    <li>Supports multiple languages</li>
+    <li>Cloud deployment with zero technical setup</li>
   </ul>
 
-  <h3>Prototype:</h3>
-  <p>Using Mizou, we implemented the core features, embedded in-chat documentation, and designed a clean UI that mimics teaching interactions.</p>
+  <!-- Tech Stack -->
+  <div class="tech-stack">
+    <h4>Technology Stack & Skills</h4>
+    <div class="progress-bar"><div class="progress blue-bar" style="width:90%;">React.js</div></div>
+    <div class="progress-bar"><div class="progress green-bar" style="width:85%;">Node.js</div></div>
+    <div class="progress-bar"><div class="progress orange-bar" style="width:80%;">NLP Models</div></div>
+  </div>
+</section>
 
-  <h3>Test:</h3>
-  <p>We conducted peer testing sessions. Based on feedback, we revised the bot’s language style, added memory features for session continuity, and integrated visual aids for better guidance. Final Mean Reciprocal Rank (MRR) performance improved to 0.86.</p>
+<!-- IMAGE GALLERY -->
+<section class="gallery" id="gallery">
+  <img src="images/artifact1-1.jpg" alt="Chatbot UI Screenshot">
+  <img src="images/artifact1-2.jpg" alt="Drag and Drop Builder">
+  <img src="images/artifact1-3.jpg" alt="AI NLP Integration">
+</section>
 
-  <h2>Audience Value</h2>
-  <ul>
-    <li><strong>Employers:</strong> Demonstrates practical skills in prompt engineering, LLM integration, chatbot UX design, and user-centric prototyping with real tools.</li>
-    <li><strong>Peers:</strong> Offers a step-by-step model for building functional chatbots through design thinking and experimentation.</li>
-    <li><strong>Instructors:</strong> Validates my understanding of generative AI tools, ethical development practices, and collaborative problem-solving.</li>
-  </ul>
+<!-- VIDEO SECTION -->
+<section class="video-section">
+  <h3>Project Demo Video</h3>
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+</section>
 
-  <h2>Reflection</h2>
-  <p>Participating in this chatbot development project taught me several vital lessons:</p>
+<!-- FAQ SECTION -->
+<section class="faq" id="faq">
+  <h3>Frequently Asked Questions</h3>
+  <div class="accordion">What is the AI Lab No-Code Chatbot Assistant?</div>
+  <div class="panel">It's a platform that lets you create chatbots without writing any code, using a simple drag-and-drop interface.</div>
 
-  <h3>User-Centric Design:</h3>
-  <p>I learned to think beyond features and focus on how users interact with AI tools. Simplifying complexity into human-friendly interfaces was a powerful experience.</p>
+  <div class="accordion">Which technologies were used?</div>
+  <div class="panel">React.js, Node.js, TensorFlow, and Dialogflow for NLP.</div>
 
-  <h3>Interdisciplinary Collaboration:</h3>
-  <p>I worked closely with peers from different backgrounds – business, tech, and design – which helped refine my communication and teamwork skills. I contributed heavily to the documentation and final presentation, ensuring clarity across technical and non-technical audiences.</p>
+  <div class="accordion">Can this chatbot handle multiple languages?</div>
+  <div class="panel">Yes, it supports multilingual capabilities for global reach.</div>
+</section>
 
-  <h3>Iterative Learning:</h3>
-  <p>Early user feedback was crucial. We thought our initial version was strong, but user testing revealed gaps. Revising the tone, flow, and visuals significantly improved the final product.</p>
+<!-- CONTACT CTA -->
+<section class="contact-cta" id="contact">
+  <h3>Want to Learn More?</h3>
+  <p>Reach out to discuss this project or explore collaboration opportunities.</p>
+  <a href="mailto:tone_satya@yahoo.co.in">Contact Me</a>
+</section>
 
-  <p>This artifact now stands as a strong example of how I solve problems with empathy, design thinking, and AI expertise – skills I intend to apply in future data analytics and AI development roles.</p>
-
-  <h2>Feedback and Revisions</h2>
-
-  <table style="width:100%; border-collapse: collapse; margin-bottom: 30px;">
-    <thead style="background-color:#004b8d; color: white;">
-      <tr>
-        <th style="padding: 10px; text-align:left;">Feedback Area</th>
-        <th style="padding: 10px; text-align:left;">Initial Issue</th>
-        <th style="padding: 10px; text-align:left;">Action Taken</th>
-        <th style="padding: 10px; text-align:left;">Results of Revision</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="background-color:#eaf4fc;">
-        <td style="padding: 10px;">Complexity of Language</td>
-        <td style="padding: 10px;">Some users were overwhelmed by AI/tech terms.</td>
-        <td style="padding: 10px;">Simplified language to 8th-grade reading level; added examples and analogies.</td>
-        <td style="padding: 10px;">MRR increased from 0.61 → 0.86</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; background:#f7fbff;">Visual Flow Confusion</td>
-        <td style="padding: 10px; background:#f7fbff;">Users struggled with text-heavy, linear conversation flow.</td>
-        <td style="padding: 10px; background:#f7fbff;">Introduced inline flowcharts, added multimedia elements (diagrams/tutorials).</td>
-        <td style="padding: 10px; background:#f7fbff;">User satisfaction rating: 4.9 / 5.0</td>
-      </tr>
-      <tr style="background-color:#eaf4fc;">
-        <td style="padding: 10px;">Lack of Onboarding</td>
-        <td style="padding: 10px;">New users felt lost at the start.</td>
-        <td style="padding: 10px;">Added a “Welcome & Instructions” sequence for onboarding.</td>
-        <td style="padding: 10px;">Most praised features: Easy-to-follow flow, visual previews, and friendly tone</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>References</h2>
-  <ul>
-    <li>Botpress. (n.d.). Botpress Documentation. Retrieved from <a href="https://botpress.com/docs" target="_blank" rel="noopener">https://botpress.com/docs</a></li>
-    <li>Chatbase. (n.d.). Create AI Chatbots for Your Website. Retrieved from <a href="https://www.chatbase.co/" target="_blank" rel="noopener">https://www.chatbase.co/</a></li>
-    <li>Dialogflow. (n.d.). Conversational AI Platform. Google Cloud. Retrieved from <a href="https://cloud.google.com/dialogflow" target="_blank" rel="noopener">https://cloud.google.com/dialogflow</a></li>
-    <li>IDEO. (n.d.). Design Thinking. Retrieved from <a href="https://designthinking.ideo.com/" target="_blank" rel="noopener">https://designthinking.ideo.com/</a></li>
-    <li>OpenAI. (2024). ChatGPT and GPT-4 Technical Capabilities Overview. Retrieved from <a href="https://openai.com/gpt-4" target="_blank" rel="noopener">https://openai.com/gpt-4</a></li>
-    <li>Mizou. (2025). Mizou AI Chatbot Builder. Retrieved from <a href="https://mizou.com" target="_blank" rel="noopener">https://mizou.com</a></li>
-    <li>Anthropic. (2024). Claude 3 Language Model Overview. Retrieved from <a href="https://www.anthropic.com/index/claude" target="_blank" rel="noopener">https://www.anthropic.com/index/claude</a></li>
-    <li>Google DeepMind. (2024). Gemini 1.5 Technical Report. Retrieved from <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener">https://deepmind.google/technologies/gemini/</a></li>
-    <li>European Union. (2018). General Data Protection Regulation (GDPR). Retrieved from <a href="https://gdpr.eu/" target="_blank" rel="noopener">https://gdpr.eu/</a></li>
-    <li>Replit. (n.d.). Collaborative Code Workspace. Retrieved from <a href="https://replit.com" target="_blank" rel="noopener">https://replit.com</a></li>
-  </ul>
-
-  <a href="index.html" class="btn-back" title="Back to Portfolio Home">← Back to Home</a>
-
-</main>
-
+<!-- FOOTER -->
 <footer>
-  &copy; 2025 Naga Venkata Satyanarayana Devarapalli
+  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
 </footer>
+
+<!-- JAVASCRIPT -->
+<script>
+  // Accordion functionality for FAQ
+  const accordions = document.querySelectorAll('.accordion');
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('click', function () {
+      this.classList.toggle('active');
+      const panel = this.nextElementSibling;
+      if (panel.style.display === 'block') {
+        panel.style.display = 'none';
+      } else {
+        panel.style.display = 'block';
+      }
+    });
+  });
+
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
