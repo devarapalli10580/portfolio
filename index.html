@@ -8,259 +8,14 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-<style>
-  /* RESET */
-  *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0; padding: 0;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f9fafb;
-    color: #111827;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-  a {
-    text-decoration: none;
-    color: #3b82f6;
-    transition: color 0.3s ease;
-  }
-  a:hover, a:focus {
-    color: #2563eb;
-  }
-  img {
-    max-width: 100%;
-    display: block;
-    border-radius: 8px;
-  }
-
-  /* CONTAINER */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  /* NAVBAR */
-  header {
-    background-color: #1e293b; /* dark slate */
-    color: white;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 1rem;
-  }
-  .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    color: #60a5fa; /* blue-400 */
-    cursor: pointer;
-  }
-  nav a {
-    color: #cbd5e1;
-    margin-left: 1.8rem;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  nav a:hover {
-    color: #60a5fa;
-  }
-
-  /* HERO SECTION */
-  .hero {
-    background: linear-gradient(135deg, #60a5fa, #2563eb);
-    color: white;
-    padding: 6rem 0 5rem;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-  }
-  .hero p {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    opacity: 0.9;
-  }
-  .btn-cta {
-    background-color: #e0e7ff;
-    color: #1e40af;
-    padding: 0.85rem 2rem;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgb(37 99 235 / 0.4);
-    transition: background-color 0.3s ease;
-  }
-  .btn-cta:hover {
-    background-color: #a5b4fc;
-  }
-
-  /* ABOUT ME SECTION */
-  section.about-me {
-    padding: 4rem 0;
-    background-color: white;
-    text-align: center;
-  }
-  section.about-me h2 {
-    font-size: 2.75rem;
-    margin-bottom: 1rem;
-    color: #1e293b;
-  }
-  section.about-me p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.15rem;
-    color: #334155;
-  }
-  .about-cards {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .about-card {
-    background: #f1f5f9;
-    border-radius: 12px;
-    padding: 2rem;
-    flex: 1 1 250px;
-    max-width: 320px;
-    box-shadow: 0 10px 30px rgb(100 116 139 / 0.1);
-    transition: transform 0.3s ease;
-    cursor: default;
-  }
-  .about-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 40px rgb(37 99 235 / 0.3);
-  }
-  .about-card img {
-    width: 50px;
-    margin-bottom: 1.2rem;
-    filter: drop-shadow(0 0 1px rgba(37, 99, 235, 0.5));
-  }
-  .about-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.8rem;
-    color: #1e293b;
-  }
-  .about-card p {
-    font-size: 1rem;
-    color: #475569;
-    line-height: 1.4;
-  }
-
-  /* ARTIFACTS SECTION */
-  section.artifacts {
-    background-color: #f9fafb;
-    padding: 5rem 0 6rem;
-    text-align: center;
-  }
-  section.artifacts h2 {
-    font-size: 2.75rem;
-    margin-bottom: 2rem;
-    color: #1e293b;
-  }
-  .artifact-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-  }
-  .artifact-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
-    max-width: 320px;
-    flex: 1 1 300px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .artifact-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 15px 40px rgb(37 99 235 / 0.3);
-  }
-  .artifact-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  .artifact-card h3 {
-    font-size: 1.5rem;
-    margin: 1.2rem 0 0.6rem;
-    color: #1e293b;
-  }
-  .artifact-card p {
-    font-weight: 600;
-    color: #3b82f6;
-    margin-bottom: 1.2rem;
-  }
-  .btn-primary {
-    background-color: #2563eb;
-    color: white;
-    padding: 0.7rem 1.6rem;
-    margin-bottom: 1.5rem;
-    border-radius: 30px;
-    font-weight: 600;
-    box-shadow: 0 6px 18px rgb(37 99 235 / 0.4);
-    transition: background-color 0.3s ease;
-    text-align: center;
-    width: 80%;
-  }
-  .btn-primary:hover {
-    background-color: #1e40af;
-  }
-
-  /* FOOTER */
-  footer {
-    background-color: #1e293b;
-    color: #94a3b8;
-    text-align: center;
-    padding: 1.5rem 0;
-    font-size: 0.9rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .about-cards, .artifact-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-    .artifact-card, .about-card {
-      max-width: 90vw;
-    }
-  }
-</style>
-
+<!-- Link to external CSS -->
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header role="banner" aria-label="Primary navigation">
   <div class="nav-container container">
-    <div class="logo" tabindex="0">NV Satyanarayana</div>
+    <div class="logo" tabindex="0" role="link" aria-label="Homepage link, Naga Venkata Satyanarayana Devarapalli Portfolio">NV Satyanarayana</div>
     <nav role="navigation" aria-label="Main navigation">
       <a href="#home" tabindex="0">Home</a>
       <a href="#about" tabindex="0">About Me</a>
@@ -294,17 +49,17 @@
 
     <div class="about-cards" aria-live="polite">
       <article class="about-card" tabindex="0" role="region" aria-label="Skill: Data Analytics">
-        <img src="https://img.icons8.com/ios-filled/50/2563eb/data-analytics.png" alt="Data Analytics icon" />
+        <img src="https://img.icons8.com/ios-filled/64/FB923C/data-analytics.png" alt="Data Analytics icon" />
         <h3>Data Analytics</h3>
         <p>Expert in analyzing and interpreting complex data sets to inform business strategies.</p>
       </article>
       <article class="about-card" tabindex="0" role="region" aria-label="Skill: AI & Machine Learning">
-        <img src="https://img.icons8.com/ios-filled/50/2563eb/artificial-intelligence.png" alt="Artificial Intelligence icon" />
+        <img src="https://img.icons8.com/ios-filled/64/FB923C/artificial-intelligence.png" alt="Artificial Intelligence icon" />
         <h3>AI & Machine Learning</h3>
         <p>Hands-on experience developing AI/ML models that solve real-world problems.</p>
       </article>
       <article class="about-card" tabindex="0" role="region" aria-label="Skill: Data Visualization">
-        <img src="https://img.icons8.com/ios-filled/50/2563eb/combo-chart.png" alt="Data Visualization icon" />
+        <img src="https://img.icons8.com/ios-filled/64/FB923C/combo-chart.png" alt="Data Visualization icon" />
         <h3>Data Visualization</h3>
         <p>Skilled in Power BI and other tools to create meaningful, interactive dashboards.</p>
       </article>
@@ -340,12 +95,12 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" tabindex="-1" aria-label="Contact section" style="background:#2563eb; color: white; padding: 4rem 0; text-align: center;">
+<section id="contact" tabindex="-1" aria-label="Contact section">
   <div class="container">
     <h2>Contact Me</h2>
     <p>Feel free to reach out for collaboration, questions, or consulting opportunities!</p>
-    <p>Email: <a href="mailto:tone_satya@yahoo.co.in" style="color:#bfdbfe;">tone_satya@yahoo.co.in</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener" style="color:#bfdbfe;">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
+    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
   </div>
 </section>
 
@@ -354,24 +109,8 @@
   <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
 </footer>
 
-<script>
-  // Smooth scroll function
-  function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.focus({preventScroll:false});
-      window.scrollTo({top: section.offsetTop - 80, behavior: 'smooth'});
-    }
-  }
-
-  // Keyboard navigation for nav logo (optional)
-  document.querySelector('.logo').addEventListener('click', () => {
-    scrollToSection('home');
-  });
-  document.querySelector('.logo').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') scrollToSection('home');
-  });
-</script>
+<!-- Link to external JavaScript -->
+<script src="scripts.js"></script>
 
 </body>
 </html>

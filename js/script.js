@@ -1,30 +1,19 @@
-// Dark Mode Toggle and Simple Smooth Scrolling
-
-// Dark Mode
-const toggleDarkMode = () => {
-  document.body.classList.toggle('dark-mode');
-  // Save preference
-  if (document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('darkMode', 'enabled');
-  } else {
-    localStorage.setItem('darkMode', 'disabled');
+// Smooth scroll to section and set focus for accessibility
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.focus({preventScroll:false});
+    window.scrollTo({top: section.offsetTop - 80, behavior: 'smooth'});
   }
-};
+}
 
-// Initialize dark mode based on localStorage
-window.addEventListener('DOMContentLoaded', () => {
-  if(localStorage.getItem('darkMode') === 'enabled'){
-    document.body.classList.add('dark-mode');
-  }
+// Nav logo keyboard accessible click
+document.querySelector('.logo').addEventListener('click', () => {
+  scrollToSection('home');
 });
-
-// Smooth scroll for internal navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
+document.querySelector('.logo').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    scrollToSection('home');
     e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if(target){
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  }
 });
