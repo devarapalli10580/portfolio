@@ -1,426 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-<!-- Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-<style>
-/* -------------------------
-RESET & BASE
----------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f8fafc;
-  color: #1e293b;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-img {
-  max-width: 100%;
-  display: block;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-ul {
-  list-style: none;
-}
-
-/* -------------------------
-COLOR PALETTE
----------------------------*/
-:root {
-  --primary: #2563eb;
-  --secondary: #1e40af;
-  --light-blue: #dbeafe;
-  --bg-light: #f1f5f9;
-  --white: #ffffff;
-  --shadow: rgba(37, 99, 235, 0.2);
-}
-
-/* -------------------------
-HEADER
----------------------------*/
-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0 4px 20px var(--shadow);
-}
-header .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-header nav a {
-  margin: 0 1rem;
-  font-weight: 600;
-  color: white;
-  transition: color 0.3s ease;
-}
-header nav a:hover {
-  color: #93c5fd;
-}
-
-/* -------------------------
-HERO SECTION
----------------------------*/
-.hero {
-  background: linear-gradient(135deg, var(--primary), #3b82f6);
-  color: white;
-  text-align: center;
-  padding: 5rem 1rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  animation: fadeDown 1.5s ease-in-out;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  animation: fadeUp 1.5s ease-in-out;
-}
-.hero .btn-primary {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background: white;
-  color: var(--primary);
-  font-weight: 700;
-  border-radius: 50px;
-  transition: 0.3s;
-  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.4);
-}
-.hero .btn-primary:hover {
-  background: #f1f5f9;
-  color: var(--secondary);
-  transform: scale(1.05);
-}
-.hero img {
-  max-width: 500px;
-  margin-top: 2rem;
-  animation: zoomIn 2s ease;
-}
-
-/* Animations */
-@keyframes fadeDown {
-  from {opacity: 0; transform: translateY(-50px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-@keyframes fadeUp {
-  from {opacity: 0; transform: translateY(50px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-@keyframes zoomIn {
-  from {transform: scale(0.8); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
-}
-
-/* -------------------------
-ABOUT SECTION
----------------------------*/
-.about {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  background: var(--bg-light);
-  gap: 2rem;
-}
-.about img {
-  border-radius: 50%;
-  width: 250px;
-  border: 8px solid var(--primary);
-  box-shadow: 0 8px 20px var(--shadow);
-}
-.about .text {
-  max-width: 600px;
-}
-.about .text h2 {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-.about .text p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-/* -------------------------
-SKILLS SECTION
----------------------------*/
-.skills {
-  background: var(--white);
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.skills h2 {
-  font-size: 2.5rem;
-  color: var(--secondary);
-  margin-bottom: 2rem;
-}
-.skill-bar {
-  background: #e2e8f0;
-  border-radius: 50px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-.skill-bar span {
-  display: block;
-  height: 14px;
-  background: var(--primary);
-  width: 0;
-  animation: fillBar 2.5s forwards;
-}
-@keyframes fillBar {
-  from {width: 0;}
-  to {width: var(--fill);}
-}
-.skills-list {
-  max-width: 700px;
-  margin: auto;
-  text-align: left;
-}
-
-/* -------------------------
-ARTIFACTS SECTION
----------------------------*/
-.artifacts {
-  padding: 4rem 2rem;
-  background: var(--bg-light);
-  text-align: center;
-}
-.artifacts h2 {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-.artifact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-.artifact-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  width: 320px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.artifact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.35);
-}
-.artifact-card img {
-  border-radius: 20px 20px 0 0;
-  height: 180px;
-  object-fit: cover;
-}
-.artifact-card h3 {
-  margin: 1rem;
-  font-size: 1.4rem;
-  color: var(--secondary);
-}
-.artifact-card p {
-  padding: 0 1rem 1.5rem;
-  color: #475569;
-}
-.artifact-card a {
-  display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.7rem 1.5rem;
-  background: var(--primary);
-  color: white;
-  border-radius: 30px;
-  transition: 0.3s;
-}
-.artifact-card a:hover {
-  background: var(--secondary);
-}
-
-/* -------------------------
-CONTACT SECTION
----------------------------*/
-.contact {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, var(--secondary), var(--primary));
-  color: white;
-}
-.contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.contact p {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-.contact a {
-  color: #facc15;
-  font-weight: 700;
-}
-
-/* -------------------------
-FOOTER
----------------------------*/
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--secondary);
-  color: white;
-  font-size: 0.9rem;
-}
-footer .social a {
-  margin: 0 10px;
-  color: white;
-  font-size: 1.3rem;
-  transition: color 0.3s;
-}
-footer .social a:hover {
-  color: #facc15;
-}
-
-/* -------------------------
-RESPONSIVE
----------------------------*/
-@media (max-width: 900px) {
-  .about {
-    flex-direction: column;
-    text-align: center;
-  }
-  .artifact-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-</style>
-</head>
-<body>
-
-<!-- HEADER -->
-<header>
-  <div class="logo">My Portfolio</div>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#artifacts">Artifacts</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <h1>Welcome to My Professional Portfolio</h1>
-  <p>Explore my journey in AI, Machine Learning, and Data Analytics.</p>
-  <a href="#artifacts" class="btn-primary">Explore Artifacts</a>
-  <img src="images/ai-hero.png" alt="AI Illustration">
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <img src="images/profile-pic.jpg" alt="Profile Image">
-  <div class="text">
-    <h2>About Me</h2>
-    <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
-    <p>I bring over 12 years of experience in Data Analytics, BI, and AI-driven solutions. This portfolio showcases my academic journey and real-world projects.</p>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="skills" id="skills">
-  <h2>Technical Skills</h2>
-  <div class="skills-list">
-    <p>Power BI, DAX, M Code, Python, SQL Server, R, AWS, Azure, Data Visualization</p>
-    <div class="skill-bar"><span style="--fill:90%"></span></div>
-    <div class="skill-bar"><span style="--fill:85%"></span></div>
-    <div class="skill-bar"><span style="--fill:80%"></span></div>
-  </div>
-</section>
-
-<!-- ARTIFACTS -->
-<section class="artifacts" id="artifacts">
-  <h2>Explore My Artifacts</h2>
-  <div class="artifact-grid">
-    <div class="artifact-card">
-      <img src="images/artifact1.jpg" alt="Artifact 1">
-      <h3>AI Lab No-Code Chatbot Assistant</h3>
-      <p>Built a chatbot on Mizou.com enabling non-coders to create AI-powered bots easily.</p>
-      <a href="artifact1.html">Learn More</a>
-    </div>
-    <div class="artifact-card">
-      <img src="images/artifact2.jpg" alt="Artifact 2">
-      <h3>AI & ML Timeline Presentation</h3>
-      <p>Comprehensive visual timeline illustrating AI and ML evolution.</p>
-      <a href="artifact2.html">Learn More</a>
-    </div>
-    <div class="artifact-card">
-      <img src="images/artifact3.jpg" alt="Artifact 3">
-      <h3>SchoolAI-Assisted Learning</h3>
-      <p>Interactive learning experience using AI chatbots for ML concepts.</p>
-      <a href="artifact3.html">Learn More</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-  <p>Location: Dallas, TX, USA</p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.</p>
-  <div class="social">
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-</footer>
-
-<!-- JS for animations -->
-<script>
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.artifact-card').forEach(card => {
-    const position = card.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-    if(position < screenPosition){
-      card.style.opacity = 1;
-      card.style.transform = 'translateY(0)';
+  <style>
+    /* --- RESET --- */
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
-  });
-});
-</script>
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgb(37 99 235 / 0.15);
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.03);
+    }
+    a {
+      text-decoration: none;
+      color: var(--blue);
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: var(--blue-dark);
+      outline: none;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
+    /* --- COLOR VARIABLES --- */
+    :root {
+      --blue: #2563eb;
+      --blue-light: #dbeafe;
+      --blue-dark: #1e40af;
+      --bg-light: #f1f5f9;
+      --text-dark: #1e293b;
+      --text-muted: #475569;
+      --shadow: rgba(37, 99, 235, 0.15);
+      --btn-bg: #2563eb;
+      --btn-bg-hover: #1e40af;
+      --btn-text: #fff;
+    }
+
+    /* --- CONTAINER --- */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* --- HEADER --- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue));
+      color: var(--btn-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 12px var(--shadow);
+      font-weight: 700;
+      letter-spacing: 1.1px;
+    }
+    header .logo {
+      font-size: 1.8rem;
+      user-select: none;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--btn-text);
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--btn-text);
+      left: 0;
+      bottom: -3px;
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #a5b4fc;
+      outline: none;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      background: linear-gradient(135deg, var(--blue), #3b82f6);
+      color: var(--btn-text);
+      padding: 5rem 1.5rem 6rem;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px var(--shadow);
+      user-select: none;
+    }
+    .hero h1 {
+      font-size: 3.6rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.5;
+      font-weight: 500;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .btn-primary {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 1rem 3rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px var(--shadow);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: var(--btn-bg-hover);
+      box-shadow: 0 10px 28px rgba(30, 64, 175, 0.8);
+      transform: scale(1.05);
+      outline: none;
+    }
+    .hero img {
+      margin-top: 3rem;
+      max-width: 460px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+      transition: transform 0.4s ease;
+    }
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- ABOUT SECTION --- */
+    .about {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 6rem;
+      background: var(--bg-light);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 15px 40px var(--shadow);
+    }
+    .about img {
+      flex-shrink: 0;
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--blue);
+      box-shadow: 0 15px 30px var(--shadow);
+      transition: box-shadow 0.3s ease;
+    }
+    .about img:hover {
+      box-shadow: 0 25px 50px rgba(37, 99, 235, 0.6);
+    }
+    .about .text {
+      max-width: 720px;
+    }
+    .about .text h2 {
+      font-size: 2.8rem;
+      color: var(--blue-dark);
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .about .text p {
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* --- PORTFOLIO OVERVIEW --- */
+    .portfolio-overview {
+      margin-top: 6rem;
+      background: var(--bg-light);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px var(--shadow);
+      max-width: 100%;
+    }
+    .portfolio-overview h2 {
+      color: var(--blue);
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .portfolio-overview p {
+      color: var(--text-muted);
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      line-height: 1.5;
+    }
+    .artifact-summary {
+      background: #eff6ff;
+      border-left: 8px solid var(--blue);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 8px 18px var(--shadow);
+      color: var(--blue-dark);
+      font-weight: 600;
+      transition: background-color 0.25s ease;
+    }
+    .artifact-summary:hover {
+      background: #dbeafe;
+    }
+    .artifact-summary h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+    .artifact-summary p {
+      font-size: 1rem;
+      color: var(--blue-dark);
+      opacity: 0.85;
+    }
+
+    /* --- SKILLS --- */
+    #skills {
+      margin-top: 6rem;
+      background: var(--white);
+      padding: 3.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 14px 30px var(--shadow);
+      text-align: center;
+      max-width: 100%;
+    }
+    #skills h2 {
+      font-size: 2.8rem;
+      color: var(--blue-dark);
+      margin-bottom: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    #skills p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    #skills ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.5rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      padding-left: 0;
+    }
+    #skills ul li {
+      background: var(--blue-light);
+      padding: 1.2rem 1.5rem;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--blue-dark);
+      box-shadow: inset 0 0 10px #93c5fddd;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    #skills ul li:hover {
+      background: #bfdbfe;
+    }
+
+    /* --- ARTIFACTS --- */
+    #artifacts {
+      margin-top: 6rem;
+      padding-bottom: 4rem;
+    }
+    #artifacts h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 3rem;
+      letter-spacing: 0.04em;
+    }
+    #artifacts p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      color: var(--blue-dark);
+      opacity: 0.85;
+    }
+    .artifact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .artifact-card {
+      background: var(--white);
+      border-radius: 20px;
+      width: 320px;
+      box-shadow: 0 20px 45px var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .artifact-card:hover,
+    .artifact-card:focus-within {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 65px rgba(37, 99, 235, 0.4);
+      outline: none;
+    }
+    .artifact-card img {
+      height: 190px;
+      object-fit: cover;
+      border-bottom: 6px solid var(--blue);
+      border-radius: 20px 20px 0 0;
+    }
+    .artifact-card h3 {
+      font-size: 1.5rem;
+      color: var(--blue-dark);
+      font-weight: 700;
+      margin: 1rem 0 0.3rem;
+    }
+    .artifact-card h4 {
+      color: var(--blue);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+    .artifact-card p {
+      padding: 0 1.3rem 1.5rem;
+      font-size: 1rem;
+      color: #475569;
+      flex-grow: 1;
+    }
+    .btn-secondary {
+      margin: 0 auto 1.8rem;
+      background-color: var(--blue);
+      color: white;
+      padding: 0.8rem 2.3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      max-width: 200px;
+    }
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background-color: var(--blue-dark);
+      outline: none;
+    }
+
+    /* --- CONTACT --- */
+    #contact {
+      margin-top: 6rem;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 15px 40px var(--shadow);
+      max-width: 100%;
+    }
+    #contact h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    #contact p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    #contact address {
+      font-style: normal;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 400px;
+      margin: 0 auto;
+      color: #a5b4fc;
+      font-weight: 500;
+    }
+    #contact a {
+      color: #facc15;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    #contact a:hover,
+    #contact a:focus {
+      color: #d97706;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background-color: var(--blue-dark);
+      color: #bfdbfe;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+    footer .social {
+      margin-top: 0.7rem;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: white;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    footer .social a:hover {
+      color: #facc15;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about img {
+        width: 180px;
+        height: 180px;
+      }
+      .artifact-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary {
+        padding: 0.9rem 2.2rem;
+        font-size: 1.05rem;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header role="banner">
+    <div class="logo" aria-label="Site logo">Naga Venkata Satyanarayana Devarapalli</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="#hero" tabindex="0">Home</a>
+      <a href="#about" tabindex="0">About Me</a>
+      <a href="#portfolio-overview" tabindex="0">Portfolio Overview</a>
+      <a href="#skills" tabindex="0">Skills</a>
+      <a href="#artifacts" tabindex="0">Artifacts</a>
+      <a href="#contact" tabindex="0">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero" role="main" aria-label="Introduction and welcome section">
+    <h1>Welcome to My Professional Portfolio</h1>
+    <p>Explore my journey in Artificial Intelligence, Machine Learning, and Data Analytics.</p>
+    <a href="#artifacts" class="btn-primary" role="button" tabindex="0">Explore Artifacts</a>
+    <img
+      src="https://images.unsplash.com/photo-1537432376769-00c28d287f17?auto=format&fit=crop&w=600&q=80"
+      alt="AI concept illustration with abstract technology"
+      loading="lazy"
+      width="600"
+      height="400"
+      aria-hidden="true"
+    />
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about" aria-label="About me section">
+    <img
+      src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=300&q=80"
+      alt="Portrait photo of Naga Venkata Satyanarayana Devarapalli"
+      loading="lazy"
+      width="240"
+      height="240"
+    />
+    <div class="text">
+      <h2>About Me</h2>
+      <p>
+        Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, currently pursuing a Master of Science
+        in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.
+      </p>
+      <p>
+        With over 12 years of experience in Data Analytics, Business Intelligence, and AI-driven solutions, I
+        enjoy tackling complex problems and creating data-driven insights to empower organizations.
+      </p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO OVERVIEW -->
+  <section class="portfolio-overview" id="portfolio-overview" aria-label="Portfolio overview">
+    <h2>Portfolio Overview</h2>
+    <p>
+      This portfolio features a selection of my key projects and artifacts developed during my academic journey
+      and professional work, highlighting real-world applications of AI and Data Analytics.
+    </p>
+    <div class="artifact-summary" tabindex="0" aria-label="Artifact: AI Lab No-Code Chatbot Assistant">
+      <h3>AI Lab No-Code Chatbot Assistant</h3>
+      <p>Developed an intuitive chatbot assistant on Mizou.com enabling non-coders to build AI-powered chatbots.</p>
+    </div>
+    <div class="artifact-summary" tabindex="0" aria-label="Artifact: AI & ML Timeline Presentation">
+      <h3>AI & ML Timeline Presentation</h3>
+      <p>Created a detailed visual timeline depicting the evolution of Artificial Intelligence and Machine Learning.</p>
+    </div>
+    <div class="artifact-summary" tabindex="0" aria-label="Artifact: SchoolAI Assisted Learning">
+      <h3>SchoolAI Assisted Learning</h3>
+      <p>Designed interactive AI chatbots to assist in teaching complex machine learning concepts to students.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" aria-label="Technical skills">
+    <h2>Technical Skills</h2>
+    <p>Proficient with tools and languages that power AI, ML, and Data Analytics:</p>
+    <ul>
+      <li>Power BI, DAX, M Code, Data Visualization</li>
+      <li>Python, R, SQL Server, PL/SQL</li>
+      <li>AWS, Azure Cloud Platforms</li>
+      <li>Machine Learning & Artificial Intelligence Algorithms</li>
+      <li>Data Warehousing, ETL Processes, and BI Dashboards</li>
+    </ul>
+  </section>
+
+  <!-- ARTIFACTS -->
+  <section id="artifacts" aria-label="Portfolio artifacts">
+    <h2>Explore My Artifacts</h2>
+    <p>Deep dive into detailed projects and learning artifacts that showcase my skills and achievements.</p>
+
+    <div class="artifact-cards">
+      <article class="artifact-card" tabindex="0" aria-label="AI Lab No-Code Chatbot Assistant artifact">
+        <img
+          src="https://images.unsplash.com/photo-1526378720360-65b15cfc2f57?auto=format&fit=crop&w=320&q=80"
+          alt="Screenshot of AI Lab No-Code Chatbot Assistant"
+          loading="lazy"
+          width="320"
+          height="190"
+        />
+        <h3>AI Lab No-Code Chatbot Assistant</h3>
+        <p>Built a user-friendly chatbot platform on Mizou.com enabling AI chatbot creation without coding.</p>
+        <a href="artifact1.html" class="btn-secondary" role="button" tabindex="0" aria-label="Learn more about AI Lab Chatbot">Learn More</a>
+      </article>
+
+      <article class="artifact-card" tabindex="0" aria-label="AI & ML Timeline Presentation artifact">
+        <img
+          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=320&q=80"
+          alt="Visual timeline presentation of AI & ML evolution"
+          loading="lazy"
+          width="320"
+          height="190"
+        />
+        <h3>AI & ML Timeline Presentation</h3>
+        <p>A comprehensive and engaging visual timeline that traces the history of AI and ML technologies.</p>
+        <a href="artifact2.html" class="btn-secondary" role="button" tabindex="0" aria-label="Learn more about AI & ML Timeline">Learn More</a>
+      </article>
+
+      <article class="artifact-card" tabindex="0" aria-label="SchoolAI Assisted Learning artifact">
+        <img
+          src="https://images.unsplash.com/photo-1559027615-1fa4ca76a68e?auto=format&fit=crop&w=320&q=80"
+          alt="SchoolAI Assisted Learning project image"
+          loading="lazy"
+          width="320"
+          height="190"
+        />
+        <h3>SchoolAI Assisted Learning</h3>
+        <p>Designed AI chatbots that assist students with interactive learning of machine learning concepts.</p>
+        <a href="artifact3.html" class="btn-secondary" role="button" tabindex="0" aria-label="Learn more about SchoolAI Assisted Learning">Learn More</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Contact information">
+    <h2>Contact Me</h2>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:tone_satya@yahoo.co.in" aria-label="Send email to tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a>
+    </p>
+    <address>
+      <strong>Location:</strong> Dallas, Texas, USA
+    </address>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
+    <div class="social" aria-label="Social media links">
+      <a href="#" aria-label="LinkedIn" tabindex="0"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="GitHub" tabindex="0"><i class="fab fa-github"></i></a>
+      <a href="#" aria-label="Twitter" tabindex="0"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
