@@ -1,482 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
 
-  <style>
-    /* --------------------------------------------------------
-       RESET & BASE STYLES
-    --------------------------------------------------------- */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9fafc;
-      color: #1e293b;
-      line-height: 1.6;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    ul {
-      list-style: none;
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    /* --------------------------------------------------------
-       COLORS & THEME
-    --------------------------------------------------------- */
-    :root {
-      --primary: #2563eb;    /* Blue */
-      --secondary: #0ea5e9;  /* Teal */
-      --light: #eff6ff;
-      --dark: #1e3a8a;
-      --text: #1e293b;
-      --white: #fff;
-    }
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    /* --------------------------------------------------------
-       GLOBAL CONTAINERS
-    --------------------------------------------------------- */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+<style>
+/* -------------------------
+RESET & BASE
+---------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
 
-    /* --------------------------------------------------------
-       HEADER & NAVBAR
-    --------------------------------------------------------- */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--white);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
-    .navbar h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    nav ul {
-      display: flex;
-      gap: 2rem;
-    }
-    nav a {
-      font-weight: 500;
-      color: var(--text);
-      transition: color 0.3s ease;
-    }
-    nav a:hover,
-    nav a.active {
-      color: var(--primary);
-    }
+/* -------------------------
+COLOR PALETTE
+---------------------------*/
+:root {
+  --primary: #2563eb;
+  --secondary: #1e40af;
+  --light-blue: #dbeafe;
+  --bg-light: #f1f5f9;
+  --white: #ffffff;
+  --shadow: rgba(37, 99, 235, 0.2);
+}
 
-    /* Mobile Menu */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: var(--primary);
-      cursor: pointer;
-    }
+/* -------------------------
+HEADER
+---------------------------*/
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+header nav a {
+  margin: 0 1rem;
+  font-weight: 600;
+  color: white;
+  transition: color 0.3s ease;
+}
+header nav a:hover {
+  color: #93c5fd;
+}
 
-    @media (max-width: 768px) {
-      nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--white);
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
-        display: none;
-      }
-      nav ul.show {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
+/* -------------------------
+HERO SECTION
+---------------------------*/
+.hero {
+  background: linear-gradient(135deg, var(--primary), #3b82f6);
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeDown 1.5s ease-in-out;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 1.5s ease-in-out;
+}
+.hero .btn-primary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: white;
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: 50px;
+  transition: 0.3s;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.4);
+}
+.hero .btn-primary:hover {
+  background: #f1f5f9;
+  color: var(--secondary);
+  transform: scale(1.05);
+}
+.hero img {
+  max-width: 500px;
+  margin-top: 2rem;
+  animation: zoomIn 2s ease;
+}
 
-    /* --------------------------------------------------------
-       HERO SECTION
-    --------------------------------------------------------- */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 7rem 0 4rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--white);
-      border-radius: 0 0 50px 50px;
-    }
-    .hero-text {
-      flex: 1 1 500px;
-      padding: 2rem;
-    }
-    .hero-text h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero-text p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    .btn-primary {
-      display: inline-block;
-      padding: 0.9rem 2rem;
-      background: var(--white);
-      color: var(--primary);
-      font-weight: 600;
-      border-radius: 50px;
-      transition: 0.3s ease;
-    }
-    .btn-primary:hover {
-      background: var(--secondary);
-      color: var(--white);
-    }
-    .hero-img {
-      flex: 1 1 400px;
-      text-align: center;
-    }
+/* Animations */
+@keyframes fadeDown {
+  from {opacity: 0; transform: translateY(-50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes zoomIn {
+  from {transform: scale(0.8); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
 
-    /* --------------------------------------------------------
-       ABOUT SECTION
-    --------------------------------------------------------- */
-    #about {
-      padding: 4rem 0;
-    }
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-    }
-    .about-img {
-      flex: 1 1 300px;
-      text-align: center;
-    }
-    .about-img img {
-      border-radius: 50%;
-      width: 250px;
-      border: 8px solid var(--primary);
-    }
-    .about-text {
-      flex: 2 1 500px;
-    }
-    .about-text h2 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .about-text p {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
+/* -------------------------
+ABOUT SECTION
+---------------------------*/
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: var(--bg-light);
+  gap: 2rem;
+}
+.about img {
+  border-radius: 50%;
+  width: 250px;
+  border: 8px solid var(--primary);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+.about .text {
+  max-width: 600px;
+}
+.about .text h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.about .text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
 
-    /* --------------------------------------------------------
-       SKILLS SECTION
-    --------------------------------------------------------- */
-    #skills {
-      background: var(--light);
-      padding: 4rem 0;
-    }
-    #skills h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 2rem;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .skill {
-      background: var(--white);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .skill h3 {
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-    .progress-bar {
-      background: #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      height: 12px;
-      margin-top: 0.5rem;
-    }
-    .progress {
-      background: var(--primary);
-      height: 12px;
-      width: 0;
-      transition: width 2s ease-in-out;
-    }
+/* -------------------------
+SKILLS SECTION
+---------------------------*/
+.skills {
+  background: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.skills h2 {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+.skill-bar {
+  background: #e2e8f0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.skill-bar span {
+  display: block;
+  height: 14px;
+  background: var(--primary);
+  width: 0;
+  animation: fillBar 2.5s forwards;
+}
+@keyframes fillBar {
+  from {width: 0;}
+  to {width: var(--fill);}
+}
+.skills-list {
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
 
-    /* --------------------------------------------------------
-       ARTIFACTS / PORTFOLIO
-    --------------------------------------------------------- */
-    #portfolio {
-      padding: 4rem 0;
-    }
-    #portfolio h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 2rem;
-    }
-    .portfolio-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .portfolio-item {
-      background: var(--white);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      width: 320px;
-      transition: transform 0.3s;
-    }
-    .portfolio-item:hover {
-      transform: translateY(-8px);
-    }
-    .portfolio-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .portfolio-item h3 {
-      color: var(--primary);
-      padding: 1rem;
-      font-size: 1.3rem;
-    }
-    .portfolio-item p {
-      padding: 0 1rem 1rem;
-      color: #475569;
-      font-size: 1rem;
-    }
-    .btn-secondary {
-      display: inline-block;
-      margin: 0 1rem 1rem;
-      padding: 0.7rem 1.5rem;
-      background: var(--primary);
-      color: var(--white);
-      border-radius: 30px;
-      font-weight: 500;
-      transition: 0.3s ease;
-    }
-    .btn-secondary:hover {
-      background: var(--secondary);
-    }
+/* -------------------------
+ARTIFACTS SECTION
+---------------------------*/
+.artifacts {
+  padding: 4rem 2rem;
+  background: var(--bg-light);
+  text-align: center;
+}
+.artifacts h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+.artifact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.artifact-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.artifact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.35);
+}
+.artifact-card img {
+  border-radius: 20px 20px 0 0;
+  height: 180px;
+  object-fit: cover;
+}
+.artifact-card h3 {
+  margin: 1rem;
+  font-size: 1.4rem;
+  color: var(--secondary);
+}
+.artifact-card p {
+  padding: 0 1rem 1.5rem;
+  color: #475569;
+}
+.artifact-card a {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.artifact-card a:hover {
+  background: var(--secondary);
+}
 
-    /* --------------------------------------------------------
-       CONTACT SECTION
-    --------------------------------------------------------- */
-    #contact {
-      background: var(--light);
-      padding: 4rem 0;
-      text-align: center;
-    }
-    #contact h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    #contact p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    #contact a {
-      color: var(--primary);
-      font-weight: bold;
-    }
+/* -------------------------
+CONTACT SECTION
+---------------------------*/
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: white;
+}
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.contact p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.contact a {
+  color: #facc15;
+  font-weight: 700;
+}
 
-    /* --------------------------------------------------------
-       FOOTER
-    --------------------------------------------------------- */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: var(--primary);
-      color: var(--white);
-      font-size: 1rem;
-      margin-top: 3rem;
-    }
+/* -------------------------
+FOOTER
+---------------------------*/
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--secondary);
+  color: white;
+  font-size: 0.9rem;
+}
+footer .social a {
+  margin: 0 10px;
+  color: white;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+footer .social a:hover {
+  color: #facc15;
+}
 
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about-container {
-        flex-direction: column;
-      }
-    }
-  </style>
+/* -------------------------
+RESPONSIVE
+---------------------------*/
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+  .artifact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="container navbar">
-    <h1>Naga Venkata S. Devarapalli</h1>
-    <div class="menu-toggle">&#9776;</div>
-    <nav>
-      <ul>
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+  <div class="logo">My Portfolio</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#artifacts">Artifacts</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="container hero-text">
-    <h2>Welcome to My Portfolio</h2>
-    <p>Master of Science in Artificial Intelligence – Data Analytics | 12+ Years Experience in BI & Data Analytics</p>
-    <a href="#portfolio" class="btn-primary">Explore My Work</a>
-  </div>
-  <div class="hero-img">
-    <img src="images/hero-image.jpg" alt="AI and Data Illustration">
-  </div>
+  <h1>Welcome to My Professional Portfolio</h1>
+  <p>Explore my journey in AI, Machine Learning, and Data Analytics.</p>
+  <a href="#artifacts" class="btn-primary">Explore Artifacts</a>
+  <img src="images/ai-hero.png" alt="AI Illustration">
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="container">
-  <div class="about-container">
-    <div class="about-img">
-      <img src="images/profile.jpg" alt="Profile Picture">
-    </div>
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>Hello! I'm Naga Venkata Satyanarayana Devarapalli, currently pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
-      <p>With 12+ years of experience in data analytics, business intelligence, and AI-driven solutions, I aim to transform data into actionable insights for better decision-making.</p>
-      <p>This portfolio highlights my technical skills, research, and innovative projects in AI, ML, and data visualization.</p>
-    </div>
+<section class="about" id="about">
+  <img src="images/profile-pic.jpg" alt="Profile Image">
+  <div class="text">
+    <h2>About Me</h2>
+    <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
+    <p>I bring over 12 years of experience in Data Analytics, BI, and AI-driven solutions. This portfolio showcases my academic journey and real-world projects.</p>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">
-        <h3>Python & ML</h3>
-        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-      </div>
-      <div class="skill">
-        <h3>Power BI & Visualization</h3>
-        <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
-      </div>
-      <div class="skill">
-        <h3>SQL & Data Modeling</h3>
-        <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
-      </div>
-      <div class="skill">
-        <h3>Cloud (Azure & AWS)</h3>
-        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-      </div>
-    </div>
+<section class="skills" id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skills-list">
+    <p>Power BI, DAX, M Code, Python, SQL Server, R, AWS, Azure, Data Visualization</p>
+    <div class="skill-bar"><span style="--fill:90%"></span></div>
+    <div class="skill-bar"><span style="--fill:85%"></span></div>
+    <div class="skill-bar"><span style="--fill:80%"></span></div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="container">
+<!-- ARTIFACTS -->
+<section class="artifacts" id="artifacts">
   <h2>Explore My Artifacts</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
+  <div class="artifact-grid">
+    <div class="artifact-card">
       <img src="images/artifact1.jpg" alt="Artifact 1">
-      <h3>Artifact 1</h3>
-      <p>No-Code AI Chatbot Assistant – Built using Mizou.com for easy chatbot creation without coding.</p>
-      <a href="artifact1.html" class="btn-secondary">Learn More</a>
+      <h3>AI Lab No-Code Chatbot Assistant</h3>
+      <p>Built a chatbot on Mizou.com enabling non-coders to create AI-powered bots easily.</p>
+      <a href="artifact1.html">Learn More</a>
     </div>
-    <div class="portfolio-item">
+    <div class="artifact-card">
       <img src="images/artifact2.jpg" alt="Artifact 2">
-      <h3>Artifact 2</h3>
-      <p>AI & ML Timeline Presentation – Detailed history and evolution of AI and ML technologies.</p>
-      <a href="artifact2.html" class="btn-secondary">Learn More</a>
+      <h3>AI & ML Timeline Presentation</h3>
+      <p>Comprehensive visual timeline illustrating AI and ML evolution.</p>
+      <a href="artifact2.html">Learn More</a>
     </div>
-    <div class="portfolio-item">
+    <div class="artifact-card">
       <img src="images/artifact3.jpg" alt="Artifact 3">
-      <h3>Artifact 3</h3>
-      <p>SchoolAI-Assisted Learning – Interactive learning experience with AI-powered chatbot.</p>
-      <a href="artifact3.html" class="btn-secondary">Learn More</a>
+      <h3>SchoolAI-Assisted Learning</h3>
+      <p>Interactive learning experience using AI chatbots for ML concepts.</p>
+      <a href="artifact3.html">Learn More</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section class="contact" id="contact">
   <h2>Contact Me</h2>
   <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
   <p>Location: Dallas, TX, USA</p>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  &copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved
+  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.</p>
+  <div class="social">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
 </footer>
 
+<!-- JS for animations -->
 <script>
-  // MOBILE NAV TOGGLE
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('nav ul');
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.artifact-card').forEach(card => {
+    const position = card.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+    if(position < screenPosition){
+      card.style.opacity = 1;
+      card.style.transform = 'translateY(0)';
+    }
   });
-
-  // ACTIVE NAV LINK ON SCROLL
-  const sections = document.querySelectorAll('section');
-  const navItems = document.querySelectorAll('nav a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    navItems.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === `#${current}`) {
-        a.classList.add('active');
-      }
-    });
-  });
+});
 </script>
 
 </body>
