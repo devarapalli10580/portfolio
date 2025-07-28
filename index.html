@@ -9,43 +9,46 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <h1>My Portfolio</h1>
+    <header class="header">
+        <h1 class="site-title">My Portfolio</h1>
         <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
-        <nav>
+        <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#bio">Bio</a>
             <a href="#artifacts">Artifacts</a>
         </nav>
     </header>
 
-    <!-- Home Section -->
-    <section id="home" class="home-section">
-        <h2>Hi there! 👋 I am Naga Venkata Satyanarayana Devarapalli</h2>
-        <p>
-            A passionate <strong>AI & Data Analytics graduate student</strong> at Indiana Wesleyan University with 12+ years of professional experience in 
-            data analytics, business intelligence, and performance testing. My career goal is to leverage AI, machine learning, and data-driven insights to 
-            solve complex business challenges and drive innovation.
-        </p>
+    <!-- Hero/Home Section -->
+    <section id="home" class="home-section fade-element">
+        <div class="content-center">
+            <img src="images/profile.jpg" alt="Profile Picture" class="profile-img">
+            <h2>Hi there! 👋 I am <span>Naga Venkata Satyanarayana Devarapalli</span></h2>
+            <p>
+                A passionate <strong>AI & Data Analytics graduate student</strong> at Indiana Wesleyan University with 12+ years of experience in 
+                <b>Data Analytics, Business Intelligence, and Performance Testing</b>.  
+                My goal is to leverage <b>AI, Machine Learning, and Data Insights</b> to solve real-world business problems.
+            </p>
+        </div>
     </section>
 
     <!-- Bio Section -->
-    <section id="bio" class="bio-section">
+    <section id="bio" class="bio-section fade-element">
         <h2>About Me</h2>
         <p>
-            I specialize in designing data solutions, developing AI models, and creating meaningful data visualizations. With strong expertise in Power BI, SQL, and Python, 
-            and hands-on experience in AI/ML projects, I aim to bridge the gap between data and decision-making. My portfolio showcases practical applications of 
-            AI and machine learning, demonstrating both technical skills and strategic thinking.
+            I specialize in <b>data solutions</b>, <b>AI model development</b>, and <b>data visualization</b>.  
+            With strong expertise in <b>Power BI, SQL, Python</b> and hands-on AI/ML projects, I bridge the gap between <b>data and decision-making</b>.  
+            This portfolio highlights my technical skills and strategic thinking.
         </p>
     </section>
 
     <!-- Artifacts Section -->
-    <section id="artifacts" class="artifacts-section">
+    <section id="artifacts" class="artifacts-section fade-element">
         <h2>My Artifacts</h2>
         <div class="artifact-container">
             <!-- Artifact 1 -->
             <div class="artifact-card">
-                <img src="images/chatbot-logo.JPG" alt="Chatbot Logo">
+                <img src="images/chatbot-logo.JPG" alt="Chatbot Logo" class="artifact-img">
                 <h3>Artifact 1</h3>
                 <p><strong>Eco-Coach Chatbot Project</strong></p>
                 <a href="artifact1.html" class="view-btn">View Details</a>
@@ -53,7 +56,7 @@
 
             <!-- Artifact 2 -->
             <div class="artifact-card">
-                <img src="images/timeline-logo.JPG" alt="Timeline Logo">
+                <img src="images/timeline-logo.JPG" alt="Timeline Logo" class="artifact-img">
                 <h3>Artifact 2</h3>
                 <p><strong>AI/ML Timeline Presentation</strong></p>
                 <a href="artifact2.html" class="view-btn">View Details</a>
@@ -61,7 +64,7 @@
 
             <!-- Artifact 3 -->
             <div class="artifact-card">
-                <img src="images/schoolai-logo.JPG" alt="SchoolAI Logo">
+                <img src="images/schoolai-logo.JPG" alt="SchoolAI Logo" class="artifact-img">
                 <h3>Artifact 3</h3>
                 <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
                 <a href="artifact3.html" class="view-btn">View Details</a>

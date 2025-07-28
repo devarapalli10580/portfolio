@@ -1,92 +1,30 @@
-// Smooth scrolling already handled by CSS scroll-behavior
-
-// Back-to-top button
-const backToTop = document.createElement('button');
-backToTop.id = 'backToTop';
-backToTop.textContent = '↑';
-document.body.appendChild(backToTop);
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-    } else {
-        backToTop.style.display = 'none';
-    }
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Dark mode toggle
-const darkModeBtn = document.createElement('button');
-darkModeBtn.id = 'darkModeToggle';
-darkModeBtn.textContent = '🌙';
-document.querySelector('header').appendChild(darkModeBtn);
-
-darkModeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    darkModeBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-});
-
-// Highlight active nav link
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Animate sections on scroll
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.2 });
-
-sections.forEach(section => {
-    observer.observe(section);
-});
-
-// Dynamic year in footer
-document.querySelector('footer p').innerHTML =
-    `© ${new Date().getFullYear()} Naga Venkata Satyanarayana Devarapalli | All Rights Reserved`;
-// Dark Mode Toggle
+// Toggle Dark Mode
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
 
-// Smooth Scroll for Nav Links
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// Smooth Scroll & Animation
+document.addEventListener('DOMContentLoaded', function () {
+    // Smooth Scroll
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
-});
 
-// Fade-in Animation for Sections
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
-    const triggerBottom = window.innerHeight * 0.8;
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-            section.classList.add('fade-in');
-        }
-    });
+    // Scroll Animations
+    const fadeElements = document.querySelectorAll('.fade-element');
+    function fadeInOnScroll() {
+        fadeElements.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                el.classList.add('fade-in');
+            }
+        });
+    }
+    window.addEventListener('scroll', fadeInOnScroll);
+    fadeInOnScroll();
 });
