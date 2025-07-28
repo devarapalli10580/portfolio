@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artifact 1 - Eco-Coach Chatbot Project</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifact 1: Eco-Coach Chatbot Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <h1>My Portfolio</h1>
+        <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#bio">Bio</a>
+            <a href="index.html#artifacts">Artifacts</a>
+        </nav>
+    </header>
 
-<header id="main-header">
-    <img src="Autumn-Star.jpg" alt="Profile Picture">
-    <h1>My Portfolio</h1>
-    <p>Artifact 1: Eco-Coach Chatbot Project</p>
-</header>
+    <!-- Artifact Section -->
+    <section class="artifact-detail">
+        <h2>Artifact 1: Eco-Coach Chatbot Project</h2>
+        
+        <!-- Overview -->
+        <div class="artifact-overview">
+            <h3>Overview</h3>
+            <p><strong>Type:</strong> Conversational AI Application</p>
+            <p><strong>Tools:</strong> Botpress, Dialogflow, Python</p>
+            <p><strong>Date:</strong> July 10, 2025</p>
+        </div>
 
-<nav id="navbar">
-    <a href="index.html">Home</a>
-    <a href="index.html#bio">Bio</a>
-    <a href="index.html#artifacts">Artifacts</a>
-</nav>
+        <!-- Description -->
+        <div class="artifact-description">
+            <h3>Description</h3>
+            <p>
+                The <strong>Eco-Coach Chatbot</strong> is an AI-driven assistant that promotes sustainable practices. 
+                It provides eco-friendly tips, answers energy-saving questions, and integrates APIs for real-time updates.
+            </p>
+            <ul>
+                <li>Uses NLP for natural conversations</li>
+                <li>Offers personalized eco-friendly recommendations</li>
+                <li>Integrates APIs for dynamic and real-time content</li>
+            </ul>
+        </div>
 
-<section>
-    <h2>Eco-Coach Chatbot Project</h2>
-    <h3>Overview</h3>
-    <ul>
-        <li><strong>Type:</strong> Conversational AI Application</li>
-        <li><strong>Tools:</strong> Botpress, Dialogflow, Python</li>
-        <li><strong>Date:</strong> July 10, 2025</li>
-    </ul>
+        <!-- Skills Demonstrated -->
+        <div class="artifact-skills">
+            <h3>Skills Demonstrated</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AI/ML Implementation</td>
+                        <td>Developed chatbot using NLP and intent recognition</td>
+                    </tr>
+                    <tr>
+                        <td>Programming</td>
+                        <td>Implemented core logic with Python and integrated with Botpress</td>
+                    </tr>
+                    <tr>
+                        <td>UX Design</td>
+                        <td>Created intuitive conversational flows for better user experience</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <h3>Description</h3>
-    <p>The Eco-Coach Chatbot is an AI-driven assistant promoting sustainable practices. It provides eco-friendly tips, answers questions on energy saving, and integrates APIs for real-time updates.</p>
-    <ul>
-        <li>Uses NLP for natural conversation</li>
-        <li>Offers personalized eco-tips</li>
-        <li>Integrates APIs for dynamic content</li>
-    </ul>
+        <!-- Challenges & Solutions -->
+        <div class="artifact-challenges">
+            <h3>Challenges & Solutions</h3>
+            <p><strong>Challenge:</strong> Handling ambiguous queries</p>
+            <p><strong>Solution:</strong> Implemented context-based fallback intents for better query resolution.</p>
+        </div>
+    </section>
 
-    <h3>Skills Demonstrated</h3>
-    <table class="skills-table">
-        <tr><th>Skill</th><th>Description</th></tr>
-        <tr><td>AI/ML Implementation</td><td>Developed chatbot with NLP</td></tr>
-        <tr><td>Programming</td><td>Used Python and Botpress</td></tr>
-        <tr><td>UX Design</td><td>Created intuitive flows for easy navigation</td></tr>
-    </table>
-
-    <h3>Challenges & Solutions</h3>
-    <p><strong>Challenge:</strong> Handling ambiguous queries → <strong>Solution:</strong> Context-based fallback intents.</p>
-</section>
-
-<button id="back-to-top">Back to Top</button>
-
-<footer>
-    <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-</footer>
-
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
