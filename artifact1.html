@@ -1,371 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Professional Portfolio Artifact 1 - Naga Venkata Satyanarayana Devarapalli</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Professional Portfolio Artifact 1 - Naga Venkata Satyanarayana Devarapalli</title>
 
-  <style>
-    /* ==========================================================================
-       Reset & Base Styles
-    ========================================================================== */
+<style>
+  /* Reset & Base Styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9faf9; /* near white-greenish */
+    color: #22332a; /* very dark green-gray for text */
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: #f97316; /* vibrant orange */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #166534; /* strong green */
+    outline: none;
+    text-decoration: underline;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #166534; /* dominant green */
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.15;
+    letter-spacing: 0.015em;
+  }
+  h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-top: 3rem;
+    color: #ea580c; /* orange heading */
+  }
+  h2 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #ea580c; /* orange underline */
+    padding-bottom: 0.35rem;
+  }
+  h3 {
+    font-size: 1.45rem;
+    margin-top: 1.6rem;
+  }
+  p, ul {
+    font-weight: 400;
+    line-height: 1.65;
+    color: #334d3a; /* deep green gray */
+    font-size: 1.125rem;
+    max-width: 900px;
+  }
+  ul {
+    padding-left: 1.5rem;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+  strong {
+    font-weight: 700;
+    color: #134e4a;
+  }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+  /* Layout and Container */
+  main.container {
+    max-width: 920px;
+    margin: 3rem auto 4rem;
+    padding: 0 2rem;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow:
+      0 4px 12px rgba(58, 133, 97, 0.12),
+      0 2px 6px rgba(233, 115, 25, 0.1);
+    scroll-margin-top: 6rem;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  section {
+    padding: 2.25rem 0;
+    border-bottom: 1px solid #d8e2dc;
+  }
+  section:last-of-type {
+    border-bottom: none;
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8; /* very light blue-gray */
-      color: #1e293b; /* dark slate */
-      line-height: 1.6;
-      font-size: 18px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+  /* Header & Nav */
+  header {
+    position: sticky;
+    top: 0;
+    background: #e9f5ec; /* subtle pale green */
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 6px rgba(23, 84, 46, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  nav {
+    width: 100%;
+    max-width: 920px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  nav li {
+    font-weight: 600;
+  }
+  nav a {
+    color: #134e4a; /* green */
+    font-size: 1.05rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #ea580c; /* orange */
+    color: #fff;
+    outline-offset: 2px;
+    outline: 3px solid #134e4a; /* strong green */
+  }
 
-    a {
-      color: #2563eb; /* strong blue */
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
+  /* Accordion Styles */
+  .accordion {
+    background: #f7faf7;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(26, 58, 25, 0.07);
+    overflow: hidden;
+    margin-top: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+  .accordion-item + .accordion-item {
+    border-top: 1.5px solid #d1e7d3;
+  }
+  .accordion-header {
+    background-color: #134e4a; /* deep green */
+    color: #f7faf7;
+    padding: 1.15rem 2rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    border-radius: 0;
+    transition: background-color 0.3s ease;
+  }
+  .accordion-header:hover,
+  .accordion-header:focus {
+    background-color: #0f3c3a; /* darker green */
+    outline: none;
+  }
+  .accordion-header[aria-expanded="true"] {
+    background-color: #ea580c; /* orange when open */
+    box-shadow: inset 0 -3px 0 #134e4a;
+  }
+  .accordion-header::after {
+    content: "+";
+    font-size: 1.6rem;
+    color: #a8dadc; /* subtle blue-green */
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+    flex-shrink: 0;
+  }
+  .accordion-header[aria-expanded="true"]::after {
+    content: "-";
+    transform: rotate(180deg);
+  }
+  .accordion-content {
+    background-color: #e7f1e9; /* pale green */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 0 2rem;
+    font-size: 1.1rem;
+    color: #1b4332; /* dark green */
+  }
+  .accordion-content.open {
+    padding: 1rem 2rem 2rem;
+    max-height: 1300px; /* large to accommodate */
+  }
+  .accordion-content ul {
+    padding-left: 1.25rem;
+  }
 
-    a:hover,
-    a:focus {
-      color: #ea580c; /* orange */
-      outline: none;
-      text-decoration: underline;
-    }
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    color: #1b4332;
+  }
+  thead tr {
+    background-color: #ea580c;
+    color: #fff;
+  }
+  th, td {
+    border: 1.5px solid #a7d7a7;
+    padding: 0.65rem 1rem;
+    text-align: left;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #d8ead8;
+  }
+  tbody tr:hover {
+    background-color: #a7d7a7;
+    color: #fff;
+  }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      color: #164e63; /* teal-ish blue */
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-      line-height: 1.2;
-      letter-spacing: 0.015em;
-    }
+  /* Footer */
+  footer {
+    background-color: #134e4a;
+    color: #d9f7d9;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+    margin-top: 3rem;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 -3px 12px rgba(19, 78, 74, 0.7);
+  }
 
-    p {
-      margin-top: 0;
-      margin-bottom: 1em;
-      color: #334155; /* slate */
-    }
-
-    ul {
-      margin-top: 0;
-      margin-bottom: 1.25em;
-      padding-left: 1.5em;
-      color: #475569;
-    }
-
-    ul li {
-      margin-bottom: 0.5em;
-    }
-
-    strong {
-      color: #0f172a; /* very dark slate */
-    }
-
-    /* ==========================================================================
-       Layout - Header and Nav
-    ========================================================================== */
-
-    header {
-      position: sticky;
-      top: 0;
-      background: #2563eb; /* blue */
-      color: #f1f5f9; /* light gray */
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
-      z-index: 1000;
-      user-select: none;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      letter-spacing: 0.03em;
-      margin: 0;
-      font-weight: 800;
-      color: #fbbf24; /* amber/orange */
-      user-select: text;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav li {
-      font-weight: 600;
-    }
-
-    nav a {
-      color: #e0e7ff;
-      font-size: 1rem;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      transition: background-color 0.25s ease, color 0.25s ease;
-      user-select: text;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      background-color: #ea580c; /* orange */
-      color: #f1f5f9;
-      outline-offset: 2px;
-      outline: 2px solid #fbbf24; /* amber */
-    }
-
-    /* ==========================================================================
-       Main Container and Sections
-    ========================================================================== */
-
+  /* Responsive */
+  @media (max-width: 900px) {
     main.container {
-      max-width: 900px;
-      margin: 3rem auto 5rem;
-      padding: 0 1rem;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(16, 24, 40, 0.1);
-      scroll-margin-top: 5rem; /* for sticky nav offset */
+      margin: 2rem 1rem 3rem;
+      padding: 0 1.25rem;
     }
-
-    section {
-      padding: 2.5rem 1rem 3rem;
-      border-bottom: 1px solid #e2e8f0; /* light slate */
+    nav ul {
+      justify-content: center;
+      gap: 1rem;
     }
-
-    section:last-of-type {
-      border-bottom: none;
+  }
+  @media (max-width: 480px) {
+    body {
+      font-size: 16px;
     }
-
-    /* ==========================================================================
-       Typography: Section Titles and Subtitles
-    ========================================================================== */
-
-    section > h2 {
-      font-size: 2rem;
-      border-bottom: 3px solid #ea580c;
-      padding-bottom: 0.35rem;
-      margin-bottom: 1rem;
-      color: #334155; /* dark slate */
+    h1 {
+      font-size: 1.9rem;
     }
-
-    section > h3 {
-      font-size: 1.5rem;
-      color: #16a34a; /* green */
-      margin-bottom: 0.75rem;
+    nav a {
+      font-size: 0.95rem;
+      padding: 0.3rem 0.5rem;
     }
-
-    /* ==========================================================================
-       Paragraph and List Styling
-    ========================================================================== */
-
-    p, ul {
-      font-weight: 400;
-      line-height: 1.6;
-      color: #475569;
-      font-size: 1.125rem;
-    }
-
-    strong {
-      font-weight: 700;
-    }
-
-    /* ==========================================================================
-       Accordion Styles
-    ========================================================================== */
-
-    .accordion {
-      border-radius: 10px;
-      background-color: #e0f2fe; /* light blue */
-      box-shadow: 0 6px 15px rgba(14, 165, 233, 0.25);
-      overflow: hidden;
-      margin-top: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .accordion-item {
-      border-top: 1px solid #bae6fd;
-    }
-
-    .accordion-item:first-child {
-      border-top: none;
-    }
-
     .accordion-header {
-      background-color: #2563eb; /* blue */
-      color: white;
-      padding: 1.25rem 2rem;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 1.125rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      border-radius: 0;
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
     }
-
-    .accordion-header:hover,
-    .accordion-header:focus {
-      background-color: #1e40af; /* darker blue */
-      outline: none;
-    }
-
-    .accordion-header[aria-expanded="true"] {
-      background-color: #1e40af;
-      box-shadow: inset 0 -3px 0 #f97316; /* orange underline */
-    }
-
-    .accordion-header::after {
-      content: "+";
-      font-size: 1.8rem;
-      color: #f97316; /* orange */
-      font-weight: 900;
-      transition: transform 0.3s ease;
-      margin-left: 1rem;
-      flex-shrink: 0;
-    }
-
-    .accordion-header[aria-expanded="true"]::after {
-      content: "-";
-      transform: rotate(180deg);
-    }
-
     .accordion-content {
-      background-color: #f0f9ff; /* very light blue */
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.45s ease, padding 0.35s ease;
-      padding: 0 2rem;
-      font-size: 1.125rem;
-      color: #334155;
-    }
-
-    .accordion-content.open {
-      padding: 1rem 2rem 2rem;
-      max-height: 1200px; /* large enough */
-    }
-
-    .accordion-content ul {
-      padding-left: 1.25rem;
-    }
-
-    /* ==========================================================================
-       Table Styling for Feedback Section
-    ========================================================================== */
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
       font-size: 1rem;
+      padding: 1rem 1.5rem 1.5rem;
     }
-
-    thead tr {
-      background-color: #2563eb;
-      color: #f1f5f9;
-    }
-
-    th, td {
-      border: 1px solid #cbd5e1;
-      padding: 0.65rem 1rem;
-      text-align: left;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #e0f2fe;
-    }
-
-    tbody tr:hover {
-      background-color: #bae6fd;
-    }
-
-    /* ==========================================================================
-       Footer Styles
-    ========================================================================== */
-
-    footer {
-      background-color: #16a34a; /* green */
-      color: #f3f4f6;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1rem;
-      user-select: none;
-      margin-top: 3rem;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 -3px 10px rgba(22, 163, 74, 0.5);
-    }
-
-    /* ==========================================================================
-       Responsive Design
-    ========================================================================== */
-
-    @media (max-width: 900px) {
-      main.container {
-        margin: 2rem 1rem 3rem;
-        padding: 0 1rem;
-      }
-
-      header {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.8rem;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        font-size: 16px;
-      }
-
-      header h1 {
-        font-size: 1.4rem;
-      }
-
-      nav a {
-        font-size: 0.9rem;
-      }
-
-      .accordion-header {
-        font-size: 1rem;
-        padding: 1rem 1.5rem;
-      }
-
-      .accordion-content {
-        font-size: 1rem;
-        padding: 1rem 1.5rem 1.5rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
-
 <body>
+
   <!-- HEADER -->
-  <header role="banner">
-    <h1 tabindex="0">Professional Portfolio Artifact 1</h1>
+  <header role="banner" aria-label="Primary site navigation">
     <nav role="navigation" aria-label="Primary navigation">
       <ul>
         <li><a href="#introduction" tabindex="0">Introduction</a></li>
@@ -380,21 +296,18 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="container" role="main">
+  <main class="container" role="main" aria-label="Professional Portfolio Artifact 1 Content">
+
+    <h1 tabindex="0">Professional Portfolio Artifact 1</h1>
 
     <!-- Introduction Section -->
-    <section
-      id="introduction"
-      tabindex="0"
-      aria-labelledby="intro-title"
-      aria-describedby="intro-desc"
-    >
+    <section id="introduction" tabindex="0" aria-labelledby="intro-title" aria-describedby="intro-desc">
       <h2 id="intro-title">Introduction</h2>
       <p id="intro-desc">
-        Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a
-        Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. As part of my
-        academic and professional growth, I am building a comprehensive professional portfolio to showcase my technical
-        capabilities, creative thinking, and collaborative skills.
+        Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a Master
+        of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. As part of my academic and
+        professional growth, I am building a comprehensive professional portfolio to showcase my technical capabilities,
+        creative thinking, and collaborative skills.
       </p>
       <p>
         This portfolio is designed to highlight real-world applications of AI/ML, reflecting my learning journey and the
@@ -405,18 +318,12 @@
       </p>
     </section>
 
-    <!-- Artifact Description Accordion -->
-    <section
-      id="artifact-description"
-      tabindex="0"
-      aria-labelledby="artifact-title"
-      aria-describedby="artifact-desc"
-      role="region"
-    >
+    <!-- Artifact Description -->
+    <section id="artifact-description" tabindex="0" aria-labelledby="artifact-title" aria-describedby="artifact-desc">
       <h2 id="artifact-title">Artifact Description</h2>
 
-      <div class="accordion" id="artifactAccordion" role="presentation">
-        <!-- Overview -->
+      <div class="accordion" id="artifactAccordion" role="presentation" aria-label="Artifact description details">
+
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -425,9 +332,7 @@
             id="overview-header"
             tabindex="0"
             aria-label="Toggle Overview Section"
-          >
-            Overview
-          </button>
+          >Overview</button>
           <div
             class="accordion-content"
             id="overview-content"
@@ -450,7 +355,6 @@
           </div>
         </div>
 
-        <!-- Problem Solved -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -459,9 +363,7 @@
             id="problem-header"
             tabindex="0"
             aria-label="Toggle Problem Solved Section"
-          >
-            Problem Solved
-          </button>
+          >Problem Solved</button>
           <div
             class="accordion-content"
             id="problem-content"
@@ -478,7 +380,6 @@
           </div>
         </div>
 
-        <!-- Tool Used -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -487,9 +388,7 @@
             id="tool-header"
             tabindex="0"
             aria-label="Toggle Tool Used Section"
-          >
-            Tool Used
-          </button>
+          >Tool Used</button>
           <div
             class="accordion-content"
             id="tool-content"
@@ -508,18 +407,12 @@
       </div>
     </section>
 
-    <!-- Design Thinking Accordion -->
-    <section
-      id="design-thinking"
-      tabindex="0"
-      aria-labelledby="design-title"
-      aria-describedby="design-desc"
-      role="region"
-    >
+    <!-- Design Thinking -->
+    <section id="design-thinking" tabindex="0" aria-labelledby="design-title" aria-describedby="design-desc">
       <h2 id="design-title">Design Thinking Applied</h2>
-      <div class="accordion" id="designAccordion" role="presentation">
 
-        <!-- Empathize -->
+      <div class="accordion" id="designAccordion" role="presentation" aria-label="Design thinking details">
+
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -528,9 +421,7 @@
             id="empathize-header"
             tabindex="0"
             aria-label="Toggle Empathize Section"
-          >
-            Empathize
-          </button>
+          >Empathize</button>
           <div
             class="accordion-content"
             id="empathize-content"
@@ -546,7 +437,6 @@
           </div>
         </div>
 
-        <!-- Define -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -555,9 +445,7 @@
             id="define-header"
             tabindex="0"
             aria-label="Toggle Define Section"
-          >
-            Define
-          </button>
+          >Define</button>
           <div
             class="accordion-content"
             id="define-content"
@@ -569,7 +457,6 @@
           </div>
         </div>
 
-        <!-- Ideate -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -578,9 +465,7 @@
             id="ideate-header"
             tabindex="0"
             aria-label="Toggle Ideate Section"
-          >
-            Ideate
-          </button>
+          >Ideate</button>
           <div
             class="accordion-content"
             id="ideate-content"
@@ -588,9 +473,7 @@
             aria-labelledby="ideate-header"
             hidden
           >
-            <p>
-              As a team, we brainstormed 12+ features. Key ideas included:
-            </p>
+            <p>As a team, we brainstormed 12+ features. Key ideas included:</p>
             <ul>
               <li>Interactive FAQ builder</li>
               <li>Tone selector (casual, formal, friendly, etc.)</li>
@@ -601,7 +484,6 @@
           </div>
         </div>
 
-        <!-- Prototype -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -610,9 +492,7 @@
             id="prototype-header"
             tabindex="0"
             aria-label="Toggle Prototype Section"
-          >
-            Prototype
-          </button>
+          >Prototype</button>
           <div
             class="accordion-content"
             id="prototype-content"
@@ -627,7 +507,6 @@
           </div>
         </div>
 
-        <!-- Test -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -636,9 +515,7 @@
             id="test-header"
             tabindex="0"
             aria-label="Toggle Test Section"
-          >
-            Test
-          </button>
+          >Test</button>
           <div
             class="accordion-content"
             id="test-content"
@@ -674,7 +551,6 @@
       <h2 id="reflection-title">Reflection</h2>
       <div class="accordion" id="reflectionAccordion" role="presentation">
 
-        <!-- User-Centric Design -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -683,9 +559,7 @@
             id="usercentric-header"
             tabindex="0"
             aria-label="Toggle User-Centric Design Section"
-          >
-            User-Centric Design
-          </button>
+          >User-Centric Design</button>
           <div
             class="accordion-content"
             id="usercentric-content"
@@ -700,7 +574,6 @@
           </div>
         </div>
 
-        <!-- Interdisciplinary Collaboration -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -709,9 +582,7 @@
             id="collaboration-header"
             tabindex="0"
             aria-label="Toggle Interdisciplinary Collaboration Section"
-          >
-            Interdisciplinary Collaboration
-          </button>
+          >Interdisciplinary Collaboration</button>
           <div
             class="accordion-content"
             id="collaboration-content"
@@ -727,7 +598,6 @@
           </div>
         </div>
 
-        <!-- Iterative Learning -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -736,9 +606,7 @@
             id="iterative-header"
             tabindex="0"
             aria-label="Toggle Iterative Learning Section"
-          >
-            Iterative Learning
-          </button>
+          >Iterative Learning</button>
           <div
             class="accordion-content"
             id="iterative-content"
@@ -764,7 +632,6 @@
       <h2 id="feedback-title">Feedback and Revisions</h2>
       <div class="accordion" id="feedbackAccordion">
 
-        <!-- Peer and Instructor Feedback Table -->
         <div class="accordion-item">
           <button
             class="accordion-header"
@@ -773,9 +640,7 @@
             id="feedbacktable-header"
             tabindex="0"
             aria-label="Toggle Peer and Instructor Feedback Section"
-          >
-            Peer and Instructor Feedback
-          </button>
+          >Peer and Instructor Feedback</button>
           <div
             class="accordion-content"
             id="feedbacktable-content"
@@ -854,14 +719,16 @@
 
         if (expanded) {
           header.setAttribute('aria-expanded', 'false');
-          document.getElementById(header.getAttribute('aria-controls')).hidden = true;
-          document.getElementById(header.getAttribute('aria-controls')).classList.remove('open');
+          const content = document.getElementById(header.getAttribute('aria-controls'));
+          content.hidden = true;
+          content.classList.remove('open');
         } else {
           // Close all other accordions (optional behavior)
           accordions.forEach(hdr => {
             hdr.setAttribute('aria-expanded', 'false');
-            document.getElementById(hdr.getAttribute('aria-controls')).hidden = true;
-            document.getElementById(hdr.getAttribute('aria-controls')).classList.remove('open');
+            const contentToClose = document.getElementById(hdr.getAttribute('aria-controls'));
+            contentToClose.hidden = true;
+            contentToClose.classList.remove('open');
           });
 
           // Open the clicked accordion
