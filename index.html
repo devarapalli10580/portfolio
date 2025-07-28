@@ -1,267 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio | Naga Venkata Satyanarayana Devarapalli</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli | AI & Data Analytics Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* RESET */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f9fafb;
+    color: #111827;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  a {
+    text-decoration: none;
+    color: #3b82f6;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #2563eb;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+  }
+
+  /* CONTAINER */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* NAVBAR */
+  header {
+    background-color: #1e293b; /* dark slate */
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #60a5fa; /* blue-400 */
+    cursor: pointer;
+  }
+  nav a {
+    color: #cbd5e1;
+    margin-left: 1.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    color: white;
+    padding: 6rem 0 5rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.9;
+  }
+  .btn-cta {
+    background-color: #e0e7ff;
+    color: #1e40af;
+    padding: 0.85rem 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgb(37 99 235 / 0.4);
+    transition: background-color 0.3s ease;
+  }
+  .btn-cta:hover {
+    background-color: #a5b4fc;
+  }
+
+  /* ABOUT ME SECTION */
+  section.about-me {
+    padding: 4rem 0;
+    background-color: white;
+    text-align: center;
+  }
+  section.about-me h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+  }
+  section.about-me p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: #334155;
+  }
+  .about-cards {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .about-card {
+    background: #f1f5f9;
+    border-radius: 12px;
+    padding: 2rem;
+    flex: 1 1 250px;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgb(100 116 139 / 0.1);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  .about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgb(37 99 235 / 0.3);
+  }
+  .about-card img {
+    width: 50px;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 0 1px rgba(37, 99, 235, 0.5));
+  }
+  .about-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    color: #1e293b;
+  }
+  .about-card p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  /* ARTIFACTS SECTION */
+  section.artifacts {
+    background-color: #f9fafb;
+    padding: 5rem 0 6rem;
+    text-align: center;
+  }
+  section.artifacts h2 {
+    font-size: 2.75rem;
+    margin-bottom: 2rem;
+    color: #1e293b;
+  }
+  .artifact-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+  .artifact-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.1);
+    max-width: 320px;
+    flex: 1 1 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .artifact-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgb(37 99 235 / 0.3);
+  }
+  .artifact-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .artifact-card h3 {
+    font-size: 1.5rem;
+    margin: 1.2rem 0 0.6rem;
+    color: #1e293b;
+  }
+  .artifact-card p {
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 1.2rem;
+  }
+  .btn-primary {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.7rem 1.6rem;
+    margin-bottom: 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgb(37 99 235 / 0.4);
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 80%;
+  }
+  .btn-primary:hover {
+    background-color: #1e40af;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about-cards, .artifact-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .artifact-card, .about-card {
+      max-width: 90vw;
+    }
+  }
+</style>
+
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Naga Venkata Satyanarayana Devarapalli Logo" />
-                <h1>NV Satyanarayana</h1>
-            </div>
-            <nav class="main-nav" aria-label="Primary Navigation">
-                <ul>
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#bio" class="nav-link">About Me</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#artifacts" class="nav-link">Artifacts</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">🌙</button>
-        </div>
-    </header>
 
-    <!-- MAIN -->
-    <main>
-        <!-- HOME SECTION -->
-        <section id="home" class="section home-section" tabindex="-1">
-            <div class="container">
-                <div class="intro-text">
-                    <h2>Welcome to My Professional Portfolio</h2>
-                    <p>
-                        Hi! I'm <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a passionate
-                        <em>AI & Data Analytics Graduate Student</em> at Indiana Wesleyan University with over
-                        12 years of experience in data analytics, business intelligence, and AI/ML development.
-                    </p>
-                    <p>
-                        This portfolio showcases my journey, projects, skills, and artifacts reflecting my
-                        expertise in AI, machine learning, data visualization, and full-stack development.
-                    </p>
-                    <a href="#contact" class="btn-primary">Get in Touch</a>
-                </div>
-                <div class="intro-image">
-                    <img src="images/profile-photo.jpg" alt="Naga Venkata Satyanarayana Devarapalli" />
-                </div>
-            </div>
-        </section>
+<header role="banner" aria-label="Primary navigation">
+  <div class="nav-container container">
+    <div class="logo" tabindex="0">NV Satyanarayana</div>
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#home" tabindex="0">Home</a>
+      <a href="#about" tabindex="0">About Me</a>
+      <a href="#artifacts" tabindex="0">Artifacts</a>
+      <a href="#contact" tabindex="0">Contact</a>
+    </nav>
+  </div>
+</header>
 
-        <!-- ABOUT ME / BIO SECTION -->
-        <section id="bio" class="section bio-section" tabindex="-1" aria-label="About Me">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="bio-content">
-                    <div class="bio-text">
-                        <p>
-                            I specialize in designing data-driven solutions and developing AI models that
-                            empower businesses to make insightful decisions. My expertise spans Power BI, SQL,
-                            Python, and cloud platforms. I am driven to bridge the gap between complex data and
-                            actionable insights through innovative technology.
-                        </p>
-                        <p>
-                            Throughout my career, I have led projects involving large datasets, predictive
-                            modeling, and interactive visualizations. I am continually expanding my skills and
-                            exploring new AI and machine learning techniques to stay ahead in this fast-evolving
-                            field.
-                        </p>
-                        <p>
-                            When not coding or analyzing data, I enjoy mentoring peers, reading about AI ethics,
-                            and experimenting with emerging AI tools.
-                        </p>
-                    </div>
-                    <div class="bio-image">
-                        <img src="images/bio-photo.jpg" alt="Naga working on AI project" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
-        <section id="skills" class="section skills-section" tabindex="-1" aria-label="Skills and Expertise">
-            <div class="container">
-                <h2>Skills & Expertise</h2>
-                <p>
-                    My diverse skill set combines technical proficiency with strategic thinking. Key
-                    areas include:
-                </p>
-                <ul class="skills-list">
-                    <li><strong>Programming & Data Tools:</strong> Python, SQL, R, Power BI, Tableau</li>
-                    <li><strong>AI & Machine Learning:</strong> Supervised & Unsupervised Learning, NLP, Deep Learning, TensorFlow</li>
-                    <li><strong>Data Visualization:</strong> Power BI dashboards, DAX, M Query, Matplotlib, Seaborn</li>
-                    <li><strong>Cloud Platforms:</strong> Azure, AWS, Vercel Deployment</li>
-                    <li><strong>Other Tools:</strong> Git, Docker, Jupyter Notebooks, REST APIs</li>
-                </ul>
-
-                <div class="skills-graphs">
-                    <div class="skill-graph" aria-label="Power BI skill level">
-                        <h3>Power BI</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-graph" aria-label="Python skill level">
-                        <h3>Python</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-graph" aria-label="SQL skill level">
-                        <h3>SQL</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-graph" aria-label="Machine Learning skill level">
-                        <h3>Machine Learning</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="section projects-section" tabindex="-1" aria-label="Projects">
-            <div class="container">
-                <h2>Selected Projects</h2>
-
-                <article class="project-card">
-                    <img src="images/project-eco-coach.jpg" alt="Eco-Coach Chatbot Project Screenshot" />
-                    <div class="project-info">
-                        <h3>Eco-Coach Chatbot Project</h3>
-                        <p>
-                            A comprehensive AI-powered chatbot developed using Next.js and OpenRouter.ai API,
-                            designed to assist users in environmental awareness and promote sustainability.
-                        </p>
-                        <p><strong>Technologies:</strong> React, Next.js, Node.js, OpenRouter.ai, Vercel</p>
-                        <a href="artifact1.html" class="btn-secondary">View Artifact Details</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <img src="images/project-ai-timeline.jpg" alt="AI/ML Timeline Presentation" />
-                    <div class="project-info">
-                        <h3>AI/ML Timeline Presentation</h3>
-                        <p>
-                            An interactive timeline showcasing the evolution of Artificial Intelligence and Machine Learning from 1950s to today, using web-based presentation tools.
-                        </p>
-                        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Google Slides</p>
-                        <a href="artifact2.html" class="btn-secondary">View Artifact Details</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <img src="images/project-schoolai.jpg" alt="SchoolAI-Assisted Learning Experience" />
-                    <div class="project-info">
-                        <h3>SchoolAI-Assisted Learning Experience</h3>
-                        <p>
-                            Interactive sessions with an AI chatbot focused on understanding Machine Learning training methods, emphasizing inquiry-based learning and critical thinking.
-                        </p>
-                        <p><strong>Technologies:</strong> SchoolAI Chatbot, AI Interaction</p>
-                        <a href="artifact3.html" class="btn-secondary">View Artifact Details</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-       <!-- ARTIFACTS SECTION -->
-<section id="artifacts" class="section artifacts-section" tabindex="-1" aria-label="Artifacts">
-    <div class="container">
-        <h2>My Artifacts</h2>
-        <div class="artifact-cards">
-            <div class="artifact-card">
-                <img src="images/chatbot-logo.jpg" alt="Eco-Coach Chatbot Logo" />
-                <h3>Artifact 1</h3>
-                <p><strong>Eco-Coach Chatbot Project</strong></p>
-                <a href="artifact1.html" class="btn-primary">View Details</a>
-            </div>
-            <div class="artifact-card">
-                <img src="images/timeline-logo.jpg" alt="AI/ML Timeline Logo" />
-                <h3>Artifact 2</h3>
-                <p><strong>AI/ML Timeline Presentation</strong></p>
-                <a href="artifact2.html" class="btn-primary">View Details</a>
-            </div>
-            <div class="artifact-card">
-                <img src="images/schoolai-logo.jpg" alt="SchoolAI-Assisted Learning Logo" />
-                <h3>Artifact 3</h3>
-                <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
-                <a href="artifact3.html" class="btn-primary">View Details</a>
-            </div>
-        </div>
-    </div>
+<!-- HERO -->
+<section id="home" class="hero" tabindex="-1" aria-label="Introduction">
+  <div class="container">
+    <h1>Hello! I'm <span aria-label="Name" role="text">Naga Venkata Satyanarayana Devarapalli</span></h1>
+    <p>
+      I am a passionate AI & Data Analytics graduate student at Indiana Wesleyan University,
+      with over 12 years of professional experience in data analytics, business intelligence,
+      and performance testing. My mission is to use AI and data-driven insights to solve complex problems and innovate.
+    </p>
+    <button class="btn-cta" onclick="scrollToSection('about')" aria-label="Learn more about me">Learn More</button>
+  </div>
 </section>
 
+<!-- ABOUT ME -->
+<section id="about" class="about-me" tabindex="-1" aria-label="About me section">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      With expertise in Power BI, SQL, Python, and AI/ML, I design data solutions, develop AI models, and create insightful visualizations.
+      I strive to bridge the gap between data and decision-making to drive meaningful business outcomes.
+    </p>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="section contact-section" tabindex="-1" aria-label="Contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <p>
-                    I welcome you to reach out for project collaboration, consulting, or just to say hello.
-                    You can email me or connect with me on professional networks.
-                </p>
-                <form id="contactForm" aria-label="Contact form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your full name"
-                            required
-                            aria-required="true"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your email"
-                            required
-                            aria-required="true"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Write your message here"
-                            rows="5"
-                            required
-                            aria-required="true"
-                        ></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
+    <div class="about-cards" aria-live="polite">
+      <article class="about-card" tabindex="0" role="region" aria-label="Skill: Data Analytics">
+        <img src="https://img.icons8.com/ios-filled/50/2563eb/data-analytics.png" alt="Data Analytics icon" />
+        <h3>Data Analytics</h3>
+        <p>Expert in analyzing and interpreting complex data sets to inform business strategies.</p>
+      </article>
+      <article class="about-card" tabindex="0" role="region" aria-label="Skill: AI & Machine Learning">
+        <img src="https://img.icons8.com/ios-filled/50/2563eb/artificial-intelligence.png" alt="Artificial Intelligence icon" />
+        <h3>AI & Machine Learning</h3>
+        <p>Hands-on experience developing AI/ML models that solve real-world problems.</p>
+      </article>
+      <article class="about-card" tabindex="0" role="region" aria-label="Skill: Data Visualization">
+        <img src="https://img.icons8.com/ios-filled/50/2563eb/combo-chart.png" alt="Data Visualization icon" />
+        <h3>Data Visualization</h3>
+        <p>Skilled in Power BI and other tools to create meaningful, interactive dashboards.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container footer-container">
-            <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-            <p>
-                Connect with me:
-                <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-                <a href="mailto:tone_satya@yahoo.co.in">Email</a>
-            </p>
-        </div>
-    </footer>
+<!-- ARTIFACTS -->
+<section id="artifacts" class="artifacts" tabindex="-1" aria-label="Portfolio artifacts">
+  <div class="container">
+    <h2>My Artifacts</h2>
+    <div class="artifact-cards" aria-live="polite">
+      <div class="artifact-card" tabindex="0" role="article" aria-label="Artifact 1: Eco-Coach Chatbot Project">
+        <img src="images/chatbot-logo.jpg" alt="Eco-Coach Chatbot Project logo" />
+        <h3>Artifact 1</h3>
+        <p><strong>Eco-Coach Chatbot Project</strong></p>
+        <a href="artifact1.html" class="btn-primary" aria-label="View details of Eco-Coach Chatbot Project">View Details</a>
+      </div>
+      <div class="artifact-card" tabindex="0" role="article" aria-label="Artifact 2: AI/ML Timeline Presentation">
+        <img src="images/timeline-logo.jpg" alt="AI/ML Timeline Presentation logo" />
+        <h3>Artifact 2</h3>
+        <p><strong>AI/ML Timeline Presentation</strong></p>
+        <a href="artifact2.html" class="btn-primary" aria-label="View details of AI/ML Timeline Presentation">View Details</a>
+      </div>
+      <div class="artifact-card" tabindex="0" role="article" aria-label="Artifact 3: SchoolAI-Assisted Learning Experience">
+        <img src="images/schoolai-logo.jpg" alt="SchoolAI-Assisted Learning Experience logo" />
+        <h3>Artifact 3</h3>
+        <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
+        <a href="artifact3.html" class="btn-primary" aria-label="View details of SchoolAI-Assisted Learning Experience">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" tabindex="-1" aria-label="Contact section" style="background:#2563eb; color: white; padding: 4rem 0; text-align: center;">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for collaboration, questions, or consulting opportunities!</p>
+    <p>Email: <a href="mailto:tone_satya@yahoo.co.in" style="color:#bfdbfe;">tone_satya@yahoo.co.in</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener" style="color:#bfdbfe;">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+</footer>
+
+<script>
+  // Smooth scroll function
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.focus({preventScroll:false});
+      window.scrollTo({top: section.offsetTop - 80, behavior: 'smooth'});
+    }
+  }
+
+  // Keyboard navigation for nav logo (optional)
+  document.querySelector('.logo').addEventListener('click', () => {
+    scrollToSection('home');
+  });
+  document.querySelector('.logo').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') scrollToSection('home');
+  });
+</script>
+
 </body>
 </html>
