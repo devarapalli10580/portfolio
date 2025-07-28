@@ -11,88 +11,122 @@
     <!-- Header -->
     <header class="header">
         <h1 class="site-title">My Portfolio</h1>
-        <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
         <nav class="navbar">
-            <a href="index.html#home">Home</a>
-            <a href="index.html#bio">Bio</a>
-            <a href="index.html#artifacts">Artifacts</a>
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="index.html#bio" class="nav-link">About</a>
+            <a href="index.html#artifacts" class="nav-link">Artifacts</a>
         </nav>
     </header>
 
-    <!-- Artifact Title -->
-    <section class="artifact-header fade-element">
+    <!-- Artifact Content -->
+    <section class="artifact-detail fade-element">
+        <a href="index.html#artifacts" class="back-link">← Back to Artifacts</a>
         <h2>Artifact 1: Eco-Coach Chatbot Project</h2>
-        <p class="subtitle">Conversational AI for Sustainable Living</p>
-    </section>
 
-    <!-- Overview Section -->
-    <section class="artifact-overview fade-element">
-        <h3>Project Overview</h3>
-        <ul>
-            <li><strong>Type:</strong> Conversational AI Application</li>
-            <li><strong>Tools:</strong> Botpress, Dialogflow, Python</li>
-            <li><strong>Date:</strong> July 10, 2025</li>
-        </ul>
-        <p>
-            The <b>Eco-Coach Chatbot</b> is an AI-driven assistant that promotes sustainable practices by providing eco-friendly tips, answering 
-            questions on energy conservation, and integrating APIs for real-time updates. It was designed to encourage environmental awareness 
-            through an engaging and user-friendly interface.
+        <div class="artifact-image-container">
+            <img src="images/chatbot-logo.jpg" alt="Eco-Coach Chatbot" class="artifact-detail-img">
+        </div>
+
+        <p class="intro-text">
+            The <strong>Eco-Coach Chatbot</strong> is an AI-powered conversational assistant designed to promote sustainable living 
+            and eco-friendly habits. Built with advanced Natural Language Processing (NLP) and integrated APIs, 
+            this chatbot delivers real-time tips, energy-saving advice, and personalized recommendations for users.
         </p>
-    </section>
 
-    <!-- Key Features -->
-    <section class="artifact-features fade-element">
-        <h3>Key Features</h3>
-        <ul>
-            <li>Uses <b>NLP</b> for natural, human-like conversations.</li>
-            <li>Provides <b>personalized eco-friendly tips</b> based on user preferences.</li>
-            <li>Integrates external APIs for <b>real-time sustainability updates</b>.</li>
-        </ul>
-    </section>
+        <!-- Overview Section -->
+        <div class="artifact-section">
+            <h3>Project Overview</h3>
+            <ul>
+                <li><strong>Type:</strong> Conversational AI Application</li>
+                <li><strong>Tools:</strong> Botpress, Dialogflow, Python</li>
+                <li><strong>Date:</strong> July 10, 2025</li>
+                <li><strong>Status:</strong> Completed</li>
+            </ul>
+        </div>
 
-    <!-- Skills Demonstrated -->
-    <section class="artifact-skills fade-element">
-        <h3>Skills Demonstrated</h3>
-        <table>
-            <tr>
-                <th>Skill</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>AI/ML Implementation</td>
-                <td>Developed chatbot with NLP and intent recognition.</td>
-            </tr>
-            <tr>
-                <td>Programming</td>
-                <td>Integrated Python scripts for handling API calls and responses.</td>
-            </tr>
-            <tr>
-                <td>UX Design</td>
-                <td>Designed intuitive conversation flows for seamless user experience.</td>
-            </tr>
-        </table>
-    </section>
+        <!-- Features Section -->
+        <div class="artifact-section">
+            <h3>Key Features</h3>
+            <ul>
+                <li>✔ Uses NLP for natural and engaging conversations</li>
+                <li>✔ Provides personalized eco-friendly tips based on user preferences</li>
+                <li>✔ Real-time weather and energy-saving API integration</li>
+                <li>✔ Contextual fallback intents for ambiguous queries</li>
+                <li>✔ Responsive design for desktop and mobile platforms</li>
+            </ul>
+        </div>
 
-    <!-- Challenges and Solutions -->
-    <section class="artifact-challenges fade-element">
-        <h3>Challenges & Solutions</h3>
-        <p><strong>Challenge:</strong> Handling ambiguous user queries.</p>
-        <p><strong>Solution:</strong> Implemented context-based fallback intents and trained the model with diverse scenarios.</p>
-    </section>
+        <!-- Value Proposition -->
+        <div class="artifact-section">
+            <h3>Value Proposition</h3>
+            <p>
+                This project demonstrates my ability to apply AI/ML concepts in real-world problem-solving scenarios. It showcases my 
+                skills in chatbot development, NLP, and API integration. By focusing on sustainability, the Eco-Coach Chatbot reflects 
+                how technology can positively influence daily behaviors and environmental awareness.
+            </p>
+        </div>
 
-    <!-- Reflection -->
-    <section class="artifact-reflection fade-element">
-        <h3>Reflection</h3>
-        <p>
-            This project allowed me to explore the intersection of <b>AI technology and sustainability</b>. It enhanced my understanding of 
-            natural language processing, real-time API integration, and user engagement strategies.
-        </p>
-    </section>
+        <!-- Skills Demonstrated -->
+        <div class="artifact-section">
+            <h3>Skills Demonstrated</h3>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AI/ML Implementation</td>
+                        <td>Developed a chatbot using NLP and intent recognition</td>
+                    </tr>
+                    <tr>
+                        <td>Programming</td>
+                        <td>Implemented backend logic using Python and APIs</td>
+                    </tr>
+                    <tr>
+                        <td>UX Design</td>
+                        <td>Designed intuitive and user-friendly conversation flows</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <!-- Navigation -->
-    <div class="artifact-navigation fade-element">
-        <a href="index.html#artifacts" class="back-btn">← Back to Artifacts</a>
-    </div>
+        <!-- Challenges & Solutions -->
+        <div class="artifact-section">
+            <h3>Challenges & Solutions</h3>
+            <p><strong>Challenge:</strong> Handling ambiguous queries from users.</p>
+            <p><strong>Solution:</strong> Implemented contextual fallback intents to redirect users to appropriate options.</p>
+            <p><strong>Challenge:</strong> Integrating real-time data sources securely.</p>
+            <p><strong>Solution:</strong> Used server-side API key management for security and reliability.</p>
+        </div>
+
+        <!-- Learning Outcomes -->
+        <div class="artifact-section">
+            <h3>Learning Outcomes</h3>
+            <ul>
+                <li>✔ Deepened understanding of NLP and chatbot frameworks</li>
+                <li>✔ Improved skills in API integration and secure environment configuration</li>
+                <li>✔ Learned best practices for conversational design and user experience</li>
+            </ul>
+        </div>
+
+        <!-- Future Enhancements -->
+        <div class="artifact-section">
+            <h3>Future Enhancements</h3>
+            <p>
+                Future plans include adding voice interaction support, expanding the eco-tips database using AI-driven personalization, 
+                and integrating sustainability tracking features for user engagement.
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div class="artifact-links">
+            <a href="index.html#artifacts" class="primary-btn">← Back to Artifacts</a>
+            <a href="https://github.com/devarapalli10580" class="secondary-btn" target="_blank">View on GitHub</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>

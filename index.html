@@ -13,62 +13,102 @@
         <h1 class="site-title">My Portfolio</h1>
         <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
         <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#bio">Bio</a>
-            <a href="#artifacts">Artifacts</a>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#bio" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#artifacts" class="nav-link">Artifacts</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
     </header>
 
-    <!-- Hero/Home Section -->
-    <section id="home" class="home-section fade-element">
-        <div class="content-center">
-            <img src="images/Profile Picture.jpeg" alt="Profile Picture" class="profile-img">
-            <h2>Hi there! 👋 I am <span>Naga Venkata Satyanarayana Devarapalli</span></h2>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section fade-element">
+        <div class="hero-content">
+            <img src="images/profile.jpg" alt="Profile Photo" class="profile-img">
+            <h2>Hello! 👋 I'm <span>Naga Venkata Satyanarayana Devarapalli</span></h2>
             <p>
-                A passionate <strong>AI & Data Analytics graduate student</strong> at Indiana Wesleyan University with 12+ years of experience in 
-                <b>Data Analytics, Business Intelligence, and Performance Testing</b>.  
-                My goal is to leverage <b>AI, Machine Learning, and Data Insights</b> to solve real-world business problems.
+                <strong>AI & Data Analytics Graduate Student | Business Intelligence Expert</strong>
             </p>
+            <p>
+                With over 12 years of professional experience in <strong>Data Analytics, Business Intelligence, and AI/ML technologies</strong>, 
+                I am passionate about leveraging data-driven insights to solve real-world business problems and deliver innovative solutions.
+            </p>
+            <a href="#artifacts" class="primary-btn">Explore My Work</a>
         </div>
     </section>
 
-    <!-- Bio Section -->
+    <!-- About Section -->
     <section id="bio" class="bio-section fade-element">
         <h2>About Me</h2>
         <p>
-            I specialize in <b>data solutions</b>, <b>AI model development</b>, and <b>data visualization</b>.  
-            With strong expertise in <b>Power BI, SQL, Python</b> and hands-on AI/ML projects, I bridge the gap between <b>data and decision-making</b>.  
-            This portfolio highlights my technical skills and strategic thinking.
+            I am currently pursuing a Master's in <strong>Artificial Intelligence – Data Analytics</strong> at Indiana Wesleyan University. 
+            My expertise spans across <strong>Power BI, Python, SQL, and Machine Learning</strong>. I specialize in creating intelligent dashboards, 
+            predictive models, and interactive AI-based applications.
         </p>
+        <p>
+            I aim to bridge the gap between data and decision-making by building advanced AI/ML solutions that are scalable, secure, and impactful.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section fade-element">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>Python, JavaScript, SQL</p>
+            </div>
+            <div class="skill-card">
+                <h3>BI Tools</h3>
+                <p>Power BI, Tableau, SSIS, SSRS</p>
+            </div>
+            <div class="skill-card">
+                <h3>AI & ML</h3>
+                <p>Machine Learning, NLP, Deep Learning</p>
+            </div>
+            <div class="skill-card">
+                <h3>Cloud & Deployment</h3>
+                <p>Azure, AWS, Vercel</p>
+            </div>
+        </div>
     </section>
 
     <!-- Artifacts Section -->
     <section id="artifacts" class="artifacts-section fade-element">
         <h2>My Artifacts</h2>
+        <p>Explore the projects that showcase my technical expertise and creativity:</p>
         <div class="artifact-container">
             <!-- Artifact 1 -->
             <div class="artifact-card">
-                <img src="images/chatbot-logo.JPG" alt="Chatbot Logo" class="artifact-img">
+                <img src="images/chatbot-logo.jpg" alt="Chatbot Logo" class="artifact-image">
                 <h3>Artifact 1</h3>
                 <p><strong>Eco-Coach Chatbot Project</strong></p>
                 <a href="artifact1.html" class="view-btn">View Details</a>
             </div>
-
             <!-- Artifact 2 -->
             <div class="artifact-card">
-                <img src="images/timeline-logo.JPG" alt="Timeline Logo" class="artifact-img">
+                <img src="images/timeline-logo.jpg" alt="Timeline Logo" class="artifact-image">
                 <h3>Artifact 2</h3>
                 <p><strong>AI/ML Timeline Presentation</strong></p>
                 <a href="artifact2.html" class="view-btn">View Details</a>
             </div>
-
             <!-- Artifact 3 -->
             <div class="artifact-card">
-                <img src="images/schoolai-logo.JPG" alt="SchoolAI Logo" class="artifact-img">
+                <img src="images/schoolai-logo.jpg" alt="SchoolAI Logo" class="artifact-image">
                 <h3>Artifact 3</h3>
                 <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
                 <a href="artifact3.html" class="view-btn">View Details</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section fade-element">
+        <h2>Contact Me</h2>
+        <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana" target="_blank">View Profile</a></p>
         </div>
     </section>
 

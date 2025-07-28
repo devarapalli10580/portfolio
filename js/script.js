@@ -1,30 +1,30 @@
-// Toggle Dark Mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-}
+// Dark Mode Toggle and Simple Smooth Scrolling
 
-// Smooth Scroll & Animation
-document.addEventListener('DOMContentLoaded', function () {
-    // Smooth Scroll
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
+// Dark Mode
+const toggleDarkMode = () => {
+  document.body.classList.toggle('dark-mode');
+  // Save preference
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    localStorage.setItem('darkMode', 'disabled');
+  }
+};
 
-    // Scroll Animations
-    const fadeElements = document.querySelectorAll('.fade-element');
-    function fadeInOnScroll() {
-        fadeElements.forEach(el => {
-            if (el.getBoundingClientRect().top < window.innerHeight * 0.8) {
-                el.classList.add('fade-in');
-            }
-        });
+// Initialize dark mode based on localStorage
+window.addEventListener('DOMContentLoaded', () => {
+  if(localStorage.getItem('darkMode') === 'enabled'){
+    document.body.classList.add('dark-mode');
+  }
+});
+
+// Smooth scroll for internal navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if(target){
+      target.scrollIntoView({ behavior: 'smooth' });
     }
-    window.addEventListener('scroll', fadeInOnScroll);
-    fadeInOnScroll();
+  });
 });
