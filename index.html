@@ -42,7 +42,7 @@
 
     /* Header */
     header {
-      background: linear-gradient(90deg, #1e3a8a, #059669, #f97316); /* blue, green, orange */
+      background: linear-gradient(90deg, #1e3a8a, #059669); /* blue and green only */
       color: white;
       padding: 1.3rem 0;
       box-shadow: 0 3px 10px rgba(30, 58, 138, 0.7);
@@ -71,7 +71,7 @@
     nav a:hover,
     nav a:focus,
     nav a[aria-current="page"] {
-      color: #fb923c; /* orange accent */
+      color: #059669; /* green accent */
       outline: none;
     }
 
@@ -80,10 +80,10 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      background: linear-gradient(135deg, #3b82f6, #22c55e, #fb923c);
+      background: linear-gradient(135deg, #3b82f6, #22c55e); /* blue and green */
       padding: 3rem 1.5rem;
       border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(251, 146, 60, 0.4);
+      box-shadow: 0 12px 40px rgba(34, 197, 94, 0.4);
       color: white;
       margin-top: 1.5rem;
     }
@@ -105,13 +105,13 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
     }
     .btn-primary {
-      background-color: #fb923c; /* orange */
+      background-color: #059669; /* green */
       color: white;
       padding: 1rem 2.5rem;
       font-weight: 700;
       font-size: 1.1rem;
       border-radius: 50px;
-      box-shadow: 0 6px 14px rgba(251, 146, 60, 0.6);
+      box-shadow: 0 6px 14px rgba(5, 150, 105, 0.6);
       cursor: pointer;
       border: none;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -120,8 +120,8 @@
     }
     .btn-primary:hover,
     .btn-primary:focus {
-      background-color: #f97316;
-      box-shadow: 0 8px 24px rgba(251, 115, 24, 0.8);
+      background-color: #047857;
+      box-shadow: 0 8px 24px rgba(4, 120, 87, 0.8);
       outline: none;
     }
     .hero-img {
@@ -169,13 +169,13 @@
     /* Portfolio Overview */
     .portfolio-overview {
       margin-top: 3.5rem;
-      background: #ffedd5; /* soft orange */
+      background: #d1fae5; /* lighter green */
       padding: 2.5rem 2rem;
       border-radius: 20px;
-      box-shadow: 0 14px 35px rgba(251, 146, 60, 0.2);
+      box-shadow: 0 14px 35px rgba(5, 150, 105, 0.2);
     }
     .portfolio-overview h2 {
-      color: #c2410c;
+      color: #047857;
       font-size: 2.4rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
@@ -188,28 +188,28 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      color: #9a3412cc;
+      color: #065f4688;
     }
     .artifact-summary {
-      background: #fff7ed;
-      border-left: 8px solid #fb923c;
+      background: #ecfdf5;
+      border-left: 8px solid #059669;
       padding: 1.2rem 1.8rem;
       margin-bottom: 1.8rem;
       border-radius: 12px;
-      box-shadow: 0 8px 18px rgba(251, 146, 60, 0.15);
+      box-shadow: 0 8px 18px rgba(5, 150, 105, 0.15);
     }
     .artifact-summary h3 {
       margin-top: 0;
       margin-bottom: 0.5rem;
       font-size: 1.45rem;
-      color: #b45309;
+      color: #065f46;
       font-weight: 700;
     }
     .artifact-summary p {
       margin: 0;
       font-size: 1rem;
       line-height: 1.45;
-      color: #78350f;
+      color: #065f46aa;
     }
 
     /* Skills Section */
@@ -302,7 +302,7 @@
     .artifact-card img {
       width: 100%;
       height: 180px;
-      object-fit: contain;
+      object-fit: cover;
       background: #dbeafe;
       border-bottom: 5px solid #2563eb;
     }
@@ -424,7 +424,7 @@
   <h1>Naga Venkata Satyanarayana Devarapalli</h1>
   <nav role="navigation" aria-label="Primary navigation">
     <a href="index.html" aria-current="page">Home</a>
-    <a href="bio.html">Bio</a>
+    <a href="#bio-section">About Me</a>
     <a href="artifact1.html">Artifact 1</a>
     <a href="artifact2.html">Artifact 2</a>
     <a href="artifact3.html">Artifact 3</a>
@@ -449,7 +449,7 @@
   </section>
 
   <!-- Bio Section -->
-  <section class="bio-section" tabindex="0" aria-label="Bio introduction section">
+  <section class="bio-section" id="bio-section" tabindex="0" aria-label="Bio introduction section">
     <img src="images/profile-pic.jpg" alt="Portrait of Naga Venkata Satyanarayana Devarapalli" class="bio-img" />
     <div class="bio-text">
       <h2>About Me</h2>
@@ -499,73 +499,69 @@
       My expertise spans a diverse set of tools and technologies vital for AI, machine learning, data analytics, and cloud environments:
     </p>
     <ul>
-      <li><strong>BI Tools & Languages:</strong> Power BI, DAX, M Code</li>
-      <li><strong>Programming Languages:</strong> Python, R, SQL, PL/SQL</li>
-      <li><strong>AI & Machine Learning:</strong> TensorFlow, Scikit-learn, Natural Language Processing, Chatbot Design</li>
-      <li><strong>Cloud Platforms:</strong> Azure, AWS, Google Cloud Basics</li>
-      <li><strong>ETL & Data Warehousing:</strong> SSIS, SSRS, SSAS, Data Modeling</li>
-      <li><strong>Version Control & Collaboration:</strong> Git, GitHub, Agile/Scrum</li>
+      <li>Power BI, DAX, M Code, SSIS, SSRS, SSAS</li>
+      <li>SQL Server, Oracle BI, Tableau</li>
+      <li>Python, R, Machine Learning Frameworks</li>
+      <li>Azure, AWS Cloud Platforms</li>
+      <li>Data Visualization & Reporting</li>
     </ul>
   </section>
 
   <!-- Artifacts Section -->
   <section id="artifacts" tabindex="0" aria-label="Portfolio artifacts">
-    <h2>Portfolio Artifacts</h2>
-    <p>Here are some key projects and presentations demonstrating my skills and learning journey in AI and Data Analytics.</p>
+    <h2>Explore My Artifacts</h2>
+    <p>Click on each artifact to learn more about my projects and achievements.</p>
+
     <div class="artifact-cards">
 
-      <article class="artifact-card" tabindex="0" aria-label="Artifact 1: AI Lab No-Code Chatbot Assistant">
-        <img src="images/chatbot-logo.jpg" alt="AI Lab No-Code Chatbot Assistant Logo" />
-        <h3>Artifact 1</h3>
-        <h4>AI Lab No-Code Chatbot Assistant</h4>
-        <p>
-          A no-code AI chatbot assistant that simplifies chatbot creation for non-programmers using design thinking and prompt engineering.
+      <article class="artifact-card" tabindex="0" aria-labelledby="artifact1-title" aria-describedby="artifact1-desc">
+        <img src="images/artifact1.jpg" alt="Screenshot of AI Lab No-Code Chatbot Assistant" />
+        <h3 id="artifact1-title">Artifact 1</h3>
+        <h4>No-Code AI Chatbot Assistant</h4>
+        <p id="artifact1-desc">
+          An AI assistant chatbot designed on the Mizou.com platform, enabling users with no programming skills to build, customize, and deploy chatbots via intuitive conversational flows.
         </p>
-        <a href="artifact1.html" class="btn-secondary" aria-label="View details of Artifact 1">View Details</a>
+        <a href="artifact1.html" class="btn-secondary" aria-label="View Artifact 1 details">Learn More</a>
       </article>
 
-      <article class="artifact-card" tabindex="0" aria-label="Artifact 2: AI & ML Timeline Presentation">
-        <img src="images/timeline-logo.jpg" alt="AI & ML Timeline Presentation Logo" />
-        <h3>Artifact 2</h3>
-        <h4>Evolution of AI and Machine Learning – Timeline Presentation</h4>
-        <p>
-          An interactive visual timeline showcasing the history and key milestones in artificial intelligence and machine learning.
+      <article class="artifact-card" tabindex="0" aria-labelledby="artifact2-title" aria-describedby="artifact2-desc">
+        <img src="images/artifact2.jpg" alt="Visual timeline of AI & ML evolution" />
+        <h3 id="artifact2-title">Artifact 2</h3>
+        <h4>AI & ML Timeline Presentation</h4>
+        <p id="artifact2-desc">
+          A comprehensive visual timeline presenting the evolution of artificial intelligence and machine learning, highlighting major breakthroughs, ethical challenges, and technology waves.
         </p>
-        <a href="artifact2.html" class="btn-secondary" aria-label="View details of Artifact 2">View Details</a>
+        <a href="artifact2.html" class="btn-secondary" aria-label="View Artifact 2 details">Learn More</a>
       </article>
 
-      <article class="artifact-card" tabindex="0" aria-label="Artifact 3: SchoolAI Assisted Learning Experience">
-        <img src="images/schoolai-logo.jpg" alt="SchoolAI Assisted Learning Experience Logo" />
-        <h3>Artifact 3</h3>
-        <h4>SchoolAI Assisted Learning Experience</h4>
-        <p>
-          An interactive learning session demonstrating inquiry-based AI-assisted learning exploring machine learning training methods.
+      <article class="artifact-card" tabindex="0" aria-labelledby="artifact3-title" aria-describedby="artifact3-desc">
+        <img src="images/artifact3.jpg" alt="SchoolAI chatbot learning session" />
+        <h3 id="artifact3-title">Artifact 3</h3>
+        <h4>SchoolAI-Assisted Learning Experience</h4>
+        <p id="artifact3-desc">
+          An interactive learning session exploring machine learning concepts via the SchoolAI chatbot, demonstrating inquiry-based learning and critical thinking strategies.
         </p>
-        <a href="artifact3.html" class="btn-secondary" aria-label="View details of Artifact 3">View Details</a>
+        <a href="artifact3.html" class="btn-secondary" aria-label="View Artifact 3 details">Learn More</a>
       </article>
 
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" tabindex="0" aria-label="Contact section">
+  <section id="contact" tabindex="0" aria-label="Contact information">
     <h2>Contact Me</h2>
-    <p>
-      Interested in collaborating or learning more? Feel free to reach out!
-    </p>
+    <p>Feel free to reach out for collaborations, questions, or professional inquiries.</p>
     <address>
       <strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a><br />
-      <strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a><br />
-      <strong>Location:</strong> Dallas, TX, USA<br />
-      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a><br />
-      <strong>GitHub:</strong> <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer">github.com/naga-venkata</a>
+      <strong>Location:</strong> Dallas, TX, United States<br />
+      <strong>Phone:</strong> +1 (555) 123-4567 (optional)
     </address>
   </section>
 
 </main>
 
 <footer>
-  &copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved
+  &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.
 </footer>
 
 </body>
