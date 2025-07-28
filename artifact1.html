@@ -6,381 +6,478 @@
 <title>Artifact 1 - AI Lab No-Code Chatbot Assistant</title>
 
 <style>
-  /* ======================
-     RESET & BASE STYLES
-  ======================= */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fa;
-    color: #2d2d2d;
-    line-height: 1.6;
-  }
-  img {
-    max-width: 100%;
-    display: block;
-    border-radius: 8px;
-  }
-  a {
-    color: #1e40af; /* deep blue */
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  a:hover,
-  a:focus {
-    color: #ea580c; /* orange accent */
-    outline: none;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  /* ======================
-     LAYOUT & CONTAINER
-  ======================= */
-  header, footer {
-    background-color: #1e40af; /* dark blue */
-    color: #fff;
-    padding: 1rem 2rem;
-  }
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header h1 {
-    font-weight: 700;
-    font-size: 1.8rem;
-  }
+/* =========================
+   Reset & Base Styles
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+a {
+  color: #2563eb; /* professional blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #ea580c; /* orange accent */
+  outline: none;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+button:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* =========================
+   Layout Containers
+========================= */
+header,
+footer {
+  background-color: #2563eb; /* dark blue */
+  color: white;
+  padding: 1rem 2rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  font-weight: 600;
+}
+
+nav a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #ea580c;
+  color: white;
+  outline: none;
+}
+
+main.container {
+  max-width: 1100px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  background: linear-gradient(135deg, #2563eb 0%, #16a34a 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(22, 163, 74, 0.35);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+/* =========================
+   Section Headings
+========================= */
+section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #2563eb;
+  border-bottom: 4px solid #ea580c;
+  padding-bottom: 0.25rem;
+}
+
+section h3 {
+  color: #16a34a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* =========================
+   Accordion (Assignment Details)
+========================= */
+.accordion {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.accordion-item + .accordion-item {
+  border-top: 1px solid #e5e7eb;
+}
+
+.accordion-header {
+  background: #2563eb;
+  color: white;
+  padding: 1.3rem 2rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
+
+.accordion-header:hover,
+.accordion-header:focus {
+  background-color: #1e40af;
+  outline: none;
+}
+
+.accordion-header::after {
+  content: '+';
+  font-size: 1.8rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 1.8rem 2rem;
+  background: #f9fafb;
+  display: none;
+  color: #374151;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.accordion-content p,
+.accordion-content ul {
+  margin-bottom: 1rem;
+}
+
+.accordion-content ul {
+  list-style: disc inside;
+}
+
+.accordion-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.accordion-content.show {
+  display: block;
+}
+
+/* =========================
+   Tabs (Development Process)
+========================= */
+.tabs {
+  margin-bottom: 3rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.tab-buttons button {
+  background: none;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 4px solid transparent;
+  margin: 0.3rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.tab-buttons button.active {
+  color: #2563eb;
+  border-bottom-color: #ea580c;
+  background-color: #f3f4f6;
+}
+
+.tab-content {
+  padding: 2.5rem 3rem;
+  color: #374151;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  min-height: 260px;
+}
+
+.tab-content ol {
+  margin-left: 1.5rem;
+}
+
+.tab-content p {
+  margin-bottom: 1rem;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* =========================
+   Image Gallery
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.7rem;
+  margin-bottom: 3rem;
+}
+
+.gallery img {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.gallery img:hover,
+.gallery img:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+#lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+#lightbox .close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+#lightbox .close-btn:hover,
+#lightbox .close-btn:focus {
+  color: #ea580c;
+  outline: none;
+}
+
+/* =========================
+   Contact Form
+========================= */
+.contact {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 4rem auto 6rem;
+}
+
+.contact h2 {
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 8px #2563ebaa;
+}
+
+.contact button {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.contact button:hover,
+.contact button:focus {
+  background-color: #1e40af;
+  outline: none;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  text-align: center;
+  padding: 1.75rem 2rem;
+  background-color: #1e40af;
+  color: #f3f4f6;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
   nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.75rem;
-    margin: 0;
-  }
-  nav ul li {
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  nav ul li a {
-    color: #f3f4f6;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-  }
-  nav ul li a:hover,
-  nav ul li a:focus {
-    background-color: #ea580c;
-    color: #fff;
-  }
-  main.container {
-    max-width: 1100px;
-    margin: 2rem auto 4rem;
-    padding: 0 1rem;
-  }
-  /* ======================
-     HERO SECTION
-  ======================= */
-  .hero {
-    background: linear-gradient(135deg, #2563eb, #16a34a);
-    color: white;
-    border-radius: 12px;
-    padding: 3rem 2rem;
-    box-shadow: 0 8px 24px rgba(22,163,74,0.3);
-    text-align: center;
-    margin-bottom: 3rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
   }
   .hero h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1.1;
-  }
-  .hero p {
-    font-size: 1.3rem;
-    max-width: 850px;
-    margin: 0 auto;
-    font-weight: 400;
-  }
-  /* ======================
-     SECTION HEADINGS
-  ======================= */
-  section h2 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: #1e40af;
-    border-bottom: 4px solid #ea580c;
-    padding-bottom: 0.25rem;
-  }
-  section h3 {
-    color: #16a34a;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  /* ======================
-     ASSIGNMENT DETAILS - ACCORDION
-  ======================= */
-  .accordion {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    overflow: hidden;
-  }
-  .accordion-item + .accordion-item {
-    border-top: 1px solid #e5e7eb;
-  }
-  .accordion-header {
-    background: #2563eb;
-    color: #fff;
-    padding: 1.25rem 2rem;
-    font-weight: 700;
-    font-size: 1.25rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-    transition: background-color 0.3s ease;
-  }
-  .accordion-header:hover,
-  .accordion-header:focus {
-    background-color: #1e40af;
-    outline: none;
-  }
-  .accordion-header::after {
-    content: '+';
-    font-size: 1.5rem;
-    line-height: 1;
-    transition: transform 0.3s ease;
-  }
-  .accordion-header.active::after {
-    content: '-';
-    transform: rotate(180deg);
-  }
-  .accordion-content {
-    padding: 1.5rem 2rem;
-    background: #f9fafb;
-    display: none;
-    color: #374151;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .accordion-content p, 
-  .accordion-content ul {
-    margin-bottom: 1rem;
-  }
-  .accordion-content ul {
-    list-style: disc inside;
-  }
-  .accordion-content ul li {
-    margin-bottom: 0.5rem;
-  }
-  .accordion-content.show {
-    display: block;
-  }
-  /* ======================
-     TABS SECTION
-  ======================= */
-  .tabs {
-    margin: 3rem 0;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  }
-  .tab-buttons {
-    display: flex;
-    justify-content: center;
-    border-bottom: 2px solid #e5e7eb;
+    font-size: 2.2rem;
   }
   .tab-buttons button {
-    background: none;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #6b7280;
-    cursor: pointer;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    border-bottom: 4px solid transparent;
-  }
-  .tab-buttons button.active {
-    color: #2563eb;
-    border-bottom-color: #ea580c;
-  }
-  .tab-content {
-    padding: 2rem;
-    color: #374151;
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-  .tab-panel {
-    display: none;
-  }
-  .tab-panel.active {
-    display: block;
-  }
-  .tab-content ol {
-    margin-left: 1.5rem;
-  }
-  /* ======================
-     IMAGE GALLERY
-  ======================= */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 3rem 0;
-  }
-  .gallery img {
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.25s ease;
-  }
-  .gallery img:hover,
-  .gallery img:focus {
-    transform: scale(1.05);
-    outline: none;
-  }
-  /* LIGHTBOX */
-  #lightbox {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 9999;
-  }
-  #lightbox.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  #lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
-  }
-  #lightbox .close-btn {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    background: none;
-    border: none;
-    font-size: 3rem;
-    color: white;
-    cursor: pointer;
-    font-weight: 700;
-    padding: 0;
-    line-height: 1;
-  }
-  /* ======================
-     CONTACT FORM
-  ======================= */
-  .contact {
-    background: #fff;
-    padding: 2.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: 4rem auto 6rem;
-  }
-  .contact h2 {
-    color: #16a34a;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  .contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  .contact input,
-  .contact textarea {
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
-    font-size: 1rem;
-    font-family: inherit;
-    resize: vertical;
-    transition: border-color 0.3s ease;
-  }
-  .contact input:focus,
-  .contact textarea:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 8px #2563ebaa;
-  }
-  .contact button {
-    background-color: #2563eb;
-    color: white;
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .contact button:hover,
-  .contact button:focus {
-    background-color: #1e40af;
-    outline: none;
-  }
-  /* ======================
-     FOOTER
-  ======================= */
-  footer {
-    text-align: center;
-    padding: 1.5rem 2rem;
-    background-color: #1e40af;
-    color: #f3f4f6;
-    font-weight: 600;
+    padding: 0.9rem 1.5rem;
     font-size: 1rem;
   }
-  /* ======================
-     RESPONSIVE
-  ======================= */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      gap: 0.75rem;
-      align-items: flex-start;
-    }
-    .hero h2 {
-      font-size: 2rem;
-    }
-    .tab-buttons {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .tab-buttons button {
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-    }
-    main.container {
-      width: 95%;
-    }
+  main.container {
+    width: 95%;
   }
+}
 </style>
-
 </head>
-<body>
 
+<body>
 <!-- HEADER -->
 <header role="banner">
   <h1 tabindex="0">Artifact 1 - AI Lab No-Code Chatbot Assistant</h1>
@@ -388,65 +485,85 @@
     <ul>
       <li><a href="index.html" tabindex="0">Home</a></li>
       <li><a href="#assignment" tabindex="0">Assignment Details</a></li>
-      <li><a href="#development" tabindex="0">Development</a></li>
+      <li><a href="#development" tabindex="0">Development Process</a></li>
       <li><a href="#gallery" tabindex="0">Gallery</a></li>
       <li><a href="#contact" tabindex="0">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero" role="region" aria-labelledby="hero-title">
   <h2 id="hero-title" tabindex="0">AI Lab No-Code Chatbot Assistant</h2>
   <p tabindex="0">
-    This project is a no-code AI chatbot platform designed to empower users without programming knowledge to create,
-    customize, and deploy intelligent chatbots efficiently. Leveraging React.js, Node.js, and Dialogflow, the platform
-    democratizes AI chatbot creation for businesses and educational purposes.
+    A powerful, user-friendly no-code AI chatbot assistant platform designed to empower users without programming skills.
+    Utilizing React.js, Node.js, and Google Dialogflow, this tool democratizes chatbot development for businesses and educators.
   </p>
 </section>
 
-<!-- MAIN CONTENT -->
-<main class="container" role="main">
+<main class="container" role="main" aria-label="Main content">
 
   <!-- ASSIGNMENT DETAILS -->
   <section id="assignment" aria-labelledby="assignment-title">
     <h2 id="assignment-title">Assignment Details</h2>
     <div class="accordion" role="region" aria-live="polite" aria-relevant="additions removals">
-      
+
       <!-- Objective -->
       <article class="accordion-item">
-        <button aria-expanded="false" aria-controls="objective-content" id="objective-btn" class="accordion-header" tabindex="0">
+        <button
+          aria-expanded="false"
+          aria-controls="objective-content"
+          id="objective-btn"
+          class="accordion-header"
+          tabindex="0"
+        >
           Objective
         </button>
         <div id="objective-content" class="accordion-content" role="region" aria-labelledby="objective-btn" hidden>
           <p>
-            The primary objective of this assignment was to design and develop a user-friendly no-code AI chatbot assistant platform
-            that facilitates the creation of intelligent conversational agents by users with zero programming experience.
+            Develop a no-code AI chatbot platform that allows non-technical users to design, customize, and deploy
+            conversational agents effortlessly. The platform aims to bridge the gap between AI technology and end-users
+            by simplifying chatbot creation.
           </p>
           <p>
-            This aligns with current trends in AI democratization by making advanced AI tools accessible to non-technical audiences.
+            This initiative aligns with current AI democratization efforts, enabling wider adoption of conversational
+            AI across industries.
           </p>
         </div>
       </article>
 
       <!-- Learning Outcomes -->
       <article class="accordion-item">
-        <button aria-expanded="false" aria-controls="learning-content" id="learning-btn" class="accordion-header" tabindex="0">
+        <button
+          aria-expanded="false"
+          aria-controls="learning-content"
+          id="learning-btn"
+          class="accordion-header"
+          tabindex="0"
+        >
           Learning Outcomes
         </button>
         <div id="learning-content" class="accordion-content" role="region" aria-labelledby="learning-btn" hidden>
           <ul>
-            <li>Gain practical knowledge of designing conversational AI workflows.</li>
-            <li>Understand the integration of Natural Language Processing engines within chatbot platforms.</li>
-            <li>Enhance skills in React.js and Node.js development environments.</li>
-            <li>Apply agile methodologies in a real-world AI development project.</li>
+            <li>Gain experience integrating AI NLP engines (Dialogflow) into applications.</li>
+            <li>Master React.js for building dynamic, interactive UIs.</li>
+            <li>Implement Node.js backend services for chatbot management.</li>
+            <li>Apply best practices in UI/UX for no-code platforms.</li>
+            <li>Understand deployment and hosting via Firebase.</li>
+            <li>Enhance problem-solving skills through challenge resolution.</li>
           </ul>
         </div>
       </article>
 
-      <!-- Tools Used -->
+      <!-- Tools -->
       <article class="accordion-item">
-        <button aria-expanded="false" aria-controls="tools-content" id="tools-btn" class="accordion-header" tabindex="0">
+        <button
+          aria-expanded="false"
+          aria-controls="tools-content"
+          id="tools-btn"
+          class="accordion-header"
+          tabindex="0"
+        >
           Tools Used
         </button>
         <div id="tools-content" class="accordion-content" role="region" aria-labelledby="tools-btn" hidden>
@@ -454,242 +571,390 @@
             <strong>Frontend:</strong> React.js, HTML5, CSS3<br />
             <strong>Backend:</strong> Node.js, Express.js<br />
             <strong>NLP Engine:</strong> Google Dialogflow<br />
-            <strong>Hosting:</strong> Firebase Hosting and Firestore<br />
-            <strong>Version Control:</strong> Git, GitHub
+            <strong>Database & Hosting:</strong> Firebase Firestore and Hosting<br />
+            <strong>Version Control:</strong> Git & GitHub<br />
+            <strong>Other:</strong> Postman for API testing, VSCode IDE
           </p>
         </div>
       </article>
 
       <!-- Problem Statement -->
       <article class="accordion-item">
-        <button aria-expanded="false" aria-controls="problem-content" id="problem-btn" class="accordion-header" tabindex="0">
+        <button
+          aria-expanded="false"
+          aria-controls="problem-content"
+          id="problem-btn"
+          class="accordion-header"
+          tabindex="0"
+        >
           Problem Statement
         </button>
         <div id="problem-content" class="accordion-content" role="region" aria-labelledby="problem-btn" hidden>
           <p>
-            Many businesses and educators lack the technical skills to build AI chatbots, limiting the benefits of AI-driven automation.
-            The problem addressed by this project is to remove the technical barrier by providing a no-code platform that facilitates
-            easy chatbot creation.
+            Many organizations lack technical skills to build AI chatbots, restricting automation and customer engagement
+            potential. Existing chatbot platforms often require programming expertise or expensive consulting.
+          </p>
+          <p>
+            This project addresses these issues by offering a no-code, intuitive platform that lowers technical barriers,
+            enabling wider use of AI chatbots.
           </p>
         </div>
       </article>
 
       <!-- Research Background -->
       <article class="accordion-item">
-        <button aria-expanded="false" aria-controls="research-content" id="research-btn" class="accordion-header" tabindex="0">
+        <button
+          aria-expanded="false"
+          aria-controls="research-content"
+          id="research-btn"
+          class="accordion-header"
+          tabindex="0"
+        >
           Research Background
         </button>
         <div id="research-content" class="accordion-content" role="region" aria-labelledby="research-btn" hidden>
           <p>
-            Extensive research was conducted on conversational AI frameworks, NLP integration methods, and user experience designs for no-code tools.
-            Peer-reviewed articles and case studies provided insight into best practices for chatbot dialogue management and multi-platform deployment.
+            Comprehensive literature review on no-code AI tools, conversational AI architectures, and UX principles
+            guided the design.
+          </p>
+          <p>
+            Research emphasized user-centric design, leveraging advances in NLP and cloud hosting for scalable,
+            low-maintenance solutions.
           </p>
         </div>
       </article>
 
-      <!-- Future Enhancements -->
+      <!-- Scope & Limitations -->
       <article class="accordion-item">
-        <button aria-expanded="false" aria-controls="future-content" id="future-btn" class="accordion-header" tabindex="0">
-          Future Enhancements
+        <button
+          aria-expanded="false"
+          aria-controls="scope-content"
+          id="scope-btn"
+          class="accordion-header"
+          tabindex="0"
+        >
+          Scope & Limitations
         </button>
-        <div id="future-content" class="accordion-content" role="region" aria-labelledby="future-btn" hidden>
+        <div id="scope-content" class="accordion-content" role="region" aria-labelledby="scope-btn" hidden>
           <ul>
-            <li>Multi-language support for global audiences.</li>
-            <li>Advanced analytics dashboard for chatbot performance monitoring.</li>
-            <li>Voice assistant integration.</li>
-            <li>AI-driven chatbot suggestions for user improvements.</li>
+            <li>Focus on English language chatbot creation (future versions planned for multilingual support).</li>
+            <li>Limited integration with third-party platforms (planned expansions).</li>
+            <li>Hosting via Firebase limits some backend customizations.</li>
+            <li>Designed for small-to-medium business and educational use cases.</li>
           </ul>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- DEVELOPMENT SECTION -->
+  <!-- DEVELOPMENT PROCESS -->
   <section id="development" aria-labelledby="development-title">
     <h2 id="development-title">Development Process</h2>
+
     <div class="tabs" role="tablist" aria-label="Development process tabs">
       <div class="tab-buttons" role="presentation">
-        <button role="tab" aria-selected="true" aria-controls="steps-panel" id="steps-tab" class="tab-btn active" tabindex="0">Steps</button>
-        <button role="tab" aria-selected="false" aria-controls="challenges-panel" id="challenges-tab" class="tab-btn" tabindex="-1">Challenges</button>
-        <button role="tab" aria-selected="false" aria-controls="solutions-panel" id="solutions-tab" class="tab-btn" tabindex="-1">Solutions</button>
+        <button
+          role="tab"
+          aria-selected="true"
+          aria-controls="steps-panel"
+          id="steps-tab"
+          class="tab-btn active"
+          tabindex="0"
+        >
+          Steps
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          aria-controls="challenges-panel"
+          id="challenges-tab"
+          class="tab-btn"
+          tabindex="-1"
+        >
+          Challenges
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          aria-controls="solutions-panel"
+          id="solutions-tab"
+          class="tab-btn"
+          tabindex="-1"
+        >
+          Solutions
+        </button>
       </div>
 
-      <div id="steps-panel" role="tabpanel" aria-labelledby="steps-tab" tabindex="0" class="tab-panel active">
+      <div
+        id="steps-panel"
+        role="tabpanel"
+        aria-labelledby="steps-tab"
+        tabindex="0"
+        class="tab-panel active tab-content"
+      >
         <h3>Development Steps</h3>
         <ol>
-          <li>Requirement gathering and defining user personas.</li>
-          <li>Wireframing UI/UX designs focusing on simplicity and accessibility.</li>
-          <li>Setting up React.js frontend and component architecture.</li>
-          <li>Integrating Dialogflow API for natural language understanding.</li>
-          <li>Implementing real-time chatbot preview and customization features.</li>
-          <li>Developing backend API with Node.js to manage chatbot configurations.</li>
-          <li>Setting up Firebase hosting and database for persistent storage.</li>
-          <li>Conducting iterative testing and user feedback incorporation.</li>
+          <li>Requirement gathering and defining target user personas and use cases.</li>
+          <li>Wireframing and prototyping UI/UX focusing on simplicity and accessibility.</li>
+          <li>Frontend architecture setup using React.js components and state management.</li>
+          <li>Integration of Google Dialogflow API for NLP and conversational logic.</li>
+          <li>Building a drag-and-drop chatbot builder interface for no-code customization.</li>
+          <li>Backend development using Node.js and Express for chatbot data handling and authentication.</li>
+          <li>Firebase integration for hosting, authentication, and Firestore database storage.</li>
+          <li>Comprehensive testing: unit, integration, user acceptance, and performance testing.</li>
+          <li>Iteration based on user feedback and analytics to enhance usability and features.</li>
         </ol>
       </div>
 
-      <div id="challenges-panel" role="tabpanel" aria-labelledby="challenges-tab" tabindex="0" class="tab-panel">
+      <div
+        id="challenges-panel"
+        role="tabpanel"
+        aria-labelledby="challenges-tab"
+        tabindex="0"
+        class="tab-panel tab-content"
+      >
         <h3>Challenges Faced</h3>
         <p>
-          Integrating real-time NLP responses without latency was challenging, especially for complex queries.
-          Ensuring security and privacy for user data required implementing strict access control and encryption.
-          Balancing the drag-and-drop UI flexibility with usability constraints was difficult.
+          Integrating real-time NLP responses while maintaining low latency and user experience was complex.
+        </p>
+        <p>
+          Ensuring robust data security and privacy compliant with best practices within a no-code environment.
+        </p>
+        <p>
+          Balancing feature-richness with simplicity to avoid overwhelming novice users.
+        </p>
+        <p>
+          Managing state and component communication within React to handle dynamic chatbot configurations.
         </p>
       </div>
 
-      <div id="solutions-panel" role="tabpanel" aria-labelledby="solutions-tab" tabindex="0" class="tab-panel">
+      <div
+        id="solutions-panel"
+        role="tabpanel"
+        aria-labelledby="solutions-tab"
+        tabindex="0"
+        class="tab-panel tab-content"
+      >
         <h3>Solutions Implemented</h3>
         <ul>
-          <li>Implemented asynchronous API calls with caching to minimize latency.</li>
-          <li>Used Firebase Security Rules and HTTPS to protect user data.</li>
-          <li>Conducted multiple rounds of usability testing and simplified UI workflows.</li>
-          <li>Applied component-based design to enable modular chatbot building blocks.</li>
+          <li>Asynchronous API calls and caching strategies reduced latency in NLP queries.</li>
+          <li>Firebase Security Rules and HTTPS ensured secure data transmission and storage.</li>
+          <li>Adopted progressive disclosure design to simplify UI for novice users, revealing advanced options on demand.</li>
+          <li>Employed React Context API and hooks for clean state management and component decoupling.</li>
+          <li>Used extensive user testing and feedback loops to iteratively improve the UX.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- IMAGE GALLERY -->
-  <section id="gallery" aria-labelledby="gallery-title">
+  <section id="gallery" aria-labelledby="gallery-title" role="region">
     <h2 id="gallery-title">Project Gallery</h2>
-    <p tabindex="0">Click images below to view enlarged screenshots of key project features and architecture.</p>
+    <p tabindex="0">Click images below to enlarge key project screenshots and diagrams.</p>
     <div class="gallery" role="list">
-      <img src="images/ui-dashboard.png" alt="User Interface Dashboard" tabindex="0" role="listitem" />
-      <img src="images/nlp-integration.png" alt="NLP Integration Diagram" tabindex="0" role="listitem" />
-      <img src="images/drag-drop-builder.png" alt="Drag and Drop Chatbot Builder" tabindex="0" role="listitem" />
-      <img src="images/firebase-setup.png" alt="Firebase Hosting and Database Setup" tabindex="0" role="listitem" />
-      <img src="images/chatbot-demo.png" alt="Chatbot in Action Demo" tabindex="0" role="listitem" />
+      <img
+        src="images/ui-dashboard.png"
+        alt="Screenshot of User Interface Dashboard showing chatbot builder"
+        tabindex="0"
+        role="listitem"
+      />
+      <img
+        src="images/nlp-integration.png"
+        alt="Diagram showing integration of NLP engine with chatbot frontend"
+        tabindex="0"
+        role="listitem"
+      />
+      <img
+        src="images/drag-drop-builder.png"
+        alt="Drag and Drop interface for building chatbot conversation flows"
+        tabindex="0"
+        role="listitem"
+      />
+      <img
+        src="images/firebase-setup.png"
+        alt="Firebase console showing hosting and database setup"
+        tabindex="0"
+        role="listitem"
+      />
+      <img
+        src="images/chatbot-demo.png"
+        alt="Live chatbot demo interaction screenshot"
+        tabindex="0"
+        role="listitem"
+      />
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact" id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Get In Touch</h2>
+  <!-- CONTACT FORM -->
+  <section id="contact" aria-labelledby="contact-title" class="contact" role="region">
+    <h2 id="contact-title">Contact Me</h2>
     <form id="contactForm" aria-describedby="form-desc" novalidate>
-      <p id="form-desc">Please fill in the form below to send your message.</p>
+      <p id="form-desc" tabindex="0">Please fill in the form below to get in touch or ask questions.</p>
+
       <label for="name">Name <sup aria-label="required">*</sup></label>
-      <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name" />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        aria-required="true"
+        placeholder="Your full name"
+        autocomplete="name"
+      />
 
       <label for="email">Email <sup aria-label="required">*</sup></label>
-      <input type="email" id="email" name="email" required aria-required="true" placeholder="Your email address" />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        aria-required="true"
+        placeholder="Your email address"
+        autocomplete="email"
+      />
+
+      <label for="subject">Subject</label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        placeholder="Reason for contacting"
+        autocomplete="off"
+      />
 
       <label for="message">Message <sup aria-label="required">*</sup></label>
-      <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Write your message here"></textarea>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        required
+        aria-required="true"
+        placeholder="Write your message here"
+      ></textarea>
 
-      <button type="submit" aria-label="Send message">Send Message</button>
+      <button type="submit" aria-label="Send your message">Send Message</button>
     </form>
   </section>
 </main>
 
+<!-- FOOTER -->
 <footer role="contentinfo">
-  &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.
+  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
 </footer>
 
-<!-- JAVASCRIPT -->
+<!-- =========================
+   JavaScript for Interactivity
+========================= -->
 <script>
-  // Accordion Functionality
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const expanded = header.getAttribute('aria-expanded') === 'true';
-      accordionHeaders.forEach(h => {
-        h.setAttribute('aria-expanded', 'false');
-        h.nextElementSibling.hidden = true;
-        h.classList.remove('active');
+  // ======= Accordion Functionality =======
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      const expanded = header.getAttribute("aria-expanded") === "true";
+
+      accordionHeaders.forEach((h) => {
+        h.setAttribute("aria-expanded", "false");
+        document.getElementById(h.getAttribute("aria-controls")).hidden = true;
+        h.classList.remove("active");
       });
+
       if (!expanded) {
-        header.setAttribute('aria-expanded', 'true');
-        header.nextElementSibling.hidden = false;
-        header.classList.add('active');
+        header.setAttribute("aria-expanded", "true");
+        document.getElementById(header.getAttribute("aria-controls")).hidden = false;
+        header.classList.add("active");
       }
     });
 
-    header.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
+    header.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         header.click();
       }
     });
   });
 
-  // Tabs Functionality
-  const tabs = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
+  // ======= Tabs Functionality =======
+  const tabs = document.querySelectorAll(".tab-btn");
+  const tabPanels = document.querySelectorAll(".tab-panel");
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-        t.setAttribute('tabindex', '-1');
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+        t.setAttribute("tabindex", "-1");
       });
-      tabPanels.forEach(panel => panel.classList.remove('active'));
+      tabPanels.forEach((panel) => panel.classList.remove("active"));
 
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      tab.setAttribute('tabindex', '0');
-      const panel = document.getElementById(tab.getAttribute('aria-controls'));
-      panel.classList.add('active');
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+      tab.setAttribute("tabindex", "0");
+      const panel = document.getElementById(tab.getAttribute("aria-controls"));
+      panel.classList.add("active");
       panel.focus();
     });
   });
 
-  // Image Gallery Lightbox
-  const galleryImages = document.querySelectorAll('.gallery img');
-  const lightbox = document.createElement('div');
-  lightbox.id = 'lightbox';
+  // ======= Image Gallery Lightbox =======
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const lightbox = document.createElement("div");
+  lightbox.id = "lightbox";
   document.body.appendChild(lightbox);
 
-  const lightboxImg = document.createElement('img');
+  const lightboxImg = document.createElement("img");
   lightbox.appendChild(lightboxImg);
 
-  const closeBtn = document.createElement('button');
-  closeBtn.className = 'close-btn';
-  closeBtn.setAttribute('aria-label', 'Close image');
-  closeBtn.innerHTML = '&times;';
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "close-btn";
+  closeBtn.setAttribute("aria-label", "Close image");
+  closeBtn.innerHTML = "&times;";
   lightbox.appendChild(closeBtn);
 
-  galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.classList.add('active');
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      lightbox.classList.add("active");
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
       closeBtn.focus();
     });
-    img.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         img.click();
       }
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    lightbox.classList.remove('active');
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
   });
-  lightbox.addEventListener('click', e => {
+
+  lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
-      lightbox.classList.remove('active');
+      lightbox.classList.remove("active");
     }
   });
 
-  // Contact Form Validation and Submission
-  const contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', e => {
+  // ======= Contact Form Validation & Submission =======
+  const contactForm = document.getElementById("contactForm");
+
+  contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const name = contactForm.name.value.trim();
     const email = contactForm.email.value.trim();
     const message = contactForm.message.value.trim();
 
     if (!name || !email || !message) {
-      alert('Please fill in all required fields.');
+      alert("Please fill in all required fields.");
       return;
     }
 
-    // Basic Email Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
+    // Basic email format validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
       contactForm.email.focus();
       return;
     }
@@ -698,6 +963,5 @@
     contactForm.reset();
   });
 </script>
-
 </body>
 </html>
