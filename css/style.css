@@ -391,3 +391,70 @@ footer {
   color: #317873;
   margin-bottom: 0.3rem;
 }
+.portfolio-overview {
+  background: #f7f7f7;
+  border-radius: 14px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.portfolio-overview h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.portfolio-overview p {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+  color: #555;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.artifact-summary {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artifact-summary:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.artifact-summary h3 {
+  font-size: 1.6rem;
+  color: #444;
+  margin-bottom: 0.8rem;
+}
+
+.artifact-summary p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.artifact-summary .icon {
+  font-size: 2.5rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.contact-info span {
+  display: block;
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
