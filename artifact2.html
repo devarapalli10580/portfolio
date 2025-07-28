@@ -3,278 +3,289 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Professional Portfolio Artifact 2 | AI & ML Timeline Presentation</title>
+<title>Artifact 2 - AI/ML Timeline Presentation</title>
 <style>
-  /* Reset & base */
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f5fa;
-    color: #2a3d66;
     margin: 0;
-    padding: 0;
+    background: #f4f9ff;
+    color: #222;
     line-height: 1.6;
   }
-  header {
-    background-color: #004b8d;
-    color: white;
-    padding: 30px 40px;
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 1.2px;
-  }
-  nav {
-    background: #0066cc;
-    padding: 14px 0;
-    text-align: center;
-  }
-  nav a {
-    color: white;
-    margin: 0 20px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    padding: 8px 18px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
-  nav a:hover, nav a.active {
-    background-color: #004a8d;
-  }
-  main {
-    max-width: 900px;
-    background: white;
-    margin: 40px auto 80px auto;
-    padding: 40px 50px;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0,75,141,0.2);
-  }
-  h1, h2, h3 {
-    color: #003366;
-    margin-top: 35px;
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-size: 36px;
-  }
-  h2 {
-    font-size: 28px;
-    border-bottom: 3px solid #ff6a00;
-    padding-bottom: 8px;
-  }
-  h3 {
-    font-size: 21px;
-  }
-  p {
-    font-size: 17px;
-    margin-bottom: 20px;
-    text-align: justify;
-  }
-  ul {
-    margin-left: 22px;
-    margin-bottom: 25px;
-  }
-  ul li {
-    margin-bottom: 10px;
-    font-size: 17px;
-  }
-  .section-box {
-    background-color: #e9f0fb;
-    border-left: 6px solid #ff6a00;
-    padding: 20px 25px;
-    margin-bottom: 40px;
-    border-radius: 7px;
-  }
-  .skills-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 40px;
-  }
-  .skills-table th, .skills-table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-  }
-  .skills-table th {
-    background-color: #004b8d;
-    color: white;
-    text-align: left;
-  }
-  .skills-table tr:nth-child(even) {
-    background-color: #f7fbff;
-  }
-  footer {
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 14px;
-    color: #666;
-  }
-  a.reference-link {
-    color: #0066cc;
+  a {
+    color: #0a74da;
     text-decoration: none;
   }
-  a.reference-link:hover {
+  a:hover {
     text-decoration: underline;
   }
-  .btn-back {
-    display: inline-block;
-    background-color: #ff6a00;
+
+  header {
+    background: linear-gradient(90deg, #0052cc 0%, #0078ff 100%);
     color: white;
-    padding: 13px 30px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-    margin-top: 30px;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .btn-back:hover {
-    background-color: #cc5500;
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  nav a {
+    margin-left: 1.5rem;
+    font-weight: 600;
+    border: 2px solid white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  main {
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 2rem 3rem;
+  }
+  main h2 {
+    color: #0052cc;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    border-bottom: 3px solid #0078ff;
+    padding-bottom: 0.5rem;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  section h3 {
+    color: #0041a3;
+    margin-bottom: 0.75rem;
+  }
+  section p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+  }
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Timeline styling */
+  .timeline {
+    border-left: 4px solid #0078ff;
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+  }
+  .timeline-event {
+    margin-bottom: 1.8rem;
+    position: relative;
+  }
+  .timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: #0078ff;
+    border-radius: 50%;
+    border: 3px solid #0052cc;
+  }
+  .timeline-event h4 {
+    margin: 0 0 0.3rem 0;
+    color: #003d99;
+  }
+  .timeline-event p {
+    margin: 0;
   }
 
   /* Responsive */
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     main {
-      padding: 25px 20px;
-      margin: 20px auto 50px auto;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem;
+    }
+    header {
+      flex-direction: column;
+      align-items: flex-start;
     }
     nav a {
-      margin: 0 8px;
-      padding: 8px 12px;
-      font-size: 15px;
+      margin-left: 0;
+      margin-top: 0.75rem;
     }
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+    margin-top: 4rem;
+  }
+
+  /* Button style */
+  .btn {
+    display: inline-block;
+    background-color: #0078ff;
+    color: white;
+    padding: 0.6rem 1.3rem;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  .btn:hover {
+    background-color: #0052cc;
   }
 </style>
 </head>
 <body>
 
 <header>
-  Professional Portfolio Artifact 2 - AI & ML Timeline Presentation
+  <h1>Artifact 2: AI/ML Timeline Presentation</h1>
+  <nav>
+    <a href="index.html" aria-label="Go to Home">Home</a>
+    <a href="artifact1.html" aria-label="Go to Artifact 1">Artifact 1</a>
+    <a href="artifact3.html" aria-label="Go to Artifact 3">Artifact 3</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="artifact1.html">Artifact 1</a>
-  <a href="artifact2.html" class="active">Artifact 2</a>
-  <a href="artifact3.html">Artifact 3</a>
-</nav>
+<main role="main" aria-labelledby="main-title">
+  <h2 id="main-title">Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h2>
 
-<main>
+  <section aria-labelledby="about-me-title">
+    <h3 id="about-me-title">About Me</h3>
+    <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of professional experience in data analytics, business intelligence, and performance testing, I am expanding my expertise into AI and Machine Learning through practical coursework and projects.</p>
+    <p>My career goal is to leverage AI and data-driven insights to solve complex business problems and drive innovation in enterprise environments. This portfolio showcases my journey of acquiring AI/ML competencies, highlighting both hands-on technical skills and strategic understanding of the field.</p>
+  </section>
 
-  <h1>About Me</h1>
-  <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of professional experience in data analytics, business intelligence, and performance testing, I am expanding my expertise into AI and Machine Learning through practical coursework and projects. My career goal is to leverage AI and data-driven insights to solve complex business problems and drive innovation in enterprise environments.</p>
-  <p>This portfolio showcases my journey of acquiring AI/ML competencies, highlighting both hands-on technical skills and strategic understanding of the field.</p>
-
-  <h2>Artifact Overview</h2>
-  <div class="section-box">
+  <section aria-labelledby="artifact-overview-title">
+    <h3 id="artifact-overview-title">Artifact Overview</h3>
     <p><strong>Title:</strong> Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</p>
     <p><strong>Type:</strong> Visual Timeline (Interactive Presentation)</p>
     <p><strong>Tools Used:</strong> Canva, Google Slides</p>
-    <p><strong>Date Created:</strong> July 20th 2025</p>
+    <p><strong>Date Created:</strong> July 20th, 2025</p>
     <p><strong>Audience:</strong> AI learners, educators, hiring managers, technology stakeholders</p>
-  </div>
+  </section>
 
-  <h2>Artifact Description</h2>
-  <p>The AI and ML Timeline artifact is a comprehensive visual representation of the historical progression of artificial intelligence and machine learning from the mid-20th century to the current era. This timeline captures the major milestones, including theoretical breakthroughs, algorithmic innovations, commercial applications, and ethical debates shaping the field.</p>
+  <section aria-labelledby="artifact-description-title">
+    <h3 id="artifact-description-title">Artifact Description</h3>
+    <p>The AI and ML Timeline artifact is a comprehensive visual representation of the historical progression of artificial intelligence and machine learning from the mid-20th century to the current era. This timeline captures the major milestones, including theoretical breakthroughs, algorithmic innovations, commercial applications, and ethical debates shaping the field.</p>
+    
+    <div class="timeline" aria-label="AI and Machine Learning Timeline">
+      <article class="timeline-event" tabindex="0">
+        <h4>Dartmouth Conference - 1956</h4>
+        <p>The Dartmouth Conference marked the birth of Artificial Intelligence as a formal academic discipline.</p>
+      </article>
+      <article class="timeline-event" tabindex="0">
+        <h4>Foundational Algorithms</h4>
+        <p>Development of perceptrons and backpropagation laid the groundwork for machine learning models.</p>
+      </article>
+      <article class="timeline-event" tabindex="0">
+        <h4>AI Winters</h4>
+        <p>Periods of reduced funding and interest slowed AI progress, followed by resurgence due to computational advances.</p>
+      </article>
+      <article class="timeline-event" tabindex="0">
+        <h4>Deep Learning Emergence</h4>
+        <p>The introduction of deep neural networks revolutionized AI capabilities in image, speech, and natural language processing.</p>
+      </article>
+      <article class="timeline-event" tabindex="0">
+        <h4>Generative AI Models</h4>
+        <p>Models like GPT and Claude advanced natural language understanding and generation, opening new possibilities.</p>
+      </article>
+      <article class="timeline-event" tabindex="0">
+        <h4>Ethical Considerations</h4>
+        <p>Issues around bias, transparency, and regulations such as GDPR became key topics in AI deployment.</p>
+      </article>
+    </div>
+  </section>
 
-  <h3>Key Highlights Included:</h3>
-  <ul>
-    <li>The Dartmouth Conference of 1956, marking AI’s birth as a formal discipline</li>
-    <li>Development of foundational algorithms such as perceptrons and backpropagation</li>
-    <li>AI winters and the resurgence due to computational advances</li>
-    <li>Introduction of deep learning architectures and neural networks</li>
-    <li>Emergence of generative AI models like GPT and Claude</li>
-    <li>Ethical considerations including bias, transparency, and data privacy regulations like GDPR</li>
-  </ul>
-  <p>I designed the timeline to be educational, engaging, and accessible, using color-coded eras and icons to differentiate technology waves and societal impact. Each segment is paired with brief explanations and important figures, enabling the viewer to quickly grasp AI’s evolution and its multifaceted impact.</p>
+  <section aria-labelledby="project-context-title">
+    <h3 id="project-context-title">Project Context</h3>
+    <p>This artifact was developed as part of Workshop 1’s assignments, aimed at deepening understanding of AI/ML history and contextualizing current technologies within a broader technological and social framework. While much focus in AI education is placed on models and coding, understanding the timeline equips learners and professionals with strategic insights necessary for innovation and responsible AI deployment.</p>
+  </section>
 
-  <h2>Project Context</h2>
-  <p>This artifact was developed as part of Workshop 1’s assignments, aimed at deepening understanding of AI/ML history and contextualizing current technologies within a broader technological and social framework. While much focus in AI education is placed on models and coding, understanding the timeline equips learners and professionals with strategic insights necessary for innovation and responsible AI deployment.</p>
+  <section aria-labelledby="skills-demonstrated-title">
+    <h3 id="skills-demonstrated-title">Skills Demonstrated</h3>
+    <ul>
+      <li><strong>Research & Data Collection:</strong> Sourced credible academic papers, industry reports, and timelines.</li>
+      <li><strong>Critical Analysis:</strong> Selected and prioritized key milestones relevant to AI growth.</li>
+      <li><strong>Visual Communication:</strong> Designed clear, engaging visuals using Canva and Google Slides.</li>
+      <li><strong>Written Communication:</strong> Developed concise, informative project descriptions.</li>
+      <li><strong>AI/ML Conceptual Mastery:</strong> Demonstrated knowledge of AI history, models, and ethics.</li>
+    </ul>
+  </section>
 
-  <h2>Skills Demonstrated</h2>
-  <table class="skills-table" aria-label="Skills Demonstrated">
-    <thead>
-      <tr>
-        <th>Skill</th>
-        <th>Description</th>
-        <th>Level</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Research &amp; Data Collection</td>
-        <td>Sourced credible academic papers, industry reports, and timelines</td>
-        <td>Advanced</td>
-      </tr>
-      <tr>
-        <td>Critical Analysis</td>
-        <td>Selected and prioritized key milestones relevant to AI growth</td>
-        <td>Advanced</td>
-      </tr>
-      <tr>
-        <td>Visual Communication</td>
-        <td>Designed clear, engaging visuals using Canva and Google Slides</td>
-        <td>Intermediate</td>
-      </tr>
-      <tr>
-        <td>Written Communication</td>
-        <td>Developed concise, informative project descriptions</td>
-        <td>Advanced</td>
-      </tr>
-      <tr>
-        <td>AI/ML Conceptual Mastery</td>
-        <td>Demonstrated knowledge of AI history, models, and ethics</td>
-        <td>Advanced</td>
-      </tr>
-    </tbody>
-  </table>
+  <section aria-labelledby="challenges-solutions-title">
+    <h3 id="challenges-solutions-title">Challenges and Solutions</h3>
+    <ul>
+      <li><strong>Challenge:</strong> Sheer volume of AI/ML developments made selecting relevant events difficult.</li>
+      <li><strong>Solution:</strong> Applied curation, focusing on breakthroughs that led to paradigm shifts or ethical/legal considerations.</li>
+      <li><strong>Challenge:</strong> Presenting technical content to diverse audiences.</li>
+      <li><strong>Solution:</strong> Used simple language, visual metaphors, icons, and color-coding for easy navigation.</li>
+    </ul>
+  </section>
 
-  <h2>Challenges and Solutions</h2>
+  <section aria-labelledby="reflection-title">
+    <h3 id="reflection-title">Reflection</h3>
+    <p>Creating this timeline was a deeply educational experience that enhanced my appreciation for AI’s complex evolution. I learned that AI development is not linear; it is shaped by technological advances, societal needs, funding cycles, and ethical debates.</p>
+    <p>This artifact complements my practical AI Lab project by emphasizing the importance of understanding context and history in technology adoption and innovation. It also strengthened my research and visual storytelling skills—both essential for effective communication in AI roles.</p>
+    <p>Importantly, this project pushed me to think critically about AI’s future. As new models emerge rapidly, professionals must remain aware of historical lessons, including past limitations and societal impacts, to guide ethical AI development.</p>
+    <p>This timeline is a tool I intend to expand and refine, using it as both a personal reference and an educational resource for others entering the AI field.</p>
+  </section>
 
-  <h3>Challenge 1:</h3>
-  <p>The sheer volume of developments in AI and ML made it difficult to decide which events to include without overwhelming the audience.</p>
-  <h3>Solution:</h3>
-  <p>I applied a curation approach, focusing on breakthroughs that led to paradigm shifts, popularized AI applications, or introduced ethical/legal considerations. This approach helped maintain clarity and relevance.</p>
+  <section aria-labelledby="audience-value-title">
+    <h3 id="audience-value-title">Audience Value</h3>
+    <ul>
+      <li><strong>Employers:</strong> Demonstrates strategic thinking and communication abilities alongside technical knowledge, highlighting readiness for AI literacy and leadership roles.</li>
+      <li><strong>Peers and Students:</strong> Provides a clear, accessible introduction to AI/ML history that supports learning and discussion.</li>
+      <li><strong>Instructors:</strong> Shows thorough research, synthesis of complex info, and skill in presenting technical content clearly.</li>
+    </ul>
+  </section>
 
-  <h3>Challenge 2:</h3>
-  <p>Presenting technical content to diverse audiences, including non-experts.</p>
-  <h3>Solution:</h3>
-  <p>I used simple language and visual metaphors, and avoided jargon. Icons and color-coding helped users navigate the timeline intuitively.</p>
+  <section aria-labelledby="portfolio-structure-title">
+    <h3 id="portfolio-structure-title">Portfolio Structure (Current)</h3>
+    <ol>
+      <li>About Me – Career goals and background</li>
+      <li>Artifact 1 – AI Lab: No-Code Chatbot Assistant Development</li>
+      <li>Artifact 2 – AI/ML Timeline Presentation (this artifact)</li>
+      <li>Skills Section – AI/ML tools, programming, data visualization, communication</li>
+    </ol>
+  </section>
 
-  <h2>Reflection</h2>
-  <p>Creating this timeline was a deeply educational experience that enhanced my appreciation for AI’s complex evolution. I learned that AI development is not linear; it is shaped by technological advances, societal needs, funding cycles, and ethical debates.</p>
-  <p>This artifact complements my practical AI Lab project by emphasizing the importance of understanding context and history in technology adoption and innovation. It also strengthened my research and visual storytelling skills—both essential for effective communication in AI roles.</p>
-  <p>Importantly, this project pushed me to think critically about AI’s future. As new models emerge rapidly, professionals must remain aware of historical lessons, including past limitations and societal impacts, to guide ethical AI development.</p>
-  <p>This timeline is a tool I intend to expand and refine, using it as both a personal reference and an educational resource for others entering the AI field.</p>
+  <section aria-labelledby="references-title">
+    <h3 id="references-title">References</h3>
+    <ul>
+      <li><a href="https://botpress.com/docs" target="_blank" rel="noopener">Botpress Documentation</a></li>
+      <li><a href="https://www.chatbase.co/" target="_blank" rel="noopener">Chatbase - Create AI Chatbots for Your Website</a></li>
+      <li><a href="https://cloud.google.com/dialogflow" target="_blank" rel="noopener">Dialogflow Conversational AI Platform - Google Cloud</a></li>
+      <li><a href="https://designthinking.ideo.com/" target="_blank" rel="noopener">IDEO Design Thinking</a></li>
+      <li><a href="https://openai.com/gpt-4" target="_blank" rel="noopener">OpenAI GPT-4 Technical Capabilities</a></li>
+      <li><a href="https://mizou.com" target="_blank" rel="noopener">Mizou AI Chatbot Builder</a></li>
+      <li><a href="https://www.anthropic.com/index/claude" target="_blank" rel="noopener">Anthropic Claude 3 Language Model</a></li>
+      <li><a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener">Google DeepMind Gemini 1.5 Technical Report</a></li>
+      <li><a href="https://gdpr.eu/" target="_blank" rel="noopener">EU General Data Protection Regulation (GDPR)</a></li>
+      <li><a href="https://replit.com" target="_blank" rel="noopener">Replit Collaborative Code Workspace</a></li>
+    </ul>
+  </section>
 
-  <h2>Audience Value</h2>
-  <ul>
-    <li><strong>Employers:</strong> Demonstrates my strategic thinking and communication abilities alongside technical knowledge, highlighting readiness for roles requiring AI literacy and leadership.</li>
-    <li><strong>Peers and Students:</strong> Provides a clear, accessible introduction to AI/ML history that can support learning and discussion.</li>
-    <li><strong>Instructors:</strong> Shows thoroughness in research, ability to synthesize complex info, and skill in presenting technical content clearly.</li>
-  </ul>
-
-  <h2>Portfolio Structure (Current)</h2>
-  <ul>
-    <li>About Me – Career goals and background</li>
-    <li>Artifact 1 – AI Lab: No-Code Chatbot Assistant Development</li>
-    <li>Artifact 2 – AI/ML Timeline Presentation (this artifact)</li>
-    <li>Skills Section – AI/ML tools, programming, data visualization, communication</li>
-  </ul>
-
-  <h2>References</h2>
-  <ul>
-    <li><a href="https://botpress.com/docs" target="_blank" rel="noopener" class="reference-link">Botpress Documentation</a></li>
-    <li><a href="https://www.chatbase.co/" target="_blank" rel="noopener" class="reference-link">Create AI Chatbots for Your Website (Chatbase)</a></li>
-    <li><a href="https://cloud.google.com/dialogflow" target="_blank" rel="noopener" class="reference-link">Dialogflow Conversational AI Platform</a></li>
-    <li><a href="https://designthinking.ideo.com/" target="_blank" rel="noopener" class="reference-link">IDEO Design Thinking</a></li>
-    <li><a href="https://openai.com/gpt-4" target="_blank" rel="noopener" class="reference-link">ChatGPT and GPT-4 Technical Capabilities Overview</a></li>
-    <li><a href="https://mizou.com" target="_blank" rel="noopener" class="reference-link">Mizou AI Chatbot Builder</a></li>
-    <li><a href="https://www.anthropic.com/index/claude" target="_blank" rel="noopener" class="reference-link">Claude 3 Language Model Overview</a></li>
-    <li><a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener" class="reference-link">Google DeepMind Gemini 1.5 Technical Report</a></li>
-    <li><a href="https://gdpr.eu/" target="_blank" rel="noopener" class="reference-link">General Data Protection Regulation (GDPR)</a></li>
-    <li><a href="https://replit.com" target="_blank" rel="noopener" class="reference-link">Replit Collaborative Code Workspace</a></li>
-  </ul>
-
-  <a href="index.html" class="btn-back" title="Back to Portfolio Home">← Back to Home</a>
+  <button class="btn" onclick="window.history.back()">← Back to Artifacts</button>
 
 </main>
 

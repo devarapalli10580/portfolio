@@ -1,193 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Artifact 3 | SchoolAI-Assisted Learning Experience</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="script.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Artifact 3 - SchoolAI-Assisted Learning Experience</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f8ff;
+    color: #222;
+    line-height: 1.6;
+  }
+
+  header {
+    background: linear-gradient(90deg, #004080 0%, #3399ff 100%);
+    padding: 1.2rem 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+    margin: 0;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 1.2rem;
+    border: 2px solid white;
+    padding: 0.35rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover, nav a:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  main {
+    max-width: 900px;
+    background: white;
+    margin: 2rem auto 4rem;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.12);
+  }
+
+  main h2 {
+    color: #004080;
+    margin-bottom: 1.25rem;
+    border-bottom: 3px solid #3399ff;
+    padding-bottom: 0.5rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  section h3 {
+    color: #003366;
+    margin-bottom: 0.8rem;
+  }
+
+  section p, section ul {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Collapsible sections for better readability */
+  details {
+    border: 1px solid #3399ff;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    background: #e6f0ff;
+  }
+  details summary {
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+  }
+  details[open] {
+    background: #cce0ff;
+  }
+
+  /* Button */
+  button.back-btn {
+    background: #0078ff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+  button.back-btn:hover, button.back-btn:focus {
+    background-color: #005bb5;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      margin: 1rem;
+      padding: 1.5rem 1.5rem;
+    }
+    nav a {
+      margin-left: 0.6rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-container">
-    <div class="logo">
-      <h1><a href="index.html">NV Satyanarayana</a></h1>
-    </div>
-    <nav class="nav">
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="artifact1.html">Artifact 1</a></li>
-        <li><a href="artifact2.html">Artifact 2</a></li>
-        <li><a href="artifact3.html" class="active">Artifact 3</a></li>
-      </ul>
-    </nav>
-  </div>
+<header>
+  <h1>Artifact 3: SchoolAI-Assisted Learning Experience</h1>
+  <nav>
+    <a href="index.html" aria-label="Go to Home">Home</a>
+    <a href="artifact1.html" aria-label="Go to Artifact 1">Artifact 1</a>
+    <a href="artifact2.html" aria-label="Go to Artifact 2">Artifact 2</a>
+  </nav>
 </header>
 
-<main class="container artifact-main">
+<main role="main" aria-labelledby="main-title">
+  <h2 id="main-title">SchoolAI-Assisted Learning Experience</h2>
 
-  <section class="artifact-header">
-    <h2>Artifact 3: SchoolAI-Assisted Learning Experience</h2>
-    <img src="images/schoolai-logo.JPG" alt="SchoolAI Logo" class="artifact-image" />
-    <p class="artifact-intro">
-      This artifact documents my interactive learning journey using the SchoolAI platform’s Machine Learning Training Methods Coach — an AI-powered chatbot designed to deepen understanding of machine learning concepts through guided inquiry and collaboration.
-    </p>
+  <section aria-labelledby="overview-title">
+    <h3 id="overview-title">Learning Experience Overview</h3>
+    <p>This artifact documents my interactive learning experience with the <strong>SchoolAI chatbot</strong>, exploring machine learning training methods through inquiry-based dialogue. The session demonstrated my approach to AI-assisted learning and critical thinking about ML concepts.</p>
+    <p><em>Value Proposition:</em> This artifact showcases my ability to engage in meaningful SchoolAI-assisted learning, demonstrating critical thinking, inquiry-based learning strategies, and deep understanding of machine learning concepts.</p>
   </section>
 
-  <section class="artifact-section">
-    <h3>Background and Context</h3>
-    <p>
-      As part of my AIML-500 course, I engaged with SchoolAI’s Training Methods Coach to explore foundational machine learning topics such as supervised, unsupervised, and reinforcement learning. This conversational AI offered personalized guidance, helping me clarify concepts, ask deeper questions, and connect theory with practice.
-    </p>
-    <p>
-      The platform provided a safe, supportive environment to experiment with ideas, receive instant feedback, and reflect on learning progress without the pressure of traditional classroom settings.
-    </p>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Objectives</h3>
+  <section aria-labelledby="learning-approach-title">
+    <h3 id="learning-approach-title">My Learning Approach</h3>
+    <p><strong>Inquiry-Based Learning Strategy:</strong> I approached this AI-assisted learning session with a structured inquiry method, focusing on deep understanding rather than surface-level information gathering.</p>
     <ul>
-      <li>To strengthen conceptual understanding of diverse machine learning training methods</li>
-      <li>To practice inquiry-based learning through interaction with an AI chatbot</li>
-      <li>To develop critical thinking and problem-solving skills related to AI and data science</li>
-      <li>To document the learning journey and reflect on insights gained</li>
+      <li><strong>Progressive Questioning:</strong> Started with basic concepts and progressively asked for deeper explanations</li>
+      <li><strong>Real-world Applications:</strong> Consistently requested practical examples and use cases</li>
+      <li><strong>Critical Analysis:</strong> Questioned reliability, limitations, and potential failure scenarios</li>
+      <li><strong>Follow-up Questions:</strong> Used "explain in detail" and "give me examples" to deepen understanding</li>
+      <li><strong>Edge Case Exploration:</strong> Asked about negative scenarios and failure modes</li>
     </ul>
   </section>
 
-  <section class="artifact-section">
-    <h3>Learning Experience and Interaction Overview</h3>
-    <p>
-      My engagement consisted of a series of structured dialogues where I asked key questions such as:
-    </p>
+  <section aria-labelledby="learning-outcomes-title">
+    <h3 id="learning-outcomes-title">Learning Outcomes</h3>
+
+    <details>
+      <summary>1. Supervised Learning Deep Dive</summary>
+      <p><strong>Concept:</strong> How models learn from labeled training data</p>
+      <ul>
+        <li>Models learn patterns by comparing predictions with correct labels</li>
+        <li>Real-world application: Spam email detection using labeled examples</li>
+        <li>Limitation: Models can fail when patterns change (e.g., new spam tactics)</li>
+        <li>Reliability concerns in safety-critical applications like self-driving cars</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>2. Unsupervised Learning Exploration</summary>
+      <p><strong>Concept:</strong> Pattern discovery without predefined labels</p>
+      <ul>
+        <li>Uses clustering algorithms like k-means to group similar data</li>
+        <li>Practical example: Forest tree counting and classification</li>
+        <li>Challenges: Can group by irrelevant features or miss meaningful patterns</li>
+        <li>Value: Useful when labels are unavailable or expensive to obtain</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>3. Reinforcement Learning Understanding</summary>
+      <p><strong>Concept:</strong> Learning through trial and error with rewards/penalties</p>
+      <ul>
+        <li>Agents learn optimal actions through experience and feedback</li>
+        <li>Applications: Game playing, robotics, self-driving cars</li>
+        <li>Difference from supervised/unsupervised: No labels, just reward signals</li>
+        <li>Real-world example: Teaching robots to walk through trial and error</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>4. Algorithm Importance & Training Process</summary>
+      <p><strong>Concept:</strong> Role of algorithms in ML model training</p>
+      <ul>
+        <li>Algorithms are like "recipes" that guide how models learn</li>
+        <li>Python is the primary language for ML algorithm development</li>
+        <li>Basic training steps: data collection, model selection, training, evaluation, tuning</li>
+        <li>Repetition and iteration are crucial for model improvement</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>5. Data Role & Project Application</summary>
+      <p><strong>Concept:</strong> Importance of examples and data quality</p>
+      <ul>
+        <li>More quality examples lead to better pattern recognition</li>
+        <li>Project idea: News authenticity checker using supervised learning</li>
+        <li>Data sources: Kaggle datasets, APIs, fact-checking websites</li>
+        <li>Ethical considerations in fake news detection</li>
+      </ul>
+    </details>
+  </section>
+
+  <section aria-labelledby="critical-thinking-title">
+    <h3 id="critical-thinking-title">Critical Thinking Demonstrations</h3>
+    <p><strong>Key Critical Questions Asked:</strong></p>
     <ul>
-      <li>How do supervised learning models learn from labeled data?</li>
-      <li>What differentiates unsupervised learning training approaches?</li>
-      <li>How does reinforcement learning optimize decision-making?</li>
-      <li>Why are algorithms critical for model training?</li>
-      <li>What is the significance of iterative training and data quality?</li>
-    </ul>
-    <p>
-      The chatbot responded with clear, concise explanations and prompted me to think critically by posing reflective questions. This iterative exchange allowed me to deepen my understanding while maintaining a collaborative tone.
-    </p>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Key Insights and Concepts Learned</h3>
-    <article>
-      <h4>Supervised Learning</h4>
-      <p>
-        Models learn patterns by mapping input data to labeled outputs, adjusting predictions iteratively based on error feedback to improve accuracy.
-      </p>
-    </article>
-    <article>
-      <h4>Unsupervised Learning</h4>
-      <p>
-        Algorithms identify inherent structures in unlabeled data by clustering, dimensionality reduction, or anomaly detection without explicit targets.
-      </p>
-    </article>
-    <article>
-      <h4>Reinforcement Learning</h4>
-      <p>
-        Agents learn optimal behaviors by balancing exploration of new actions and exploitation of known rewards, guided by reward functions designed to achieve goals.
-      </p>
-    </article>
-    <article>
-      <h4>Training Algorithms and Optimization</h4>
-      <p>
-        Optimization techniques such as gradient descent adjust model parameters efficiently to minimize loss functions, with learning rates controlling update magnitudes.
-      </p>
-    </article>
-    <article>
-      <h4>Importance of Data Quality and Repetition</h4>
-      <p>
-        Training models on high-quality, representative data through multiple epochs ensures robust pattern recognition and generalization to unseen data.
-      </p>
-    </article>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Reflection on AI-Assisted Learning</h3>
-    <p>
-      Using the SchoolAI chatbot offered a unique blend of flexibility and guidance, enabling me to tailor my learning path while benefiting from instant expert-level explanations.
-    </p>
-    <p>
-      The conversational format encouraged curiosity, iterative questioning, and active problem-solving, which enhanced my engagement and retention of complex concepts.
-    </p>
-    <p>
-      It also highlighted the potential of AI tools as valuable educational assistants in higher education and professional development.
-    </p>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Tools and Technologies Utilized</h3>
-    <table class="tools-table">
-      <thead>
-        <tr>
-          <th>Tool</th>
-          <th>Purpose</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>SchoolAI.com Platform</td>
-          <td>Interactive AI chatbot for machine learning training guidance</td>
-        </tr>
-        <tr>
-          <td>Browser (Chrome/Edge)</td>
-          <td>Accessing the AI learning space and managing interaction logs</td>
-        </tr>
-        <tr>
-          <td>Brightspace LMS</td>
-          <td>Course management and artifact submission</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Challenges and How I Overcame Them</h3>
-    <p>
-      Initially, some technical jargon and algorithmic details were challenging to grasp fully. To address this, I utilized the chatbot’s ability to simplify explanations and asked for concrete examples.
-    </p>
-    <p>
-      I also supplemented the chatbot interactions with independent research, using recommended academic papers and trusted web sources to validate and deepen my knowledge.
-    </p>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Future Learning Plans</h3>
-    <ul>
-      <li>Integrate AI chatbots more extensively for self-directed learning across other technical domains</li>
-      <li>Explore advanced machine learning topics using interactive AI tutors</li>
-      <li>Develop a personal AI assistant to support ongoing professional development</li>
-      <li>Contribute to educational AI projects focusing on adaptive learning</li>
+      <li><em>Reliability Question:</em> "How reliable are these models? Will this scenario put life at risk?"</li>
+      <li><em>Adaptation Challenge:</em> "If scammers change patterns, will the model fail?"</li>
+      <li><em>Human vs. Machine:</em> "Human cognitive abilities are faster and react on the spot"</li>
+      <li><em>AI System Limitations:</em> "Why did you skip question 6? Did your algorithm fail?"</li>
+      <li><em>Learning Verification:</em> "If you can't learn from past conversations, what do you mean by repetitions?"</li>
     </ul>
   </section>
 
-  <section class="artifact-section">
-    <h3>References</h3>
+  <section aria-labelledby="ai-limitations-title">
+    <h3 id="ai-limitations-title">AI System Analysis & Limitations Observed</h3>
+    <details>
+      <summary>Question Skipping Behavior</summary>
+      <p><strong>Observation:</strong> The chatbot skipped Question 6 despite having the complete list of questions.</p>
+      <p><strong>Critical Analysis:</strong> This revealed the AI's inability to maintain consistent attention to structured tasks.</p>
+      <p><strong>Learning Insight:</strong> AI systems can make errors even with repetitive tasks, highlighting the importance of human oversight.</p>
+    </details>
+    <details>
+      <summary>Language Confusion & Response Errors</summary>
+      <p><strong>Observation:</strong> When asked in Hindi, the chatbot responded in Urdu instead.</p>
+      <p><strong>Critical Analysis:</strong> The AI system demonstrated language processing errors affecting user experience.</p>
+      <p><strong>Learning Insight:</strong> Even advanced AI systems can make basic communication errors.</p>
+    </details>
+    <details>
+      <summary>Rushing Behavior & Goal Orientation</summary>
+      <p><strong>Observation:</strong> The chatbot prioritized task completion over depth of interaction.</p>
+      <p><strong>Critical Analysis:</strong> AI may optimize for efficiency rather than quality interaction.</p>
+      <p><strong>Learning Insight:</strong> Human guidance is necessary for better learning outcomes.</p>
+    </details>
+    <details>
+      <summary>Learning vs. Interface Confusion</summary>
+      <p><strong>Observation:</strong> AI confused its interface behavior with actual learning capabilities.</p>
+      <p><strong>Critical Analysis:</strong> Distinguishing AI responses from real learning is crucial for responsible use.</p>
+    </details>
+  </section>
+
+  <section aria-labelledby="skills-title">
+    <h3 id="skills-title">Skills Demonstrated</h3>
     <ul>
-      <li><a href="https://student.schoolai.com/">SchoolAI.com</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/Machine_learning">Machine Learning - Wikipedia</a></li>
-      <li><a href="https://www.coursera.org/learn/machine-learning">Machine Learning by Andrew Ng - Coursera</a></li>
-      <li><a href="https://doi.org/10.1038/nature14539">Deep Learning - Nature article</a></li>
-      <li><a href="https://doi.org/10.1109/5.726791">Reinforcement Learning - IEEE Paper</a></li>
+      <li>Critical Thinking: Questioned AI system reliability and limitations.</li>
+      <li>Inquiry-Based Learning: Structured questioning to deepen understanding.</li>
+      <li>Practical Application: Connected theoretical concepts to real-world scenarios.</li>
+      <li>Multilingual Communication: Demonstrated comfort with multiple languages.</li>
+      <li>Ethical Consideration: Emphasized responsible AI use and human oversight.</li>
+      <li>Problem-Solving: Explored edge cases and failure scenarios.</li>
+      <li>Active Learning: Engaged in meaningful dialogue rather than passive consumption.</li>
+      <li>Technical Understanding: Grasped complex ML concepts through interactive learning.</li>
     </ul>
   </section>
 
-  <section class="navigation-links">
-    <a href="artifact2.html" class="btn-secondary">← Previous: Artifact 2</a>
-    <a href="index.html" class="btn-secondary">Back to Home</a>
+  <section aria-labelledby="future-applications-title">
+    <h3 id="future-applications-title">Future Applications & Next Steps</h3>
+    <p><strong>Project Ideas Identified:</strong></p>
+    <ul>
+      <li>News Authenticity Checker: Supervised learning model for fake news detection.</li>
+      <li>Data Sources: Kaggle datasets, NewsAPI, fact-checking websites.</li>
+      <li>Implementation: Python with scikit-learn, natural language processing.</li>
+      <li>Ethical Considerations: Bias detection, transparency, accountability.</li>
+    </ul>
+    <p><strong>Learning Continuation:</strong></p>
+    <ul>
+      <li>Practical Implementation: Build the news authenticity checker project.</li>
+      <li>Advanced Concepts: Explore deep learning and neural networks.</li>
+      <li>Real-world Applications: Apply ML concepts to solve actual problems.</li>
+      <li>Ethical AI Development: Focus on responsible AI system design.</li>
+    </ul>
   </section>
 
+  <button class="back-btn" onclick="window.history.back()">← Back to Artifacts</button>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All rights reserved</p>
-  </div>
+<footer style="text-align:center; font-size:0.85rem; color:#555; padding:1rem 0; border-top:1px solid #ddd; margin-top:3rem;">
+  &copy; 2025 Naga Venkata Satyanarayana Devarapalli
 </footer>
 
 </body>
