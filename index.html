@@ -1,434 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Naga Venkata Satyanarayana Devarapalli | AI & Data Analytics Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-/* ===================
-GLOBAL STYLES
-=================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  background: #f8f9fa;
-  color: #333;
-  transition: background 0.4s, color 0.4s;
-}
-.dark-mode {
-  background: #121212;
-  color: #f5f5f5;
-}
-
-/* ===================
-HEADER
-=================== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: #0078d7;
-  color: #fff;
-  z-index: 1000;
-}
-header h1 {
-  font-size: 22px;
-}
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: 500;
-}
-nav a:hover {
-  border-bottom: 2px solid #fff;
-}
-.dark-toggle {
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/* ===================
-HERO SECTION
-=================== */
-.hero {
-  background: linear-gradient(120deg, #0078d7, #00c6ff);
-  color: #fff;
-  text-align: center;
-  padding: 150px 20px 100px;
-}
-.hero img {
-  width: 160px;
-  border-radius: 50%;
-  margin: 20px 0;
-  border: 4px solid #fff;
-}
-.hero h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-.hero p {
-  font-size: 18px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.hero .cta {
-  margin-top: 20px;
-}
-.hero .btn {
-  background: #fff;
-  color: #0078d7;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.hero .btn:hover {
-  background: #005ea6;
-  color: #fff;
-}
-
-/* ===================
-ABOUT SECTION
-=================== */
-section {
-  padding: 80px 50px;
-}
-.about h2 {
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-.about p {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-/* ===================
-SKILLS SECTION
-=================== */
-.skills h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.skill-bars {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.skill {
-  margin-bottom: 15px;
-}
-.skill-name {
-  display: flex;
-  justify-content: space-between;
-}
-.progress {
-  background: #ddd;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.progress span {
-  display: block;
-  height: 10px;
-  background: #0078d7;
-  width: 0%;
-  transition: width 2s ease;
-}
-
-/* ===================
-ARTIFACTS
-=================== */
-.artifacts h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.artifact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-.artifact-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  text-align: center;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-.artifact-card:hover {
-  transform: translateY(-10px);
-}
-.artifact-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.artifact-card h3 {
-  margin: 15px 0;
-}
-.artifact-card p {
-  padding: 0 10px;
-  font-size: 15px;
-}
-.artifact-card a {
-  display: inline-block;
-  margin: 15px;
-  padding: 10px 15px;
-  background: #0078d7;
-  color: #fff;
-  border-radius: 20px;
-  text-decoration: none;
-}
-.artifact-card a:hover {
-  background: #005ea6;
-}
-
-/* ===================
-EDUCATION
-=================== */
-.education {
-  background: #f0f8ff;
-}
-.timeline {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background: #0078d7;
-  height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.timeline-item {
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  position: relative;
-  width: 45%;
-  margin: 20px 0;
-}
-.timeline-item:nth-child(odd) {
-  left: 0;
-}
-.timeline-item:nth-child(even) {
-  left: 55%;
-}
-.timeline-item h4 {
-  color: #0078d7;
-}
-
-/* ===================
-CONTACT
-=================== */
-.contact h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-form input, form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-form button {
-  background: #0078d7;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-form button:hover {
-  background: #005ea6;
-}
-
-/* ===================
-FOOTER
-=================== */
-footer {
-  background: #0078d7;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-footer .social i {
-  margin: 0 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-footer .social i:hover {
-  color: #00c6ff;
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Naga Venkata Satyanarayana Devarapalli</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-<header>
-  <h1>My Portfolio</h1>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#artifacts">Artifacts</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
-</header>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Naga Venkata Satyanarayana Devarapalli Logo" />
+                <h1>NV Satyanarayana</h1>
+            </div>
+            <nav class="main-nav" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#bio" class="nav-link">About Me</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#artifacts" class="nav-link">Artifacts</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">🌙</button>
+        </div>
+    </header>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <img src="https://via.placeholder.com/160" alt="Profile Photo">
-  <h2>Hello, I'm Naga Venkata Satyanarayana</h2>
-  <p>Graduate Student | AI & Data Analytics | Passionate about leveraging machine learning and data-driven insights to solve complex business problems.</p>
-  <div class="cta">
-    <a href="#artifacts" class="btn">View My Work</a>
-    <a href="#contact" class="btn">Contact Me</a>
-  </div>
-</section>
+    <!-- MAIN -->
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="section home-section" tabindex="-1">
+            <div class="container">
+                <div class="intro-text">
+                    <h2>Welcome to My Professional Portfolio</h2>
+                    <p>
+                        Hi! I'm <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a passionate
+                        <em>AI & Data Analytics Graduate Student</em> at Indiana Wesleyan University with over
+                        12 years of experience in data analytics, business intelligence, and AI/ML development.
+                    </p>
+                    <p>
+                        This portfolio showcases my journey, projects, skills, and artifacts reflecting my
+                        expertise in AI, machine learning, data visualization, and full-stack development.
+                    </p>
+                    <a href="#contact" class="btn-primary">Get in Touch</a>
+                </div>
+                <div class="intro-image">
+                    <img src="images/profile-photo.jpg" alt="Naga Venkata Satyanarayana Devarapalli" />
+                </div>
+            </div>
+        </section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <h2>About Me</h2>
-  <p>
-    I am currently pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of professional experience in Data Analytics, Business Intelligence, and AI/ML, I specialize in creating practical, AI-driven solutions that make a real-world impact. My portfolio highlights diverse projects, from AI-powered chatbots to data visualization dashboards, demonstrating both technical proficiency and innovative thinking.
-  </p>
-</section>
+        <!-- ABOUT ME / BIO SECTION -->
+        <section id="bio" class="section bio-section" tabindex="-1" aria-label="About Me">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="bio-content">
+                    <div class="bio-text">
+                        <p>
+                            I specialize in designing data-driven solutions and developing AI models that
+                            empower businesses to make insightful decisions. My expertise spans Power BI, SQL,
+                            Python, and cloud platforms. I am driven to bridge the gap between complex data and
+                            actionable insights through innovative technology.
+                        </p>
+                        <p>
+                            Throughout my career, I have led projects involving large datasets, predictive
+                            modeling, and interactive visualizations. I am continually expanding my skills and
+                            exploring new AI and machine learning techniques to stay ahead in this fast-evolving
+                            field.
+                        </p>
+                        <p>
+                            When not coding or analyzing data, I enjoy mentoring peers, reading about AI ethics,
+                            and experimenting with emerging AI tools.
+                        </p>
+                    </div>
+                    <div class="bio-image">
+                        <img src="images/bio-photo.jpg" alt="Naga working on AI project" />
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- SKILLS -->
-<section class="skills" id="skills">
-  <h2>Technical Skills</h2>
-  <div class="skill-bars">
-    <div class="skill">
-      <div class="skill-name"><span>Python</span><span>90%</span></div>
-      <div class="progress"><span style="width:90%"></span></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name"><span>Machine Learning</span><span>85%</span></div>
-      <div class="progress"><span style="width:85%"></span></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name"><span>Power BI</span><span>95%</span></div>
-      <div class="progress"><span style="width:95%"></span></div>
-    </div>
-  </div>
-</section>
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section skills-section" tabindex="-1" aria-label="Skills and Expertise">
+            <div class="container">
+                <h2>Skills & Expertise</h2>
+                <p>
+                    My diverse skill set combines technical proficiency with strategic thinking. Key
+                    areas include:
+                </p>
+                <ul class="skills-list">
+                    <li><strong>Programming & Data Tools:</strong> Python, SQL, R, Power BI, Tableau</li>
+                    <li><strong>AI & Machine Learning:</strong> Supervised & Unsupervised Learning, NLP, Deep Learning, TensorFlow</li>
+                    <li><strong>Data Visualization:</strong> Power BI dashboards, DAX, M Query, Matplotlib, Seaborn</li>
+                    <li><strong>Cloud Platforms:</strong> Azure, AWS, Vercel Deployment</li>
+                    <li><strong>Other Tools:</strong> Git, Docker, Jupyter Notebooks, REST APIs</li>
+                </ul>
 
-<!-- ARTIFACTS -->
-<section class="artifacts" id="artifacts">
-  <h2>My Artifacts</h2>
-  <div class="artifact-grid">
-    <div class="artifact-card">
-      <img src="images/chatbot-logo.JPG" alt="Chatbot">
-      <h3>Artifact 1</h3>
-      <p>College Assistant Chatbot using AI/ML integrated with OpenRouter API.</p>
-      <a href="artifact1.html">View Details</a>
-    </div>
-    <div class="artifact-card">
-      <img src="images/timeline-logo.JPG" alt="Timeline">
-      <h3>Artifact 2</h3>
-      <p>AI & ML Evolution Timeline – Interactive visual representation.</p>
-      <a href="artifact2.html">View Details</a>
-    </div>
-    <div class="artifact-card">
-      <img src="images/schoolai-logo.JPG" alt="SchoolAI">
-      <h3>Artifact 3</h3>
-      <p>SchoolAI Assisted Learning Experience for Machine Learning Training Methods.</p>
-      <a href="artifact3.html">View Details</a>
-    </div>
-  </div>
-</section>
+                <div class="skills-graphs">
+                    <div class="skill-graph" aria-label="Power BI skill level">
+                        <h3>Power BI</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-graph" aria-label="Python skill level">
+                        <h3>Python</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-graph" aria-label="SQL skill level">
+                        <h3>SQL</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-graph" aria-label="Machine Learning skill level">
+                        <h3>Machine Learning</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- EDUCATION -->
-<section class="education" id="education">
-  <h2>Education</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h4>MS in Artificial Intelligence – Data Analytics</h4>
-      <p>Indiana Wesleyan University (2024 - Present)</p>
-    </div>
-    <div class="timeline-item">
-      <h4>Master of Business Administration</h4>
-      <p>Osmania University, Hyderabad (2010)</p>
-    </div>
-  </div>
-</section>
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section projects-section" tabindex="-1" aria-label="Projects">
+            <div class="container">
+                <h2>Selected Projects</h2>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2>Contact Me</h2>
-  <form onsubmit="return validateForm()">
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="email" id="email" placeholder="Your Email">
-    <textarea id="message" rows="5" placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+                <article class="project-card">
+                    <img src="images/project-eco-coach.jpg" alt="Eco-Coach Chatbot Project Screenshot" />
+                    <div class="project-info">
+                        <h3>Eco-Coach Chatbot Project</h3>
+                        <p>
+                            A comprehensive AI-powered chatbot developed using Next.js and OpenRouter.ai API,
+                            designed to assist users in environmental awareness and promote sustainability.
+                        </p>
+                        <p><strong>Technologies:</strong> React, Next.js, Node.js, OpenRouter.ai, Vercel</p>
+                        <a href="artifact1.html" class="btn-secondary">View Artifact Details</a>
+                    </div>
+                </article>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-  <div class="social">
-    <i class="fab fa-linkedin"></i>
-    <i class="fab fa-github"></i>
-    <i class="fab fa-twitter"></i>
-  </div>
-</footer>
+                <article class="project-card">
+                    <img src="images/project-ai-timeline.jpg" alt="AI/ML Timeline Presentation" />
+                    <div class="project-info">
+                        <h3>AI/ML Timeline Presentation</h3>
+                        <p>
+                            An interactive timeline showcasing the evolution of Artificial Intelligence and Machine Learning from 1950s to today, using web-based presentation tools.
+                        </p>
+                        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Google Slides</p>
+                        <a href="artifact2.html" class="btn-secondary">View Artifact Details</a>
+                    </div>
+                </article>
 
-<script>
-// Dark Mode Toggle
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-}
+                <article class="project-card">
+                    <img src="images/project-schoolai.jpg" alt="SchoolAI-Assisted Learning Experience" />
+                    <div class="project-info">
+                        <h3>SchoolAI-Assisted Learning Experience</h3>
+                        <p>
+                            Interactive sessions with an AI chatbot focused on understanding Machine Learning training methods, emphasizing inquiry-based learning and critical thinking.
+                        </p>
+                        <p><strong>Technologies:</strong> SchoolAI Chatbot, AI Interaction</p>
+                        <a href="artifact3.html" class="btn-secondary">View Artifact Details</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-// Smooth Scroll on Nav Links
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
+        <!-- ARTIFACTS SECTION -->
+        <section id="artifacts" class="section artifacts-section" tabindex="-1" aria-label="Artifacts">
+            <div class="container">
+                <h2>My Artifacts</h2>
+                <div class="artifact-cards">
+                    <div class="artifact-card">
+                        <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot Logo" />
+                        <h3>Artifact 1</h3>
+                        <p><strong>Eco-Coach Chatbot Project</strong></p>
+                        <a href="artifact1.html" class="btn-primary">View Details</a>
+                    </div>
+                    <div class="artifact-card">
+                        <img src="images/timeline-logo.JPG" alt="AI/ML Timeline Logo" />
+                        <h3>Artifact 2</h3>
+                        <p><strong>AI/ML Timeline Presentation</strong></p>
+                        <a href="artifact2.html" class="btn-primary">View Details</a>
+                    </div>
+                    <div class="artifact-card">
+                        <img src="images/schoolai-logo.JPG" alt="SchoolAI-Assisted Learning Logo" />
+                        <h3>Artifact 3</h3>
+                        <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
+                        <a href="artifact3.html" class="btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-// Form Validation
-function validateForm() {
-  let name = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let message = document.getElementById('message').value;
-  if (name === '' || email === '' || message === '') {
-    alert('Please fill all fields.');
-    return false;
-  }
-  alert('Message Sent Successfully!');
-  return true;
-}
-</script>
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section" tabindex="-1" aria-label="Contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>
+                    I welcome you to reach out for project collaboration, consulting, or just to say hello.
+                    You can email me or connect with me on professional networks.
+                </p>
+                <form id="contactForm" aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your full name"
+                            required
+                            aria-required="true"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your email"
+                            required
+                            aria-required="true"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message here"
+                            rows="5"
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+            <p>
+                Connect with me:
+                <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                <a href="mailto:tone_satya@yahoo.co.in">Email</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
