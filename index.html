@@ -1,116 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Naga Venkata Satyanarayana Devarapalli | AI & Data Analytics Portfolio</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
-<!-- Link to external CSS -->
-<link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naga Venkata Satyanarayana Devarapalli | AI & Data Analytics Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav-container">
+            <h1 class="logo">Naga Venkata Satyanarayana Devarapalli</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#artifacts">Artifacts</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
+        </div>
+    </header>
 
-<header role="banner" aria-label="Primary navigation">
-  <div class="nav-container container">
-    <div class="logo" tabindex="0" role="link" aria-label="Homepage link, Naga Venkata Satyanarayana Devarapalli Portfolio">NV Satyanarayana</div>
-    <nav role="navigation" aria-label="Main navigation">
-      <a href="#home" tabindex="0">Home</a>
-      <a href="#about" tabindex="0">About Me</a>
-      <a href="#artifacts" tabindex="0">Artifacts</a>
-      <a href="#contact" tabindex="0">Contact</a>
-    </nav>
-  </div>
-</header>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="container hero-content">
+            <h2>Hello, I’m <span>Naga Venkata Satyanarayana Devarapalli</span></h2>
+            <p>AI & Data Analytics Professional | Power BI Expert | Machine Learning Enthusiast</p>
+            <a href="#contact" class="btn-primary">Hire Me</a>
+            <a href="#artifacts" class="btn-secondary">View My Work</a>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section id="home" class="hero" tabindex="-1" aria-label="Introduction">
-  <div class="container">
-    <h1>Hello! I'm <span aria-label="Name" role="text">Naga Venkata Satyanarayana Devarapalli</span></h1>
-    <p>
-      I am a passionate AI & Data Analytics graduate student at Indiana Wesleyan University,
-      with over 12 years of professional experience in data analytics, business intelligence,
-      and performance testing. My mission is to use AI and data-driven insights to solve complex problems and innovate.
-    </p>
-    <button class="btn-cta" onclick="scrollToSection('about')" aria-label="Learn more about me">Learn More</button>
-  </div>
-</section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate AI and Data Analytics graduate student at Indiana Wesleyan University with over 12 years of experience in business intelligence, 
+                data visualization, and AI-driven solutions. My expertise spans Power BI, SQL, Python, and machine learning model development.
+            </p>
+            <p>
+                My goal is to combine advanced analytics with business strategy to create impactful data-driven solutions that enable organizations to make informed decisions.
+            </p>
+            <div class="about-grid">
+                <div>
+                    <h3>Professional Highlights</h3>
+                    <ul>
+                        <li>12+ years in BI & Data Analytics across healthcare, finance, and technology domains.</li>
+                        <li>Developed AI-driven solutions to optimize business workflows and improve decision-making.</li>
+                        <li>Certified in Power BI, SQL Server, and Data Visualization Techniques.</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ABOUT ME -->
-<section id="about" class="about-me" tabindex="-1" aria-label="About me section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>
-      With expertise in Power BI, SQL, Python, and AI/ML, I design data solutions, develop AI models, and create insightful visualizations.
-      I strive to bridge the gap between data and decision-making to drive meaningful business outcomes.
-    </p>
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>AI & Machine Learning</h3>
+                    <p>Supervised & Unsupervised Learning, Neural Networks, Scikit-learn, TensorFlow</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Data Visualization</h3>
+                    <p>Power BI, Tableau, D3.js for interactive dashboards and analytics</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <p>Python, R, SQL, JavaScript for advanced analytics and automation</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Database & Cloud</h3>
+                    <p>SQL Server, MySQL, Azure, AWS for scalable data storage and processing</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="about-cards" aria-live="polite">
-      <article class="about-card" tabindex="0" role="region" aria-label="Skill: Data Analytics">
-        <img src="https://img.icons8.com/ios-filled/64/FB923C/data-analytics.png" alt="Data Analytics icon" />
-        <h3>Data Analytics</h3>
-        <p>Expert in analyzing and interpreting complex data sets to inform business strategies.</p>
-      </article>
-      <article class="about-card" tabindex="0" role="region" aria-label="Skill: AI & Machine Learning">
-        <img src="https://img.icons8.com/ios-filled/64/FB923C/artificial-intelligence.png" alt="Artificial Intelligence icon" />
-        <h3>AI & Machine Learning</h3>
-        <p>Hands-on experience developing AI/ML models that solve real-world problems.</p>
-      </article>
-      <article class="about-card" tabindex="0" role="region" aria-label="Skill: Data Visualization">
-        <img src="https://img.icons8.com/ios-filled/64/FB923C/combo-chart.png" alt="Data Visualization icon" />
-        <h3>Data Visualization</h3>
-        <p>Skilled in Power BI and other tools to create meaningful, interactive dashboards.</p>
-      </article>
-    </div>
-  </div>
-</section>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>What I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>AI Model Development</h3>
+                    <p>End-to-end AI solutions including predictive modeling and machine learning pipelines.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Business Intelligence Dashboards</h3>
+                    <p>Interactive dashboards using Power BI for business performance tracking and reporting.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Data Strategy Consulting</h3>
+                    <p>Helping organizations leverage data analytics for strategic decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ARTIFACTS -->
-<section id="artifacts" class="artifacts" tabindex="-1" aria-label="Portfolio artifacts">
-  <div class="container">
-    <h2>My Artifacts</h2>
-    <div class="artifact-cards" aria-live="polite">
-      <div class="artifact-card" tabindex="0" role="article" aria-label="Artifact 1: Eco-Coach Chatbot Project">
-        <img src="images/chatbot-logo.jpg" alt="Eco-Coach Chatbot Project logo" />
-        <h3>Artifact 1</h3>
-        <p><strong>Eco-Coach Chatbot Project</strong></p>
-        <a href="artifact1.html" class="btn-primary" aria-label="View details of Eco-Coach Chatbot Project">View Details</a>
-      </div>
-      <div class="artifact-card" tabindex="0" role="article" aria-label="Artifact 2: AI/ML Timeline Presentation">
-        <img src="images/timeline-logo.jpg" alt="AI/ML Timeline Presentation logo" />
-        <h3>Artifact 2</h3>
-        <p><strong>AI/ML Timeline Presentation</strong></p>
-        <a href="artifact2.html" class="btn-primary" aria-label="View details of AI/ML Timeline Presentation">View Details</a>
-      </div>
-      <div class="artifact-card" tabindex="0" role="article" aria-label="Artifact 3: SchoolAI-Assisted Learning Experience">
-        <img src="images/schoolai-logo.jpg" alt="SchoolAI-Assisted Learning Experience logo" />
-        <h3>Artifact 3</h3>
-        <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
-        <a href="artifact3.html" class="btn-primary" aria-label="View details of SchoolAI-Assisted Learning Experience">View Details</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- PORTFOLIO / ARTIFACTS -->
+    <section id="artifacts" class="artifacts-section">
+        <div class="container">
+            <h2>My Artifacts</h2>
+            <div class="artifact-cards">
+                <div class="artifact-card">
+                    <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot Logo" />
+                    <h3>Artifact 1</h3>
+                    <p><strong>Eco-Coach Chatbot Project</strong></p>
+                    <a href="artifact1.html" class="btn-primary">View Details</a>
+                </div>
+                <div class="artifact-card">
+                    <img src="images/timeline-logo.JPG" alt="AI/ML Timeline Logo" />
+                    <h3>Artifact 2</h3>
+                    <p><strong>AI/ML Timeline Presentation</strong></p>
+                    <a href="artifact2.html" class="btn-primary">View Details</a>
+                </div>
+                <div class="artifact-card">
+                    <img src="images/schoolai-logo.JPG" alt="SchoolAI Logo" />
+                    <h3>Artifact 3</h3>
+                    <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
+                    <a href="artifact3.html" class="btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" tabindex="-1" aria-label="Contact section">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out for collaboration, questions, or consulting opportunities!</p>
-    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
-  </div>
-</section>
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <ul>
+                <li><strong>Data Analytics Consultant</strong> – Developed BI dashboards, implemented AI models for forecasting.</li>
+                <li><strong>Business Intelligence Developer</strong> – Designed enterprise-level reports and predictive insights.</li>
+                <li><strong>Machine Learning Enthusiast</strong> – Delivered prototypes using supervised and unsupervised models.</li>
+            </ul>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-</footer>
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2>Education</h2>
+            <p>Master of Science in Artificial Intelligence – Data Analytics, Indiana Wesleyan University</p>
+            <p>Certified Power BI Professional | Advanced SQL Developer | AI/ML Enthusiast</p>
+        </div>
+    </section>
 
-<!-- Link to external JavaScript -->
-<script src="scripts.js"></script>
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What People Say</h2>
+            <div class="testimonial-card">
+                <p>"Naga delivered exceptional dashboards and insights that transformed our business strategy."</p>
+                <h4>- Client Testimonial</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"His expertise in machine learning and AI concepts helped our team build innovative solutions."</p>
+                <h4>- Team Member</h4>
+            </div>
+        </div>
+    </section>
 
+    <!-- CALL TO ACTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Let's Work Together!</h2>
+            <p>Looking for someone to build data-driven AI solutions? Let’s collaborate!</p>
+            <a href="#contact" class="btn-primary">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
