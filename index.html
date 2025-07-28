@@ -25,7 +25,7 @@
       display: block;
     }
     a {
-      color: #0077cc;
+      color: #2563eb; /* blue link */
       text-decoration: none;
     }
     a:hover,
@@ -42,10 +42,10 @@
 
     /* Header */
     header {
-      background: linear-gradient(90deg, #1e3a8a, #059669); /* blue only */
+      background: linear-gradient(90deg, #1e3a8a, #2563eb); /* shades of blue */
       color: white;
       padding: 1.3rem 0;
-      box-shadow: 0 3px 10px rgba(30, 58, 138, 0.7);
+      box-shadow: 0 3px 10px rgba(37, 99, 235, 0.7);
       position: sticky;
       top: 0;
       z-index: 999;
@@ -71,7 +71,7 @@
     nav a:hover,
     nav a:focus,
     nav a[aria-current="page"] {
-      color: #059669; /* blue accent */
+      color: #1e40af; /* darker blue accent */
       outline: none;
     }
 
@@ -80,10 +80,10 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      background: linear-gradient(135deg, #3b82f6, #22c55e); /* blue */
+      background: linear-gradient(135deg, #3b82f6, #2563eb); /* blues only */
       padding: 3rem 1.5rem;
       border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(34, 197, 94, 0.4);
+      box-shadow: 0 12px 40px rgba(37, 99, 235, 0.4);
       color: white;
       margin-top: 1.5rem;
     }
@@ -105,13 +105,13 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
     }
     .btn-primary {
-      background-color: #059669; /* blue */
+      background-color: #2563eb; /* blue */
       color: white;
       padding: 1rem 2.5rem;
       font-weight: 700;
       font-size: 1.1rem;
       border-radius: 50px;
-      box-shadow: 0 6px 14px rgba(5, 150, 105, 0.6);
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.6);
       cursor: pointer;
       border: none;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -120,8 +120,8 @@
     }
     .btn-primary:hover,
     .btn-primary:focus {
-      background-color: #047857;
-      box-shadow: 0 8px 24px rgba(4, 120, 87, 0.8);
+      background-color: #1e40af;
+      box-shadow: 0 8px 24px rgba(30, 64, 175, 0.8);
       outline: none;
     }
     .hero-img {
@@ -133,18 +133,18 @@
     /* Bio Section */
     .bio-section {
       margin-top: 3rem;
-      background-color: #dcfce7; /* soft blue */
+      background-color: #dbeafe; /* soft blue */
       border-radius: 20px;
       padding: 2.5rem 2rem;
       display: flex;
       align-items: center;
       gap: 2rem;
-      box-shadow: 0 15px 40px rgba(34, 197, 94, 0.2);
+      box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
     }
     .bio-img {
       flex-shrink: 0;
       border-radius: 50%;
-      border: 6px solid #059669;
+      border: 6px solid #2563eb;
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
       max-width: 220px;
       aspect-ratio: 1/1;
@@ -154,7 +154,7 @@
       flex: 1;
     }
     .bio-text h2 {
-      color: #065f46;
+      color: #1e40af;
       font-size: 2rem;
       margin-bottom: 1rem;
       font-weight: 700;
@@ -163,19 +163,19 @@
       font-size: 1.1rem;
       line-height: 1.5;
       margin-bottom: 1rem;
-      color: #065f4677;
+      color: #1e40afcc;
     }
 
     /* Portfolio Overview */
     .portfolio-overview {
       margin-top: 3.5rem;
-      background: #d1fae5; /* lighter blue */
+      background: #dbeafe; /* lighter blue */
       padding: 2.5rem 2rem;
       border-radius: 20px;
-      box-shadow: 0 14px 35px rgba(5, 150, 105, 0.2);
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.2);
     }
     .portfolio-overview h2 {
-      color: #047857;
+      color: #2563eb;
       font-size: 2.4rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
@@ -188,28 +188,28 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      color: #065f4688;
+      color: #2563eb88;
     }
     .artifact-summary {
-      background: #ecfdf5;
-      border-left: 8px solid #059669;
+      background: #eff6ff;
+      border-left: 8px solid #2563eb;
       padding: 1.2rem 1.8rem;
       margin-bottom: 1.8rem;
       border-radius: 12px;
-      box-shadow: 0 8px 18px rgba(5, 150, 105, 0.15);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.15);
     }
     .artifact-summary h3 {
       margin-top: 0;
       margin-bottom: 0.5rem;
       font-size: 1.45rem;
-      color: #065f46;
+      color: #1e40af;
       font-weight: 700;
     }
     .artifact-summary p {
       margin: 0;
       font-size: 1rem;
       line-height: 1.45;
-      color: #065f46aa;
+      color: #1e40afaa;
     }
 
     /* Skills Section */
@@ -340,7 +340,7 @@
     }
     .btn-secondary:hover,
     .btn-secondary:focus {
-      background-color: #1d4ed8;
+      background-color: #1e40af;
       outline: none;
     }
 
@@ -348,11 +348,11 @@
     #contact {
       margin-top: 5rem;
       padding: 3rem 2rem;
-      background: #dcfce7;
+      background: #eff6ff; /* soft light blue */
       border-radius: 20px;
-      box-shadow: 0 14px 40px rgba(34, 197, 94, 0.15);
+      box-shadow: 0 14px 40px rgba(37, 99, 235, 0.15);
       text-align: center;
-      color: #065f46;
+      color: #1e40af;
       font-weight: 600;
     }
     #contact h2 {
@@ -371,10 +371,10 @@
       line-height: 1.6;
       max-width: 400px;
       margin: 0 auto;
-      color: #064e3b;
+      color: #1e40afcc;
     }
     #contact a {
-      color: #047857;
+      color: #2563eb;
       font-weight: 700;
     }
     #contact a:hover,
@@ -387,8 +387,8 @@
     footer {
       text-align: center;
       padding: 1.3rem 1rem;
-      background-color: #134e4a;
-      color: #bbf7d0;
+      background-color: #1e40af;
+      color: #bfdbfe;
       font-weight: 600;
       font-size: 0.95rem;
       margin-top: 4rem;
