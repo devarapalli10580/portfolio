@@ -65,3 +65,28 @@ sections.forEach(section => {
 // Dynamic year in footer
 document.querySelector('footer p').innerHTML =
     `© ${new Date().getFullYear()} Naga Venkata Satyanarayana Devarapalli | All Rights Reserved`;
+// Dark Mode Toggle
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+// Smooth Scroll for Nav Links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// Fade-in Animation for Sections
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.8;
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+            section.classList.add('fade-in');
+        }
+    });
+});
