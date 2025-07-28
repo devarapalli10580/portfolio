@@ -6,100 +6,98 @@
   <title>Professional Portfolio Artifact 1 - Naga Venkata Satyanarayana Devarapalli</title>
 
   <style>
-    /* ===== Reset & Base Styles ===== */
+    /* ==========================================================================
+       Reset & Base Styles
+    ========================================================================== */
+
     *, *::before, *::after {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      line-height: 1.65;
+      background-color: #f0f4f8; /* very light blue-gray */
+      color: #1e293b; /* dark slate */
+      line-height: 1.6;
+      font-size: 18px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-      border-radius: 8px;
     }
 
     a {
-      color: #2563eb;
+      color: #2563eb; /* strong blue */
       text-decoration: none;
+      font-weight: 600;
       transition: color 0.3s ease;
     }
 
-    a:hover, a:focus {
-      color: #ea580c;
+    a:hover,
+    a:focus {
+      color: #ea580c; /* orange */
       outline: none;
+      text-decoration: underline;
     }
 
-    ul {
-      padding-left: 1.25rem;
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4, h5, h6 {
       font-weight: 700;
-      color: #2563eb;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    h1 {
-      font-size: 2.75rem;
-      color: #1e40af;
-    }
-
-    h2 {
-      font-size: 2rem;
-      border-bottom: 3px solid #ea580c;
-      padding-bottom: 0.25rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: #16a34a;
-      margin-top: 1rem;
-      margin-bottom: 0.75rem;
+      color: #164e63; /* teal-ish blue */
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+      letter-spacing: 0.015em;
     }
 
     p {
       margin-top: 0;
-      margin-bottom: 1rem;
-      color: #374151;
-      font-size: 1.125rem;
+      margin-bottom: 1em;
+      color: #334155; /* slate */
+    }
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 1.25em;
+      padding-left: 1.5em;
+      color: #475569;
+    }
+
+    ul li {
+      margin-bottom: 0.5em;
     }
 
     strong {
-      color: #111827;
+      color: #0f172a; /* very dark slate */
     }
 
-    /* ===== Layout Containers ===== */
-    header, footer {
-      background-color: #2563eb;
-      color: white;
-      padding: 1rem 2rem;
-    }
+    /* ==========================================================================
+       Layout - Header and Nav
+    ========================================================================== */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      background: #2563eb; /* blue */
+      color: #f1f5f9; /* light gray */
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+      z-index: 1000;
+      user-select: none;
     }
 
     header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.03em;
       margin: 0;
+      font-weight: 800;
+      color: #fbbf24; /* amber/orange */
+      user-select: text;
     }
 
     nav ul {
@@ -108,7 +106,6 @@
       gap: 1.5rem;
       margin: 0;
       padding: 0;
-      align-items: center;
     }
 
     nav li {
@@ -116,52 +113,93 @@
     }
 
     nav a {
-      padding: 0.3rem 0.5rem;
-      border-radius: 5px;
+      color: #e0e7ff;
+      font-size: 1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      user-select: text;
     }
 
-    nav a:focus, nav a:hover {
-      background-color: #ea580c;
-      color: white;
-      outline: none;
+    nav a:hover,
+    nav a:focus {
+      background-color: #ea580c; /* orange */
+      color: #f1f5f9;
+      outline-offset: 2px;
+      outline: 2px solid #fbbf24; /* amber */
     }
+
+    /* ==========================================================================
+       Main Container and Sections
+    ========================================================================== */
 
     main.container {
-      max-width: 960px;
+      max-width: 900px;
       margin: 3rem auto 5rem;
       padding: 0 1rem;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(16, 24, 40, 0.1);
+      scroll-margin-top: 5rem; /* for sticky nav offset */
     }
 
-    /* ===== Section Spacing ===== */
     section {
-      padding: 2rem 1rem 3rem;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 2.5rem 1rem 3rem;
+      border-bottom: 1px solid #e2e8f0; /* light slate */
     }
 
     section:last-of-type {
       border-bottom: none;
     }
 
-    /* ===== Intro Section ===== */
-    #introduction p:first-of-type {
-      font-weight: 600;
-      font-size: 1.25rem;
-      color: #111827;
+    /* ==========================================================================
+       Typography: Section Titles and Subtitles
+    ========================================================================== */
+
+    section > h2 {
+      font-size: 2rem;
+      border-bottom: 3px solid #ea580c;
+      padding-bottom: 0.35rem;
+      margin-bottom: 1rem;
+      color: #334155; /* dark slate */
     }
 
-    /* ===== Accordion Styles ===== */
+    section > h3 {
+      font-size: 1.5rem;
+      color: #16a34a; /* green */
+      margin-bottom: 0.75rem;
+    }
+
+    /* ==========================================================================
+       Paragraph and List Styling
+    ========================================================================== */
+
+    p, ul {
+      font-weight: 400;
+      line-height: 1.6;
+      color: #475569;
+      font-size: 1.125rem;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       Accordion Styles
+    ========================================================================== */
+
     .accordion {
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      background-color: #f3f4f6;
+      border-radius: 10px;
+      background-color: #e0f2fe; /* light blue */
+      box-shadow: 0 6px 15px rgba(14, 165, 233, 0.25);
       overflow: hidden;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .accordion-item {
-      border-top: 1px solid #d1d5db;
+      border-top: 1px solid #bae6fd;
     }
 
     .accordion-item:first-child {
@@ -169,87 +207,126 @@
     }
 
     .accordion-header {
-      background-color: #2563eb;
+      background-color: #2563eb; /* blue */
       color: white;
-      padding: 1rem 1.5rem;
+      padding: 1.25rem 2rem;
       cursor: pointer;
-      font-size: 1.125rem;
       font-weight: 700;
+      font-size: 1.125rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       user-select: none;
-      border-bottom: 1px solid #1d4ed8;
       transition: background-color 0.3s ease;
+      border-radius: 0;
     }
 
-    .accordion-header:hover, .accordion-header:focus {
-      background-color: #1e40af;
+    .accordion-header:hover,
+    .accordion-header:focus {
+      background-color: #1e40af; /* darker blue */
       outline: none;
     }
 
     .accordion-header[aria-expanded="true"] {
       background-color: #1e40af;
+      box-shadow: inset 0 -3px 0 #f97316; /* orange underline */
     }
 
     .accordion-header::after {
-      content: '+';
-      font-size: 1.5rem;
+      content: "+";
+      font-size: 1.8rem;
+      color: #f97316; /* orange */
+      font-weight: 900;
       transition: transform 0.3s ease;
-      color: #fbbf24; /* amber/orange */
+      margin-left: 1rem;
+      flex-shrink: 0;
     }
 
     .accordion-header[aria-expanded="true"]::after {
-      content: '-';
+      content: "-";
       transform: rotate(180deg);
     }
 
     .accordion-content {
+      background-color: #f0f9ff; /* very light blue */
       max-height: 0;
       overflow: hidden;
-      background-color: #e0f2fe;
-      color: #1e293b;
-      padding: 0 1.5rem;
+      transition: max-height 0.45s ease, padding 0.35s ease;
+      padding: 0 2rem;
       font-size: 1.125rem;
-      transition: max-height 0.35s ease;
+      color: #334155;
     }
 
     .accordion-content.open {
-      padding: 1rem 1.5rem 1.5rem;
-      max-height: 1000px; /* large enough for content */
+      padding: 1rem 2rem 2rem;
+      max-height: 1200px; /* large enough */
     }
 
-    /* ===== Lists inside accordion content ===== */
     .accordion-content ul {
       padding-left: 1.25rem;
     }
 
-    .accordion-content li {
-      margin-bottom: 0.5rem;
+    /* ==========================================================================
+       Table Styling for Feedback Section
+    ========================================================================== */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 1rem;
     }
 
-    /* ===== Links styling inside content ===== */
-    .accordion-content a {
-      color: #2563eb;
-      font-weight: 600;
+    thead tr {
+      background-color: #2563eb;
+      color: #f1f5f9;
     }
 
-    /* ===== Footer Styling ===== */
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 0.65rem 1rem;
+      text-align: left;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #e0f2fe;
+    }
+
+    tbody tr:hover {
+      background-color: #bae6fd;
+    }
+
+    /* ==========================================================================
+       Footer Styles
+    ========================================================================== */
+
     footer {
-      text-align: center;
+      background-color: #16a34a; /* green */
+      color: #f3f4f6;
       padding: 1.5rem 1rem;
+      text-align: center;
       font-weight: 600;
       font-size: 1rem;
-      background-color: #1e40af;
-      color: #f3f4f6;
       user-select: none;
+      margin-top: 3rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 -3px 10px rgba(22, 163, 74, 0.5);
     }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 768px) {
+    /* ==========================================================================
+       Responsive Design
+    ========================================================================== */
+
+    @media (max-width: 900px) {
+      main.container {
+        margin: 2rem 1rem 3rem;
+        padding: 0 1rem;
+      }
+
       header {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 0.8rem;
       }
 
       nav ul {
@@ -257,16 +334,36 @@
         gap: 1rem;
         justify-content: center;
       }
+    }
 
-      main.container {
-        margin: 2rem 1rem 3rem;
+    @media (max-width: 480px) {
+      body {
+        font-size: 16px;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+
+      .accordion-header {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+      }
+
+      .accordion-content {
+        font-size: 1rem;
+        padding: 1rem 1.5rem 1.5rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header role="banner">
     <h1 tabindex="0">Professional Portfolio Artifact 1</h1>
     <nav role="navigation" aria-label="Primary navigation">
@@ -282,11 +379,16 @@
     </nav>
   </header>
 
-  <!-- Main content container -->
+  <!-- MAIN CONTENT -->
   <main class="container" role="main">
 
-    <!-- Introduction -->
-    <section id="introduction" tabindex="0" aria-labelledby="intro-title" aria-describedby="intro-desc">
+    <!-- Introduction Section -->
+    <section
+      id="introduction"
+      tabindex="0"
+      aria-labelledby="intro-title"
+      aria-describedby="intro-desc"
+    >
       <h2 id="intro-title">Introduction</h2>
       <p id="intro-desc">
         Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a
@@ -313,7 +415,7 @@
     >
       <h2 id="artifact-title">Artifact Description</h2>
 
-      <div class="accordion" id="artifactAccordion">
+      <div class="accordion" id="artifactAccordion" role="presentation">
         <!-- Overview -->
         <div class="accordion-item">
           <button
@@ -322,6 +424,7 @@
             aria-controls="overview-content"
             id="overview-header"
             tabindex="0"
+            aria-label="Toggle Overview Section"
           >
             Overview
           </button>
@@ -355,6 +458,7 @@
             aria-controls="problem-content"
             id="problem-header"
             tabindex="0"
+            aria-label="Toggle Problem Solved Section"
           >
             Problem Solved
           </button>
@@ -382,6 +486,7 @@
             aria-controls="tool-content"
             id="tool-header"
             tabindex="0"
+            aria-label="Toggle Tool Used Section"
           >
             Tool Used
           </button>
@@ -403,7 +508,7 @@
       </div>
     </section>
 
-    <!-- Design Thinking Section Accordion -->
+    <!-- Design Thinking Accordion -->
     <section
       id="design-thinking"
       tabindex="0"
@@ -412,7 +517,7 @@
       role="region"
     >
       <h2 id="design-title">Design Thinking Applied</h2>
-      <div class="accordion" id="designAccordion">
+      <div class="accordion" id="designAccordion" role="presentation">
 
         <!-- Empathize -->
         <div class="accordion-item">
@@ -422,6 +527,7 @@
             aria-controls="empathize-content"
             id="empathize-header"
             tabindex="0"
+            aria-label="Toggle Empathize Section"
           >
             Empathize
           </button>
@@ -448,6 +554,7 @@
             aria-controls="define-content"
             id="define-header"
             tabindex="0"
+            aria-label="Toggle Define Section"
           >
             Define
           </button>
@@ -470,6 +577,7 @@
             aria-controls="ideate-content"
             id="ideate-header"
             tabindex="0"
+            aria-label="Toggle Ideate Section"
           >
             Ideate
           </button>
@@ -480,7 +588,9 @@
             aria-labelledby="ideate-header"
             hidden
           >
-            <p>As a team, we brainstormed 12+ features. Key ideas included:</p>
+            <p>
+              As a team, we brainstormed 12+ features. Key ideas included:
+            </p>
             <ul>
               <li>Interactive FAQ builder</li>
               <li>Tone selector (casual, formal, friendly, etc.)</li>
@@ -499,6 +609,7 @@
             aria-controls="prototype-content"
             id="prototype-header"
             tabindex="0"
+            aria-label="Toggle Prototype Section"
           >
             Prototype
           </button>
@@ -524,6 +635,7 @@
             aria-controls="test-content"
             id="test-header"
             tabindex="0"
+            aria-label="Toggle Test Section"
           >
             Test
           </button>
@@ -536,8 +648,8 @@
           >
             <p>
               We conducted peer testing sessions. Based on feedback, we revised the bot’s language style, added memory
-              features for session continuity, and integrated visual aids for better guidance. Final
-              <strong>Mean Reciprocal Rank (MRR)</strong> performance improved to <strong>0.86</strong>.
+              features for session continuity, and integrated visual aids for better guidance. Final Mean Reciprocal Rank
+              (MRR) performance improved to 0.86.
             </p>
           </div>
         </div>
@@ -545,22 +657,22 @@
     </section>
 
     <!-- Audience Value Section -->
-    <section id="audience-value" tabindex="0" aria-labelledby="audience-title" aria-describedby="audience-desc">
+    <section id="audience-value" tabindex="0" aria-labelledby="audience-title" aria-describedby="audience-desc" role="region">
       <h2 id="audience-title">Audience Value</h2>
       <p id="audience-desc">
-        This artifact offers specific value to different audiences:
+        The artifact provides significant value to various audiences:
       </p>
       <ul>
         <li><strong>Employers:</strong> Demonstrates practical skills in prompt engineering, LLM integration, chatbot UX design, and user-centric prototyping with real tools.</li>
         <li><strong>Peers:</strong> Offers a step-by-step model for building functional chatbots through design thinking and experimentation.</li>
-        <li><strong>Instructors:</strong> Validates understanding of generative AI tools, ethical development practices, and collaborative problem-solving.</li>
+        <li><strong>Instructors:</strong> Validates my understanding of generative AI tools, ethical development practices, and collaborative problem-solving.</li>
       </ul>
     </section>
 
     <!-- Reflection Accordion -->
     <section id="reflection" tabindex="0" aria-labelledby="reflection-title" aria-describedby="reflection-desc" role="region">
       <h2 id="reflection-title">Reflection</h2>
-      <div class="accordion" id="reflectionAccordion">
+      <div class="accordion" id="reflectionAccordion" role="presentation">
 
         <!-- User-Centric Design -->
         <div class="accordion-item">
@@ -570,6 +682,7 @@
             aria-controls="usercentric-content"
             id="usercentric-header"
             tabindex="0"
+            aria-label="Toggle User-Centric Design Section"
           >
             User-Centric Design
           </button>
@@ -595,6 +708,7 @@
             aria-controls="collaboration-content"
             id="collaboration-header"
             tabindex="0"
+            aria-label="Toggle Interdisciplinary Collaboration Section"
           >
             Interdisciplinary Collaboration
           </button>
@@ -621,6 +735,7 @@
             aria-controls="iterative-content"
             id="iterative-header"
             tabindex="0"
+            aria-label="Toggle Iterative Learning Section"
           >
             Iterative Learning
           </button>
@@ -657,6 +772,7 @@
             aria-controls="feedbacktable-content"
             id="feedbacktable-header"
             tabindex="0"
+            aria-label="Toggle Peer and Instructor Feedback Section"
           >
             Peer and Instructor Feedback
           </button>
@@ -667,33 +783,33 @@
             aria-labelledby="feedbacktable-header"
             hidden
           >
-            <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+            <table>
               <thead>
-                <tr style="background-color:#2563eb; color:#fff;">
-                  <th style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Feedback Area</th>
-                  <th style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Initial Issue</th>
-                  <th style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Action Taken</th>
-                  <th style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Results of Revision</th>
+                <tr>
+                  <th>Feedback Area</th>
+                  <th>Initial Issue</th>
+                  <th>Action Taken</th>
+                  <th>Results of Revision</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Complexity of Language</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Some users were overwhelmed by AI/tech terms.</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Simplified language to 8th-grade reading level; added examples and analogies.</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">MRR increased from 0.61 → 0.86</td>
-                </tr>
-                <tr style="background-color:#f0fdf4;">
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Visual Flow Confusion</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Users struggled with text-heavy, linear conversation flow.</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Introduced inline flowcharts, added multimedia elements (diagrams/tutorials).</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">User satisfaction rating: 4.9 / 5.0</td>
+                  <td>Complexity of Language</td>
+                  <td>Some users were overwhelmed by AI/tech terms.</td>
+                  <td>Simplified language to 8th-grade reading level; added examples and analogies.</td>
+                  <td>MRR increased from 0.61 → 0.86</td>
                 </tr>
                 <tr>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Lack of Onboarding</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">New users felt lost at the start.</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Added a “Welcome & Instructions” sequence for onboarding.</td>
-                  <td style="padding: 0.5rem 1rem; border: 1px solid #ccc;">Most praised features: Easy-to-follow flow, visual previews, and friendly tone</td>
+                  <td>Visual Flow Confusion</td>
+                  <td>Users struggled with text-heavy, linear conversation flow.</td>
+                  <td>Introduced inline flowcharts, added multimedia elements (diagrams/tutorials).</td>
+                  <td>User satisfaction rating: 4.9 / 5.0</td>
+                </tr>
+                <tr>
+                  <td>Lack of Onboarding</td>
+                  <td>New users felt lost at the start.</td>
+                  <td>Added a “Welcome & Instructions” sequence for onboarding.</td>
+                  <td>Most praised features: Easy-to-follow flow, visual previews, and friendly tone</td>
                 </tr>
               </tbody>
             </table>
@@ -705,7 +821,9 @@
     <!-- References Section -->
     <section id="references" tabindex="0" aria-labelledby="references-title" aria-describedby="references-desc" role="region">
       <h2 id="references-title">References</h2>
-      <p id="references-desc">Key references that informed this artifact development include:</p>
+      <p id="references-desc">
+        Key references that informed this artifact development include:
+      </p>
       <ul>
         <li><a href="https://botpress.com/docs" target="_blank" rel="noopener noreferrer">Botpress Documentation</a></li>
         <li><a href="https://www.chatbase.co/" target="_blank" rel="noopener noreferrer">Chatbase - Create AI Chatbots for Your Website</a></li>
@@ -719,40 +837,43 @@
         <li><a href="https://replit.com" target="_blank" rel="noopener noreferrer">Replit Collaborative Code Workspace</a></li>
       </ul>
     </section>
-
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer role="contentinfo" tabindex="0">
     <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
   </footer>
 
-  <!-- ===== JavaScript ===== -->
+  <!-- JavaScript for Accordion and Smooth Scroll -->
   <script>
-    // Accordion behavior
+    // Accordion toggle function
     const accordions = document.querySelectorAll('.accordion-header');
-    accordions.forEach((header) => {
+    accordions.forEach(header => {
       header.addEventListener('click', () => {
         const expanded = header.getAttribute('aria-expanded') === 'true';
+
         if (expanded) {
           header.setAttribute('aria-expanded', 'false');
           document.getElementById(header.getAttribute('aria-controls')).hidden = true;
           document.getElementById(header.getAttribute('aria-controls')).classList.remove('open');
         } else {
-          // Close all others first (optional)
+          // Close all other accordions (optional behavior)
           accordions.forEach(hdr => {
             hdr.setAttribute('aria-expanded', 'false');
             document.getElementById(hdr.getAttribute('aria-controls')).hidden = true;
             document.getElementById(hdr.getAttribute('aria-controls')).classList.remove('open');
           });
-          // Open this one
+
+          // Open the clicked accordion
           header.setAttribute('aria-expanded', 'true');
-          document.getElementById(header.getAttribute('aria-controls')).hidden = false;
-          document.getElementById(header.getAttribute('aria-controls')).classList.add('open');
+          const content = document.getElementById(header.getAttribute('aria-controls'));
+          content.hidden = false;
+          content.classList.add('open');
         }
       });
 
-      header.addEventListener('keydown', (e) => {
+      // Keyboard accessibility for accordions
+      header.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           header.click();
@@ -760,7 +881,7 @@
       });
     });
 
-    // Smooth scroll for nav links (if browser doesn't support CSS smooth scroll)
+    // Smooth scroll for nav links
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
