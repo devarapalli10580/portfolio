@@ -1,178 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naga Venkata Satyanarayana Devarapalli | Professional Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naga Venkata Satyanarayana Devarapalli | Portfolio</title>
+<style>
+/* ================== GLOBAL STYLES ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: linear-gradient(135deg, #0f4c75, #3282b8);
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.btn-primary {
+    background: #ff7f50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #ffa07a;
+}
+/* HEADER */
+header {
+    background: rgba(15, 76, 117, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    padding: 15px 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links a:hover {
+    color: #ff7f50;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+}
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 0 60px;
+}
+.hero-text {
+    width: 55%;
+}
+.hero-text h2 span {
+    color: #ff7f50;
+}
+.hero-image img {
+    width: 300px;
+    border-radius: 50%;
+    border: 5px solid #ff7f50;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+/* ABOUT SECTION */
+.about-section {
+    background: #1b262c;
+    padding: 60px 0;
+    border-radius: 12px;
+    margin: 40px 0;
+}
+.about-container {
+    text-align: center;
+}
+.about-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.about-card {
+    background: #3282b8;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+.about-card:hover {
+    transform: translateY(-10px);
+    background: #0f4c75;
+}
+/* SKILLS */
+.skills-section {
+    padding: 60px 0;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.skill-card {
+    background: #1b262c;
+    padding: 20px;
+    border-radius: 10px;
+}
+.progress-bar {
+    background: #3282b8;
+    border-radius: 20px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: #ff7f50;
+}
+/* ARTIFACTS */
+.artifacts-section {
+    background: #1b262c;
+    padding: 60px 0;
+    border-radius: 12px;
+    margin: 40px 0;
+    text-align: center;
+}
+.artifact-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.artifact-card {
+    background: #3282b8;
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+.artifact-card:hover {
+    transform: scale(1.05);
+    background: #0f4c75;
+}
+.artifact-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+}
+/* CONTACT */
+.contact-section {
+    padding: 60px 0;
+    text-align: center;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 60%;
+    margin: auto;
+}
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0f4c75;
+    margin-top: 40px;
+}
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text, .hero-image {
+        width: 100%;
+    }
+    .artifact-card {
+        width: 90%;
+    }
+}
+</style>
 </head>
 <body>
-    <!-- ===================== HEADER ====================== -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <h1>Naga Venkata</h1>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#artifacts">Artifacts</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        </div>
-    </header>
 
-    <!-- ===================== HERO SECTION ====================== -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h2>Hello, I'm <span>Naga Venkata Satyanarayana Devarapalli</span></h2>
-                <p>
-                    A passionate <strong>AI & Data Analytics Professional</strong> with over 12+ years of experience 
-                    in Data Analytics, Business Intelligence, and AI-driven solutions. Currently pursuing a Master’s 
-                    degree in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.
-                </p>
-                <a href="#contact" class="btn-primary">Contact Me</a>
-                <a href="resume.pdf" class="btn-secondary" target="_blank">Download Resume</a>
-            </div>
-            <div class="hero-image">
-                <img src="images/profile.jpg" alt="Profile Image">
-            </div>
-        </div>
-    </section>
+<!-- HEADER -->
+<header>
+    <div class="container nav-container">
+        <h1>My Portfolio</h1>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#artifacts">Artifacts</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+</header>
 
-    <!-- ===================== ABOUT SECTION ====================== -->
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <h2>About Me</h2>
-            <p>
-                I specialize in designing innovative data-driven solutions, building machine learning models, and creating 
-                impactful data visualizations. With extensive expertise in tools like Power BI, Python, SQL, and cloud platforms, 
-                I thrive on transforming raw data into actionable insights that drive business growth.
-            </p>
-            <div class="about-details">
-                <div class="about-card">
-                    <h3>Education</h3>
-                    <ul>
-                        <li>Master of Science in Artificial Intelligence – Data Analytics</li>
-                        <li>Indiana Wesleyan University – National & Global</li>
-                        <li>Graduation: 2025</li>
-                    </ul>
-                </div>
-                <div class="about-card">
-                    <h3>Experience</h3>
-                    <ul>
-                        <li>12+ years in BI & Data Analytics</li>
-                        <li>Specialized in Power BI, SQL Server, and AI solutions</li>
-                        <li>Worked on enterprise-level analytics projects</li>
-                    </ul>
-                </div>
-                <div class="about-card">
-                    <h3>Certifications</h3>
-                    <ul>
-                        <li>Microsoft Certified: Data Analyst Associate</li>
-                        <li>Azure Fundamentals</li>
-                        <li>Machine Learning Foundations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section id="home" class="hero container">
+    <div class="hero-text">
+        <h2>Hello, I'm <span>Naga Venkata</span></h2>
+        <p>A passionate AI & Data Analytics Professional with 12+ years experience in BI, Analytics & AI solutions.</p>
+        <a href="#contact" class="btn-primary">Contact Me</a>
+    </div>
+    <div class="hero-image">
+        <img src="images/profile.jpg" alt="Profile Picture">
+    </div>
+</section>
 
-    <!-- ===================== SKILLS SECTION ====================== -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2>My Skills</h2>
-            <p>Here are some of the key technical skills I bring to every project:</p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Python & AI/ML</h3>
-                    <div class="progress-bar"><span style="width: 90%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>Power BI & DAX</h3>
-                    <div class="progress-bar"><span style="width: 95%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>SQL & Databases</h3>
-                    <div class="progress-bar"><span style="width: 92%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>Cloud Platforms (Azure, AWS)</h3>
-                    <div class="progress-bar"><span style="width: 85%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>Machine Learning</h3>
-                    <div class="progress-bar"><span style="width: 88%;"></span></div>
-                </div>
-                <div class="skill-card">
-                    <h3>Data Visualization</h3>
-                    <div class="progress-bar"><span style="width: 94%;"></span></div>
-                </div>
-            </div>
+<!-- ABOUT -->
+<section id="about" class="about-section container">
+    <h2>About Me</h2>
+    <p>I design AI-driven solutions, build ML models, and create meaningful dashboards for businesses.</p>
+    <div class="about-details">
+        <div class="about-card">
+            <h3>Education</h3>
+            <p>MSc AI – Data Analytics, IWU</p>
         </div>
-    </section>
+        <div class="about-card">
+            <h3>Experience</h3>
+            <p>12+ years BI, AI, Data Analytics</p>
+        </div>
+        <div class="about-card">
+            <h3>Skills</h3>
+            <p>Power BI, Python, SQL, ML</p>
+        </div>
+    </div>
+</section>
 
-    <!-- ===================== ARTIFACTS SECTION ====================== -->
-    <section id="artifacts" class="artifacts-section">
-        <div class="container">
-            <h2>My Artifacts</h2>
-            <p>Explore my academic and professional work highlighting AI, data analytics, and technology innovations.</p>
-            <div class="artifact-cards">
-                <!-- Artifact 1 -->
-                <div class="artifact-card">
-                    <img src="images/chatbot-logo.jpg" alt="Eco-Coach Chatbot">
-                    <h3>Artifact 1</h3>
-                    <p><strong>Eco-Coach Chatbot Project</strong></p>
-                    <a href="artifact1.html" class="btn-primary">View Details</a>
-                </div>
-                <!-- Artifact 2 -->
-                <div class="artifact-card">
-                    <img src="images/timeline-logo.jpg" alt="AI/ML Timeline">
-                    <h3>Artifact 2</h3>
-                    <p><strong>AI/ML Timeline Presentation</strong></p>
-                    <a href="artifact2.html" class="btn-primary">View Details</a>
-                </div>
-                <!-- Artifact 3 -->
-                <div class="artifact-card">
-                    <img src="images/schoolai-logo.jpg" alt="SchoolAI">
-                    <h3>Artifact 3</h3>
-                    <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
-                    <a href="artifact3.html" class="btn-primary">View Details</a>
-                </div>
-            </div>
+<!-- SKILLS -->
+<section id="skills" class="skills-section container">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>Python</h3>
+            <div class="progress-bar"><span style="width: 90%;"></span></div>
         </div>
-    </section>
+        <div class="skill-card">
+            <h3>Power BI</h3>
+            <div class="progress-bar"><span style="width: 95%;"></span></div>
+        </div>
+        <div class="skill-card">
+            <h3>SQL</h3>
+            <div class="progress-bar"><span style="width: 92%;"></span></div>
+        </div>
+    </div>
+</section>
 
-    <!-- ===================== CONTACT SECTION ====================== -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>If you’d like to connect or collaborate on a project, feel free to reach out!</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+<!-- ARTIFACTS -->
+<section id="artifacts" class="artifacts-section container">
+    <h2>My Artifacts</h2>
+    <div class="artifact-cards">
+        <div class="artifact-card">
+            <img src="images/chatbot-logo.jpg" alt="Chatbot">
+            <h3>Artifact 1</h3>
+            <p>Eco-Coach Chatbot Project</p>
+            <a href="artifact1.html" class="btn-primary">View Details</a>
         </div>
-    </section>
+        <div class="artifact-card">
+            <img src="images/timeline-logo.jpg" alt="Timeline">
+            <h3>Artifact 2</h3>
+            <p>AI/ML Timeline Presentation</p>
+            <a href="artifact2.html" class="btn-primary">View Details</a>
+        </div>
+        <div class="artifact-card">
+            <img src="images/schoolai-logo.jpg" alt="SchoolAI">
+            <h3>Artifact 3</h3>
+            <p>SchoolAI Learning Experience</p>
+            <a href="artifact3.html" class="btn-primary">View Details</a>
+        </div>
+    </div>
+</section>
 
-    <!-- ===================== FOOTER ====================== -->
-    <footer>
-        <div class="container footer-container">
-            <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-            <p>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
-                <a href="https://github.com" target="_blank">GitHub</a>
-            </p>
-        </div>
-    </footer>
+<!-- CONTACT -->
+<section id="contact" class="contact-section container">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button class="btn-primary">Send Message</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Naga Venkata Satyanarayana Devarapalli</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
 </body>
 </html>
