@@ -1,290 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artifact 1 | Eco-Coach Chatbot Project</title>
-    <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artifact 1 | Eco-Coach Chatbot Project</title>
+<style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: #f4f9ff; color: #333; line-height: 1.6; }
 
-        body {
-            background-color: #f4f8fb;
-            color: #333;
-            line-height: 1.6;
-        }
+    /* HEADER */
+    header {
+        background: linear-gradient(135deg, #004aad 85%, #ff9800 15%);
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    header h1 { font-size: 2.4rem; margin-bottom: 5px; font-weight: bold; }
+    nav { display: flex; justify-content: center; gap: 30px; }
+    nav a {
+        color: #fff; font-size: 1.1rem; font-weight: bold;
+        text-decoration: none; transition: 0.3s ease-in-out;
+        padding: 6px 10px; border-radius: 4px;
+    }
+    nav a:hover { background: #ff9800; color: #fff; }
 
-        header {
-            background: linear-gradient(135deg, #0056b3 90%, #ff9800 10%);
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
+    /* CONTAINER */
+    .container { width: 90%; max-width: 1200px; margin: 25px auto; }
 
-        header h1 {
-            font-size: 2.4rem;
-            margin-bottom: 5px;
-        }
+    /* SECTION TITLES */
+    h2.section-title {
+        text-align: center; font-size: 2rem; color: #004aad;
+        margin-bottom: 20px; position: relative;
+    }
+    h2.section-title::after {
+        content: ''; display: block; width: 80px; height: 4px;
+        background: #ff9800; margin: 8px auto; border-radius: 5px;
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 10px;
-        }
+    /* INTRO BOX */
+    .intro-box {
+        background: #fff; padding: 25px; border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 25px; animation: fadeIn 1s ease;
+    }
+    .intro-box img {
+        width: 100%; height: auto; border-radius: 10px; margin-top: 15px;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    /* CONTENT BOXES */
+    .content-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px; margin-top: 20px;
+    }
+    .card {
+        background: #fff; border-radius: 10px;
+        padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .card h3 { color: #004aad; margin-bottom: 10px; }
 
-        nav a:hover {
-            color: #ffeb3b;
-        }
+    /* GALLERY */
+    .gallery {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px; margin-top: 20px;
+    }
+    .gallery img {
+        width: 100%; height: 200px; object-fit: cover; border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+    .gallery img:hover { transform: scale(1.05); }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
+    /* FOOTER */
+    footer {
+        background: #004aad; color: #fff;
+        text-align: center; padding: 15px; margin-top: 30px;
+    }
 
-        h2.section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #0056b3;
-            position: relative;
-        }
+    /* SCROLL TOP BUTTON */
+    #scrollBtn {
+        position: fixed; bottom: 25px; right: 25px;
+        background: #ff9800; color: #fff;
+        font-size: 20px; padding: 12px 16px;
+        border-radius: 50%; cursor: pointer; display: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    #scrollBtn:hover { background: #e68a00; }
 
-        h2.section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #ff9800;
-            margin: 10px auto;
-            border-radius: 4px;
-        }
-
-        .intro-section {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .intro-section img {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .content-box {
-            background: #fff;
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .content-box h3 {
-            color: #0056b3;
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-
-        .content-box ul {
-            margin-left: 20px;
-            list-style-type: disc;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        footer {
-            background: #0056b3;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
-
-        /* Scroll-to-top button */
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #ff9800;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        #scrollTopBtn:hover {
-            background: #e68a00;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+    /* ANIMATIONS */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Artifact 1: Eco-Coach Chatbot Project</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="artifact1.html">Artifact 1</a>
-            <a href="artifact2.html">Artifact 2</a>
-            <a href="artifact3.html">Artifact 3</a>
-        </nav>
-    </header>
 
-    <div class="container">
-        <!-- Introduction -->
-        <section class="intro-section">
-            <h2 class="section-title">Introduction</h2>
-            <p>
-                The Eco-Coach Chatbot is a smart AI-powered conversational assistant designed to help users adopt sustainable living practices. 
-                It serves as a virtual eco-coach, answering questions, providing personalized suggestions, and promoting eco-friendly habits 
-                through interactive communication.
-            </p>
-            <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot Screenshot">
-        </section>
+<header>
+    <h1>Artifact 1: Eco-Coach Chatbot</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="artifact1.html">Artifact 1</a>
+        <a href="artifact2.html">Artifact 2</a>
+        <a href="artifact3.html">Artifact 3</a>
+    </nav>
+</header>
 
-        <!-- About the Artifact -->
-        <section class="content-box">
-            <h3>About the Artifact</h3>
-            <p>
-                This artifact demonstrates my ability to integrate Natural Language Processing (NLP), Machine Learning, and user-focused design 
-                into a practical solution. The chatbot was designed using Python and integrated with APIs to provide real-time responses.
-            </p>
-        </section>
+<div class="container">
+    <section class="intro-box">
+        <h2 class="section-title">Introduction</h2>
+        <p>
+            The Eco-Coach Chatbot is an AI-driven solution designed to assist individuals in adopting 
+            sustainable living practices. By leveraging NLP and machine learning, it provides 
+            personalized recommendations for eco-friendly choices.
+        </p>
+        <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot">
+    </section>
 
-        <!-- Objectives -->
-        <section class="content-box">
-            <h3>Project Objectives</h3>
-            <ul>
-                <li>Encourage sustainable lifestyle habits using AI-driven insights.</li>
-                <li>Provide instant, actionable eco-friendly tips for daily use.</li>
-                <li>Enhance user engagement through an interactive chat interface.</li>
-            </ul>
-        </section>
-
-        <!-- Process -->
-        <section class="content-box">
-            <h3>Development Process</h3>
-            <p>
-                The development followed a structured AI model-building approach:
-            </p>
-            <ul>
-                <li>Data collection from trusted environmental sources.</li>
-                <li>Model training using NLP techniques for accurate intent recognition.</li>
-                <li>Integration with Flask for backend and responsive web UI.</li>
-                <li>Deployment on cloud to ensure scalability and availability.</li>
-            </ul>
-        </section>
-
-        <!-- Tools & Technologies -->
-        <section class="content-box">
-            <h3>Tools & Technologies Used</h3>
-            <ul>
-                <li><strong>Programming:</strong> Python, Flask</li>
-                <li><strong>NLP:</strong> NLTK, spaCy</li>
-                <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
-                <li><strong>Cloud:</strong> AWS</li>
-            </ul>
-        </section>
-
-        <!-- Value Proposition -->
-        <section class="content-box">
-            <h3>Value Proposition</h3>
-            <p>
-                This artifact reflects my expertise in AI application development and my commitment to sustainability through technology.
-                It demonstrates proficiency in chatbot design, data-driven insights, and end-to-end solution deployment.
-            </p>
-        </section>
-
-        <!-- Gallery -->
-        <section class="content-box">
-            <h3>Screenshots</h3>
-            <div class="gallery">
-                <img src="images/chatbot-logo.JPG" alt="Chatbot UI">
-                <img src="images/chatbot-interface.JPG" alt="Chatbot Conversation">
-                <img src="images/chatbot-dashboard.JPG" alt="Chatbot Dashboard">
+    <section>
+        <h2 class="section-title">Key Features</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Real-Time Responses</h3>
+                <p>Uses NLP to understand and respond instantly to user queries.</p>
             </div>
-        </section>
+            <div class="card">
+                <h3>Personalized Tips</h3>
+                <p>Generates custom eco-friendly suggestions based on user profile.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Integration</h3>
+                <p>Deployed on AWS for seamless accessibility and scalability.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- References -->
-        <section class="content-box">
-            <h3>References</h3>
-            <ul>
-                <li>OpenAI Documentation</li>
-                <li>Natural Language Toolkit (NLTK)</li>
-                <li>spaCy Official Guide</li>
-            </ul>
-        </section>
-    </div>
+    <section>
+        <h2 class="section-title">Development Process</h2>
+        <ul>
+            <li>Data collection from eco-knowledge bases.</li>
+            <li>Model training with NLP libraries (NLTK, spaCy).</li>
+            <li>API integration for weather and energy-saving tips.</li>
+            <li>Deployment using Flask backend and responsive UI.</li>
+        </ul>
+    </section>
 
-    <footer>
-        <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-    </footer>
+    <section>
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery">
+            <img src="images/chatbot-logo.JPG" alt="Eco-Coach UI">
+            <img src="images/chatbot-dashboard.JPG" alt="Dashboard View">
+            <img src="images/chatbot-interface.JPG" alt="Conversation Example">
+        </div>
+    </section>
 
-    <!-- Scroll to top button -->
-    <button id="scrollTopBtn">↑</button>
+    <section>
+        <h2 class="section-title">References</h2>
+        <p>
+            - OpenAI Documentation <br>
+            - NLTK Official Guide <br>
+            - spaCy API Docs
+        </p>
+    </section>
+</div>
 
-    <script>
-        const scrollBtn = document.getElementById("scrollTopBtn");
-        window.onscroll = function() {
-            if (document.documentElement.scrollTop > 200) {
-                scrollBtn.style.display = "block";
-            } else {
-                scrollBtn.style.display = "none";
-            }
-        };
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    </script>
+<footer>
+    <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+</footer>
+
+<button id="scrollBtn">↑</button>
+
+<script>
+    const scrollBtn = document.getElementById("scrollBtn");
+    window.onscroll = () => {
+        if (document.documentElement.scrollTop > 200) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    };
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
 </body>
 </html>
