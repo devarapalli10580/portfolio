@@ -1,188 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Artifact 1 | Eco-Coach Chatbot Project</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifact 1 | Eco-Coach Chatbot Project</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #f4f8fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0056b3 90%, #ff9800 10%);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffeb3b;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #0056b3;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #ff9800;
+            margin: 10px auto;
+            border-radius: 4px;
+        }
+
+        .intro-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .intro-section img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .content-box {
+            background: #fff;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-box h3 {
+            color: #0056b3;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .content-box ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #0056b3;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        /* Scroll-to-top button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #ff9800;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #scrollTopBtn:hover {
+            background: #e68a00;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Artifact 1: Eco-Coach Chatbot Project</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="artifact1.html">Artifact 1</a>
+            <a href="artifact2.html">Artifact 2</a>
+            <a href="artifact3.html">Artifact 3</a>
+        </nav>
+    </header>
 
-<header class="site-header">
-  <div class="container header-container">
-    <div class="logo">
-      <h1><a href="index.html">NV Satyanarayana</a></h1>
+    <div class="container">
+        <!-- Introduction -->
+        <section class="intro-section">
+            <h2 class="section-title">Introduction</h2>
+            <p>
+                The Eco-Coach Chatbot is a smart AI-powered conversational assistant designed to help users adopt sustainable living practices. 
+                It serves as a virtual eco-coach, answering questions, providing personalized suggestions, and promoting eco-friendly habits 
+                through interactive communication.
+            </p>
+            <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot Screenshot">
+        </section>
+
+        <!-- About the Artifact -->
+        <section class="content-box">
+            <h3>About the Artifact</h3>
+            <p>
+                This artifact demonstrates my ability to integrate Natural Language Processing (NLP), Machine Learning, and user-focused design 
+                into a practical solution. The chatbot was designed using Python and integrated with APIs to provide real-time responses.
+            </p>
+        </section>
+
+        <!-- Objectives -->
+        <section class="content-box">
+            <h3>Project Objectives</h3>
+            <ul>
+                <li>Encourage sustainable lifestyle habits using AI-driven insights.</li>
+                <li>Provide instant, actionable eco-friendly tips for daily use.</li>
+                <li>Enhance user engagement through an interactive chat interface.</li>
+            </ul>
+        </section>
+
+        <!-- Process -->
+        <section class="content-box">
+            <h3>Development Process</h3>
+            <p>
+                The development followed a structured AI model-building approach:
+            </p>
+            <ul>
+                <li>Data collection from trusted environmental sources.</li>
+                <li>Model training using NLP techniques for accurate intent recognition.</li>
+                <li>Integration with Flask for backend and responsive web UI.</li>
+                <li>Deployment on cloud to ensure scalability and availability.</li>
+            </ul>
+        </section>
+
+        <!-- Tools & Technologies -->
+        <section class="content-box">
+            <h3>Tools & Technologies Used</h3>
+            <ul>
+                <li><strong>Programming:</strong> Python, Flask</li>
+                <li><strong>NLP:</strong> NLTK, spaCy</li>
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Cloud:</strong> AWS</li>
+            </ul>
+        </section>
+
+        <!-- Value Proposition -->
+        <section class="content-box">
+            <h3>Value Proposition</h3>
+            <p>
+                This artifact reflects my expertise in AI application development and my commitment to sustainability through technology.
+                It demonstrates proficiency in chatbot design, data-driven insights, and end-to-end solution deployment.
+            </p>
+        </section>
+
+        <!-- Gallery -->
+        <section class="content-box">
+            <h3>Screenshots</h3>
+            <div class="gallery">
+                <img src="images/chatbot-logo.JPG" alt="Chatbot UI">
+                <img src="images/chatbot-interface.JPG" alt="Chatbot Conversation">
+                <img src="images/chatbot-dashboard.JPG" alt="Chatbot Dashboard">
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-box">
+            <h3>References</h3>
+            <ul>
+                <li>OpenAI Documentation</li>
+                <li>Natural Language Toolkit (NLTK)</li>
+                <li>spaCy Official Guide</li>
+            </ul>
+        </section>
     </div>
-    <nav class="nav">
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="artifact1.html" class="active">Artifact 1</a></li>
-        <li><a href="artifact2.html">Artifact 2</a></li>
-        <li><a href="artifact3.html">Artifact 3</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
-<main class="container artifact-main">
+    <footer>
+        <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+    </footer>
 
-  <section class="artifact-header">
-    <h2>Artifact 1: Eco-Coach Chatbot Project</h2>
-    <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot Logo" class="artifact-image" />
-    <p class="artifact-intro">
-      The Eco-Coach Chatbot is an interactive conversational AI designed to help users reduce their carbon footprint by providing personalized, actionable advice. This artifact showcases my skills in AI development, natural language processing, and sustainable technology solutions.
-    </p>
-  </section>
+    <!-- Scroll to top button -->
+    <button id="scrollTopBtn">↑</button>
 
-  <section class="artifact-section">
-    <h3>Project Objective</h3>
-    <p>
-      The primary goal of this project was to design a chatbot that motivates users to adopt more eco-friendly habits by offering tailored recommendations based on their lifestyle inputs. The chatbot also tracks user progress and adapts advice dynamically.
-    </p>
-    <ul>
-      <li>Increase awareness about personal carbon footprints</li>
-      <li>Encourage behavioral change through gamification and rewards</li>
-      <li>Provide real-time, personalized coaching and resources</li>
-      <li>Demonstrate applied AI techniques in natural language understanding</li>
-    </ul>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Tools and Technologies Used</h3>
-    <table class="tools-table">
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Tools / Frameworks</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Programming Language</td>
-          <td>Python 3.8+</td>
-        </tr>
-        <tr>
-          <td>AI & NLP Frameworks</td>
-          <td>NLTK, spaCy, TensorFlow, Dialogflow</td>
-        </tr>
-        <tr>
-          <td>Web Framework</td>
-          <td>Flask</td>
-        </tr>
-        <tr>
-          <td>Cloud Services</td>
-          <td>Microsoft Azure Bot Service</td>
-        </tr>
-        <tr>
-          <td>Database</td>
-          <td>SQLite</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Project Process & Workflow</h3>
-    <ol>
-      <li>
-        <strong>Requirement Gathering:</strong> Researched sustainable living challenges and chatbot use cases.
-      </li>
-      <li>
-        <strong>Design:</strong> Created conversation flowcharts and defined intents/entities for natural language understanding.
-      </li>
-      <li>
-        <strong>Development:</strong> Implemented core chatbot logic using Python and integrated NLP libraries for intent recognition.
-      </li>
-      <li>
-        <strong>Deployment:</strong> Hosted the chatbot using Azure Bot Service and tested accessibility via web and mobile.
-      </li>
-      <li>
-        <strong>User Feedback:</strong> Conducted beta testing with sample users, gathered feedback, and refined responses.
-      </li>
-      <li>
-        <strong>Iteration:</strong> Optimized conversational flow and incorporated gamification elements to improve engagement.
-      </li>
-    </ol>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Challenges Faced and Solutions</h3>
-    <dl>
-      <dt>Natural Language Understanding</dt>
-      <dd>
-        Ensuring the chatbot correctly interprets diverse user inputs was complex. This was addressed by extensive training data and continuous tuning of intent classifiers.
-      </dd>
-
-      <dt>Maintaining Engagement</dt>
-      <dd>
-        Initial chatbot interactions were somewhat static, so gamification strategies like progress tracking and rewards were added to increase motivation.
-      </dd>
-
-      <dt>Scalability</dt>
-      <dd>
-        Managing concurrent users while maintaining performance required optimizing backend services and leveraging Azure’s scalable infrastructure.
-      </dd>
-    </dl>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Project Outcomes & Impact</h3>
-    <p>
-      The Eco-Coach Chatbot successfully demonstrated how conversational AI can facilitate sustainable behavior change. Beta testers reported improved awareness and adoption of eco-friendly habits.
-    </p>
-    <ul>
-      <li>Engagement rate of 75% during pilot testing</li>
-      <li>Positive user feedback highlighting the chatbot's helpfulness</li>
-      <li>Potential for integration into larger sustainability platforms</li>
-    </ul>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Reflection and Learning</h3>
-    <p>
-      This project deepened my understanding of AI-driven user interaction design and the practical challenges in deploying NLP applications. It reinforced the importance of iterative feedback and cross-disciplinary skills spanning AI, environmental science, and UX design.
-    </p>
-    <p>
-      I also learned how to balance technical capabilities with user-centric considerations to create meaningful digital experiences.
-    </p>
-  </section>
-
-  <section class="artifact-section">
-    <h3>Future Enhancements</h3>
-    <p>Planned improvements include:</p>
-    <ul>
-      <li>Integration of voice interface for hands-free interactions</li>
-      <li>Adding multi-language support to reach diverse audiences</li>
-      <li>Advanced personalization using user behavioral analytics</li>
-      <li>Expansion to mobile app platforms for broader accessibility</li>
-    </ul>
-  </section>
-
-  <section class="artifact-section">
-    <h3>References & Resources</h3>
-    <ul>
-      <li><a href="https://azure.microsoft.com/en-us/services/bot-service/">Microsoft Azure Bot Service</a></li>
-      <li><a href="https://www.tensorflow.org/">TensorFlow Official Site</a></li>
-      <li><a href="https://spacy.io/">spaCy NLP Library</a></li>
-      <li><a href="https://dialogflow.cloud.google.com/">Google Dialogflow</a></li>
-      <li><a href="https://www.nltk.org/">Natural Language Toolkit (NLTK)</a></li>
-    </ul>
-  </section>
-
-  <section class="navigation-links">
-    <a href="index.html" class="btn-secondary">← Back to Home</a>
-    <a href="artifact2.html" class="btn-secondary">Next: Artifact 2 →</a>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All rights reserved</p>
-  </div>
-</footer>
-
+    <script>
+        const scrollBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.documentElement.scrollTop > 200) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        };
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </body>
 </html>
