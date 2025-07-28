@@ -5,338 +5,216 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Artifact 1 | Eco-Coach Chatbot Project</title>
 <style>
-  /* RESET */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+  /* Embedded CSS for Artifact 1 page */
   body {
-    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e8f0fe 0%, #ffffff 100%);
-    color: #1a1a1a;
-    line-height: 1.65;
+    margin: 0; padding: 0; background: #f7f9fc;
+    color: #333;
   }
-
-  /* HEADER */
   header {
-    background: linear-gradient(135deg, #004aad 85%, #ff9800 15%);
-    padding: 1.3rem 1rem;
+    background: #004b8d;
     color: white;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header h1 {
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 28px;
     font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 1.1px;
-    user-select: none;
   }
   nav {
+    background: #0077cc;
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 0;
   }
   nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    user-select: none;
+    font-size: 17px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
   }
-  nav a:hover,
-  nav a:focus {
-    background-color: #ff9800;
-    color: #222;
-    outline: none;
+  nav a:hover {
+    background: #005a99;
   }
-
-  /* MAIN CONTAINER */
-  main.container {
-    max-width: 1080px;
-    margin: 2rem auto 3rem;
-    padding: 0 1rem;
-  }
-
-  /* SECTION TITLES */
-  h2.section-title {
-    font-size: 2.4rem;
-    color: #004aad;
-    text-align: center;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  h2.section-title::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: #ff9800;
-    border-radius: 2px;
-    margin: 0.5rem auto 0;
-  }
-
-  /* INTRO SECTION */
-  .intro-section {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
     padding: 30px 40px;
-    margin-bottom: 3rem;
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgb(0 75 141 / 0.2);
+    border-radius: 10px;
   }
-  .intro-section:hover {
-    box-shadow: 0 8px 30px rgb(0 0 0 / 0.15);
+  h1, h2, h3 {
+    color: #004b8d;
   }
-  .intro-section p {
-    font-size: 1.15rem;
-    max-width: 800px;
-    margin: 1rem auto 0;
-    color: #333;
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
   }
-  .intro-section img {
-    display: block;
-    margin: 2rem auto 0;
-    max-width: 300px;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
-    transition: transform 0.3s ease;
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #ff6a00;
+    padding-bottom: 6px;
   }
-  .intro-section img:hover {
-    transform: scale(1.05);
+  p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 18px;
   }
-
-  /* GRID LAYOUT FOR CARDS */
-  .grid-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 2rem;
+  img.project-img {
+    max-width: 100%;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgb(0 75 141 / 0.15);
   }
-
-  /* FEATURE CARD */
-  .feature-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px 20px;
-    box-shadow: 0 4px 18px rgb(0 0 0 / 0.07);
-    cursor: default;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .feature-card:hover {
-    box-shadow: 0 10px 30px rgb(0 0 0 / 0.12);
-    transform: translateY(-8px);
-  }
-  .feature-card h3 {
-    margin-bottom: 0.6rem;
-    color: #004aad;
-    font-size: 1.4rem;
-    user-select: none;
-  }
-  .feature-card p {
-    color: #555;
-    font-size: 1rem;
-  }
-
-  /* PROCESS LIST */
-  .process-list {
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    padding-left: 20px;
-    color: #222;
-    font-size: 1.1rem;
-  }
-  .process-list li {
-    margin-bottom: 0.8rem;
-    position: relative;
-  }
-  .process-list li::before {
-    content: "✔";
-    color: #ff9800;
-    position: absolute;
-    left: -20px;
-    font-weight: 900;
-    font-size: 1.2rem;
-  }
-
-  /* GALLERY */
-  .gallery {
-    max-width: 900px;
-    margin: 0 auto 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 20px;
-  }
-  .gallery img {
-    width: 100%;
-    height: 160px;
-    border-radius: 14px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  .btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: #ff6a00;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
     cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
   }
-  .gallery img:hover {
-    transform: scale(1.08);
+  .btn-back:hover {
+    background: #cc5500;
   }
-
-  /* REFERENCES */
-  .references {
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    color: #444;
-    font-style: italic;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-left: 4px solid #004aad;
-    padding-left: 18px;
+  /* Section boxes */
+  .section-box {
+    background: #eaf4fc;
+    border-left: 6px solid #ff6a00;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    border-radius: 6px;
   }
-
-  /* FOOTER */
+  .section-box p {
+    font-size: 16px;
+  }
+  /* Footer */
   footer {
     text-align: center;
-    padding: 1.8rem 1rem;
-    background-color: #004aad;
-    color: #fff;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-
-  /* SCROLL TO TOP BUTTON */
-  #scrollToTopBtn {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    background-color: #ff9800;
-    border: none;
-    border-radius: 50%;
-    width: 46px;
-    height: 46px;
-    cursor: pointer;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.3);
-    color: white;
-    font-size: 22px;
-    display: none;
-    transition: background-color 0.25s ease;
-    z-index: 999;
-  }
-  #scrollToTopBtn:hover {
-    background-color: #e68a00;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 450px) {
-    header h1 {
-      font-size: 1.3rem;
-    }
-    nav a {
-      font-size: 0.95rem;
-      padding: 5px 8px;
-    }
+    padding: 18px 10px;
+    margin-top: 60px;
+    font-size: 14px;
+    color: #777;
   }
 </style>
 </head>
 <body>
 
-<header role="banner">
-  <h1>Artifact 1: Eco-Coach Chatbot Project</h1>
-  <nav role="navigation" aria-label="Primary Navigation">
-    <a href="index.html" tabindex="0">Home</a>
-    <a href="artifact1.html" tabindex="0" aria-current="page">Artifact 1</a>
-    <a href="artifact2.html" tabindex="0">Artifact 2</a>
-    <a href="artifact3.html" tabindex="0">Artifact 3</a>
-  </nav>
+<header>
+  Eco-Coach Chatbot Project - Artifact 1
 </header>
 
-<main class="container" role="main">
+<nav>
+  <a href="index.html">Home</a>
+  <a href="artifact1.html" style="background:#005a99; border-radius:4px;">Artifact 1</a>
+  <a href="artifact2.html">Artifact 2</a>
+  <a href="artifact3.html">Artifact 3</a>
+</nav>
 
-  <section class="intro-section" aria-labelledby="intro-title">
-    <h2 id="intro-title" class="section-title">Introduction</h2>
+<main>
+  <h1>Eco-Coach Chatbot Project</h1>
+  <p>
+    The Eco-Coach Chatbot is an AI-powered interactive assistant designed to promote eco-friendly habits by providing real-time guidance and personalized suggestions. This project integrates natural language processing (NLP) techniques with modern web technologies to create an engaging user experience that motivates sustainable lifestyle choices.
+  </p>
+
+  <img src="images/chatbot-screenshot.png" alt="Screenshot of Eco-Coach Chatbot interface" class="project-img" />
+
+  <h2>Project Overview and Objectives</h2>
+  <div class="section-box">
     <p>
-      The Eco-Coach Chatbot is an AI-powered assistant designed to help users live more sustainably by providing personalized eco-friendly recommendations, advice, and actionable tips.  
-      This chatbot combines natural language processing with environmental datasets to promote awareness and behavioral change.
+      The goal of this project was to build a conversational AI tool capable of understanding user queries about environmental topics and responding with helpful tips and resources. It serves as both an educational tool and a behavioral coach to encourage sustainable actions in daily life.
     </p>
-    <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot logo showing a green leaf" />
-  </section>
+    <p>
+      We aimed to combine machine learning models, rule-based logic, and a responsive user interface to achieve a seamless experience that could be easily extended in future iterations.
+    </p>
+  </div>
 
-  <section aria-labelledby="features-title">
-    <h2 id="features-title" class="section-title">Key Features & Benefits</h2>
-    <div class="grid-cards" role="list">
-      <article class="feature-card" role="listitem" tabindex="0" aria-label="Real-Time Responses feature">
-        <h3>Real-Time Natural Language Responses</h3>
-        <p>Engages users with instant, conversational answers tailored to their sustainability queries.</p>
-      </article>
-      <article class="feature-card" role="listitem" tabindex="0" aria-label="Personalized Recommendations feature">
-        <h3>Personalized Eco Recommendations</h3>
-        <p>Adapts advice based on user input, preferences, and location for maximum impact.</p>
-      </article>
-      <article class="feature-card" role="listitem" tabindex="0" aria-label="Scalable Cloud Deployment feature">
-        <h3>Scalable Cloud Deployment</h3>
-        <p>Hosted on AWS to ensure availability, scalability, and reliable performance.</p>
-      </article>
-    </div>
-  </section>
+  <h2>Development Process</h2>
+  <div class="section-box">
+    <p>
+      The chatbot backend was built using Python’s Flask framework and leverages NLP libraries such as spaCy for intent recognition and NLTK for text processing. Machine learning classifiers were trained on labeled datasets of environmental questions and user intents to provide accurate responses.
+    </p>
+    <p>
+      On the frontend, a React-based interface ensures responsive and dynamic conversations, with real-time feedback and user-friendly design principles.
+    </p>
+  </div>
 
-  <section aria-labelledby="process-title">
-    <h2 id="process-title" class="section-title">Development Process</h2>
-    <ul class="process-list">
-      <li>Collected environmental knowledge bases and datasets.</li>
-      <li>Developed the NLP model using NLTK and spaCy frameworks.</li>
-      <li>Integrated external APIs for weather and energy consumption tips.</li>
-      <li>Built a Flask backend API to handle user queries securely.</li>
-      <li>Created a responsive frontend interface with React.js.</li>
-      <li>Performed iterative testing and user feedback cycles to improve accuracy.</li>
+  <h2>Technologies and Tools Used</h2>
+  <div class="section-box">
+    <ul>
+      <li>Python, Flask (Backend API)</li>
+      <li>spaCy, NLTK (Natural Language Processing)</li>
+      <li>React.js (Frontend UI)</li>
+      <li>Heroku (Deployment)</li>
+      <li>GitHub for version control and collaboration</li>
     </ul>
-  </section>
+  </div>
 
-  <section aria-labelledby="gallery-title">
-    <h2 id="gallery-title" class="section-title">Project Gallery</h2>
-    <div class="gallery" role="list">
-      <img src="images/chatbot-logo.JPG" alt="Eco-Coach Chatbot logo" role="listitem" tabindex="0" />
-      <img src="images/chatbot-dashboard.JPG" alt="Chatbot Dashboard showing analytics" role="listitem" tabindex="0" />
-      <img src="images/chatbot-interface.JPG" alt="Chatbot conversation interface screenshot" role="listitem" tabindex="0" />
-    </div>
-  </section>
+  <h2>Key Features</h2>
+  <div class="section-box">
+    <ul>
+      <li>Real-time conversational interaction with natural language understanding</li>
+      <li>Personalized eco-friendly suggestions based on user inputs</li>
+      <li>Interactive FAQs on environmental topics</li>
+      <li>Easy integration with external APIs for updated information</li>
+      <li>Responsive design optimized for mobile and desktop</li>
+    </ul>
+  </div>
 
-  <section aria-labelledby="references-title">
-    <h2 id="references-title" class="section-title">References</h2>
-    <p class="references" tabindex="0">
-      1. OpenAI API Documentation<br />
-      2. NLTK Natural Language Toolkit Guide<br />
-      3. spaCy NLP Framework Official Docs<br />
-      4. AWS Cloud Deployment Tutorials<br />
+  <h2>Reflection and Lessons Learned</h2>
+  <div class="section-box">
+    <p>
+      This project deepened my understanding of NLP techniques and how supervised learning models can be trained to classify user intents effectively. Working on integrating multiple technologies enhanced my skills in full-stack development and taught me the importance of clean data and iterative testing.
     </p>
-  </section>
+    <p>
+      Challenges included managing ambiguous user inputs and improving the chatbot’s ability to handle unexpected questions, which was addressed by expanding training data and refining the intent classification model.
+    </p>
+  </div>
 
+  <h2>Personal Contribution</h2>
+  <div class="section-box">
+    <p>
+      I led the design and implementation of the backend chatbot logic, including data preprocessing, model training, and API development. Additionally, I contributed to the frontend interface design to ensure seamless user experience across devices.
+    </p>
+  </div>
+
+  <h2>Future Improvements</h2>
+  <div class="section-box">
+    <p>
+      Moving forward, I plan to incorporate reinforcement learning to allow the chatbot to improve its responses based on user feedback dynamically. Integrating voice recognition and multilingual support are also priorities to broaden accessibility.
+    </p>
+  </div>
+
+  <h2>Connection to Machine Learning Training Methods</h2>
+  <div class="section-box">
+    <p>
+      The Eco-Coach Chatbot project exemplifies supervised learning, where labeled training data was essential for teaching the model to recognize user intents accurately. The iterative training and testing cycles reflect key machine learning principles, emphasizing the importance of quality data and repeated exposure for model refinement.
+    </p>
+  </div>
+
+  <a href="index.html" class="btn-back" title="Back to Portfolio Home">← Back to Home</a>
 </main>
 
-<footer role="contentinfo">
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All rights reserved</p>
+<footer>
+  &copy; 2025 Naga Venkata Satyanarayana Devarapalli
 </footer>
 
-<button id="scrollToTopBtn" aria-label="Scroll to top">↑</button>
-
 <script>
-  // Scroll to top button logic
-  const scrollBtn = document.getElementById('scrollToTopBtn');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 250) {
-      scrollBtn.style.display = 'block';
-    } else {
-      scrollBtn.style.display = 'none';
+  // Simple JS to highlight the active nav link
+  document.querySelectorAll('nav a').forEach(link => {
+    if(link.href === window.location.href) {
+      link.style.backgroundColor = '#003d6b';
+      link.style.borderRadius = '4px';
     }
-  });
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
