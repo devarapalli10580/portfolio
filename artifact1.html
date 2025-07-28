@@ -3,220 +3,253 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Artifact 1 | Eco-Coach Chatbot Project</title>
+<title>Professional Portfolio Artifact 1 | ChatBox Creator Bot</title>
 <style>
-  /* Embedded CSS for Artifact 1 page */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0; background: #f7f9fc;
+    background-color: #f3f8ff;
+    margin: 0;
+    padding: 0;
     color: #333;
+    line-height: 1.6;
   }
   header {
     background: #004b8d;
-    color: white;
-    padding: 20px 40px;
+    color: #fff;
+    padding: 25px 40px;
     text-align: center;
     font-size: 28px;
     font-weight: 700;
+    letter-spacing: 1.2px;
   }
   nav {
     background: #0077cc;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 10px 0;
+    padding: 12px 0;
+    text-align: center;
   }
   nav a {
     color: white;
-    text-decoration: none;
+    margin: 0 20px;
     font-weight: 600;
-    font-size: 17px;
-    padding: 8px 14px;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
   }
-  nav a:hover {
-    background: #005a99;
+  nav a:hover,
+  nav a.active {
+    background-color: #005a99;
   }
   main {
-    max-width: 1000px;
-    margin: 40px auto;
+    max-width: 900px;
+    margin: 40px auto 80px auto;
     background: white;
-    padding: 30px 40px;
-    box-shadow: 0 0 20px rgb(0 75 141 / 0.2);
+    padding: 35px 40px;
     border-radius: 10px;
+    box-shadow: 0 0 22px rgb(0 75 141 / 0.15);
   }
   h1, h2, h3 {
     color: #004b8d;
+    margin-top: 30px;
+    margin-bottom: 15px;
   }
   h1 {
     font-size: 36px;
-    margin-bottom: 10px;
   }
   h2 {
-    margin-top: 40px;
-    margin-bottom: 18px;
+    font-size: 26px;
     border-bottom: 3px solid #ff6a00;
-    padding-bottom: 6px;
+    padding-bottom: 8px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
   }
   p {
     font-size: 17px;
-    line-height: 1.6;
     margin-bottom: 18px;
   }
-  img.project-img {
-    max-width: 100%;
-    margin: 30px 0;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgb(0 75 141 / 0.15);
+  ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
-  .btn-back {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 24px;
-    background: #ff6a00;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  ul li {
+    margin-bottom: 10px;
   }
-  .btn-back:hover {
-    background: #cc5500;
-  }
-  /* Section boxes */
   .section-box {
     background: #eaf4fc;
     border-left: 6px solid #ff6a00;
-    padding: 20px 25px;
-    margin-bottom: 30px;
+    padding: 18px 22px;
+    margin-bottom: 35px;
     border-radius: 6px;
   }
-  .section-box p {
-    font-size: 16px;
+  .btn-back {
+    display: inline-block;
+    background-color: #ff6a00;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
   }
-  /* Footer */
+  .btn-back:hover {
+    background-color: #cc5500;
+  }
   footer {
     text-align: center;
     padding: 18px 10px;
-    margin-top: 60px;
     font-size: 14px;
-    color: #777;
+    color: #666;
+  }
+  /* Responsive */
+  @media(max-width:600px) {
+    main {
+      padding: 25px 20px;
+      margin: 20px auto 40px auto;
+    }
+    nav a {
+      margin: 0 8px;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
   }
 </style>
 </head>
 <body>
 
 <header>
-  Eco-Coach Chatbot Project - Artifact 1
+  Professional Portfolio Artifact 1 - ChatBox Creator Bot
 </header>
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="artifact1.html" style="background:#005a99; border-radius:4px;">Artifact 1</a>
+  <a href="artifact1.html" class="active">Artifact 1</a>
   <a href="artifact2.html">Artifact 2</a>
   <a href="artifact3.html">Artifact 3</a>
 </nav>
 
 <main>
-  <h1>Eco-Coach Chatbot Project</h1>
-  <p>
-    The Eco-Coach Chatbot is an AI-powered interactive assistant designed to promote eco-friendly habits by providing real-time guidance and personalized suggestions. This project integrates natural language processing (NLP) techniques with modern web technologies to create an engaging user experience that motivates sustainable lifestyle choices.
-  </p>
 
-  <img src="images/chatbot-screenshot.png" alt="Screenshot of Eco-Coach Chatbot interface" class="project-img" />
+  <h1>Introduction</h1>
+  <p>Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. As part of my academic and professional growth, I am building a comprehensive professional portfolio to showcase my technical capabilities, creative thinking, and collaborative skills.</p>
+  <p>This portfolio is designed to highlight real-world applications of AI/ML, reflecting my learning journey and the impact of my contributions. The artifact presented here stems from Workshop 1’s AI Lab activity, where I actively participated in the ideation, design, and testing of an AI assistant chatbot for no-code chatbot development. The experience was an excellent opportunity to practice design thinking, prompt engineering, and AI deployment in a collaborative team environment.</p>
 
-  <h2>Project Overview and Objectives</h2>
-  <div class="section-box">
-    <p>
-      The goal of this project was to build a conversational AI tool capable of understanding user queries about environmental topics and responding with helpful tips and resources. It serves as both an educational tool and a behavioral coach to encourage sustainable actions in daily life.
-    </p>
-    <p>
-      We aimed to combine machine learning models, rule-based logic, and a responsive user interface to achieve a seamless experience that could be easily extended in future iterations.
-    </p>
-  </div>
+  <h2>Artifact Description</h2>
 
-  <h2>Development Process</h2>
-  <div class="section-box">
-    <p>
-      The chatbot backend was built using Python’s Flask framework and leverages NLP libraries such as spaCy for intent recognition and NLTK for text processing. Machine learning classifiers were trained on labeled datasets of environmental questions and user intents to provide accurate responses.
-    </p>
-    <p>
-      On the frontend, a React-based interface ensures responsive and dynamic conversations, with real-time feedback and user-friendly design principles.
-    </p>
-  </div>
+  <h3>Overview:</h3>
+  <p>The featured artifact is a conversational AI assistant – the <strong>ChatBox Creator Bot</strong> – designed to help users, especially non-programmers, create and deploy custom chatbots without any coding knowledge. The bot was built using <strong>Mizou.com</strong>, a no-code platform that allows easy prototyping and deployment of chatbot flows.</p>
+  <p>The chatbot acts as a mentor and guide, enabling users to construct their own bots by walking them through features such as tone selection, FAQ design, visual flow planning, and integration into web platforms. It supports both beginners and small business owners looking to adopt conversational AI solutions.</p>
 
-  <h2>Technologies and Tools Used</h2>
-  <div class="section-box">
-    <ul>
-      <li>Python, Flask (Backend API)</li>
-      <li>spaCy, NLTK (Natural Language Processing)</li>
-      <li>React.js (Frontend UI)</li>
-      <li>Heroku (Deployment)</li>
-      <li>GitHub for version control and collaboration</li>
-    </ul>
-  </div>
+  <h3>Problem Solved:</h3>
+  <p>Many individuals with innovative ideas often face a steep learning curve in implementing chatbots due to lack of technical expertise. This AI assistant addresses that issue by simplifying the development process into intuitive conversations. It provides visual instructions, examples, templates, and hands-on walkthroughs to help users build personalized chatbots.</p>
 
-  <h2>Key Features</h2>
-  <div class="section-box">
-    <ul>
-      <li>Real-time conversational interaction with natural language understanding</li>
-      <li>Personalized eco-friendly suggestions based on user inputs</li>
-      <li>Interactive FAQs on environmental topics</li>
-      <li>Easy integration with external APIs for updated information</li>
-      <li>Responsive design optimized for mobile and desktop</li>
-    </ul>
-  </div>
+  <h3>Tool Used:</h3>
+  <p><strong>Platform:</strong> Mizou.com</p>
+  <p><strong>Bot Name:</strong> ChatBox Creator Bot</p>
+  <p><strong>Live Preview:</strong> <a href="https://mizou.com" target="_blank" rel="noopener">Click here to preview</a></p>
 
-  <h2>Reflection and Lessons Learned</h2>
-  <div class="section-box">
-    <p>
-      This project deepened my understanding of NLP techniques and how supervised learning models can be trained to classify user intents effectively. Working on integrating multiple technologies enhanced my skills in full-stack development and taught me the importance of clean data and iterative testing.
-    </p>
-    <p>
-      Challenges included managing ambiguous user inputs and improving the chatbot’s ability to handle unexpected questions, which was addressed by expanding training data and refining the intent classification model.
-    </p>
-  </div>
+  <h2>Design Thinking Applied</h2>
 
-  <h2>Personal Contribution</h2>
-  <div class="section-box">
-    <p>
-      I led the design and implementation of the backend chatbot logic, including data preprocessing, model training, and API development. Additionally, I contributed to the frontend interface design to ensure seamless user experience across devices.
-    </p>
-  </div>
+  <h3>Empathize:</h3>
+  <p>We conducted interviews with college peers, small business owners, and entrepreneurs to understand their biggest challenges in chatbot development. Most cited technical jargon, interface complexity, and uncertainty about use cases as primary barriers.</p>
 
-  <h2>Future Improvements</h2>
-  <div class="section-box">
-    <p>
-      Moving forward, I plan to incorporate reinforcement learning to allow the chatbot to improve its responses based on user feedback dynamically. Integrating voice recognition and multilingual support are also priorities to broaden accessibility.
-    </p>
-  </div>
+  <h3>Define:</h3>
+  <p>How might we help non-coders build functional chatbots quickly and confidently without writing code?</p>
 
-  <h2>Connection to Machine Learning Training Methods</h2>
-  <div class="section-box">
-    <p>
-      The Eco-Coach Chatbot project exemplifies supervised learning, where labeled training data was essential for teaching the model to recognize user intents accurately. The iterative training and testing cycles reflect key machine learning principles, emphasizing the importance of quality data and repeated exposure for model refinement.
-    </p>
-  </div>
+  <h3>Ideate:</h3>
+  <p>As a team, we brainstormed 12+ features. Key ideas included:</p>
+  <ul>
+    <li>Interactive FAQ builder</li>
+    <li>Tone selector (casual, formal, friendly, etc.)</li>
+    <li>Visual flowchart previews</li>
+    <li>Multilingual templates</li>
+    <li>User success checklist</li>
+  </ul>
+
+  <h3>Prototype:</h3>
+  <p>Using Mizou, we implemented the core features, embedded in-chat documentation, and designed a clean UI that mimics teaching interactions.</p>
+
+  <h3>Test:</h3>
+  <p>We conducted peer testing sessions. Based on feedback, we revised the bot’s language style, added memory features for session continuity, and integrated visual aids for better guidance. Final Mean Reciprocal Rank (MRR) performance improved to 0.86.</p>
+
+  <h2>Audience Value</h2>
+  <ul>
+    <li><strong>Employers:</strong> Demonstrates practical skills in prompt engineering, LLM integration, chatbot UX design, and user-centric prototyping with real tools.</li>
+    <li><strong>Peers:</strong> Offers a step-by-step model for building functional chatbots through design thinking and experimentation.</li>
+    <li><strong>Instructors:</strong> Validates my understanding of generative AI tools, ethical development practices, and collaborative problem-solving.</li>
+  </ul>
+
+  <h2>Reflection</h2>
+  <p>Participating in this chatbot development project taught me several vital lessons:</p>
+
+  <h3>User-Centric Design:</h3>
+  <p>I learned to think beyond features and focus on how users interact with AI tools. Simplifying complexity into human-friendly interfaces was a powerful experience.</p>
+
+  <h3>Interdisciplinary Collaboration:</h3>
+  <p>I worked closely with peers from different backgrounds – business, tech, and design – which helped refine my communication and teamwork skills. I contributed heavily to the documentation and final presentation, ensuring clarity across technical and non-technical audiences.</p>
+
+  <h3>Iterative Learning:</h3>
+  <p>Early user feedback was crucial. We thought our initial version was strong, but user testing revealed gaps. Revising the tone, flow, and visuals significantly improved the final product.</p>
+
+  <p>This artifact now stands as a strong example of how I solve problems with empathy, design thinking, and AI expertise – skills I intend to apply in future data analytics and AI development roles.</p>
+
+  <h2>Feedback and Revisions</h2>
+
+  <table style="width:100%; border-collapse: collapse; margin-bottom: 30px;">
+    <thead style="background-color:#004b8d; color: white;">
+      <tr>
+        <th style="padding: 10px; text-align:left;">Feedback Area</th>
+        <th style="padding: 10px; text-align:left;">Initial Issue</th>
+        <th style="padding: 10px; text-align:left;">Action Taken</th>
+        <th style="padding: 10px; text-align:left;">Results of Revision</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color:#eaf4fc;">
+        <td style="padding: 10px;">Complexity of Language</td>
+        <td style="padding: 10px;">Some users were overwhelmed by AI/tech terms.</td>
+        <td style="padding: 10px;">Simplified language to 8th-grade reading level; added examples and analogies.</td>
+        <td style="padding: 10px;">MRR increased from 0.61 → 0.86</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; background:#f7fbff;">Visual Flow Confusion</td>
+        <td style="padding: 10px; background:#f7fbff;">Users struggled with text-heavy, linear conversation flow.</td>
+        <td style="padding: 10px; background:#f7fbff;">Introduced inline flowcharts, added multimedia elements (diagrams/tutorials).</td>
+        <td style="padding: 10px; background:#f7fbff;">User satisfaction rating: 4.9 / 5.0</td>
+      </tr>
+      <tr style="background-color:#eaf4fc;">
+        <td style="padding: 10px;">Lack of Onboarding</td>
+        <td style="padding: 10px;">New users felt lost at the start.</td>
+        <td style="padding: 10px;">Added a “Welcome & Instructions” sequence for onboarding.</td>
+        <td style="padding: 10px;">Most praised features: Easy-to-follow flow, visual previews, and friendly tone</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>References</h2>
+  <ul>
+    <li>Botpress. (n.d.). Botpress Documentation. Retrieved from <a href="https://botpress.com/docs" target="_blank" rel="noopener">https://botpress.com/docs</a></li>
+    <li>Chatbase. (n.d.). Create AI Chatbots for Your Website. Retrieved from <a href="https://www.chatbase.co/" target="_blank" rel="noopener">https://www.chatbase.co/</a></li>
+    <li>Dialogflow. (n.d.). Conversational AI Platform. Google Cloud. Retrieved from <a href="https://cloud.google.com/dialogflow" target="_blank" rel="noopener">https://cloud.google.com/dialogflow</a></li>
+    <li>IDEO. (n.d.). Design Thinking. Retrieved from <a href="https://designthinking.ideo.com/" target="_blank" rel="noopener">https://designthinking.ideo.com/</a></li>
+    <li>OpenAI. (2024). ChatGPT and GPT-4 Technical Capabilities Overview. Retrieved from <a href="https://openai.com/gpt-4" target="_blank" rel="noopener">https://openai.com/gpt-4</a></li>
+    <li>Mizou. (2025). Mizou AI Chatbot Builder. Retrieved from <a href="https://mizou.com" target="_blank" rel="noopener">https://mizou.com</a></li>
+    <li>Anthropic. (2024). Claude 3 Language Model Overview. Retrieved from <a href="https://www.anthropic.com/index/claude" target="_blank" rel="noopener">https://www.anthropic.com/index/claude</a></li>
+    <li>Google DeepMind. (2024). Gemini 1.5 Technical Report. Retrieved from <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener">https://deepmind.google/technologies/gemini/</a></li>
+    <li>European Union. (2018). General Data Protection Regulation (GDPR). Retrieved from <a href="https://gdpr.eu/" target="_blank" rel="noopener">https://gdpr.eu/</a></li>
+    <li>Replit. (n.d.). Collaborative Code Workspace. Retrieved from <a href="https://replit.com" target="_blank" rel="noopener">https://replit.com</a></li>
+  </ul>
 
   <a href="index.html" class="btn-back" title="Back to Portfolio Home">← Back to Home</a>
+
 </main>
 
 <footer>
   &copy; 2025 Naga Venkata Satyanarayana Devarapalli
 </footer>
-
-<script>
-  // Simple JS to highlight the active nav link
-  document.querySelectorAll('nav a').forEach(link => {
-    if(link.href === window.location.href) {
-      link.style.backgroundColor = '#003d6b';
-      link.style.borderRadius = '4px';
-    }
-  });
-</script>
 
 </body>
 </html>
