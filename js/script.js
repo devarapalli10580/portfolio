@@ -1,61 +1,59 @@
-// Wait for DOM to load
+// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
-  
   // Navigation menu toggle for mobile
   const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav ul');
+  const navList = document.querySelector('.nav-list');
 
-  if (navToggle && navMenu) {
+  if (navToggle && navList) {
     navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
+      navList.classList.toggle('open');
+      navToggle.setAttribute(
+        'aria-expanded',
+        navList.classList.contains('open') ? 'true' : 'false'
+      );
     });
   }
 
-  // Dark mode toggle
+  // Scroll to Top button
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  if (scrollTopBtn) {
+    // Show or hide button on scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.style.display = 'block';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+
+    // Smooth scroll to top on click
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  }
+
+  // Optional: Dark mode toggle (requires a button with class .dark-mode-toggle)
   const darkModeToggle = document.querySelector('.dark-mode-toggle');
-  const body = document.body;
 
   if (darkModeToggle) {
     darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-
-      // Change icon (moon/sun)
-      if(body.classList.contains('dark-mode')){
-        darkModeToggle.textContent = '☀️';  // sun icon
+      document.body.classList.toggle('dark-mode');
+      // Optionally save preference to localStorage
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
       } else {
-        darkModeToggle.textContent = '🌙';  // moon icon
-      }
-
-      // Optional: Save preference in localStorage
-      if(body.classList.contains('dark-mode')){
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
+        localStorage.removeItem('darkMode');
       }
     });
 
-    // Load saved theme preference on page load
-    const savedTheme = localStorage.getItem('theme');
-    if(savedTheme === 'dark'){
-      body.classList.add('dark-mode');
-      darkModeToggle.textContent = '☀️';
+    // Load saved mode
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
     }
   }
-
-  // Smooth scroll for anchor links
-  const links = document.querySelectorAll('nav a[href^="#"]');
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if(target){
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Close nav menu on mobile after click
-        if(navMenu.classList.contains('show')){
-          navMenu.classList.remove('show');
-        }
-      }
-    });
-  });
-
 });
