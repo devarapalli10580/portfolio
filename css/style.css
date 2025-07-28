@@ -344,3 +344,50 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.artifact-summary {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(49, 120, 115, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.artifact-summary:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(31, 77, 68, 0.3);
+}
+
+.artifact-summary .icon {
+  font-size: 2.5rem;
+  color: #317873;
+  margin-bottom: 1rem;
+}
+
+.artifact-summary h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #1f4d44;
+}
+
+.artifact-summary p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.artifact-summary .contact-info span {
+  display: block;
+  font-size: 0.95rem;
+  color: #317873;
+  margin-bottom: 0.3rem;
+}
