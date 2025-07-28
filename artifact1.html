@@ -1,470 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artifact 1 – AI Lab No-Code Chatbot Assistant</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Artifact 1 – AI Lab No-Code Chatbot Assistant</title>
 
-  <!-- Embedded CSS -->
-  <style>
-    /* ===============================
-       GLOBAL RESET & BASE STYLES
-    ================================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    ul {
-      list-style: none;
-    }
+<!-- ==========================
+     CSS STYLES (Embedded)
+==============================-->
+<style>
+/* =======================================
+   GLOBAL RESET & BASE STYLES
+========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+/* Anchors and lists */
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
 
-    /* ===============================
-       COLOR PALETTE
-    ================================= */
-    :root {
-      --blue: #2563eb;
-      --blue-dark: #1e40af;
-      --green: #16a34a;
-      --orange: #ea580c;
-      --light-bg: #ffffff;
-      --light-gray: #f1f5f9;
-      --dark-text: #1e293b;
-      --transition: all 0.3s ease;
-    }
+/* =======================================
+   COLOR VARIABLES
+========================================== */
+:root {
+  --blue: #2563eb;
+  --blue-dark: #1e40af;
+  --green: #16a34a;
+  --orange: #ea580c;
+  --light-bg: #ffffff;
+  --light-gray: #f1f5f9;
+  --dark-text: #1e293b;
+  --transition: all 0.3s ease;
+}
 
-    /* ===============================
-       HEADER & NAV
-    ================================= */
-    header {
-      background: linear-gradient(90deg, var(--blue), var(--green));
-      color: white;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li a {
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-    nav ul li a:hover {
-      color: var(--orange);
-    }
+/* =======================================
+   HEADER & NAVBAR
+========================================== */
+header {
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+nav ul li a {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+nav ul li a:hover {
+  color: var(--orange);
+}
 
-    /* ===============================
-       HERO SECTION
-    ================================= */
-    .hero {
-      background: linear-gradient(135deg, var(--blue), var(--green));
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
+/* =======================================
+   HERO SECTION
+========================================== */
+.hero {
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: auto;
+}
 
-    /* ===============================
-       MAIN CONTAINER
-    ================================= */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 2rem auto;
-    }
+/* =======================================
+   MAIN CONTAINER
+========================================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
 
-    /* ===============================
-       ASSIGNMENT DETAILS
-    ================================= */
-    .assignment-details h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--blue);
-    }
-    .accordion {
-      background: var(--light-gray);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .accordion-item {
-      border-bottom: 1px solid #ddd;
-    }
-    .accordion-header {
-      background: var(--blue);
-      color: white;
-      padding: 1rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .accordion-header:hover {
-      background: var(--blue-dark);
-    }
-    .accordion-content {
-      background: white;
-      display: none;
-      padding: 1rem 1.5rem;
-      line-height: 1.7;
-      color: var(--dark-text);
-    }
-    .accordion-header.active + .accordion-content {
-      display: block;
-    }
+/* =======================================
+   SECTION HEADERS
+========================================== */
+section h2 {
+  font-size: 2rem;
+  color: var(--blue);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+section p {
+  margin-bottom: 1rem;
+}
 
-    /* ===============================
-       TABS
-    ================================= */
-    .tabs {
-      margin: 2rem 0;
-    }
-    .tab-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .tab-buttons button {
-      background: var(--green);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .tab-buttons button.active {
-      background: var(--orange);
-    }
-    .tab-content {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .tab-panel {
-      display: none;
-    }
-    .tab-panel.active {
-      display: block;
-    }
+/* =======================================
+   ASSIGNMENT DETAILS (Accordion)
+========================================== */
+.accordion {
+  background: var(--light-gray);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+.accordion-header {
+  background: var(--blue);
+  color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-header:hover {
+  background: var(--blue-dark);
+}
+.accordion-content {
+  background: white;
+  display: none;
+  padding: 1rem 1.5rem;
+  line-height: 1.7;
+  color: var(--dark-text);
+}
+.accordion-header.active + .accordion-content {
+  display: block;
+}
 
-    /* ===============================
-       IMAGE GALLERY
-    ================================= */
-    .gallery {
-      margin: 2rem 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: var(--transition);
-    }
-    .lightbox.active {
-      visibility: visible;
-      opacity: 1;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
-    .close-lightbox {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-    }
+/* =======================================
+   TABS
+========================================== */
+.tabs { margin: 2rem 0; }
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.tab-buttons button {
+  background: var(--green);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.tab-buttons button.active { background: var(--orange); }
+.tab-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 
-    /* ===============================
-       CONTACT FORM
-    ================================= */
-    .contact {
-      background: var(--light-gray);
-      padding: 2rem;
-      border-radius: 10px;
-      margin-top: 3rem;
-    }
-    .contact h2 {
-      color: var(--green);
-      margin-bottom: 1rem;
-    }
-    .contact form {
-      display: grid;
-      gap: 1rem;
-    }
-    .contact input, .contact textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    .contact button {
-      background: var(--blue);
-      color: white;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+/* =======================================
+   IMAGE GALLERY
+========================================== */
+.gallery {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.gallery img {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.gallery img:hover { transform: scale(1.05); }
 
-    /* ===============================
-       FOOTER
-    ================================= */
-    footer {
-      background: var(--blue-dark);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; opacity: 0;
+  transition: var(--transition);
+}
+.lightbox.active { visibility: visible; opacity: 1; }
+.lightbox img {
+  max-width: 90%; max-height: 80%;
+  border-radius: 10px;
+}
+.close-lightbox {
+  position: absolute; top: 20px; right: 30px;
+  color: white; font-size: 2rem;
+  cursor: pointer;
+}
 
-    /* ===============================
-       DARK MODE
-    ================================= */
-    .dark-mode {
-      background: #1e293b;
-      color: #f1f5f9;
-    }
-    .dark-mode .accordion-header {
-      background: var(--green);
-    }
-    .dark-mode .tab-buttons button {
-      background: var(--orange);
-    }
+/* =======================================
+   CONTACT FORM
+========================================== */
+.contact {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 3rem;
+}
+.contact h2 { color: var(--green); margin-bottom: 1rem; }
+.contact form {
+  display: grid;
+  gap: 1rem;
+}
+.contact input, .contact textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.contact button {
+  background: var(--blue);
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
 
-    /* Responsive */
-    @media(max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+/* =======================================
+   FOOTER
+========================================== */
+footer {
+  background: var(--blue-dark);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+/* =======================================
+   DARK MODE
+========================================== */
+.dark-mode { background: #1e293b; color: #f1f5f9; }
+.dark-mode .accordion-header { background: var(--green); }
+.dark-mode .tab-buttons button { background: var(--orange); }
+
+/* =======================================
+   RESPONSIVE
+========================================== */
+@media(max-width: 768px) {
+  nav ul { flex-direction: column; gap: 0.5rem; }
+  .hero h2 { font-size: 2rem; }
+}
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Artifact 1: No-Code AI Chatbot</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#assignment">Assignment</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- ===============================
+     HEADER
+=================================== -->
+<header>
+  <h1>Artifact 1: No-Code AI Chatbot</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#assignment">Assignment</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h2>AI Lab – No-Code Chatbot Assistant</h2>
-    <p>
-      This artifact demonstrates an AI-powered chatbot creation platform built for non-programmers.
-      It enables users to design, customize, and deploy chatbots seamlessly.
-    </p>
+<!-- ===============================
+     HERO SECTION
+=================================== -->
+<section class="hero">
+  <h2>AI Lab – No-Code Chatbot Assistant</h2>
+  <p>
+    This artifact demonstrates an AI-powered chatbot creation platform built for non-programmers.
+    It enables users to design, customize, and deploy chatbots seamlessly with zero coding skills.
+  </p>
+</section>
+
+<main class="container">
+  <!-- ===============================
+       ASSIGNMENT DETAILS
+  ===================================-->
+  <section class="assignment-details" id="assignment">
+    <h2>Assignment Details</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header">Objective <span>+</span></div>
+        <div class="accordion-content">
+          <p>
+            The objective was to develop an AI chatbot creation tool without requiring coding skills.
+            The system simplifies deployment, integrates with NLP, and ensures an intuitive user experience.
+          </p>
+          <p>
+            The goal aligns with modern AI democratization trends, enabling small businesses and educational institutions
+            to leverage AI without heavy technical resources.
+          </p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Learning Outcomes <span>+</span></div>
+        <div class="accordion-content">
+          <ul>
+            <li>Understand AI chatbot design principles and conversational flow creation</li>
+            <li>Explore Natural Language Processing (NLP) integration for intelligent responses</li>
+            <li>Enhance UX for non-technical users with drag-and-drop interface</li>
+            <li>Apply agile methodology for iterative development</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Tools Used <span>+</span></div>
+        <div class="accordion-content">
+          <p>Technologies include React.js, Node.js, Dialogflow for NLP, and Firebase for cloud hosting.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <main class="container">
-    <!-- ASSIGNMENT DETAILS -->
-    <section class="assignment-details" id="assignment">
-      <h2>Assignment Details</h2>
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="accordion-header">Objective <span>+</span></div>
-          <div class="accordion-content">
-            <p>
-              The objective was to develop an AI chatbot creation tool without requiring coding skills.
-              The system simplifies deployment and supports NLP integration.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header">Learning Outcomes <span>+</span></div>
-          <div class="accordion-content">
-            <ul>
-              <li>Understand AI chatbot design principles</li>
-              <li>Explore NLP integration</li>
-              <li>Enhance UX for non-technical users</li>
-            </ul>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header">Tools Used <span>+</span></div>
-          <div class="accordion-content">
-            <p>React.js, Node.js, Dialogflow, TensorFlow Lite</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TABS -->
-    <section class="tabs">
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-target="tab1">Steps</button>
-        <button class="tab-btn" data-target="tab2">Challenges</button>
-        <button class="tab-btn" data-target="tab3">Solutions</button>
-      </div>
-      <div class="tab-content">
-        <div class="tab-panel active" id="tab1">
-          <h3>Development Steps</h3>
-          <ol>
-            <li>Defined user personas and requirements</li>
-            <li>Built UI with React.js for drag-and-drop interface</li>
-            <li>Integrated NLP for chatbot training</li>
-            <li>Deployed using cloud services</li>
-          </ol>
-        </div>
-        <div class="tab-panel" id="tab2">
-          <h3>Challenges</h3>
-          <p>Ensuring smooth NLP integration and supporting multiple languages was challenging.</p>
-        </div>
-        <div class="tab-panel" id="tab3">
-          <h3>Solutions</h3>
-          <p>Used pre-trained models and scalable architecture to manage complexities.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery" id="gallery">
-      <img src="images/artifact1-step1.jpg" alt="Step 1 UI" />
-      <img src="images/artifact1-step2.jpg" alt="Step 2 Bot Setup" />
-      <img src="images/artifact1-dashboard.jpg" alt="Dashboard" />
-    </section>
-
-    <div class="lightbox" id="lightbox">
-      <span class="close-lightbox">&times;</span>
-      <img src="" alt="Enlarged Image" />
+  <!-- ===============================
+       DEVELOPMENT TABS
+  ===================================-->
+  <section class="tabs">
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-target="tab1">Steps</button>
+      <button class="tab-btn" data-target="tab2">Challenges</button>
+      <button class="tab-btn" data-target="tab3">Solutions</button>
     </div>
+    <div class="tab-content">
+      <div class="tab-panel active" id="tab1">
+        <h3>Development Steps</h3>
+        <ol>
+          <li>Defined user personas and requirements through surveys</li>
+          <li>Built UI with React.js for drag-and-drop conversational blocks</li>
+          <li>Integrated NLP engine for dynamic language understanding</li>
+          <li>Tested chatbot for multi-lingual support and accessibility</li>
+          <li>Deployed using Firebase Hosting for scalability</li>
+        </ol>
+      </div>
+      <div class="tab-panel" id="tab2">
+        <h3>Challenges</h3>
+        <p>
+          The main challenge was ensuring smooth NLP integration with real-time updates and managing user data securely.
+          Supporting multiple languages without performance degradation required careful optimization.
+        </p>
+      </div>
+      <div class="tab-panel" id="tab3">
+        <h3>Solutions</h3>
+        <p>
+          Implemented pre-trained transformer models and a caching mechanism to optimize NLP response time.
+          Enforced encryption for sensitive data and adopted cloud-based load balancing to handle scaling.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <h2>Contact Me</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+  <!-- ===============================
+       GALLERY
+  ===================================-->
+  <section class="gallery" id="gallery">
+    <img src="images/artifact1-step1.jpg" alt="Step 1 UI" />
+    <img src="images/artifact1-step2.jpg" alt="Step 2 Bot Setup" />
+    <img src="images/artifact1-dashboard.jpg" alt="Dashboard" />
+    <img src="images/architecture.jpg" alt="System Architecture" />
+    <img src="images/results.jpg" alt="Testing Results" />
+  </section>
 
-  <footer>
-    &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.
-  </footer>
+  <div class="lightbox" id="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img src="" alt="Enlarged Image" />
+  </div>
 
-  <!-- Embedded JavaScript -->
-  <script>
-    // Accordion functionality
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        header.classList.toggle('active');
-        const content = header.nextElementSibling;
-        if (header.classList.contains('active')) {
-          content.style.display = 'block';
-        } else {
-          content.style.display = 'none';
-        }
-      });
-    });
+  <!-- ===============================
+       CONTACT FORM
+  ===================================-->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
 
-    // Tabs functionality
-    const tabs = document.querySelectorAll('.tab-btn');
-    const panels = document.querySelectorAll('.tab-panel');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(btn => btn.classList.remove('active'));
-        panels.forEach(panel => panel.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.target).classList.add('active');
-      });
-    });
+<footer>
+  &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.
+</footer>
 
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = img.src;
-      });
-    });
-    document.querySelector('.close-lightbox').addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
+<!-- ===============================
+     JAVASCRIPT INTERACTIVITY
+===================================-->
+<script>
+// Accordion
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', () => {
+    header.classList.toggle('active');
+    const content = header.nextElementSibling;
+    if (header.classList.contains('active')) {
+      content.style.display = 'block';
+    } else {
+      content.style.display = 'none';
+    }
+  });
+});
 
-    // Contact form validation
-    document.getElementById('contactForm').addEventListener('submit', e => {
-      e.preventDefault();
-      alert('Thank you for contacting me!');
-    });
-  </script>
+// Tabs
+const tabs = document.querySelectorAll('.tab-btn');
+const panels = document.querySelectorAll('.tab-panel');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(btn => btn.classList.remove('active'));
+    panels.forEach(panel => panel.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.target).classList.add('active');
+  });
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.classList.add('active');
+    lightboxImg.src = img.src;
+  });
+});
+document.querySelector('.close-lightbox').addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+
+// Contact Form
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  alert('Thank you for contacting me!');
+});
+</script>
+
+<!-- ===============================
+     Additional Comments & Structure
+===================================-->
+<!-- 
+  NOTE: This file includes:
+  - Detailed HTML structure
+  - Embedded CSS
+  - Interactivity with JS
+  - Expanded text and sections for academic purposes
+  - Followed blue, green, and orange color theme
+-->
+
 </body>
 </html>
