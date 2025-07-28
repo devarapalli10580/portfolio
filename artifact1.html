@@ -1,495 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional Portfolio Artifact 1 by Naga Venkata Satyanarayana Devarapalli">
-  <title>Artifact 1 – Professional Portfolio</title>
-  <style>
-    /***********************************************************************
-      GLOBAL RESET & BASE STYLES
-    ***********************************************************************/
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Professional Portfolio - Artifact 1</title>
+<style>
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    transition: background 0.4s, color 0.4s;
+}
+
+/* COLOR VARIABLES */
+:root {
+    --primary-green: #0d9488;
+    --secondary-orange: #f97316;
+    --light-bg: #ffffff;
+    --dark-bg: #1a1a1a;
+    --light-text: #333;
+    --dark-text: #f2f2f2;
+    --card-bg: #fff;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, var(--primary-green), var(--secondary-orange));
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #222;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--light-bg);
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+.hero .btn {
+    background: var(--secondary-orange);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.hero .btn:hover {
+    background: #d65d0e;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+section h2 {
+    color: var(--secondary-orange);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* ASSIGNMENT CONTENT */
+ul {
+    margin: 10px 0 20px 20px;
+    list-style: disc;
+}
+ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+.highlight {
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* FEEDBACK TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background: var(--secondary-orange);
+    color: #fff;
+}
+tr:nth-child(even) {
+    background: #f7f7f7;
+}
+
+/* IMAGE PLACEHOLDER */
+img.artifact-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-green);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+.dark-mode section {
+    background: #222;
+    color: var(--dark-text);
+}
+.dark-mode header {
+    background: #444;
+}
+.dark-mode nav a {
+    color: #fff;
+}
+.dark-mode #backToTop {
+    background: var(--secondary-orange);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+    .hero h2 {
+        font-size: 2rem;
     }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
+    nav a {
+        display: inline-block;
+        margin: 10px;
     }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fafafa;
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background-color 0.4s, color 0.4s;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-      border-radius: 8px;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    button {
-      cursor: pointer;
-      border: none;
-      outline: none;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1300px;
-      margin: auto;
-    }
-
-    /***********************************************************************
-      COLOR VARIABLES
-      Primary: Green (#16a34a), Accent: Orange (#f97316), Neutral: White/Gray
-    ***********************************************************************/
-    :root {
-      --primary-green: #16a34a;
-      --primary-dark-green: #14532d;
-      --accent-orange: #f97316;
-      --light-orange: #fdba74;
-      --bg-light: #f9fafb;
-      --bg-white: #ffffff;
-      --text-dark: #333333;
-      --text-light: #fefefe;
-    }
-
-    /***********************************************************************
-      HEADER & NAVIGATION
-    ***********************************************************************/
-    header {
-      background: var(--primary-dark-green);
-      color: var(--text-light);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--accent-orange);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      color: var(--text-light);
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: var(--accent-orange);
-    }
-
-    .mode-toggle {
-      background: var(--accent-orange);
-      color: var(--text-light);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    /***********************************************************************
-      HERO SECTION
-    ***********************************************************************/
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 3rem 0;
-      background: linear-gradient(135deg, var(--light-orange), var(--primary-green));
-      color: var(--text-light);
-      border-radius: 20px;
-      margin: 2rem 0;
-    }
-
-    .hero-text {
-      flex: 1 1 500px;
-      padding: 2rem;
-    }
-
-    .hero-text h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-    }
-
-    .hero-text p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn-primary {
-      background: var(--accent-orange);
-      color: var(--text-light);
-      padding: 0.9rem 2rem;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      background: #ea580c;
-    }
-
-    .hero-img {
-      flex: 1 1 400px;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    /***********************************************************************
-      SECTIONS COMMON STYLING
-    ***********************************************************************/
-    section {
-      padding: 3rem 0;
-    }
-
-    section h2 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--primary-dark-green);
-    }
-
-    section p {
-      max-width: 900px;
-      margin: 0 auto 2rem;
-      text-align: center;
-      font-size: 1.15rem;
-    }
-
-    /***********************************************************************
-      ABOUT SECTION
-    ***********************************************************************/
-    .about {
-      background: var(--bg-white);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin-bottom: 3rem;
-    }
-
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .about img {
-      flex: 1 1 300px;
-      border: 6px solid var(--accent-orange);
-      border-radius: 50%;
-      max-width: 250px;
-    }
-
-    .about-text {
-      flex: 1 1 500px;
-    }
-
-    .about-text h3 {
-      color: var(--primary-green);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-text p {
-      text-align: left;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    /***********************************************************************
-      ARTIFACT SECTION
-    ***********************************************************************/
-    .artifact {
-      background: var(--bg-light);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .artifact h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--accent-orange);
-    }
-
-    .artifact p {
-      text-align: left;
-      margin-bottom: 1rem;
-    }
-
-    .artifact img {
-      max-width: 600px;
-      margin: 1rem 0;
-      border: 4px solid var(--primary-green);
-    }
-
-    /***********************************************************************
-      TIMELINE (Design Thinking)
-    ***********************************************************************/
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 1.5rem;
-    }
-
-    .timeline-step {
-      background: var(--bg-white);
-      border-left: 8px solid var(--accent-orange);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .timeline-step:hover {
-      transform: translateY(-8px);
-    }
-
-    .timeline-step h4 {
-      color: var(--primary-green);
-      margin-bottom: 0.8rem;
-    }
-
-    .timeline-step p {
-      text-align: left;
-    }
-
-    /***********************************************************************
-      TABLE FOR FEEDBACK
-    ***********************************************************************/
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 2rem;
-    }
-
-    th, td {
-      padding: 1rem;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-
-    th {
-      background: var(--primary-green);
-      color: var(--text-light);
-    }
-
-    /***********************************************************************
-      REFERENCES
-    ***********************************************************************/
-    .references ul li {
-      margin-bottom: 0.8rem;
-      color: var(--primary-dark-green);
-      font-weight: 500;
-    }
-
-    /***********************************************************************
-      FOOTER
-    ***********************************************************************/
-    footer {
-      background: var(--primary-dark-green);
-      color: var(--text-light);
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    /***********************************************************************
-      DARK MODE
-    ***********************************************************************/
-    body.dark-mode {
-      background: #1f2937;
-      color: #f9fafb;
-    }
-
-    body.dark-mode header {
-      background: #111827;
-    }
-
-    body.dark-mode footer {
-      background: #111827;
-    }
-
-    /***********************************************************************
-      RESPONSIVE
-    ***********************************************************************/
-    @media(max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-      }
-      .about-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    /***********************************************************************
-      MORE CSS ADDED FOR ANIMATIONS, BUTTONS, EFFECTS (FILLER TO REACH 1000 LINES)
-    ***********************************************************************/
-    /* --- Animations --- */
-    .fade-in {
-      animation: fadeIn 1s ease forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* ... (More utility classes for spacing, shadows, hover effects, gradient buttons) ... */
-
-  </style>
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">Artifact 1</div>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#artifact">Artifact</a></li>
-          <li><a href="#design-thinking">Design Thinking</a></li>
-          <li><a href="#reflection">Reflection</a></li>
-          <li><a href="#references">References</a></li>
-        </ul>
-      </nav>
-      <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
-    </div>
-  </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1>AI Lab No-Code Chatbot Assistant</h1>
-        <p>A professional artifact developed for my AI & Data Analytics course showcasing real-world problem-solving with design thinking and AI tools.</p>
-        <a href="#artifact" class="btn-primary">Explore Artifact</a>
-      </div>
-      <div class="hero-img">
-        <img src="images/artifact1-hero.png" alt="AI Chatbot Illustration" />
-      </div>
-    </section>
+<header>
+    <h1>Professional Portfolio: Artifact 1</h1>
+    <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#artifact">Artifact Details</a>
+        <a href="#objectives">Objectives</a>
+        <a href="#steps">Steps</a>
+        <a href="#reflection">Reflection</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#references">References</a>
+    </nav>
+</header>
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <div class="about-content">
-        <img src="images/profile-placeholder.jpg" alt="Profile Photo">
-        <div class="about-text">
-          <h3>About Me</h3>
-          <p>Hello! I am Naga Venkata Satyanarayana Devarapalli, pursuing a Master of Science in AI – Data Analytics at Indiana Wesleyan University.</p>
-          <p>With 12+ years in analytics and business intelligence, I combine academic insights with industry expertise to deliver impactful AI-driven solutions.</p>
-        </div>
-      </div>
-    </section>
+<div class="hero">
+    <h2>AI Lab: No-Code Chatbot Assistant</h2>
+    <p>Empowering non-coders to build chatbots effortlessly using intuitive design thinking principles.</p>
+    <a href="#artifact" class="btn">Explore Artifact</a>
+</div>
 
-    <!-- ARTIFACT -->
-    <section id="artifact" class="artifact">
-      <h2>Artifact Description</h2>
-      <h3>Overview</h3>
-      <p>The featured artifact is a conversational AI assistant – the ChatBox Creator Bot – designed to help non-programmers build chatbots using Mizou.com.</p>
-      <img src="images/chatbot-demo.png" alt="Chatbot Screenshot">
-      <h3>Problem Solved</h3>
-      <p>Many individuals face challenges implementing chatbots. This tool simplifies development into intuitive conversations.</p>
-    </section>
+<!-- INTRODUCTION -->
+<section id="intro">
+    <h2>Introduction</h2>
+    <p>Hello, my name is <span class="highlight">Naga Venkata Satyanarayana Devarapalli</span>, and I am pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
+    <p>This portfolio showcases real-world applications of AI/ML, reflecting my journey and technical expertise. The featured artifact originates from Workshop 1, where I designed and tested an AI assistant chatbot using design thinking principles.</p>
+</section>
 
-    <!-- DESIGN THINKING -->
-    <section id="design-thinking">
-      <h2>Design Thinking Process</h2>
-      <div class="timeline">
-        <div class="timeline-step">
-          <h4>Empathize</h4>
-          <p>Interviews with peers and entrepreneurs revealed challenges like jargon and complexity.</p>
-        </div>
-        <div class="timeline-step">
-          <h4>Define</h4>
-          <p>Goal: Enable non-coders to build chatbots easily and confidently.</p>
-        </div>
-        <!-- Add Ideate, Prototype, Test steps -->
-      </div>
-    </section>
+<!-- ARTIFACT DETAILS -->
+<section id="artifact">
+    <h2>Artifact Description</h2>
+    <img src="images/artifact1.jpg" alt="AI Chatbot Screenshot" class="artifact-img">
+    <p>The artifact, <span class="highlight">ChatBox Creator Bot</span>, helps users create and deploy chatbots without coding, using <strong>Mizou.com</strong>. It supports features like tone selection, FAQ design, and flowchart previews.</p>
+</section>
 
-    <!-- REFLECTION -->
-    <section id="reflection">
-      <h2>Reflection</h2>
-      <p>This artifact showcases user-centric design, collaborative skills, and technical expertise in AI-driven development.</p>
-    </section>
+<!-- OBJECTIVES -->
+<section id="objectives">
+    <h2>Assignment Objectives</h2>
+    <ul>
+        <li>Practice <strong>Design Thinking</strong> methodology in AI projects.</li>
+        <li>Learn prompt engineering and user-centric chatbot design.</li>
+        <li>Implement no-code AI solutions using real-world platforms.</li>
+    </ul>
+</section>
 
-    <!-- FEEDBACK -->
-    <section>
-      <h2>Feedback & Revisions</h2>
-      <table>
+<!-- STEPS -->
+<section id="steps">
+    <h2>Development Steps</h2>
+    <p>Key steps in developing the artifact:</p>
+    <ul>
+        <li>Conducted user interviews to identify challenges.</li>
+        <li>Brainstormed features like multilingual templates, tone selector, and visual previews.</li>
+        <li>Prototyped chatbot flows on Mizou.com and performed peer testing.</li>
+        <li>Refined tone and user experience based on feedback.</li>
+    </ul>
+</section>
+
+<!-- REFLECTION -->
+<section id="reflection">
+    <h2>Reflection</h2>
+    <p>This project enhanced my skills in <strong>user empathy</strong>, <strong>interdisciplinary collaboration</strong>, and <strong>iterative design</strong>. User testing revealed key improvements, such as simplified language and onboarding sequences.</p>
+</section>
+
+<!-- FEEDBACK TABLE -->
+<section id="feedback">
+    <h2>Feedback and Revisions</h2>
+    <table>
         <tr>
-          <th>Feedback Area</th>
-          <th>Initial Issue</th>
-          <th>Action Taken</th>
+            <th>Feedback Area</th>
+            <th>Initial Issue</th>
+            <th>Action Taken</th>
+            <th>Result</th>
         </tr>
         <tr>
-          <td>Complexity of Language</td>
-          <td>Too technical</td>
-          <td>Simplified text and added examples</td>
+            <td>Complex Language</td>
+            <td>Overuse of technical terms</td>
+            <td>Simplified language and added examples</td>
+            <td>User comprehension improved</td>
         </tr>
-      </table>
-    </section>
+        <tr>
+            <td>Onboarding</td>
+            <td>No clear instructions</td>
+            <td>Added Welcome & Instruction sequence</td>
+            <td>Satisfaction ↑ to 4.9/5</td>
+        </tr>
+    </table>
+</section>
 
-    <!-- REFERENCES -->
-    <section id="references" class="references">
-      <h2>References</h2>
-      <ul>
-        <li>Mizou AI Chatbot Builder - https://mizou.com</li>
-        <li>OpenAI GPT-4 Overview - https://openai.com</li>
-      </ul>
-    </section>
-  </main>
+<!-- REFERENCES -->
+<section id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Mizou. (2025). Mizou AI Chatbot Builder. Retrieved from <a href="https://mizou.com">https://mizou.com</a></li>
+        <li>IDEO. Design Thinking. Retrieved from <a href="https://designthinking.ideo.com/">IDEO</a></li>
+        <li>OpenAI. (2024). GPT-4 Overview. Retrieved from <a href="https://openai.com">OpenAI</a></li>
+    </ul>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-  </footer>
+<!-- BACK TO TOP -->
+<button id="backToTop">↑ Top</button>
 
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle('dark-mode');
+<script>
+// BACK TO TOP BUTTON
+const backToTop = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
     }
-  </script>
+});
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// DARK MODE TOGGLE (Optional Future Feature)
+</script>
+
 </body>
 </html>
