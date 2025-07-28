@@ -142,3 +142,17 @@ section {
 .view-btn:hover {
     background: #6a70ff;
 }
+.view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #4e54c8;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+.view-btn:hover {
+    background: #6a70ff;
+}
