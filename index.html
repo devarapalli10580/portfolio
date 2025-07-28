@@ -1,120 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Naga Venkata Satyanarayana Devarapalli</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naga Venkata Satyanarayana Devarapalli | AI & Data Analytics Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ===================
+GLOBAL STYLES
+=================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #f8f9fa;
+  color: #333;
+  transition: background 0.4s, color 0.4s;
+}
+.dark-mode {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+/* ===================
+HEADER
+=================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #0078d7;
+  color: #fff;
+  z-index: 1000;
+}
+header h1 {
+  font-size: 22px;
+}
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover {
+  border-bottom: 2px solid #fff;
+}
+.dark-toggle {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* ===================
+HERO SECTION
+=================== */
+.hero {
+  background: linear-gradient(120deg, #0078d7, #00c6ff);
+  color: #fff;
+  text-align: center;
+  padding: 150px 20px 100px;
+}
+.hero img {
+  width: 160px;
+  border-radius: 50%;
+  margin: 20px 0;
+  border: 4px solid #fff;
+}
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hero .cta {
+  margin-top: 20px;
+}
+.hero .btn {
+  background: #fff;
+  color: #0078d7;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.hero .btn:hover {
+  background: #005ea6;
+  color: #fff;
+}
+
+/* ===================
+ABOUT SECTION
+=================== */
+section {
+  padding: 80px 50px;
+}
+.about h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.about p {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ===================
+SKILLS SECTION
+=================== */
+.skills h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.skill-bars {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.skill {
+  margin-bottom: 15px;
+}
+.skill-name {
+  display: flex;
+  justify-content: space-between;
+}
+.progress {
+  background: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progress span {
+  display: block;
+  height: 10px;
+  background: #0078d7;
+  width: 0%;
+  transition: width 2s ease;
+}
+
+/* ===================
+ARTIFACTS
+=================== */
+.artifacts h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.artifact-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.artifact-card:hover {
+  transform: translateY(-10px);
+}
+.artifact-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.artifact-card h3 {
+  margin: 15px 0;
+}
+.artifact-card p {
+  padding: 0 10px;
+  font-size: 15px;
+}
+.artifact-card a {
+  display: inline-block;
+  margin: 15px;
+  padding: 10px 15px;
+  background: #0078d7;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.artifact-card a:hover {
+  background: #005ea6;
+}
+
+/* ===================
+EDUCATION
+=================== */
+.education {
+  background: #f0f8ff;
+}
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: #0078d7;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  position: relative;
+  width: 45%;
+  margin: 20px 0;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+.timeline-item:nth-child(even) {
+  left: 55%;
+}
+.timeline-item h4 {
+  color: #0078d7;
+}
+
+/* ===================
+CONTACT
+=================== */
+.contact h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+form button {
+  background: #0078d7;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #005ea6;
+}
+
+/* ===================
+FOOTER
+=================== */
+footer {
+  background: #0078d7;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+footer .social i {
+  margin: 0 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+footer .social i:hover {
+  color: #00c6ff;
+}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <h1 class="site-title">My Portfolio</h1>
-        <div class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
-        <nav class="navbar">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#bio" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#artifacts" class="nav-link">Artifacts</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-    </header>
+<header>
+  <h1>My Portfolio</h1>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#artifacts">Artifacts</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section fade-element">
-        <div class="hero-content">
-            <img src="images/profile.jpg" alt="Profile Photo" class="profile-img">
-            <h2>Hello! 👋 I'm <span>Naga Venkata Satyanarayana Devarapalli</span></h2>
-            <p>
-                <strong>AI & Data Analytics Graduate Student | Business Intelligence Expert</strong>
-            </p>
-            <p>
-                With over 12 years of professional experience in <strong>Data Analytics, Business Intelligence, and AI/ML technologies</strong>, 
-                I am passionate about leveraging data-driven insights to solve real-world business problems and deliver innovative solutions.
-            </p>
-            <a href="#artifacts" class="primary-btn">Explore My Work</a>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <img src="https://via.placeholder.com/160" alt="Profile Photo">
+  <h2>Hello, I'm Naga Venkata Satyanarayana</h2>
+  <p>Graduate Student | AI & Data Analytics | Passionate about leveraging machine learning and data-driven insights to solve complex business problems.</p>
+  <div class="cta">
+    <a href="#artifacts" class="btn">View My Work</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section id="bio" class="bio-section fade-element">
-        <h2>About Me</h2>
-        <p>
-            I am currently pursuing a Master's in <strong>Artificial Intelligence – Data Analytics</strong> at Indiana Wesleyan University. 
-            My expertise spans across <strong>Power BI, Python, SQL, and Machine Learning</strong>. I specialize in creating intelligent dashboards, 
-            predictive models, and interactive AI-based applications.
-        </p>
-        <p>
-            I aim to bridge the gap between data and decision-making by building advanced AI/ML solutions that are scalable, secure, and impactful.
-        </p>
-    </section>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <h2>About Me</h2>
+  <p>
+    I am currently pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of professional experience in Data Analytics, Business Intelligence, and AI/ML, I specialize in creating practical, AI-driven solutions that make a real-world impact. My portfolio highlights diverse projects, from AI-powered chatbots to data visualization dashboards, demonstrating both technical proficiency and innovative thinking.
+  </p>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section fade-element">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <h3>Programming</h3>
-                <p>Python, JavaScript, SQL</p>
-            </div>
-            <div class="skill-card">
-                <h3>BI Tools</h3>
-                <p>Power BI, Tableau, SSIS, SSRS</p>
-            </div>
-            <div class="skill-card">
-                <h3>AI & ML</h3>
-                <p>Machine Learning, NLP, Deep Learning</p>
-            </div>
-            <div class="skill-card">
-                <h3>Cloud & Deployment</h3>
-                <p>Azure, AWS, Vercel</p>
-            </div>
-        </div>
-    </section>
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skill-bars">
+    <div class="skill">
+      <div class="skill-name"><span>Python</span><span>90%</span></div>
+      <div class="progress"><span style="width:90%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name"><span>Machine Learning</span><span>85%</span></div>
+      <div class="progress"><span style="width:85%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name"><span>Power BI</span><span>95%</span></div>
+      <div class="progress"><span style="width:95%"></span></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Artifacts Section -->
-    <section id="artifacts" class="artifacts-section fade-element">
-        <h2>My Artifacts</h2>
-        <p>Explore the projects that showcase my technical expertise and creativity:</p>
-        <div class="artifact-container">
-            <!-- Artifact 1 -->
-            <div class="artifact-card">
-                <img src="images/chatbot-logo.jpg" alt="Chatbot Logo" class="artifact-image">
-                <h3>Artifact 1</h3>
-                <p><strong>Eco-Coach Chatbot Project</strong></p>
-                <a href="artifact1.html" class="view-btn">View Details</a>
-            </div>
-            <!-- Artifact 2 -->
-            <div class="artifact-card">
-                <img src="images/timeline-logo.jpg" alt="Timeline Logo" class="artifact-image">
-                <h3>Artifact 2</h3>
-                <p><strong>AI/ML Timeline Presentation</strong></p>
-                <a href="artifact2.html" class="view-btn">View Details</a>
-            </div>
-            <!-- Artifact 3 -->
-            <div class="artifact-card">
-                <img src="images/schoolai-logo.jpg" alt="SchoolAI Logo" class="artifact-image">
-                <h3>Artifact 3</h3>
-                <p><strong>SchoolAI-Assisted Learning Experience</strong></p>
-                <a href="artifact3.html" class="view-btn">View Details</a>
-            </div>
-        </div>
-    </section>
+<!-- ARTIFACTS -->
+<section class="artifacts" id="artifacts">
+  <h2>My Artifacts</h2>
+  <div class="artifact-grid">
+    <div class="artifact-card">
+      <img src="images/chatbot-logo.JPG" alt="Chatbot">
+      <h3>Artifact 1</h3>
+      <p>College Assistant Chatbot using AI/ML integrated with OpenRouter API.</p>
+      <a href="artifact1.html">View Details</a>
+    </div>
+    <div class="artifact-card">
+      <img src="images/timeline-logo.JPG" alt="Timeline">
+      <h3>Artifact 2</h3>
+      <p>AI & ML Evolution Timeline – Interactive visual representation.</p>
+      <a href="artifact2.html">View Details</a>
+    </div>
+    <div class="artifact-card">
+      <img src="images/schoolai-logo.JPG" alt="SchoolAI">
+      <h3>Artifact 3</h3>
+      <p>SchoolAI Assisted Learning Experience for Machine Learning Training Methods.</p>
+      <a href="artifact3.html">View Details</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section fade-element">
-        <h2>Contact Me</h2>
-        <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana" target="_blank">View Profile</a></p>
-        </div>
-    </section>
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>MS in Artificial Intelligence – Data Analytics</h4>
+      <p>Indiana Wesleyan University (2024 - Present)</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Bachelor of Technology</h4>
+      <p>JNTU Hyderabad (2007)</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-    </footer>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Me</h2>
+  <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+  <div class="social">
+    <i class="fab fa-linkedin"></i>
+    <i class="fab fa-github"></i>
+    <i class="fab fa-twitter"></i>
+  </div>
+</footer>
+
+<script>
+// Dark Mode Toggle
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
+
+// Smooth Scroll on Nav Links
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Form Validation
+function validateForm() {
+  let name = document.getElementById('name').value;
+  let email = document.getElementById('email').value;
+  let message = document.getElementById('message').value;
+  if (name === '' || email === '' || message === '') {
+    alert('Please fill all fields.');
+    return false;
+  }
+  alert('Message Sent Successfully!');
+  return true;
+}
+</script>
 </body>
 </html>
