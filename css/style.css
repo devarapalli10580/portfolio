@@ -234,3 +234,41 @@ section {
     background: #4e54c8;
     color: #fff;
 }
+.artifact-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.artifact-section h3 {
+    color: #4e54c8;
+    margin-bottom: 15px;
+}
+
+.artifact-section h4 {
+    margin-top: 15px;
+    color: #333;
+}
+
+.artifact-section ul {
+    margin-left: 20px;
+    list-style: disc;
+    font-size: 1.05em;
+}
+
+.artifact-reflection {
+    background: #f4f4ff;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 5px solid #4e54c8;
+    font-size: 1.1em;
+    border-radius: 8px;
+}
+
+.artifact-contact {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
