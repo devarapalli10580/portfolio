@@ -1,124 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Naga Venkata Satyanarayana Devarapalli</title>
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
+<style>
+/* ==============================
+   GLOBAL STYLES & RESET
+============================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height: 1.6;
+}
+a { color: #f57c00; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ==============================
+   HEADER & NAVIGATION
+============================== */
+header {
+  position: sticky;
+  top: 0;
+  background: #264653; /* teal/navy mix */
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #f4a261; /* orange accent */
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+nav ul li a {
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #f4a261;
+  color: #264653;
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
+.hero {
+  background: linear-gradient(135deg, #2a9d8f, #264653);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.3rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero a.button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: #f4a261;
+  color: #264653;
+  border-radius: 30px;
+  font-weight: bold;
+}
+.hero a.button:hover {
+  background-color: #e76f51;
+  color: white;
+}
+
+/* ==============================
+   ABOUT SECTION
+============================== */
+.about {
+  max-width: 1000px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.about h2 {
+  color: #264653;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.about p {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ==============================
+   SKILLS SECTION
+============================== */
+.skills {
+  background: #f0f7f6;
+  padding: 3rem 2rem;
+}
+.skills h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #264653;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.skill-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  color: #444;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* ==============================
+   ARTIFACT SECTION
+============================== */
+.artifacts {
+  margin: 4rem auto;
+  max-width: 1200px;
+}
+.artifacts h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #264653;
+}
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.artifact-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.artifact-card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.artifact-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #2a9d8f;
+}
+.artifact-card p {
+  color: #555;
+}
+.artifact-card a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: #e76f51;
+}
+.artifact-card a:hover {
+  color: #264653;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+  background-color: #264653;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 4rem;
+}
+footer a {
+  color: #f4a261;
+  margin: 0 0.5rem;
+}
+footer a:hover {
+  color: #e76f51;
+}
+</style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <nav>
-      <div class="logo">My Portfolio</div>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="bio.html">Bio</a></li>
-        <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
-        <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
-        <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
-        <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
-        <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to My Professional Portfolio</h1>
-      <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a Master's student specializing in AI & Data Analytics. Explore my academic projects, professional achievements, and hands-on experience in cutting-edge technologies.</p>
-      <a href="bio.html" class="cta-button">Explore My Bio</a>
+<!-- HEADER -->
+<header>
+  <div class="logo">Naga V. S. Devarapalli</div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
+      <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
+      <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
+      <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
+      <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Welcome to My Professional Portfolio</h1>
+  <p>Explore my journey in AI, Data Analytics, and cutting-edge projects that showcase innovation and technical excellence.</p>
+  <a href="bio.html" class="button">Learn More About Me</a>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <h2>About This Portfolio</h2>
+  <p>This portfolio demonstrates my learning, projects, and contributions in AI and data analytics. Each section highlights my technical expertise and problem-solving skills in real-world scenarios.</p>
+</section>
+
+<!-- SKILLS -->
+<section class="skills">
+  <h2>My Core Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">Python & R Programming</div>
+    <div class="skill-card">Machine Learning (Scikit-learn, TensorFlow)</div>
+    <div class="skill-card">Data Visualization (Power BI, Tableau)</div>
+    <div class="skill-card">Big Data (Hadoop, Spark)</div>
+    <div class="skill-card">SQL & Database Management</div>
+    <div class="skill-card">Cloud Platforms (AWS, Azure)</div>
+  </div>
+</section>
+
+<!-- ARTIFACTS -->
+<section class="artifacts">
+  <h2>Portfolio Artifacts</h2>
+  <div class="artifact-grid">
+    <div class="artifact-card">
+      <img src="images/artifact1.jpg" alt="Artifact 1">
+      <h3>Artifact 1: AI Lab Chatbot</h3>
+      <p>No-code chatbot project using Botpress and Mizou AI platforms.</p>
+      <a href="artifacts/artifact1.html">View Details →</a>
     </div>
-  </section>
-
-  <!-- SKILLS SECTION -->
-  <section class="skills">
-    <h2>Core Skills & Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Artificial Intelligence</h3>
-        <p>Machine Learning, Deep Learning, NLP, Model Optimization</p>
-      </div>
-      <div class="skill-card">
-        <h3>Data Analytics</h3>
-        <p>Power BI, Tableau, SQL, Python Data Analysis</p>
-      </div>
-      <div class="skill-card">
-        <h3>Big Data & Cloud</h3>
-        <p>Hadoop, Spark, AWS, Azure Fundamentals</p>
-      </div>
-      <div class="skill-card">
-        <h3>Programming</h3>
-        <p>Python, R, JavaScript, SQL, HTML/CSS</p>
-      </div>
+    <div class="artifact-card">
+      <img src="images/artifact2.jpg" alt="Artifact 2">
+      <h3>Artifact 2: AI Timeline</h3>
+      <p>Visual presentation of AI and ML evolution from 1956 to present.</p>
+      <a href="artifacts/artifact2.html">View Details →</a>
     </div>
-  </section>
-
-  <!-- PORTFOLIO / ARTIFACTS SECTION -->
-  <section class="artifacts-section">
-    <h2>Featured Artifacts</h2>
-    <div class="artifacts-grid">
-      <!-- Artifact 1 -->
-      <div class="artifact-card">
-        <img src="images/artifact1.jpg" alt="Artifact 1" />
-        <h3>Artifact 1</h3>
-        <p>No-Code AI Chatbot Assistant Development using Botpress & Dialogflow.</p>
-        <a href="artifacts/artifact1.html" class="btn-link">View Details</a>
-      </div>
-      <!-- Artifact 2 -->
-      <div class="artifact-card">
-        <img src="images/artifact2.jpg" alt="Artifact 2" />
-        <h3>Artifact 2</h3>
-        <p>AI & ML Timeline – A comprehensive visual presentation of evolution.</p>
-        <a href="artifacts/artifact2.html" class="btn-link">View Details</a>
-      </div>
-      <!-- Artifact 3 -->
-      <div class="artifact-card">
-        <img src="images/artifact3.jpg" alt="Artifact 3" />
-        <h3>Artifact 3</h3>
-        <p>SchoolAI-Assisted Learning Experience with real-time engagement.</p>
-        <a href="artifacts/artifact3.html" class="btn-link">View Details</a>
-      </div>
-      <!-- Artifact 4 -->
-      <div class="artifact-card">
-        <img src="images/artifact4.jpg" alt="Artifact 4" />
-        <h3>Artifact 4</h3>
-        <p>Data Challenge Scenarios – Handling data quality and bias issues.</p>
-        <a href="artifacts/artifact4.html" class="btn-link">View Details</a>
-      </div>
-      <!-- Artifact 5 -->
-      <div class="artifact-card">
-        <img src="images/artifact5.jpg" alt="Artifact 5" />
-        <h3>Artifact 5</h3>
-        <p>Advanced AI Project integrating predictive analytics and visualization.</p>
-        <a href="artifacts/artifact5.html" class="btn-link">View Details</a>
-      </div>
+    <div class="artifact-card">
+      <img src="images/artifact3.jpg" alt="Artifact 3">
+      <h3>Artifact 3: SchoolAI Project</h3>
+      <p>Integrating AI into classrooms for improved learning outcomes.</p>
+      <a href="artifacts/artifact3.html">View Details →</a>
     </div>
-  </section>
+    <div class="artifact-card">
+      <img src="images/artifact4.jpg" alt="Artifact 4">
+      <h3>Artifact 4: Data Challenges</h3>
+      <p>Big data handling and advanced analytics for healthcare scenarios.</p>
+      <a href="artifacts/artifact4.html">View Details →</a>
+    </div>
+    <div class="artifact-card">
+      <img src="images/artifact5.jpg" alt="Artifact 5">
+      <h3>Artifact 5: Advanced AI Project</h3>
+      <p>Predictive maintenance solution for industrial systems using AI.</p>
+      <a href="artifacts/artifact5.html">View Details →</a>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/naga-venkata-satyanarayana</a></p>
-    <p>GitHub: <a href="#">github.com/naga-venkata</a></p>
-  </section>
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | 
+    <a href="index.html">Home</a> | 
+    <a href="bio.html">Bio</a> | 
+    <a href="artifacts/artifact1.html">Artifact 1</a> | 
+    <a href="artifacts/artifact2.html">Artifact 2</a> | 
+    <a href="artifacts/artifact3.html">Artifact 3</a> | 
+    <a href="artifacts/artifact4.html">Artifact 4</a> | 
+    <a href="artifacts/artifact5.html">Artifact 5</a>
+  </p>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.</p>
-    <nav class="footer-nav">
-      <a href="index.html">Home</a> |
-      <a href="bio.html">Bio</a> |
-      <a href="artifacts/artifact1.html">Artifact 1</a> |
-      <a href="artifacts/artifact2.html">Artifact 2</a> |
-      <a href="artifacts/artifact3.html">Artifact 3</a> |
-      <a href="artifacts/artifact4.html">Artifact 4</a> |
-      <a href="artifacts/artifact5.html">Artifact 5</a>
-    </nav>
-  </footer>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
