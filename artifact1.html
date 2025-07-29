@@ -1,116 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artifact 1 - COVID-19 Data Analysis</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artifact 1 - AI Lab Chatbot Development | Naga Venkata Satyanarayana Devarapalli</title>
+  <style>
+    /* ===== Reset & Base Styles ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      color: #222;
+    }
+    body {
+      line-height: 1.6;
+      background: linear-gradient(135deg, #fff3e0, #fbe9e7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    a {
+      color: #0288d1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #f57c00;
+      outline: none;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: disc inside;
+    }
+    pre {
+      background-color: #263238;
+      color: #eceff1;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 1rem 0 2rem 0;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0; right: 0;
+      background: #ef6c00; /* Deep Orange */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 10000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: #fff;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      cursor: default;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #fff;
+      box-shadow: inset 0 0 0 0 transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      background-color: #0288d1; /* Blue */
+      box-shadow: inset 0 -3px 0 0 #01579b;
+      color: #fff;
+    }
+
+    /* ===== Main Content ===== */
+    main {
+      margin-top: 80px;
+      flex-grow: 1;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      background: #ffffffcc;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      color: #333;
+    }
+
+    /* ===== Artifact Section ===== */
+    #artifact1 {
+      border-left: 8px solid #ef6c00; /* Deep Orange */
+      padding-left: 1.5rem;
+    }
+    #artifact1 h1 {
+      font-size: 3rem;
+      color: #bf360c;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    #artifact1 h2, #artifact1 h3 {
+      color: #d84315;
+      margin-top: 2rem;
+      font-weight: 700;
+    }
+    #artifact1 p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
+    #artifact1 ul {
+      margin-left: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    #artifact1 ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: #bf360c; /* Darker deep orange */
+      color: #ffe0b2;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #ffe0b2;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: #ffcc80;
+      text-decoration: underline;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem 1rem;
+        max-width: 95%;
+      }
+      #artifact1 h1 {
+        font-size: 2.2rem;
+      }
+      #artifact1 h2 {
+        font-size: 1.6rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #artifact1 h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Naga's Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../bio.html">Bio</a></li>
-                <li><a href="artifact1.html" class="active">Artifact 1</a></li>
-                <li><a href="artifact2.html">Artifact 2</a></li>
-                <li><a href="artifact3.html">Artifact 3</a></li>
-                <li><a href="artifact4.html">Artifact 4</a></li>
-                <li><a href="artifact5.html">Artifact 5</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- ARTIFACT DETAILS -->
-    <section class="artifact-detail">
-        <div class="container">
-            <h1>Artifact 1: COVID-19 Data Analysis – Vaccination vs Death Rates</h1>
-            <p><em>Analyzing real-world data to understand the impact of vaccination on COVID-19 death rates in India.</em></p>
-        </div>
-    </section>
+<header role="banner" aria-label="Primary Navigation">
+  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+  <nav role="navigation" aria-label="Main Navigation">
+    <a href="../index.html">Home</a>
+    <a href="../bio.html">Bio</a>
+    <a href="artifact1.html" class="active" aria-current="page">Artifact 1</a>
+    <a href="artifact2.html">Artifact 2</a>
+    <a href="artifact3.html">Artifact 3</a>
+    <a href="artifact4.html">Artifact 4</a>
+    <a href="artifact5.html">Artifact 5</a>
+  </nav>
+</header>
 
-    <!-- OBJECTIVE -->
-    <section class="objective">
-        <div class="container">
-            <h2>Project Objective</h2>
-            <p>
-                The primary objective of this project was to explore the relationship between vaccination coverage and COVID-19 mortality rates 
-                in India. By analyzing official data sources, the project aimed to identify trends, correlations, and patterns that demonstrate 
-                how vaccination efforts influenced death rates during the pandemic.
-            </p>
-        </div>
-    </section>
+<main>
+  <section id="artifact1" role="main" aria-label="Artifact 1 Content">
+    <h1>Artifact 1: AI Lab - No-Code Chatbot Assistant Development</h1>
 
-    <!-- DESCRIPTION -->
-    <section class="description">
-        <div class="container">
-            <h2>Description & Methodology</h2>
-            <p>
-                The analysis involved gathering vaccination and mortality data from government and trusted open data sources. 
-                The project was implemented using <strong>R programming</strong> in RStudio, focusing on data cleaning, transformation, and visualization.
-            </p>
-            <p>
-                The methodology included:
-            </p>
-            <ul>
-                <li>Data Acquisition from official APIs and CSV datasets</li>
-                <li>Data Preprocessing – handling missing values and outliers</li>
-                <li>Correlation Analysis – identifying relationship between vaccination and death rates</li>
-                <li>Visualization using ggplot2 – line charts, bar charts, and heatmaps</li>
-            </ul>
-        </div>
-    </section>
+    <p><strong>Introduction:</strong> This artifact demonstrates my hands-on experience developing a no-code AI chatbot assistant using leading platforms, showcasing technical and strategic skills in AI deployment.</p>
 
-    <!-- TOOLS USED -->
-    <section class="tools">
-        <div class="container">
-            <h2>Tools & Technologies Used</h2>
-            <ul>
-                <li><strong>R Programming Language</strong> – for statistical analysis and visualization</li>
-                <li><strong>RStudio</strong> – IDE for development</li>
-                <li><strong>ggplot2</strong> – for advanced visualizations</li>
-                <li><strong>Data Sources:</strong> Government of India COVID-19 dataset, WHO data</li>
-            </ul>
-        </div>
-    </section>
+    <h2>Project Overview</h2>
+    <p>
+      The AI Lab Chatbot Assistant project focused on building an interactive chatbot without traditional coding by leveraging platforms such as Botpress, Chatbase, and Mizou AI. This approach enabled rapid prototyping, deployment, and iterative improvement.
+    </p>
 
-    <!-- VISUALIZATIONS -->
-    <section class="visualizations">
-        <div class="container">
-            <h2>Visualizations</h2>
-            <div class="img-gallery">
-                <img src="../images/artifact1-graph1.jpg" alt="Vaccination vs Death Trend">
-                <img src="../images/artifact1-graph2.jpg" alt="Heatmap Correlation">
-            </div>
-            <p><em>Note: These charts represent the vaccination trend and death rate correlation during the COVID-19 pandemic in India.</em></p>
-        </div>
-    </section>
+    <h2>Tools & Technologies Used</h2>
+    <ul>
+      <li>Botpress</li>
+      <li>Chatbase</li>
+      <li>Mizou AI</li>
+      <li>Google Dialogflow</li>
+    </ul>
 
-    <!-- KEY INSIGHTS -->
-    <section class="insights">
-        <div class="container">
-            <h2>Key Insights & Learning Outcomes</h2>
-            <ul>
-                <li>Increased vaccination coverage strongly correlates with a significant reduction in death rates.</li>
-                <li>Data visualization plays a critical role in understanding health trends and decision-making.</li>
-                <li>Gained expertise in R programming, ggplot2 visualization, and statistical correlation analysis.</li>
-            </ul>
-        </div>
-    </section>
+    <h2>Process and Steps</h2>
+    <ol>
+      <li>Requirement gathering and defining chatbot objectives.</li>
+      <li>Platform selection and initial setup.</li>
+      <li>Dialog flow design and training the chatbot.</li>
+      <li>Testing and refinement based on user interactions.</li>
+      <li>Deployment and monitoring chatbot performance.</li>
+    </ol>
 
-    <!-- NAVIGATION -->
-    <section class="navigation-links">
-        <div class="container">
-            <a href="../index.html" class="btn-secondary">← Back to Home</a>
-            <a href="artifact2.html" class="btn-primary">Next: Artifact 2 →</a>
-        </div>
-    </section>
+    <h2>Code Sample</h2>
+    <pre>
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "examples": ["Hello", "Hi", "Good morning"],
+      "responses": ["Hello! How can I assist you today?"]
+    }
+  ]
+}
+    </pre>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-    </footer>
+    <h2>Outcomes and Learnings</h2>
+    <p>
+      This project enhanced my ability to design user-friendly AI assistants and understand the trade-offs between no-code and custom-coded solutions. It highlighted the importance of conversational design, user experience, and iterative learning to improve AI assistants’ effectiveness.
+    </p>
+
+    <img src="../images/artifact1.jpg" alt="Screenshot of AI Lab Chatbot Assistant interface" />
+
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
+  <p>
+    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
+    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
+    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+  </p>
+</footer>
+
+<script>
+  // Highlight active nav link based on URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
