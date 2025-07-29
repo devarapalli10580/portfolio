@@ -1,727 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Naga Venkata Satyanarayana Devarapalli - AI/ML Professional Portfolio</title>
-  <style>
-    /* =======================
-       RESET & BASE STYLES
-    ========================= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli | AI/ML Portfolio</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #222;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  /* Container */
+  #container {
+    max-width: 1080px;
+    margin: 90px auto 50px;
+    padding: 0 20px 100px;
+  }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #222222;
-      background-color: #fafafa;
-      min-height: 100vh;
-    }
+  /* Header */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background-color: #196f50;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    color: #e8f5e9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 9999;
+  }
+  header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: #d1e8d1;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav ul li a.active, nav ul li a:hover, nav ul li a:focus {
+    background-color: #12472d;
+    color: #a4d4a4;
+    box-shadow: 0 0 8px #a4d4a4;
+  }
 
-    /* =======================
-       HEADER & NAVIGATION
-    ========================= */
+  /* Sections (pages) */
+  section.page {
+    display: none;
+    background: white;
+    border-radius: 14px;
+    padding: 40px 50px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    min-height: 600px;
+  }
+  section.page.active {
+    display: block;
+  }
+  section h2 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+  section h3 {
+    font-size: 1.9rem;
+    margin-top: 2.4rem;
+    margin-bottom: 1rem;
+  }
+  section p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+  ul, ol {
+    margin-left: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  li {
+    margin-bottom: 0.7rem;
+  }
+  .btn-link {
+    background-color: #196f50;
+    color: #e8f5e9;
+    padding: 10px 18px;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    margin: 10px 5px 25px 0;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  .btn-link:hover, .btn-link:focus {
+    background-color: #12472d;
+    outline: none;
+    box-shadow: 0 0 10px #a4d4a4;
+  }
+
+  /* Color Themes for Each Page */
+
+  /* Home */
+  #home {
+    border-left: 10px solid #196f50;
+  }
+
+  /* Bio */
+  #bio {
+    border-left: 10px solid #f57c00; /* orange */
+  }
+  #bio h2, #bio h3 {
+    color: #f57c00;
+  }
+
+  /* Artifact 1 */
+  #artifact1 {
+    border-left: 10px solid #196f50; /* green */
+  }
+  #artifact1 h2, #artifact1 h3 {
+    color: #196f50;
+  }
+
+  /* Artifact 2 */
+  #artifact2 {
+    border-left: 10px solid #f57c00; /* orange */
+  }
+  #artifact2 h2, #artifact2 h3 {
+    color: #f57c00;
+  }
+
+  /* Artifact 3 */
+  #artifact3 {
+    border-left: 10px solid #004d99; /* blue */
+  }
+  #artifact3 h2, #artifact3 h3 {
+    color: #004d99;
+  }
+
+  /* Artifact 4 */
+  #artifact4 {
+    border-left: 10px solid #6a4c93; /* purple */
+  }
+  #artifact4 h2, #artifact4 h3 {
+    color: #6a4c93;
+  }
+
+  /* Artifact 5 */
+  #artifact5 {
+    border-left: 10px solid #b55a1e; /* brown */
+  }
+  #artifact5 h2, #artifact5 h3 {
+    color: #b55a1e;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #196f50;
+    color: #e8f5e9;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: #196f50;
-      color: #e8f5e9;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    header h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.6rem;
-    }
-
-    nav ul li a {
-      color: #d1e8d1;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 0.8rem;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav ul li a:hover,
-    nav ul li a:focus,
-    nav ul li a.active {
-      background-color: #12472d;
-      outline: none;
-      color: #a4d4a4;
-      box-shadow: 0 0 8px #a4d4a4;
-    }
-
-    nav ul li a:focus-visible {
-      outline: 3px solid #a4d4a4;
-      outline-offset: 3px;
-    }
-
-    /* =======================
-       MAIN CONTAINER & SECTIONS
-    ========================= */
-    main {
-      padding-top: 90px; /* header height + padding */
-      max-width: 980px;
-      margin: 0 auto 4rem;
-    }
-
-    section {
-      margin-bottom: 4rem;
-      padding: 3rem 2rem;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      background-color: white;
-    }
-
-    section:focus {
-      outline: 3px solid #196f50;
-      outline-offset: 4px;
-    }
-
-    /* =======================
-       HOME SECTION
-    ========================= */
-    #home {
-      background: linear-gradient(135deg, #d8f3dc 0%, #40916c 100%);
-      color: #0b3d2e;
-      box-shadow: 0 5px 20px rgba(13, 71, 38, 0.5);
-    }
-
-    #home h2 {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 4px #295937;
-    }
-
-    #home p {
-      font-size: 1.25rem;
-      max-width: 740px;
-      margin-bottom: 2.2rem;
-      font-weight: 600;
-    }
-
-    /* Artifact Cards Grid on Home */
-    .artifact-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: #e6f4ea;
-      border-radius: 14px;
-      padding: 1.8rem 2rem;
-      box-shadow: 0 4px 10px rgba(13, 71, 38, 0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 10px;
+      padding: 15px 20px;
     }
-
-    .card:hover,
-    .card:focus-within {
-      box-shadow: 0 10px 20px rgba(13, 71, 38, 0.45);
-      transform: translateY(-6px);
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
-
-    .card h3 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-      color: #0a2f1a;
+    #container {
+      margin: 120px 15px 150px;
+      padding: 0 10px;
     }
-
-    .card p {
-      flex-grow: 1;
-      font-size: 1rem;
-      color: #14532d;
-      margin-bottom: 1.3rem;
-      line-height: 1.5;
+    section.page {
+      padding: 25px 20px;
+      min-height: auto;
     }
-
-    .card a {
-      align-self: flex-start;
-      text-decoration: none;
-      font-weight: 700;
-      color: #196f50;
-      background-color: #b7d9b4;
-      padding: 0.5rem 1.1rem;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-
-    .card a:hover,
-    .card a:focus {
-      background-color: #40916c;
-      color: white;
-      outline: none;
-      box-shadow: 0 0 6px #2a6b46;
-    }
-
-    /* =======================
-       BIO SECTION
-    ========================= */
-    #bio {
-      background: linear-gradient(135deg, #ffe8cc 0%, #ff914d 100%);
-      color: #5a3300;
-      box-shadow: 0 5px 20px rgba(153, 69, 0, 0.4);
-    }
-
-    #bio h2 {
-      font-size: 2.9rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-    }
-
-    #bio p {
-      font-size: 1.15rem;
-      max-width: 770px;
-      margin-bottom: 1rem;
-      line-height: 1.65;
-      font-weight: 600;
-    }
-
-    #bio ul {
-      max-width: 770px;
-      margin-top: 1rem;
-      list-style-type: square;
-      margin-left: 1.6rem;
-      color: #663300;
-      font-weight: 600;
-    }
-
-    #bio ul li {
-      margin-bottom: 0.7rem;
-    }
-
-    /* =======================
-       ARTIFACTS SHARED STYLE
-    ========================= */
-    .artifact-section {
-      padding: 3rem 2.5rem;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
-      color: #3a2f1c;
-      background-color: #f7f3e9;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      user-select: text;
-    }
-
-    .artifact-section h2 {
-      font-size: 2.7rem;
-      font-weight: 900;
-      margin-bottom: 1.4rem;
-      color: #5a421a;
-      letter-spacing: 1.3px;
-    }
-
-    .artifact-section h3 {
-      font-size: 1.85rem;
-      font-weight: 800;
-      margin-top: 2rem;
-      margin-bottom: 0.7rem;
-      color: #7f6132;
-    }
-
-    .artifact-section p {
-      margin-bottom: 1.25rem;
-      font-weight: 600;
-    }
-
-    .artifact-section ul {
-      margin-left: 2rem;
-      margin-bottom: 1.8rem;
-      color: #5a421a;
-    }
-
-    .artifact-section ul li {
-      margin-bottom: 0.7rem;
-      line-height: 1.5;
-    }
-
-    /* =======================
-       ARTIFACT 1
-    ========================= */
-    #artifact1 {
-      background: #e1f0f9;
-      color: #064a6d;
-      box-shadow: 0 6px 20px rgba(6, 74, 109, 0.35);
-    }
-
-    #artifact1 h2,
-    #artifact1 h3 {
-      color: #023959;
-    }
-
-    /* =======================
-       ARTIFACT 2
-    ========================= */
-    #artifact2 {
-      background: #fff7e6;
-      color: #664d03;
-      box-shadow: 0 6px 20px rgba(102, 77, 3, 0.35);
-    }
-
-    #artifact2 h2,
-    #artifact2 h3 {
-      color: #4d3b00;
-    }
-
-    /* =======================
-       ARTIFACT 3
-    ========================= */
-    #artifact3 {
-      background: #f3f1de;
-      color: #594e3f;
-      box-shadow: 0 6px 20px rgba(89, 78, 63, 0.35);
-    }
-
-    #artifact3 h2,
-    #artifact3 h3 {
-      color: #473f2f;
-    }
-
-    /* =======================
-       ARTIFACT 4
-    ========================= */
-    #artifact4 {
-      background: #e2f4f3;
-      color: #14635a;
-      box-shadow: 0 6px 20px rgba(20, 99, 90, 0.35);
-    }
-
-    #artifact4 h2,
-    #artifact4 h3 {
-      color: #0f4d47;
-    }
-
-    /* =======================
-       ARTIFACT 5
-    ========================= */
-    #artifact5 {
-      background: #fef2e4;
-      color: #b55a1e;
-      box-shadow: 0 6px 20px rgba(181, 90, 30, 0.35);
-    }
-
-    #artifact5 h2,
-    #artifact5 h3 {
-      color: #8c3e11;
-    }
-
-    /* =======================
-       FOOTER
-    ========================= */
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      background-color: #196f50;
-      color: #e8f5e9;
-      font-weight: 600;
-      letter-spacing: 1px;
-      user-select: none;
-      margin-top: 2rem;
-    }
-
-    /* =======================
-       BACK TO TOP BUTTON
-    ========================= */
-    #backToTop {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background-color: #196f50;
-      color: #e8f5e9;
-      border: none;
-      padding: 0.7rem 1.3rem;
-      border-radius: 25px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      cursor: pointer;
-      opacity: 0.75;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-      transition: opacity 0.3s ease;
-      z-index: 10001;
-      display: none;
-    }
-
-    #backToTop:hover,
-    #backToTop:focus {
-      opacity: 1;
-      outline: none;
-      box-shadow: 0 0 10px #a4d4a4;
-    }
-
-    /* =======================
-       RESPONSIVE
-    ========================= */
-    @media (max-width: 750px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem 1.5rem;
-      }
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-      main {
-        padding: 6rem 1rem 3rem 1rem;
-      }
-      section {
-        padding: 2.5rem 1.5rem;
-      }
-    }
-
-  </style>
+  }
+</style>
 </head>
 <body>
-
-<header role="banner" aria-label="Site header with navigation">
+<header role="banner" aria-label="Primary site header with navigation">
   <h1 tabindex="0">Naga Venkata Satyanarayana Devarapalli</h1>
   <nav role="navigation" aria-label="Primary navigation">
     <ul>
-      <li><a href="#home" class="nav-link active" tabindex="0">Home</a></li>
-      <li><a href="#bio" class="nav-link" tabindex="0">Bio</a></li>
-      <li><a href="#artifact1" class="nav-link" tabindex="0">Artifact 1</a></li>
-      <li><a href="#artifact2" class="nav-link" tabindex="0">Artifact 2</a></li>
-      <li><a href="#artifact3" class="nav-link" tabindex="0">Artifact 3</a></li>
-      <li><a href="#artifact4" class="nav-link" tabindex="0">Artifact 4</a></li>
-      <li><a href="#artifact5" class="nav-link" tabindex="0">Artifact 5</a></li>
+      <li><a href="#home" class="nav-link active" tabindex="0" data-target="home">Home</a></li>
+      <li><a href="#bio" class="nav-link" tabindex="0" data-target="bio">Bio</a></li>
+      <li><a href="#artifact1" class="nav-link" tabindex="0" data-target="artifact1">Artifact 1</a></li>
+      <li><a href="#artifact2" class="nav-link" tabindex="0" data-target="artifact2">Artifact 2</a></li>
+      <li><a href="#artifact3" class="nav-link" tabindex="0" data-target="artifact3">Artifact 3</a></li>
+      <li><a href="#artifact4" class="nav-link" tabindex="0" data-target="artifact4">Artifact 4</a></li>
+      <li><a href="#artifact5" class="nav-link" tabindex="0" data-target="artifact5">Artifact 5</a></li>
     </ul>
   </nav>
 </header>
 
-<main>
+<div id="container">
 
-  <!-- HOME -->
-  <section id="home" tabindex="-1" aria-label="Home section introducing portfolio">
-    <h2>Welcome to My AI/ML Professional Portfolio</h2>
-    <p>Greetings! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, currently pursuing my Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
-    <p>This portfolio highlights my journey, projects, and reflections within the field of Artificial Intelligence and Machine Learning. You can explore in detail my academic assignments, real-world projects, and collaborative work that demonstrate my skills, learning approaches, and problem-solving abilities.</p>
+<!-- Home Section -->
+<section id="home" class="page active" role="main" aria-label="Home Page">
+  <h2>Welcome to My AI/ML Professional Portfolio</h2>
+  <p>Hello! I’m <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
+  <p>This portfolio highlights my academic journey, hands-on projects, and reflections on Artificial Intelligence, Machine Learning, and Data Analytics.</p>
+  <p>Feel free to explore my detailed artifacts showcasing data analyses, case studies, AI-driven projects, and interactive learning experiences.</p>
 
-    <p>The portfolio contains five detailed artifacts that showcase my competencies in AI/ML, data analytics, ethical considerations, and practical applications using modern tools.</p>
+  <h3>Explore My Artifacts</h3>
+  <ul>
+    <li><button class="btn-link" data-target="artifact1">Artifact 1: COVID-19 Vaccination Data Analysis</button></li>
+    <li><button class="btn-link" data-target="artifact2">Artifact 2: Evolution of AI and Machine Learning Timeline</button></li>
+    <li><button class="btn-link" data-target="artifact3">Artifact 3: Big Data Adoption in Healthcare Case Study</button></li>
+    <li><button class="btn-link" data-target="artifact4">Artifact 4: Data Challenge Scenarios AI Coach</button></li>
+    <li><button class="btn-link" data-target="artifact5">Artifact 5: AI-Powered Predictive Analytics Project</button></li>
+  </ul>
 
-    <div class="artifact-cards" aria-label="Quick links to portfolio artifacts">
-      <article class="card" tabindex="0">
-        <h3>Artifact 1: COVID-19 Vaccination Data Analysis</h3>
-        <p>Comprehensive analysis and visualization of COVID-19 vaccination data across India using RStudio, offering insights into regional vaccination progress.</p>
-        <a href="#artifact1" aria-label="Navigate to Artifact 1">Explore Artifact 1</a>
-      </article>
+  <h3>Contact Information</h3>
+  <p>Email: <a href="mailto:tone_satya@yahoo.co.in" tabindex="0">tone_satya@yahoo.co.in</a></p>
+  <p>Location: Dallas, TX, USA</p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" tabindex="0">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
+</section>
 
-      <article class="card" tabindex="0">
-        <h3>Artifact 2: Evolution of AI and Machine Learning Timeline</h3>
-        <p>A detailed timeline highlighting twenty major milestones in AI and Machine Learning, including ethical debates and technological breakthroughs.</p>
-        <a href="#artifact2" aria-label="Navigate to Artifact 2">Explore Artifact 2</a>
-      </article>
+<!-- Bio Section -->
+<section id="bio" class="page" role="main" aria-label="Biography Page">
+  <h2>About Me</h2>
+  <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student at Indiana Wesleyan University specializing in Artificial Intelligence and Data Analytics.</p>
+  <p>With over 12 years of experience in data analytics, business intelligence, and performance testing, I am passionate about leveraging AI to build impactful solutions.</p>
 
-      <article class="card" tabindex="0">
-        <h3>Artifact 3: Big Data Adoption in Healthcare Case Study</h3>
-        <p>Case study exploring the challenges and solutions around big data technology adoption in healthcare environments focusing on MIMIC-III.</p>
-        <a href="#artifact3" aria-label="Navigate to Artifact 3">Explore Artifact 3</a>
-      </article>
+  <h3>Professional Skills</h3>
+  <ul>
+    <li>Data Visualization: Power BI, Tableau</li>
+    <li>Machine Learning: Supervised and Unsupervised learning, Reinforcement learning</li>
+    <li>Programming: Python, R, SQL, JavaScript</li>
+    <li>Big Data and Healthcare Informatics</li>
+    <li>AI Ethics, Privacy Compliance, and Responsible AI Development</li>
+  </ul>
 
-      <article class="card" tabindex="0">
-        <h3>Artifact 4: Data Challenge Scenarios AI Coach</h3>
-        <p>My interactive experience engaging with an AI chatbot to address common data challenges in machine learning, including privacy and bias.</p>
-        <a href="#artifact4" aria-label="Navigate to Artifact 4">Explore Artifact 4</a>
-      </article>
+  <h3>Education</h3>
+  <ul>
+    <li>Master of Science in Artificial Intelligence – Data Analytics, Indiana Wesleyan University</li>
+    <li>Hands-on AI and Data Science Projects and Research</li>
+  </ul>
 
-      <article class="card" tabindex="0">
-        <h3>Artifact 5: AI-Powered Predictive Analytics Project</h3>
-        <p>Development of predictive sales forecasting models using Python and Power BI to enable data-driven business decisions.</p>
-        <a href="#artifact5" aria-label="Navigate to Artifact 5">Explore Artifact 5</a>
-      </article>
-    </div>
-  </section>
+  <h3>Professional Interests</h3>
+  <ul>
+    <li>AI Model Development and Deployment</li>
+    <li>Healthcare Data Analytics and Predictive Modeling</li>
+    <li>Data-Driven Decision Making</li>
+    <li>Ethical AI and Privacy Compliance</li>
+  </ul>
+</section>
 
-  <!-- BIO -->
-  <section id="bio" tabindex="-1" aria-label="Biography of portfolio owner">
-    <h2>About Me</h2>
-    <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student specializing in Artificial Intelligence and Data Analytics at Indiana Wesleyan University.</p>
-    <p>With over a decade of experience in data analytics, business intelligence, and software testing, I bring a unique blend of technical expertise and practical knowledge to AI and machine learning projects. My passion lies in leveraging data-driven techniques to solve complex problems and create meaningful impact.</p>
-    <p>My educational journey focuses on deepening my knowledge in machine learning algorithms, data visualization, and ethical AI development. I am committed to continuous learning, collaboration, and applying best practices in AI implementation.</p>
+<!-- Artifact 1 Section -->
+<section id="artifact1" class="page" role="main" aria-label="Artifact 1 Page">
+  <h2>Artifact 1: COVID-19 Vaccination Data Analysis</h2>
+  <p>This artifact showcases my project analyzing COVID-19 vaccination data in India using RStudio. The project aimed to track vaccination progress, identify regional differences, and visualize trends effectively.</p>
 
-    <h3>Professional Skills and Interests</h3>
-    <ul>
-      <li>Data Visualization (Power BI, Tableau)</li>
-      <li>Machine Learning Algorithms (Supervised, Unsupervised, Reinforcement Learning)</li>
-      <li>Programming Languages: Python, R, SQL, JavaScript</li>
-      <li>Data Cleaning and Preprocessing</li>
-      <li>Big Data Frameworks and Healthcare Informatics</li>
-      <li>AI Ethics and Responsible AI Development</li>
-      <li>Project Management and Collaborative Workflows</li>
-    </ul>
+  <h3>Objectives</h3>
+  <ul>
+    <li>Analyze vaccination coverage across Indian states and territories.</li>
+    <li>Create clear and impactful visualizations for stakeholders.</li>
+    <li>Deliver actionable insights to healthcare officials for targeted outreach.</li>
+  </ul>
 
-    <h3>Academic & Professional Highlights</h3>
-    <ul>
-      <li>Master of Science in Artificial Intelligence – Data Analytics (Indiana Wesleyan University)</li>
-      <li>Hands-on projects in AI model development and deployment</li>
-      <li>Experience in healthcare data analytics and compliance frameworks</li>
-      <li>Active participation in AI ethics discussions and workshops</li>
-    </ul>
-  </section>
+  <h3>Tools & Methodologies</h3>
+  <ul>
+    <li>R programming language (ggplot2, dplyr)</li>
+    <li>Data cleaning and preprocessing</li>
+    <li>Time-series visualization</li>
+  </ul>
 
-  <!-- ARTIFACT 1 -->
-  <section id="artifact1" class="artifact-section" tabindex="-1" aria-label="Artifact 1 COVID-19 Vaccination Data Analysis">
-    <h2>Artifact 1: COVID-19 Vaccination Data Analysis</h2>
-    <p>This artifact represents a comprehensive data visualization and analysis project focusing on COVID-19 vaccination rates across India. The project was conducted using RStudio and aimed at uncovering patterns, regional disparities, and progress monitoring.</p>
+  <h3>Findings</h3>
+  <p>The vaccination coverage varied significantly between urban and rural areas. Trends showed increasing uptake but highlighted regions requiring more focus.</p>
 
-    <h3>Project Objectives</h3>
-    <ul>
-      <li>Analyze vaccination data by states and union territories</li>
-      <li>Visualize vaccination trends over time</li>
-      <li>Provide actionable insights for public health officials</li>
-    </ul>
+  <h3>Reflection</h3>
+  <p>This artifact sharpened my skills in data analysis, visualization, and communicating technical findings to diverse audiences.</p>
 
-    <h3>Approach and Tools Used</h3>
-    <p>The project leveraged R programming with packages such as ggplot2 and dplyr for data manipulation and visualization. Data sources included official government datasets and APIs.</p>
-    <p>Key tasks included data cleaning, aggregation, and generation of dynamic dashboards.</p>
+  <h3>References</h3>
+  <ul>
+    <li>Government of India COVID-19 Open Data API</li>
+    <li>RStudio Documentation</li>
+  </ul>
+</section>
 
-    <h3>Findings and Insights</h3>
-    <p>Significant variation in vaccination rates was observed across different regions, with urban centers showing higher coverage. The data revealed trends in vaccine uptake and helped identify priority areas for intervention.</p>
+<!-- Artifact 2 Section -->
+<section id="artifact2" class="page" role="main" aria-label="Artifact 2 Page">
+  <h2>Artifact 2: Evolution of Artificial Intelligence and Machine Learning Timeline</h2>
+  <p>This interactive timeline highlights key milestones in AI and ML history from the 1950s to today. It uses color-coded eras and icons to differentiate waves of technological advancement and societal impact.</p>
 
-    <h3>Reflection and Learning</h3>
-    <p>This artifact enhanced my skills in data visualization, epidemiological data handling, and collaborative report generation. It also deepened my appreciation for the challenges of large-scale public health data analysis.</p>
+  <h3>Key Milestones</h3>
+  <ol>
+    <li>1956: Dartmouth Conference — Birth of AI as a formal discipline</li>
+    <li>1960s: Early neural networks and perceptrons developed</li>
+    <li>1970s-80s: AI winters due to lack of progress and funding</li>
+    <li>1997: IBM Deep Blue beats chess champion Garry Kasparov</li>
+    <li>2012: Deep learning resurgence through ImageNet breakthroughs</li>
+    <li>2018: Introduction of Transformer architectures</li>
+    <li>2023: Generative AI models like GPT-4 revolutionize NLP</li>
+  </ol>
 
-    <h3>Skills Demonstrated</h3>
-    <ul>
-      <li>Data analysis with R</li>
-      <li>Advanced data visualization</li>
-      <li>Collaborative project management</li>
-      <li>Communication of technical findings to a broad audience</li>
-    </ul>
+  <h3>Tools Used</h3>
+  <ul>
+    <li>Canva and Google Slides for timeline design</li>
+    <li>Extensive research and critical analysis of AI history</li>
+  </ul>
 
-    <h3>References</h3>
-    <ul>
-      <li>Government of India COVID-19 Vaccination API</li>
-      <li>RStudio Documentation</li>
-      <li>Peer-reviewed articles on vaccine distribution</li>
-    </ul>
-  </section>
+  <h3>Reflection</h3>
+  <p>This artifact enhanced my strategic understanding of AI's evolution and its ethical and societal implications. It supports my technical learning by contextualizing current AI breakthroughs.</p>
+</section>
 
-  <!-- ARTIFACT 2 -->
-  <section id="artifact2" class="artifact-section" tabindex="-1" aria-label="Artifact 2 AI and Machine Learning Timeline">
-    <h2>Artifact 2: Evolution of Artificial Intelligence and Machine Learning Timeline</h2>
-    <p>This artifact presents a curated timeline spanning over 70 years of AI and machine learning milestones, highlighting key inventions, breakthroughs, and ethical considerations.</p>
+<!-- Artifact 3 Section -->
+<section id="artifact3" class="page" role="main" aria-label="Artifact 3 Page">
+  <h2>Artifact 3: Big Data Adoption in Healthcare Case Study</h2>
+  <p>This case study explores the challenges and opportunities in adopting big data technologies in healthcare settings, focusing on MIMIC-III dataset applications.</p>
 
-    <h3>Timeline Highlights</h3>
-    <ol>
-      <li><strong>1950:</strong> Alan Turing proposes the Turing Test.</li>
-      <li><strong>1956:</strong> Dartmouth Conference coins "Artificial Intelligence".</li>
-      <li><strong>1966:</strong> ELIZA chatbot demonstrates natural language processing.</li>
-      <li><strong>1980s:</strong> Development of expert systems.</li>
-      <li><strong>1997:</strong> IBM’s Deep Blue defeats world chess champion.</li>
-      <li><strong>2012:</strong> AlexNet revolutionizes deep learning.</li>
-      <li><strong>2016:</strong> AlphaGo beats Go champion Lee Sedol.</li>
-      <li><strong>2020s:</strong> GPT and transformer models advance NLP.</li>
-      <li><em>...and many more milestones</em></li>
-    </ol>
+  <h3>Key Learnings</h3>
+  <ul>
+    <li>Data quality and integration challenges</li>
+    <li>Privacy and HIPAA compliance issues</li>
+    <li>Benefits of predictive analytics for patient outcomes</li>
+    <li>Organizational change and technology adoption models</li>
+  </ul>
 
-    <h3>Action and Comparison with Popular Chatbots</h3>
-    <p>This timeline also compares capabilities, training methods, and evolution of major chatbot platforms such as ELIZA, Cleverbot, Siri, Alexa, and ChatGPT.</p>
+  <h3>Project Context</h3>
+  <p>The artifact was created as part of a workshop assignment to deepen my understanding of healthcare big data and AI implementation complexities.</p>
 
-    <h3>Reflection</h3>
-    <p>Curating this timeline deepened my understanding of AI’s rapid evolution and highlighted the importance of ethical AI design and ongoing technological innovation.</p>
+  <h3>Reflection</h3>
+  <p>This work improved my ability to analyze real-world problems, propose technology solutions, and address ethical concerns in AI adoption.</p>
+</section>
 
-    <h3>Skills Highlighted</h3>
-    <ul>
-      <li>Historical research and synthesis</li>
-      <li>Timeline visualization</li>
-      <li>Comparative AI platform analysis</li>
-      <li>Critical thinking on AI ethics</li>
-    </ul>
+<!-- Artifact 4 Section -->
+<section id="artifact4" class="page" role="main" aria-label="Artifact 4 Page">
+  <h2>Artifact 4: Data Challenge Scenarios AI Coach</h2>
+  <p>This artifact documents my interaction with an AI chatbot coach designed to simulate real-world data challenges in machine learning projects.</p>
 
-    <h3>References</h3>
-    <ul>
-      <li>AI History Archives</li>
-      <li>Academic journals on AI development</li>
-      <li>Official chatbot documentation</li>
-    </ul>
-  </section>
+  <h3>Learning Approach</h3>
+  <ul>
+    <li>Engaged in adaptive conversations with the AI chatbot</li>
+    <li>Worked through scenarios on data quality, bias, privacy, and scalability</li>
+    <li>Received immediate feedback and tailored guidance</li>
+  </ul>
 
-  <!-- ARTIFACT 3 -->
-  <section id="artifact3" class="artifact-section" tabindex="-1" aria-label="Artifact 3 Big Data Adoption in Healthcare Case Study">
-    <h2>Artifact 3: Big Data Adoption in Healthcare - Case Study</h2>
-    <p>This artifact analyzes the challenges and strategies involved in adopting big data technologies in healthcare, focusing on the MIMIC-III clinical database.</p>
+  <h3>Key Outcomes</h3>
+  <ul>
+    <li>Enhanced understanding of data cleaning and preprocessing</li>
+    <li>Developed strategies to mitigate bias and privacy issues</li>
+    <li>Built confidence handling complex data problems</li>
+  </ul>
 
-    <h3>Study Background</h3>
-    <p>Healthcare organizations face significant data challenges including volume, variety, and the critical need for patient confidentiality.</p>
+  <h3>Reflection</h3>
+  <p>The AI coach experience was invaluable for honing problem-solving skills and preparing for real-world AI/ML data challenges.</p>
+</section>
 
-    <h3>Study Objectives</h3>
-    <ul>
-      <li>Evaluate barriers to big data adoption in clinical settings</li>
-      <li>Assess the effectiveness of compliance frameworks (HIPAA, GDPR)</li>
-      <li>Propose strategies for secure, ethical data use</li>
-    </ul>
+<!-- Artifact 5 Section -->
+<section id="artifact5" class="page" role="main" aria-label="Artifact 5 Page">
+  <h2>Artifact 5: AI-Powered Predictive Analytics Project</h2>
+  <p>This project demonstrates my capability to design and implement predictive analytics solutions using AI models on business datasets.</p>
 
-    <h3>Findings</h3>
-    <p>Successful adoption requires technical infrastructure, clear policies, and ongoing training to mitigate risks and harness data value.</p>
+  <h3>Project Highlights</h3>
+  <ul>
+    <li>Data acquisition and feature engineering</li>
+    <li>Model training with regression and classification algorithms</li>
+    <li>Performance evaluation and optimization</li>
+    <li>Deployment strategies and dashboard visualization</li>
+  </ul>
 
-    <h3>Reflection</h3>
-    <p>This study broadened my understanding of healthcare data complexities and the importance of ethical leadership in AI implementation.</p>
+  <h3>Reflection</h3>
+  <p>This artifact reflects my end-to-end skills in AI project development and business value creation through predictive analytics.</p>
+</section>
 
-    <h3>Skills Highlighted</h3>
-    <ul>
-      <li>Big data analytics frameworks</li>
-      <li>Data governance and ethics</li>
-      <li>Healthcare informatics knowledge</li>
-    </ul>
-
-    <h3>References</h3>
-    <ul>
-      <li>HIPAA Guidelines (2025)</li>
-      <li>MIMIC-III Dataset Papers</li>
-      <li>Big Data Fundamentals Textbook</li>
-    </ul>
-  </section>
-
-  <!-- ARTIFACT 4 -->
-  <section id="artifact4" class="artifact-section" tabindex="-1" aria-label="Artifact 4 Data Challenge Scenarios AI Coach">
-    <h2>Artifact 4: Data Challenge Scenarios with AI Coach</h2>
-    <p>This artifact captures my interactive learning experience with a pre-trained AI chatbot designed to simulate real-world data challenges including data cleaning, bias, privacy, and security issues in machine learning.</p>
-
-    <h3>Experience Summary</h3>
-    <p>Engaging in scenario-based conversations allowed me to explore practical problem-solving methods, receive immediate feedback, and refine my understanding of data challenges.</p>
-
-    <h3>Learning Outcomes</h3>
-    <ul>
-      <li>Strategies for data preprocessing and cleaning</li>
-      <li>Recognizing and mitigating data bias</li>
-      <li>Understanding privacy and security constraints in ML applications</li>
-      <li>Applying adaptive thinking to complex data problems</li>
-    </ul>
-
-    <h3>Reflection</h3>
-    <p>The AI chatbot provided a safe, supportive environment for trial-and-error learning, boosting my confidence and digital literacy with AI tools.</p>
-
-    <h3>Artifact Format</h3>
-    <p>This artifact is presented as a narrative and analysis of my chatbot interactions, showcasing my growth through this AI-enabled learning experience.</p>
-
-    <h3>References</h3>
-    <ul>
-      <li>SchoolAI.com Platform Documentation</li>
-      <li>FERPA and GDPR Privacy Laws</li>
-      <li>Recent AI Ethics Research Papers</li>
-    </ul>
-  </section>
-
-  <!-- ARTIFACT 5 -->
-  <section id="artifact5" class="artifact-section" tabindex="-1" aria-label="Artifact 5 AI-Powered Predictive Analytics Project">
-    <h2>Artifact 5: AI-Powered Predictive Analytics Project</h2>
-    <p>This project involved designing and deploying predictive sales forecasting models using Python and Power BI, providing actionable business insights to support decision-making.</p>
-
-    <h3>Project Highlights</h3>
-    <ul>
-      <li>Data collection and cleaning from sales databases</li>
-      <li>Feature engineering and model selection with Python</li>
-      <li>Interactive dashboards built in Power BI</li>
-      <li>Performance monitoring and model tuning</li>
-    </ul>
-
-    <h3>Impact</h3>
-    <p>The predictive models improved forecast accuracy by 15%, enabling targeted marketing strategies and optimized inventory management.</p>
-
-    <h3>Reflection</h3>
-    <p>This artifact demonstrates my end-to-end project management skills, from data engineering to AI model deployment and visualization.</p>
-
-    <h3>Technologies Used</h3>
-    <ul>
-      <li>Python (scikit-learn, pandas, matplotlib)</li>
-      <li>Power BI for visualization</li>
-      <li>SQL for data extraction</li>
-    </ul>
-
-    <h3>References</h3>
-    <ul>
-      <li>Python scikit-learn Documentation</li>
-      <li>Power BI Learning Resources</li>
-      <li>Corporate Sales Data (Confidential)</li>
-    </ul>
-  </section>
-</main>
-
-<button id="backToTop" aria-label="Back to top">↑ Top</button>
+</div>
 
 <footer role="contentinfo">
   <p>© 2025 Naga Venkata Satyanarayana Devarapalli — All Rights Reserved</p>
 </footer>
 
 <script>
-  // Smooth active nav link highlight on scroll
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav ul li a');
+  // JavaScript for page navigation in single-page app style
+  const navLinks = document.querySelectorAll('a.nav-link');
+  const btnLinks = document.querySelectorAll('.btn-link');
+  const pages = document.querySelectorAll('section.page');
 
-  function activateNavLink() {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (window.pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
+  function showPage(pageId) {
+    pages.forEach(section => {
+      if(section.id === pageId) {
+        section.classList.add('active');
+      } else {
+        section.classList.remove('active');
       }
     });
     navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href").substring(1) === current) {
-        link.classList.add("active");
+      if(link.dataset.target === pageId) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
       }
     });
+    // Scroll to top of container after switching page
+    document.getElementById('container').scrollIntoView({behavior:'smooth'});
   }
 
-  window.addEventListener("scroll", activateNavLink);
+  // Handle nav clicks
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.dataset.target;
+      if(target) showPage(target);
+      // update URL hash without jumping
+      history.pushState(null, '', '#' + target);
+    });
+  });
 
-  // Back to top button behavior
-  const backToTopBtn = document.getElementById('backToTop');
-  backToTopBtn.style.display = 'none';
+  // Handle buttons in home page that navigate to artifacts
+  btnLinks.forEach(button => {
+    button.addEventListener('click', e => {
+      const target = button.dataset.target;
+      if(target) showPage(target);
+      history.pushState(null, '', '#' + target);
+    });
+  });
 
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 400) {
-      backToTopBtn.style.display = 'block';
+  // On page load, check hash to open correct page
+  window.addEventListener('load', () => {
+    let hash = location.hash.substring(1);
+    if(hash && document.getElementById(hash)) {
+      showPage(hash);
     } else {
-      backToTopBtn.style.display = 'none';
+      showPage('home');
     }
   });
 
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-
-  // Keyboard navigation & smooth scroll on nav links
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      targetSection.focus();
-      window.scrollTo({ top: targetSection.offsetTop - 80, behavior: 'smooth' });
-    });
+  // Handle back/forward navigation
+  window.addEventListener('popstate', () => {
+    let hash = location.hash.substring(1);
+    if(hash && document.getElementById(hash)) {
+      showPage(hash);
+    } else {
+      showPage('home');
+    }
   });
 </script>
 

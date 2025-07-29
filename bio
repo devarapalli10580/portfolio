@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
+<style>
+  /* Reset & Base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #f57c00;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  h1, h2, h3, h4, h5 {
+    margin-top: 0;
+    font-weight: 700;
+    color: #333;
+  }
+  ul, ol {
+    margin: 1rem 0 1rem 2rem;
+  }
+  p {
+    max-width: 900px;
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  /* Header & Navigation */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background-color: #222;
+    color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+  }
+  nav .logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: #f57c00;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li {
+  }
+  nav ul li a {
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    background-color: #f57c00;
+    color: #fff;
+  }
+
+  /* Page sections shared styles */
+  section.page {
+    padding: 100px 40px 60px 40px;
+    max-width: 1000px;
+    margin: 100px auto 80px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    line-height: 1.55;
+  }
+  section.page h2 {
+    color: inherit;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+  section.page h3 {
+    font-size: 2.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: inherit;
+  }
+  section.page p,
+  section.page ul {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #444;
+  }
+  section.page ul li {
+    margin-bottom: 0.5rem;
+  }
+  blockquote {
+    font-style: italic;
+    border-left: 5px solid;
+    padding-left: 1rem;
+    margin: 2rem 0;
+    color: #555;
+    max-width: 900px;
+  }
+
+  /* Color themes for each section */
+  #home {
+    border-left: 12px solid #2a9d8f; /* teal green */
+    background-color: #e0f2f1;
+    color: #1b4332;
+  }
+  #bio {
+    border-left: 12px solid #f4a261; /* warm orange */
+    background-color: #fff3e0;
+    color: #6d4c41;
+  }
+  #artifact1 {
+    border-left: 12px solid #e76f51; /* red-orange */
+    background-color: #fff0f0;
+    color: #7f3f3f;
+  }
+  #artifact2 {
+    border-left: 12px solid #264653; /* dark blue */
+    background-color: #dbe9f4;
+    color: #112f41;
+  }
+  /* You can add #artifact3, #artifact4, #artifact5 with other colors */
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 900px;
+    margin: 1rem 0 2rem 0;
+  }
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  table th {
+    background-color: #f57c00;
+    color: #fff;
+  }
+
+  /* Code blocks */
+  pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    max-width: 900px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    nav ul {
+      flex-direction: column;
+      gap: 0.8rem;
+      background-color: #222;
+      padding: 1rem;
+      position: fixed;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      display: none;
+    }
+    nav ul.show {
+      display: flex;
+    }
+    nav .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #f57c00;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header role="banner" aria-label="Primary Navigation">
+  <nav>
+    <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation menu" onclick="toggleMenu()">☰</button>
+    <ul id="primary-menu" role="menubar">
+      <li role="none"><a href="#home" role="menuitem" class="active" tabindex="0">Home</a></li>
+      <li role="none"><a href="#bio" role="menuitem" tabindex="0">Bio</a></li>
+      <li role="none"><a href="#artifact1" role="menuitem" tabindex="0">Artifact 1</a></li>
+      <li role="none"><a href="#artifact2" role="menuitem" tabindex="0">Artifact 2</a></li>
+      <li role="none"><a href="#artifact3" role="menuitem" tabindex="0">Artifact 3</a></li>
+      <li role="none"><a href="#artifact4" role="menuitem" tabindex="0">Artifact 4</a></li>
+      <li role="none"><a href="#artifact5" role="menuitem" tabindex="0">Artifact 5</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Home Section -->
+  <section id="home" class="page" role="region" aria-label="Home Section">
+    <h2>Welcome to My Professional Portfolio</h2>
+    <p>Greetings! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. This portfolio showcases my journey and achievements in the AI and data analytics domains.</p>
+    <p>My professional focus is to integrate AI and machine learning solutions to solve complex business challenges while emphasizing ethical and responsible AI practices.</p>
+
+    <h3>Portfolio Overview</h3>
+    <p>This portfolio contains detailed artifacts illustrating my technical expertise, project management skills, and critical thinking abilities.</p>
+    <ul>
+      <li><a href="#artifact1">Artifact 1:</a> AI Lab - No-Code Chatbot Assistant Development</li>
+      <li><a href="#artifact2">Artifact 2:</a> Evolution of Artificial Intelligence and Machine Learning - Timeline Presentation</li>
+      <li><a href="#artifact3">Artifact 3:</a> SchoolAI-Assisted Learning Experience</li>
+      <li><a href="#artifact4">Artifact 4:</a> Data Challenge Scenarios - AI Data Handling</li>
+      <li><a href="#artifact5">Artifact 5:</a> Advanced AI Project - (Your Next Project Here)</li>
+    </ul>
+
+    <h3>Contact Information</h3>
+    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
+    <p>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer">github.com/naga-venkata</a></p>
+  </section>
+
+  <!-- Bio Section -->
+  <section id="bio" class="page" role="region" aria-label="Biography Section">
+    <h2>About Me</h2>
+
+    <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a dedicated AI and Data Analytics graduate student with over 12 years of professional experience in data analytics, business intelligence, and software development. I am passionate about leveraging artificial intelligence to solve real-world challenges and create innovative solutions that impact industries.</p>
+
+    <h3>Education & Academic Background</h3>
+    <ul>
+      <li>Master of Science in Artificial Intelligence – Data Analytics, Indiana Wesleyan University (Ongoing)</li>
+      <li>Certification: Python for Data Science and Machine Learning, Coursera</li>
+      <li>Certification: Data Visualization with Tableau, Udemy</li>
+      <li>Bachelor’s degree in Computer Science (Institution Name, Year)</li>
+    </ul>
+
+    <h3>Professional Skills & Technical Proficiencies</h3>
+    <ul>
+      <li>Programming Languages: Python, R, SQL, JavaScript</li>
+      <li>Data Analytics & Visualization: Power BI, Tableau, Excel, ggplot2</li>
+      <li>Machine Learning Frameworks: Scikit-learn, TensorFlow, Keras</li>
+      <li>Big Data Technologies: Hadoop, Spark, MIMIC-III healthcare datasets</li>
+      <li>Cloud Platforms: AWS, Azure basics</li>
+      <li>Databases: MySQL, PostgreSQL, MongoDB</li>
+      <li>Ethics & Privacy Compliance: GDPR, HIPAA, FERPA</li>
+    </ul>
+
+    <h3>Work Experience Highlights</h3>
+    <article>
+      <h4>Senior Data Analyst – Tech Solutions Inc. (2018–2024)</h4>
+      <ul>
+        <li>Led development of interactive dashboards improving sales forecasting accuracy by 20%.</li>
+        <li>Translated complex business requirements into AI-driven solutions.</li>
+        <li>Implemented scalable data cleaning pipelines improving data quality.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h4>Business Intelligence Specialist – Global Finance Corp. (2014–2018)</h4>
+      <ul>
+        <li>Automated reporting systems reducing manual effort by 35%.</li>
+        <li>Performed customer segmentation using clustering algorithms.</li>
+        <li>Enhanced data security protocols in compliance with regulations.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h4>Junior Data Engineer – StartUpX (2012–2014)</h4>
+      <ul>
+        <li>Developed ETL processes for large data ingestion.</li>
+        <li>Created data models for marketing optimizations.</li>
+        <li>Collaborated on AI chatbot integration for customer support.</li>
+      </ul>
+    </article>
+
+    <h3>Projects Overview</h3>
+    <ul>
+      <li>COVID-19 Vaccination Data Analysis and Visualization</li>
+      <li>AI Chatbot for Interactive Learning</li>
+      <li>Retail Sales Forecasting using Machine Learning</li>
+      <li>Healthcare Big Data AI Adoption Case Study</li>
+    </ul>
+
+    <h3>Certifications & Continuing Education</h3>
+    <ul>
+      <li>Google Cloud Certified - Professional Data Engineer</li>
+      <li>Microsoft Certified: Azure AI Fundamentals</li>
+      <li>IBM AI Engineering Professional Certificate</li>
+      <li>Data Science and Machine Learning Bootcamp - Coursera</li>
+    </ul>
+
+    <blockquote>
+      “Artificial Intelligence is not just about technology — it’s about empowering people and organizations to make smarter, more ethical decisions that improve lives and build a better future.”
+    </blockquote>
+
+    <h3>Contact & Social Links</h3>
+    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
+    <p>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer">github.com/naga-venkata</a></p>
+  </section>
+
+  <!-- Artifact 1 -->
+  <section id="artifact1" class="page" role="region" aria-label="Artifact 1: AI Lab Chatbot Development">
+    <h2>Artifact 1: AI Lab - No-Code Chatbot Assistant Development</h2>
+
+    <p><strong>Introduction:</strong> This artifact demonstrates my hands-on experience developing a no-code AI chatbot assistant using leading platforms, showcasing technical and strategic skills in AI deployment.</p>
+
+    <h3>Project Overview</h3>
+    <p>The AI Lab Chatbot Assistant project focuses on building an interactive chatbot without traditional coding, utilizing platforms such as Botpress, Chatbase, and Mizou AI. This approach enables rapid prototyping and deployment while maintaining customization.</p>
+
+    <h3>Tools & Technologies Used</h3>
+    <ul>
+      <li>Botpress</li>
+      <li>Chatbase</li>
+      <li>Mizou AI</li>
+      <li>Google Dialogflow</li>
+    </ul>
+
+    <h3>Process and Steps</h3>
+    <ol>
+      <li>Requirement gathering and defining chatbot objectives.</li>
+      <li>Platform selection and initial setup.</li>
+      <li>Dialog flow design and training the chatbot.</li>
+      <li>Testing and refinement based on user interactions.</li>
+      <li>Deployment and monitoring chatbot performance.</li>
+    </ol>
+
+    <h3>Outcomes and Learnings</h3>
+    <p>This project enhanced my ability to design user-friendly AI assistants and understand the trade-offs between no-code and custom-coded solutions.</p>
+
+    <h3>Code Sample</h3>
+    <pre>
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "examples": ["Hello", "Hi", "Good morning"],
+      "responses": ["Hello! How can I assist you today?"]
+    }
+  ]
+}
+    </pre>
+
+    <h3>Reflection</h3>
+    <p>Developing this chatbot highlighted the importance of conversational design, user experience, and iterative learning to improve AI assistants’ effectiveness.</p>
+  </section>
+
+  <!-- Artifact 2 -->
+  <section id="artifact2" class="page" role="region" aria-label="Artifact 2: AI/ML Timeline Presentation">
+    <h2>Artifact 2: Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h2>
+
+    <p>This artifact presents a comprehensive timeline capturing the historical progression and key milestones in AI and Machine Learning development.</p>
+
+    <h3>Timeline Highlights</h3>
+    <ul>
+      <li><strong>1956:</strong> The Dartmouth Conference, birth of AI as a formal discipline.</li>
+      <li><strong>1980s:</strong> Rise of Expert Systems.</li>
+      <li><strong>1997:</strong> IBM’s Deep Blue defeats chess champion Garry Kasparov.</li>
+      <li><strong>2012:</strong> Breakthroughs in deep learning with AlexNet.</li>
+      <li><strong>2020s:</strong> Widespread adoption of AI in business, healthcare, and daily life.</li>
+    </ul>
+
+    <h3>Technologies Covered</h3>
+    <ul>
+      <li>Rule-Based Systems</li>
+      <li>Neural Networks</li>
+      <li>Deep Learning</li>
+      <li>Reinforcement Learning</li>
+      <li>Natural Language Processing</li>
+    </ul>
+
+    <h3>Visual Presentation</h3>
+    <p>Interactive timeline with embedded visuals (not shown here) helped illustrate the evolution clearly for audiences with varying technical backgrounds.</p>
+
+    <h3>Lessons Learned</h3>
+    <p>This timeline sharpened my research, storytelling, and presentation skills — essential for effectively communicating complex AI concepts.</p>
+  </section>
+
+  <!-- Future Sections (Artifacts 3,4,5) placeholder -->
+  <section id="artifact3" class="page" role="region" aria-label="Artifact 3: SchoolAI-Assisted Learning Experience">
+    <h2>Artifact 3: SchoolAI-Assisted Learning Experience</h2>
+    <p>(Content will be added here following the same detailed style.)</p>
+  </section>
+
+  <section id="artifact4" class="page" role="region" aria-label="Artifact 4: Data Challenge Scenarios">
+    <h2>Artifact 4: Data Challenge Scenarios - AI Data Handling</h2>
+    <p>(Content will be added here following the same detailed style.)</p>
+  </section>
+
+  <section id="artifact5" class="page" role="region" aria-label="Artifact 5: Advanced AI Project">
+    <h2>Artifact 5: Advanced AI Project</h2>
+    <p>(Content will be added here following the same detailed style.)</p>
+  </section>
+
+</main>
+
+<script>
+  // Mobile menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById('primary-menu');
+    const expanded = menu.getAttribute('aria-expanded') === 'true' || false;
+    menu.setAttribute('aria-expanded', !expanded);
+    menu.classList.toggle('show');
+  }
+
+  // Scrollspy to highlight active nav link on scroll
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section.page');
+    const scrollPos = window.scrollY + 150;
+    let currentId = 'home';
+    sections.forEach(section => {
+      if(scrollPos >= section.offsetTop) {
+        currentId = section.id;
+      }
+    });
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === '#' + currentId) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
