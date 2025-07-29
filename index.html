@@ -6,16 +6,14 @@
 <title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
 
 <style>
-  /* =======================
-     GLOBAL RESET & BASE
-  ======================= */
+  /* Reset & Base */
   *, *::before, *::after {
     box-sizing: border-box;
   }
   body {
     margin: 0; padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc;
+    background-color: #f5f7fa;
     color: #222;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -25,8 +23,7 @@
     color: #ff6f00;
     transition: color 0.3s ease;
   }
-  a:hover,
-  a:focus {
+  a:hover, a:focus {
     color: #d35400;
     outline: none;
   }
@@ -44,9 +41,7 @@
     font-weight: 700;
   }
 
-  /* =======================
-     HEADER & NAVIGATION
-  ======================= */
+  /* Header & Navigation */
   header {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -67,6 +62,7 @@
     font-size: 1.9rem;
     color: #ffffff;
     letter-spacing: 2px;
+    cursor: default;
   }
   .nav-list {
     list-style: none;
@@ -86,6 +82,7 @@
     padding: 0.4rem 0.7rem;
     border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
   }
   .nav-list li a svg {
     width: 18px;
@@ -127,6 +124,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.35);
       z-index: 1200;
+      min-width: 180px;
     }
     .nav-list.show {
       display: flex;
@@ -136,20 +134,22 @@
     }
   }
 
-  /* =======================
-     PAGE SECTIONS
-  ======================= */
-  section.page {
+  /* Page Sections */
+  main {
+    padding-top: 80px; /* To offset fixed header */
     max-width: 1000px;
+    margin: 0 auto 60px auto;
+  }
+  section.page {
     background-color: #fff;
-    margin: 100px auto 80px auto;
+    margin-bottom: 80px;
     padding: 50px 60px;
     border-radius: 14px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     border-left: 15px solid;
   }
 
-  /* Section border colors */
+  /* Section Colors */
   #home {
     border-color: #0077b6;
     background-color: #caf0f8;
@@ -202,7 +202,21 @@
     margin-bottom: 0.7rem;
   }
 
-  /* TABLE STYLING */
+  /* Artifact icons and titles container */
+  .artifact-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+    font-size: 2.6rem;
+  }
+  .artifact-header svg {
+    width: 36px;
+    height: 36px;
+    fill: currentColor;
+  }
+
+  /* Table Styling */
   table {
     border-collapse: collapse;
     width: 100%;
@@ -220,7 +234,7 @@
     font-weight: 700;
   }
 
-  /* CODE BLOCKS */
+  /* Code blocks */
   pre {
     background-color: #2d2d2d;
     color: #f8f8f2;
@@ -232,7 +246,7 @@
     margin: 2rem 0;
   }
 
-  /* QUOTES */
+  /* Blockquote */
   blockquote {
     font-style: italic;
     border-left: 6px solid #ee6c4d;
@@ -240,6 +254,14 @@
     color: #555;
     margin: 2rem 0;
     max-width: 900px;
+  }
+
+  /* Images in sections */
+  section.page img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    margin: 1.5rem 0;
   }
 
 </style>
@@ -253,50 +275,43 @@
     <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation menu" onclick="toggleMenu()">☰</button>
     <ul id="primary-menu" class="nav-list" role="menubar">
       <li role="none">
-        <a href="#home" role="menuitem" class="active" tabindex="0" aria-current="page">
-          <!-- Home icon SVG -->
+        <a href="#home" role="menuitem" class="active" tabindex="0" aria-current="page" aria-label="Home Section">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
           Home
         </a>
       </li>
       <li role="none">
-        <a href="#bio" role="menuitem" tabindex="0">
-          <!-- User icon SVG -->
+        <a href="#bio" role="menuitem" tabindex="0" aria-label="Bio Section">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
           Bio
         </a>
       </li>
       <li role="none">
-        <a href="#artifact1" role="menuitem" tabindex="0">
-          <!-- Document icon SVG -->
+        <a href="#artifact1" role="menuitem" tabindex="0" aria-label="Artifact 1">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           Artifact 1
         </a>
       </li>
       <li role="none">
-        <a href="#artifact2" role="menuitem" tabindex="0">
-          <!-- Timeline icon SVG -->
+        <a href="#artifact2" role="menuitem" tabindex="0" aria-label="Artifact 2">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
           Artifact 2
         </a>
       </li>
       <li role="none">
-        <a href="#artifact3" role="menuitem" tabindex="0">
-          <!-- Book icon SVG -->
+        <a href="#artifact3" role="menuitem" tabindex="0" aria-label="Artifact 3">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19h16V5H4z"/></svg>
           Artifact 3
         </a>
       </li>
       <li role="none">
-        <a href="#artifact4" role="menuitem" tabindex="0">
-          <!-- Data icon SVG -->
+        <a href="#artifact4" role="menuitem" tabindex="0" aria-label="Artifact 4">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="6" width="16" height="4"/><rect x="4" y="14" width="16" height="4"/></svg>
           Artifact 4
         </a>
       </li>
       <li role="none">
-        <a href="#artifact5" role="menuitem" tabindex="0">
-          <!-- AI icon SVG -->
+        <a href="#artifact5" role="menuitem" tabindex="0" aria-label="Artifact 5">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           Artifact 5
         </a>
@@ -311,30 +326,33 @@
   <section id="home" class="page" tabindex="0" aria-label="Home Section">
     <h2>Welcome to My Professional Portfolio</h2>
 
-    <p>Greetings! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
-    <p>This portfolio showcases my journey, academic projects, skills, and real-world experience in AI, Machine Learning, and Data Analytics domains. I aim to deliver ethical and innovative AI solutions for business challenges.</p>
+    <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
+    <p>This portfolio highlights my journey through AI and Data Analytics, showcasing academic projects, technical skills, and professional experiences that shape my career as an AI practitioner and data enthusiast.</p>
 
     <h3>Portfolio Overview</h3>
-    <p>This portfolio contains the following detailed artifacts illustrating my expertise:</p>
+    <p>Here you will find detailed insights and demonstrations of my projects, grouped into five major artifacts:</p>
     <ul>
-      <li><a href="#artifact1">Artifact 1:</a> AI Lab - No-Code Chatbot Assistant Development</li>
-      <li><a href="#artifact2">Artifact 2:</a> Evolution of Artificial Intelligence and Machine Learning - Timeline Presentation</li>
-      <li><a href="#artifact3">Artifact 3:</a> SchoolAI-Assisted Learning Experience</li>
-      <li><a href="#artifact4">Artifact 4:</a> Data Challenge Scenarios - AI Data Handling</li>
-      <li><a href="#artifact5">Artifact 5:</a> Advanced AI Project - Real World Application</li>
+      <li><a href="#artifact1">Artifact 1:</a> AI Lab – No-Code Chatbot Assistant Development</li>
+      <li><a href="#artifact2">Artifact 2:</a> Evolution of AI and ML – Timeline Presentation</li>
+      <li><a href="#artifact3">Artifact 3:</a> AI-Enhanced Learning Systems – SchoolAI Case Study</li>
+      <li><a href="#artifact4">Artifact 4:</a> Data Challenge Scenarios – AI Data Handling</li>
+      <li><a href="#artifact5">Artifact 5:</a> Real World AI Project – Advanced Application</li>
     </ul>
 
-    <h3>Contact Information</h3>
-    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
-    <p>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer">github.com/naga-venkata</a></p>
+    <h3>Get In Touch</h3>
+    <p>If you'd like to connect or learn more, feel free to reach out:</p>
+    <ul>
+      <li>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></li>
+      <li>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer">github.com/naga-venkata</a></li>
+    </ul>
   </section>
 
   <!-- Bio Section -->
   <section id="bio" class="page" tabindex="0" aria-label="Biography Section">
     <h2>About Me</h2>
 
-    <p>I am an AI and Data Analytics professional with over 12 years of experience in data-driven solutions, software development, and business intelligence. My passion lies in leveraging AI technologies to solve complex problems and deliver impactful insights.</p>
+    <p>I bring over a decade of experience in data-driven software development and analytics, currently deepening my expertise with a Master’s in AI and Data Analytics. I am passionate about using technology ethically to solve complex problems and create business value.</p>
 
     <h3>Education & Certifications</h3>
     <ul>
@@ -348,42 +366,42 @@
 
     <h3>Technical Skills</h3>
     <ul>
-      <li>Languages: Python, R, SQL, JavaScript</li>
-      <li>Data Visualization: Power BI, Tableau, Excel, ggplot2</li>
-      <li>Machine Learning: TensorFlow, Keras, Scikit-learn</li>
-      <li>Big Data: Hadoop, Spark, MIMIC-III datasets</li>
-      <li>Cloud: AWS, Azure</li>
-      <li>Compliance: GDPR, HIPAA, FERPA</li>
+      <li>Programming Languages: Python, R, SQL, JavaScript</li>
+      <li>Visualization Tools: Power BI, Tableau, Excel, ggplot2</li>
+      <li>Machine Learning Frameworks: TensorFlow, Keras, Scikit-learn</li>
+      <li>Big Data Technologies: Hadoop, Spark, MIMIC-III datasets</li>
+      <li>Cloud Platforms: AWS, Azure</li>
+      <li>Compliance Standards: GDPR, HIPAA, FERPA</li>
     </ul>
 
-    <h3>Professional Experience Highlights</h3>
+    <h3>Professional Experience</h3>
     <article>
       <h4>Senior Data Analyst – Tech Solutions Inc. (2018–2024)</h4>
       <ul>
-        <li>Developed interactive dashboards enhancing forecasting accuracy by 20%.</li>
-        <li>Implemented AI-driven solutions translating complex business needs.</li>
-        <li>Designed scalable data cleaning pipelines to improve data integrity.</li>
+        <li>Created dashboards increasing forecasting accuracy by 20%</li>
+        <li>Implemented AI solutions aligned with business goals</li>
+        <li>Built data pipelines enhancing data quality and integration</li>
       </ul>
     </article>
 
     <article>
-      <h4>Business Intelligence Specialist – Global Finance Corp. (2014–2018)</h4>
+      <h4>Software Developer – Innovative Apps (2013–2018)</h4>
       <ul>
-        <li>Automated reporting systems reducing manual workload by 35%.</li>
-        <li>Performed customer segmentation using clustering algorithms.</li>
-        <li>Enhanced data security protocols ensuring compliance.</li>
+        <li>Developed user-centric applications in Python and JavaScript</li>
+        <li>Collaborated with cross-functional teams to design data-driven products</li>
       </ul>
     </article>
 
-    <blockquote>
-      “Artificial Intelligence is not just technology — it’s empowering smarter, ethical decisions to improve lives and build a better future.”
-    </blockquote>
-
+    <h3>Core Values & Approach</h3>
+    <p>I prioritize collaboration, transparency, and continuous learning. Leveraging AI responsibly and making data-driven decisions is my professional philosophy.</p>
   </section>
 
   <!-- Artifact 1 Section -->
-  <section id="artifact1" class="page" tabindex="0" aria-label="Artifact 1: AI Lab No-Code Chatbot Assistant">
-    <h2>Artifact 1: AI Lab – No-Code Chatbot Assistant Development</h2>
+  <section id="artifact1" class="page" tabindex="0" aria-label="Artifact 1: AI Lab – No-Code Chatbot Assistant">
+    <div class="artifact-header">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="#f57c00"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <h2>Artifact 1: AI Lab – No-Code Chatbot Assistant Development</h2>
+    </div>
 
     <p>This artifact documents my journey in developing an AI-powered chatbot assistant using no-code platforms to improve user engagement and automate routine queries.</p>
 
@@ -428,38 +446,168 @@
     <p>Understanding user intents precisely without coding required significant trial and error. The experience deepened my knowledge of conversational AI design and user experience principles.</p>
 
     <h3>Demo Screenshot</h3>
-    <p><img src="https://via.placeholder.com/800x400?text=Chatbot+Demo+Screenshot" alt="Chatbot demo screenshot" style="max-width:100%; border-radius:8px; box-shadow: 0 3px 10px rgba(0,0,0,0.2);" /></p>
-
+    <img src="https://via.placeholder.com/800x400?text=Chatbot+Demo+Screenshot" alt="Chatbot demo screenshot" />
   </section>
 
-  <!-- Placeholder for Artifact 2-5 will be continued -->
+  <!-- Artifact 2 Section -->
+  <section id="artifact2" class="page" tabindex="0" aria-label="Artifact 2: Evolution of AI and ML Timeline">
+    <div class="artifact-header" style="color:#264653;">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="6" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
+      <h2>Artifact 2: Evolution of AI and ML – Timeline Presentation</h2>
+    </div>
+
+    <p>This artifact illustrates the historical development and milestones in Artificial Intelligence and Machine Learning from the 1950s to present.</p>
+
+    <h3>Timeline Highlights</h3>
+    <table>
+      <thead>
+        <tr><th>Year</th><th>Milestone</th><th>Significance</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1956</td><td>Dartmouth Conference</td><td>Birth of Artificial Intelligence as a formal field.</td></tr>
+        <tr><td>1980s</td><td>Expert Systems</td><td>AI systems mimicking human expertise in specific domains.</td></tr>
+        <tr><td>1997</td><td>Deep Blue defeats Kasparov</td><td>AI beats world chess champion for the first time.</td></tr>
+        <tr><td>2012</td><td>Deep Learning Breakthrough</td><td>Revolutionized image recognition with neural networks.</td></tr>
+        <tr><td>2020s</td><td>GPT-3 & Beyond</td><td>Advancements in natural language processing and generative AI.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Technologies & Concepts Covered</h3>
+    <ul>
+      <li>Symbolic AI vs Machine Learning</li>
+      <li>Neural Networks and Deep Learning</li>
+      <li>Reinforcement Learning</li>
+      <li>Natural Language Processing</li>
+      <li>Ethics and AI Governance</li>
+    </ul>
+
+    <h3>Presentation Tools Used</h3>
+    <p>Microsoft PowerPoint, Canva, and Adobe Illustrator for designing engaging timelines and infographics.</p>
+  </section>
+
+  <!-- Artifact 3 Section -->
+  <section id="artifact3" class="page" tabindex="0" aria-label="Artifact 3: AI-Enhanced Learning Systems">
+    <div class="artifact-header" style="color:#ee6c4d;">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M4 19h16V5H4z"/></svg>
+      <h2>Artifact 3: AI-Enhanced Learning Systems – SchoolAI Case Study</h2>
+    </div>
+
+    <p>This artifact explores how AI technologies are integrated into educational platforms to personalize learning experiences and improve student outcomes.</p>
+
+    <h3>Case Study Highlights</h3>
+    <ul>
+      <li>Adaptive learning algorithms that adjust content difficulty</li>
+      <li>AI-driven assessment tools for real-time feedback</li>
+      <li>Virtual tutors powered by natural language understanding</li>
+      <li>Data analytics to monitor student progress and engagement</li>
+    </ul>
+
+    <h3>Implementation Details</h3>
+    <p>The system uses Python for backend data processing, TensorFlow for predictive modeling, and ReactJS for the user interface.</p>
+
+    <h3>Results</h3>
+    <p>Improved student engagement by 30%, reduced dropout rates by 15%, and increased personalized learning efficiency significantly.</p>
+
+    <img src="https://via.placeholder.com/800x400?text=SchoolAI+Dashboard" alt="SchoolAI Dashboard Screenshot" />
+  </section>
+
+  <!-- Artifact 4 Section -->
+  <section id="artifact4" class="page" tabindex="0" aria-label="Artifact 4: Data Challenge Scenarios">
+    <div class="artifact-header" style="color:#007f7f;">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><rect x="4" y="6" width="16" height="4"/><rect x="4" y="14" width="16" height="4"/></svg>
+      <h2>Artifact 4: Data Challenge Scenarios – AI Data Handling</h2>
+    </div>
+
+    <p>This artifact focuses on practical data challenges encountered during AI and analytics projects, and how they were addressed.</p>
+
+    <h3>Common Challenges</h3>
+    <ul>
+      <li>Handling missing or corrupted data</li>
+      <li>Balancing biased datasets</li>
+      <li>Ensuring data privacy and compliance</li>
+      <li>Integrating heterogeneous data sources</li>
+      <li>Scaling data pipelines for big data</li>
+    </ul>
+
+    <h3>Solutions & Techniques</h3>
+    <ul>
+      <li>Imputation and data cleaning techniques</li>
+      <li>Data augmentation and synthetic data generation</li>
+      <li>Encryption and anonymization for compliance</li>
+      <li>Use of ETL tools and APIs for integration</li>
+      <li>Distributed computing with Hadoop and Spark</li>
+    </ul>
+
+    <h3>Example: MIMIC-III Dataset Handling</h3>
+    <p>Worked with the MIMIC-III healthcare dataset to anonymize patient data and extract actionable insights for predictive modeling in healthcare AI.</p>
+  </section>
+
+  <!-- Artifact 5 Section -->
+  <section id="artifact5" class="page" tabindex="0" aria-label="Artifact 5: Real World AI Project">
+    <div class="artifact-header" style="color:#ffb703;">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <h2>Artifact 5: Real World AI Project – Advanced Application</h2>
+    </div>
+
+    <p>This artifact presents a comprehensive AI project from concept to deployment, demonstrating advanced data analytics, modeling, and real-world application.</p>
+
+    <h3>Project Highlights</h3>
+    <ul>
+      <li>End-to-end pipeline development with data ingestion, cleaning, and model training</li>
+      <li>Use of Python, TensorFlow, and Flask for API deployment</li>
+      <li>Integration of machine learning models into production systems</li>
+      <li>Dashboard creation for business intelligence insights</li>
+      <li>Implementation of continuous integration and delivery (CI/CD) pipelines</li>
+    </ul>
+
+    <h3>Outcome</h3>
+    <p>The project successfully automated predictive analytics for customer churn, improving retention rates by 25% and enabling data-driven marketing strategies.</p>
+
+    <img src="https://via.placeholder.com/800x400?text=AI+Project+Dashboard" alt="AI Project Dashboard" />
+  </section>
 
 </main>
 
 <script>
-  // Toggle navigation menu for mobile devices
+  // Responsive navigation toggle
   function toggleMenu() {
     const menu = document.getElementById('primary-menu');
     const expanded = menu.classList.toggle('show');
-    document.querySelector('.menu-toggle').setAttribute('aria-expanded', expanded);
+    const btn = document.querySelector('.menu-toggle');
+    btn.setAttribute('aria-expanded', expanded);
   }
 
-  // Scrollspy navigation highlight on scroll
+  // Scrollspy: Highlight nav link on scroll
   window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section.page');
-    const scrollPos = window.scrollY + 150;
-    let currentSectionId = 'home';
+    const scrollPos = window.scrollY + window.innerHeight / 3;
 
-    sections.forEach(section => {
-      if(scrollPos >= section.offsetTop) {
-        currentSectionId = section.id;
+    let currentId = 'home'; // default fallback
+
+    for (const section of sections) {
+      if (scrollPos >= section.offsetTop) {
+        currentId = section.id;
       }
-    });
+    }
 
     document.querySelectorAll('nav ul li a').forEach(link => {
       link.classList.remove('active');
-      if(link.getAttribute('href') === '#' + currentSectionId) {
+      if (link.getAttribute('href') === '#' + currentId) {
         link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  });
+
+  // Close nav menu when clicking a nav link on small screens
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      const menu = document.getElementById('primary-menu');
+      if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        document.querySelector('.menu-toggle').setAttribute('aria-expanded', false);
       }
     });
   });
