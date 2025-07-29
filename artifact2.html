@@ -1,728 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Professional Portfolio - Artifact 2</title>
-  <style>
-    /* Reset and base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fafb;
-      color: #2c3e50;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    a {
-      color: #d35400;
-      text-decoration: none;
-    }
-    a:hover, a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-    h1, h2, h3, h4 {
-      margin-top: 0;
-      font-weight: 700;
-      color: #27ae60;
-      line-height: 1.2;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-      color: #e67e22;
-    }
-    p {
-      margin: 0 0 1rem;
-      font-size: 1rem;
-      color: #34495e;
-    }
-    ul {
-      margin: 0 0 1rem 1.5rem;
-      padding: 0;
-      color: #34495e;
-    }
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 2rem 4rem 2rem;
-    }
-    /* Header */
-    header {
-      background-color: #27ae60;
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.5rem 2rem;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    .nav-links li {
-      position: relative;
-    }
-    .nav-links a {
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.3rem 0.5rem;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-    .nav-links a:hover, .nav-links a:focus {
-      background-color: #e67e22;
-      color: #fff;
-      outline: none;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #f9f9f9 30%, #dff0d8 70%);
-      padding: 4rem 2rem 3rem 2rem;
-      text-align: center;
-      border-radius: 8px;
-      margin: 2rem 0;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .hero h1 {
-      color: #27ae60;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      color: #2c3e50;
-    }
-    .btn-primary {
-      background-color: #e67e22;
-      border: none;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(230,126,34,0.4);
-      transition: background-color 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-    }
-    .btn-primary:hover, .btn-primary:focus {
-      background-color: #d35400;
-      outline: none;
-    }
-
-    /* Section Styling */
-    section.content-box {
-      background-color: #fff;
-      padding: 2rem 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-      margin-bottom: 3rem;
-      transition: box-shadow 0.3s;
-    }
-    section.content-box:focus-within {
-      box-shadow: 0 0 10px 3px #27ae60;
-      outline: none;
-    }
-
-    /* Timeline Container */
-    .timeline-container {
-      position: relative;
-      margin: 2rem 0 0 0;
-      padding-left: 3rem;
-      border-left: 4px solid #e67e22;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2rem;
-      padding-left: 2rem;
-    }
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-    .timeline-year {
-      position: absolute;
-      left: -4.5rem;
-      top: 0;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #e67e22;
-      background: #fff;
-      padding: 0.2rem 0.6rem;
-      border: 2px solid #e67e22;
-      border-radius: 6px;
-      min-width: 4rem;
-      text-align: center;
-      box-shadow: 0 0 5px rgba(230,126,34,0.25);
-      user-select: none;
-    }
-    .timeline-content h3 {
-      color: #27ae60;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-    .timeline-content p {
-      font-size: 1rem;
-      color: #34495e;
-      margin-bottom: 0.6rem;
-      line-height: 1.5;
-    }
-    /* Section headings */
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #27ae60;
-      margin-bottom: 1.25rem;
-      text-align: center;
-    }
-    /* Footer */
-    footer {
-      background-color: #27ae60;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-      margin-top: 4rem;
-      user-select: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
-      .timeline-container {
-        padding-left: 1rem;
-        border-left: 3px solid #e67e22;
-      }
-      .timeline-year {
-        position: static;
-        display: inline-block;
-        margin-bottom: 0.4rem;
-        border-radius: 6px;
-        font-size: 1rem;
-      }
-      .timeline-item {
-        padding-left: 0;
-      }
-    }
-
-    /* Dark Mode */
-    body.dark-mode {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-    }
-    body.dark-mode a {
-      color: #e67e22;
-    }
-    body.dark-mode .content-box {
-      background-color: #34495e;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.8);
-    }
-    body.dark-mode header {
-      background-color: #1e2d3b;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
-    }
-    body.dark-mode footer {
-      background-color: #1e2d3b;
-    }
-    body.dark-mode .timeline-container {
-      border-left-color: #e67e22;
-    }
-    body.dark-mode .timeline-year {
-      background-color: #2c3e50;
-      border-color: #e67e22;
-      color: #e67e22;
-      box-shadow: none;
-    }
-    body.dark-mode .timeline-content h3 {
-      color: #e67e22;
-    }
-    body.dark-mode .timeline-content p {
-      color: #dcdde1;
-    }
-
-    /* Back to top button */
-    #backToTopBtn {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      display: none;
-      background-color: #e67e22;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(230,126,34,0.6);
-      transition: background-color 0.3s ease;
-      z-index: 1100;
-    }
-    #backToTopBtn:hover, #backToTopBtn:focus {
-      background-color: #d35400;
-      outline: none;
-    }
-    /* Toggle dark mode button */
-    #darkModeToggle {
-      cursor: pointer;
-      background-color: transparent;
-      border: 2px solid white;
-      border-radius: 30px;
-      color: white;
-      padding: 0.3rem 0.75rem;
-      font-weight: 600;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: none;
-    }
-    #darkModeToggle:hover, #darkModeToggle:focus {
-      background-color: white;
-      color: #27ae60;
-      outline: none;
-    }
-    body.dark-mode #darkModeToggle {
-      background-color: white;
-      color: #27ae60;
-      border-color: #27ae60;
-    }
-    body.dark-mode #darkModeToggle:hover, body.dark-mode #darkModeToggle:focus {
-      background-color: #27ae60;
-      color: white;
-      outline: none;
-    }
-
-    /* Collapsible sections styling */
-    .collapsible {
-      background-color: #27ae60;
-      color: white;
-      cursor: pointer;
-      padding: 0.6rem 1rem;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1.15rem;
-      border-radius: 6px;
-      margin-bottom: 0.5rem;
-      user-select: none;
-      transition: background-color 0.3s ease;
-    }
-    .collapsible:hover, .collapsible:focus {
-      background-color: #1e8449;
-      outline: none;
-    }
-    .collapsible:after {
-      content: '\25BC';
-      float: right;
-      margin-left: 5px;
-      transition: transform 0.3s ease;
-    }
-    .collapsible.active:after {
-      transform: rotate(180deg);
-    }
-    .content-collapsible {
-      padding: 0 1rem 1rem 1rem;
-      display: none;
-      overflow: hidden;
-      background-color: #dff0d8;
-      border-radius: 0 0 6px 6px;
-      color: #2c3e50;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    body.dark-mode .content-collapsible {
-      background-color: #1e2d3b;
-      color: #ecf0f1;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifact 2 - Evolution of AI & Machine Learning</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header>
-    <nav aria-label="Primary navigation">
-      <div class="logo" tabindex="0">NVS Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="index.html" tabindex="0">Home</a></li>
-        <li><a href="bio.html" tabindex="0">Bio</a></li>
-        <li><a href="artifact1.html" tabindex="0">Artifact 1</a></li>
-        <li><a href="artifact2.html" aria-current="page" tabindex="0">Artifact 2</a></li>
-        <li><a href="artifact3.html" tabindex="0">Artifact 3</a></li>
-        <li><a href="contact.html" tabindex="0">Contact</a></li>
-      </ul>
-      <button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode">Dark Mode</button>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Naga's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../bio.html">Bio</a></li>
+                <li><a href="artifact1.html">Artifact 1</a></li>
+                <li><a href="artifact2.html" class="active">Artifact 2</a></li>
+                <li><a href="artifact3.html">Artifact 3</a></li>
+                <li><a href="artifact4.html">Artifact 4</a></li>
+                <li><a href="artifact5.html">Artifact 5</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main class="container" role="main">
-    <section class="hero" aria-label="Portfolio introduction">
-      <h1 tabindex="0">Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h1>
-      <p tabindex="0">
-        This artifact presents a detailed timeline of AI and ML development from 1956 to 2025, highlighting key milestones and chatbot evolution.
-      </p>
-      <button class="btn-primary" onclick="scrollToSection('ai-timeline')">Explore the Timeline</button>
+    <!-- ARTIFACT DETAILS -->
+    <section class="artifact-detail">
+        <div class="container">
+            <h1>Artifact 2: Evolution of Artificial Intelligence and Machine Learning</h1>
+            <p><em>A timeline-based presentation showcasing the growth of AI & ML from early stages to modern advancements.</em></p>
+        </div>
     </section>
 
-    <section class="content-box" tabindex="0" aria-labelledby="about-me-title">
-      <h2 id="about-me-title" class="section-title">About Me</h2>
-      <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of professional experience in data analytics, business intelligence, and performance testing, I am expanding my expertise into AI and Machine Learning through practical coursework and projects. My career goal is to leverage AI and data-driven insights to solve complex business problems and drive innovation in enterprise environments.</p>
-      <p>This portfolio showcases my journey of acquiring AI/ML competencies, highlighting both hands-on technical skills and strategic understanding of the field.</p>
+    <!-- OBJECTIVE -->
+    <section class="objective">
+        <div class="container">
+            <h2>Project Objective</h2>
+            <p>
+                The objective of this project was to create an interactive timeline that illustrates key milestones in the 
+                evolution of Artificial Intelligence (AI) and Machine Learning (ML). The timeline captures significant events, 
+                research breakthroughs, technological developments, and future predictions in AI.
+            </p>
+        </div>
     </section>
 
-    <section class="content-box" tabindex="0" aria-labelledby="artifact-overview-title">
-      <h2 id="artifact-overview-title" class="section-title">Artifact Overview</h2>
-      <p><strong>Title:</strong> Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</p>
-      <p><strong>Type:</strong> Visual Timeline (Interactive Presentation)</p>
-      <p><strong>Tools Used:</strong> Canva, Google Slides</p>
-      <p><strong>Date Created:</strong> July 20th, 2025</p>
-      <p><strong>Audience:</strong> AI learners, educators, hiring managers, technology stakeholders</p>
+    <!-- DESCRIPTION -->
+    <section class="description">
+        <div class="container">
+            <h2>Description & Methodology</h2>
+            <p>
+                This artifact was designed as a visual presentation that explains how AI has evolved over decades. 
+                It highlights the major phases: 
+                <strong>Early AI Concepts (1950s-1970s), AI Winter, Expert Systems Era, Machine Learning Rise, and Deep Learning Revolution.</strong>
+            </p>
+            <p>
+                The methodology included:
+            </p>
+            <ul>
+                <li>Researching historical AI developments from academic and industry sources.</li>
+                <li>Structuring milestones into chronological order.</li>
+                <li>Designing a visually appealing timeline using PowerPoint and Canva.</li>
+                <li>Embedding interactive elements and graphical representations.</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="content-box" tabindex="0" aria-labelledby="artifact-description-title">
-      <h2 id="artifact-description-title" class="section-title">Artifact Description</h2>
-      <p>The AI and ML Timeline artifact is a comprehensive visual representation of the historical progression of artificial intelligence and machine learning from the mid-20th century to the current era. This timeline captures the major milestones, including theoretical breakthroughs, algorithmic innovations, commercial applications, and ethical debates shaping the field.</p>
-      <p>Key highlights included:</p>
-      <ul>
-        <li>The Dartmouth Conference of 1956, marking AI’s birth as a formal discipline</li>
-        <li>Development of foundational algorithms such as perceptrons and backpropagation</li>
-        <li>AI winters and the resurgence due to computational advances</li>
-        <li>Introduction of deep learning architectures and neural networks</li>
-        <li>Emergence of generative AI models like GPT and Claude</li>
-        <li>Ethical considerations including bias, transparency, and data privacy regulations like GDPR</li>
-      </ul>
-      <p>I designed the timeline to be educational, engaging, and accessible, using color-coded eras and icons to differentiate technology waves and societal impact. Each segment is paired with brief explanations and important figures, enabling the viewer to quickly grasp AI’s evolution and its multifaceted impact.</p>
+    <!-- TIMELINE -->
+    <section class="timeline">
+        <div class="container">
+            <h2>AI & ML Evolution Timeline</h2>
+            <ul class="timeline-list">
+                <li><strong>1950:</strong> Alan Turing publishes “Computing Machinery and Intelligence” introducing the Turing Test.</li>
+                <li><strong>1956:</strong> Dartmouth Conference – Birth of AI as a field.</li>
+                <li><strong>1970s:</strong> Development of early expert systems.</li>
+                <li><strong>1980s:</strong> AI Winter due to lack of funding and results.</li>
+                <li><strong>1997:</strong> IBM’s Deep Blue defeats world chess champion Garry Kasparov.</li>
+                <li><strong>2006:</strong> Emergence of Deep Learning (Hinton’s breakthrough on neural networks).</li>
+                <li><strong>2010s:</strong> Rapid adoption of ML and DL in real-world applications.</li>
+                <li><strong>2020s:</strong> AI for healthcare, autonomous systems, and generative AI models.</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="content-box" tabindex="0" aria-labelledby="project-context-title">
-      <h2 id="project-context-title" class="section-title">Project Context</h2>
-      <p>This artifact was developed as part of Workshop 1’s assignments, aimed at deepening understanding of AI/ML history and contextualizing current technologies within a broader technological and social framework. While much focus in AI education is placed on models and coding, understanding the timeline equips learners and professionals with strategic insights necessary for innovation and responsible AI deployment.</p>
+    <!-- TOOLS USED -->
+    <section class="tools">
+        <div class="container">
+            <h2>Tools & Technologies Used</h2>
+            <ul>
+                <li><strong>Microsoft PowerPoint</strong> – for timeline presentation design</li>
+                <li><strong>Canva</strong> – for modern graphics and layout</li>
+                <li><strong>Academic Research Articles</strong> – to ensure historical accuracy</li>
+            </ul>
+        </div>
     </section>
 
-    <section id="ai-timeline" class="content-box" tabindex="0" aria-labelledby="timeline-title">
-      <h2 id="timeline-title" class="section-title">AI &amp; Machine Learning Timeline</h2>
-      <p>This timeline captures 20 significant milestones in AI and Machine Learning history, focusing on actions, tasks, and comparisons especially highlighting chatbot evolution and capabilities.</p>
-
-      <div class="timeline-container" role="list" aria-label="AI and ML historical timeline with chatbot comparisons">
-        <!-- Timeline items -->
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 1956: Dartmouth Conference">
-          <time datetime="1956" class="timeline-year">1956</time>
-          <div class="timeline-content">
-            <h3>Birth of AI - Dartmouth Conference</h3>
-            <p>First formal AI conference where the term “Artificial Intelligence” was coined and initial ideas for intelligent machines discussed.</p>
-            <p><strong>Chatbot context:</strong> This laid groundwork, but chatbots would not appear until decades later.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 1966: ELIZA chatbot">
-          <time datetime="1966" class="timeline-year">1966</time>
-          <div class="timeline-content">
-            <h3>Creation of ELIZA</h3>
-            <p>Joseph Weizenbaum developed ELIZA, the first chatbot simulating human conversation by pattern matching and substitution.</p>
-            <p><strong>Chatbot context:</strong> The earliest known chatbot, setting a precedent for conversational agents.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 1972: SHRDLU">
-          <time datetime="1972" class="timeline-year">1972</time>
-          <div class="timeline-content">
-            <h3>SHRDLU Program</h3>
-            <p>A natural language understanding program that could manipulate objects in a virtual world via commands.</p>
-            <p><strong>Chatbot context:</strong> Demonstrated deeper language understanding but limited to controlled environment.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 1980: Expert Systems rise">
-          <time datetime="1980" class="timeline-year">1980</time>
-          <div class="timeline-content">
-            <h3>Rise of Expert Systems</h3>
-            <p>AI shifted focus to expert systems applying rule-based reasoning to specific domains.</p>
-            <p><strong>Chatbot context:</strong> Chatbots remained rule-based, limited in flexibility and conversational depth.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 1986: Backpropagation algorithm">
-          <time datetime="1986" class="timeline-year">1986</time>
-          <div class="timeline-content">
-            <h3>Backpropagation Algorithm Popularized</h3>
-            <p>David Rumelhart and colleagues reintroduced backpropagation, enabling multi-layer neural networks to learn efficiently.</p>
-            <p><strong>Chatbot context:</strong> Foundation for neural network–based conversational models later.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 1997: IBM Deep Blue">
-          <time datetime="1997" class="timeline-year">1997</time>
-          <div class="timeline-content">
-            <h3>IBM Deep Blue beats Kasparov</h3>
-            <p>AI milestone as a computer defeated the world chess champion, showcasing power of specialized algorithms.</p>
-            <p><strong>Chatbot context:</strong> AI successes began shifting focus to complex problem solving beyond basic conversations.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2000: AIML and ALICE">
-          <time datetime="2000" class="timeline-year">2000</time>
-          <div class="timeline-content">
-            <h3>ALICE chatbot and AIML</h3>
-            <p>Development of ALICE chatbot using AIML (Artificial Intelligence Markup Language), improving pattern recognition.</p>
-            <p><strong>Chatbot context:</strong> AIML standardized chatbot scripting, enabling wider chatbot deployments.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2006: Deep Learning Emerges">
-          <time datetime="2006" class="timeline-year">2006</time>
-          <div class="timeline-content">
-            <h3>Emergence of Deep Learning</h3>
-            <p>Geoffrey Hinton and others popularized deep neural networks, drastically improving AI capabilities.</p>
-            <p><strong>Chatbot context:</strong> Enabled chatbots to understand context and intent better through data-driven models.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2011: IBM Watson on Jeopardy">
-          <time datetime="2011" class="timeline-year">2011</time>
-          <div class="timeline-content">
-            <h3>IBM Watson wins Jeopardy!</h3>
-            <p>Watson's natural language processing and knowledge representation allowed it to outperform humans.</p>
-            <p><strong>Chatbot context:</strong> Demonstrated AI’s potential in answering complex queries, influencing chatbot design.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2014: Chatbots on social media">
-          <time datetime="2014" class="timeline-year">2014</time>
-          <div class="timeline-content">
-            <h3>Chatbots on social media platforms</h3>
-            <p>Facebook Messenger and other platforms launched chatbots, expanding use cases in customer service.</p>
-            <p><strong>Chatbot context:</strong> Chatbots became mainstream, focusing on practical applications.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2015: Virtual assistants popular">
-          <time datetime="2015" class="timeline-year">2015</time>
-          <div class="timeline-content">
-            <h3>Virtual assistants like Siri, Alexa, Google Assistant</h3>
-            <p>Voice-activated AI assistants gained popularity with natural language understanding and multi-modal input.</p>
-            <p><strong>Chatbot context:</strong> Chatbots expanded into voice interaction, improving user engagement.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2017: Transformer architecture">
-          <time datetime="2017" class="timeline-year">2017</time>
-          <div class="timeline-content">
-            <h3>Transformer architecture introduced</h3>
-            <p>Google introduced Transformer, revolutionizing NLP with attention mechanisms allowing better context retention.</p>
-            <p><strong>Chatbot context:</strong> Transformer enabled advanced chatbots like GPT series with coherent dialogue.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2018: BERT model">
-          <time datetime="2018" class="timeline-year">2018</time>
-          <div class="timeline-content">
-            <h3>BERT by Google</h3>
-            <p>BERT improved understanding of language context bidirectionally, greatly improving NLP tasks.</p>
-            <p><strong>Chatbot context:</strong> Enhanced chatbot ability to understand nuanced queries.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2019: GPT-2 release">
-          <time datetime="2019" class="timeline-year">2019</time>
-          <div class="timeline-content">
-            <h3>GPT-2 released by OpenAI</h3>
-            <p>Generative pre-trained transformers capable of generating human-like text at scale.</p>
-            <p><strong>Chatbot context:</strong> GPT-2 marked significant leap in chatbot conversational quality.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2020: GPT-3 launch">
-          <time datetime="2020" class="timeline-year">2020</time>
-          <div class="timeline-content">
-            <h3>GPT-3 launched</h3>
-            <p>Massively scaled language model with 175 billion parameters, powering powerful chatbots and language tasks.</p>
-            <p><strong>Chatbot context:</strong> Enabled more coherent, creative, and context-aware chatbots.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2021: Ethical AI discussions">
-          <time datetime="2021" class="timeline-year">2021</time>
-          <div class="timeline-content">
-            <h3>Ethical AI and fairness debates intensify</h3>
-            <p>Focus on reducing bias, ensuring transparency, and responsible AI deployment.</p>
-            <p><strong>Chatbot context:</strong> Chatbots started integrating bias mitigation and transparency features.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2023: GPT-4 release">
-          <time datetime="2023" class="timeline-year">2023</time>
-          <div class="timeline-content">
-            <h3>OpenAI releases GPT-4</h3>
-            <p>Multimodal, more aligned with human instructions, and improved reasoning capabilities.</p>
-            <p><strong>Chatbot context:</strong> GPT-4 powers advanced conversational agents with better safety and context awareness.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2024: Claude 3 release">
-          <time datetime="2024" class="timeline-year">2024</time>
-          <div class="timeline-content">
-            <h3>Anthropic releases Claude 3</h3>
-            <p>Focus on AI safety, interpretability, and ethical frameworks.</p>
-            <p><strong>Chatbot context:</strong> Claude 3 chatbots emphasize safe and responsible AI interactions.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item" role="listitem" tabindex="0" aria-label="Year 2025: Gemini 1.5 launch">
-          <time datetime="2025" class="timeline-year">2025</time>
-          <div class="timeline-content">
-            <h3>Google DeepMind Gemini 1.5 Launch</h3>
-            <p>Next-gen AI model combining language understanding and reasoning capabilities.</p>
-            <p><strong>Chatbot context:</strong> Gemini powers hybrid chatbots integrating multimodal inputs and advanced logic.</p>
-          </div>
-        </article>
-      </div>
+    <!-- VISUALS -->
+    <section class="visualizations">
+        <div class="container">
+            <h2>Timeline Visuals</h2>
+            <div class="img-gallery">
+                <img src="../images/artifact2-timeline1.jpg" alt="AI Timeline Slide 1">
+                <img src="../images/artifact2-timeline2.jpg" alt="AI Timeline Slide 2">
+            </div>
+            <p><em>Note: The visuals above are from the timeline presentation designed for this project.</em></p>
+        </div>
     </section>
 
-    <section class="content-box" tabindex="0" aria-labelledby="skills-title">
-      <h2 id="skills-title" class="section-title">Skills Demonstrated</h2>
-      <ul>
-        <li><strong>Research &amp; Data Collection:</strong> Sourced credible academic papers, industry reports, and timelines</li>
-        <li><strong>Critical Analysis:</strong> Selected and prioritized key milestones relevant to AI growth</li>
-        <li><strong>Visual Communication:</strong> Designed clear, engaging visuals using Canva and Google Slides</li>
-        <li><strong>Written Communication:</strong> Developed concise, informative project descriptions</li>
-        <li><strong>AI/ML Conceptual Mastery:</strong> Demonstrated knowledge of AI history, models, and ethics</li>
-      </ul>
+    <!-- INSIGHTS -->
+    <section class="insights">
+        <div class="container">
+            <h2>Key Insights & Learning Outcomes</h2>
+            <ul>
+                <li>Gained understanding of historical AI development and technological cycles (AI Winters, booms).</li>
+                <li>Developed skills in creating educational, visually appealing content using design tools.</li>
+                <li>Strengthened knowledge of AI’s current trajectory and future potential in various domains.</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="content-box" tabindex="0" aria-labelledby="challenges-title">
-      <h2 id="challenges-title" class="section-title">Challenges and Solutions</h2>
-      <p><strong>Challenge:</strong> The sheer volume of developments in AI and ML made it difficult to decide which events to include without overwhelming the audience.</p>
-      <p><strong>Solution:</strong> I applied a curation approach, focusing on breakthroughs that led to paradigm shifts, popularized AI applications, or introduced ethical/legal considerations. This approach helped maintain clarity and relevance.</p>
-      <p><strong>Challenge:</strong> Presenting technical content to diverse audiences, including non-experts.</p>
-      <p><strong>Solution:</strong> I used simple language and visual metaphors, and avoided jargon. Icons and color-coding helped users navigate the timeline intuitively.</p>
+    <!-- NAVIGATION -->
+    <section class="navigation-links">
+        <div class="container">
+            <a href="artifact1.html" class="btn-secondary">← Previous: Artifact 1</a>
+            <a href="artifact3.html" class="btn-primary">Next: Artifact 3 →</a>
+        </div>
     </section>
 
-    <section class="content-box" tabindex="0" aria-labelledby="reflection-title">
-      <h2 id="reflection-title" class="section-title">Reflection</h2>
-      <p>Creating this timeline was a deeply educational experience that enhanced my appreciation for AI’s complex evolution. I learned that AI development is not linear; it is shaped by technological advances, societal needs, funding cycles, and ethical debates.</p>
-      <p>This artifact complements my practical AI Lab project by emphasizing the importance of understanding context and history in technology adoption and innovation. It also strengthened my research and visual storytelling skills—both essential for effective communication in AI roles.</p>
-      <p>Importantly, this project pushed me to think critically about AI’s future. As new models emerge rapidly, professionals must remain aware of historical lessons, including past limitations and societal impacts, to guide ethical AI development.</p>
-      <p>This timeline is a tool I intend to expand and refine, using it as both a personal reference and an educational resource for others entering the AI field.</p>
-    </section>
-
-    <section class="content-box" tabindex="0" aria-labelledby="audience-value-title">
-      <h2 id="audience-value-title" class="section-title">Audience Value</h2>
-      <ul>
-        <li><strong>Employers:</strong> Demonstrates my strategic thinking and communication abilities alongside technical knowledge, highlighting readiness for roles requiring AI literacy and leadership.</li>
-        <li><strong>Peers and Students:</strong> Provides a clear, accessible introduction to AI/ML history that can support learning and discussion.</li>
-        <li><strong>Instructors:</strong> Shows thoroughness in research, ability to synthesize complex info, and skill in presenting technical content clearly.</li>
-      </ul>
-    </section>
-
-    <section class="content-box" tabindex="0" aria-labelledby="portfolio-structure-title">
-      <h2 id="portfolio-structure-title" class="section-title">Portfolio Structure (Current)</h2>
-      <ul>
-        <li>About Me – Career goals and background</li>
-        <li>Artifact 1 – AI Lab: No-Code Chatbot Assistant Development</li>
-        <li>Artifact 2 – AI/ML Timeline Presentation (this artifact)</li>
-        <li>Skills Section – AI/ML tools, programming, data visualization, communication</li>
-        <li>References</li>
-      </ul>
-    </section>
-
-    <section class="content-box" tabindex="0" aria-labelledby="references-title">
-      <h2 id="references-title" class="section-title">References</h2>
-      <ul>
-        <li>Botpress. (n.d.). Botpress Documentation. <a href="https://botpress.com/docs" target="_blank" rel="noopener noreferrer">https://botpress.com/docs</a></li>
-        <li>Chatbase. (n.d.). Create AI Chatbots for Your Website. <a href="https://www.chatbase.co/" target="_blank" rel="noopener noreferrer">https://www.chatbase.co/</a></li>
-        <li>Dialogflow. (n.d.). Conversational AI Platform. Google Cloud. <a href="https://cloud.google.com/dialogflow" target="_blank" rel="noopener noreferrer">https://cloud.google.com/dialogflow</a></li>
-        <li>IDEO. (n.d.). Design Thinking. <a href="https://designthinking.ideo.com/" target="_blank" rel="noopener noreferrer">https://designthinking.ideo.com/</a></li>
-        <li>OpenAI. (2024). ChatGPT and GPT-4 Technical Capabilities Overview. <a href="https://openai.com/gpt-4" target="_blank" rel="noopener noreferrer">https://openai.com/gpt-4</a></li>
-        <li>Mizou. (2025). Mizou AI Chatbot Builder. <a href="https://mizou.com" target="_blank" rel="noopener noreferrer">https://mizou.com</a></li>
-        <li>Anthropic. (2024). Claude 3 Language Model Overview. <a href="https://www.anthropic.com/index/claude" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/index/claude</a></li>
-        <li>Google DeepMind. (2024). Gemini 1.5 Technical Report. <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener noreferrer">https://deepmind.google/technologies/gemini/</a></li>
-        <li>European Union. (2018). General Data Protection Regulation (GDPR). <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer">https://gdpr.eu/</a></li>
-        <li>Replit. (n.d.). Collaborative Code Workspace. <a href="https://replit.com" target="_blank" rel="noopener noreferrer">https://replit.com</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer role="contentinfo" tabindex="0">
-    &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.
-  </footer>
-
-  <button id="backToTopBtn" aria-label="Back to top">&uarr;</button>
-
-  <script>
-    // Smooth scroll to section
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Back to top button
-    const backToTopBtn = document.getElementById('backToTopBtn');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark-mode');
-      darkModeToggle.setAttribute('aria-pressed', isDark);
-      darkModeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-    });
-
-    // Keyboard accessibility: focus outlines
-    document.body.addEventListener('keyup', e => {
-      if (e.key === 'Tab') {
-        document.body.classList.add('user-is-tabbing');
-      }
-    });
-
-    // Collapsible sections - optional if needed, but no collapsible in current version
-
-  </script>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
