@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</title>
+<style>
+  /* ============ Reset and base styles ============ */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f8fa;
+    color: #222;
+    line-height: 1.6;
+  }
+  a {
+    color: #d35400; /* Orange accent */
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    color: #2c3e50; /* Dark slate */
+  }
+  p {
+    margin: 0 0 1rem 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* ============ Layout containers ============ */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+  }
+  /* ============ Header & Nav ============ */
+  header {
+    position: sticky;
+    top: 0;
+    background-color: #ecf0f1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav .logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #e67e22; /* Orange */
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.3rem;
+  }
+  nav ul li {
+    font-weight: 600;
+  }
+  nav ul li a {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    background-color: #d35400;
+    color: white;
+  }
+  /* ============ Hero Banner ============ */
+  #home {
+    background: linear-gradient(120deg, #f39c12, #e67e22);
+    color: #fff;
+    padding: 5rem 1rem 6rem 1rem;
+    text-align: center;
+    border-radius: 0 0 60% 60% / 10% 10% 90% 90%;
+    box-shadow: inset 0 0 50px #e67e22cc;
+  }
+  #home h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  #home p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+  }
+  #home .cta-button {
+    font-size: 1.2rem;
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.6);
+    transition: background-color 0.3s ease;
+  }
+  #home .cta-button:hover,
+  #home .cta-button:focus {
+    background-color: #1e8449;
+    outline: none;
+  }
+  /* ============ Section Styling ============ */
+  section {
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  section h2 {
+    font-size: 2.3rem;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+    color: #34495e;
+  }
+  /* ============ Artifact Content Styling ============ */
+  .artifact-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #e1e1e1;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .artifact-section {
+    margin-bottom: 2.5rem;
+  }
+  /* Collapsible container */
+  details {
+    background-color: #fafafa;
+    border-radius: 6px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  }
+  details summary {
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+  }
+  details[open] summary {
+    color: #d35400;
+  }
+  details p, details ul {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  details ul {
+    list-style: disc inside;
+  }
+  /* ============ Responsive Grid for Skills and Lists ============ */
+  .skill-list, .challenge-list, .audience-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+  }
+  .skill-list li, .challenge-list li, .audience-list li {
+    background: #f5f7fa;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px #ddd;
+  }
+  /* ============ Button Styling ============ */
+  button.toggle-mode {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 50%;
+    padding: 0.6rem 0.7rem;
+    font-size: 1.4rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(39,174,96,0.6);
+    transition: background-color 0.3s ease;
+    z-index: 1100;
+  }
+  button.toggle-mode:hover {
+    background-color: #1e8449;
+  }
+  /* Back to top button */
+  #back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 5rem;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #d35400cc;
+    display: none;
+    z-index: 1100;
+    transition: background-color 0.3s ease;
+  }
+  #back-to-top:hover {
+    background-color: #ca6e1f;
+  }
+  /* ============ Footer ============ */
+  footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.4rem 1rem;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+  }
+  /* ============ Responsive Adjustments ============ */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    #home h1 {
+      font-size: 2.2rem;
+    }
+    #home p {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header role="banner">
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="logo" tabindex="0">Naga Venkata S. Devarapalli</div>
+    <ul>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#bio" class="nav-link">Bio</a></li>
+      <li><a href="#artifact1" class="nav-link">Artifact 1</a></li>
+      <li><a href="#artifact2" class="nav-link">Artifact 2</a></li>
+      <li><a href="#artifact3" class="nav-link">Artifact 3</a></li>
+      <li><a href="#artifact4" class="nav-link">Artifact 4</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container" tabindex="0">
+
+  <!-- Home Section -->
+  <section id="home" tabindex="0" aria-label="Home Section">
+    <h1>Welcome to My Professional Portfolio</h1>
+    <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. Explore my journey through AI and Machine Learning projects, learning experiences, and reflections.</p>
+    <button class="cta-button" onclick="document.getElementById('artifact1').scrollIntoView({behavior:'smooth'});">Explore Artifact 1</button>
+  </section>
+
+  <!-- Bio Section -->
+  <section id="bio" tabindex="0" aria-label="Bio Section">
+    <h2>About Me</h2>
+    <div class="artifact-content">
+      <p>Hello! I am a passionate AI enthusiast with a solid foundation in data analytics, business intelligence, and machine learning. With over 12 years of professional experience, I am expanding my skills through graduate coursework and hands-on projects in AI/ML. My goal is to apply data-driven insights to solve complex business challenges and innovate in AI applications.</p>
+      <p>I specialize in creating intelligent systems that integrate machine learning with practical business needs, focusing on ethical AI development and effective communication.</p>
+      <p>This portfolio highlights key artifacts representing my technical skills, design thinking, problem-solving ability, and AI knowledge.</p>
+    </div>
+  </section>
+
+  <!-- Artifact 1 Section -->
+  <section id="artifact1" tabindex="0" aria-label="Artifact 1 Section">
+    <h2>Professional Portfolio Artifact 1</h2>
+    <div class="artifact-content">
+      <div class="artifact-section" id="a1-intro">
+        <h3>Introduction</h3>
+        <p>Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. This artifact presents my work on an AI Lab project focused on developing a no-code chatbot assistant to empower users without programming skills.</p>
+        <p>This project involved ideation, design, and testing phases, emphasizing design thinking and prompt engineering. The goal was to simplify chatbot creation for non-technical users.</p>
+      </div>
+
+      <div class="artifact-section" id="a1-description">
+        <h3>Artifact Description</h3>
+        <p><strong>Project:</strong> ChatBox Creator Bot on Mizou.com</p>
+        <p>This chatbot assistant guides users through creating custom chatbots using conversational steps, templates, tone selection, and visual flow design. It targets beginners and small business owners aiming to adopt AI chatbots quickly.</p>
+        <p>The platform removes technical barriers by enabling intuitive, no-code development.</p>
+      </div>
+
+      <div class="artifact-section" id="a1-problem">
+        <h3>Problem Solved</h3>
+        <p>Many innovative individuals face hurdles building chatbots due to lack of coding skills. This AI assistant addresses that gap by offering visual instructions, examples, and walkthroughs to facilitate personalized chatbot creation.</p>
+      </div>
+
+      <div class="artifact-section" id="a1-tools">
+        <h3>Tools Used</h3>
+        <ul class="skill-list">
+          <li>Mizou.com (No-code chatbot platform)</li>
+          <li>React.js & Node.js (Frontend/backend)</li>
+          <li>Natural Language Processing APIs</li>
+          <li>AI prompt engineering techniques</li>
+        </ul>
+      </div>
+
+      <div class="artifact-section" id="a1-design-thinking">
+        <h3>Design Thinking Process</h3>
+        <details>
+          <summary>Empathize</summary>
+          <p>Interviewed peers and business owners to identify chatbot creation challenges, focusing on interface complexity and jargon barriers.</p>
+        </details>
+        <details>
+          <summary>Define</summary>
+          <p>Formulated the challenge: How to enable non-coders to build chatbots easily?</p>
+        </details>
+        <details>
+          <summary>Ideate</summary>
+          <p>Brainstormed features like FAQ builders, tone selectors, flowchart previews, multilingual templates, and checklists.</p>
+        </details>
+        <details>
+          <summary>Prototype</summary>
+          <p>Built a working version with core features on Mizou with embedded documentation.</p>
+        </details>
+        <details>
+          <summary>Test</summary>
+          <p>Conducted peer tests and refined based on feedback, improving interaction flow and visual aids.</p>
+        </details>
+      </div>
+
+      <div class="artifact-section" id="a1-reflection">
+        <h3>Reflection</h3>
+        <p>This project taught me the value of user-centric design, interdisciplinary collaboration, and iterative improvement based on user feedback. Simplifying technical complexity into friendly AI experiences is key to adoption.</p>
+      </div>
+
+      <div class="artifact-section" id="a1-feedback">
+        <h3>Feedback and Revisions</h3>
+        <table border="1" style="border-collapse: collapse; width: 100%; margin-top: 1rem;">
+          <thead>
+            <tr style="background-color: #f39c12; color: white;">
+              <th>Feedback Area</th>
+              <th>Initial Issue</th>
+              <th>Action Taken</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Language Complexity</td>
+              <td>Users found the language too technical.</td>
+              <td>Simplified to 8th-grade reading level, added analogies.</td>
+              <td>User satisfaction increased significantly.</td>
+            </tr>
+            <tr>
+              <td>Visual Flow</td>
+              <td>Confusing conversation flow.</td>
+              <td>Added inline flowcharts and multimedia elements.</td>
+              <td>Improved user engagement and understanding.</td>
+            </tr>
+            <tr>
+              <td>Onboarding</td>
+              <td>New users felt lost initially.</td>
+              <td>Implemented a welcome sequence with instructions.</td>
+              <td>Higher completion rates and better feedback.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="artifact-section" id="a1-references">
+        <h3>References</h3>
+        <ul>
+          <li>Botpress Documentation - https://botpress.com/docs</li>
+          <li>Chatbase AI Chatbots - https://www.chatbase.co/</li>
+          <li>Dialogflow by Google Cloud - https://cloud.google.com/dialogflow</li>
+          <li>IDEO Design Thinking - https://designthinking.ideo.com/</li>
+          <li>OpenAI GPT-4 Technical Overview - https://openai.com/gpt-4</li>
+          <li>Mizou AI Chatbot Builder - https://mizou.com</li>
+          <li>Anthropic Claude 3 - https://www.anthropic.com/index/claude</li>
+          <li>Google DeepMind Gemini 1.5 - https://deepmind.google/technologies/gemini/</li>
+          <li>GDPR Compliance - https://gdpr.eu/</li>
+          <li>Replit Collaborative Workspace - https://replit.com</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artifact 2 Section -->
+  <section id="artifact2" tabindex="0" aria-label="Artifact 2 Section">
+    <h2>Professional Portfolio Artifact 2</h2>
+    <div class="artifact-content">
+      <!-- Placeholder content for brevity -->
+      <h3>Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h3>
+      <p>This artifact presents an interactive visual timeline tracing AI and ML’s history, from the Dartmouth Conference to generative AI models and ethical concerns.</p>
+      <p>Key skills demonstrated include research, data visualization using Canva and Google Slides, and ethical analysis.</p>
+      <p>Artifact 2 deepened my understanding of AI’s evolution and provided strategic context for technical innovation.</p>
+      <!-- More detailed content omitted for brevity in this snippet -->
+    </div>
+  </section>
+
+  <!-- Artifact 3 Section -->
+  <section id="artifact3" tabindex="0" aria-label="Artifact 3 Section">
+    <h2>Professional Portfolio Artifact 3</h2>
+    <div class="artifact-content">
+      <h3>SchoolAI-Assisted Learning Experience</h3>
+      <p>This artifact documents my interactive learning session with the SchoolAI chatbot, exploring machine learning training methods and inquiry-based learning strategies.</p>
+      <p>Focus was on critical thinking, question structuring, and ethical AI considerations.</p>
+      <p>The artifact highlights my ability to engage meaningfully with AI for practical learning.</p>
+    </div>
+  </section>
+
+  <!-- Artifact 4 Section -->
+  <section id="artifact4" tabindex="0" aria-label="Artifact 4 Section">
+    <h2>Professional Portfolio Artifact 4</h2>
+    <div class="artifact-content">
+
+      <div class="artifact-section" id="a4-intro">
+        <h3>Introduction</h3>
+        <p>This artifact documents my experience with the <strong>Data Challenge Scenarios Coach</strong>, an AI chatbot designed to guide learners through realistic data challenges in machine learning. Through interactive dialogue, I explored issues such as data quality, bias, privacy, and security—developing problem-solving strategies relevant to the field.</p>
+      </div>
+
+      <div class="artifact-section" id="a4-assignment-overview">
+        <h3>Assignment Overview</h3>
+        <p>The 4.3 assignment focused on understanding common data problems faced by data scientists and ML practitioners. The goal was to deepen knowledge of data processing, cleaning, sharing, privacy, and scalability challenges through active interaction with an AI coach.</p>
+        <p>Engaging with the chatbot allowed personalized, adaptive learning with real-time feedback and safe experimentation in a private environment.</p>
+      </div>
+
+      <div class="artifact-section" id="a4-chatbot-experience">
+        <h3>Chatbot Interaction Experience</h3>
+        <p>I accessed the Data Challenge Scenarios Coach via the provided SchoolAI link and engaged in a series of scenario-based dialogues. The AI posed challenging questions about data preparation, ethical use, and technical constraints, prompting me to reflect critically and apply ML concepts.</p>
+        <p>The chatbot’s instant feedback and clarifications supported progressive understanding, allowing me to explore difficult topics at my own pace and revisit concepts as needed.</p>
+      </div>
+
+      <div class="artifact-section" id="a4-key-learnings">
+        <h3>Key Learnings</h3>
+        <ul class="skill-list">
+          <li><strong>Data Processing & Cleaning:</strong> Identifying missing values, outliers, and normalization techniques.</li>
+          <li><strong>Bias & Fairness:</strong> Recognizing sources of bias and mitigation strategies in datasets.</li>
+          <li><strong>Privacy & Security:</strong> Understanding encryption, anonymization, and regulatory compliance (GDPR, FERPA).</li>
+          <li><strong>Scalability Challenges:</strong> Managing large datasets and computational constraints.</li>
+          <li><strong>Ethical AI Use:</strong> Balancing innovation with societal responsibility.</li>
+        </ul>
+      </div>
+
+      <div class="artifact-section" id="a4-challenges-solved">
+        <h3>Challenges Addressed & Solutions</h3>
+        <details>
+          <summary>Handling Missing Data</summary>
+          <p>Learned methods such as imputation, deletion, and model-based approaches for dealing with incomplete datasets.</p>
+        </details>
+        <details>
+          <summary>Mitigating Dataset Bias</summary>
+          <p>Explored sampling techniques, fairness-aware algorithms, and continuous monitoring to reduce bias impact.</p>
+        </details>
+        <details>
+          <summary>Privacy-Preserving Data Sharing</summary>
+          <p>Reviewed data anonymization, encryption, and policies to ensure compliance with data protection laws.</p>
+        </details>
+        <details>
+          <summary>Ensuring Data Security</summary>
+          <p>Studied best practices including access control, secure storage, and audit trails to protect sensitive information.</p>
+        </details>
+      </div>
+
+      <div class="artifact-section" id="a4-reflection">
+        <h3>Reflection</h3>
+        <p>This interactive experience enhanced my practical understanding of data challenges in ML workflows. It highlighted the importance of rigorous data management and ethical responsibility in AI projects.</p>
+        <p>Engaging with an AI coach strengthened my critical thinking and adaptive learning skills, preparing me for real-world AI deployments where data issues are inevitable.</p>
+      </div>
+
+      <div class="artifact-section" id="a4-audience-value">
+        <h3>Audience Value</h3>
+        <ul class="audience-list">
+          <li><strong>Employers:</strong> Demonstrates my problem-solving abilities, data literacy, and ethical awareness crucial for AI roles.</li>
+          <li><strong>Peers and Students:</strong> Provides insights into navigating practical data issues, supporting collaborative learning.</li>
+          <li><strong>Instructors:</strong> Shows engagement with advanced learning tools and critical reflection on AI ethics and data challenges.</li>
+        </ul>
+      </div>
+
+      <div class="artifact-section" id="a4-instructions">
+        <h3>Assignment Instructions Summary</h3>
+        <p>The assignment required interacting with the AI chatbot at <a href="https://student.schoolai.com/student-space?code=0UBU" target="_blank" rel="noopener noreferrer">SchoolAI Data Challenge Coach</a> and documenting the learning process.</p>
+        <p>I submitted the chat data URL to the instructor for evaluation; no Brightspace submission was necessary.</p>
+      </div>
+
+      <div class="artifact-section" id="a4-references">
+        <h3>References</h3>
+        <ul>
+          <li>SchoolAI Data Challenge Scenarios Coach - https://student.schoolai.com/student-space?code=0UBU</li>
+          <li>General Data Protection Regulation (GDPR) - https://gdpr.eu/</li>
+          <li>FERPA Compliance Information - https://studentprivacy.ed.gov/</li>
+          <li>Scikit-learn Documentation (Python ML) - https://scikit-learn.org/</li>
+          <li>Bias in Machine Learning - Barocas, Hardt, Narayanan, 2019.</li>
+          <li>Data Cleaning Techniques - Kotsiantis et al., 2006.</li>
+          <li>Privacy Preserving Machine Learning - Abadi et al., 2016.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" tabindex="0" aria-label="Contact Section">
+    <h2>Contact Me</h2>
+    <div class="artifact-content">
+      <p>If you'd like to connect or discuss AI/ML projects, please reach out via:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naga-venkata-devarapalli/" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-devarapalli</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" title="Back to top">&uarr;</button>
+<button class="toggle-mode" aria-label="Toggle dark mode" title="Toggle dark mode">&#9788;</button>
+
+<script>
+  // Smooth scroll for nav links and active link toggling
+  const navLinks = document.querySelectorAll('nav ul li a.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      const targetId = link.getAttribute('href').substring(1);
+      document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  // Dark mode toggle
+  const toggleBtn = document.querySelector('button.toggle-mode');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+      toggleBtn.innerHTML = '&#9790;'; // moon icon
+      document.body.style.backgroundColor = '#121212';
+      document.body.style.color = '#eee';
+    } else {
+      toggleBtn.innerHTML = '&#9788;'; // sun icon
+      document.body.style.backgroundColor = '#f7f8fa';
+      document.body.style.color = '#222';
+    }
+  });
+</script>
+</body>
+</html>
