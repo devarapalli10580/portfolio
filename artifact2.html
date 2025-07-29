@@ -3,68 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Professional Portfolio Artifact 2 - AI & ML Timeline | Naga Venkata Satyanarayana Devarapalli</title>
-  <meta name="description" content="Portfolio Artifact 2: Evolution of Artificial Intelligence and Machine Learning Timeline Presentation by Naga Venkata Satyanarayana Devarapalli" />
+  <title>Artifact 2 - AI & ML Timeline Presentation | Portfolio - Naga Venkata Satyanarayana Devarapalli</title>
+  <meta name="description" content="Professional Portfolio Artifact 2 - Evolution of AI and Machine Learning Timeline Presentation by Naga Venkata Satyanarayana Devarapalli." />
   <meta name="author" content="Naga Venkata Satyanarayana Devarapalli" />
   <style>
-    /* Reset & Base */
+    /* ===============================
+       Reset and Base Styles
+    =============================== */
     *, *::before, *::after {
       box-sizing: border-box;
     }
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f6fa;
+      color: #2c3e50;
+      line-height: 1.6;
     }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      background-color: #f5f6fa;
+      color: #2c3e50;
     }
     a {
-      color: #d35400;
       text-decoration: none;
+      color: #2980b9;
       transition: color 0.3s ease;
     }
     a:hover, a:focus {
-      color: #27ae60;
+      color: #c0392b;
       outline: none;
     }
     h1, h2, h3, h4, h5 {
-      margin-top: 0;
+      margin: 0 0 1rem 0;
       font-weight: 700;
       line-height: 1.2;
-      color: #2c3e50;
+      color: #34495e;
     }
     p {
-      margin: 0 0 1rem;
+      margin: 0 0 1.25rem 0;
       font-size: 1rem;
     }
     ul, ol {
-      margin: 0 0 1rem 1.5rem;
+      margin: 0 0 1.25rem 1.5rem;
       font-size: 1rem;
     }
-    /* Container */
+    ul li, ol li {
+      margin-bottom: 0.5rem;
+    }
+    button {
+      font-family: inherit;
+    }
+
+    /* ===============================
+       Container & Layout
+    =============================== */
     .container {
+      width: 90%;
       max-width: 1100px;
       margin: 2rem auto 3rem;
-      padding: 0 1rem;
+      padding-bottom: 5rem;
       flex-grow: 1;
     }
 
-    /* Header */
+    /* ===============================
+       Header Styles (matching Artifact 1 style)
+    =============================== */
     header {
-      background-color: #27ae60;
-      color: white;
+      background-color: #1a5276;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 10000;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      z-index: 9999;
+      user-select: none;
     }
     .nav-wrapper {
       max-width: 1100px;
@@ -75,65 +90,70 @@
       align-items: center;
     }
     .logo {
-      font-weight: 800;
-      font-size: 1.5rem;
-      letter-spacing: 1.5px;
-      user-select: none;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #ecf0f1;
+      letter-spacing: 1.4px;
+      cursor: default;
     }
     nav ul {
       list-style: none;
-      display: flex;
-      gap: 1.3rem;
       margin: 0;
       padding: 0;
+      display: flex;
+      gap: 1.6rem;
     }
     nav ul li a {
+      color: #ecf0f1;
       font-weight: 600;
-      font-size: 1rem;
-      padding: 0.3rem 0.6rem;
+      padding: 0.5rem 0.7rem;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      display: inline-block;
     }
     nav ul li a:hover,
     nav ul li a:focus,
     nav ul li a.active {
-      background-color: #e67e22;
-      color: white;
-      outline: none;
+      background-color: #ecf0f1;
+      color: #1a5276;
+      outline-offset: 2px;
+      outline-color: #c0392b;
     }
-    /* Hamburger for Mobile */
+
+    /* Hamburger for mobile */
     .hamburger {
       display: none;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       cursor: pointer;
     }
     .hamburger div {
       width: 25px;
       height: 3px;
-      background-color: white;
+      background-color: #ecf0f1;
       border-radius: 2px;
     }
     @media (max-width: 768px) {
       nav ul {
         position: fixed;
-        top: 60px;
+        top: 62px;
         right: 0;
-        background: #27ae60;
+        background-color: #1a5276;
         flex-direction: column;
         width: 240px;
-        height: calc(100% - 60px);
+        height: calc(100% - 62px);
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
         padding-top: 1.5rem;
-        border-left: 4px solid #e67e22;
+        box-shadow: -3px 0 6px rgba(0, 0, 0, 0.3);
+        border-left: 4px solid #c0392b;
         z-index: 10001;
       }
       nav ul.open {
         transform: translateX(0);
       }
       nav ul li {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.6rem;
         text-align: center;
       }
       .hamburger {
@@ -141,75 +161,88 @@
       }
     }
 
-    /* Hero Section */
+    /* ===============================
+       Hero Section
+    =============================== */
     .hero {
-      background: linear-gradient(135deg, #e67e22, #27ae60);
-      color: white;
-      padding: 6rem 1rem 7rem;
+      background: linear-gradient(120deg, #c0392b 0%, #1a5276 100%);
+      color: #f0f3f4;
+      padding: 5rem 1rem 7rem;
       text-align: center;
       user-select: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       max-width: 900px;
-      margin: 0 auto 1.2rem;
-      text-shadow: 1.5px 1.5px 8px rgba(0,0,0,0.3);
+      margin: 0 auto 1.5rem;
       line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       max-width: 700px;
       margin: 0 auto 2.5rem;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-      line-height: 1.5;
+      font-weight: 600;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      line-height: 1.4;
     }
     .btn-primary {
-      background-color: white;
-      color: #27ae60;
+      background-color: #ecf0f1;
+      color: #c0392b;
       font-weight: 700;
-      padding: 1rem 2.5rem;
+      padding: 1rem 2.7rem;
       border: none;
-      border-radius: 30px;
+      border-radius: 40px;
       cursor: pointer;
-      font-size: 1.2rem;
-      box-shadow: 0 5px 18px rgba(255,255,255,0.6);
+      font-size: 1.3rem;
+      box-shadow: 0 5px 15px rgba(236, 240, 241, 0.6);
       transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
       user-select: none;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
     }
     .btn-primary:hover,
     .btn-primary:focus {
-      background-color: #e67e22;
-      color: white;
+      background-color: #c0392b;
+      color: #ecf0f1;
+      box-shadow: 0 7px 25px rgba(192, 57, 43, 0.9);
       outline: none;
-      box-shadow: 0 7px 24px rgba(230, 126, 34, 0.9);
     }
 
-    /* Section Titles */
-    h2 {
-      border-bottom: 3px solid #e67e22;
-      padding-bottom: 0.4rem;
-      margin-bottom: 1.8rem;
-      font-size: 2rem;
-      color: #27ae60;
+    /* ===============================
+       Section Titles
+    =============================== */
+    h2.section-title {
+      color: #c0392b;
+      border-bottom: 3px solid #c0392b;
+      padding-bottom: 0.3rem;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 1.1px;
     }
-    h3 {
+    h3.sub-title {
       margin-bottom: 1rem;
-      color: #e67e22;
-      font-size: 1.5rem;
+      color: #1a5276;
+      font-size: 1.6rem;
+      font-weight: 800;
     }
 
-    /* Content Boxes */
+    /* ===============================
+       Content Box (white cards)
+    =============================== */
     section.content-box {
-      background: white;
-      padding: 2rem 2.5rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      background: #fff;
+      border-radius: 12px;
+      padding: 2.8rem 3rem;
       margin-bottom: 3.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       line-height: 1.65;
       font-size: 1.1rem;
-      color: #333;
+      color: #34495e;
       transition: box-shadow 0.3s ease;
     }
     section.content-box:hover,
@@ -217,16 +250,19 @@
       box-shadow: 0 9px 30px rgba(0,0,0,0.12);
       outline: none;
     }
-    /* Lists */
+
+    /* ===============================
+       Lists & Tables
+    =============================== */
     ul.keypoints {
       list-style-type: disc;
-      margin-left: 1.6rem;
-      font-size: 1.05rem;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+      color: #2c3e50;
     }
     ul.keypoints li {
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.7rem;
     }
-    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -234,222 +270,209 @@
       font-size: 1rem;
     }
     table thead tr {
-      background-color: #27ae60;
+      background-color: #c0392b;
       color: white;
     }
     table thead th, table tbody td {
-      padding: 0.85rem 1.1rem;
+      padding: 0.9rem 1.2rem;
       border: 1px solid #ddd;
       text-align: left;
     }
     table tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-    /* Challenge & Solution pairs */
-    .challenge-solution {
-      margin-bottom: 2rem;
-    }
-    .challenge-solution h4 {
-      color: #e67e22;
-      margin-bottom: 0.4rem;
-      font-size: 1.15rem;
-    }
-    .challenge-solution p {
-      margin-top: 0;
-      font-size: 1.05rem;
+      background-color: #f7f9fa;
     }
 
-    /* Gallery Grid */
-    .gallery {
-      margin-top: 4rem;
+    /* ===============================
+       Challenge & Solution Styling
+    =============================== */
+    .challenge-solution {
+      margin-bottom: 2.5rem;
+      border-left: 5px solid #c0392b;
+      padding-left: 1rem;
+      background-color: #fef6f5;
+      border-radius: 6px;
     }
-    .gallery h2 {
-      margin-bottom: 1.8rem;
-      color: #27ae60;
+    .challenge-solution h4 {
+      color: #c0392b;
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .challenge-solution p {
+      font-size: 1.05rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    /* ===============================
+       Gallery for Other Artifacts
+    =============================== */
+    .gallery {
+      margin-top: 3rem;
+    }
+    .gallery h2.section-title {
+      margin-bottom: 2.5rem;
+      color: #1a5276;
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.7rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.9rem;
     }
     .gallery-card {
-      background: white;
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+      padding: 1.6rem 1.8rem;
       display: flex;
       flex-direction: column;
       transition: box-shadow 0.3s ease;
       cursor: pointer;
+      color: #34495e;
     }
     .gallery-card:hover,
     .gallery-card:focus-within {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       outline: none;
+      background-color: #f7fbff;
     }
     .gallery-image {
       height: 160px;
-      background-color: #d7f2e3;
+      background-color: #d6eaf8;
       border-radius: 8px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #2980b9;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #27ae60;
       user-select: none;
       text-align: center;
     }
     .gallery-title {
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #27ae60;
-      margin-bottom: 0.5rem;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #2980b9;
+      margin-bottom: 0.6rem;
+      user-select: none;
     }
     .gallery-description {
       font-size: 1rem;
-      color: #555;
       flex-grow: 1;
       margin-bottom: 1rem;
+      user-select: none;
     }
     .gallery-link {
-      font-weight: 600;
-      color: #e67e22;
+      color: #c0392b;
+      font-weight: 700;
       text-decoration: underline;
       align-self: flex-start;
+      transition: color 0.3s ease;
     }
     .gallery-link:hover,
     .gallery-link:focus {
-      color: #27ae60;
+      color: #2980b9;
+      outline: none;
     }
 
-    /* References Section */
+    /* ===============================
+       References Styling
+    =============================== */
     .references ul {
-      list-style-type: none;
+      list-style: none;
       padding-left: 0;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      color: #34495e;
     }
     .references ul li {
       margin-bottom: 0.8rem;
+      user-select: text;
     }
     .references ul li a {
-      color: #27ae60;
+      color: #2980b9;
       text-decoration: underline;
     }
     .references ul li a:hover,
     .references ul li a:focus {
-      color: #e67e22;
+      color: #c0392b;
       outline: none;
     }
 
-    /* Contact Section */
+    /* ===============================
+       Contact Section
+    =============================== */
     .contact p {
       font-size: 1.1rem;
+      color: #2c3e50;
+    }
+    .contact a {
+      font-weight: 700;
     }
 
-    /* Back to Top Button */
+    /* ===============================
+       Back to Top Button
+    =============================== */
     #backToTopBtn {
       position: fixed;
       bottom: 40px;
-      right: 30px;
-      background-color: #27ae60;
+      right: 40px;
+      background-color: #c0392b;
       color: white;
       border: none;
       outline: none;
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      font-size: 26px;
+      font-size: 28px;
       cursor: pointer;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.4s ease;
-      z-index: 11000;
+      z-index: 10000;
       user-select: none;
+      box-shadow: 0 6px 16px rgba(192, 57, 43, 0.8);
     }
     #backToTopBtn.show {
       opacity: 1;
       pointer-events: auto;
     }
 
-    /* Dark Mode */
-    body.dark-mode {
-      background-color: #121212;
-      color: #ddd;
-    }
-    body.dark-mode a {
-      color: #f39c12;
-    }
-    body.dark-mode a:hover,
-    body.dark-mode a:focus {
-      color: #2ecc71;
-    }
-    body.dark-mode header {
-      background-color: #1e1e1e;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
-    body.dark-mode nav ul li a {
-      color: #ddd;
-    }
-    body.dark-mode nav ul li a:hover,
-    body.dark-mode nav ul li a:focus,
-    body.dark-mode nav ul li a.active {
-      background-color: #f39c12;
-      color: #121212;
-    }
-    body.dark-mode .hero {
-      background: linear-gradient(135deg, #f39c12, #27ae60);
-      color: #121212;
-      text-shadow: none;
-    }
-    body.dark-mode .btn-primary {
-      background-color: #27ae60;
-      color: #121212;
-      box-shadow: none;
-    }
-    body.dark-mode .btn-primary:hover,
-    body.dark-mode .btn-primary:focus {
-      background-color: #f39c12;
-      color: #121212;
-    }
-    body.dark-mode section.content-box {
-      background-color: #1e1e1e;
-      box-shadow: 0 0 12px rgba(255,255,255,0.1);
-      color: #ddd;
-    }
-    body.dark-mode table thead tr {
-      background-color: #27ae60;
-      color: #121212;
-    }
-
-    /* Responsive typography */
-    @media (max-width: 480px) {
+    /* ===============================
+       Responsive typography and layout
+    =============================== */
+    @media (max-width: 600px) {
       html {
         font-size: 14px;
       }
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
-      h2 {
-        font-size: 1.6rem;
+      h2.section-title {
+        font-size: 1.7rem;
       }
-      h3 {
-        font-size: 1.25rem;
+      h3.sub-title {
+        font-size: 1.3rem;
+      }
+      nav ul {
+        gap: 1rem;
       }
       .btn-primary {
-        padding: 0.7rem 1.8rem;
-        font-size: 1rem;
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
       }
-      table thead th, table tbody td {
-        padding: 0.45rem 0.6rem;
+      .container {
+        width: 95%;
+        margin: 1.5rem auto 2.5rem;
       }
     }
+
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER with consistent nav -->
   <header role="banner">
     <div class="nav-wrapper">
       <div class="logo" tabindex="0" aria-label="Portfolio owner name">
@@ -457,12 +480,12 @@
       </div>
       <nav role="navigation" aria-label="Primary navigation">
         <ul id="navLinks">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about-me">About Me</a></li>
-          <li><a href="#artifact2">Artifact 2</a></li>
-          <li><a href="#gallery">Artifacts Gallery</a></li>
-          <li><a href="#references">References</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" aria-current="false">Home</a></li>
+          <li><a href="bio.html" aria-current="false">Bio</a></li>
+          <li><a href="artifact1.html" aria-current="false">Artifact 1</a></li>
+          <li><a href="artifact2.html" class="active" aria-current="page">Artifact 2</a></li>
+          <li><a href="artifact3.html" aria-current="false">Artifact 3</a></li>
+          <li><a href="contact.html" aria-current="false">Contact</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
           <div></div>
@@ -473,31 +496,21 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero" tabindex="0" aria-label="Portfolio introduction">
-    <h1>Professional Portfolio Artifact 2<br>Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h1>
-    <p>Welcome to my portfolio. Here I present a detailed AI & ML timeline artifact showcasing the evolution of artificial intelligence from inception to present day, highlighting key milestones, technologies, and ethical considerations.</p>
-    <button class="btn-primary" onclick="document.getElementById('artifact2').scrollIntoView({behavior:'smooth'})" aria-label="Jump to Artifact 2 details">
-      View Artifact 2 Details
-    </button>
+  <!-- HERO Section -->
+  <section class="hero" tabindex="0" aria-label="Artifact 2 introduction">
+    <h1>Artifact 2<br>Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h1>
+    <p>Welcome to the detailed presentation of my Artifact 2 showcasing the comprehensive timeline of AI and Machine Learning evolution, highlighting the pivotal milestones, breakthroughs, and societal impact.</p>
+    <button class="btn-primary" onclick="document.getElementById('artifact-details').scrollIntoView({behavior: 'smooth'})" aria-label="Jump to Artifact 2 details">Explore Artifact 2</button>
   </section>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTAINER -->
   <main class="container" role="main">
 
-    <!-- ABOUT ME -->
-    <section id="about-me" class="content-box" tabindex="0" aria-labelledby="about-me-title">
-      <h2 id="about-me-title">About Me</h2>
-      <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of professional experience in data analytics, business intelligence, and performance testing, I am expanding my expertise into AI and Machine Learning through practical coursework and projects.</p>
-      <p>My career goal is to leverage AI and data-driven insights to solve complex business problems and drive innovation in enterprise environments.</p>
-      <p>This portfolio highlights my journey in AI/ML, blending technical skills and strategic understanding.</p>
-    </section>
-
-    <!-- ARTIFACT 2 OVERVIEW -->
-    <section id="artifact2" class="content-box" tabindex="0" aria-labelledby="artifact2-title">
-      <h2 id="artifact2-title">Artifact 2 Overview</h2>
-      <h3>Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h3>
-      <ul class="keypoints" aria-label="Artifact details">
+    <!-- Artifact Details -->
+    <section id="artifact-details" class="content-box" tabindex="0" aria-labelledby="artifact-title">
+      <h2 id="artifact-title" class="section-title">Artifact 2 Overview</h2>
+      <h3 class="sub-title">Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h3>
+      <ul class="keypoints" aria-label="Artifact 2 main details">
         <li><strong>Title:</strong> Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</li>
         <li><strong>Type:</strong> Visual Timeline (Interactive Presentation)</li>
         <li><strong>Tools Used:</strong> Canva, Google Slides</li>
@@ -506,12 +519,12 @@
       </ul>
     </section>
 
-    <!-- ARTIFACT DESCRIPTION -->
-    <section class="content-box" tabindex="0" aria-labelledby="artifact2-description-title">
-      <h2 id="artifact2-description-title">Artifact Description</h2>
+    <!-- Artifact Description -->
+    <section id="artifact-description" class="content-box" tabindex="0" aria-labelledby="artifact-description-title">
+      <h2 id="artifact-description-title" class="section-title">Artifact Description</h2>
       <p>This timeline artifact provides a comprehensive visual history of artificial intelligence and machine learning from the mid-20th century to today. It includes key milestones such as theoretical breakthroughs, major algorithms, industry adoption, and ethical debates.</p>
       <p><strong>Key highlights include:</strong></p>
-      <ul class="keypoints">
+      <ul class="keypoints" aria-label="Key highlights in AI and ML timeline">
         <li>The Dartmouth Conference of 1956 marking the formal birth of AI</li>
         <li>Development of foundational algorithms like perceptrons and backpropagation</li>
         <li>Periods known as AI winters followed by resurgence due to computational advances</li>
@@ -522,18 +535,18 @@
       <p>The timeline is designed to be accessible and engaging, using color-coded eras, icons, and concise explanations for each segment to aid understanding of AI’s multifaceted evolution and impact.</p>
     </section>
 
-    <!-- PROJECT CONTEXT -->
-    <section class="content-box" tabindex="0" aria-labelledby="artifact2-project-context-title">
-      <h2 id="artifact2-project-context-title">Project Context</h2>
+    <!-- Project Context -->
+    <section id="project-context" class="content-box" tabindex="0" aria-labelledby="project-context-title">
+      <h2 id="project-context-title" class="section-title">Project Context</h2>
       <p>This artifact was created for Workshop 1 assignments to deepen understanding of AI/ML history and contextualize current technology within its broader social and technological frameworks.</p>
       <p>While AI education often focuses on technical skills and coding, this timeline provides strategic insights necessary for innovation and responsible AI deployment.</p>
     </section>
 
-    <!-- SKILLS DEMONSTRATED -->
-    <section class="content-box" tabindex="0" aria-labelledby="artifact2-skills-title">
-      <h2 id="artifact2-skills-title">Skills Demonstrated</h2>
-      <table aria-describedby="artifact2-skills-desc" role="table">
-        <caption id="artifact2-skills-desc" style="caption-side: bottom; text-align: left; padding-top: 0.5rem; font-style: italic;">
+    <!-- Skills Demonstrated -->
+    <section id="skills-demonstrated" class="content-box" tabindex="0" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">Skills Demonstrated</h2>
+      <table aria-describedby="skills-desc" role="table" summary="Skills demonstrated in the creation of Artifact 2">
+        <caption id="skills-desc" style="caption-side: bottom; text-align: left; padding-top: 0.5rem; font-style: italic;">
           Skills demonstrated in the creation of Artifact 2
         </caption>
         <thead>
@@ -573,28 +586,28 @@
       </table>
     </section>
 
-    <!-- CHALLENGES AND SOLUTIONS -->
-    <section class="content-box" tabindex="0" aria-labelledby="artifact2-challenges-title">
-      <h2 id="artifact2-challenges-title">Challenges and Solutions</h2>
+    <!-- Challenges and Solutions -->
+    <section id="challenges-solutions" class="content-box" tabindex="0" aria-labelledby="challenges-title">
+      <h2 id="challenges-title" class="section-title">Challenges and Solutions</h2>
 
-      <div class="challenge-solution" tabindex="0" aria-label="Challenge 1">
+      <article class="challenge-solution" tabindex="0" aria-label="Challenge 1 and its solution">
         <h4>Challenge:</h4>
         <p>The sheer volume of developments in AI and ML made it difficult to decide which events to include without overwhelming the audience.</p>
         <h4>Solution:</h4>
         <p>I applied a curation approach, focusing on breakthroughs that led to paradigm shifts, popularized AI applications, or introduced ethical/legal considerations. This helped maintain clarity and relevance.</p>
-      </div>
+      </article>
 
-      <div class="challenge-solution" tabindex="0" aria-label="Challenge 2">
+      <article class="challenge-solution" tabindex="0" aria-label="Challenge 2 and its solution">
         <h4>Challenge:</h4>
         <p>Presenting technical content to diverse audiences, including non-experts.</p>
         <h4>Solution:</h4>
         <p>Used simple language, visual metaphors, and avoided jargon. Color-coded icons helped users intuitively navigate the timeline.</p>
-      </div>
+      </article>
     </section>
 
-    <!-- REFLECTION -->
-    <section class="content-box" tabindex="0" aria-labelledby="artifact2-reflection-title">
-      <h2 id="artifact2-reflection-title">Reflection</h2>
+    <!-- Reflection -->
+    <section id="reflection" class="content-box" tabindex="0" aria-labelledby="reflection-title">
+      <h2 id="reflection-title" class="section-title">Reflection</h2>
       <p>Creating this timeline was a deeply educational experience that enhanced my appreciation for AI’s complex evolution. I learned AI development is non-linear, shaped by technology, society, funding, and ethics.</p>
       <p>This artifact complements my practical AI lab project by emphasizing the importance of context and history in technology adoption and innovation.</p>
       <p>It strengthened my research and visual storytelling skills, essential for effective AI communication roles.</p>
@@ -602,9 +615,9 @@
       <p>I intend to expand this timeline as both a personal reference and an educational resource.</p>
     </section>
 
-    <!-- AUDIENCE VALUE -->
-    <section class="content-box" tabindex="0" aria-labelledby="artifact2-audience-title">
-      <h2 id="artifact2-audience-title">Audience Value</h2>
+    <!-- Audience Value -->
+    <section id="audience-value" class="content-box" tabindex="0" aria-labelledby="audience-title">
+      <h2 id="audience-title" class="section-title">Audience Value</h2>
       <ul class="keypoints">
         <li><strong>Employers:</strong> Demonstrates strategic thinking and communication alongside technical knowledge, showing readiness for AI leadership roles.</li>
         <li><strong>Peers and Students:</strong> Provides an accessible AI/ML history introduction to support learning and discussion.</li>
@@ -612,28 +625,28 @@
       </ul>
     </section>
 
-    <!-- ARTIFACTS GALLERY -->
+    <!-- Gallery of Other Artifacts -->
     <section id="gallery" class="gallery" tabindex="0" aria-label="Artifacts Gallery">
-      <h2>Other Artifacts</h2>
+      <h2 class="section-title">Other Artifacts</h2>
       <div class="gallery-grid" role="list">
         <article class="gallery-card" tabindex="0" role="listitem" aria-label="Artifact 1 - AI Lab Chatbot Assistant">
           <div class="gallery-image" aria-hidden="true">Artifact 1 Image</div>
           <h3 class="gallery-title">Artifact 1</h3>
           <p class="gallery-description">No-Code Chatbot Assistant Development with Mizou.com</p>
-          <a href="#artifact1" class="gallery-link" onclick="scrollToSection('artifact1')" aria-label="View details of Artifact 1">View Artifact 1</a>
+          <a href="artifact1.html" class="gallery-link" aria-label="View details of Artifact 1">View Artifact 1</a>
         </article>
         <article class="gallery-card" tabindex="0" role="listitem" aria-label="Artifact 3 - Upcoming Artifact">
           <div class="gallery-image" aria-hidden="true">Artifact 3 Image</div>
           <h3 class="gallery-title">Artifact 3</h3>
           <p class="gallery-description">Coming Soon: AI/ML Advanced Project Presentation</p>
-          <a href="#artifact3" class="gallery-link" onclick="scrollToSection('artifact3')" aria-label="View details of Artifact 3">View Artifact 3</a>
+          <a href="artifact3.html" class="gallery-link" aria-label="View details of Artifact 3">View Artifact 3</a>
         </article>
       </div>
     </section>
 
-    <!-- REFERENCES -->
+    <!-- References Section -->
     <section id="references" class="references content-box" tabindex="0" aria-labelledby="references-title">
-      <h2 id="references-title">References</h2>
+      <h2 id="references-title" class="section-title">References</h2>
       <ul>
         <li><a href="https://botpress.com/docs" target="_blank" rel="noopener noreferrer">Botpress Documentation</a></li>
         <li><a href="https://www.chatbase.co/" target="_blank" rel="noopener noreferrer">Create AI Chatbots for Your Website - Chatbase</a></li>
@@ -648,9 +661,9 @@
       </ul>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact Section -->
     <section id="contact" class="contact content-box" tabindex="0" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
+      <h2 id="contact-title" class="section-title">Contact</h2>
       <p>If you'd like to get in touch for collaboration, feedback, or inquiries, please reach out via email:</p>
       <p><a href="mailto:tone_satya@yahoo.co.in" aria-label="Send email to Naga Venkata Satyanarayana Devarapalli">tone_satya@yahoo.co.in</a></p>
       <p>LinkedIn and other professional networks coming soon.</p>
@@ -658,22 +671,21 @@
 
   </main>
 
-  <!-- BACK TO TOP BUTTON -->
-  <button id="backToTopBtn" aria-label="Back to top">&#8679;</button>
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" aria-label="Back to top" title="Back to top">&#8679;</button>
 
   <!-- SCRIPTS -->
   <script>
-    // Hamburger toggle for mobile navigation
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
     hamburger.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', !expanded);
       navLinks.classList.toggle('open');
     });
 
-    // Close mobile menu when a link is clicked
+    // Close mobile menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if(navLinks.classList.contains('open')){
@@ -683,37 +695,20 @@
       });
     });
 
-    // Smooth scroll function used for gallery links
-    function scrollToSection(id){
-      const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior: 'smooth'});
-    }
-
-    // Active nav link highlight on scroll
-    const sections = document.querySelectorAll('main section, .hero');
-    const navItems = document.querySelectorAll('nav ul li a');
-
-    window.addEventListener('scroll', () => {
-      let currentSection = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if(pageYOffset >= sectionTop){
-          currentSection = section.getAttribute('id');
-        }
-      });
-      navItems.forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('href').substring(1) === currentSection){
-          link.classList.add('active');
-        }
-      });
+    // Highlight active nav link based on URL
+    const currentUrl = window.location.pathname.split('/').pop();
+    navLinks.querySelectorAll('a').forEach(link => {
+      if(link.getAttribute('href') === currentUrl){
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
     });
 
     // Back to top button
     const backToTopBtn = document.getElementById('backToTopBtn');
 
     window.addEventListener('scroll', () => {
-      if(window.scrollY > 400){
+      if(window.scrollY > 300){
         backToTopBtn.classList.add('show');
       } else {
         backToTopBtn.classList.remove('show');
@@ -724,14 +719,8 @@
       window.scrollTo({top: 0, behavior: 'smooth'});
     });
 
-    // Dark mode toggle via keyboard shortcut (D key)
-    let darkMode = false;
-    document.addEventListener('keydown', (e) => {
-      if(e.key.toLowerCase() === 'd'){
-        darkMode = !darkMode;
-        document.body.classList.toggle('dark-mode', darkMode);
-      }
-    });
+    // Keyboard accessible skip links (optional enhancement)
+    // Dark mode toggle by D key - optional, can be added if needed
   </script>
 </body>
 </html>
