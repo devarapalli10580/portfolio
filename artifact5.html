@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artifact 5 - Advanced AI Project | Naga Venkata Satyanarayana Devarapalli</title>
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #264653, #2a9d8f);
+      color: #edf2f4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body {
+      line-height: 1.6;
+    }
+    a {
+      color: #f4a261;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #e76f51;
+      outline: none;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: disc inside;
+      margin-bottom: 1rem;
+    }
+    ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    pre {
+      background-color: #1b262c;
+      color: #f4a261;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 1rem 0 2rem 0;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      display: block;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #2a9d8f;
+      color: #edf2f4;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 10000;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      user-select: none;
+      cursor: default;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    nav a {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #edf2f4;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      background-color: #f4a261;
+      color: #2a9d8f;
+    }
+
+    /* Main content */
+    main {
+      margin-top: 80px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      background: #1b262ccc;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      color: #edf2f4;
+    }
+
+    /* Artifact section style */
+    #artifact5 {
+      border-left: 8px solid #f4a261; /* warm orange */
+      padding-left: 1.5rem;
+    }
+    #artifact5 h1 {
+      font-size: 3rem;
+      color: #f4a261;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    #artifact5 h2, #artifact5 h3 {
+      color: #f4a261;
+      margin-top: 2rem;
+      font-weight: 700;
+    }
+    #artifact5 p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+      line-height: 1.7;
+    }
+    #artifact5 ul, #artifact5 ol {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    #artifact5 ul li, #artifact5 ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2a9d8f;
+      color: #edf2f4;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #f4a261;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: #e76f51;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem 1rem;
+        max-width: 95%;
+      }
+      #artifact5 h1 {
+        font-size: 2.2rem;
+      }
+      #artifact5 h2 {
+        font-size: 1.6rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #artifact5 h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header role="banner" aria-label="Primary Navigation">
+  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+  <nav role="navigation" aria-label="Main Navigation">
+    <a href="../index.html">Home</a>
+    <a href="../bio.html">Bio</a>
+    <a href="artifact1.html">Artifact 1</a>
+    <a href="artifact2.html">Artifact 2</a>
+    <a href="artifact3.html">Artifact 3</a>
+    <a href="artifact4.html">Artifact 4</a>
+    <a href="artifact5.html" class="active" aria-current="page">Artifact 5</a>
+  </nav>
+</header>
+
+<main>
+  <section id="artifact5" role="main" aria-label="Artifact 5 Content">
+    <h1>Artifact 5: Advanced AI Project - Predictive Analytics for Business</h1>
+
+    <p>This artifact highlights a comprehensive AI project focused on developing predictive analytics models to forecast sales and customer behavior using machine learning techniques.</p>
+
+    <h2>Project Objectives</h2>
+    <ul>
+      <li>Develop accurate predictive models for monthly sales forecasting.</li>
+      <li>Identify key customer segments with high conversion potential.</li>
+      <li>Utilize advanced AI techniques to improve marketing campaign effectiveness.</li>
+    </ul>
+
+    <h2>Technologies & Tools Used</h2>
+    <ul>
+      <li>Python (Pandas, Scikit-learn, XGBoost)</li>
+      <li>Power BI for dashboard visualization</li>
+      <li>SQL Server for data warehousing</li>
+      <li>Azure Machine Learning for model deployment</li>
+    </ul>
+
+    <h2>Methodology</h2>
+    <ol>
+      <li>Data collection and preprocessing from multiple internal sources.</li>
+      <li>Feature engineering including time-series features and customer demographics.</li>
+      <li>Model training and hyperparameter tuning using cross-validation.</li>
+      <li>Model evaluation using RMSE and classification metrics.</li>
+      <li>Deployment of models via Azure ML and integration with Power BI dashboards.</li>
+    </ol>
+
+    <pre>
+from xgboost import XGBRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+
+# Load and preprocess data
+X = data.drop('sales', axis=1)
+y = data['sales']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train XGBoost model
+model = XGBRegressor(objective='reg:squarederror', n_estimators=100, max_depth=5)
+model.fit(X_train, y_train)
+
+# Predict and evaluate
+y_pred = model.predict(X_test)
+rmse = mean_squared_error(y_test, y_pred, squared=False)
+print(f'RMSE: {rmse}')
+    </pre>
+
+    <h2>Results</h2>
+    <p>The model achieved an RMSE of 2.5%, significantly improving sales forecasting accuracy compared to previous statistical models. Segmentation results helped tailor marketing strategies effectively.</p>
+
+    <h2>Dashboard Snapshot</h2>
+    <img src="../images/artifact5.jpg" alt="Power BI dashboard showing sales forecasts and customer segments" />
+
+    <h2>Reflection & Future Work</h2>
+    <p>This project demonstrated the importance of combining domain expertise with machine learning to build impactful business solutions. Future work includes incorporating real-time data streams and expanding customer behavior modeling.</p>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
+  <p>
+    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
+    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
+    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+  </p>
+</footer>
+
+<script>
+  // Highlight active nav link based on URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
