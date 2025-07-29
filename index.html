@@ -1,559 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
-  <style>
-    /* Reset and base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f9fbfd;
-      color: #222;
-      min-height: 100vh;
-      scroll-behavior: smooth;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-    /* Container */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem 3rem;
-    }
-    /* Header */
-    header {
-      background: #1a73e8; /* strong blue */
-      color: white;
-      padding: 1.2rem 0;
-      box-shadow: 0 3px 10px rgba(26, 115, 232, 0.5);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: 1.2px;
-    }
-    nav {
-      margin-top: 0.8rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      font-weight: 600;
-      margin: 0 1.1rem;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover,
-    nav a:focus,
-    nav a[aria-current="page"] {
-      color: #ff6f00; /* bright orange */
-      outline: none;
-    }
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      background: linear-gradient(135deg, #90caf9, #1976d2);
-      padding: 3rem 1.5rem;
-      border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(25, 118, 210, 0.3);
-      color: white;
-      margin-top: 1.5rem;
-    }
-    .hero-text {
-      flex: 1 1 450px;
-      padding-right: 2rem;
-    }
-    .hero-text h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
-    }
-    .hero-text p {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 1.6rem;
-      max-width: 560px;
-      line-height: 1.45;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-    }
-    .btn-primary {
-      background-color: #ff6f00;
-      color: white;
-      padding: 0.9rem 2.2rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      box-shadow: 0 6px 14px rgba(255, 111, 0, 0.4);
-      cursor: pointer;
-      border: none;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-primary:hover,
-    .btn-primary:focus {
-      background-color: #ff8f00;
-      box-shadow: 0 8px 24px rgba(255, 143, 0, 0.6);
-      outline: none;
-    }
-    .hero-img {
-      flex: 1 1 450px;
-      max-width: 450px;
-      margin: auto;
-    }
-    /* Bio Section */
-    .bio-section {
-      margin-top: 3rem;
-      background-color: #e3f2fd;
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      box-shadow: 0 15px 40px rgba(25, 118, 210, 0.2);
-    }
-    .bio-img {
-      flex-shrink: 0;
-      border-radius: 50%;
-      border: 6px solid #1976d2;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-      max-width: 220px;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-    }
-    .bio-text {
-      flex: 1;
-    }
-    .bio-text h2 {
-      color: #0d47a1;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .bio-text p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-      color: #0d47a1dd;
-    }
-    /* Portfolio Overview */
-    .portfolio-overview {
-      margin-top: 3.5rem;
-      background: #fff3e0;
-      padding: 2.5rem 2rem;
-      border-radius: 20px;
-      box-shadow: 0 14px 35px rgba(255, 111, 0, 0.2);
-    }
-    .portfolio-overview h2 {
-      color: #e65100;
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      text-align: center;
-    }
-    .portfolio-overview p {
-      text-align: center;
-      font-size: 1.15rem;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #bf360ccc;
-    }
-    .artifact-summary {
-      background: #fff8e1;
-      border-left: 8px solid #ff6f00;
-      padding: 1.2rem 1.8rem;
-      margin-bottom: 1.8rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 18px rgba(255, 111, 0, 0.15);
-    }
-    .artifact-summary h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.45rem;
-      color: #bf360c;
-      font-weight: 700;
-    }
-    .artifact-summary p {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.45;
-      color: #5d4037;
-    }
-    /* Skills Section */
-    #skills {
-      margin-top: 4rem;
-      padding: 2.5rem 2rem;
-      background: #e8f5e9;
-      border-radius: 20px;
-      box-shadow: 0 14px 30px rgba(76, 175, 80, 0.15);
-    }
-    #skills h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      color: #2e7d32;
-      font-weight: 700;
-      margin-bottom: 1.8rem;
-    }
-    #skills p {
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      font-size: 1.15rem;
-      color: #33691ecc;
-      text-align: center;
-      font-weight: 500;
-    }
-    #skills ul {
-      max-width: 720px;
-      margin: 0 auto;
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 1.5rem 2rem;
-      color: #1b5e20;
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
-    #skills ul li {
-      background: #c8e6c9;
-      padding: 1.2rem 1rem;
-      border-radius: 14px;
-      box-shadow: inset 0 0 10px #a5d6a7aa;
-    }
-    /* Artifacts Section */
-    #artifacts {
-      margin-top: 4rem;
-    }
-    #artifacts h2 {
-      text-align: center;
-      font-size: 2.6rem;
-      margin-bottom: 2rem;
-      color: #1565c0;
-      font-weight: 700;
-    }
-    #artifacts p {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 1.15rem;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #0d47a188;
-      font-weight: 500;
-    }
-    .artifact-cards {
-      display: flex;
-      gap: 2.3rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .artifact-card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(21, 101, 192, 0.15);
-      overflow: hidden;
-      width: 320px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .artifact-card:hover,
-    .artifact-card:focus-within {
-      transform: translateY(-8px);
-      box-shadow: 0 22px 55px rgba(21, 101, 192, 0.35);
-      outline: none;
-    }
-    .artifact-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: contain;
-      background: #e3f2fd;
-      border-bottom: 5px solid #1976d2;
-    }
-    .artifact-card h3 {
-      margin: 1rem 0 0.3rem;
-      color: #0d47a1;
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-    .artifact-card h4 {
-      margin: 0 0 0.8rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #1565c0;
-    }
-    .artifact-card p {
-      padding: 0 1rem 1.3rem;
-      color: #555;
-      font-size: 1rem;
-      flex-grow: 1;
-    }
-    .btn-secondary {
-      background-color: #1976d2;
-      color: white;
-      margin-bottom: 1.4rem;
-      padding: 0.65rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-secondary:hover,
-    .btn-secondary:focus {
-      background-color: #1565c0;
-      outline: none;
-    }
-    /* Contact Section */
-    #contact {
-      margin-top: 5rem;
-      padding: 3rem 2rem;
-      background: #ede7f6;
-      border-radius: 20px;
-      box-shadow: 0 14px 40px rgba(103, 58, 183, 0.15);
-      text-align: center;
-      color: #512da8;
-    }
-    #contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    #contact p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-    #contact address {
-      font-style: normal;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 380px;
-      margin: 0 auto;
-      color: #4527a0;
-    }
-    #contact a {
-      color: #311b92;
-      font-weight: 700;
-    }
-    #contact a:hover,
-    #contact a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1.3rem 1rem;
-      background-color: #1a237e;
-      color: #bbdefb;
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-top: 4rem;
-    }
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1.5rem;
-      }
-      .hero-text {
-        padding-right: 0;
-        margin-bottom: 1.5rem;
-      }
-      .artifact-cards {
-        justify-content: center;
-      }
-      .bio-section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .bio-text {
-        margin-top: 1.3rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio - Naga Venkata Satyanarayana Devarapalli</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Naga's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
+                <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
+                <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
+                <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
+                <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-  <h1>Naga Venkata Satyanarayana Devarapalli</h1>
-  <nav role="navigation" aria-label="Primary navigation">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="bio.html">Bio</a>
-    <a href="artifact1.html">Artifact 1</a>
-    <a href="artifact2.html">Artifact 2</a>
-    <a href="artifact3.html">Artifact 3</a>
-  </nav>
-</header>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to My Professional Portfolio</h1>
+            <p>Exploring the world of Artificial Intelligence, Data Analytics, and Web Development.</p>
+            <a href="bio.html" class="btn-primary">Learn More About Me</a>
+        </div>
+    </section>
 
-<main class="container" aria-label="Main content">
+    <!-- ABOUT -->
+    <section class="about">
+        <h2>About Me</h2>
+        <p>I am Naga Venkata Satyanarayana Devarapalli, a passionate AI and Data Analytics graduate student at Indiana Wesleyan University. This portfolio showcases my projects, research, and technical skills in modern AI and data-driven solutions.</p>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero" tabindex="0" aria-label="Welcome section">
-    <div class="hero-text">
-      <h2>Welcome to My Professional Portfolio</h2>
-      <p>
-        Dive into my academic and professional journey in Artificial Intelligence and Data Analytics.
-        Explore key projects that showcase my skills in AI, Machine Learning, and Data-driven problem solving.
-      </p>
-      <a href="#artifacts" class="btn-primary" aria-label="Explore my artifacts">Explore Artifacts</a>
-    </div>
-    <div class="hero-img" role="img" aria-label="Abstract AI and data visualization illustration">
-      <img src="https://i.ibb.co/cXZw6Zj/ai-ml-illustration.png" alt="Abstract illustration showing AI and data visualization concepts" />
-    </div>
-  </section>
+    <!-- ARTIFACTS OVERVIEW -->
+    <section class="portfolio-overview">
+        <h2>My Artifacts</h2>
+        <p>Each artifact represents a milestone in my learning and professional growth in AI, data analytics, and software development.</p>
+        <div class="artifact-grid">
+            <!-- Artifact 1 -->
+            <div class="artifact-card">
+                <img src="images/artifact1.jpg" alt="Artifact 1">
+                <h3>COVID-19 Data Analysis</h3>
+                <p>Analyzing vaccination impact on mortality rates using R and visualization tools.</p>
+                <a href="artifacts/artifact1.html" class="btn-secondary">View Artifact</a>
+            </div>
+            <!-- Artifact 2 -->
+            <div class="artifact-card">
+                <img src="images/artifact2.jpg" alt="Artifact 2">
+                <h3>AI & Machine Learning Evolution</h3>
+                <p>A timeline presentation of AI and ML advancements, major breakthroughs, and future trends.</p>
+                <a href="artifacts/artifact2.html" class="btn-secondary">View Artifact</a>
+            </div>
+            <!-- Repeat for Artifact 3, 4, 5 -->
+        </div>
+    </section>
 
-  <!-- Bio Section -->
-  <section class="bio-section" tabindex="0" aria-label="Bio introduction section">
-    <img src="https://i.ibb.co/gZQ3c8Y/profile-pic.jpg" alt="Portrait of Naga Venkata Satyanarayana Devarapalli" class="bio-img" />
-    <div class="bio-text">
-      <h2>About Me</h2>
-      <p>
-        Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, currently pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.
-      </p>
-      <p>
-        With over 12 years of professional experience in data analytics, business intelligence, and performance testing, I am passionate about applying AI and data-driven solutions to complex real-world challenges.
-      </p>
-      <p>
-        This portfolio highlights my academic journey and practical projects showcasing my skills in AI, machine learning, and data analytics — demonstrating both technical depth and strategic insight.
-      </p>
-    </div>
-  </section>
+    <!-- CONTACT -->
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
+    </section>
 
-  <!-- Portfolio Overview -->
-  <section class="portfolio-overview" tabindex="0" aria-label="Portfolio overview">
-    <h2>Portfolio Overview</h2>
-    <p>My portfolio features three key artifacts reflecting different aspects of my learning and expertise:</p>
-
-    <div class="artifact-summary">
-      <h3>Artifact 1: AI Lab No-Code Chatbot Assistant</h3>
-      <p>
-        An AI chatbot designed on the Mizou.com platform, enabling users with no programming skills to build, customize, and deploy chatbots via intuitive conversational flows.
-      </p>
-    </div>
-
-    <div class="artifact-summary">
-      <h3>Artifact 2: AI & ML Timeline Presentation</h3>
-      <p>
-        A comprehensive visual timeline presenting the evolution of artificial intelligence and machine learning, highlighting major breakthroughs, ethical challenges, and technology waves.
-      </p>
-    </div>
-
-    <div class="artifact-summary">
-      <h3>Artifact 3: SchoolAI-Assisted Learning Experience</h3>
-      <p>
-        An interactive learning session exploring machine learning concepts via the SchoolAI chatbot, demonstrating inquiry-based learning and critical thinking strategies.
-      </p>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" tabindex="0" aria-label="Technical skills">
-    <h2>Technical Skills & Tools</h2>
-    <p>
-      My expertise spans a diverse set of tools and technologies vital for AI, machine learning, data analytics, and visualization:
-    </p>
-    <ul>
-      <li><strong>Data Analytics & Visualization:</strong> Power BI, Tableau, Excel, SQL, DAX, M Code</li>
-      <li><strong>Programming Languages:</strong> Python, R, SQL, PL/SQL</li>
-      <li><strong>AI & Machine Learning:</strong> TensorFlow, Scikit-learn, Natural Language Processing, Chatbot Design</li>
-      <li><strong>Cloud Platforms:</strong> Azure, AWS, Google Cloud Basics</li>
-      <li><strong>ETL & Data Warehousing:</strong> SSIS, SSRS, SSAS, Data Modeling</li>
-      <li><strong>Version Control & Collaboration:</strong> Git, GitHub, Agile/Scrum</li>
-    </ul>
-  </section>
-
-  <!-- Artifacts Section -->
-  <section id="artifacts" tabindex="0" aria-label="Portfolio artifacts">
-    <h2>Portfolio Artifacts</h2>
-    <p>Here are some key projects and presentations demonstrating my skills and learning journey in AI and Data Analytics.</p>
-    <div class="artifact-cards">
-
-      <article class="artifact-card" tabindex="0" aria-label="Artifact 1: Eco-Coach Chatbot Project">
-        <img src="https://i.ibb.co/2h8wJHx/chatbot-logo.jpg" alt="Eco-Coach Chatbot Logo" />
-        <h3>Artifact 1</h3>
-        <h4>Eco-Coach Chatbot Project</h4>
-        <p>
-          A no-code AI chatbot assistant that simplifies chatbot creation for non-programmers using design thinking and prompt engineering.
-        </p>
-        <a href="artifact1.html" class="btn-secondary" aria-label="View details of Artifact 1">View Details</a>
-      </article>
-
-      <article class="artifact-card" tabindex="0" aria-label="Artifact 2: AI/ML Timeline Presentation">
-        <img src="https://i.ibb.co/QXwP2Rg/timeline-logo.jpg" alt="AI/ML Timeline Logo" />
-        <h3>Artifact 2</h3>
-        <h4>Evolution of AI and Machine Learning – Timeline Presentation</h4>
-        <p>
-          An interactive visual timeline showcasing the history and key milestones in artificial intelligence and machine learning.
-        </p>
-        <a href="artifact2.html" class="btn-secondary" aria-label="View details of Artifact 2">View Details</a>
-      </article>
-
-      <article class="artifact-card" tabindex="0" aria-label="Artifact 3: SchoolAI Assisted Learning Experience">
-        <img src="https://i.ibb.co/PrtyMHq/schoolai-logo.jpg" alt="SchoolAI Assisted Learning Logo" />
-        <h3>Artifact 3</h3>
-        <h4>SchoolAI Assisted Learning Experience</h4>
-        <p>
-          An interactive learning session demonstrating inquiry-based AI-assisted learning exploring machine learning training methods.
-        </p>
-        <a href="artifact3.html" class="btn-secondary" aria-label="View details of Artifact 3">View Details</a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" tabindex="0" aria-label="Contact section">
-    <h2>Contact Me</h2>
-    <p>
-      Interested in collaborating or learning more? Feel free to reach out!
-    </p>
-    <address>
-      <strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a><br />
-      <strong>Location:</strong> Dallas, TX, USA<br />
-      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">Naga Venkata Satyanarayana Devarapalli</a>
-    </address>
-  </section>
-
-</main>
-
-<footer>
-  &copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved
-</footer>
-
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
