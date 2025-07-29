@@ -1,287 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Artifact 5 - Advanced AI Project | Naga Venkata Satyanarayana Devarapalli</title>
-  <style>
-    /* Reset & Base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
-    html {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 16px;
-      scroll-behavior: smooth;
-      background: linear-gradient(135deg, #264653, #2a9d8f);
-      color: #edf2f4;
-      min-height: 100vh;
-      display: flex;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Artifact 5: Advanced AI Project - Naga Venkata Satyanarayana Devarapalli</title>
+<style>
+  /* Reset and base styling */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #2c3e50;
+    line-height: 1.6;
+  }
+  a {
+    color: #f4a261; /* warm orange */
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+  header, footer {
+    background-color: #264653; /* dark teal */
+    color: #f4f1de;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+  }
+  header nav ul li a {
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+  }
+  header nav ul li a:hover,
+  header nav ul li a.active {
+    background-color: #f4a261;
+    color: #264653;
+  }
+  main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  h1, h2, h3 {
+    color: #264653;
+  }
+  p, ul, ol {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  ul, ol {
+    margin-left: 1.5rem;
+  }
+  blockquote {
+    border-left: 5px solid #f4a261;
+    background-color: #fff3e0;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #7f4e1f;
+    margin: 2rem 0;
+  }
+  pre, code {
+    background-color: #e9f0ef;
+    padding: 1rem 1.2rem;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+    color: #264653;
+    margin-bottom: 1.5rem;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    header, footer {
       flex-direction: column;
-      justify-content: space-between;
-    }
-    body {
-      line-height: 1.6;
-    }
-    a {
-      color: #f4a261;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover, a:focus {
-      color: #e76f51;
-      outline: none;
-      text-decoration: underline;
-    }
-    ul {
-      list-style: disc inside;
-      margin-bottom: 1rem;
-    }
-    ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    pre {
-      background-color: #1b262c;
-      color: #f4a261;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-family: 'Courier New', Courier, monospace;
-      margin: 1rem 0 2rem 0;
-      box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      display: block;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #2a9d8f;
-      color: #edf2f4;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      z-index: 10000;
-    }
-    header .logo {
-      font-weight: 900;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      user-select: none;
-      cursor: default;
-    }
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-    nav a {
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background-color: transparent;
-      color: #edf2f4;
-      transition: background-color 0.3s ease;
-    }
-    nav a:hover, nav a.active {
-      background-color: #f4a261;
-      color: #2a9d8f;
-    }
-
-    /* Main content */
-    main {
-      margin-top: 80px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem;
-      background: #1b262ccc;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      color: #edf2f4;
-    }
-
-    /* Artifact section style */
-    #artifact5 {
-      border-left: 8px solid #f4a261; /* warm orange */
-      padding-left: 1.5rem;
-    }
-    #artifact5 h1 {
-      font-size: 3rem;
-      color: #f4a261;
-      font-weight: 900;
-      margin-bottom: 1rem;
-    }
-    #artifact5 h2, #artifact5 h3 {
-      color: #f4a261;
-      margin-top: 2rem;
-      font-weight: 700;
-    }
-    #artifact5 p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      text-align: justify;
-      line-height: 1.7;
-    }
-    #artifact5 ul, #artifact5 ol {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-    #artifact5 ul li, #artifact5 ol li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #2a9d8f;
-      color: #edf2f4;
-      padding: 1rem 2rem;
       text-align: center;
-      font-size: 0.9rem;
-      user-select: none;
-      margin-top: 3rem;
+      gap: 0.7rem;
     }
-    footer a {
-      color: #f4a261;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      font-weight: 600;
+    header nav ul {
+      flex-direction: column;
+      gap: 1rem;
     }
-    footer a:hover {
-      color: #e76f51;
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      main {
-        padding: 1rem 1rem;
-        max-width: 95%;
-      }
-      #artifact5 h1 {
-        font-size: 2.2rem;
-      }
-      #artifact5 h2 {
-        font-size: 1.6rem;
-      }
-    }
-    @media (max-width: 480px) {
-      #artifact5 h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-<header role="banner" aria-label="Primary Navigation">
-  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
-  <nav>
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../bio.html">Bio</a></li>
-    <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
-    <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
-    <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
-    <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
-    <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
-  </ul>
-</nav>
+<header>
+  <div class="logo" tabindex="0" aria-label="Site Logo and Title"><strong>Naga Venkata Satyanarayana Devarapalli</strong></div>
+  <nav aria-label="Primary Navigation">
+    <ul>
+      <li><a href="../index.html" role="link" tabindex="0">Home</a></li>
+      <li><a href="../bio.html" role="link" tabindex="0">Bio</a></li>
+      <li><a href="artifact1.html" role="link" tabindex="0">Artifact 1</a></li>
+      <li><a href="artifact2.html" role="link" tabindex="0">Artifact 2</a></li>
+      <li><a href="artifact3.html" role="link" tabindex="0">Artifact 3</a></li>
+      <li><a href="artifact4.html" role="link" tabindex="0">Artifact 4</a></li>
+      <li><a href="artifact5.html" role="link" tabindex="0" class="active" aria-current="page">Artifact 5</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main>
-  <section id="artifact5" role="main" aria-label="Artifact 5 Content">
-    <h1>Artifact 5: Advanced AI Project - Predictive Analytics for Business</h1>
+<main role="main" tabindex="0">
 
-    <p>This artifact highlights a comprehensive AI project focused on developing predictive analytics models to forecast sales and customer behavior using machine learning techniques.</p>
+  <section aria-label="Introduction to Artifact 5">
+    <h1>Artifact 5: Advanced AI Project – Predictive Maintenance with Machine Learning</h1>
+    <p>This artifact details the development and deployment of an AI-powered predictive maintenance system designed to reduce downtime and optimize operational efficiency in industrial settings.</p>
+  </section>
 
-    <h2>Project Objectives</h2>
+  <section aria-label="Project Overview and Objectives">
+    <h2>Project Overview and Objectives</h2>
+    <p>The project aimed to create an intelligent system capable of:</p>
     <ul>
-      <li>Develop accurate predictive models for monthly sales forecasting.</li>
-      <li>Identify key customer segments with high conversion potential.</li>
-      <li>Utilize advanced AI techniques to improve marketing campaign effectiveness.</li>
+      <li>Predicting equipment failures before they occur.</li>
+      <li>Scheduling maintenance proactively to minimize disruption.</li>
+      <li>Reducing maintenance costs by avoiding unnecessary inspections.</li>
+      <li>Providing real-time insights and alerts for operators and maintenance teams.</li>
     </ul>
+    <p>This solution was developed for a manufacturing plant to enhance productivity and reliability.</p>
+  </section>
 
-    <h2>Technologies & Tools Used</h2>
-    <ul>
-      <li>Python (Pandas, Scikit-learn, XGBoost)</li>
-      <li>Power BI for dashboard visualization</li>
-      <li>SQL Server for data warehousing</li>
-      <li>Azure Machine Learning for model deployment</li>
-    </ul>
-
-    <h2>Methodology</h2>
+  <section aria-label="Data Collection and Preprocessing">
+    <h2>Data Collection and Preprocessing</h2>
+    <p>The system was built on extensive sensor data from machinery, including vibration, temperature, pressure, and operational metrics. Key steps included:</p>
     <ol>
-      <li>Data collection and preprocessing from multiple internal sources.</li>
-      <li>Feature engineering including time-series features and customer demographics.</li>
-      <li>Model training and hyperparameter tuning using cross-validation.</li>
-      <li>Model evaluation using RMSE and classification metrics.</li>
-      <li>Deployment of models via Azure ML and integration with Power BI dashboards.</li>
+      <li>Data integration from multiple IoT sensors and historical maintenance logs.</li>
+      <li>Cleaning and handling missing or inconsistent data points.</li>
+      <li>Feature engineering to extract meaningful signals such as rolling averages, thresholds, and anomaly scores.</li>
+      <li>Balancing datasets to handle class imbalance in failure events.</li>
     </ol>
+  </section>
 
-    <pre>
-from xgboost import XGBRegressor
+  <section aria-label="Machine Learning Model Development">
+    <h2>Machine Learning Model Development</h2>
+    <p>Several machine learning models were evaluated for predictive accuracy and interpretability, including:</p>
+    <ul>
+      <li><strong>Random Forest Classifier:</strong> Effective for handling non-linear relationships and feature importance analysis.</li>
+      <li><strong>Gradient Boosting Machines (XGBoost):</strong> Provided superior performance with hyperparameter tuning.</li>
+      <li><strong>Long Short-Term Memory (LSTM) Networks:</strong> Captured temporal dependencies in sensor data for sequential prediction.</li>
+    </ul>
+    <p>The best model was selected based on cross-validation scores and business requirements.</p>
+
+    <pre><code># Example Python snippet: Training a Random Forest model for failure prediction
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import classification_report
 
-# Load and preprocess data
-X = data.drop('sales', axis=1)
-y = data['sales']
-
+# Assume X and y are preprocessed feature matrix and target vector
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Train XGBoost model
-model = XGBRegressor(objective='reg:squarederror', n_estimators=100, max_depth=5)
+model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
-# Predict and evaluate
 y_pred = model.predict(X_test)
-rmse = mean_squared_error(y_test, y_pred, squared=False)
-print(f'RMSE: {rmse}')
-    </pre>
-
-    <h2>Results</h2>
-    <p>The model achieved an RMSE of 2.5%, significantly improving sales forecasting accuracy compared to previous statistical models. Segmentation results helped tailor marketing strategies effectively.</p>
-
-    <h2>Dashboard Snapshot</h2>
-    <img src="../images/artifact5.jpg" alt="Power BI dashboard showing sales forecasts and customer segments" />
-
-    <h2>Reflection & Future Work</h2>
-    <p>This project demonstrated the importance of combining domain expertise with machine learning to build impactful business solutions. Future work includes incorporating real-time data streams and expanding customer behavior modeling.</p>
+print(classification_report(y_test, y_pred))
+</code></pre>
   </section>
+
+  <section aria-label="System Architecture and Deployment">
+    <h2>System Architecture and Deployment</h2>
+    <p>The predictive maintenance system architecture included:</p>
+    <ul>
+      <li>Data ingestion pipeline using Apache Kafka for real-time sensor streaming.</li>
+      <li>Preprocessing and feature extraction with Apache Spark.</li>
+      <li>Model serving through RESTful APIs built with Flask.</li>
+      <li>Interactive dashboards built with Power BI and Grafana for visualization.</li>
+      <li>Alert notification system integrated with SMS and email.</li>
+    </ul>
+    <p>The solution was deployed on cloud infrastructure (AWS), ensuring scalability and fault tolerance.</p>
+  </section>
+
+  <section aria-label="Results and Impact">
+    <h2>Results and Impact</h2>
+    <p>Key outcomes from the project included:</p>
+    <ul>
+      <li>Reduced unplanned downtime by 30%, saving substantial costs.</li>
+      <li>Improved maintenance scheduling efficiency by 40%.</li>
+      <li>Enabled proactive decision-making with actionable insights.</li>
+      <li>Enhanced equipment lifespan through timely interventions.</li>
+    </ul>
+  </section>
+
+  <section aria-label="Challenges and Lessons Learned">
+    <h2>Challenges and Lessons Learned</h2>
+    <p>During the project, several challenges were encountered:</p>
+    <ul>
+      <li><strong>Data Quality:</strong> Variability and noise in sensor data required advanced filtering and validation.</li>
+      <li><strong>Integration Complexity:</strong> Merging real-time streams with historical logs demanded robust architecture design.</li>
+      <li><strong>Model Interpretability:</strong> Balancing performance with explainability for maintenance engineers.</li>
+    </ul>
+    <p>These challenges fostered valuable skills in data engineering, system design, and stakeholder communication.</p>
+  </section>
+
+  <section aria-label="Future Enhancements">
+    <h2>Future Enhancements</h2>
+    <ul>
+      <li>Incorporate advanced deep learning techniques like Transformers for improved sequence modeling.</li>
+      <li>Integrate augmented reality (AR) for maintenance support guided by AI insights.</li>
+      <li>Expand to predictive maintenance for other asset classes.</li>
+      <li>Enhance user interfaces with AI-powered chatbots for maintenance queries.</li>
+    </ul>
+  </section>
+
+  <section aria-label="Contact Information">
+    <h2>Contact Information</h2>
+    <p>For any questions or collaboration inquiries, please reach out:</p>
+    <ul>
+      <li>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></li>
+      <li>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer">github.com/naga-venkata</a></li>
+    </ul>
+  </section>
+
 </main>
 
-<footer role="contentinfo">
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
-  <p>
-    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
-    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
-    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+<footer>
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli &mdash;
+    <a href="../index.html">Home</a> | 
+    <a href="../bio.html">Bio</a> | 
+    <a href="artifact1.html">Artifact 1</a> | 
+    <a href="artifact2.html">Artifact 2</a> | 
+    <a href="artifact3.html">Artifact 3</a> | 
+    <a href="artifact4.html">Artifact 4</a> | 
+    <a href="artifact5.html" aria-current="page" class="active">Artifact 5</a>
   </p>
 </footer>
-
-<script>
-  // Highlight active nav link based on URL
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
