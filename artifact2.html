@@ -1,133 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artifact 2 - Evolution of AI & Machine Learning</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artifact 2 - Evolution of AI and ML Timeline | Naga Venkata Satyanarayana Devarapalli</title>
+  <style>
+    /* ===== Reset & Base Styles ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #222;
+    }
+    body {
+      line-height: 1.6;
+      background: linear-gradient(135deg, #dbe9f4, #c7d9f1);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    a {
+      color: #0077b6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #023e8a;
+      outline: none;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: disc inside;
+    }
+    pre {
+      background-color: #001f3f;
+      color: #caf0f8;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 1rem 0 2rem 0;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0; right: 0;
+      background: #0077b6; /* Blue */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 10000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: #fff;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      cursor: default;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #fff;
+      box-shadow: inset 0 0 0 0 transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      background-color: #f57c00; /* Orange */
+      box-shadow: inset 0 -3px 0 0 #bf360c;
+      color: #fff;
+    }
+
+    /* ===== Main Content ===== */
+    main {
+      margin-top: 80px;
+      flex-grow: 1;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      background: #ffffffcc;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      color: #222;
+    }
+
+    /* ===== Artifact Section ===== */
+    #artifact2 {
+      border-left: 8px solid #0077b6; /* Blue */
+      padding-left: 1.5rem;
+    }
+    #artifact2 h1 {
+      font-size: 3rem;
+      color: #023e8a;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    #artifact2 h2, #artifact2 h3 {
+      color: #01579b;
+      margin-top: 2rem;
+      font-weight: 700;
+    }
+    #artifact2 p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
+    #artifact2 ul {
+      margin-left: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    #artifact2 ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: #023e8a; /* Dark Blue */
+      color: #a0c4ff;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #a0c4ff;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: #caf0f8;
+      text-decoration: underline;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem 1rem;
+        max-width: 95%;
+      }
+      #artifact2 h1 {
+        font-size: 2.2rem;
+      }
+      #artifact2 h2 {
+        font-size: 1.6rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #artifact2 h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Naga's Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../bio.html">Bio</a></li>
-                <li><a href="artifact1.html">Artifact 1</a></li>
-                <li><a href="artifact2.html" class="active">Artifact 2</a></li>
-                <li><a href="artifact3.html">Artifact 3</a></li>
-                <li><a href="artifact4.html">Artifact 4</a></li>
-                <li><a href="artifact5.html">Artifact 5</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- ARTIFACT DETAILS -->
-    <section class="artifact-detail">
-        <div class="container">
-            <h1>Artifact 2: Evolution of Artificial Intelligence and Machine Learning</h1>
-            <p><em>A timeline-based presentation showcasing the growth of AI & ML from early stages to modern advancements.</em></p>
-        </div>
-    </section>
+<header role="banner" aria-label="Primary Navigation">
+  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+  <nav role="navigation" aria-label="Main Navigation">
+    <a href="../index.html">Home</a>
+    <a href="../bio.html">Bio</a>
+    <a href="artifact1.html">Artifact 1</a>
+    <a href="artifact2.html" class="active" aria-current="page">Artifact 2</a>
+    <a href="artifact3.html">Artifact 3</a>
+    <a href="artifact4.html">Artifact 4</a>
+    <a href="artifact5.html">Artifact 5</a>
+  </nav>
+</header>
 
-    <!-- OBJECTIVE -->
-    <section class="objective">
-        <div class="container">
-            <h2>Project Objective</h2>
-            <p>
-                The objective of this project was to create an interactive timeline that illustrates key milestones in the 
-                evolution of Artificial Intelligence (AI) and Machine Learning (ML). The timeline captures significant events, 
-                research breakthroughs, technological developments, and future predictions in AI.
-            </p>
-        </div>
-    </section>
+<main>
+  <section id="artifact2" role="main" aria-label="Artifact 2 Content">
+    <h1>Artifact 2: Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h1>
 
-    <!-- DESCRIPTION -->
-    <section class="description">
-        <div class="container">
-            <h2>Description & Methodology</h2>
-            <p>
-                This artifact was designed as a visual presentation that explains how AI has evolved over decades. 
-                It highlights the major phases: 
-                <strong>Early AI Concepts (1950s-1970s), AI Winter, Expert Systems Era, Machine Learning Rise, and Deep Learning Revolution.</strong>
-            </p>
-            <p>
-                The methodology included:
-            </p>
-            <ul>
-                <li>Researching historical AI developments from academic and industry sources.</li>
-                <li>Structuring milestones into chronological order.</li>
-                <li>Designing a visually appealing timeline using PowerPoint and Canva.</li>
-                <li>Embedding interactive elements and graphical representations.</li>
-            </ul>
-        </div>
-    </section>
+    <p>This artifact presents a comprehensive timeline capturing the historical progression and key milestones in AI and Machine Learning development.</p>
 
-    <!-- TIMELINE -->
-    <section class="timeline">
-        <div class="container">
-            <h2>AI & ML Evolution Timeline</h2>
-            <ul class="timeline-list">
-                <li><strong>1950:</strong> Alan Turing publishes “Computing Machinery and Intelligence” introducing the Turing Test.</li>
-                <li><strong>1956:</strong> Dartmouth Conference – Birth of AI as a field.</li>
-                <li><strong>1970s:</strong> Development of early expert systems.</li>
-                <li><strong>1980s:</strong> AI Winter due to lack of funding and results.</li>
-                <li><strong>1997:</strong> IBM’s Deep Blue defeats world chess champion Garry Kasparov.</li>
-                <li><strong>2006:</strong> Emergence of Deep Learning (Hinton’s breakthrough on neural networks).</li>
-                <li><strong>2010s:</strong> Rapid adoption of ML and DL in real-world applications.</li>
-                <li><strong>2020s:</strong> AI for healthcare, autonomous systems, and generative AI models.</li>
-            </ul>
-        </div>
-    </section>
+    <h2>Timeline Highlights</h2>
+    <ul>
+      <li><strong>1956:</strong> The Dartmouth Conference, birth of AI as a formal discipline.</li>
+      <li><strong>1980s:</strong> Rise of Expert Systems.</li>
+      <li><strong>1997:</strong> IBM’s Deep Blue defeats chess champion Garry Kasparov.</li>
+      <li><strong>2012:</strong> Breakthroughs in deep learning with AlexNet.</li>
+      <li><strong>2020s:</strong> Widespread adoption of AI in business, healthcare, and daily life.</li>
+    </ul>
 
-    <!-- TOOLS USED -->
-    <section class="tools">
-        <div class="container">
-            <h2>Tools & Technologies Used</h2>
-            <ul>
-                <li><strong>Microsoft PowerPoint</strong> – for timeline presentation design</li>
-                <li><strong>Canva</strong> – for modern graphics and layout</li>
-                <li><strong>Academic Research Articles</strong> – to ensure historical accuracy</li>
-            </ul>
-        </div>
-    </section>
+    <h2>Technologies Covered</h2>
+    <ul>
+      <li>Rule-Based Systems</li>
+      <li>Neural Networks</li>
+      <li>Deep Learning</li>
+      <li>Reinforcement Learning</li>
+      <li>Natural Language Processing</li>
+    </ul>
 
-    <!-- VISUALS -->
-    <section class="visualizations">
-        <div class="container">
-            <h2>Timeline Visuals</h2>
-            <div class="img-gallery">
-                <img src="../images/artifact2-timeline1.jpg" alt="AI Timeline Slide 1">
-                <img src="../images/artifact2-timeline2.jpg" alt="AI Timeline Slide 2">
-            </div>
-            <p><em>Note: The visuals above are from the timeline presentation designed for this project.</em></p>
-        </div>
-    </section>
+    <h2>Visual Presentation</h2>
+    <p>Interactive timeline with embedded visuals (not shown here) helped illustrate the evolution clearly for audiences with varying technical backgrounds.</p>
 
-    <!-- INSIGHTS -->
-    <section class="insights">
-        <div class="container">
-            <h2>Key Insights & Learning Outcomes</h2>
-            <ul>
-                <li>Gained understanding of historical AI development and technological cycles (AI Winters, booms).</li>
-                <li>Developed skills in creating educational, visually appealing content using design tools.</li>
-                <li>Strengthened knowledge of AI’s current trajectory and future potential in various domains.</li>
-            </ul>
-        </div>
-    </section>
+    <h2>Lessons Learned</h2>
+    <p>This timeline sharpened my research, storytelling, and presentation skills — essential for effectively communicating complex AI concepts.</p>
 
-    <!-- NAVIGATION -->
-    <section class="navigation-links">
-        <div class="container">
-            <a href="artifact1.html" class="btn-secondary">← Previous: Artifact 1</a>
-            <a href="artifact3.html" class="btn-primary">Next: Artifact 3 →</a>
-        </div>
-    </section>
+    <img src="../images/artifact2.jpg" alt="Timeline visual of AI and Machine Learning evolution" />
+  </section>
+</main>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-    </footer>
+<footer role="contentinfo">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
+  <p>
+    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
+    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
+    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+  </p>
+</footer>
+
+<script>
+  // Highlight active nav link based on URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
