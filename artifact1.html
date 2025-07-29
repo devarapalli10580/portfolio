@@ -2,236 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Artifact 1 - AI Lab Chatbot Development | Naga Venkata Satyanarayana Devarapalli</title>
-  <style>
-    /* ===== Reset & Base Styles ===== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7f9;
-      color: #222;
-    }
-    body {
-      line-height: 1.6;
-      background: linear-gradient(135deg, #fff3e0, #fbe9e7);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    a {
-      color: #0288d1;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover, a:focus {
-      color: #f57c00;
-      outline: none;
-      text-decoration: underline;
-    }
-    ul {
-      list-style: disc inside;
-    }
-    pre {
-      background-color: #263238;
-      color: #eceff1;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-family: 'Courier New', Courier, monospace;
-      margin: 1rem 0 2rem 0;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    /* ===== Header ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0; right: 0;
-      background: #ef6c00; /* Deep Orange */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      z-index: 10000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      color: #fff;
-    }
-    header .logo {
-      font-weight: 900;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      cursor: default;
-      user-select: none;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    nav a {
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background-color: transparent;
-      color: #fff;
-      box-shadow: inset 0 0 0 0 transparent;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    nav a:hover, nav a.active {
-      background-color: #0288d1; /* Blue */
-      box-shadow: inset 0 -3px 0 0 #01579b;
-      color: #fff;
-    }
-
-    /* ===== Main Content ===== */
-    main {
-      margin-top: 80px;
-      flex-grow: 1;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem;
-      background: #ffffffcc;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      color: #333;
-    }
-
-    /* ===== Artifact Section ===== */
-    #artifact1 {
-      border-left: 8px solid #ef6c00; /* Deep Orange */
-      padding-left: 1.5rem;
-    }
-    #artifact1 h1 {
-      font-size: 3rem;
-      color: #bf360c;
-      margin-bottom: 1rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-    #artifact1 h2, #artifact1 h3 {
-      color: #d84315;
-      margin-top: 2rem;
-      font-weight: 700;
-    }
-    #artifact1 p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      line-height: 1.7;
-      text-align: justify;
-    }
-    #artifact1 ul {
-      margin-left: 1.5rem;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-    #artifact1 ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background-color: #bf360c; /* Darker deep orange */
-      color: #ffe0b2;
-      padding: 1rem 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      user-select: none;
-      margin-top: 3rem;
-    }
-    footer a {
-      color: #ffe0b2;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      font-weight: 600;
-    }
-    footer a:hover {
-      color: #ffcc80;
-      text-decoration: underline;
-    }
-
-    /* ===== Responsive Design ===== */
-    @media (max-width: 768px) {
-      main {
-        padding: 1rem 1rem;
-        max-width: 95%;
-      }
-      #artifact1 h1 {
-        font-size: 2.2rem;
-      }
-      #artifact1 h2 {
-        font-size: 1.6rem;
-      }
-    }
-    @media (max-width: 480px) {
-      #artifact1 h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifact 1 - AI Lab No-Code Chatbot</title>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-<header role="banner" aria-label="Primary Navigation">
-  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
-  <nav>
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../bio.html">Bio</a></li>
-    <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
-    <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
-    <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
-    <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
-    <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
-  </ul>
-</nav>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo">My Portfolio</div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../bio.html">Bio</a></li>
+        <li><a href="artifact1.html" class="active">Artifact 1</a></li>
+        <li><a href="artifact2.html">Artifact 2</a></li>
+        <li><a href="artifact3.html">Artifact 3</a></li>
+        <li><a href="artifact4.html">Artifact 4</a></li>
+        <li><a href="artifact5.html">Artifact 5</a></li>
+      </ul>
+    </nav>
+  </header>
 
-</header>
-
-<main>
-  <section id="artifact1" role="main" aria-label="Artifact 1 Content">
+  <!-- MAIN CONTENT -->
+  <section class="artifact">
     <h1>Artifact 1: AI Lab - No-Code Chatbot Assistant Development</h1>
+    <p><strong>Objective:</strong> To design and develop an interactive chatbot assistant without writing traditional code, using AI platforms for rapid deployment and scalability.</p>
 
-    <p><strong>Introduction:</strong> This artifact demonstrates my hands-on experience developing a no-code AI chatbot assistant using leading platforms, showcasing technical and strategic skills in AI deployment.</p>
+    <h2>Overview</h2>
+    <p>This artifact showcases my ability to create AI-powered chatbot solutions using no-code platforms like Botpress, Chatbase, and Google Dialogflow. The goal was to enable fast development cycles while maintaining functionality and user experience.</p>
 
-    <h2>Project Overview</h2>
-    <p>
-      The AI Lab Chatbot Assistant project focused on building an interactive chatbot without traditional coding by leveraging platforms such as Botpress, Chatbase, and Mizou AI. This approach enabled rapid prototyping, deployment, and iterative improvement.
-    </p>
-
-    <h2>Tools & Technologies Used</h2>
-    <ul>
-      <li>Botpress</li>
-      <li>Chatbase</li>
-      <li>Mizou AI</li>
-      <li>Google Dialogflow</li>
-    </ul>
-
-    <h2>Process and Steps</h2>
+    <h2>Steps & Process</h2>
     <ol>
-      <li>Requirement gathering and defining chatbot objectives.</li>
-      <li>Platform selection and initial setup.</li>
-      <li>Dialog flow design and training the chatbot.</li>
-      <li>Testing and refinement based on user interactions.</li>
-      <li>Deployment and monitoring chatbot performance.</li>
+      <li>Defined chatbot objectives and user interaction scenarios.</li>
+      <li>Selected no-code platforms suitable for the use case.</li>
+      <li>Designed conversation flows and responses.</li>
+      <li>Integrated AI for natural language understanding.</li>
+      <li>Tested and deployed chatbot for user interaction.</li>
     </ol>
 
-    <h2>Code Sample</h2>
+    <h2>Technologies Used</h2>
+    <ul>
+      <li>Botpress</li>
+      <li>Google Dialogflow</li>
+      <li>Chatbase</li>
+      <li>JavaScript (for integration)</li>
+    </ul>
+
+    <h2>Sample Code</h2>
     <pre>
 {
   "intents": [
@@ -244,36 +61,24 @@
 }
     </pre>
 
-    <h2>Outcomes and Learnings</h2>
+    <h2>Key Learnings</h2>
     <p>
-      This project enhanced my ability to design user-friendly AI assistants and understand the trade-offs between no-code and custom-coded solutions. It highlighted the importance of conversational design, user experience, and iterative learning to improve AI assistants’ effectiveness.
+      This project emphasized the importance of conversational design, user experience optimization, and iterative improvement based on user feedback. It also highlighted trade-offs between no-code flexibility and custom-coded solutions.
     </p>
-
-    <img src="../images/artifact1.jpg" alt="Screenshot of AI Lab Chatbot Assistant interface" />
-
   </section>
-</main>
 
-<footer role="contentinfo">
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
-  <p>
-    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
-    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
-    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
-  </p>
-</footer>
-
-<script>
-  // Highlight active nav link based on URL
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
-
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.</p>
+    <nav class="footer-nav">
+      <a href="../index.html">Home</a> |
+      <a href="../bio.html">Bio</a> |
+      <a href="artifact1.html">Artifact 1</a> |
+      <a href="artifact2.html">Artifact 2</a> |
+      <a href="artifact3.html">Artifact 3</a> |
+      <a href="artifact4.html">Artifact 4</a> |
+      <a href="artifact5.html">Artifact 5</a>
+    </nav>
+  </footer>
 </body>
 </html>
