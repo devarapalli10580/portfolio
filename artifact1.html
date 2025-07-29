@@ -2,454 +2,851 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Professional Portfolio | Naga Venkata Satyanarayana Devarapalli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio Artifact 1</title>
 <style>
-/* ---------------------------------------------------
-    GLOBAL STYLES
-----------------------------------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Color Theme */
-:root {
-  --primary-green: #2e8b57;
-  --primary-orange: #ff7f50;
-  --accent-blue: #4682b4;
-  --light-bg: #f1f5f9;
-  --dark-bg: #222;
-  --dark-text: #ddd;
-}
-
-/* ---------------------------------------------------
-    HEADER & NAVIGATION
-----------------------------------------------------*/
-header {
-  background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0.5rem 1rem;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: #000;
-}
-
-/* ---------------------------------------------------
-    HERO SECTION
-----------------------------------------------------*/
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--light-bg);
-  padding: 4rem 2rem;
-}
-.hero h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: var(--primary-green);
-}
-.hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin-bottom: 1.5rem;
-}
-.hero .btn-primary {
-  background: var(--primary-orange);
-  color: #fff;
-  padding: 0.8rem 1.8rem;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.hero .btn-primary:hover {
-  background: var(--primary-green);
-}
-
-/* ---------------------------------------------------
-    SECTION GENERIC
-----------------------------------------------------*/
-section {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--primary-green);
-}
-section p {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #444;
-}
-
-/* ---------------------------------------------------
-    BIO SECTION
-----------------------------------------------------*/
-#bio {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-#bio img {
-  flex: 1 1 300px;
-  border-radius: 10px;
-  max-width: 350px;
-  object-fit: cover;
-}
-#bio .bio-text {
-  flex: 2 1 500px;
-}
-#bio .bio-text h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary-orange);
-}
-#bio .bio-text p {
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-/* ---------------------------------------------------
-    ARTIFACTS GALLERY
-----------------------------------------------------*/
-#artifacts-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.artifact-card {
-  background: #fafafa;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.artifact-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.artifact-card h3 {
-  margin: 1rem;
-  color: var(--primary-green);
-}
-.artifact-card p {
-  margin: 0 1rem 1rem;
-}
-.artifact-card a {
-  margin: auto 1rem 1rem;
-  text-align: center;
-  background: var(--primary-orange);
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.artifact-card a:hover {
-  background: var(--primary-green);
-}
-
-/* ---------------------------------------------------
-    TABLE (FEEDBACK)
-----------------------------------------------------*/
-.table-container {
-  overflow-x: auto;
-  margin-top: 1.5rem;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid #ccc;
-  padding: 0.8rem;
-  text-align: left;
-}
-th {
-  background: var(--primary-green);
-  color: #fff;
-}
-
-/* ---------------------------------------------------
-    FOOTER
-----------------------------------------------------*/
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: var(--primary-green);
-  color: #fff;
-  margin-top: 2rem;
-}
-
-/* ---------------------------------------------------
-    DARK MODE
-----------------------------------------------------*/
-body.dark {
-  background: var(--dark-bg);
-  color: var(--dark-text);
-}
-body.dark section {
-  background: #333;
-  color: #eee;
-}
-body.dark nav a {
-  color: #fff;
-}
-.toggle-mode {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--primary-orange);
-  color: #fff;
-  border: none;
-  padding: 0.8rem;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-/* ---------------------------------------------------
-    BACK TO TOP BUTTON
-----------------------------------------------------*/
-#backToTop {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: var(--accent-blue);
-  color: #fff;
-  padding: 0.8rem;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2e2e2e;
+    background: #f8f9fa;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  a {
+    color: #e67e22; /* orange */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    color: #27ae60; /* green */
+    outline: none;
+  }
+  h1, h2, h3, h4, h5 {
+    margin-top: 0;
+    font-weight: 700;
+    color: #27ae60;
+  }
+  p {
+    margin-bottom: 1rem;
+    color: #3a3a3a;
+  }
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+  }
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #27ae60, #e67e22);
+    color: white;
+    padding: 1.2rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+  header .nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1.3px;
+  }
+  nav {
+    display: flex;
+    gap: 1.4rem;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+  }
+  nav a.active,
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(255 255 255 / 0.25);
+    color: white;
+    outline: none;
+  }
+  /* Hero Banner Home */
+  #home {
+    background: linear-gradient(135deg, #d5f4e6, #f9e5d8);
+    padding: 5rem 1.5rem 6rem;
+    text-align: center;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 6px 15px rgba(230,126,34,0.3);
+  }
+  #home h2 {
+    font-size: 2.8rem;
+    color: #27ae60;
+    margin-bottom: 1rem;
+  }
+  #home p {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #2c3e50cc;
+  }
+  .btn-primary {
+    background-color: #e67e22;
+    color: white;
+    padding: 1rem 2.8rem;
+    font-size: 1.15rem;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(230,126,34,0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #d35400;
+    box-shadow: 0 8px 20px rgba(211,84,0,0.7);
+    outline: none;
+  }
+  /* Section Titles */
+  section > h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+    letter-spacing: 1px;
+  }
+  /* Bio Section */
   #bio {
+    background: #eafaf1;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 25px rgba(39,174,96,0.15);
+    margin: 3rem 0 4rem;
+  }
+  #bio .bio-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  #bio img.bio-pic {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 50%;
+    border: 6px solid #e67e22;
+    box-shadow: 0 6px 18px rgba(230,126,34,0.3);
+  }
+  #bio .bio-text {
+    flex: 1 1 400px;
+  }
+  #bio .bio-text p {
+    font-size: 1.15rem;
+    color: #2c3e50dd;
+  }
+  /* Artifact 1 Section */
+  #artifact1 {
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem 2rem 4rem;
+    box-shadow: 0 12px 30px rgba(230,126,34,0.12);
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+  }
+  #artifact1 > h2 {
+    color: #e67e22;
+  }
+  #artifact1 h3, #artifact1 h4 {
+    color: #27ae60;
+  }
+  #artifact1 p {
+    font-size: 1.12rem;
+    color: #333;
+  }
+  /* Sections inside Artifact 1 */
+  .artifact-section {
+    margin-bottom: 2.8rem;
+  }
+  .artifact-section h3 {
+    margin-bottom: 0.8rem;
+    border-left: 6px solid #e67e22;
+    padding-left: 0.7rem;
+  }
+  /* Collapsible Sections */
+  .collapsible {
+    background-color: #27ae60;
+    color: white;
+    cursor: pointer;
+    padding: 0.9rem 1.2rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(39,174,96,0.4);
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .collapsible:hover, .collapsible:focus {
+    background-color: #1e8449;
+    outline: none;
+  }
+  .collapsible:after {
+    content: '\25bc'; /* Down arrow */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  .collapsible.active:after {
+    transform: rotate(180deg);
+  }
+  .content-collapsible {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background: #f0f7f2;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 1.5rem;
+  }
+  .content-collapsible.open {
+    padding: 1rem 1.5rem;
+    max-height: 1000px; /* large max-height for expansion */
+  }
+  /* Table for Feedback */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #27ae60;
+    color: white;
+    font-weight: 600;
+  }
+  /* References list */
+  #artifact1 ul.references-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #555;
+  }
+  #artifact1 ul.references-list li {
+    margin-bottom: 0.7rem;
+  }
+  /* Artifacts Gallery */
+  #artifacts-gallery {
+    max-width: 1100px;
+    margin: 3rem auto 5rem;
+    padding: 0 1.5rem;
+  }
+  #artifacts-gallery h2 {
+    color: #e67e22;
+    margin-bottom: 2rem;
+  }
+  .gallery-cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gallery-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(230,126,34,0.15);
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
     flex-direction: column;
+    cursor: pointer;
+    user-select: none;
+  }
+  .gallery-card:hover,
+  .gallery-card:focus {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(230,126,34,0.3);
+    outline: none;
+  }
+  .gallery-card img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+  .gallery-card h3 {
+    margin: 1rem 0 0.3rem;
+    color: #27ae60;
+    font-weight: 700;
+  }
+  .gallery-card p {
+    padding: 0 1rem 1.5rem;
+    font-size: 1rem;
+    color: #444;
+    flex-grow: 1;
+  }
+  .gallery-card a {
+    margin: 0 0 1rem;
+    color: #e67e22;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+  }
+  .gallery-card a:hover,
+  .gallery-card a:focus {
+    text-decoration: underline;
+  }
+  /* Contact Section */
+  #contact {
+    background: #eafaf1;
+    border-radius: 20px;
+    padding: 3rem 1.5rem;
+    box-shadow: 0 12px 30px rgba(39,174,96,0.15);
+    max-width: 1100px;
+    margin: 0 auto 4rem;
     text-align: center;
   }
-}
+  #contact h2 {
+    color: #27ae60;
+    margin-bottom: 1rem;
+  }
+  #contact p {
+    font-size: 1.15rem;
+    color: #2c3e50dd;
+    margin-bottom: 1rem;
+  }
+  #contact address {
+    font-style: normal;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #3a3a3a;
+    max-width: 460px;
+    margin: 0 auto 1.5rem;
+  }
+  #contact a {
+    color: #e67e22;
+    font-weight: 700;
+  }
+  #contact a:hover,
+  #contact a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  /* Footer */
+  footer {
+    background-color: #27ae60;
+    color: #f0f7f4;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 1.2rem 1rem;
+  }
+  /* Back to top button */
+  #back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #e67e22;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(230,126,34,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 10000;
+  }
+  #back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #back-to-top:hover,
+  #back-to-top:focus {
+    background-color: #d35400;
+    outline: none;
+  }
+  /* Dark mode styles */
+  body.dark {
+    background-color: #121212;
+    color: #eee;
+  }
+  body.dark a {
+    color: #f39c12;
+  }
+  body.dark a:hover,
+  body.dark a:focus {
+    color: #27ae60;
+  }
+  body.dark header {
+    background: linear-gradient(90deg, #196f3d, #ba4a00);
+  }
+  body.dark #home {
+    background: linear-gradient(135deg, #164d1a, #4e2600);
+    color: #eee;
+  }
+  body.dark #bio {
+    background: #164d1a;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  }
+  body.dark #artifact1 {
+    background: #222;
+    box-shadow: 0 12px 30px rgba(255,165,0,0.15);
+  }
+  body.dark .artifact-section h3 {
+    border-left-color: #f39c12;
+  }
+  body.dark .collapsible {
+    background-color: #27ae60;
+    color: #eee;
+  }
+  body.dark .collapsible:hover,
+  body.dark .collapsible:focus {
+    background-color: #1e8449;
+  }
+  body.dark .content-collapsible {
+    background: #1a4425;
+    color: #dcdcdc;
+  }
+  body.dark table th {
+    background-color: #196f3d;
+  }
+  body.dark table, body.dark th, body.dark td {
+    border-color: #444;
+  }
+  body.dark #artifacts-gallery .gallery-card {
+    background: #222;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+  }
+  body.dark #contact {
+    background: #164d1a;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  }
+  body.dark footer {
+    background-color: #196f3d;
+    color: #dcdcdc;
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    #bio .bio-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    #bio img.bio-pic {
+      max-width: 180px;
+      margin: 0 auto;
+    }
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .gallery-cards {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 480px) {
+    #home h2 {
+      font-size: 2rem;
+    }
+    #home p {
+      font-size: 1rem;
+    }
+    .btn-primary {
+      padding: 0.85rem 2rem;
+      font-size: 1rem;
+    }
+  }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Naga Venkata Satyanarayana Devarapalli</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#bio">Bio</a>
-    <a href="#artifact1">Artifact 1</a>
-    <a href="#artifact2">Artifact 2</a>
-    <a href="#artifact3">Artifact 3</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="nav-container" role="banner">
+    <h1 tabindex="0">Naga Venkata Satyanarayana Devarapalli</h1>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="#home" class="active" tabindex="0">Home</a>
+      <a href="#bio" tabindex="0">Bio</a>
+      <a href="#artifact1" tabindex="0">Artifact 1</a>
+      <a href="artifact2.html" tabindex="0" target="_blank" rel="noopener noreferrer">Artifact 2</a>
+      <a href="artifact3.html" tabindex="0" target="_blank" rel="noopener noreferrer">Artifact 3</a>
+      <a href="#contact" tabindex="0">Contact</a>
+      <button id="dark-mode-toggle" aria-label="Toggle dark/light mode" tabindex="0" title="Toggle Dark/Light Mode" style="margin-left:10px; font-size:1.2rem; background:none; border:none; color:white; cursor:pointer;">🌙</button>
+    </nav>
+  </div>
 </header>
 
-<!-- HOME SECTION -->
-<section id="home" class="hero">
-  <h2>Welcome to My Professional Portfolio</h2>
-  <p>
-    Explore my journey in Artificial Intelligence and Data Analytics. This portfolio demonstrates my academic progress, hands-on projects, and technical expertise through carefully curated artifacts.
-  </p>
-  <a href="#artifact1" class="btn-primary">Explore Artifact 1</a>
-</section>
+<main>
 
-<!-- BIO SECTION -->
-<section id="bio">
-  <img src="images/profile.jpg" alt="Profile Photo" />
-  <div class="bio-text">
-    <h3>About Me</h3>
-    <p>Hello! I am a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.</p>
-    <p>I bring over 12 years of professional experience in data analytics, BI solutions, and performance testing. My passion lies in leveraging AI to solve real-world problems.</p>
-  </div>
-</section>
+  <!-- Home Section -->
+  <section id="home" tabindex="0" aria-label="Homepage introduction and overview">
+    <h2>Welcome to My Professional Portfolio</h2>
+    <p>
+      Hello! I'm <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.
+      This portfolio highlights my academic achievements, professional projects, and technical skills with a focus on AI and Data Analytics.
+    </p>
+    <a href="#artifact1" class="btn-primary" aria-label="Explore Artifact 1">Explore Artifact 1</a>
+  </section>
 
-<!-- ARTIFACT 1 -->
-<section id="artifact1">
-  <h2>Professional Portfolio Artifact 1</h2>
-  <p><strong>Introduction:</strong> Hello, my name is Naga... (full details below).</p>
-  <h3>Introduction</h3>
-  <p>
-    This artifact showcases an AI assistant chatbot built on Mizou.com using a no-code platform, applying design thinking and prompt engineering.
-  </p>
-  <h3>Artifact Description</h3>
-  <p>
-    Overview: ChatBox Creator Bot allows non-programmers to create custom chatbots easily.
-  </p>
-  <h3>Objectives & Learning Outcomes</h3>
-  <ul>
-    <li>Understand chatbot frameworks</li>
-    <li>Apply design thinking in AI projects</li>
-    <li>Collaborate in multi-disciplinary teams</li>
-  </ul>
-  <h3>Tools Used</h3>
-  <p>Mizou.com, Design Thinking Framework</p>
-
-  <h3>Steps</h3>
-  <ol>
-    <li>Empathize: Interviews with users</li>
-    <li>Define: Problem scoping</li>
-    <li>Ideate: Brainstorm features</li>
-    <li>Prototype: Implement in Mizou</li>
-    <li>Test: Peer review and feedback</li>
-  </ol>
-
-  <h3>Reflection</h3>
-  <p>
-    Key learning: User-centric design and iterative development are critical for AI-based tools.
-  </p>
-
-  <h3>Feedback and Revisions</h3>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Feedback Area</th>
-          <th>Initial Issue</th>
-          <th>Action Taken</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Language Complexity</td>
-          <td>Too technical</td>
-          <td>Simplified tone</td>
-        </tr>
-        <tr>
-          <td>Visual Flow</td>
-          <td>Confusing UI</td>
-          <td>Added flowcharts</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>References</h3>
-  <ul>
-    <li>Mizou.com - No Code Bot Platform</li>
-    <li>Dialogflow, OpenAI Docs</li>
-  </ul>
-</section>
-
-<!-- ARTIFACT 2 & 3 -->
-<section id="artifact2">
-  <h2>Artifact 2: AI & ML Timeline</h2>
-  <p>A comprehensive timeline of AI and ML evolution, highlighting key milestones.</p>
-</section>
-
-<section id="artifact3">
-  <h2>Artifact 3: SchoolAI Learning Experience</h2>
-  <p>Interactive session demonstrating ML concepts using AI-assisted tools.</p>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <h2>Artifacts Gallery</h2>
-  <div id="artifacts-gallery">
-    <div class="artifact-card">
-      <img src="images/artifact1.jpg" alt="Artifact 1" />
-      <h3>Artifact 1</h3>
-      <p>No-Code Chatbot Assistant</p>
-      <a href="#artifact1">View Details</a>
+  <!-- Bio Section -->
+  <section id="bio" tabindex="0" aria-label="About Me and academic background">
+    <h2>About Me</h2>
+    <div class="bio-container">
+      <img src="images/profile-placeholder.jpg" alt="Naga Venkata Satyanarayana Devarapalli Profile Picture" class="bio-pic" />
+      <div class="bio-text">
+        <p>
+          I am a dedicated AI and Data Analytics graduate student at Indiana Wesleyan University with a passion for developing innovative solutions using artificial intelligence and machine learning.
+          My academic journey has equipped me with solid skills in data visualization, predictive modeling, natural language processing, and business intelligence tools.
+        </p>
+        <p>
+          Apart from technical expertise, I enjoy collaborative problem-solving and have contributed to several team projects involving no-code AI tools and interactive dashboards.
+          My goal is to leverage my skills to solve real-world business challenges with cutting-edge AI technologies.
+        </p>
+      </div>
     </div>
-    <div class="artifact-card">
-      <img src="images/artifact2.jpg" alt="Artifact 2" />
-      <h3>Artifact 2</h3>
-      <p>AI & ML Timeline</p>
-      <a href="#artifact2">View Details</a>
-    </div>
-    <div class="artifact-card">
-      <img src="images/artifact3.jpg" alt="Artifact 3" />
-      <h3>Artifact 3</h3>
-      <p>SchoolAI Experience</p>
-      <a href="#artifact3">View Details</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-  <p>Location: Dallas, TX, USA</p>
-</section>
+  <!-- Artifact 1 Section -->
+  <section id="artifact1" tabindex="0" aria-label="Detailed Artifact 1 presentation" role="region" aria-live="polite">
+    <h2>Professional Portfolio Artifact 1</h2>
 
-<footer>
-  &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.
+    <article class="artifact-section" id="introduction">
+      <h3>Introduction</h3>
+      <p>
+        Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.
+        As part of my academic and professional growth, I have developed this comprehensive professional portfolio showcasing my technical skills, creative thinking, and collaborative capabilities.
+      </p>
+      <p>
+        The artifact presented here originates from Workshop 1’s AI Lab activity, where I actively participated in ideating, designing, and testing an AI assistant chatbot for no-code chatbot development.
+        This experience was invaluable for practicing design thinking, prompt engineering, and AI deployment within a team environment.
+      </p>
+    </article>
+
+    <article class="artifact-section" id="artifact-details">
+      <h3>Artifact Details</h3>
+      <h4>Overview</h4>
+      <p>
+        The featured artifact is a conversational AI assistant – the <em>ChatBox Creator Bot</em> – designed to empower non-programmers to create and deploy custom chatbots without coding.
+        It was built using Mizou.com, a no-code platform allowing easy prototyping and deployment of chatbot flows.
+      </p>
+      <p>
+        This chatbot functions as a mentor, guiding users through tone selection, FAQ design, visual flow planning, and integration into web platforms.
+        It primarily serves beginners and small business owners eager to adopt conversational AI.
+      </p>
+      <h4>Problem Solved</h4>
+      <p>
+        Many innovative individuals face steep learning curves when implementing chatbots due to technical barriers.
+        This AI assistant simplifies the chatbot creation process via intuitive conversational interactions, visual aids, examples, and templates.
+      </p>
+      <h4>Tool Used</h4>
+      <p>
+        <strong>Platform:</strong> Mizou.com <br />
+        <strong>Bot Name:</strong> ChatBox Creator Bot <br />
+        <strong>Live Preview:</strong> <a href="https://mizou.com" target="_blank" rel="noopener noreferrer">https://mizou.com</a>
+      </p>
+    </article>
+
+    <article class="artifact-section" id="objectives">
+      <h3>Objectives & Learning Outcomes</h3>
+      <ul>
+        <li>Develop a no-code chatbot assistant simplifying chatbot creation for non-programmers.</li>
+        <li>Apply design thinking principles to solve real-world technical usability problems.</li>
+        <li>Demonstrate prompt engineering and conversational UX design.</li>
+        <li>Learn collaborative AI tool development in a team setting.</li>
+        <li>Enhance understanding of AI deployment on cloud-based no-code platforms.</li>
+      </ul>
+    </article>
+
+    <article class="artifact-section" id="tools-used">
+      <h3>Tools Used</h3>
+      <ul>
+        <li>Mizou.com – No-code AI Chatbot Platform</li>
+        <li>Visual design tools embedded in Mizou</li>
+        <li>Google Docs for documentation</li>
+        <li>Collaborative communication via MS Teams and Slack</li>
+      </ul>
+    </article>
+
+    <article class="artifact-section" id="steps">
+      <h3>Design Thinking Process & Steps</h3>
+
+      <button type="button" class="collapsible" aria-expanded="false" aria-controls="empathize-content" id="empathize-btn">Empathize</button>
+      <div class="content-collapsible" id="empathize-content" role="region" aria-labelledby="empathize-btn" hidden>
+        <p>
+          Conducted interviews with peers, entrepreneurs, and small business owners to understand challenges in chatbot development.
+          Primary barriers included technical jargon, interface complexity, and unclear use cases.
+        </p>
+      </div>
+
+      <button type="button" class="collapsible" aria-expanded="false" aria-controls="define-content" id="define-btn">Define</button>
+      <div class="content-collapsible" id="define-content" role="region" aria-labelledby="define-btn" hidden>
+        <p>
+          Framed the challenge: <em>How might we help non-coders build functional chatbots quickly and confidently without writing code?</em>
+        </p>
+      </div>
+
+      <button type="button" class="collapsible" aria-expanded="false" aria-controls="ideate-content" id="ideate-btn">Ideate</button>
+      <div class="content-collapsible" id="ideate-content" role="region" aria-labelledby="ideate-btn" hidden>
+        <p>
+          Brainstormed over a dozen features including interactive FAQ builder, tone selector, visual flowchart previews, multilingual templates, and user success checklist.
+        </p>
+      </div>
+
+      <button type="button" class="collapsible" aria-expanded="false" aria-controls="prototype-content" id="prototype-btn">Prototype</button>
+      <div class="content-collapsible" id="prototype-content" role="region" aria-labelledby="prototype-btn" hidden>
+        <p>
+          Used Mizou to implement core chatbot features with embedded documentation and designed a clean, intuitive user interface resembling teaching interactions.
+        </p>
+      </div>
+
+      <button type="button" class="collapsible" aria-expanded="false" aria-controls="test-content" id="test-btn">Test</button>
+      <div class="content-collapsible" id="test-content" role="region" aria-labelledby="test-btn" hidden>
+        <p>
+          Conducted peer testing sessions; revised language style, added memory features for session continuity, and integrated visual aids.
+          The final Mean Reciprocal Rank (MRR) performance improved to 0.86.
+        </p>
+      </div>
+    </article>
+
+    <article class="artifact-section" id="challenges-solutions">
+      <h3>Challenges & Solutions</h3>
+      <ul>
+        <li><strong>Challenge:</strong> Users found initial language too complex.<br /><strong>Solution:</strong> Simplified chatbot language to 8th-grade reading level with examples and analogies.</li>
+        <li><strong>Challenge:</strong> Linear conversation flows confused users.<br /><strong>Solution:</strong> Added inline flowcharts and multimedia tutorials.</li>
+        <li><strong>Challenge:</strong> Onboarding was unclear.<br /><strong>Solution:</strong> Implemented a “Welcome & Instructions” sequence for new users.</li>
+      </ul>
+    </article>
+
+    <article class="artifact-section" id="reflection">
+      <h3>Reflection</h3>
+      <p>
+        This project strengthened my user-centric design skills by emphasizing simplification of complex AI concepts into accessible interfaces.
+        Collaborating with peers from diverse backgrounds enhanced my communication and teamwork abilities.
+      </p>
+      <p>
+        Iterative feedback was invaluable for refining chatbot tone, interaction flow, and visual aids, resulting in a polished final product.
+        This artifact exemplifies how empathy, design thinking, and AI expertise come together to solve real problems.
+      </p>
+    </article>
+
+    <article class="artifact-section" id="feedback-revisions">
+      <h3>Feedback & Revisions</h3>
+      <table aria-describedby="feedback-summary">
+        <caption id="feedback-summary" style="caption-side: bottom; font-style: italic; font-weight: 600; padding-top: 0.5rem;">
+          Summary of peer and instructor feedback with actions taken.
+        </caption>
+        <thead>
+          <tr>
+            <th>Feedback Area</th>
+            <th>Initial Issue</th>
+            <th>Action Taken</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Complexity of Language</td>
+            <td>Users overwhelmed by AI/tech terms</td>
+            <td>Simplified language to 8th-grade level, added examples and analogies</td>
+            <td>MRR improved from 0.61 to 0.86; User satisfaction rating: 4.9 / 5.0</td>
+          </tr>
+          <tr>
+            <td>Visual Flow Confusion</td>
+            <td>Text-heavy, linear conversation flow</td>
+            <td>Introduced inline flowcharts and multimedia tutorials</td>
+            <td>Most praised features: Easy-to-follow flow and visual previews</td>
+          </tr>
+          <tr>
+            <td>Lack of Onboarding</td>
+            <td>New users felt lost initially</td>
+            <td>Added a “Welcome & Instructions” onboarding sequence</td>
+            <td>Increased user engagement and positive feedback</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="artifact-section" id="references">
+      <h3>References</h3>
+      <ul class="references-list">
+        <li>Botpress. (n.d.). Botpress Documentation. Retrieved from <a href="https://botpress.com/docs" target="_blank" rel="noopener noreferrer">https://botpress.com/docs</a></li>
+        <li>Chatbase. (n.d.). Create AI Chatbots for Your Website. Retrieved from <a href="https://www.chatbase.co/" target="_blank" rel="noopener noreferrer">https://www.chatbase.co/</a></li>
+        <li>Dialogflow. (n.d.). Conversational AI Platform. Google Cloud. Retrieved from <a href="https://cloud.google.com/dialogflow" target="_blank" rel="noopener noreferrer">https://cloud.google.com/dialogflow</a></li>
+        <li>IDEO. (n.d.). Design Thinking. Retrieved from <a href="https://designthinking.ideo.com/" target="_blank" rel="noopener noreferrer">https://designthinking.ideo.com/</a></li>
+        <li>OpenAI. (2024). ChatGPT and GPT-4 Technical Capabilities Overview. Retrieved from <a href="https://openai.com/gpt-4" target="_blank" rel="noopener noreferrer">https://openai.com/gpt-4</a></li>
+        <li>Mizou. (2025). Mizou AI Chatbot Builder. Retrieved from <a href="https://mizou.com" target="_blank" rel="noopener noreferrer">https://mizou.com</a></li>
+        <li>Anthropic. (2024). Claude 3 Language Model Overview. Retrieved from <a href="https://www.anthropic.com/index/claude" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/index/claude</a></li>
+        <li>Google DeepMind. (2024). Gemini 1.5 Technical Report. Retrieved from <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener noreferrer">https://deepmind.google/technologies/gemini/</a></li>
+        <li>European Union. (2018). General Data Protection Regulation (GDPR). Retrieved from <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer">https://gdpr.eu/</a></li>
+        <li>Replit. (n.d.). Collaborative Code Workspace. Retrieved from <a href="https://replit.com" target="_blank" rel="noopener noreferrer">https://replit.com</a></li>
+      </ul>
+    </article>
+
+  </section>
+
+  <!-- Artifacts Gallery (Artifact 2 & 3 placeholders) -->
+  <section id="artifacts-gallery" tabindex="0" aria-label="Artifacts gallery and links">
+    <h2>Other Artifacts</h2>
+    <div class="gallery-cards">
+
+      <article class="gallery-card" tabindex="0" role="link" aria-label="Artifact 2 Details">
+        <img src="images/artifact2-placeholder.jpg" alt="Artifact 2 Project Illustration" />
+        <h3>Artifact 2</h3>
+        <p>
+          Placeholder for Artifact 2: Detailed data visualization and predictive analytics project using Power BI and Python.
+        </p>
+        <a href="artifact2.html" aria-label="Open Artifact 2 page" target="_blank" rel="noopener noreferrer">View Artifact 2</a>
+      </article>
+
+      <article class="gallery-card" tabindex="0" role="link" aria-label="Artifact 3 Details">
+        <img src="images/artifact3-placeholder.jpg" alt="Artifact 3 Project Illustration" />
+        <h3>Artifact 3</h3>
+        <p>
+          Placeholder for Artifact 3: Advanced machine learning workflow development and deployment using TensorFlow and cloud services.
+        </p>
+        <a href="artifact3.html" aria-label="Open Artifact 3 page" target="_blank" rel="noopener noreferrer">View Artifact 3</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" tabindex="0" aria-label="Contact information and social links">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for project discussions, collaboration, or queries.</p>
+    <address>
+      <strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a><br />
+      <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nagavdevarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/nagavdevarapalli</a><br />
+      <strong>Location:</strong> Dallas, Texas, USA
+    </address>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
 </footer>
 
-<!-- BUTTONS -->
-<button class="toggle-mode" onclick="toggleMode()">🌙</button>
-<button id="backToTop" onclick="scrollToTop()">⬆</button>
+<button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
 
 <script>
-// Dark/Light Mode
-function toggleMode() {
-  document.body.classList.toggle("dark");
-}
+  // Highlight nav link on scroll
+  const sections = document.querySelectorAll('main section, main article');
+  const navLinks = document.querySelectorAll('header nav a[href^="#"]');
 
-// Back to Top
-const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTop.style.display = "block";
-  } else {
-    backToTop.style.display = "none";
+  function activateNavLinkOnScroll() {
+    let scrollPosition = window.scrollY + window.innerHeight / 4;
+    sections.forEach(section => {
+      if(section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if(link.getAttribute('href') === '#' + section.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
   }
-});
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+
+  window.addEventListener('scroll', activateNavLinkOnScroll);
+
+  // Collapsible sections
+  const collapsibles = document.querySelectorAll('.collapsible');
+  collapsibles.forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+      if(isOpen) {
+        content.classList.remove('open');
+        content.setAttribute('hidden', '');
+        button.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+      } else {
+        content.classList.add('open');
+        content.removeAttribute('hidden');
+        button.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // Dark mode toggle
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if(document.body.classList.contains('dark')) {
+      darkModeToggle.textContent = '☀️';
+    } else {
+      darkModeToggle.textContent = '🌙';
+    }
+  });
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    if(link.getAttribute('href').startsWith('#')){
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        if(targetSection) {
+          targetSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      });
+    }
+  });
+
+  // Accessibility: Keyboard navigation enhancement for collapsibles
+  collapsibles.forEach(button => {
+    button.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        button.click();
+      }
+    });
+  });
 </script>
 
 </body>
