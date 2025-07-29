@@ -2,297 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bio - Naga Venkata Satyanarayana Devarapalli</title>
-  <style>
-    /* ===== Reset & Base Styles ===== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7f9;
-      color: #222;
-    }
-    body {
-      line-height: 1.6;
-      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    a {
-      color: #0288d1;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover, a:focus {
-      color: #ff7043;
-      outline: none;
-      text-decoration: underline;
-    }
-    ul {
-      list-style: none;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ===== Header ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0; right: 0;
-      background: #00796b; /* Teal */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      z-index: 10000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      color: #e0f2f1;
-    }
-    header .logo {
-      font-weight: 900;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      cursor: default;
-      user-select: none;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    nav a {
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background-color: transparent;
-      color: #e0f2f1;
-      box-shadow: inset 0 0 0 0 transparent;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    nav a:hover, nav a.active {
-      background-color: #ff7043; /* Orange */
-      box-shadow: inset 0 -3px 0 0 #bf360c;
-      color: #fff;
-    }
-
-    /* ===== Main Content ===== */
-    main {
-      margin-top: 80px;
-      flex-grow: 1;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem;
-      background: #ffffffcc;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-
-    /* ===== Bio Section ===== */
-    #bio {
-      border-left: 6px solid #4caf50; /* Green */
-      padding-left: 1.5rem;
-    }
-    #bio h1 {
-      font-size: 3rem;
-      color: #2e7d32;
-      margin-bottom: 1rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-    #bio h2 {
-      color: #00796b;
-      margin-top: 2rem;
-      font-size: 2rem;
-      font-weight: 700;
-    }
-    #bio p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-      line-height: 1.7;
-      text-align: justify;
-    }
-    #bio ul {
-      margin-left: 1.5rem;
-      color: #424242;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
-    #bio ul li {
-      margin-bottom: 0.6rem;
-    }
-
-    /* ===== Contact Button ===== */
-    .btn-contact {
-      display: inline-block;
-      background-color: #ff7043; /* Orange */
-      color: #fff;
-      padding: 0.8rem 1.8rem;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      box-shadow: 0 4px 8px rgba(255,112,67,0.6);
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-      margin-top: 1rem;
-      text-align: center;
-      text-decoration: none;
-    }
-    .btn-contact:hover {
-      background-color: #bf360c;
-      box-shadow: 0 6px 12px rgba(191,54,12,0.7);
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background-color: #004d40; /* Dark teal */
-      color: #b2dfdb;
-      padding: 1rem 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      user-select: none;
-      margin-top: 3rem;
-    }
-    footer a {
-      color: #80cbc4;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      font-weight: 600;
-    }
-    footer a:hover {
-      color: #ffab91;
-      text-decoration: underline;
-    }
-
-    /* ===== Responsive Design ===== */
-    @media (max-width: 768px) {
-      main {
-        padding: 1rem 1rem;
-        max-width: 95%;
-      }
-      #bio h1 {
-        font-size: 2.2rem;
-      }
-      #bio h2 {
-        font-size: 1.6rem;
-      }
-    }
-    @media (max-width: 480px) {
-      #bio h1 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biography - Naga Venkata Satyanarayana Devarapalli</title>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo">My Portfolio</div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="bio.html" class="active">Bio</a></li>
+        <li><a href="../artifacts/artifact1.html">Artifact 1</a></li>
+        <li><a href="../artifacts/artifact2.html">Artifact 2</a></li>
+        <li><a href="../artifacts/artifact3.html">Artifact 3</a></li>
+        <li><a href="../artifacts/artifact4.html">Artifact 4</a></li>
+        <li><a href="../artifacts/artifact5.html">Artifact 5</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header role="banner" aria-label="Primary Navigation">
-  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
-  <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="bio.html">Bio</a></li>
-    <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
-    <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
-    <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
-    <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
-    <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
-  </ul>
-</nav>
-
-</header>
-
-<main>
-  <section id="bio" role="main" aria-label="Bio Content">
+  <!-- BIO SECTION -->
+  <section class="bio">
     <h1>About Me</h1>
-    <p>
-      Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student specializing in Artificial Intelligence and Data Analytics at Indiana Wesleyan University.  
-      With a passion for data-driven problem solving and machine learning, I aim to apply advanced AI techniques to create impactful solutions.
-    </p>
+    <p>Hello! I’m <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a passionate graduate student pursuing a Master’s degree in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of IT experience, I bring deep expertise in data analytics, AI solutions, and machine learning systems.</p>
 
-    <h2>Educational Background</h2>
-    <p>
-      Currently pursuing a Master of Science in Artificial Intelligence – Data Analytics, I have developed strong foundational knowledge in areas such as:
-    </p>
+    <h2>Education</h2>
     <ul>
-      <li>Machine Learning & Deep Learning</li>
-      <li>Big Data Analysis and Visualization</li>
-      <li>Statistical Modeling & Predictive Analytics</li>
-      <li>Ethical AI & Responsible Data Use</li>
-      <li>Data Engineering and Pipeline Construction</li>
+      <li>Master of Science in Artificial Intelligence – Data Analytics (Ongoing)</li>
+      <li>Bachelor’s Degree in Computer Science</li>
+      <li>Certifications: Python for Data Science, Tableau, Power BI, Azure AI Fundamentals</li>
     </ul>
 
     <h2>Professional Experience</h2>
-    <p>
-      I have worked extensively on projects involving Power BI dashboard development, data visualization, and SQL-based data analysis in real-world business environments.  
-      My key responsibilities have included:
-    </p>
     <ul>
-      <li>Designing and building dynamic dashboards and scorecards for business insights</li>
-      <li>Collaborating with cross-functional teams including finance and marketing to gather data requirements</li>
-      <li>Ensuring compliance with industry standards such as HIPAA and GDPR</li>
-      <li>Developing automated data pipelines and reporting tools</li>
+      <li><strong>Senior Data Analyst</strong> – Tech Solutions Inc. (2018–2024)</li>
+      <li><strong>Business Intelligence Specialist</strong> – Global Finance Corp. (2014–2018)</li>
+      <li><strong>Junior Data Engineer</strong> – StartUpX (2012–2014)</li>
     </ul>
 
-    <h2>Technical Skills</h2>
+    <h2>Skills</h2>
     <ul>
-      <li>Programming Languages: Python, R, SQL, JavaScript</li>
-      <li>Data Visualization: Power BI, Tableau, matplotlib, ggplot2</li>
-      <li>Machine Learning Frameworks: TensorFlow, scikit-learn, PyTorch</li>
-      <li>Database Technologies: MySQL, PostgreSQL, MongoDB</li>
-      <li>Cloud & Big Data: AWS, Azure, Hadoop, Spark</li>
+      <li>AI & Machine Learning: TensorFlow, Scikit-learn, NLP, Computer Vision</li>
+      <li>Data Visualization: Power BI, Tableau, Matplotlib</li>
+      <li>Programming: Python, R, SQL, JavaScript</li>
+      <li>Big Data: Hadoop, Spark</li>
     </ul>
 
     <h2>Certifications</h2>
     <ul>
-      <li>Microsoft Certified: Data Analyst Associate</li>
-      <li>Google Data Analytics Professional Certificate</li>
-      <li>Certified Ethical Emerging Technologist (CEET)</li>
+      <li>Google Cloud Certified: Professional Data Engineer</li>
+      <li>Microsoft Certified: Azure AI Fundamentals</li>
+      <li>IBM AI Engineering Professional Certificate</li>
     </ul>
 
-    <h2>Get In Touch</h2>
-    <p>
-      Interested in collaborating or learning more? Feel free to reach out to me.
-    </p>
-    <a href="mailto:tone_satya@yahoo.co.in" class="btn-contact" aria-label="Email Naga Venkata Satyanarayana Devarapalli">Email Me</a>
+    <h2>Quote</h2>
+    <blockquote>
+      "Artificial Intelligence is not just technology—it’s about empowering businesses and people to make better decisions."
+    </blockquote>
   </section>
-</main>
 
-<footer role="contentinfo">
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
-  <p>
-    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
-    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
-    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
-  </p>
-</footer>
-
-<script>
-  // Highlight active nav link based on URL
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
-
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.</p>
+    <nav class="footer-nav">
+      <a href="../index.html">Home</a> |
+      <a href="bio.html">Bio</a> |
+      <a href="../artifacts/artifact1.html">Artifact 1</a> |
+      <a href="../artifacts/artifact2.html">Artifact 2</a> |
+      <a href="../artifacts/artifact3.html">Artifact 3</a> |
+      <a href="../artifacts/artifact4.html">Artifact 4</a> |
+      <a href="../artifacts/artifact5.html">Artifact 5</a>
+    </nav>
+  </footer>
 </body>
 </html>

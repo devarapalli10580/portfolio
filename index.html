@@ -2,462 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Naga Venkata Satyanarayana Devarapalli – Professional Portfolio</title>
-  <style>
-    /* ===== Reset & Base Styles ===== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7f9;
-      color: #222;
-    }
-    body {
-      line-height: 1.6;
-      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    a {
-      color: #0288d1;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover, a:focus {
-      color: #ff7043;
-      outline: none;
-      text-decoration: underline;
-    }
-    ul {
-      list-style: none;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ===== Header ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0; right: 0;
-      background: #00796b; /* Teal */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      z-index: 10000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      color: #e0f2f1;
-    }
-    header .logo {
-      font-weight: 900;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      cursor: default;
-      user-select: none;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    nav a {
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background-color: transparent;
-      color: #e0f2f1;
-      box-shadow: inset 0 0 0 0 transparent;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    nav a:hover, nav a.active {
-      background-color: #ff7043; /* Orange */
-      box-shadow: inset 0 -3px 0 0 #bf360c;
-      color: #fff;
-    }
-
-    /* Hamburger menu for mobile */
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.8rem;
-      user-select: none;
-      color: #e0f2f1;
-      background: none;
-      border: none;
-    }
-
-    /* ===== Main Content ===== */
-    main {
-      margin-top: 80px;
-      flex-grow: 1;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem;
-      background: #ffffffcc;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-
-    /* ===== Hero Section ===== */
-    #home {
-      padding-bottom: 3rem;
-      border-bottom: 3px solid #00796b;
-    }
-    #home h1 {
-      font-size: 3rem;
-      color: #00796b;
-      margin-bottom: 0.3rem;
-    }
-    #home p.subtitle {
-      font-size: 1.4rem;
-      color: #4caf50; /* Green */
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-    #home p.description {
-      font-size: 1.2rem;
-      max-width: 700px;
-      color: #333;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-    #home .btn-contact {
-      display: inline-block;
-      background-color: #ff7043; /* Orange */
-      color: #fff;
-      padding: 0.8rem 1.8rem;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      box-shadow: 0 4px 8px rgba(255,112,67,0.6);
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-    #home .btn-contact:hover {
-      background-color: #bf360c;
-      box-shadow: 0 6px 12px rgba(191,54,12,0.7);
-    }
-
-    /* ===== About Section ===== */
-    #about {
-      margin-top: 3rem;
-      border-left: 6px solid #4caf50; /* Green */
-      padding-left: 1.5rem;
-    }
-    #about h2 {
-      font-size: 2.5rem;
-      color: #2e7d32;
-      margin-bottom: 1rem;
-    }
-    #about p {
-      font-size: 1.15rem;
-      color: #555;
-      margin-bottom: 1rem;
-      max-width: 800px;
-      line-height: 1.6;
-    }
-    #about a {
-      font-weight: 700;
-      color: #00796b;
-      border-bottom: 2px solid transparent;
-      transition: border-bottom-color 0.3s ease;
-    }
-    #about a:hover {
-      border-bottom-color: #00796b;
-    }
-
-    /* ===== Artifacts Section ===== */
-    #artifacts {
-      margin-top: 4rem;
-      border-top: 3px solid #0288d1; /* Blue */
-      padding-top: 2rem;
-    }
-    #artifacts h2 {
-      color: #01579b;
-      font-size: 2.8rem;
-      margin-bottom: 2rem;
-      font-weight: 800;
-      text-align: center;
-    }
-    .artifact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 2.5rem;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .artifact-card {
-      background: #e3f2fd;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      padding: 1.6rem;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .artifact-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
-    .artifact-card img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 1.2rem;
-    }
-    .artifact-card h3 {
-      color: #0277bd;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      font-size: 1.3rem;
-    }
-    .artifact-card p {
-      font-size: 1rem;
-      color: #424242;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-    .artifact-card a {
-      color: #0288d1;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: underline;
-    }
-
-    /* ===== Contact Section ===== */
-    #contact {
-      margin-top: 5rem;
-      border-top: 3px solid #ff7043; /* Orange */
-      padding-top: 2rem;
-      text-align: center;
-      color: #6d4c41;
-    }
-    #contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 800;
-      color: #bf360c;
-    }
-    #contact p {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    #contact a {
-      color: #bf360c;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    #contact a:hover {
-      color: #ff7043;
-      text-decoration: underline;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background-color: #004d40; /* Dark teal */
-      color: #b2dfdb;
-      padding: 1rem 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      user-select: none;
-      margin-top: 3rem;
-    }
-    footer a {
-      color: #80cbc4;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      font-weight: 600;
-    }
-    footer a:hover {
-      color: #ffab91;
-      text-decoration: underline;
-    }
-
-    /* ===== Responsive Design ===== */
-    @media (max-width: 768px) {
-      header {
-        flex-wrap: wrap;
-        padding: 1rem 1rem;
-      }
-      nav {
-        width: 100%;
-        justify-content: center;
-        margin-top: 0.5rem;
-      }
-      main {
-        padding: 1rem 1rem;
-      }
-      #home h1 {
-        font-size: 2.2rem;
-      }
-      #artifacts {
-        padding-top: 1rem;
-      }
-    }
-    @media (max-width: 480px) {
-      #home h1 {
-        font-size: 1.8rem;
-      }
-      #artifacts h2 {
-        font-size: 2rem;
-      }
-      .artifact-card img {
-        width: 90px;
-        height: 90px;
-      }
-    }
-
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Naga Venkata Satyanarayana Devarapalli</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo">My Portfolio</div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
+        <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
+        <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
+        <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
+        <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header role="banner" aria-label="Primary Navigation">
-  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
-  <nav role="navigation" aria-label="Main Navigation">
-    <a href="index.html" class="active" aria-current="page">Home</a>
-    <a href="bio.html">Bio</a>
-    <a href="artifacts/artifact1.html">Artifact 1</a>
-    <a href="artifacts/artifact2.html">Artifact 2</a>
-    <a href="artifacts/artifact3.html">Artifact 3</a>
-    <a href="artifacts/artifact4.html">Artifact 4</a>
-    <a href="artifacts/artifact5.html">Artifact 5</a>
-  </nav>
-</header>
-
-<main>
-
-  <!-- Hero / Welcome Section -->
-  <section id="home" role="region" aria-label="Welcome Section">
-    <h1>Welcome to My Professional Portfolio</h1>
-    <p class="subtitle">Master of Science in Artificial Intelligence – Data Analytics</p>
-    <p class="description">
-      Greetings! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a dedicated graduate student and AI/Data Analytics enthusiast.  
-      This portfolio highlights my academic journey, professional projects, and deep expertise in artificial intelligence, machine learning, and data science.  
-      Explore the artifacts below to learn more about my work and skills.
-    </p>
-    <a href="bio.html" class="btn-contact" aria-label="Go to Bio page">Learn More About Me</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" role="region" aria-label="About Section">
-    <h2>About Me</h2>
-    <p>
-      With over a decade of experience in data analytics, software development, and business intelligence, I am passionate about leveraging AI responsibly  
-      to solve real-world problems. Currently pursuing my Master of Science at Indiana Wesleyan University, I specialize in combining technical skills with ethical AI applications.
-    </p>
-    <p>
-      To know more about my background, skills, certifications, and work experience, please visit the <a href="bio.html">Bio page</a>.
-    </p>
-  </section>
-
-  <!-- Artifacts Section -->
-  <section id="artifacts" role="region" aria-label="Artifacts Section">
-    <h2>Professional Portfolio Artifacts</h2>
-    <div class="artifact-grid" role="list">
-
-      <!-- Artifact 1 -->
-      <article class="artifact-card" role="listitem" tabindex="0" aria-label="Artifact 1: AI Lab Chatbot Development">
-        <img src="images/artifact1.jpg" alt="Artifact 1 Image: AI Lab Chatbot" loading="lazy" />
-        <h3>Artifact 1: AI Lab Chatbot Assistant Development</h3>
-        <p>Hands-on no-code chatbot assistant development showcasing AI conversational interfaces and deployment skills.</p>
-        <a href="artifacts/artifact1.html" aria-label="View Artifact 1 details">Read More</a>
-      </article>
-
-      <!-- Artifact 2 -->
-      <article class="artifact-card" role="listitem" tabindex="0" aria-label="Artifact 2: AI/ML Timeline Presentation">
-        <img src="images/artifact2.jpg" alt="Artifact 2 Image: AI/ML Timeline" loading="lazy" />
-        <h3>Artifact 2: Evolution of AI and Machine Learning Timeline</h3>
-        <p>Comprehensive timeline covering the historical milestones and key technologies in AI and ML.</p>
-        <a href="artifacts/artifact2.html" aria-label="View Artifact 2 details">Read More</a>
-      </article>
-
-      <!-- Artifact 3 -->
-      <article class="artifact-card" role="listitem" tabindex="0" aria-label="Artifact 3: SchoolAI-Assisted Learning Experience">
-        <img src="images/artifact3.jpg" alt="Artifact 3 Image: SchoolAI Learning" loading="lazy" />
-        <h3>Artifact 3: SchoolAI-Assisted Learning Experience</h3>
-        <p>Documenting inquiry-based AI-assisted learning to deepen machine learning concept understanding.</p>
-        <a href="artifacts/artifact3.html" aria-label="View Artifact 3 details">Read More</a>
-      </article>
-
-      <!-- Artifact 4 -->
-      <article class="artifact-card" role="listitem" tabindex="0" aria-label="Artifact 4: Data Challenge Scenarios">
-        <img src="images/artifact4.jpg" alt="Artifact 4 Image: Data Challenge" loading="lazy" />
-        <h3>Artifact 4: Data Challenge Scenarios</h3>
-        <p>Exploring real-world machine learning data issues and how to address them with AI-driven solutions.</p>
-        <a href="artifacts/artifact4.html" aria-label="View Artifact 4 details">Read More</a>
-      </article>
-
-      <!-- Artifact 5 -->
-      <article class="artifact-card" role="listitem" tabindex="0" aria-label="Artifact 5: Advanced AI Project">
-        <img src="images/artifact5.jpg" alt="Artifact 5 Image: Advanced AI" loading="lazy" />
-        <h3>Artifact 5: Advanced AI Project</h3>
-        <p>Showcasing advanced AI project implementation combining ethics, data science, and real-world applications.</p>
-        <a href="artifacts/artifact5.html" aria-label="View Artifact 5 details">Read More</a>
-      </article>
-
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Professional Portfolio</h1>
+      <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a Master's student specializing in AI & Data Analytics. Explore my academic projects, professional achievements, and hands-on experience in cutting-edge technologies.</p>
+      <a href="bio.html" class="cta-button">Explore My Bio</a>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" role="region" aria-label="Contact Section">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email Naga Venkata Satyanarayana Devarapalli">tone_satya@yahoo.co.in</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
-    <p>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">github.com/naga-venkata</a></p>
+  <!-- SKILLS SECTION -->
+  <section class="skills">
+    <h2>Core Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Artificial Intelligence</h3>
+        <p>Machine Learning, Deep Learning, NLP, Model Optimization</p>
+      </div>
+      <div class="skill-card">
+        <h3>Data Analytics</h3>
+        <p>Power BI, Tableau, SQL, Python Data Analysis</p>
+      </div>
+      <div class="skill-card">
+        <h3>Big Data & Cloud</h3>
+        <p>Hadoop, Spark, AWS, Azure Fundamentals</p>
+      </div>
+      <div class="skill-card">
+        <h3>Programming</h3>
+        <p>Python, R, JavaScript, SQL, HTML/CSS</p>
+      </div>
+    </div>
   </section>
 
-</main>
+  <!-- PORTFOLIO / ARTIFACTS SECTION -->
+  <section class="artifacts-section">
+    <h2>Featured Artifacts</h2>
+    <div class="artifacts-grid">
+      <!-- Artifact 1 -->
+      <div class="artifact-card">
+        <img src="images/artifact1.jpg" alt="Artifact 1" />
+        <h3>Artifact 1</h3>
+        <p>No-Code AI Chatbot Assistant Development using Botpress & Dialogflow.</p>
+        <a href="artifacts/artifact1.html" class="btn-link">View Details</a>
+      </div>
+      <!-- Artifact 2 -->
+      <div class="artifact-card">
+        <img src="images/artifact2.jpg" alt="Artifact 2" />
+        <h3>Artifact 2</h3>
+        <p>AI & ML Timeline – A comprehensive visual presentation of evolution.</p>
+        <a href="artifacts/artifact2.html" class="btn-link">View Details</a>
+      </div>
+      <!-- Artifact 3 -->
+      <div class="artifact-card">
+        <img src="images/artifact3.jpg" alt="Artifact 3" />
+        <h3>Artifact 3</h3>
+        <p>SchoolAI-Assisted Learning Experience with real-time engagement.</p>
+        <a href="artifacts/artifact3.html" class="btn-link">View Details</a>
+      </div>
+      <!-- Artifact 4 -->
+      <div class="artifact-card">
+        <img src="images/artifact4.jpg" alt="Artifact 4" />
+        <h3>Artifact 4</h3>
+        <p>Data Challenge Scenarios – Handling data quality and bias issues.</p>
+        <a href="artifacts/artifact4.html" class="btn-link">View Details</a>
+      </div>
+      <!-- Artifact 5 -->
+      <div class="artifact-card">
+        <img src="images/artifact5.jpg" alt="Artifact 5" />
+        <h3>Artifact 5</h3>
+        <p>Advanced AI Project integrating predictive analytics and visualization.</p>
+        <a href="artifacts/artifact5.html" class="btn-link">View Details</a>
+      </div>
+    </div>
+  </section>
 
-<footer role="contentinfo">
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
-  <p>
-    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
-    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
-    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
-  </p>
-</footer>
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="bio.html">Bio</a></li>
-    <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
-    <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
-    <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
-    <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
-    <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
-  </ul>
-</nav>
-<script>
-  // Highlight active nav link based on URL
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
+  <!-- CONTACT SECTION -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/naga-venkata-satyanarayana</a></p>
+    <p>GitHub: <a href="#">github.com/naga-venkata</a></p>
+  </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.</p>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="bio.html">Bio</a> |
+      <a href="artifacts/artifact1.html">Artifact 1</a> |
+      <a href="artifacts/artifact2.html">Artifact 2</a> |
+      <a href="artifacts/artifact3.html">Artifact 3</a> |
+      <a href="artifacts/artifact4.html">Artifact 4</a> |
+      <a href="artifacts/artifact5.html">Artifact 5</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
