@@ -1,626 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="author" content="Naga Venkata Satyanarayana Devarapalli" />
-<meta name="description" content="Professional Portfolio - Artifact 1: No-Code Chatbot Assistant Development" />
-<title>Professional Portfolio - Artifact 1 | Naga Venkata Satyanarayana Devarapalli</title>
-
-<style>
-  /* Reset and base */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa; color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-  }
-  a {
-    color: #e57200;
-    text-decoration: none;
-  }
-  a:hover, a:focus {
-    color: #3a8e00;
-    text-decoration: underline;
-    outline: none;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.2em; margin-bottom: 0.5em;
-    font-weight: 700;
-    color: #2f3a4a;
-  }
-  p {
-    margin-bottom: 1em;
-  }
-  ul, ol {
-    margin-left: 1.5em;
-    margin-bottom: 1em;
-  }
-  img {
-    max-width: 100%; height: auto;
-    border-radius: 6px;
-  }
-
-  /* Layout container */
-  .container {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-  }
-
-  /* Header */
-  header {
-    background: #3a8e00; /* green */
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  nav {
-    max-width: 1024px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-  }
-  nav .logo {
-    font-weight: 900;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    user-select: none;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.4rem;
-  }
-  nav ul li a {
-    color: white;
-    font-weight: 600;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  nav ul li a:hover,
-  nav ul li a.active {
-    background: #e57200; /* orange */
-    color: white;
-    font-weight: 700;
-  }
-
-  /* Hero Banner */
-  .hero {
-    background: linear-gradient(135deg, #e57200dd, #3a8e0088);
-    color: white;
-    padding: 5rem 1rem 6rem;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.3rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
-  }
-  .hero p {
-    font-size: 1.2rem;
-    font-weight: 600;
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  }
-  .btn-primary {
-    background-color: #2f3a4a;
-    color: #e57200;
-    padding: 0.7rem 1.8rem;
-    border: none;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-color: #e57200;
-    color: white;
-    outline: none;
-  }
-
-  /* Sections */
-  section {
-    margin-top: 3rem;
-  }
-  .section-title {
-    color: #3a8e00;
-    font-size: 1.8rem;
-    border-left: 6px solid #e57200;
-    padding-left: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  .sub-title {
-    color: #2f3a4a;
-    font-size: 1.4rem;
-    margin-top: 2rem;
-    margin-bottom: 0.7rem;
-  }
-
-  /* Text styling */
-  strong {
-    color: #3a8e00;
-  }
-
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-  }
-  table thead {
-    background: #3a8e00;
-    color: white;
-  }
-  table th, table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
-    text-align: left;
-    vertical-align: top;
-  }
-  table tbody tr:nth-child(even) {
-    background: #f9f9f9;
-  }
-
-  /* Timeline */
-  .timeline {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  @media (min-width: 768px) {
-    .timeline {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  .timeline-item {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-    padding: 1rem 1.5rem 1.5rem;
-    outline-offset: 3px;
-  }
-  .timeline-item:focus {
-    outline: 3px solid #e57200;
-  }
-  .timeline-item h4 {
-    color: #e57200;
-    margin-bottom: 0.5rem;
-  }
-  .timeline-item img {
-    max-height: 130px;
-    margin-bottom: 0.8rem;
-    object-fit: contain;
-  }
-  .timeline-item p {
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  /* Lists */
-  ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-  }
-
-  /* Footer */
-  footer {
-    background: #2f3a4a;
-    color: #ccc;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-    user-select: none;
-  }
-  footer a {
-    color: #e57200;
-    margin: 0 0.4rem;
-  }
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  /* Responsive and utility */
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-    nav ul {
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-  }
-
-  /* Back to top button */
-  #backToTop {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #e57200;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    display: none;
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-  }
-  #backToTop:hover {
-    background-color: #3a8e00;
-  }
-
-  /* Accordion */
-  .accordion {
-    background: #f8f9fa;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    box-shadow: inset 0 0 0 1px #ddd;
-  }
-  .accordion-header {
-    cursor: pointer;
-    padding: 1rem 1.2rem;
-    font-weight: 700;
-    user-select: none;
-    background: #e57200;
-    color: white;
-    border-radius: 6px 6px 0 0;
-  }
-  .accordion-header[aria-expanded="true"] {
-    background: #3a8e00;
-  }
-  .accordion-content {
-    padding: 1rem 1.2rem;
-    border-radius: 0 0 6px 6px;
-    border-top: 1px solid #ddd;
-    display: none;
-  }
-  .accordion.active .accordion-content {
-    display: block;
-  }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifact 1 - COVID-19 Data Analysis</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Naga's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../bio.html">Bio</a></li>
+                <li><a href="artifact1.html" class="active">Artifact 1</a></li>
+                <li><a href="artifact2.html">Artifact 2</a></li>
+                <li><a href="artifact3.html">Artifact 3</a></li>
+                <li><a href="artifact4.html">Artifact 4</a></li>
+                <li><a href="artifact5.html">Artifact 5</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header role="banner">
-  <nav aria-label="Primary navigation">
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-      <div class="logo" tabindex="0" aria-label="Portfolio logo">
-        Naga Venkata Satyanarayana Devarapalli
-      </div>
-      <ul>
-        <li><a href="#home" class="active" tabindex="0">Home</a></li>
-        <li><a href="#artifact1" tabindex="0">Artifact 1</a></li>
-        <li><a href="#bio" tabindex="0">Bio</a></li>
-        <li><a href="#contact" tabindex="0">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
+    <!-- ARTIFACT DETAILS -->
+    <section class="artifact-detail">
+        <div class="container">
+            <h1>Artifact 1: COVID-19 Data Analysis – Vaccination vs Death Rates</h1>
+            <p><em>Analyzing real-world data to understand the impact of vaccination on COVID-19 death rates in India.</em></p>
+        </div>
+    </section>
 
-<main class="container" role="main">
+    <!-- OBJECTIVE -->
+    <section class="objective">
+        <div class="container">
+            <h2>Project Objective</h2>
+            <p>
+                The primary objective of this project was to explore the relationship between vaccination coverage and COVID-19 mortality rates 
+                in India. By analyzing official data sources, the project aimed to identify trends, correlations, and patterns that demonstrate 
+                how vaccination efforts influenced death rates during the pandemic.
+            </p>
+        </div>
+    </section>
 
-  <!-- Home Section -->
-  <section id="home" tabindex="0" aria-label="Home section">
-    <div class="hero">
-      <h1>Welcome to My Professional Portfolio</h1>
-      <p>I am Naga Venkata Satyanarayana Devarapalli, a graduate student specializing in Artificial Intelligence and Data Analytics.</p>
-      <button class="btn-primary" onclick="document.getElementById('artifact1').scrollIntoView({behavior:'smooth'});">Explore Artifact 1</button>
-    </div>
-  </section>
+    <!-- DESCRIPTION -->
+    <section class="description">
+        <div class="container">
+            <h2>Description & Methodology</h2>
+            <p>
+                The analysis involved gathering vaccination and mortality data from government and trusted open data sources. 
+                The project was implemented using <strong>R programming</strong> in RStudio, focusing on data cleaning, transformation, and visualization.
+            </p>
+            <p>
+                The methodology included:
+            </p>
+            <ul>
+                <li>Data Acquisition from official APIs and CSV datasets</li>
+                <li>Data Preprocessing – handling missing values and outliers</li>
+                <li>Correlation Analysis – identifying relationship between vaccination and death rates</li>
+                <li>Visualization using ggplot2 – line charts, bar charts, and heatmaps</li>
+            </ul>
+        </div>
+    </section>
 
-  <!-- Artifact 1 Section -->
-  <section id="artifact1" tabindex="0" aria-label="Artifact 1 detailed description">
-    <h2 class="section-title">Professional Portfolio Artifact 1</h2>
+    <!-- TOOLS USED -->
+    <section class="tools">
+        <div class="container">
+            <h2>Tools & Technologies Used</h2>
+            <ul>
+                <li><strong>R Programming Language</strong> – for statistical analysis and visualization</li>
+                <li><strong>RStudio</strong> – IDE for development</li>
+                <li><strong>ggplot2</strong> – for advanced visualizations</li>
+                <li><strong>Data Sources:</strong> Government of India COVID-19 dataset, WHO data</li>
+            </ul>
+        </div>
+    </section>
 
-    <h3 class="sub-title">Introduction</h3>
-    <p>
-      Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. As part of my academic and professional growth, I am building a comprehensive professional portfolio to showcase my technical capabilities, creative thinking, and collaborative skills.
-    </p>
-    <p>
-      This portfolio is designed to highlight real-world applications of AI/ML, reflecting my learning journey and the impact of my contributions. The artifact presented here stems from Workshop 1’s AI Lab activity, where I actively participated in the ideation, design, and testing of an AI assistant chatbot for no-code chatbot development. The experience was an excellent opportunity to practice design thinking, prompt engineering, and AI deployment in a collaborative team environment.
-    </p>
+    <!-- VISUALIZATIONS -->
+    <section class="visualizations">
+        <div class="container">
+            <h2>Visualizations</h2>
+            <div class="img-gallery">
+                <img src="../images/artifact1-graph1.jpg" alt="Vaccination vs Death Trend">
+                <img src="../images/artifact1-graph2.jpg" alt="Heatmap Correlation">
+            </div>
+            <p><em>Note: These charts represent the vaccination trend and death rate correlation during the COVID-19 pandemic in India.</em></p>
+        </div>
+    </section>
 
-    <h3 class="sub-title">Artifact Description</h3>
+    <!-- KEY INSIGHTS -->
+    <section class="insights">
+        <div class="container">
+            <h2>Key Insights & Learning Outcomes</h2>
+            <ul>
+                <li>Increased vaccination coverage strongly correlates with a significant reduction in death rates.</li>
+                <li>Data visualization plays a critical role in understanding health trends and decision-making.</li>
+                <li>Gained expertise in R programming, ggplot2 visualization, and statistical correlation analysis.</li>
+            </ul>
+        </div>
+    </section>
 
-    <h4>Overview</h4>
-    <p>
-      The featured artifact is a conversational AI assistant – the <strong>ChatBox Creator Bot</strong> – designed to help users, especially non-programmers, create and deploy custom chatbots without any coding knowledge. The bot was built using <a href="https://mizou.com" target="_blank" rel="noopener">Mizou.com</a>, a no-code platform that allows easy prototyping and deployment of chatbot flows.
-    </p>
-    <p>
-      The chatbot acts as a mentor and guide, enabling users to construct their own bots by walking them through features such as tone selection, FAQ design, visual flow planning, and integration into web platforms. It supports both beginners and small business owners looking to adopt conversational AI solutions.
-    </p>
+    <!-- NAVIGATION -->
+    <section class="navigation-links">
+        <div class="container">
+            <a href="../index.html" class="btn-secondary">← Back to Home</a>
+            <a href="artifact2.html" class="btn-primary">Next: Artifact 2 →</a>
+        </div>
+    </section>
 
-    <h4>Problem Solved</h4>
-    <p>
-      Many individuals with innovative ideas often face a steep learning curve in implementing chatbots due to lack of technical expertise. This AI assistant addresses that issue by simplifying the development process into intuitive conversations. It provides visual instructions, examples, templates, and hands-on walkthroughs to help users build personalized chatbots.
-    </p>
-
-    <h4>Tool Used</h4>
-    <ul>
-      <li><strong>Platform:</strong> Mizou.com</li>
-      <li><strong>Bot Name:</strong> ChatBox Creator Bot</li>
-      <li><strong>Live Preview:</strong> <a href="https://mizou.com/chatbox-creator" target="_blank" rel="noopener">Click here to preview</a></li>
-    </ul>
-
-    <h3 class="sub-title">Design Thinking Applied</h3>
-
-    <h4>Empathize</h4>
-    <p>
-      We conducted interviews with college peers, small business owners, and entrepreneurs to understand their biggest challenges in chatbot development. Most cited technical jargon, interface complexity, and uncertainty about use cases as primary barriers.
-    </p>
-
-    <h4>Define</h4>
-    <p>
-      How might we help non-coders build functional chatbots quickly and confidently without writing code?
-    </p>
-
-    <h4>Ideate</h4>
-    <ul>
-      <li>Interactive FAQ builder</li>
-      <li>Tone selector (casual, formal, friendly, etc.)</li>
-      <li>Visual flowchart previews</li>
-      <li>Multilingual templates</li>
-      <li>User success checklist</li>
-    </ul>
-
-    <h4>Prototype</h4>
-    <p>
-      Using Mizou, we implemented the core features, embedded in-chat documentation, and designed a clean UI that mimics teaching interactions.
-    </p>
-
-    <h4>Test</h4>
-    <p>
-      We conducted peer testing sessions. Based on feedback, we revised the bot’s language style, added memory features for session continuity, and integrated visual aids for better guidance. Final <strong>Mean Reciprocal Rank (MRR)</strong> performance improved to <strong>0.86</strong>.
-    </p>
-
-    <h3 class="sub-title">Audience Value</h3>
-    <ul>
-      <li><strong>Employers:</strong> Demonstrates practical skills in prompt engineering, LLM integration, chatbot UX design, and user-centric prototyping with real tools.</li>
-      <li><strong>Peers:</strong> Offers a step-by-step model for building functional chatbots through design thinking and experimentation.</li>
-      <li><strong>Instructors:</strong> Validates my understanding of generative AI tools, ethical development practices, and collaborative problem-solving.</li>
-    </ul>
-
-    <h3 class="sub-title">Reflection</h3>
-    <p>
-      Participating in this chatbot development project taught me several vital lessons:
-    </p>
-    <ul>
-      <li><strong>User-Centric Design:</strong> I learned to think beyond features and focus on how users interact with AI tools. Simplifying complexity into human-friendly interfaces was a powerful experience.</li>
-      <li><strong>Interdisciplinary Collaboration:</strong> I worked closely with peers from different backgrounds – business, tech, and design – which helped refine my communication and teamwork skills. I contributed heavily to the documentation and final presentation, ensuring clarity across technical and non-technical audiences.</li>
-      <li><strong>Iterative Learning:</strong> Early user feedback was crucial. We thought our initial version was strong, but user testing revealed gaps. Revising the tone, flow, and visuals significantly improved the final product.</li>
-    </ul>
-    <p>
-      This artifact now stands as a strong example of how I solve problems with empathy, design thinking, and AI expertise – skills I intend to apply in future data analytics and AI development roles.
-    </p>
-
-    <h3 class="sub-title">Challenges & Solutions</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Challenge</th>
-          <th>Solution</th>
-          <th>Result</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Users overwhelmed by technical language</td>
-          <td>Simplified to 8th grade reading level, used analogies</td>
-          <td>User satisfaction rose significantly</td>
-        </tr>
-        <tr>
-          <td>Text-heavy linear flow caused confusion</td>
-          <td>Added visual flowcharts and inline multimedia</td>
-          <td>Navigation became intuitive</td>
-        </tr>
-        <tr>
-          <td>New users lost at start of chatbot</td>
-          <td>Created onboarding with welcome & instructions</td>
-          <td>Onboarding completion rate increased</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3 class="sub-title">Timeline of Key Milestones</h3>
-    <div class="timeline" aria-label="Timeline of chatbot development milestones">
-      <!-- 20 timeline items -->
-      <div class="timeline-item" tabindex="0">
-        <h4>1956 - Dartmouth Conference</h4>
-        <img src="https://via.placeholder.com/300x130?text=Dartmouth+Conference" alt="Dartmouth Conference illustration" />
-        <p>AI is formally born as a research discipline. Foundation for chatbot concepts laid.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>1966 - ELIZA Chatbot Created</h4>
-        <img src="https://via.placeholder.com/300x130?text=ELIZA+Chatbot" alt="ELIZA chatbot illustration" />
-        <p>First chatbot simulating conversation with Rogerian therapist. Highlighted natural language capabilities.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>1995 - ALICE Chatbot</h4>
-        <img src="https://via.placeholder.com/300x130?text=ALICE+Chatbot" alt="ALICE chatbot illustration" />
-        <p>Introduced AIML scripting, improved conversation handling and AI interaction.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2006 - Siri Development Begins</h4>
-        <img src="https://via.placeholder.com/300x130?text=Siri+Development" alt="Siri virtual assistant" />
-        <p>Apple's voice assistant project introduces voice-based interaction, natural language understanding advances.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2014 - Amazon Alexa Launch</h4>
-        <img src="https://via.placeholder.com/300x130?text=Amazon+Alexa" alt="Amazon Alexa device" />
-        <p>Popularized smart speakers with conversational AI, expanding chatbot to home assistant roles.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2018 - Google Duplex Demo</h4>
-        <img src="https://via.placeholder.com/300x130?text=Google+Duplex" alt="Google Duplex demo" />
-        <p>AI conducts human-like phone conversations, demonstrating sophisticated dialogue systems.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2019 - GPT-2 Release</h4>
-        <img src="https://via.placeholder.com/300x130?text=GPT-2+Model" alt="GPT-2 AI model" />
-        <p>Transformer-based language model generating coherent text, boosting chatbot conversational abilities.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2020 - No-Code AI Platforms Growth</h4>
-        <img src="https://via.placeholder.com/300x130?text=No-Code+AI" alt="No-code AI platforms" />
-        <p>Platforms like Mizou allow non-technical users to create chatbots without coding.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2022 - ChatGPT Launch</h4>
-        <img src="https://via.placeholder.com/300x130?text=ChatGPT" alt="ChatGPT AI chatbot" />
-        <p>Conversational AI accessible publicly, showing remarkable human-like dialogue skills.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2024 - Multilingual & Visual Chatbots</h4>
-        <img src="https://via.placeholder.com/300x130?text=Visual+Chatbots" alt="Visual chatbot interface" />
-        <p>Integration of visual flowcharts and multi-language support in chatbots enhances usability.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2025 - ChatBox Creator Bot</h4>
-        <img src="https://via.placeholder.com/300x130?text=ChatBox+Creator+Bot" alt="ChatBox Creator Bot" />
-        <p>No-code chatbot assistant simplifies bot building for non-programmers, combining AI and design thinking.</p>
-      </div>
-      <!-- Add 9 more placeholders for a total of 20 -->
-      <div class="timeline-item" tabindex="0">
-        <h4>2025 - Ethical AI Chatbots Emphasis</h4>
-        <img src="https://via.placeholder.com/300x130?text=Ethical+AI" alt="Ethical AI" />
-        <p>Focus on bias mitigation, privacy, and transparency in chatbot design grows substantially.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2026 - AI and IoT Integration</h4>
-        <img src="https://via.placeholder.com/300x130?text=AI+IoT" alt="AI and IoT devices" />
-        <p>Chatbots embedded in smart devices create seamless interactive environments.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2027 - Emotionally Intelligent Bots</h4>
-        <img src="https://via.placeholder.com/300x130?text=Emotional+AI" alt="Emotional AI chatbot" />
-        <p>Advances in recognizing and responding to user emotions improve engagement.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2028 - Decentralized AI Assistants</h4>
-        <img src="https://via.placeholder.com/300x130?text=Decentralized+AI" alt="Decentralized AI systems" />
-        <p>Blockchain and decentralization bring data privacy and control to chatbot interactions.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2029 - AI for Accessibility</h4>
-        <img src="https://via.placeholder.com/300x130?text=AI+Accessibility" alt="AI accessibility tools" />
-        <p>AI chatbots provide enhanced assistance for users with disabilities, improving inclusion.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2030 - AI Chatbots in Education</h4>
-        <img src="https://via.placeholder.com/300x130?text=AI+Education" alt="AI in education" />
-        <p>Personalized learning bots tutor students, adapting to individual learning styles.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2031 - AI Governance Frameworks</h4>
-        <img src="https://via.placeholder.com/300x130?text=AI+Governance" alt="AI governance" />
-        <p>Global regulations define chatbot accountability, ethical use, and transparency standards.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2032 - Autonomous Conversational Agents</h4>
-        <img src="https://via.placeholder.com/300x130?text=Autonomous+Agents" alt="Autonomous conversational agents" />
-        <p>Bots begin to act autonomously in complex tasks, from customer service to personal assistants.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2033 - AI-Powered Collaborative Teams</h4>
-        <img src="https://via.placeholder.com/300x130?text=AI+Teams" alt="AI collaborative teams" />
-        <p>Chatbots integrate deeply with human teams, facilitating hybrid human-AI workflows.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>2034 - AI as a Creative Partner</h4>
-        <img src="https://via.placeholder.com/300x130?text=AI+Creative+Partner" alt="AI creative partner" />
-        <p>Chatbots co-create with humans in writing, art, music, and design fields, enabling innovation.</p>
-      </div>
-    </div>
-
-    <h3 class="sub-title">References</h3>
-    <ol>
-      <li>Botpress. (n.d.). <a href="https://botpress.com/docs" target="_blank" rel="noopener">Botpress Documentation</a>.</li>
-      <li>Chatbase. (n.d.). <a href="https://www.chatbase.co/" target="_blank" rel="noopener">Create AI Chatbots for Your Website</a>.</li>
-      <li>Dialogflow. (n.d.). <a href="https://cloud.google.com/dialogflow" target="_blank" rel="noopener">Conversational AI Platform. Google Cloud</a>.</li>
-      <li>IDEO. (n.d.). <a href="https://designthinking.ideo.com/" target="_blank" rel="noopener">Design Thinking</a>.</li>
-      <li>OpenAI. (2024). <a href="https://openai.com/gpt-4" target="_blank" rel="noopener">ChatGPT and GPT-4 Technical Capabilities Overview</a>.</li>
-      <li>Mizou. (2025). <a href="https://mizou.com" target="_blank" rel="noopener">Mizou AI Chatbot Builder</a>.</li>
-      <li>Anthropic. (2024). <a href="https://www.anthropic.com/index/claude" target="_blank" rel="noopener">Claude 3 Language Model Overview</a>.</li>
-      <li>Google DeepMind. (2024). <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener">Gemini 1.5 Technical Report</a>.</li>
-      <li>European Union. (2018). <a href="https://gdpr.eu/" target="_blank" rel="noopener">General Data Protection Regulation (GDPR)</a>.</li>
-      <li>Replit. (n.d.). <a href="https://replit.com" target="_blank" rel="noopener">Collaborative Code Workspace</a>.</li>
-    </ol>
-  </section>
-
-  <!-- Bio Section -->
-  <section id="bio" tabindex="0" aria-label="Bio section">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.
-      With over 12 years of experience in data analytics, business intelligence, and performance testing, I am expanding my expertise into AI and ML through coursework and projects.
-    </p>
-    <p>
-      I am passionate about leveraging data-driven insights and AI to solve complex problems and create innovative solutions for businesses.
-    </p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" tabindex="0" aria-label="Contact section">
-    <h2 class="section-title">Contact Me</h2>
-    <p>If you want to get in touch, feel free to reach out via email:</p>
-    <p><strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-  </section>
-
-</main>
-
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top">&uarr;</button>
-
-<script>
-  // Navigation active state
-  const navLinks = document.querySelectorAll('nav ul li a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      navLinks.forEach(l => l.classList.remove('active'));
-      e.target.classList.add('active');
-    });
-  });
-
-  // Back to top button show/hide
-  const backToTopBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      backToTopBtn.style.display = 'block';
-    } else {
-      backToTopBtn.style.display = 'none';
-    }
-  });
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-
-  // Accordion for future extension (not used now but structure ready)
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const parent = header.parentElement;
-      parent.classList.toggle('active');
-      header.setAttribute('aria-expanded', parent.classList.contains('active'));
-    });
-  });
-</script>
-
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
