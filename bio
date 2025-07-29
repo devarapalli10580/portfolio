@@ -1,130 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Naga Venkata Satyanarayana Devarapalli</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bio - Naga Venkata Satyanarayana Devarapalli</title>
+  <style>
+    /* ===== Reset & Base Styles ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      color: #222;
+    }
+    body {
+      line-height: 1.6;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    a {
+      color: #0288d1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #ff7043;
+      outline: none;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0; right: 0;
+      background: #00796b; /* Teal */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 10000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: #e0f2f1;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      cursor: default;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #e0f2f1;
+      box-shadow: inset 0 0 0 0 transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      background-color: #ff7043; /* Orange */
+      box-shadow: inset 0 -3px 0 0 #bf360c;
+      color: #fff;
+    }
+
+    /* ===== Main Content ===== */
+    main {
+      margin-top: 80px;
+      flex-grow: 1;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      background: #ffffffcc;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    /* ===== Bio Section ===== */
+    #bio {
+      border-left: 6px solid #4caf50; /* Green */
+      padding-left: 1.5rem;
+    }
+    #bio h1 {
+      font-size: 3rem;
+      color: #2e7d32;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    #bio h2 {
+      color: #00796b;
+      margin-top: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    #bio p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
+    #bio ul {
+      margin-left: 1.5rem;
+      color: #424242;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    #bio ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* ===== Contact Button ===== */
+    .btn-contact {
+      display: inline-block;
+      background-color: #ff7043; /* Orange */
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      box-shadow: 0 4px 8px rgba(255,112,67,0.6);
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 1rem;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-contact:hover {
+      background-color: #bf360c;
+      box-shadow: 0 6px 12px rgba(191,54,12,0.7);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: #004d40; /* Dark teal */
+      color: #b2dfdb;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #80cbc4;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: #ffab91;
+      text-decoration: underline;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem 1rem;
+        max-width: 95%;
+      }
+      #bio h1 {
+        font-size: 2.2rem;
+      }
+      #bio h2 {
+        font-size: 1.6rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #bio h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Naga's Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html" class="active">Bio</a></li>
-                <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
-                <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
-                <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
-                <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
-                <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- ABOUT ME -->
-    <section class="bio-section">
-        <div class="container">
-            <h1>About Me</h1>
-            <p>
-                Hello! My name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>. 
-                I am currently pursuing a <strong>Master of Science in Artificial Intelligence – Data Analytics</strong> 
-                at <em>Indiana Wesleyan University – National & Global</em>. 
-                With a strong passion for AI, Machine Learning, and Data Analytics, 
-                I am committed to applying cutting-edge technologies to solve real-world problems 
-                and contribute to innovation in data-driven decision-making.
-            </p>
+<header role="banner" aria-label="Primary Navigation">
+  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+  <nav role="navigation" aria-label="Main Navigation">
+    <a href="index.html">Home</a>
+    <a href="bio.html" class="active" aria-current="page">Bio</a>
+    <a href="artifacts/artifact1.html">Artifact 1</a>
+    <a href="artifacts/artifact2.html">Artifact 2</a>
+    <a href="artifacts/artifact3.html">Artifact 3</a>
+    <a href="artifacts/artifact4.html">Artifact 4</a>
+    <a href="artifacts/artifact5.html">Artifact 5</a>
+  </nav>
+</header>
 
-            <h2>Professional Summary</h2>
-            <p>
-                As an aspiring AI & Data Analytics professional, I have a strong foundation in:
-                <ul>
-                    <li>Data Analysis using Python, R, and SQL</li>
-                    <li>Data Visualization with Power BI and Tableau</li>
-                    <li>Machine Learning and AI model development</li>
-                    <li>Big Data Tools (Hadoop, Spark)</li>
-                </ul>
-                My professional goal is to work on projects that combine data analytics, AI models, and predictive systems 
-                to help organizations make informed decisions.
-            </p>
-        </div>
-    </section>
+<main>
+  <section id="bio" role="main" aria-label="Bio Content">
+    <h1>About Me</h1>
+    <p>
+      Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student specializing in Artificial Intelligence and Data Analytics at Indiana Wesleyan University.  
+      With a passion for data-driven problem solving and machine learning, I aim to apply advanced AI techniques to create impactful solutions.
+    </p>
 
-    <!-- EDUCATION -->
-    <section class="education-section">
-        <div class="container">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <strong>Master of Science in Artificial Intelligence – Data Analytics</strong><br>
-                    Indiana Wesleyan University – National & Global, USA
-                </li>
-                <li>
-                    <strong>Bachelor of Technology in Computer Science</strong><br>
-                    [University Name], India
-                </li>
-            </ul>
-        </div>
-    </section>
+    <h2>Educational Background</h2>
+    <p>
+      Currently pursuing a Master of Science in Artificial Intelligence – Data Analytics, I have developed strong foundational knowledge in areas such as:
+    </p>
+    <ul>
+      <li>Machine Learning & Deep Learning</li>
+      <li>Big Data Analysis and Visualization</li>
+      <li>Statistical Modeling & Predictive Analytics</li>
+      <li>Ethical AI & Responsible Data Use</li>
+      <li>Data Engineering and Pipeline Construction</li>
+    </ul>
 
-    <!-- SKILLS -->
-    <section class="skills-section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">Python</div>
-                <div class="skill-card">R</div>
-                <div class="skill-card">SQL</div>
-                <div class="skill-card">Power BI</div>
-                <div class="skill-card">Tableau</div>
-                <div class="skill-card">Machine Learning</div>
-                <div class="skill-card">Big Data Analytics</div>
-                <div class="skill-card">HTML/CSS/JavaScript</div>
-            </div>
-        </div>
-    </section>
+    <h2>Professional Experience</h2>
+    <p>
+      I have worked extensively on projects involving Power BI dashboard development, data visualization, and SQL-based data analysis in real-world business environments.  
+      My key responsibilities have included:
+    </p>
+    <ul>
+      <li>Designing and building dynamic dashboards and scorecards for business insights</li>
+      <li>Collaborating with cross-functional teams including finance and marketing to gather data requirements</li>
+      <li>Ensuring compliance with industry standards such as HIPAA and GDPR</li>
+      <li>Developing automated data pipelines and reporting tools</li>
+    </ul>
 
-    <!-- EXPERIENCE -->
-    <section class="experience-section">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <p>
-                I have worked on academic and professional projects involving:
-            </p>
-            <ul>
-                <li>Designing and developing dashboards for data-driven insights</li>
-                <li>Performing predictive modeling and trend analysis</li>
-                <li>Using AI tools for intelligent data processing</li>
-            </ul>
-        </div>
-    </section>
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>Programming Languages: Python, R, SQL, JavaScript</li>
+      <li>Data Visualization: Power BI, Tableau, matplotlib, ggplot2</li>
+      <li>Machine Learning Frameworks: TensorFlow, scikit-learn, PyTorch</li>
+      <li>Database Technologies: MySQL, PostgreSQL, MongoDB</li>
+      <li>Cloud & Big Data: AWS, Azure, Hadoop, Spark</li>
+    </ul>
 
-    <!-- GOALS -->
-    <section class="goals-section">
-        <div class="container">
-            <h2>Career Goals</h2>
-            <p>
-                My short-term goal is to work in a challenging role as a Data Analyst or AI Engineer, 
-                leveraging my technical expertise to build data-driven solutions. 
-                In the long term, I aim to lead AI innovation projects and contribute to advancements in intelligent systems.
-            </p>
-        </div>
-    </section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>Microsoft Certified: Data Analyst Associate</li>
+      <li>Google Data Analytics Professional Certificate</li>
+      <li>Certified Ethical Emerging Technologist (CEET)</li>
+    </ul>
 
-    <!-- CONTACT INFO -->
-    <section class="contact-section">
-        <div class="container">
-            <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-            <p>Location: Dallas, Texas, USA</p>
-            <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/naga-devarapalli</a></p>
-        </div>
-    </section>
+    <h2>Get In Touch</h2>
+    <p>
+      Interested in collaborating or learning more? Feel free to reach out to me.
+    </p>
+    <a href="mailto:tone_satya@yahoo.co.in" class="btn-contact" aria-label="Email Naga Venkata Satyanarayana Devarapalli">Email Me</a>
+  </section>
+</main>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved</p>
-    </footer>
+<footer role="contentinfo">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
+  <p>
+    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
+    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
+    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+  </p>
+</footer>
+
+<script>
+  // Highlight active nav link based on URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
