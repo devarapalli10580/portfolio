@@ -3,553 +3,539 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</title>
+<title>Professional Portfolio Artifact 4 - Data Challenge Scenarios</title>
 <style>
-  /* ============ Reset and base styles ============ */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+  /* --- Base styles --- */
+  *, *::before, *::after { box-sizing: border-box; }
   body {
-    margin: 0; padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f7f8fa;
-    color: #222;
-    line-height: 1.6;
-  }
-  a {
-    color: #d35400; /* Orange accent */
-    text-decoration: none;
-  }
-  a:hover, a:focus {
-    text-decoration: underline;
-  }
-  h1,h2,h3,h4,h5,h6 {
-    margin: 0 0 1rem 0;
-    font-weight: 700;
-    color: #2c3e50; /* Dark slate */
-  }
-  p {
-    margin: 0 0 1rem 0;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  /* ============ Layout containers ============ */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 4rem;
-  }
-  /* ============ Header & Nav ============ */
-  header {
-    position: sticky;
-    top: 0;
-    background-color: #ecf0f1;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    z-index: 1000;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  nav .logo {
-    font-weight: 800;
-    font-size: 1.4rem;
-    color: #e67e22; /* Orange */
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.3rem;
-  }
-  nav ul li {
-    font-weight: 600;
-  }
-  nav ul li a {
-    font-size: 1rem;
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  nav ul li a:hover,
-  nav ul li a.active {
-    background-color: #d35400;
-    color: white;
-  }
-  /* ============ Hero Banner ============ */
-  #home {
-    background: linear-gradient(120deg, #f39c12, #e67e22);
-    color: #fff;
-    padding: 5rem 1rem 6rem 1rem;
-    text-align: center;
-    border-radius: 0 0 60% 60% / 10% 10% 90% 90%;
-    box-shadow: inset 0 0 50px #e67e22cc;
-  }
-  #home h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-  #home p {
-    font-size: 1.4rem;
-    max-width: 700px;
-    margin: 0 auto 1.5rem auto;
-  }
-  #home .cta-button {
-    font-size: 1.2rem;
-    background-color: #27ae60;
-    border: none;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.6);
-    transition: background-color 0.3s ease;
-  }
-  #home .cta-button:hover,
-  #home .cta-button:focus {
-    background-color: #1e8449;
-    outline: none;
-  }
-  /* ============ Section Styling ============ */
-  section {
-    margin-top: 3rem;
-    padding-bottom: 2rem;
-  }
-  section h2 {
-    font-size: 2.3rem;
-    border-bottom: 3px solid #e67e22;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1.5rem;
-  }
-  section h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.7rem;
-    color: #34495e;
-  }
-  /* ============ Artifact Content Styling ============ */
-  .artifact-content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px #e1e1e1;
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
-  .artifact-section {
-    margin-bottom: 2.5rem;
-  }
-  /* Collapsible container */
-  details {
     background-color: #fafafa;
-    border-radius: 6px;
-    padding: 1rem 1.3rem;
-    margin-bottom: 1.4rem;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    margin: 0; padding: 1rem 2rem 6rem 2rem;
+    color: #222;
+    max-width: 960px; margin-left: auto; margin-right: auto;
+    line-height: 1.65;
+  }
+  h1,h2,h3,h4 {
+    font-weight: 700; color: #2e4053; margin-top: 2rem; margin-bottom: 1rem;
+  }
+  h1 { font-size: 3rem; color: #d35400; text-align: center; margin-top: 3rem; }
+  h2 { font-size: 2.2rem; border-bottom: 3px solid #d35400; padding-bottom: 0.3rem; }
+  h3 { font-size: 1.6rem; color: #34495e; }
+  h4 { font-size: 1.3rem; margin-top: 1rem; margin-bottom: 0.5rem; color: #5d6d7e; }
+  p { margin-bottom: 1.1rem; font-size: 1.05rem; }
+  ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+  ul li { margin-bottom: 0.5rem; }
+  a { color: #d35400; text-decoration: none; }
+  a:hover, a:focus { text-decoration: underline; }
+  blockquote {
+    margin-left: 1rem; margin-bottom: 1.5rem;
+    border-left: 5px solid #d35400; padding-left: 1rem;
+    color: #666; font-style: italic;
+    background-color: #fff5e6;
+  }
+  code, pre {
+    font-family: Consolas, Monaco, monospace;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+  }
+  code { padding: 0.15rem 0.3rem; }
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  /* Collapsible details */
+  details {
+    background: #fef6f0;
+    border: 1px solid #d35400;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 1px 1px 5px rgba(211, 84, 0, 0.15);
   }
   details summary {
     font-weight: 700;
-    font-size: 1.2rem;
     cursor: pointer;
     outline: none;
-  }
-  details[open] summary {
-    color: #d35400;
+    font-size: 1.1rem;
   }
   details p, details ul {
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    margin-top: 0.7rem;
   }
-  details ul {
-    list-style: disc inside;
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
   }
-  /* ============ Responsive Grid for Skills and Lists ============ */
-  .skill-list, .challenge-list, .audience-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 1rem;
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.7rem 1rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #d35400;
+    color: white;
+  }
+  /* Navigation sidebar */
+  nav {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    width: 240px;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    padding: 1.5rem 1.2rem;
+    overflow-y: auto;
+  }
+  nav h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #d35400;
+  }
+  nav ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 0;
+    margin-top: 1rem;
   }
-  .skill-list li, .challenge-list li, .audience-list li {
-    background: #f5f7fa;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px #ddd;
+  nav ul li {
+    margin-bottom: 1rem;
   }
-  /* ============ Button Styling ============ */
-  button.toggle-mode {
+  nav ul li a {
+    font-weight: 600;
+    color: #34495e;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+  nav ul li a:hover, nav ul li a:focus {
+    color: #d35400;
+    text-decoration: underline;
+  }
+  /* Main content margin */
+  main {
+    margin-left: 260px;
+    padding: 1rem 3rem 6rem 3rem;
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    nav {
+      position: static;
+      width: 100%;
+      height: auto;
+      box-shadow: none;
+      padding-bottom: 1rem;
+    }
+    main {
+      margin-left: 0;
+      padding: 1rem 1rem 4rem 1rem;
+    }
+  }
+  /* Button back to top */
+  #backToTop {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #27ae60;
-    border: none;
-    border-radius: 50%;
-    padding: 0.6rem 0.7rem;
-    font-size: 1.4rem;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(39,174,96,0.6);
-    transition: background-color 0.3s ease;
-    z-index: 1100;
-  }
-  button.toggle-mode:hover {
-    background-color: #1e8449;
-  }
-  /* Back to top button */
-  #back-to-top {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 5rem;
-    background-color: #e67e22;
-    color: #fff;
+    right: 2rem;
+    bottom: 2rem;
+    background-color: #d35400;
     border: none;
     border-radius: 50%;
     width: 45px;
     height: 45px;
-    font-size: 1.6rem;
+    color: white;
+    font-size: 1.7rem;
     cursor: pointer;
-    box-shadow: 0 4px 10px #d35400cc;
+    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.8);
     display: none;
-    z-index: 1100;
     transition: background-color 0.3s ease;
   }
-  #back-to-top:hover {
-    background-color: #ca6e1f;
+  #backToTop:hover {
+    background-color: #a84100;
   }
-  /* ============ Footer ============ */
-  footer {
-    background: #2c3e50;
+  /* Transcript chat style */
+  .chat-transcript {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .chat-msg {
+    margin-bottom: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 15px;
+    max-width: 75%;
+  }
+  .chat-user {
+    background-color: #d35400;
     color: white;
-    text-align: center;
-    padding: 1.4rem 1rem;
-    margin-top: 4rem;
-    font-size: 0.9rem;
+    align-self: flex-end;
+    margin-left: auto;
   }
-  /* ============ Responsive Adjustments ============ */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    #home h1 {
-      font-size: 2.2rem;
-    }
-    #home p {
-      font-size: 1.1rem;
-    }
+  .chat-bot {
+    background-color: #eee;
+    color: #222;
+    align-self: flex-start;
+  }
+  .chat-msg-container {
+    display: flex;
+    flex-direction: column;
   }
 </style>
 </head>
 <body>
-<header role="banner">
-  <nav role="navigation" aria-label="Primary Navigation">
-    <div class="logo" tabindex="0">Naga Venkata S. Devarapalli</div>
-    <ul>
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#bio" class="nav-link">Bio</a></li>
-      <li><a href="#artifact1" class="nav-link">Artifact 1</a></li>
-      <li><a href="#artifact2" class="nav-link">Artifact 2</a></li>
-      <li><a href="#artifact3" class="nav-link">Artifact 3</a></li>
-      <li><a href="#artifact4" class="nav-link">Artifact 4</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
-</header>
 
-<main class="container" tabindex="0">
+<nav aria-label="Artifact 4 Navigation">
+  <h2>Artifact 4 Navigation</h2>
+  <ul>
+    <li><a href="#introduction">Introduction & Overview</a></li>
+    <li><a href="#assignment-context">Assignment Context & Purpose</a></li>
+    <li><a href="#methodology-tools">Methodology & Tools Used</a></li>
+    <li><a href="#scenario1">Scenario 1: Data Quality Challenges</a></li>
+    <li><a href="#scenario1-transcript">Scenario 1 Transcript & Analysis</a></li>
+    <li><a href="#scenario2">Scenario 2: Bias and Fairness</a></li>
+    <li><a href="#scenario2-transcript">Scenario 2 Transcript & Analysis</a></li>
+    <li><a href="#scenario3">Scenario 3: Data Privacy & Security</a></li>
+    <li><a href="#scenario3-transcript">Scenario 3 Transcript & Analysis</a></li>
+    <li><a href="#data-processing">Data Processing & Cleaning Techniques</a></li>
+    <li><a href="#bias-privacy">Bias, Privacy & Security Challenges</a></li>
+    <li><a href="#reflections">Reflections & Learnings</a></li>
+    <li><a href="#future-directions">Future Directions & Improvements</a></li>
+    <li><a href="#audience-value">Audience Value & Use Cases</a></li>
+    <li><a href="#glossary">Glossary of Key Terms</a></li>
+    <li><a href="#references">References & Resources</a></li>
+  </ul>
+</nav>
 
-  <!-- Home Section -->
-  <section id="home" tabindex="0" aria-label="Home Section">
-    <h1>Welcome to My Professional Portfolio</h1>
-    <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. Explore my journey through AI and Machine Learning projects, learning experiences, and reflections.</p>
-    <button class="cta-button" onclick="document.getElementById('artifact1').scrollIntoView({behavior:'smooth'});">Explore Artifact 1</button>
-  </section>
+<main>
+  <h1>Professional Portfolio Artifact 4</h1>
+  <h2 id="introduction">Introduction & Overview</h2>
+  <p>
+    This artifact documents my detailed engagement with the <strong>Data Challenge Scenarios Coach</strong>, an AI-powered chatbot designed to simulate real-world challenges that data scientists and machine learning practitioners face. By interacting with this bot through a structured conversation, I was able to explore issues related to data quality, bias, privacy, and security in machine learning workflows.
+  </p>
+  <p>
+    The purpose of this exercise was to deepen my understanding of practical data challenges and develop critical thinking skills necessary to design responsible, accurate, and fair AI systems.
+  </p>
 
-  <!-- Bio Section -->
-  <section id="bio" tabindex="0" aria-label="Bio Section">
-    <h2>About Me</h2>
-    <div class="artifact-content">
-      <p>Hello! I am a passionate AI enthusiast with a solid foundation in data analytics, business intelligence, and machine learning. With over 12 years of professional experience, I am expanding my skills through graduate coursework and hands-on projects in AI/ML. My goal is to apply data-driven insights to solve complex business challenges and innovate in AI applications.</p>
-      <p>I specialize in creating intelligent systems that integrate machine learning with practical business needs, focusing on ethical AI development and effective communication.</p>
-      <p>This portfolio highlights key artifacts representing my technical skills, design thinking, problem-solving ability, and AI knowledge.</p>
+  <h2 id="assignment-context">Assignment Context & Purpose</h2>
+  <p>
+    As part of Workshop 4, Assignment 4.3 required me to interact with an AI coach that presents various real-world data problems through three immersive scenarios. These scenarios are designed to mimic the complex decision-making processes that professionals encounter when preparing data for machine learning projects.
+  </p>
+  <p>
+    The assignment aimed to foster:
+  </p>
+  <ul>
+    <li>Critical evaluation of data processing techniques</li>
+    <li>Understanding of ethical concerns in AI development</li>
+    <li>Application of privacy and security best practices</li>
+    <li>Active learning through conversational AI tools</li>
+  </ul>
+  <p>
+    This artifact captures my dialogue with the chatbot, my analytical responses, and reflections on the lessons learned.
+  </p>
+
+  <h2 id="methodology-tools">Methodology & Tools Used</h2>
+  <p>
+    The Data Challenge Scenarios Coach is accessed online at SchoolAI.com, a platform for AI-assisted learning. This interactive chatbot guides users through tailored questions, evaluates answers in real-time, and encourages iterative learning.
+  </p>
+  <p>
+    I approached the assignment with an inquiry-based learning strategy:
+  </p>
+  <ul>
+    <li>Progressively deepening questions from basic to advanced</li>
+    <li>Requesting practical examples and clarifications</li>
+    <li>Critically assessing limitations and edge cases</li>
+    <li>Connecting theory to real-world applications</li>
+  </ul>
+  <p>
+    Supplementary tools included Python (for prototyping cleaning techniques), Jupyter notebooks for experimentation, and scholarly resources to inform fairness and privacy concepts.
+  </p>
+
+  <h2 id="scenario1">Scenario 1: Data Quality Challenges</h2>
+  <p><strong>Scenario Overview:</strong> The chatbot presented a dataset characterized by missing values, inconsistent entries, outliers, and noisy data. My task was to devise strategies to clean and prepare this data for effective machine learning.</p>
+
+  <h3>Detailed Transcript Excerpt</h3>
+  <div class="chat-transcript" aria-label="Chatbot transcript for scenario 1">
+    <div class="chat-msg-container">
+      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> Welcome to Scenario 1. You are given a dataset with multiple missing values and several outliers. What steps would you take to clean this data?</div>
+      <div class="chat-user chat-msg">I would start by analyzing the extent and pattern of missingness. For missing values, if less than 5% of data is missing, I might remove those rows. Otherwise, I would consider imputation methods.</div>
+      <div class="chat-bot chat-msg">Good. Which imputation methods would you consider and why?</div>
+      <div class="chat-user chat-msg">For numerical data, mean or median imputation could work, depending on skewness. For categorical data, the mode or a new category might be used. Predictive imputation with models could be used for more accuracy.</div>
+      <div class="chat-bot chat-msg">Excellent. How about outliers? How would you detect and handle them?</div>
+      <div class="chat-user chat-msg">I would use statistical methods like z-score and IQR to detect outliers. Visualization tools like box plots help. Depending on their nature, I might cap or remove outliers, or transform data.</div>
+      <div class="chat-bot chat-msg">Well done. How do you ensure consistent data formats?</div>
+      <div class="chat-user chat-msg">I would standardize date formats, unify categorical labels (e.g., “NY” vs “New York”), and check encoding schemes for categorical variables.</div>
     </div>
-  </section>
+  </div>
 
-  <!-- Artifact 1 Section -->
-  <section id="artifact1" tabindex="0" aria-label="Artifact 1 Section">
-    <h2>Professional Portfolio Artifact 1</h2>
-    <div class="artifact-content">
-      <div class="artifact-section" id="a1-intro">
-        <h3>Introduction</h3>
-        <p>Hello, my name is <strong>Naga Venkata Satyanarayana Devarapalli</strong>, and I am a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. This artifact presents my work on an AI Lab project focused on developing a no-code chatbot assistant to empower users without programming skills.</p>
-        <p>This project involved ideation, design, and testing phases, emphasizing design thinking and prompt engineering. The goal was to simplify chatbot creation for non-technical users.</p>
-      </div>
+  <h3>Python Code Example for Missing Value Imputation</h3>
+  <pre><code>import pandas as pd
+from sklearn.impute import SimpleImputer
 
-      <div class="artifact-section" id="a1-description">
-        <h3>Artifact Description</h3>
-        <p><strong>Project:</strong> ChatBox Creator Bot on Mizou.com</p>
-        <p>This chatbot assistant guides users through creating custom chatbots using conversational steps, templates, tone selection, and visual flow design. It targets beginners and small business owners aiming to adopt AI chatbots quickly.</p>
-        <p>The platform removes technical barriers by enabling intuitive, no-code development.</p>
-      </div>
+# Load data
+data = pd.read_csv('dataset.csv')
 
-      <div class="artifact-section" id="a1-problem">
-        <h3>Problem Solved</h3>
-        <p>Many innovative individuals face hurdles building chatbots due to lack of coding skills. This AI assistant addresses that gap by offering visual instructions, examples, and walkthroughs to facilitate personalized chatbot creation.</p>
-      </div>
+# Identify columns with missing data
+missing_cols = data.columns[data.isnull().any()]
 
-      <div class="artifact-section" id="a1-tools">
-        <h3>Tools Used</h3>
-        <ul class="skill-list">
-          <li>Mizou.com (No-code chatbot platform)</li>
-          <li>React.js & Node.js (Frontend/backend)</li>
-          <li>Natural Language Processing APIs</li>
-          <li>AI prompt engineering techniques</li>
-        </ul>
-      </div>
+# Impute numerical columns with median
+num_cols = data.select_dtypes(include=['float64', 'int']).columns
+imputer_num = SimpleImputer(strategy='median')
+data[num_cols] = imputer_num.fit_transform(data[num_cols])
 
-      <div class="artifact-section" id="a1-design-thinking">
-        <h3>Design Thinking Process</h3>
-        <details>
-          <summary>Empathize</summary>
-          <p>Interviewed peers and business owners to identify chatbot creation challenges, focusing on interface complexity and jargon barriers.</p>
-        </details>
-        <details>
-          <summary>Define</summary>
-          <p>Formulated the challenge: How to enable non-coders to build chatbots easily?</p>
-        </details>
-        <details>
-          <summary>Ideate</summary>
-          <p>Brainstormed features like FAQ builders, tone selectors, flowchart previews, multilingual templates, and checklists.</p>
-        </details>
-        <details>
-          <summary>Prototype</summary>
-          <p>Built a working version with core features on Mizou with embedded documentation.</p>
-        </details>
-        <details>
-          <summary>Test</summary>
-          <p>Conducted peer tests and refined based on feedback, improving interaction flow and visual aids.</p>
-        </details>
-      </div>
+# Impute categorical columns with mode
+cat_cols = data.select_dtypes(include=['object']).columns
+imputer_cat = SimpleImputer(strategy='most_frequent')
+data[cat_cols] = imputer_cat.fit_transform(data[cat_cols])
 
-      <div class="artifact-section" id="a1-reflection">
-        <h3>Reflection</h3>
-        <p>This project taught me the value of user-centric design, interdisciplinary collaboration, and iterative improvement based on user feedback. Simplifying technical complexity into friendly AI experiences is key to adoption.</p>
-      </div>
+print("Missing values handled successfully.")</code></pre>
 
-      <div class="artifact-section" id="a1-feedback">
-        <h3>Feedback and Revisions</h3>
-        <table border="1" style="border-collapse: collapse; width: 100%; margin-top: 1rem;">
-          <thead>
-            <tr style="background-color: #f39c12; color: white;">
-              <th>Feedback Area</th>
-              <th>Initial Issue</th>
-              <th>Action Taken</th>
-              <th>Result</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Language Complexity</td>
-              <td>Users found the language too technical.</td>
-              <td>Simplified to 8th-grade reading level, added analogies.</td>
-              <td>User satisfaction increased significantly.</td>
-            </tr>
-            <tr>
-              <td>Visual Flow</td>
-              <td>Confusing conversation flow.</td>
-              <td>Added inline flowcharts and multimedia elements.</td>
-              <td>Improved user engagement and understanding.</td>
-            </tr>
-            <tr>
-              <td>Onboarding</td>
-              <td>New users felt lost initially.</td>
-              <td>Implemented a welcome sequence with instructions.</td>
-              <td>Higher completion rates and better feedback.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <h3>Scenario 1 Analysis</h3>
+  <p>
+    This scenario reinforced foundational concepts of exploratory data analysis and preprocessing. Understanding the context behind missing values is crucial—blind deletion may bias the dataset, while imputation strategies must align with the data distribution. Outliers require domain expertise to decide whether they are errors or valid extreme cases.
+  </p>
+  <p>
+    Automated tools are helpful but human insight remains essential in data cleaning.
+  </p>
 
-      <div class="artifact-section" id="a1-references">
-        <h3>References</h3>
-        <ul>
-          <li>Botpress Documentation - https://botpress.com/docs</li>
-          <li>Chatbase AI Chatbots - https://www.chatbase.co/</li>
-          <li>Dialogflow by Google Cloud - https://cloud.google.com/dialogflow</li>
-          <li>IDEO Design Thinking - https://designthinking.ideo.com/</li>
-          <li>OpenAI GPT-4 Technical Overview - https://openai.com/gpt-4</li>
-          <li>Mizou AI Chatbot Builder - https://mizou.com</li>
-          <li>Anthropic Claude 3 - https://www.anthropic.com/index/claude</li>
-          <li>Google DeepMind Gemini 1.5 - https://deepmind.google/technologies/gemini/</li>
-          <li>GDPR Compliance - https://gdpr.eu/</li>
-          <li>Replit Collaborative Workspace - https://replit.com</li>
-        </ul>
-      </div>
+  <h2 id="scenario2">Scenario 2: Bias and Fairness in Data</h2>
+  <p><strong>Scenario Overview:</strong> Presented with a dataset exhibiting demographic imbalances, I was asked to identify sources of bias and recommend mitigation strategies.</p>
+
+  <h3>Detailed Transcript Excerpt</h3>
+  <div class="chat-transcript" aria-label="Chatbot transcript for scenario 2">
+    <div class="chat-msg-container">
+      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> The dataset has an underrepresentation of certain ethnic groups. What types of bias might be present?</div>
+      <div class="chat-user chat-msg">Sampling bias due to unequal representation, measurement bias if data quality varies by group, and historical bias embedded in the data collection process.</div>
+      <div class="chat-bot chat-msg">Correct. How can you mitigate such bias?</div>
+      <div class="chat-user chat-msg">By rebalancing data through oversampling minorities or undersampling majorities, using fairness-aware algorithms, and carefully selecting features to avoid proxy variables.</div>
+      <div class="chat-bot chat-msg">How do you evaluate model fairness?</div>
+      <div class="chat-user chat-msg">By applying metrics such as demographic parity, equal opportunity difference, and monitoring model outputs continuously for disparate impact.</div>
     </div>
-  </section>
+  </div>
 
-  <!-- Artifact 2 Section -->
-  <section id="artifact2" tabindex="0" aria-label="Artifact 2 Section">
-    <h2>Professional Portfolio Artifact 2</h2>
-    <div class="artifact-content">
-      <!-- Placeholder content for brevity -->
-      <h3>Evolution of Artificial Intelligence and Machine Learning – Timeline Presentation</h3>
-      <p>This artifact presents an interactive visual timeline tracing AI and ML’s history, from the Dartmouth Conference to generative AI models and ethical concerns.</p>
-      <p>Key skills demonstrated include research, data visualization using Canva and Google Slides, and ethical analysis.</p>
-      <p>Artifact 2 deepened my understanding of AI’s evolution and provided strategic context for technical innovation.</p>
-      <!-- More detailed content omitted for brevity in this snippet -->
+  <h3>Fairness Evaluation Metrics Table</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Description</th>
+        <th>Use Case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Demographic Parity</td>
+        <td>Equal positive prediction rates across groups</td>
+        <td>Ensures no group is favored or disfavored in predictions</td>
+      </tr>
+      <tr>
+        <td>Equalized Odds</td>
+        <td>Equal true positive and false positive rates across groups</td>
+        <td>Balances fairness for both positive and negative outcomes</td>
+      </tr>
+      <tr>
+        <td>Disparate Impact</td>
+        <td>Ratio of favorable outcomes between groups</td>
+        <td>Assesses potential discrimination against protected groups</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Scenario 2 Code Snippet: Oversampling Minority Class using Python (Imbalanced-learn)</h3>
+  <pre><code>from imblearn.over_sampling import SMOTE
+from collections import Counter
+import pandas as pd
+
+# Load dataset
+data = pd.read_csv('imbalanced_data.csv')
+X = data.drop('target', axis=1)
+y = data['target']
+
+print('Original dataset shape %s' % Counter(y))
+
+sm = SMOTE(random_state=42)
+X_res, y_res = sm.fit_resample(X, y)
+
+print('Resampled dataset shape %s' % Counter(y_res))</code></pre>
+
+  <h3>Scenario 2 Analysis</h3>
+  <p>
+    Fairness is a complex, multi-faceted challenge. No single metric or technique solves bias completely; rather, a combination of data balancing, algorithmic adjustments, and continuous monitoring is needed. Understanding the societal context behind data is essential to prevent perpetuating systemic inequalities.
+  </p>
+
+  <h2 id="scenario3">Scenario 3: Data Privacy and Security</h2>
+  <p><strong>Scenario Overview:</strong> This scenario focused on challenges related to sensitive personal data, regulatory compliance, and protecting data in AI applications.</p>
+
+  <h3>Detailed Transcript Excerpt</h3>
+  <div class="chat-transcript" aria-label="Chatbot transcript for scenario 3">
+    <div class="chat-msg-container">
+      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> Your dataset contains sensitive health data. How do you ensure privacy compliance?</div>
+      <div class="chat-user chat-msg">I would anonymize or pseudonymize data, encrypt storage and transit, and implement access controls following GDPR and HIPAA regulations.</div>
+      <div class="chat-bot chat-msg">How can you share data with partners securely?</div>
+      <div class="chat-user chat-msg">By using federated learning or secure multi-party computation to avoid sharing raw data, and by applying strict data use agreements.</div>
+      <div class="chat-bot chat-msg">What techniques can protect privacy in machine learning?</div>
+      <div class="chat-user chat-msg">Differential privacy to add noise, homomorphic encryption, and limiting data retention periods.</div>
     </div>
-  </section>
+  </div>
 
-  <!-- Artifact 3 Section -->
-  <section id="artifact3" tabindex="0" aria-label="Artifact 3 Section">
-    <h2>Professional Portfolio Artifact 3</h2>
-    <div class="artifact-content">
-      <h3>SchoolAI-Assisted Learning Experience</h3>
-      <p>This artifact documents my interactive learning session with the SchoolAI chatbot, exploring machine learning training methods and inquiry-based learning strategies.</p>
-      <p>Focus was on critical thinking, question structuring, and ethical AI considerations.</p>
-      <p>The artifact highlights my ability to engage meaningfully with AI for practical learning.</p>
-    </div>
-  </section>
+  <h3>Privacy Protection Techniques Overview</h3>
+  <ul>
+    <li><strong>Differential Privacy:</strong> Adds statistical noise to data queries to prevent identification of individuals.</li>
+    <li><strong>Federated Learning:</strong> Models train on data locally on devices, only sharing model updates.</li>
+    <li><strong>Homomorphic Encryption:</strong> Enables computations on encrypted data without decrypting it.</li>
+    <li><strong>Access Control:</strong> Role-based permissions limit data exposure.</li>
+    <li><strong>Data Minimization:</strong> Collect only data necessary for the task.</li>
+  </ul>
 
-  <!-- Artifact 4 Section -->
-  <section id="artifact4" tabindex="0" aria-label="Artifact 4 Section">
-    <h2>Professional Portfolio Artifact 4</h2>
-    <div class="artifact-content">
+  <h3>Scenario 3 Code Example: Simple Pseudonymization</h3>
+  <pre><code>import hashlib
+import pandas as pd
 
-      <div class="artifact-section" id="a4-intro">
-        <h3>Introduction</h3>
-        <p>This artifact documents my experience with the <strong>Data Challenge Scenarios Coach</strong>, an AI chatbot designed to guide learners through realistic data challenges in machine learning. Through interactive dialogue, I explored issues such as data quality, bias, privacy, and security—developing problem-solving strategies relevant to the field.</p>
-      </div>
+def pseudonymize(value):
+    return hashlib.sha256(value.encode()).hexdigest()
 
-      <div class="artifact-section" id="a4-assignment-overview">
-        <h3>Assignment Overview</h3>
-        <p>The 4.3 assignment focused on understanding common data problems faced by data scientists and ML practitioners. The goal was to deepen knowledge of data processing, cleaning, sharing, privacy, and scalability challenges through active interaction with an AI coach.</p>
-        <p>Engaging with the chatbot allowed personalized, adaptive learning with real-time feedback and safe experimentation in a private environment.</p>
-      </div>
+data = pd.read_csv('sensitive_data.csv')
 
-      <div class="artifact-section" id="a4-chatbot-experience">
-        <h3>Chatbot Interaction Experience</h3>
-        <p>I accessed the Data Challenge Scenarios Coach via the provided SchoolAI link and engaged in a series of scenario-based dialogues. The AI posed challenging questions about data preparation, ethical use, and technical constraints, prompting me to reflect critically and apply ML concepts.</p>
-        <p>The chatbot’s instant feedback and clarifications supported progressive understanding, allowing me to explore difficult topics at my own pace and revisit concepts as needed.</p>
-      </div>
+# Apply pseudonymization on sensitive column
+data['patient_id_hashed'] = data['patient_id'].apply(pseudonymize)
 
-      <div class="artifact-section" id="a4-key-learnings">
-        <h3>Key Learnings</h3>
-        <ul class="skill-list">
-          <li><strong>Data Processing & Cleaning:</strong> Identifying missing values, outliers, and normalization techniques.</li>
-          <li><strong>Bias & Fairness:</strong> Recognizing sources of bias and mitigation strategies in datasets.</li>
-          <li><strong>Privacy & Security:</strong> Understanding encryption, anonymization, and regulatory compliance (GDPR, FERPA).</li>
-          <li><strong>Scalability Challenges:</strong> Managing large datasets and computational constraints.</li>
-          <li><strong>Ethical AI Use:</strong> Balancing innovation with societal responsibility.</li>
-        </ul>
-      </div>
+# Drop original sensitive column
+data.drop(columns=['patient_id'], inplace=True)
 
-      <div class="artifact-section" id="a4-challenges-solved">
-        <h3>Challenges Addressed & Solutions</h3>
-        <details>
-          <summary>Handling Missing Data</summary>
-          <p>Learned methods such as imputation, deletion, and model-based approaches for dealing with incomplete datasets.</p>
-        </details>
-        <details>
-          <summary>Mitigating Dataset Bias</summary>
-          <p>Explored sampling techniques, fairness-aware algorithms, and continuous monitoring to reduce bias impact.</p>
-        </details>
-        <details>
-          <summary>Privacy-Preserving Data Sharing</summary>
-          <p>Reviewed data anonymization, encryption, and policies to ensure compliance with data protection laws.</p>
-        </details>
-        <details>
-          <summary>Ensuring Data Security</summary>
-          <p>Studied best practices including access control, secure storage, and audit trails to protect sensitive information.</p>
-        </details>
-      </div>
+print("Pseudonymization complete.")</code></pre>
 
-      <div class="artifact-section" id="a4-reflection">
-        <h3>Reflection</h3>
-        <p>This interactive experience enhanced my practical understanding of data challenges in ML workflows. It highlighted the importance of rigorous data management and ethical responsibility in AI projects.</p>
-        <p>Engaging with an AI coach strengthened my critical thinking and adaptive learning skills, preparing me for real-world AI deployments where data issues are inevitable.</p>
-      </div>
+  <h3>Scenario 3 Analysis</h3>
+  <p>
+    Ensuring data privacy in AI applications is paramount, especially when dealing with sensitive or regulated information. Implementing layered security approaches, adhering to legal frameworks, and maintaining transparency about data use build trust and safeguard individuals.
+  </p>
 
-      <div class="artifact-section" id="a4-audience-value">
-        <h3>Audience Value</h3>
-        <ul class="audience-list">
-          <li><strong>Employers:</strong> Demonstrates my problem-solving abilities, data literacy, and ethical awareness crucial for AI roles.</li>
-          <li><strong>Peers and Students:</strong> Provides insights into navigating practical data issues, supporting collaborative learning.</li>
-          <li><strong>Instructors:</strong> Shows engagement with advanced learning tools and critical reflection on AI ethics and data challenges.</li>
-        </ul>
-      </div>
+  <h2 id="data-processing">Data Processing & Cleaning Techniques</h2>
+  <p>
+    From the scenarios, I applied several data cleaning best practices:
+  </p>
+  <ul>
+    <li>Exploratory Data Analysis (EDA) to identify issues</li>
+    <li>Imputation for missing data using statistical and model-based methods</li>
+    <li>Outlier detection and management with domain knowledge</li>
+    <li>Standardization of data formats and encodings</li>
+    <li>Feature scaling to normalize ranges</li>
+  </ul>
+  <p>
+    The following pseudocode summarizes a robust data cleaning pipeline:
+  </p>
+  <pre><code># Pseudocode for Data Cleaning Pipeline
+def clean_data(df):
+    # 1. Identify missing values and impute
+    for col in df.columns:
+        if has_missing(df[col]):
+            if is_numeric(df[col]):
+                df[col] = impute_median(df[col])
+            else:
+                df[col] = impute_mode(df[col])
+    # 2. Detect outliers using IQR
+    for col in numeric_columns(df):
+        outliers = detect_outliers_iqr(df[col])
+        df = handle_outliers(df, col, outliers)
+    # 3. Standardize categorical values
+    df = standardize_categories(df)
+    # 4. Scale numeric features
+    df = scale_features(df)
+    return df
+</code></pre>
 
-      <div class="artifact-section" id="a4-instructions">
-        <h3>Assignment Instructions Summary</h3>
-        <p>The assignment required interacting with the AI chatbot at <a href="https://student.schoolai.com/student-space?code=0UBU" target="_blank" rel="noopener noreferrer">SchoolAI Data Challenge Coach</a> and documenting the learning process.</p>
-        <p>I submitted the chat data URL to the instructor for evaluation; no Brightspace submission was necessary.</p>
-      </div>
+  <h2 id="bias-privacy">Bias, Privacy & Security Challenges</h2>
+  <p>
+    This exercise deepened my understanding of the complex interplay between:
+  </p>
+  <ul>
+    <li><strong>Bias:</strong> How data collection and model design can perpetuate unfairness.</li>
+    <li><strong>Privacy:</strong> Regulatory requirements like GDPR necessitating careful handling.</li>
+    <li><strong>Security:</strong> Protecting data from breaches and unauthorized access.</li>
+  </ul>
+  <p>
+    Successfully addressing these requires a holistic approach combining technical, legal, and ethical strategies.
+  </p>
 
-      <div class="artifact-section" id="a4-references">
-        <h3>References</h3>
-        <ul>
-          <li>SchoolAI Data Challenge Scenarios Coach - https://student.schoolai.com/student-space?code=0UBU</li>
-          <li>General Data Protection Regulation (GDPR) - https://gdpr.eu/</li>
-          <li>FERPA Compliance Information - https://studentprivacy.ed.gov/</li>
-          <li>Scikit-learn Documentation (Python ML) - https://scikit-learn.org/</li>
-          <li>Bias in Machine Learning - Barocas, Hardt, Narayanan, 2019.</li>
-          <li>Data Cleaning Techniques - Kotsiantis et al., 2006.</li>
-          <li>Privacy Preserving Machine Learning - Abadi et al., 2016.</li>
-        </ul>
-      </div>
+  <h2 id="reflections">Reflections & Learnings</h2>
+  <p>
+    Engaging with the Data Challenge Scenarios Coach was a highly valuable experience. The interactive format encouraged active learning and allowed me to test my knowledge in a risk-free environment. I particularly appreciated:
+  </p>
+  <ul>
+    <li>The immediate feedback and probing questions that pushed deeper analysis.</li>
+    <li>The ability to explore edge cases and real-world complexities.</li>
+    <li>Understanding the importance of data context beyond just numbers.</li>
+  </ul>
+  <p>
+    I recognize that AI and ML development is not purely technical but requires ongoing ethical vigilance, especially when working with human-centered data.
+  </p>
 
-    </div>
-  </section>
+  <h2 id="future-directions">Future Directions & Improvements</h2>
+  <p>
+    Moving forward, I plan to:
+  </p>
+  <ul>
+    <li>Implement advanced bias detection tools in my projects.</li>
+    <li>Explore privacy-enhancing technologies such as federated learning in depth.</li>
+    <li>Develop workflows that integrate ethical AI checks as standard practice.</li>
+    <li>Engage with community efforts around AI fairness and transparency.</li>
+  </ul>
 
-  <!-- Contact Section -->
-  <section id="contact" tabindex="0" aria-label="Contact Section">
-    <h2>Contact Me</h2>
-    <div class="artifact-content">
-      <p>If you'd like to connect or discuss AI/ML projects, please reach out via:</p>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/naga-venkata-devarapalli/" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-devarapalli</a></li>
-      </ul>
-    </div>
-  </section>
+  <h2 id="audience-value">Audience Value & Use Cases</h2>
+  <p>
+    This artifact offers value to multiple audiences:
+  </p>
+  <ul>
+    <li><strong>Employers:</strong> Demonstrates my critical thinking and practical problem-solving skills in handling data challenges vital for reliable AI deployment.</li>
+    <li><strong>Peers & Students:</strong> Provides a structured case study format that aids learning through example and reflection.</li>
+    <li><strong>Instructors:</strong> Shows my engagement with interactive AI tools and ability to synthesize complex concepts effectively.</li>
+  </ul>
+
+  <h2 id="glossary">Glossary of Key Terms</h2>
+  <dl>
+    <dt><strong>Bias</strong></dt>
+    <dd>A systematic error or prejudice in data or algorithms that leads to unfair outcomes.</dd>
+
+    <dt><strong>Imputation</strong></dt>
+    <dd>The process of replacing missing data with substituted values.</dd>
+
+    <dt><strong>Outlier</strong></dt>
+    <dd>An observation significantly different from other data points, potentially indicative of error or novel phenomena.</dd>
+
+    <dt><strong>Demographic Parity</strong></dt>
+    <dd>A fairness metric requiring equal positive classification rates across demographic groups.</dd>
+
+    <dt><strong>Differential Privacy</strong></dt>
+    <dd>A method to ensure privacy by adding noise to data queries to mask individual records.</dd>
+
+    <dt><strong>Federated Learning</strong></dt>
+    <dd>A decentralized machine learning approach where models are trained locally on devices without sharing raw data.</dd>
+
+    <dt><strong>Pseudonymization</strong></dt>
+    <dd>Replacing identifying information with artificial identifiers to protect privacy.</dd>
+  </dl>
+
+  <h2 id="references">References & Resources</h2>
+  <ul>
+    <li><a href="https://www.gdpr.eu/" target="_blank" rel="noopener noreferrer">General Data Protection Regulation (GDPR)</a></li>
+    <li><a href="https://scikit-learn.org/stable/modules/impute.html" target="_blank" rel="noopener noreferrer">Scikit-learn Imputation Documentation</a></li>
+    <li><a href="https://imbalanced-learn.org/stable/over_sampling.html" target="_blank" rel="noopener noreferrer">Imbalanced-learn SMOTE Oversampling</a></li>
+    <li><a href="https://fairlearn.org/" target="_blank" rel="noopener noreferrer">Fairlearn: Fairness in Machine Learning</a></li>
+    <li><a href="https://differentialprivacy.org/" target="_blank" rel="noopener noreferrer">Differential Privacy Foundation</a></li>
+    <li><a href="https://student.schoolai.com/" target="_blank" rel="noopener noreferrer">SchoolAI.com</a></li>
+  </ul>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
 </main>
 
-<footer role="contentinfo">
-  &copy; 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.
-</footer>
-
-<button id="back-to-top" aria-label="Back to top" title="Back to top">&uarr;</button>
-<button class="toggle-mode" aria-label="Toggle dark mode" title="Toggle dark mode">&#9788;</button>
-
 <script>
-  // Smooth scroll for nav links and active link toggling
-  const navLinks = document.querySelectorAll('nav ul li a.nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-      const targetId = link.getAttribute('href').substring(1);
-      document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
-    });
-  });
-
-  // Back to top button
-  const backToTopBtn = document.getElementById('back-to-top');
+  // Back to top button logic
+  const backToTopBtn = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
-    if(window.scrollY > 300) {
+    if (window.scrollY > 300) {
       backToTopBtn.style.display = 'block';
     } else {
       backToTopBtn.style.display = 'none';
@@ -558,21 +544,7 @@
   backToTopBtn.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
-
-  // Dark mode toggle
-  const toggleBtn = document.querySelector('button.toggle-mode');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    if(document.body.classList.contains('dark-mode')){
-      toggleBtn.innerHTML = '&#9790;'; // moon icon
-      document.body.style.backgroundColor = '#121212';
-      document.body.style.color = '#eee';
-    } else {
-      toggleBtn.innerHTML = '&#9788;'; // sun icon
-      document.body.style.backgroundColor = '#f7f8fa';
-      document.body.style.color = '#222';
-    }
-  });
 </script>
+
 </body>
 </html>
