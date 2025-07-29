@@ -1,592 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="author" content="Naga Venkata Satyanarayana Devarapalli" />
-<meta name="description" content="Professional Portfolio - Artifact 3: SchoolAI-Assisted Learning Experience" />
-<title>Professional Portfolio - Artifact 3 | Naga Venkata Satyanarayana Devarapalli</title>
-
-<style>
-  /* Reset and base */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa; color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-  }
-  a {
-    color: #e57200;
-    text-decoration: none;
-  }
-  a:hover, a:focus {
-    color: #3a8e00;
-    text-decoration: underline;
-    outline: none;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.2em; margin-bottom: 0.5em;
-    font-weight: 700;
-    color: #2f3a4a;
-  }
-  p {
-    margin-bottom: 1em;
-  }
-  ul, ol {
-    margin-left: 1.5em;
-    margin-bottom: 1em;
-  }
-  img {
-    max-width: 100%; height: auto;
-    border-radius: 6px;
-  }
-
-  /* Layout container */
-  .container {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-  }
-
-  /* Header */
-  header {
-    background: #3a8e00; /* green */
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  nav {
-    max-width: 1024px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-  }
-  nav .logo {
-    font-weight: 900;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    user-select: none;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.4rem;
-  }
-  nav ul li a {
-    color: white;
-    font-weight: 600;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  nav ul li a:hover,
-  nav ul li a.active {
-    background: #e57200; /* orange */
-    color: white;
-    font-weight: 700;
-  }
-
-  /* Hero Banner */
-  .hero {
-    background: linear-gradient(135deg, #e57200dd, #3a8e0088);
-    color: white;
-    padding: 5rem 1rem 6rem;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.3rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.35);
-  }
-  .hero p {
-    font-size: 1.2rem;
-    font-weight: 600;
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  }
-  .btn-primary {
-    background-color: #2f3a4a;
-    color: #e57200;
-    padding: 0.7rem 1.8rem;
-    border: none;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-color: #e57200;
-    color: white;
-    outline: none;
-  }
-
-  /* Sections */
-  section {
-    margin-top: 3rem;
-  }
-  .section-title {
-    color: #3a8e00;
-    font-size: 1.8rem;
-    border-left: 6px solid #e57200;
-    padding-left: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  .sub-title {
-    color: #2f3a4a;
-    font-size: 1.4rem;
-    margin-top: 2rem;
-    margin-bottom: 0.7rem;
-  }
-
-  /* Text styling */
-  strong {
-    color: #3a8e00;
-  }
-
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-  }
-  table thead {
-    background: #3a8e00;
-    color: white;
-  }
-  table th, table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
-    text-align: left;
-    vertical-align: top;
-  }
-  table tbody tr:nth-child(even) {
-    background: #f9f9f9;
-  }
-
-  /* Timeline */
-  .timeline {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  @media (min-width: 768px) {
-    .timeline {
-      grid-template-columns: 1fr 1fr;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artifact 3 - SchoolAI-Assisted Learning Experience | Naga Venkata Satyanarayana Devarapalli</title>
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
     }
-  }
-  .timeline-item {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-    padding: 1rem 1.5rem 1.5rem;
-    outline-offset: 3px;
-  }
-  .timeline-item:focus {
-    outline: 3px solid #e57200;
-  }
-  .timeline-item h4 {
-    color: #e57200;
-    margin-bottom: 0.5rem;
-  }
-  .timeline-item img {
-    max-height: 130px;
-    margin-bottom: 0.8rem;
-    object-fit: contain;
-  }
-  .timeline-item p {
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  /* Lists */
-  ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-  }
-
-  /* Footer */
-  footer {
-    background: #2f3a4a;
-    color: #ccc;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-    user-select: none;
-  }
-  footer a {
-    color: #e57200;
-    margin: 0 0.4rem;
-  }
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  /* Responsive and utility */
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-    nav ul {
+    html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #a8d5ba, #d0f0c0);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      justify-content: space-between;
     }
-  }
+    body {
+      line-height: 1.6;
+    }
+    a {
+      color: #2f7a49;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #1b472e;
+      outline: none;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: disc inside;
+    }
+    pre {
+      background-color: #1b472e;
+      color: #cdeac0;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 1rem 0 2rem 0;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: block;
+    }
 
-  /* Back to top button */
-  #backToTop {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #e57200;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    display: none;
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-  }
-  #backToTop:hover {
-    background-color: #3a8e00;
-  }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #2f7a49;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 10000;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      user-select: none;
+      cursor: default;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    nav a {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      background-color: #f4a261; /* soft orange */
+      color: #222;
+    }
 
-  /* Accordion */
-  .accordion {
-    background: #f8f9fa;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    box-shadow: inset 0 0 0 1px #ddd;
-  }
-  .accordion-header {
-    cursor: pointer;
-    padding: 1rem 1.2rem;
-    font-weight: 700;
-    user-select: none;
-    background: #e57200;
-    color: white;
-    border-radius: 6px 6px 0 0;
-  }
-  .accordion-header[aria-expanded="true"] {
-    background: #3a8e00;
-  }
-  .accordion-content {
-    padding: 1rem 1.2rem;
-    border-radius: 0 0 6px 6px;
-    border-top: 1px solid #ddd;
-    display: none;
-  }
-  .accordion.active .accordion-content {
-    display: block;
-  }
+    /* Main content */
+    main {
+      margin-top: 80px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      background: #ffffffcc;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      color: #222;
+    }
 
-</style>
+    /* Artifact section style */
+    #artifact3 {
+      border-left: 8px solid #2f7a49; /* green */
+      padding-left: 1.5rem;
+    }
+    #artifact3 h1 {
+      font-size: 3rem;
+      color: #1b472e;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    #artifact3 h2, #artifact3 h3 {
+      color: #225533;
+      margin-top: 2rem;
+      font-weight: 700;
+    }
+    #artifact3 p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+      line-height: 1.7;
+    }
+    #artifact3 ul {
+      margin-left: 1.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    #artifact3 ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1b472e;
+      color: #cdeac0;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #cdeac0;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: #f4a261;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem 1rem;
+        max-width: 95%;
+      }
+      #artifact3 h1 {
+        font-size: 2.2rem;
+      }
+      #artifact3 h2 {
+        font-size: 1.6rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #artifact3 h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header role="banner">
-  <nav aria-label="Primary navigation">
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-      <div class="logo" tabindex="0" aria-label="Portfolio logo">
-        Naga Venkata Satyanarayana Devarapalli
-      </div>
-      <ul>
-        <li><a href="#home" tabindex="0">Home</a></li>
-        <li><a href="#artifact1" tabindex="0">Artifact 1</a></li>
-        <li><a href="#artifact2" tabindex="0">Artifact 2</a></li>
-        <li><a href="#artifact3" class="active" tabindex="0">Artifact 3</a></li>
-        <li><a href="#bio" tabindex="0">Bio</a></li>
-        <li><a href="#contact" tabindex="0">Contact</a></li>
-      </ul>
-    </div>
+<header role="banner" aria-label="Primary Navigation">
+  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+  <nav role="navigation" aria-label="Main Navigation">
+    <a href="../index.html">Home</a>
+    <a href="../bio.html">Bio</a>
+    <a href="artifact1.html">Artifact 1</a>
+    <a href="artifact2.html">Artifact 2</a>
+    <a href="artifact3.html" class="active" aria-current="page">Artifact 3</a>
+    <a href="artifact4.html">Artifact 4</a>
+    <a href="artifact5.html">Artifact 5</a>
   </nav>
 </header>
 
-<main class="container" role="main">
+<main>
+  <section id="artifact3" role="main" aria-label="Artifact 3 Content">
+    <h1>Artifact 3: SchoolAI-Assisted Learning Experience</h1>
 
-  <!-- Home Section -->
-  <section id="home" tabindex="0" aria-label="Home section">
-    <div class="hero">
-      <h1>Welcome to My Professional Portfolio</h1>
-      <p>I am Naga Venkata Satyanarayana Devarapalli, a graduate student specializing in Artificial Intelligence and Data Analytics.</p>
-      <button class="btn-primary" onclick="document.getElementById('artifact3').scrollIntoView({behavior:'smooth'});">Explore Artifact 3</button>
-    </div>
-  </section>
+    <p>This artifact explores the integration of AI-assisted learning tools within educational settings to improve student engagement, personalized learning, and outcomes.</p>
 
-  <!-- Artifact 3 Section -->
-  <section id="artifact3" tabindex="0" aria-label="Artifact 3 SchoolAI Assisted Learning Experience">
-    <h2 class="section-title">Professional Portfolio Artifact 3</h2>
-
-    <h3 class="sub-title">SchoolAI-Assisted Learning Experience</h3>
-    <p>This artifact documents my interactive learning experience with the <strong>SchoolAI chatbot</strong>, exploring machine learning training methods through inquiry-based dialogue. The session demonstrated my approach to AI-assisted learning and critical thinking about ML concepts.</p>
-
-    <h3 class="sub-title">Value Proposition</h3>
-    <p>
-      This artifact showcases my ability to engage in meaningful SchoolAI-assisted learning, demonstrating critical thinking, inquiry-based learning strategies, and deep understanding of machine learning concepts.
-    </p>
-
-    <h3 class="sub-title">My Learning Approach</h3>
-    <h4>Inquiry-Based Learning Strategy</h4>
-    <p>I approached this AI-assisted learning session with a structured inquiry method, focusing on deep understanding rather than surface-level information gathering.</p>
+    <h2>Project Objectives</h2>
     <ul>
-      <li><strong>Progressive Questioning:</strong> Started with basic concepts and progressively asked for deeper explanations.</li>
-      <li><strong>Real-world Applications:</strong> Consistently requested practical examples and use cases.</li>
-      <li><strong>Critical Analysis:</strong> Questioned reliability, limitations, and potential failure scenarios.</li>
-      <li><strong>Follow-up Questions:</strong> Used "explain in detail" and "give me examples" to deepen understanding.</li>
-      <li><strong>Edge Case Exploration:</strong> Asked about negative scenarios and failure modes.</li>
+      <li>To implement AI tools that customize learning experiences based on individual student needs.</li>
+      <li>To measure the impact of AI interventions on student engagement and academic performance.</li>
+      <li>To identify challenges and opportunities in adopting AI in classroom environments.</li>
     </ul>
 
-    <h3 class="sub-title">Learning Outcomes</h3>
+    <h2>Tools & Technologies</h2>
+    <ul>
+      <li>AI-based adaptive learning platforms (e.g., DreamBox, Smart Sparrow)</li>
+      <li>Data analytics for monitoring student progress</li>
+      <li>Natural Language Processing for automated feedback</li>
+      <li>Cloud-based learning management systems</li>
+    </ul>
+
+    <h2>Process & Implementation</h2>
     <ol>
-      <li>Supervised Learning Deep Dive</li>
-      <li>Unsupervised Learning Exploration</li>
-      <li>Reinforcement Learning Understanding</li>
-      <li>Algorithm Importance & Training Process</li>
-      <li>Data Role & Project Application</li>
+      <li>Initial needs assessment and stakeholder consultation.</li>
+      <li>Selection of appropriate AI learning tools tailored for curriculum.</li>
+      <li>Training educators on AI tool usage and data interpretation.</li>
+      <li>Deployment in pilot classrooms with ongoing data collection.</li>
+      <li>Analysis of outcomes and refinement of approach.</li>
     </ol>
 
-    <h3 class="sub-title">Critical Thinking Demonstrations</h3>
-    <p><strong>Key Critical Questions Asked:</strong></p>
-    <ul>
-      <li><em>Reliability Question:</em> "How reliable are these models? Will this scenario put life at risk?"</li>
-      <li><em>Adaptation Challenge:</em> "If scammers change patterns, will the model fail?"</li>
-      <li><em>Human vs. Machine:</em> "Human cognitive abilities are faster and react on the spot."</li>
-      <li><em>AI System Limitations:</em> "Why did you skip question 6? Did your algorithm fail?"</li>
-      <li><em>Learning Verification:</em> "If you can't learn from past conversations, what do you mean by repetitions?"</li>
-    </ul>
+    <h2>Outcomes & Reflections</h2>
+    <p>The project demonstrated significant improvements in student engagement metrics and personalized learning efficacy. It also highlighted the importance of teacher involvement and ethical considerations in AI use.</p>
 
-    <h3 class="sub-title">AI System Analysis & Limitations Observed</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Observation</th>
-          <th>Description</th>
-          <th>Impact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Question Skipping Behavior</td>
-          <td>AI sometimes skipped questions without explanation.</td>
-          <td>Caused confusion, showing incomplete interaction flow.</td>
-        </tr>
-        <tr>
-          <td>Language Confusion & Response Errors</td>
-          <td>Occasional misunderstanding of phrasing and multi-language inputs.</td>
-          <td>Led to inaccurate or irrelevant answers.</td>
-        </tr>
-        <tr>
-          <td>Rushing Behavior & Goal Orientation</td>
-          <td>AI appeared focused on completing tasks quickly, sometimes at the cost of thoroughness.</td>
-          <td>Reduced depth and quality of explanations.</td>
-        </tr>
-        <tr>
-          <td>Learning vs. Interface Confusion</td>
-          <td>AI lacked ability to remember prior conversation context properly.</td>
-          <td>Repeated similar answers, limiting adaptive learning.</td>
-        </tr>
-      </tbody>
-    </table>
+    <h2>Code Example: Adaptive Feedback Logic (Python snippet)</h2>
+    <pre>
+def provide_feedback(student_answer, correct_answer):
+    if student_answer.lower() == correct_answer.lower():
+        return "Great job! You got it right."
+    elif student_answer.lower() in synonyms(correct_answer):
+        return "Close enough! Consider this alternative answer."
+    else:
+        return "Let's review this concept again."
+    </pre>
 
-    <h3 class="sub-title">Skills Demonstrated</h3>
-    <ul>
-      <li><strong>Critical Thinking:</strong> Questioned AI system reliability and limitations.</li>
-      <li><strong>Inquiry-Based Learning:</strong> Structured questioning to deepen understanding.</li>
-      <li><strong>Practical Application:</strong> Connected theoretical concepts to real-world scenarios.</li>
-      <li><strong>Multilingual Communication:</strong> Demonstrated comfort with multiple languages.</li>
-      <li><strong>Ethical Consideration:</strong> Emphasized responsible AI use and human oversight.</li>
-      <li><strong>Problem-Solving:</strong> Explored edge cases and failure scenarios.</li>
-      <li><strong>Active Learning:</strong> Engaged in meaningful dialogue rather than passive consumption.</li>
-      <li><strong>Technical Understanding:</strong> Grasped complex ML concepts through interactive learning.</li>
-    </ul>
-
-    <h3 class="sub-title">Future Applications & Next Steps</h3>
-    <h4>Project Ideas Identified</h4>
-    <ul>
-      <li><strong>News Authenticity Checker:</strong> Supervised learning model for fake news detection.</li>
-      <li><strong>Data Sources:</strong> Kaggle datasets, NewsAPI, fact-checking websites.</li>
-      <li><strong>Implementation:</strong> Python with scikit-learn, natural language processing.</li>
-      <li><strong>Ethical Considerations:</strong> Bias detection, transparency, accountability.</li>
-    </ul>
-
-    <h4>Learning Continuation</h4>
-    <ul>
-      <li><strong>Practical Implementation:</strong> Build the news authenticity checker project.</li>
-      <li><strong>Advanced Concepts:</strong> Explore deep learning and neural networks.</li>
-      <li><strong>Real-world Applications:</strong> Apply ML concepts to solve actual problems.</li>
-      <li><strong>Ethical AI Development:</strong> Focus on responsible AI system design.</li>
-    </ul>
-
-    <h3 class="sub-title">Detailed Timeline: SchoolAI Learning Journey</h3>
-    <div class="timeline" aria-label="Timeline of learning milestones with SchoolAI chatbot">
-
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 1: Initiating Inquiry</h4>
-        <p>Began session by asking basic questions about machine learning types to gauge AI responses and capabilities.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 2: Supervised Learning Deep Dive</h4>
-        <p>Explored supervised learning definitions, algorithms, and use cases with follow-up example requests.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 3: Unsupervised Learning Exploration</h4>
-        <p>Requested explanations on clustering and dimensionality reduction, emphasizing practical scenarios.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 4: Reinforcement Learning Understanding</h4>
-        <p>Queried about agent-environment interaction, reward mechanisms, and real-world applications.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 5: Algorithm Importance Discussion</h4>
-        <p>Analyzed how training algorithms impact model performance and adaptability, questioning optimization methods.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 6: Data Role & Project Application</h4>
-        <p>Emphasized data quality, quantity, and preprocessing's role in successful ML project outcomes.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 7: Critical Reliability Questioning</h4>
-        <p>Assessed reliability of ML models, safety concerns, and risk mitigation in sensitive applications.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 8: Adaptation Challenges</h4>
-        <p>Discussed potential failure when input patterns change and model retraining requirements.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 9: Human vs. Machine Cognitive Comparison</h4>
-        <p>Compared speed and adaptability differences between humans and AI in decision making.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 10: AI System Limitations Observation</h4>
-        <p>Identified instances of question skipping, unclear responses, and contextual misunderstandings.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 11: Learning Verification</h4>
-        <p>Explored AI’s capacity to learn from interactions and its limitations in memory and adaptation.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 12: Ethical AI Considerations</h4>
-        <p>Raised questions on bias, transparency, and accountability in AI model deployment.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 13: Multilingual Communication Testing</h4>
-        <p>Tested chatbot responses with mixed language queries to evaluate linguistic capabilities.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 14: Edge Case and Failure Mode Exploration</h4>
-        <p>Asked about scenarios where ML models might fail or produce incorrect results.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 15: Practical Example Requests</h4>
-        <p>Requested specific real-world project examples applying ML concepts discussed.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 16: Algorithm Optimization Discussion</h4>
-        <p>Investigated optimization techniques and hyperparameter tuning for better model accuracy.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 17: Project Design Planning</h4>
-        <p>Drafted initial ideas for news authenticity checker project integrating supervised learning.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 18: Ethical AI Development Emphasis</h4>
-        <p>Discussed importance of fairness, bias mitigation, and ethical frameworks for AI projects.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 19: Advanced Concept Exploration</h4>
-        <p>Planned future learning about deep learning, neural networks, and their applications.</p>
-      </div>
-      <div class="timeline-item" tabindex="0">
-        <h4>Step 20: Learning Session Summary & Reflection</h4>
-        <p>Summarized insights, knowledge gained, and next steps for practical implementation and study.</p>
-      </div>
-
-    </div>
-
-    <h3 class="sub-title">References</h3>
-    <ol>
-      <li>Mitchell, T. M. (1997). Machine Learning. McGraw-Hill.</li>
-      <li>Russell, S., & Norvig, P. (2016). Artificial Intelligence: A Modern Approach (3rd ed.). Pearson.</li>
-      <li>Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.</li>
-      <li>Ng, A. (2022). Machine Learning Yearning. deeplearning.ai.</li>
-      <li>Scikit-learn: Machine Learning in Python. <a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">https://scikit-learn.org/stable/</a></li>
-      <li>NewsAPI. (n.d.). <a href="https://newsapi.org/" target="_blank" rel="noopener">https://newsapi.org/</a></li>
-      <li>Kaggle Datasets. (n.d.). <a href="https://kaggle.com/datasets" target="_blank" rel="noopener">https://kaggle.com/datasets</a></li>
-      <li>IBM. (2021). AI Ethics: Fairness and Bias. IBM Research.</li>
-      <li>OpenAI. (2023). GPT-4 Technical Report. <a href="https://openai.com/research/gpt-4" target="_blank" rel="noopener">https://openai.com/research/gpt-4</a></li>
-      <li>Google AI Blog. (2024). Responsible AI. <a href="https://ai.google/responsible-ai/" target="_blank" rel="noopener">https://ai.google/responsible-ai/</a></li>
-    </ol>
-
+    <img src="../images/artifact3.jpg" alt="SchoolAI learning interface screenshot" />
   </section>
-
-  <!-- Bio Section -->
-  <section id="bio" tabindex="0" aria-label="About me section">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University.
-      I have over 12 years of experience in data analytics, business intelligence, and performance testing, now focusing on AI and ML applications.
-    </p>
-    <p>
-      I am passionate about using data-driven AI to solve complex challenges and improve business processes with innovative technology.
-    </p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" tabindex="0" aria-label="Contact me section">
-    <h2 class="section-title">Contact Me</h2>
-    <p>If you want to get in touch, please email me at:</p>
-    <p><strong>Email:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-  </section>
-
 </main>
 
-<!-- Back to top button -->
-<button id="backToTop" aria-label="Back to top" title="Back to top">&uarr;</button>
+<footer role="contentinfo">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
+  <p>
+    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
+    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
+    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+  </p>
+</footer>
 
 <script>
-  // Navigation active state highlight on click
-  const navLinks = document.querySelectorAll('nav ul li a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      navLinks.forEach(l => l.classList.remove('active'));
-      e.target.classList.add('active');
-    });
-  });
-
-  // Show/hide back to top button on scroll
-  const backToTopBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      backToTopBtn.style.display = 'block';
-    } else {
-      backToTopBtn.style.display = 'none';
-    }
-  });
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-
-  // Accordion toggle if needed in future
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const parent = header.parentElement;
-      parent.classList.toggle('active');
-      header.setAttribute('aria-expanded', parent.classList.contains('active'));
+  // Highlight active nav link based on URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
     });
   });
 </script>
