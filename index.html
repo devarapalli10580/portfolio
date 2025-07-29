@@ -1,454 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional Portfolio of Naga Venkata Satyanarayana Devarapalli - AI & Data Analytics" />
-  <title>Naga Venkata Satyanarayana Devarapalli | Professional Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /************************************************************
-    RESET & BASE STYLES
-    ************************************************************/
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f4f7fb;
-      color: #333;
-      line-height: 1.6;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /************************************************************
-    COLOR VARIABLES
-    ************************************************************/
-    :root {
-      --primary-blue: #0077b6;
-      --primary-green: #27ae60;
-      --primary-orange: #f39c12;
-      --light-bg: #f9f9f9;
-      --dark-text: #333;
-      --shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    /************************************************************
-    HEADER & NAVIGATION
-    ************************************************************/
-    header {
-      background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      padding: 1rem 0;
-      box-shadow: var(--shadow);
-    }
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      margin: auto;
-    }
-    header h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli - AI/ML Professional Portfolio</title>
+<style>
+  /* RESET */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f5f2;
+    color: #222;
+    max-width: 1100px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  /* NAVIGATION */
+  nav {
+    background: #d35400;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  nav ul {
+    list-style: none;
+    margin: 0; padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover, nav ul li a:focus {
+    color: #f39c12;
+  }
+  /* HEADER */
+  header {
+    text-align: center;
+    padding: 3rem 1rem 1rem 1rem;
+  }
+  header h1 {
+    font-size: 3.4rem;
+    margin-bottom: 0;
+    color: #d35400;
+  }
+  header p.subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: -0.3rem;
+    color: #a84100;
+  }
+  /* SECTIONS */
+  section {
+    background: white;
+    margin: 2rem 1rem;
+    padding: 2rem 3rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.15);
+  }
+  section h2 {
+    border-bottom: 3px solid #d35400;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.4rem;
+    color: #2c3e50;
+  }
+  section h3 {
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+  }
+  section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.4rem;
+    color: #333;
+  }
+  section ul {
+    margin-left: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+  section ul li {
+    margin-bottom: 0.8rem;
+  }
+  /* ARTIFACT GRID */
+  .artifact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  .artifact-card {
+    background-color: #fff8f0;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 1px 7px rgba(211, 84, 0, 0.2);
+    border: 1px solid #e1b87a;
+  }
+  .artifact-card h3 {
+    margin-top: 0;
+    color: #d35400;
+  }
+  .artifact-card p {
+    color: #444;
+  }
+  .artifact-card a.btn {
+    background-color: #d35400;
+    color: white;
+    padding: 0.7rem 1.3rem;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .artifact-card a.btn:hover, .artifact-card a.btn:focus {
+    background-color: #a84100;
+  }
+  /* CODE BLOCKS */
+  pre, code {
+    background: #f9f5f2;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    overflow-x: auto;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  /* CHAT TRANSCRIPTS */
+  .chat-transcript {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 1rem 1.2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 2rem;
+  }
+  .chat-msg-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .chat-msg {
+    padding: 0.7rem 1rem;
+    border-radius: 15px;
+    max-width: 70%;
+  }
+  .chat-user {
+    background-color: #d35400;
+    color: white;
+    align-self: flex-end;
+  }
+  .chat-bot {
+    background-color: #eee;
+    color: #222;
+    align-self: flex-start;
+  }
+  /* TABLE STYLING */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  th, td {
+    border: 1px solid #d35400;
+    padding: 0.6rem 1rem;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+  th {
+    background-color: #f7c39b;
+  }
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #d35400;
+    color: white;
+    font-weight: 700;
+    border-radius: 0 0 14px 14px;
+    margin-top: 4rem;
+  }
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
     nav ul {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
+      flex-direction: column;
+      gap: 1rem;
     }
-    nav a {
-      color: #fff;
-      font-weight: 600;
-      transition: color 0.3s ease;
+    section {
+      padding: 1rem 1.2rem;
+      margin: 1rem 0.5rem;
     }
-    nav a:hover {
-      color: var(--primary-orange);
-    }
-
-    /************************************************************
-    HERO SECTION
-    ************************************************************/
-    .hero {
-      background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 4rem 10%;
-      min-height: 500px;
-    }
-    .hero-text {
-      flex: 1 1 500px;
-    }
-    .hero-text h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero-text p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .btn-primary {
-      background: var(--primary-orange);
-      padding: 1rem 2rem;
-      color: #fff;
-      font-weight: 700;
-      border-radius: 50px;
-      box-shadow: var(--shadow);
-      transition: 0.3s ease;
-    }
-    .btn-primary:hover {
-      background: #e67e22;
-      transform: translateY(-5px);
-    }
-    .hero img {
-      flex: 1 1 400px;
-      max-width: 450px;
-      margin-top: 2rem;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-    }
-
-    /************************************************************
-    ABOUT SECTION
-    ************************************************************/
-    #about {
-      padding: 4rem 10%;
-      background: #fff;
-      border-radius: 20px;
-      margin: 3rem auto;
-      box-shadow: var(--shadow);
-    }
-    #about h2 {
-      font-size: 2.5rem;
-      color: var(--primary-blue);
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    #about p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      text-align: justify;
-    }
-
-    /************************************************************
-    PORTFOLIO OVERVIEW
-    ************************************************************/
-    #portfolio-overview {
-      padding: 4rem 10%;
-      background: var(--light-bg);
-    }
-    #portfolio-overview h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary-green);
-    }
-    .artifact-summary {
-      background: #fff;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-    .artifact-summary h3 {
-      color: var(--primary-blue);
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-    }
-    .artifact-summary .contact-info span {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    /************************************************************
-    SKILLS SECTION
-    ************************************************************/
-    #skills {
-      padding: 4rem 10%;
-      background: #fff;
-      margin: 3rem auto;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-    }
-    #skills h2 {
-      text-align: center;
-      color: var(--primary-orange);
-      margin-bottom: 1rem;
-      font-size: 2.2rem;
-    }
-    .skill-bar {
-      margin-bottom: 1.5rem;
-    }
-    .skill-bar p {
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-    .bar {
-      height: 12px;
-      background: #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .progress {
-      height: 100%;
-      background: var(--primary-blue);
-      width: 0;
-      transition: width 2s ease;
-    }
-
-    /************************************************************
-    ARTIFACTS SECTION
-    ************************************************************/
-    #artifacts {
-      padding: 4rem 10%;
-      background: var(--light-bg);
-    }
-    #artifacts h2 {
-      text-align: center;
-      color: var(--primary-blue);
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .artifact-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .artifact-card {
-      background: #fff;
-      width: 320px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      text-align: center;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    .artifact-card:hover {
-      transform: translateY(-10px);
-    }
-    .artifact-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .artifact-card h3 {
-      margin: 1rem 0 0.5rem;
-      color: var(--primary-green);
-    }
-    .artifact-card h4 {
-      color: var(--primary-blue);
-      margin-bottom: 0.8rem;
-    }
-    .btn-secondary {
-      display: inline-block;
-      margin: 1rem 0;
-      padding: 0.7rem 1.5rem;
-      background: var(--primary-orange);
-      color: #fff;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: 0.3s ease;
-    }
-    .btn-secondary:hover {
-      background: #e67e22;
-    }
-
-    /************************************************************
-    CONTACT SECTION
-    ************************************************************/
-    #contact {
-      padding: 4rem 10%;
-      background: #fff;
-      margin: 3rem auto;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-    #contact h2 {
-      color: var(--primary-green);
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-    }
-    #contact p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /************************************************************
-    FOOTER
-    ************************************************************/
-    footer {
-      text-align: center;
-      background: var(--primary-blue);
-      color: #fff;
-      padding: 1.2rem;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <h1>My Portfolio</h1>
-      <nav>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#portfolio-overview">Portfolio</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#artifacts">Artifacts</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<nav aria-label="Primary site navigation">
+  <ul>
+    <li><a href="#about-me">About Me</a></li>
+    <li><a href="#artifacts">Artifacts Overview</a></li>
+    <li><a href="#artifact4">Artifact 4</a></li>
+    <li><a href="#artifact6">Artifact 6</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-text">
-      <h2>Welcome to My Portfolio</h2>
-      <p>Explore my journey in Artificial Intelligence, Machine Learning, and Data Analytics. Discover projects that demonstrate innovation and technical expertise.</p>
-      <a href="#artifacts" class="btn-primary">Explore Artifacts</a>
-    </div>
-    <img src="images/hero-placeholder.jpg" alt="AI concept image" />
-  </section>
+<header role="banner">
+  <h1>Naga Venkata Satyanarayana Devarapalli</h1>
+  <p class="subtitle">Master of Science in Artificial Intelligence – Data Analytics</p>
+</header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I am Naga Venkata Satyanarayana Devarapalli, currently pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With 12+ years of experience in BI, analytics, and cloud technologies, I combine technical expertise with strategic thinking to deliver impactful AI solutions.</p>
-    <p>This portfolio demonstrates my academic achievements, real-world projects, and passion for leveraging data-driven insights to solve complex business challenges.</p>
-  </section>
+<main>
 
-  <!-- PORTFOLIO OVERVIEW -->
-  <section id="portfolio-overview">
-    <h2>Portfolio Overview</h2>
-    <div class="artifact-summary">
-      <h3>AI Lab No-Code Chatbot Assistant</h3>
-      <p>Created a no-code chatbot platform empowering users to build AI chatbots without programming knowledge, hosted on Mizou.com.</p>
-      <div class="contact-info">
-        <span><strong>Technologies:</strong> React.js, Node.js, NLP, AI APIs</span>
-        <span><strong>Link:</strong> <a href="https://mizou.com" target="_blank">mizou.com</a></span>
-      </div>
-    </div>
+<section id="about-me" aria-label="About Me section">
+  <h2>About Me</h2>
+  <p>
+    Greetings! I am Naga Venkata Satyanarayana Devarapalli, a graduate student at Indiana Wesleyan University specializing in Artificial Intelligence and Data Analytics. My passion lies in leveraging data science and AI technologies to solve complex problems and foster innovation in business and society.
+  </p>
+  <p>
+    With over a decade of experience spanning data analytics, business intelligence, and performance testing, I am extending my skills into advanced AI/ML techniques. This portfolio is a curated collection of artifacts highlighting my journey, practical projects, and research in the AI space.
+  </p>
+  <p>
+    I am committed to ethical AI practices and transparent communication of data insights to empower informed decision-making.
+  </p>
+</section>
 
-    <div class="artifact-summary">
-      <h3>AI & ML Timeline Presentation</h3>
-      <p>Designed an interactive timeline visualizing the evolution of Artificial Intelligence and Machine Learning concepts over the decades.</p>
-      <div class="contact-info">
-        <span><strong>Tools Used:</strong> PowerPoint, Adobe Illustrator</span>
-      </div>
-    </div>
-
-    <div class="artifact-summary">
-      <h3>SchoolAI Assisted Learning</h3>
-      <p>Developed interactive AI chatbots to support students in understanding machine learning principles through engaging Q&A sessions.</p>
-      <div class="contact-info">
-        <span><strong>Stack:</strong> Python, TensorFlow, Dialogflow</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skill-bar">
-      <p>Python</p>
-      <div class="bar"><div class="progress" data-width="90%"></div></div>
-    </div>
-    <div class="skill-bar">
-      <p>Power BI</p>
-      <div class="bar"><div class="progress" data-width="85%"></div></div>
-    </div>
-    <div class="skill-bar">
-      <p>Machine Learning</p>
-      <div class="bar"><div class="progress" data-width="80%"></div></div>
-    </div>
-  </section>
-
-  <!-- ARTIFACTS -->
-  <section id="artifacts">
-    <h2>My Artifacts</h2>
-    <div class="artifact-cards">
-      <div class="artifact-card">
-        <img src="images/artifact1.jpg" alt="Artifact 1">
-        <h3>Artifact 1</h3>
-        <h4>No-Code AI Chatbot</h4>
-        <p>Empowering users with no coding knowledge to create intelligent chatbots easily.</p>
-        <a href="artifact1.html" class="btn-secondary">Learn More</a>
-      </div>
-      <div class="artifact-card">
-        <img src="images/artifact2.jpg" alt="Artifact 2">
-        <h3>Artifact 2</h3>
-        <h4>AI & ML Timeline</h4>
-        <p>A detailed timeline covering major advancements in AI & ML technologies.</p>
-        <a href="artifact2.html" class="btn-secondary">Learn More</a>
-      </div>
-      <div class="artifact-card">
-        <img src="images/artifact3.jpg" alt="Artifact 3">
-        <h3>Artifact 3</h3>
-        <h4>SchoolAI Learning</h4>
-        <p>Interactive chatbot-based learning for understanding ML principles.</p>
-        <a href="artifact3.html" class="btn-secondary">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-    <p>Location: Dallas, TX, United States</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Naga Venkata Satyanarayana Devarapalli | All Rights Reserved.
-  </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
-    // Animate skill bars on scroll
-    const progressBars = document.querySelectorAll('.progress');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          const width = entry.target.getAttribute('data-width');
-          entry.target.style.width = width;
-        }
-      });
-    }, {threshold: 0.5});
-    progressBars.forEach(bar => observer.observe(bar));
-  </script>
+<section id="artifacts" aria-label="Portfolio Artifacts Overview">
+  <h2>Portfolio Artifacts Overview</h2>
+  <p>
+    Below are summaries of key artifacts from my academic and professional work in AI and machine learning. Click on each to navigate to detailed views.
+  </p>
   
+  <div class="artifact-grid" role="list">
+    <article class="artifact-card" role="listitem" id="artifact1-summary">
+      <h3>Artifact 1: COVID-19 Vaccination Data Analysis</h3>
+      <p>A data visualization and statistical analysis project examining COVID-19 vaccination trends and outcomes in India using RStudio.</p>
+      <a href="#artifact1" class="btn" tabindex="0">View Artifact 1</a>
+    </article>
+
+    <article class="artifact-card" role="listitem" id="artifact2-summary">
+      <h3>Artifact 2: AI & Machine Learning Evolution Timeline</h3>
+      <p>An interactive timeline showcasing major milestones in AI and machine learning history, with emphasis on ethical and technological advances.</p>
+      <a href="#artifact2" class="btn" tabindex="0">View Artifact 2</a>
+    </article>
+
+    <article class="artifact-card" role="listitem" id="artifact3-summary">
+      <h3>Artifact 3: Big Data Adoption in Healthcare</h3>
+      <p>Case study analysis of big data challenges in healthcare using the MIMIC-III dataset, focusing on data privacy and integration strategies.</p>
+      <a href="#artifact3" class="btn" tabindex="0">View Artifact 3</a>
+    </article>
+
+    <article class="artifact-card" role="listitem" id="artifact4-summary">
+      <h3>Artifact 4: Data Challenge Scenarios - AI Coach Interaction</h3>
+      <p>Detailed interactions with an AI chatbot tackling common machine learning data issues including quality, bias, and privacy.</p>
+      <a href="#artifact4" class="btn" tabindex="0">View Artifact 4</a>
+    </article>
+
+    <article class="artifact-card" role="listitem" id="artifact6-summary">
+      <h3>Artifact 6: AI-Powered Predictive Analytics Project</h3>
+      <p>Design and implementation of predictive sales models using Python and Power BI, showcasing end-to-end AI project skills.</p>
+      <a href="#artifact6" class="btn" tabindex="0">View Artifact 6</a>
+    </article>
+  </div>
+</section>
+
+<!-- Artifact 4 Detailed Section -->
+<section id="artifact4" aria-label="Artifact 4 Full Detail">
+  <h2>Artifact 4: Data Challenge Scenarios - AI Coach Interaction</h2>
+  
+  <p>
+    This artifact reflects my deep engagement with the Data Challenge Scenarios Coach chatbot on SchoolAI.com. I explored three major data challenges that machine learning practitioners face:
+  </p>
+  <ul>
+    <li><strong>Data Quality and Cleaning:</strong> Addressing missing values, outliers, and inconsistent data.</li>
+    <li><strong>Bias and Fairness:</strong> Mitigating demographic imbalances and monitoring fairness.</li>
+    <li><strong>Data Privacy and Security:</strong> Ensuring compliance with privacy regulations and securing sensitive data.</li>
+  </ul>
+
+  <h3>Scenario 1: Data Quality Challenges</h3>
+  <p><strong>Context:</strong> Preparing datasets with missing or noisy data for training machine learning models.</p>
+  
+  <div class="chat-transcript" aria-label="Chatbot dialogue for data quality">
+    <div class="chat-msg-container">
+      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> How do you handle missing data and outliers in your dataset?</div>
+      <div class="chat-user chat-msg">I analyze missingness patterns, apply imputation techniques, and identify outliers using statistical methods like IQR or Z-score.</div>
+      <div class="chat-bot chat-msg">What imputation strategies do you prefer for numerical and categorical data?</div>
+      <div class="chat-user chat-msg">Median or mean imputation for numerical data and mode or most frequent value for categorical data.</div>
+      <div class="chat-bot chat-msg">How do you ensure consistent data formatting?</div>
+      <div class="chat-user chat-msg">By standardizing date formats and categorical labels, and encoding variables appropriately.</div>
+    </div>
+  </div>
+
+  <h4>Sample Python Code: Imputation of Missing Data</h4>
+  <pre><code>import pandas as pd
+from sklearn.impute import SimpleImputer
+
+data = pd.read_csv('data.csv')
+numeric_cols = data.select_dtypes(include=['float64', 'int64']).columns
+categorical_cols = data.select_dtypes(include=['object']).columns
+
+# Impute numeric columns with median
+imputer_num = SimpleImputer(strategy='median')
+data[numeric_cols] = imputer_num.fit_transform(data[numeric_cols])
+
+# Impute categorical columns with mode
+imputer_cat = SimpleImputer(strategy='most_frequent')
+data[categorical_cols] = imputer_cat.fit_transform(data[categorical_cols])
+</code></pre>
+
+  <h3>Scenario 2: Bias and Fairness in AI</h3>
+  <p><strong>Context:</strong> Detecting and mitigating bias in datasets to build fairer models.</p>
+
+  <div class="chat-transcript" aria-label="Chatbot dialogue for bias and fairness">
+    <div class="chat-msg-container">
+      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> Your dataset has an underrepresented group. What strategies do you use to mitigate bias?</div>
+      <div class="chat-user chat-msg">I apply oversampling techniques like SMOTE, use fairness-aware models, and evaluate fairness metrics regularly.</div>
+      <div class="chat-bot chat-msg">How do you measure fairness?</div>
+      <div class="chat-user chat-msg">By metrics like demographic parity, equalized odds, and disparate impact ratio.</div>
+    </div>
+  </div>
+
+  <h4>Fairness Metrics Summary</h4>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Description</th><th>Application</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Demographic Parity</td><td>Equal positive prediction rates across groups</td><td>Ensures equal opportunity</td></tr>
+      <tr><td>Equalized Odds</td><td>Equal true positive and false positive rates</td><td>Balances error rates</td></tr>
+      <tr><td>Disparate Impact</td><td>Ratio of favorable outcomes between groups</td><td>Detects potential discrimination</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Sample Python Code: Oversampling Using SMOTE</h4>
+  <pre><code>from imblearn.over_sampling import SMOTE
+import pandas as pd
+
+data = pd.read_csv('data.csv')
+X = data.drop('target', axis=1)
+y = data['target']
+
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X, y)
+</code></pre>
+
+  <h3>Scenario 3: Data Privacy and Security</h3>
+  <p><strong>Context:</strong> Protecting sensitive data while enabling machine learning development and collaboration.</p>
+
+  <div class="chat-transcript" aria-label="Chatbot dialogue for privacy and security">
+    <div class="chat-msg-container">
+      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> How do you protect sensitive health data to comply with privacy regulations?</div>
+      <div class="chat-user chat-msg">By pseudonymizing identifiers, encrypting data storage, controlling access, and applying differential privacy techniques.</div>
+      <div class="chat-bot chat-msg">How can data be shared securely?</div>
+      <div class="chat-user chat-msg">Using federated learning, secure multi-party computation, or sharing aggregated data only.</div>
+    </div>
+  </div>
+
+  <h4>Sample Python Code: Pseudonymization</h4>
+  <pre><code>import hashlib
+import pandas as pd
+
+def pseudonymize(value):
+    return hashlib.sha256(value.encode('utf-8')).hexdigest()
+
+data = pd.read_csv('sensitive_data.csv')
+data['patient_id_hash'] = data['patient_id'].apply(pseudonymize)
+data.drop(columns=['patient_id'], inplace=True)
+</code></pre>
+
+  <h3>Reflection and Learning Outcomes</h3>
+  <p>
+    This AI coach interaction deepened my understanding of practical data challenges in ML workflows. Real-time dialogue and feedback facilitated active learning, critical thinking, and application of best practices in data cleaning, bias mitigation, and privacy protection.
+  </p>
+</section>
+
+<!-- Artifact 6 Full Section -->
+<section id="artifact6" aria-label="Artifact 6 Full Detail">
+  <h2>Artifact 6: AI-Powered Predictive Analytics Project</h2>
+  
+  <p>
+    This artifact highlights my experience designing, building, and deploying predictive models to forecast retail sales trends. Combining Python programming for data science and Power BI for visualization, this project demonstrates full lifecycle AI capabilities.
+  </p>
+
+  <h3>Project Overview</h3>
+  <p>
+    The goal was to create a reliable sales forecasting model using historical sales data enriched with seasonal, promotional, and economic features. This project required extensive data cleaning, feature engineering, model training, and dashboard development.
+  </p>
+
+  <h3>Data Collection and Cleaning</h3>
+  <p>
+    Data was sourced from transactional sales records spanning five years. Missing values, outliers, and inconsistent formats were cleaned using pandas and sklearn tools.
+  </p>
+
+  <h4>Sample Python Code: Handling Missing Values and Outliers</h4>
+  <pre><code>import pandas as pd
+import numpy as np
+
+data = pd.read_csv('sales_data.csv')
+
+# Fill missing numerical values with median
+data['sales'].fillna(data['sales'].median(), inplace=True)
+
+# Remove outliers using IQR method
+Q1 = data['sales'].quantile(0.25)
+Q3 = data['sales'].quantile(0.75)
+IQR = Q3 - Q1
+filtered_data = data[(data['sales'] >= (Q1 - 1.5 * IQR)) & (data['sales'] <= (Q3 + 1.5 * IQR))]
+</code></pre>
+
+  <h3>Feature Engineering</h3>
+  <p>
+    Created lag features, rolling averages, and encoded categorical variables to enhance model inputs.
+  </p>
+
+  <h4>Sample Python Code: Creating Lag Features and Rolling Averages</h4>
+  <pre><code>data['sales_lag_1'] = data['sales'].shift(1)
+data['sales_rolling_mean_3'] = data['sales'].rolling(window=3).mean()
+data['is_promotion'] = data['promotion'].apply(lambda x: 1 if x == 'Yes' else 0)
+</code></pre>
+
+  <h3>Modeling</h3>
+  <p>
+    Used scikit-learn's RandomForestRegressor to train the predictive model. Evaluated performance using RMSE and R² metrics.
+  </p>
+
+  <h4>Sample Python Code: Model Training and Evaluation</h4>
+  <pre><code>from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
+
+features = ['sales_lag_1', 'sales_rolling_mean_3', 'is_promotion', 'holiday_flag']
+X = data[features].dropna()
+y = data.loc[X.index, 'sales']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+
+rmse = mean_squared_error(y_test, predictions, squared=False)
+r2 = r2_score(y_test, predictions)
+
+print(f'RMSE: {rmse}')
+print(f'R² Score: {r2}')
+</code></pre>
+
+  <h3>Power BI Dashboard</h3>
+  <p>
+    Developed interactive dashboards in Power BI to visualize sales trends, forecast accuracy, and feature importance, enabling stakeholders to monitor business metrics intuitively.
+  </p>
+
+  <p><em>Note: Due to format constraints, dashboard visuals are linked externally or available upon request.</em></p>
+
+  <h3>Project Challenges and Solutions</h3>
+  <ul>
+    <li><strong>Challenge:</strong> Handling seasonality and promotions impact on sales variability.</li>
+    <li><strong>Solution:</strong> Incorporated time-series features and promotional flags in modeling.</li>
+    <li><strong>Challenge:</strong> Missing and noisy data points.</li>
+    <li><strong>Solution:</strong> Data cleaning and imputation methods described above.</li>
+  </ul>
+
+  <h3>Reflection</h3>
+  <p>
+    This project strengthened my practical skills in data science workflows, from raw data to actionable insights. Combining Python analytics and Power BI visualization bridged technical and business perspectives effectively.
+  </p>
+</section>
+
+<section id="contact" aria-label="Contact Information">
+  <h2>Contact Me</h2>
+  <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
+  <p>Location: Dallas, TX, United States</p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
