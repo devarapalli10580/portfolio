@@ -1,548 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Professional Portfolio Artifact 4 - Data Challenge Scenarios</title>
-<style>
-  /* --- Base styles --- */
-  *, *::before, *::after { box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fafafa;
-    margin: 0; padding: 1rem 2rem 6rem 2rem;
-    color: #222;
-    max-width: 960px; margin-left: auto; margin-right: auto;
-    line-height: 1.65;
-  }
-  h1,h2,h3,h4 {
-    font-weight: 700; color: #2e4053; margin-top: 2rem; margin-bottom: 1rem;
-  }
-  h1 { font-size: 3rem; color: #d35400; text-align: center; margin-top: 3rem; }
-  h2 { font-size: 2.2rem; border-bottom: 3px solid #d35400; padding-bottom: 0.3rem; }
-  h3 { font-size: 1.6rem; color: #34495e; }
-  h4 { font-size: 1.3rem; margin-top: 1rem; margin-bottom: 0.5rem; color: #5d6d7e; }
-  p { margin-bottom: 1.1rem; font-size: 1.05rem; }
-  ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-  ul li { margin-bottom: 0.5rem; }
-  a { color: #d35400; text-decoration: none; }
-  a:hover, a:focus { text-decoration: underline; }
-  blockquote {
-    margin-left: 1rem; margin-bottom: 1.5rem;
-    border-left: 5px solid #d35400; padding-left: 1rem;
-    color: #666; font-style: italic;
-    background-color: #fff5e6;
-  }
-  code, pre {
-    font-family: Consolas, Monaco, monospace;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-  }
-  code { padding: 0.15rem 0.3rem; }
-  pre {
-    padding: 1rem;
-    overflow-x: auto;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-  }
-  /* Collapsible details */
-  details {
-    background: #fef6f0;
-    border: 1px solid #d35400;
-    border-radius: 8px;
-    padding: 1rem 1.2rem;
-    margin-bottom: 1rem;
-    box-shadow: 1px 1px 5px rgba(211, 84, 0, 0.15);
-  }
-  details summary {
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
-    font-size: 1.1rem;
-  }
-  details p, details ul {
-    margin-top: 0.7rem;
-  }
-  /* Table styling */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-  }
-  th, td {
-    border: 1px solid #ccc;
-    padding: 0.7rem 1rem;
-    text-align: left;
-    vertical-align: top;
-  }
-  th {
-    background-color: #d35400;
-    color: white;
-  }
-  /* Navigation sidebar */
-  nav {
-    position: fixed;
-    top: 0; left: 0;
-    height: 100vh;
-    width: 240px;
-    background: #fff;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-    padding: 1.5rem 1.2rem;
-    overflow-y: auto;
-  }
-  nav h2 {
-    font-size: 1.8rem;
-    margin-top: 0;
-    color: #d35400;
-  }
-  nav ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 1rem;
-  }
-  nav ul li {
-    margin-bottom: 1rem;
-  }
-  nav ul li a {
-    font-weight: 600;
-    color: #34495e;
-    font-size: 1.1rem;
-    text-decoration: none;
-  }
-  nav ul li a:hover, nav ul li a:focus {
-    color: #d35400;
-    text-decoration: underline;
-  }
-  /* Main content margin */
-  main {
-    margin-left: 260px;
-    padding: 1rem 3rem 6rem 3rem;
-  }
-  /* Responsive */
-  @media (max-width: 900px) {
-    nav {
-      position: static;
-      width: 100%;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artifact 4 - Data Challenge Scenarios | Naga Venkata Satyanarayana Devarapalli</title>
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #f4a261, #f9d976);
+      color: #3e2f1c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body {
+      line-height: 1.6;
+    }
+    a {
+      color: #a65703;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #7a4300;
+      outline: none;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: disc inside;
+      margin-bottom: 1rem;
+    }
+    ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    pre {
+      background-color: #7a4300;
+      color: #f9d976;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 1rem 0 2rem 0;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+    }
+    img {
+      max-width: 100%;
       height: auto;
-      box-shadow: none;
-      padding-bottom: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: block;
     }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #a65703;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 10000;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      user-select: none;
+      cursor: default;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    nav a {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      background-color: #f4a261;
+      color: #3e2f1c;
+    }
+
+    /* Main content */
     main {
-      margin-left: 0;
-      padding: 1rem 1rem 4rem 1rem;
+      margin-top: 80px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      background: #fff8e1cc;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      color: #3e2f1c;
     }
-  }
-  /* Button back to top */
-  #backToTop {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    background-color: #d35400;
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    color: white;
-    font-size: 1.7rem;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.8);
-    display: none;
-    transition: background-color 0.3s ease;
-  }
-  #backToTop:hover {
-    background-color: #a84100;
-  }
-  /* Transcript chat style */
-  .chat-transcript {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 1rem 1.5rem;
-    margin-bottom: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-height: 400px;
-    overflow-y: auto;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  .chat-msg {
-    margin-bottom: 1rem;
-    padding: 0.7rem 1rem;
-    border-radius: 15px;
-    max-width: 75%;
-  }
-  .chat-user {
-    background-color: #d35400;
-    color: white;
-    align-self: flex-end;
-    margin-left: auto;
-  }
-  .chat-bot {
-    background-color: #eee;
-    color: #222;
-    align-self: flex-start;
-  }
-  .chat-msg-container {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
+
+    /* Artifact section style */
+    #artifact4 {
+      border-left: 8px solid #a65703; /* dark orange */
+      padding-left: 1.5rem;
+    }
+    #artifact4 h1 {
+      font-size: 3rem;
+      color: #7a4300;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    #artifact4 h2, #artifact4 h3 {
+      color: #7a4300;
+      margin-top: 2rem;
+      font-weight: 700;
+    }
+    #artifact4 p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+      line-height: 1.7;
+    }
+    #artifact4 ul, #artifact4 ol {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    #artifact4 ul li, #artifact4 ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #7a4300;
+      color: #f9d976;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #f9d976;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: #a65703;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        padding: 1rem 1rem;
+        max-width: 95%;
+      }
+      #artifact4 h1 {
+        font-size: 2.2rem;
+      }
+      #artifact4 h2 {
+        font-size: 1.6rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #artifact4 h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav aria-label="Artifact 4 Navigation">
-  <h2>Artifact 4 Navigation</h2>
-  <ul>
-    <li><a href="#introduction">Introduction & Overview</a></li>
-    <li><a href="#assignment-context">Assignment Context & Purpose</a></li>
-    <li><a href="#methodology-tools">Methodology & Tools Used</a></li>
-    <li><a href="#scenario1">Scenario 1: Data Quality Challenges</a></li>
-    <li><a href="#scenario1-transcript">Scenario 1 Transcript & Analysis</a></li>
-    <li><a href="#scenario2">Scenario 2: Bias and Fairness</a></li>
-    <li><a href="#scenario2-transcript">Scenario 2 Transcript & Analysis</a></li>
-    <li><a href="#scenario3">Scenario 3: Data Privacy & Security</a></li>
-    <li><a href="#scenario3-transcript">Scenario 3 Transcript & Analysis</a></li>
-    <li><a href="#data-processing">Data Processing & Cleaning Techniques</a></li>
-    <li><a href="#bias-privacy">Bias, Privacy & Security Challenges</a></li>
-    <li><a href="#reflections">Reflections & Learnings</a></li>
-    <li><a href="#future-directions">Future Directions & Improvements</a></li>
-    <li><a href="#audience-value">Audience Value & Use Cases</a></li>
-    <li><a href="#glossary">Glossary of Key Terms</a></li>
-    <li><a href="#references">References & Resources</a></li>
-  </ul>
-</nav>
+<header role="banner" aria-label="Primary Navigation">
+  <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+  <nav role="navigation" aria-label="Main Navigation">
+    <a href="../index.html">Home</a>
+    <a href="../bio.html">Bio</a>
+    <a href="artifact1.html">Artifact 1</a>
+    <a href="artifact2.html">Artifact 2</a>
+    <a href="artifact3.html">Artifact 3</a>
+    <a href="artifact4.html" class="active" aria-current="page">Artifact 4</a>
+    <a href="artifact5.html">Artifact 5</a>
+  </nav>
+</header>
 
 <main>
-  <h1>Professional Portfolio Artifact 4</h1>
-  <h2 id="introduction">Introduction & Overview</h2>
-  <p>
-    This artifact documents my detailed engagement with the <strong>Data Challenge Scenarios Coach</strong>, an AI-powered chatbot designed to simulate real-world challenges that data scientists and machine learning practitioners face. By interacting with this bot through a structured conversation, I was able to explore issues related to data quality, bias, privacy, and security in machine learning workflows.
-  </p>
-  <p>
-    The purpose of this exercise was to deepen my understanding of practical data challenges and develop critical thinking skills necessary to design responsible, accurate, and fair AI systems.
-  </p>
+  <section id="artifact4" role="main" aria-label="Artifact 4 Content">
+    <h1>Artifact 4: Data Challenge Scenarios - AI Data Handling</h1>
 
-  <h2 id="assignment-context">Assignment Context & Purpose</h2>
-  <p>
-    As part of Workshop 4, Assignment 4.3 required me to interact with an AI coach that presents various real-world data problems through three immersive scenarios. These scenarios are designed to mimic the complex decision-making processes that professionals encounter when preparing data for machine learning projects.
-  </p>
-  <p>
-    The assignment aimed to foster:
-  </p>
-  <ul>
-    <li>Critical evaluation of data processing techniques</li>
-    <li>Understanding of ethical concerns in AI development</li>
-    <li>Application of privacy and security best practices</li>
-    <li>Active learning through conversational AI tools</li>
-  </ul>
-  <p>
-    This artifact captures my dialogue with the chatbot, my analytical responses, and reflections on the lessons learned.
-  </p>
+    <p>This artifact highlights complex data handling scenarios encountered during AI projects, with a focus on data quality, privacy, and ethical challenges.</p>
 
-  <h2 id="methodology-tools">Methodology & Tools Used</h2>
-  <p>
-    The Data Challenge Scenarios Coach is accessed online at SchoolAI.com, a platform for AI-assisted learning. This interactive chatbot guides users through tailored questions, evaluates answers in real-time, and encourages iterative learning.
-  </p>
-  <p>
-    I approached the assignment with an inquiry-based learning strategy:
-  </p>
-  <ul>
-    <li>Progressively deepening questions from basic to advanced</li>
-    <li>Requesting practical examples and clarifications</li>
-    <li>Critically assessing limitations and edge cases</li>
-    <li>Connecting theory to real-world applications</li>
-  </ul>
-  <p>
-    Supplementary tools included Python (for prototyping cleaning techniques), Jupyter notebooks for experimentation, and scholarly resources to inform fairness and privacy concepts.
-  </p>
+    <h2>Key Data Challenges</h2>
+    <ul>
+      <li>Ensuring data completeness and accuracy across disparate sources.</li>
+      <li>Handling sensitive personal data while maintaining compliance with GDPR and HIPAA.</li>
+      <li>Managing data bias and fairness in AI training datasets.</li>
+      <li>Addressing scalability and real-time data processing constraints.</li>
+    </ul>
 
-  <h2 id="scenario1">Scenario 1: Data Quality Challenges</h2>
-  <p><strong>Scenario Overview:</strong> The chatbot presented a dataset characterized by missing values, inconsistent entries, outliers, and noisy data. My task was to devise strategies to clean and prepare this data for effective machine learning.</p>
+    <h2>Scenario 1: Data Cleaning and Validation</h2>
+    <p>In this scenario, raw healthcare data contained missing values, inconsistent coding, and outliers. A robust pipeline was implemented using Python and Pandas to clean, normalize, and validate data before AI model training.</p>
 
-  <h3>Detailed Transcript Excerpt</h3>
-  <div class="chat-transcript" aria-label="Chatbot transcript for scenario 1">
-    <div class="chat-msg-container">
-      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> Welcome to Scenario 1. You are given a dataset with multiple missing values and several outliers. What steps would you take to clean this data?</div>
-      <div class="chat-user chat-msg">I would start by analyzing the extent and pattern of missingness. For missing values, if less than 5% of data is missing, I might remove those rows. Otherwise, I would consider imputation methods.</div>
-      <div class="chat-bot chat-msg">Good. Which imputation methods would you consider and why?</div>
-      <div class="chat-user chat-msg">For numerical data, mean or median imputation could work, depending on skewness. For categorical data, the mode or a new category might be used. Predictive imputation with models could be used for more accuracy.</div>
-      <div class="chat-bot chat-msg">Excellent. How about outliers? How would you detect and handle them?</div>
-      <div class="chat-user chat-msg">I would use statistical methods like z-score and IQR to detect outliers. Visualization tools like box plots help. Depending on their nature, I might cap or remove outliers, or transform data.</div>
-      <div class="chat-bot chat-msg">Well done. How do you ensure consistent data formats?</div>
-      <div class="chat-user chat-msg">I would standardize date formats, unify categorical labels (e.g., “NY” vs “New York”), and check encoding schemes for categorical variables.</div>
-    </div>
-  </div>
-
-  <h3>Python Code Example for Missing Value Imputation</h3>
-  <pre><code>import pandas as pd
-from sklearn.impute import SimpleImputer
-
-# Load data
-data = pd.read_csv('dataset.csv')
-
-# Identify columns with missing data
-missing_cols = data.columns[data.isnull().any()]
-
-# Impute numerical columns with median
-num_cols = data.select_dtypes(include=['float64', 'int']).columns
-imputer_num = SimpleImputer(strategy='median')
-data[num_cols] = imputer_num.fit_transform(data[num_cols])
-
-# Impute categorical columns with mode
-cat_cols = data.select_dtypes(include=['object']).columns
-imputer_cat = SimpleImputer(strategy='most_frequent')
-data[cat_cols] = imputer_cat.fit_transform(data[cat_cols])
-
-print("Missing values handled successfully.")</code></pre>
-
-  <h3>Scenario 1 Analysis</h3>
-  <p>
-    This scenario reinforced foundational concepts of exploratory data analysis and preprocessing. Understanding the context behind missing values is crucial—blind deletion may bias the dataset, while imputation strategies must align with the data distribution. Outliers require domain expertise to decide whether they are errors or valid extreme cases.
-  </p>
-  <p>
-    Automated tools are helpful but human insight remains essential in data cleaning.
-  </p>
-
-  <h2 id="scenario2">Scenario 2: Bias and Fairness in Data</h2>
-  <p><strong>Scenario Overview:</strong> Presented with a dataset exhibiting demographic imbalances, I was asked to identify sources of bias and recommend mitigation strategies.</p>
-
-  <h3>Detailed Transcript Excerpt</h3>
-  <div class="chat-transcript" aria-label="Chatbot transcript for scenario 2">
-    <div class="chat-msg-container">
-      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> The dataset has an underrepresentation of certain ethnic groups. What types of bias might be present?</div>
-      <div class="chat-user chat-msg">Sampling bias due to unequal representation, measurement bias if data quality varies by group, and historical bias embedded in the data collection process.</div>
-      <div class="chat-bot chat-msg">Correct. How can you mitigate such bias?</div>
-      <div class="chat-user chat-msg">By rebalancing data through oversampling minorities or undersampling majorities, using fairness-aware algorithms, and carefully selecting features to avoid proxy variables.</div>
-      <div class="chat-bot chat-msg">How do you evaluate model fairness?</div>
-      <div class="chat-user chat-msg">By applying metrics such as demographic parity, equal opportunity difference, and monitoring model outputs continuously for disparate impact.</div>
-    </div>
-  </div>
-
-  <h3>Fairness Evaluation Metrics Table</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Metric</th>
-        <th>Description</th>
-        <th>Use Case</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Demographic Parity</td>
-        <td>Equal positive prediction rates across groups</td>
-        <td>Ensures no group is favored or disfavored in predictions</td>
-      </tr>
-      <tr>
-        <td>Equalized Odds</td>
-        <td>Equal true positive and false positive rates across groups</td>
-        <td>Balances fairness for both positive and negative outcomes</td>
-      </tr>
-      <tr>
-        <td>Disparate Impact</td>
-        <td>Ratio of favorable outcomes between groups</td>
-        <td>Assesses potential discrimination against protected groups</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>Scenario 2 Code Snippet: Oversampling Minority Class using Python (Imbalanced-learn)</h3>
-  <pre><code>from imblearn.over_sampling import SMOTE
-from collections import Counter
+    <pre>
 import pandas as pd
 
-# Load dataset
-data = pd.read_csv('imbalanced_data.csv')
-X = data.drop('target', axis=1)
-y = data['target']
+df = pd.read_csv('health_data.csv')
 
-print('Original dataset shape %s' % Counter(y))
+# Fill missing values
+df['age'].fillna(df['age'].median(), inplace=True)
 
-sm = SMOTE(random_state=42)
-X_res, y_res = sm.fit_resample(X, y)
+# Remove outliers
+df = df[df['blood_pressure'] < 200]
 
-print('Resampled dataset shape %s' % Counter(y_res))</code></pre>
+# Standardize categorical values
+df['diagnosis'] = df['diagnosis'].str.lower()
+    </pre>
 
-  <h3>Scenario 2 Analysis</h3>
-  <p>
-    Fairness is a complex, multi-faceted challenge. No single metric or technique solves bias completely; rather, a combination of data balancing, algorithmic adjustments, and continuous monitoring is needed. Understanding the societal context behind data is essential to prevent perpetuating systemic inequalities.
-  </p>
+    <h2>Scenario 2: Privacy-Preserving Data Sharing</h2>
+    <p>Collaborating across institutions required anonymization techniques and secure multi-party computation methods to share data without compromising patient confidentiality.</p>
 
-  <h2 id="scenario3">Scenario 3: Data Privacy and Security</h2>
-  <p><strong>Scenario Overview:</strong> This scenario focused on challenges related to sensitive personal data, regulatory compliance, and protecting data in AI applications.</p>
+    <h3>Techniques Used:</h3>
+    <ul>
+      <li>Data masking and tokenization</li>
+      <li>Differential privacy algorithms</li>
+      <li>Encrypted data transfer protocols</li>
+    </ul>
 
-  <h3>Detailed Transcript Excerpt</h3>
-  <div class="chat-transcript" aria-label="Chatbot transcript for scenario 3">
-    <div class="chat-msg-container">
-      <div class="chat-bot chat-msg"><strong>Chatbot:</strong> Your dataset contains sensitive health data. How do you ensure privacy compliance?</div>
-      <div class="chat-user chat-msg">I would anonymize or pseudonymize data, encrypt storage and transit, and implement access controls following GDPR and HIPAA regulations.</div>
-      <div class="chat-bot chat-msg">How can you share data with partners securely?</div>
-      <div class="chat-user chat-msg">By using federated learning or secure multi-party computation to avoid sharing raw data, and by applying strict data use agreements.</div>
-      <div class="chat-bot chat-msg">What techniques can protect privacy in machine learning?</div>
-      <div class="chat-user chat-msg">Differential privacy to add noise, homomorphic encryption, and limiting data retention periods.</div>
-    </div>
-  </div>
+    <h2>Scenario 3: Mitigating AI Bias</h2>
+    <p>Bias in training data led to unfair predictions. We applied fairness metrics and re-sampling methods to balance the dataset and improve model equity.</p>
 
-  <h3>Privacy Protection Techniques Overview</h3>
-  <ul>
-    <li><strong>Differential Privacy:</strong> Adds statistical noise to data queries to prevent identification of individuals.</li>
-    <li><strong>Federated Learning:</strong> Models train on data locally on devices, only sharing model updates.</li>
-    <li><strong>Homomorphic Encryption:</strong> Enables computations on encrypted data without decrypting it.</li>
-    <li><strong>Access Control:</strong> Role-based permissions limit data exposure.</li>
-    <li><strong>Data Minimization:</strong> Collect only data necessary for the task.</li>
-  </ul>
+    <h3>Fairness Metrics Monitored:</h3>
+    <ul>
+      <li>Demographic parity</li>
+      <li>Equal opportunity</li>
+      <li>Disparate impact ratio</li>
+    </ul>
 
-  <h3>Scenario 3 Code Example: Simple Pseudonymization</h3>
-  <pre><code>import hashlib
-import pandas as pd
+    <img src="../images/artifact4.jpg" alt="Data challenge scenario visualization" />
 
-def pseudonymize(value):
-    return hashlib.sha256(value.encode()).hexdigest()
-
-data = pd.read_csv('sensitive_data.csv')
-
-# Apply pseudonymization on sensitive column
-data['patient_id_hashed'] = data['patient_id'].apply(pseudonymize)
-
-# Drop original sensitive column
-data.drop(columns=['patient_id'], inplace=True)
-
-print("Pseudonymization complete.")</code></pre>
-
-  <h3>Scenario 3 Analysis</h3>
-  <p>
-    Ensuring data privacy in AI applications is paramount, especially when dealing with sensitive or regulated information. Implementing layered security approaches, adhering to legal frameworks, and maintaining transparency about data use build trust and safeguard individuals.
-  </p>
-
-  <h2 id="data-processing">Data Processing & Cleaning Techniques</h2>
-  <p>
-    From the scenarios, I applied several data cleaning best practices:
-  </p>
-  <ul>
-    <li>Exploratory Data Analysis (EDA) to identify issues</li>
-    <li>Imputation for missing data using statistical and model-based methods</li>
-    <li>Outlier detection and management with domain knowledge</li>
-    <li>Standardization of data formats and encodings</li>
-    <li>Feature scaling to normalize ranges</li>
-  </ul>
-  <p>
-    The following pseudocode summarizes a robust data cleaning pipeline:
-  </p>
-  <pre><code># Pseudocode for Data Cleaning Pipeline
-def clean_data(df):
-    # 1. Identify missing values and impute
-    for col in df.columns:
-        if has_missing(df[col]):
-            if is_numeric(df[col]):
-                df[col] = impute_median(df[col])
-            else:
-                df[col] = impute_mode(df[col])
-    # 2. Detect outliers using IQR
-    for col in numeric_columns(df):
-        outliers = detect_outliers_iqr(df[col])
-        df = handle_outliers(df, col, outliers)
-    # 3. Standardize categorical values
-    df = standardize_categories(df)
-    # 4. Scale numeric features
-    df = scale_features(df)
-    return df
-</code></pre>
-
-  <h2 id="bias-privacy">Bias, Privacy & Security Challenges</h2>
-  <p>
-    This exercise deepened my understanding of the complex interplay between:
-  </p>
-  <ul>
-    <li><strong>Bias:</strong> How data collection and model design can perpetuate unfairness.</li>
-    <li><strong>Privacy:</strong> Regulatory requirements like GDPR necessitating careful handling.</li>
-    <li><strong>Security:</strong> Protecting data from breaches and unauthorized access.</li>
-  </ul>
-  <p>
-    Successfully addressing these requires a holistic approach combining technical, legal, and ethical strategies.
-  </p>
-
-  <h2 id="reflections">Reflections & Learnings</h2>
-  <p>
-    Engaging with the Data Challenge Scenarios Coach was a highly valuable experience. The interactive format encouraged active learning and allowed me to test my knowledge in a risk-free environment. I particularly appreciated:
-  </p>
-  <ul>
-    <li>The immediate feedback and probing questions that pushed deeper analysis.</li>
-    <li>The ability to explore edge cases and real-world complexities.</li>
-    <li>Understanding the importance of data context beyond just numbers.</li>
-  </ul>
-  <p>
-    I recognize that AI and ML development is not purely technical but requires ongoing ethical vigilance, especially when working with human-centered data.
-  </p>
-
-  <h2 id="future-directions">Future Directions & Improvements</h2>
-  <p>
-    Moving forward, I plan to:
-  </p>
-  <ul>
-    <li>Implement advanced bias detection tools in my projects.</li>
-    <li>Explore privacy-enhancing technologies such as federated learning in depth.</li>
-    <li>Develop workflows that integrate ethical AI checks as standard practice.</li>
-    <li>Engage with community efforts around AI fairness and transparency.</li>
-  </ul>
-
-  <h2 id="audience-value">Audience Value & Use Cases</h2>
-  <p>
-    This artifact offers value to multiple audiences:
-  </p>
-  <ul>
-    <li><strong>Employers:</strong> Demonstrates my critical thinking and practical problem-solving skills in handling data challenges vital for reliable AI deployment.</li>
-    <li><strong>Peers & Students:</strong> Provides a structured case study format that aids learning through example and reflection.</li>
-    <li><strong>Instructors:</strong> Shows my engagement with interactive AI tools and ability to synthesize complex concepts effectively.</li>
-  </ul>
-
-  <h2 id="glossary">Glossary of Key Terms</h2>
-  <dl>
-    <dt><strong>Bias</strong></dt>
-    <dd>A systematic error or prejudice in data or algorithms that leads to unfair outcomes.</dd>
-
-    <dt><strong>Imputation</strong></dt>
-    <dd>The process of replacing missing data with substituted values.</dd>
-
-    <dt><strong>Outlier</strong></dt>
-    <dd>An observation significantly different from other data points, potentially indicative of error or novel phenomena.</dd>
-
-    <dt><strong>Demographic Parity</strong></dt>
-    <dd>A fairness metric requiring equal positive classification rates across demographic groups.</dd>
-
-    <dt><strong>Differential Privacy</strong></dt>
-    <dd>A method to ensure privacy by adding noise to data queries to mask individual records.</dd>
-
-    <dt><strong>Federated Learning</strong></dt>
-    <dd>A decentralized machine learning approach where models are trained locally on devices without sharing raw data.</dd>
-
-    <dt><strong>Pseudonymization</strong></dt>
-    <dd>Replacing identifying information with artificial identifiers to protect privacy.</dd>
-  </dl>
-
-  <h2 id="references">References & Resources</h2>
-  <ul>
-    <li><a href="https://www.gdpr.eu/" target="_blank" rel="noopener noreferrer">General Data Protection Regulation (GDPR)</a></li>
-    <li><a href="https://scikit-learn.org/stable/modules/impute.html" target="_blank" rel="noopener noreferrer">Scikit-learn Imputation Documentation</a></li>
-    <li><a href="https://imbalanced-learn.org/stable/over_sampling.html" target="_blank" rel="noopener noreferrer">Imbalanced-learn SMOTE Oversampling</a></li>
-    <li><a href="https://fairlearn.org/" target="_blank" rel="noopener noreferrer">Fairlearn: Fairness in Machine Learning</a></li>
-    <li><a href="https://differentialprivacy.org/" target="_blank" rel="noopener noreferrer">Differential Privacy Foundation</a></li>
-    <li><a href="https://student.schoolai.com/" target="_blank" rel="noopener noreferrer">SchoolAI.com</a></li>
-  </ul>
-
-  <button id="backToTop" aria-label="Back to top">↑</button>
+    <h2>Lessons Learned</h2>
+    <p>Handling complex data requires rigorous quality checks, strong privacy practices, and ongoing bias assessments to ensure AI solutions are ethical and effective.</p>
+  </section>
 </main>
 
+<footer role="contentinfo">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
+  <p>
+    <a href="mailto:tone_satya@yahoo.co.in" aria-label="Email me">Email</a> |
+    <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a> |
+    <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+  </p>
+</footer>
+
 <script>
-  // Back to top button logic
-  const backToTopBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.style.display = 'block';
-    } else {
-      backToTopBtn.style.display = 'none';
-    }
-  });
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+  // Highlight active nav link based on URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
   });
 </script>
 
