@@ -1,3 +1,150 @@
+/* ==============================
+   Global Reset & Base Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ==============================
+   Header & Navigation Bar
+============================== */
+header {
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+header nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  transition: 0.3s ease;
+  border-radius: 5px;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+  background: #f77f00;
+  color: #fff;
+}
+
+/* ==============================
+   Section Styles
+============================== */
+.bio-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+}
+.bio-section h1 {
+  font-size: 2.5rem;
+  color: #0077b6;
+  margin-bottom: 15px;
+}
+.bio-section h2 {
+  font-size: 1.8rem;
+  color: #f77f00;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.bio-section ul, 
+.bio-section ol {
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+.bio-section li {
+  margin-bottom: 8px;
+}
+blockquote {
+  background: #e0f7fa;
+  border-left: 6px solid #00b4d8;
+  padding: 15px;
+  font-style: italic;
+  margin: 20px 0;
+  color: #0077b6;
+}
+pre {
+  background: #333;
+  color: #eee;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+/* ==============================
+   Footer Styles
+============================== */
+footer {
+  background: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+footer a {
+  color: #f77f00;
+  text-decoration: none;
+  margin-left: 5px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   Responsive Design
+============================== */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    background: #0077b6;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    display: none;
+  }
+  header nav ul.show {
+    display: flex;
+  }
+  header nav .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
