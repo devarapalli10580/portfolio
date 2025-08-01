@@ -1,301 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artifact 4 - Data Challenge Scenarios</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Artifact 4 - Data Challenge Scenarios: Addressing Real-World ML Data Issues</title>
 <style>
-/* =======================
-   GLOBAL STYLES
-   ======================= */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-header {
-  background: linear-gradient(90deg, #007bff, #28a745, #ff9800);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-header nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
-header nav ul li {
-  margin: 0 15px;
-}
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 10px;
-}
-header nav ul li a.active {
-  border-bottom: 3px solid #fff;
-}
-section {
-  padding: 30px;
-  max-width: 1200px;
-  margin: auto;
-  background: white;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-h1, h2, h3 {
-  color: #007bff;
-}
-h1 {
-  margin-top: 0;
-}
-blockquote {
-  background: #f1f1f1;
-  padding: 15px;
-  border-left: 5px solid #007bff;
-  margin: 20px 0;
-}
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-}
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  margin-top: 20px;
-}
-.table-container table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.table-container th, .table-container td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
-pre {
-  background: #272822;
-  color: #f8f8f2;
-  padding: 15px;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-/* Accordion Style */
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 18px;
-  transition: 0.4s;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
-}
-/* Back-to-top button */
-#backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  font-size: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-}
-#backToTop:hover {
-  background: #0056b3;
-}
+  /* Reset & Base Styles */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafb;
+    color: #333;
+    line-height: 1.65;
+  }
+  a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  h1, h2, h3, h4, h5 {
+    margin-top: 0;
+    color: #0b3d91;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #f5a623;
+    padding-bottom: 0.2rem;
+  }
+  h3 {
+    font-size: 1.9rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #2c9e4f;
+  }
+  p {
+    max-width: 900px;
+    margin: 0 0 1rem 0;
+    font-size: 1.15rem;
+  }
+  ul, ol {
+    max-width: 900px;
+    margin: 0 0 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  ul li, ol li {
+    margin-bottom: 0.6rem;
+  }
+  pre {
+    background-color: #1e293b;
+    color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 900px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    margin: 1.5rem 0 2.5rem 0;
+  }
+  blockquote {
+    border-left: 5px solid #f5a623;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #555;
+    max-width: 900px;
+    margin: 2rem 0;
+    background-color: #fff8e1;
+  }
+  header, footer {
+    background-color: #0b3d91;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #f5a623;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    background-color: #f5a623;
+    color: #0b3d91;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto 4rem auto;
+    background-color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    main {
+      padding: 1.5rem 1.5rem;
+      margin: 1rem;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <h1>Naga Venkata Satyanarayana Devarapalli - Portfolio</h1>
-  <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../bio.html">Bio</a></li>
-      <li><a href="artifact1.html">Artifact 1</a></li>
-      <li><a href="artifact2.html">Artifact 2</a></li>
-      <li><a href="artifact3.html">Artifact 3</a></li>
-      <li><a href="artifact4.html" class="active">Artifact 4</a></li>
-      <li><a href="artifact5.html">Artifact 5</a></li>
+<header role="banner" aria-label="Primary Navigation">
+  <nav role="navigation" aria-label="Main menu">
+    <div class="logo" tabindex="0">Naga Venkata Satyanarayana Devarapalli</div>
+    <ul role="menubar" aria-label="Primary Navigation Menu">
+      <li role="none"><a href="../index.html" role="menuitem" tabindex="0">Home</a></li>
+      <li role="none"><a href="../bio.html" role="menuitem" tabindex="0">Bio</a></li>
+      <li role="none"><a href="artifact1.html" role="menuitem" tabindex="0">Artifact 1</a></li>
+      <li role="none"><a href="artifact2.html" role="menuitem" tabindex="0">Artifact 2</a></li>
+      <li role="none"><a href="artifact3.html" role="menuitem" tabindex="0">Artifact 3</a></li>
+      <li role="none"><a href="artifact4.html" role="menuitem" tabindex="0" class="active">Artifact 4</a></li>
+      <li role="none"><a href="artifact5.html" role="menuitem" tabindex="0">Artifact 5</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- MAIN CONTENT -->
-<section>
+<main role="main" tabindex="0" aria-label="Artifact 4 Content">
+
   <h1>Artifact 4: Data Challenge Scenarios – Navigating Data Quality, Bias, and Privacy in Machine Learning</h1>
-  <p><strong>Objective:</strong> Demonstrate strategies for solving real-world ML data challenges such as quality issues, privacy, and bias.</p>
-</section>
 
-<section>
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href="#scenario1">Scenario 1: Data Quality Issues</a></li>
-    <li><a href="#scenario2">Scenario 2: Privacy & Security</a></li>
-    <li><a href="#scenario3">Scenario 3: Bias & Fairness</a></li>
-    <li><a href="#reflection">Reflection</a></li>
-    <li><a href="#references">References</a></li>
-  </ul>
-</section>
+  <section aria-label="Objective">
+    <h2>Objective</h2>
+    <p>
+      The primary goal of this artifact is to demonstrate my ability to identify, analyze, and resolve critical data challenges encountered in real-world machine learning workflows. These challenges include data quality issues, privacy and security concerns, and bias in AI systems. Successfully addressing these problems ensures that AI models are accurate, fair, and trustworthy.
+    </p>
+  </section>
 
-<!-- Scenario 1 -->
-<section id="scenario1">
-  <h2>Scenario 1: Data Quality Challenges</h2>
-  <p>Problems identified:</p>
-  <ul>
-    <li>Missing values in numeric columns.</li>
-    <li>Duplicate records skewing analytics.</li>
-    <li>Outliers in financial transactions causing model distortion.</li>
-  </ul>
-  <button class="accordion">Click to Expand Solution</button>
-  <div class="panel">
-    <p><strong>Solutions Applied:</strong></p>
-    <ol>
-      <li>Imputation for missing data using mean for numerical and mode for categorical.</li>
-      <li>Deduplication using Pandas drop_duplicates().</li>
-      <li>Outlier detection via Z-score and IQR methods.</li>
-    </ol>
-    <pre>
+  <section aria-label="Context of the Work">
+    <h2>Context of the Work</h2>
+    <p>
+      This artifact was developed as part of Module 4: Data Challenges in Machine Learning during my Master’s coursework in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. The activity required interaction with a SchoolAI Data Challenge Scenarios Coach, which presented three simulated real-world scenarios involving data preparation, privacy compliance, and bias mitigation.
+    </p>
+  </section>
+
+  <section aria-label="Process and Methodology">
+    <h2>Process and Methodology</h2>
+
+    <article aria-label="Step 1: Understanding the Scenarios">
+      <h3>Step 1: Understanding the Scenarios</h3>
+      <p>The chatbot presented three unique scenarios:</p>
+      <ul>
+        <li><strong>Data Quality Issues</strong> – Missing values, duplicates, and noisy data in a financial dataset.</li>
+        <li><strong>Privacy and Security</strong> – Handling sensitive healthcare data subject to GDPR and HIPAA.</li>
+        <li><strong>Bias and Fairness</strong> – Addressing imbalanced datasets and algorithmic bias in predictive hiring models.</li>
+      </ul>
+    </article>
+
+    <article aria-label="Step 2: Solutions for Each Scenario">
+      <h3>Step 2: Solutions for Each Scenario</h3>
+
+      <section aria-label="Scenario 1: Data Quality">
+        <h4>Scenario 1: Data Quality</h4>
+        <h5>Challenges Identified:</h5>
+        <ul>
+          <li>Missing values in key attributes.</li>
+          <li>Duplicate entries affecting accuracy.</li>
+          <li>Outliers creating skewed distributions.</li>
+        </ul>
+
+        <h5>Solutions Applied:</h5>
+        <ul>
+          <li><strong>Imputation:</strong> Used mean/mode imputation for missing numerical and categorical data.</li>
+          <li><strong>Normalization:</strong> Applied Min-Max scaling to handle data distribution.</li>
+          <li><strong>Outlier Treatment:</strong> Used Z-score method to identify and remove outliers.</li>
+          <li><strong>Tools:</strong> Python (Pandas, NumPy), scikit-learn preprocessing functions.</li>
+        </ul>
+
+        <pre>
+# Example Python code for missing data imputation and outlier removal
 import pandas as pd
 import numpy as np
+from scipy import stats
+from sklearn.preprocessing import MinMaxScaler
 
-# Handle missing data
-df['age'].fillna(df['age'].mean(), inplace=True)
+# Load dataset
+data = pd.read_csv('financial_data.csv')
+
+# Impute missing numerical values with mean
+data['income'].fillna(data['income'].mean(), inplace=True)
+
+# Impute missing categorical values with mode
+data['occupation'].fillna(data['occupation'].mode()[0], inplace=True)
 
 # Remove duplicates
-df.drop_duplicates(inplace=True)
+data.drop_duplicates(inplace=True)
 
-# Outlier detection
-from scipy import stats
-df = df[(np.abs(stats.zscore(df['salary'])) < 3)]
-    </pre>
-  </div>
-</section>
+# Remove outliers using Z-score
+z_scores = np.abs(stats.zscore(data.select_dtypes(include=[np.number])))
+data = data[(z_scores < 3).all(axis=1)]
 
-<!-- Scenario 2 -->
-<section id="scenario2">
-  <h2>Scenario 2: Privacy & Security</h2>
-  <p>Challenges:</p>
-  <ul>
-    <li>PHI compliance under HIPAA/GDPR.</li>
-    <li>Secure transmission and storage of healthcare records.</li>
-  </ul>
-  <button class="accordion">Click to Expand Solution</button>
-  <div class="panel">
-    <p><strong>Solutions:</strong> AES encryption for storage, anonymization for data sharing.</p>
-    <pre>
+# Normalize numerical features
+scaler = MinMaxScaler()
+data[['income', 'age']] = scaler.fit_transform(data[['income', 'age']])
+        </pre>
+      </section>
+
+      <section aria-label="Scenario 2: Privacy and Security">
+        <h4>Scenario 2: Privacy and Security</h4>
+        <h5>Challenges Identified:</h5>
+        <ul>
+          <li>Sensitive patient data (PHI) requiring legal compliance.</li>
+          <li>Potential for data breaches during transmission and storage.</li>
+        </ul>
+
+        <h5>Solutions Applied:</h5>
+        <ul>
+          <li><strong>Data Anonymization:</strong> Removed personal identifiers like names and IDs.</li>
+          <li><strong>Encryption:</strong> Applied AES-256 for secure data storage.</li>
+          <li><strong>Access Control:</strong> Implemented role-based access policies.</li>
+          <li><strong>Compliance:</strong> Ensured adherence to GDPR, HIPAA, and FERPA standards.</li>
+          <li><strong>Tools:</strong> Python cryptography libraries, secured cloud storage.</li>
+        </ul>
+
+        <pre>
+# Example Python code for AES encryption using cryptography library
 from cryptography.fernet import Fernet
 
-# Generate key and encrypt
+# Generate key (store this securely)
 key = Fernet.generate_key()
-cipher = Fernet(key)
+cipher_suite = Fernet(key)
 
-encrypted_data = cipher.encrypt(b"Sensitive patient record")
-print(encrypted_data)
-    </pre>
-  </div>
-</section>
+# Encrypt data
+sensitive_data = b"Patient PHI data to encrypt"
+encrypted_data = cipher_suite.encrypt(sensitive_data)
 
-<!-- Scenario 3 -->
-<section id="scenario3">
-  <h2>Scenario 3: Bias & Fairness</h2>
-  <p>Challenge: Hiring prediction dataset heavily biased toward male candidates.</p>
-  <button class="accordion">Click to Expand Solution</button>
-  <div class="panel">
-    <p>Used SMOTE to balance classes and AIF360 to check fairness.</p>
-    <pre>
+# Decrypt data
+decrypted_data = cipher_suite.decrypt(encrypted_data)
+print(decrypted_data.decode())
+        </pre>
+      </section>
+
+      <section aria-label="Scenario 3: Bias and Fairness">
+        <h4>Scenario 3: Bias and Fairness</h4>
+        <h5>Challenges Identified:</h5>
+        <ul>
+          <li>Class imbalance in hiring prediction dataset (e.g., 80% male candidates).</li>
+          <li>Potential for gender and ethnicity-based bias in ML predictions.</li>
+        </ul>
+
+        <h5>Solutions Applied:</h5>
+        <ul>
+          <li><strong>Class Balancing:</strong> Used SMOTE (Synthetic Minority Oversampling Technique).</li>
+          <li><strong>Bias Audit:</strong> Performed fairness evaluation using metrics such as Equal Opportunity Difference and Demographic Parity.</li>
+          <li><strong>Model Recalibration:</strong> Adjusted thresholds to reduce disparate impact.</li>
+          <li><strong>Team Diversity:</strong> Recommended inclusion of diverse stakeholders in model design.</li>
+          <li><strong>Tools:</strong> Python (imbalanced-learn, AIF360), bias detection frameworks.</li>
+        </ul>
+
+        <pre>
+# Example Python code to perform SMOTE oversampling
 from imblearn.over_sampling import SMOTE
-sm = SMOTE()
+from collections import Counter
+from sklearn.model_selection import train_test_split
+
+X = data.drop('target', axis=1)
+y = data['target']
+
+print('Original dataset shape %s' % Counter(y))
+sm = SMOTE(random_state=42)
 X_res, y_res = sm.fit_resample(X, y)
-    </pre>
-  </div>
-</section>
+print('Resampled dataset shape %s' % Counter(y_res))
+        </pre>
+      </section>
+    </article>
 
-<!-- Reflection -->
-<section id="reflection">
-  <h2>Reflection</h2>
-  <p>This exercise reinforced the significance of data integrity, ethical AI, and compliance in machine learning workflows. Key lessons:</p>
-  <ul>
-    <li>Garbage in, garbage out – Data quality directly impacts performance.</li>
-    <li>Bias can emerge at multiple stages of ML pipeline.</li>
-    <li>Privacy compliance builds trust and prevents legal issues.</li>
-  </ul>
-</section>
+    <article aria-label="Step 3: Documentation and Reflection">
+      <h3>Step 3: Documentation and Reflection</h3>
+      <p>Throughout the interaction with the SchoolAI chatbot, I recorded all decisions, evaluated the effectiveness of each solution, and noted areas for improvement. This process has been integrated as a portfolio artifact demonstrating critical thinking and applied ML knowledge.</p>
 
-<!-- References -->
-<section id="references">
-  <h2>References</h2>
-  <ol>
-    <li>IBM AI Fairness 360 Toolkit: <a href="https://aif360.mybluemix.net/" target="_blank">https://aif360.mybluemix.net/</a></li>
-    <li>GDPR Compliance: <a href="https://gdpr-info.eu/" target="_blank">https://gdpr-info.eu/</a></li>
-    <li>HIPAA Guidelines: <a href="https://www.hhs.gov/hipaa/index.html" target="_blank">https://www.hhs.gov/hipaa/index.html</a></li>
-  </ol>
-</section>
+      <blockquote>
+        "Handling data challenges with ethical and technical rigor is essential to build AI systems that are trustworthy and effective."
+      </blockquote>
 
-<!-- FOOTER -->
+      <h4>Tools & Techniques Used</h4>
+      <ul>
+        <li><strong>Languages:</strong> Python</li>
+        <li><strong>Libraries:</strong> Pandas, NumPy, scikit-learn, imbalanced-learn, AIF360</li>
+        <li><strong>Techniques:</strong> Data preprocessing, normalization, outlier detection, SMOTE, fairness metrics</li>
+        <li><strong>Security Practices:</strong> AES encryption, anonymization, GDPR/HIPAA compliance</li>
+        <li><strong>Platform:</strong> SchoolAI interactive chatbot</li>
+      </ul>
+
+      <h4>Value Proposition</h4>
+      <p>This artifact demonstrates my ability to:</p>
+      <ul>
+        <li>Diagnose and resolve data quality issues for robust ML training.</li>
+        <li>Implement privacy and security measures that comply with global standards.</li>
+        <li>Identify and mitigate algorithmic bias to promote ethical AI practices.</li>
+      </ul>
+
+      <h4>Professional Roles Supported</h4>
+      <ul>
+        <li>Machine Learning Engineer</li>
+        <li>AI/ML Data Scientist</li>
+        <li>Ethical AI Specialist</li>
+        <li>Data Governance Analyst</li>
+      </ul>
+    </article>
+
+    <article aria-label="Reflection and Feedback">
+      <h3>Reflection</h3>
+      <p>Engaging with the Data Challenge Scenarios reinforced the practical complexities of AI implementation. Key lessons learned include:</p>
+      <ul>
+        <li><strong>Data quality drives model performance:</strong> Poor data leads to flawed predictions, regardless of algorithm quality.</li>
+        <li><strong>Bias originates at multiple stages:</strong> Not just in data collection but also in labeling, feature selection, and interpretation.</li>
+        <li><strong>Privacy is non-negotiable:</strong> Compliance and security measures are integral to maintaining trust and preventing legal risks.</li>
+      </ul>
+
+      <h4>Feedback Integration</h4>
+      <p>The chatbot feedback helped me refine my approaches, especially in handling outliers and choosing fairness metrics. Initially, I considered only accuracy metrics, but after feedback, I incorporated demographic parity checks for ethical compliance.</p>
+
+      <h4>Customization for Audience</h4>
+      <p>For my portfolio, I expanded the technical descriptions, included compliance details, and illustrated the use of bias auditing frameworks to make this artifact relevant for employers in AI ethics, data governance, and advanced ML roles.</p>
+
+      <h4>Evidence of Learning</h4>
+      <ul>
+        <li>Screenshot of chatbot interaction (available in portfolio).</li>
+        <li>Documentation of solutions and applied techniques.</li>
+        <li>Reflection demonstrating critical thinking and ethical consideration.</li>
+      </ul>
+    </article>
+
+  </section>
+
+</main>
+
 <footer>
-  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | <a href="../index.html">Home</a> | <a href="../bio.html">Bio</a></p>
+  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | 
+    <a href="../index.html">Home</a> | 
+    <a href="../bio.html">Bio</a>
+  </p>
 </footer>
-
-<!-- Back to Top -->
-<button id="backToTop">&#8679;</button>
-
-<script>
-// Accordion Functionality
-const acc = document.querySelectorAll(".accordion");
-acc.forEach(btn => {
-  btn.addEventListener("click", function() {
-    this.classList.toggle("active");
-    const panel = this.nextElementSibling;
-    panel.style.display = (panel.style.display === "block") ? "none" : "block";
-  });
-});
-
-// Back to Top
-const backToTop = document.getElementById("backToTop");
-window.onscroll = () => {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    backToTop.style.display = "block";
-  } else {
-    backToTop.style.display = "none";
-  }
-};
-backToTop.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
-</script>
 
 </body>
 </html>
