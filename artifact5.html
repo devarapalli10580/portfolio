@@ -1,135 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</title>
-  <style>
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; background: #f9f9f9; color: #333;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 1.2px;
+  }
+  nav {
+    margin-top: 12px;
+  }
+  nav a {
+    color: #aad4ff;
+    margin: 0 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  nav a:hover, nav a.active {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+  section {
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  section:last-child {
+    border-bottom: none;
+  }
+  h2 {
+    border-left: 6px solid #0f527e;
+    padding-left: 12px;
+    color: #0f527e;
+    margin-bottom: 16px;
+    font-size: 2rem;
+  }
+  h3 {
+    color: #205375;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+  }
+  p {
+    margin-bottom: 14px;
+  }
+  ul, ol {
+    margin-left: 1.3rem;
+    margin-bottom: 14px;
+  }
+  ul li, ol li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: #205375;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Code styling */
+  pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+  code {
+    font-family: Consolas, monospace;
+  }
+
+  /* Collapsible code block */
+  .collapsible {
+    background-color: #205375;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .collapsible:hover {
+    background-color: #143d59;
+  }
+  .active, .collapsible:active {
+    background-color: #0f2a3d;
+  }
+  .content {
+    padding: 0 15px 15px 15px;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border-radius: 0 0 6px 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
     header h1 {
-      margin: 0;
-      font-size: 2.6rem;
-      letter-spacing: 1.2px;
+      font-size: 1.8rem;
     }
-    nav {
-      margin-top: 10px;
+    main {
+      margin: 20px 15px 50px 15px;
+      padding: 15px;
     }
     nav a {
-      color: #aad4ff;
-      margin: 0 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-size: 1rem;
+      margin: 0 8px;
+      font-size: 0.9rem;
     }
-    nav a:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px 60px 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    section {
-      margin-bottom: 50px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #ddd;
-    }
-    section:last-child {
-      border-bottom: none;
-    }
-    h2 {
-      border-left: 6px solid #0f527e;
-      padding-left: 12px;
-      color: #0f527e;
-      margin-bottom: 16px;
-      font-size: 2rem;
-    }
-    h3 {
-      color: #205375;
-      margin-top: 20px;
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-    }
-    p {
-      margin-bottom: 14px;
-    }
-    ul, ol {
-      margin-left: 1.3rem;
-      margin-bottom: 14px;
-    }
-    ul li, ol li {
-      margin-bottom: 8px;
-    }
-    a {
-      color: #205375;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code, pre {
-      background: #f4f4f4;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
-      font-family: Consolas, monospace;
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    /* Responsive */
-    @media (max-width: 720px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      main {
-        margin: 15px;
-        padding: 15px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
 <header>
   <h1>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</h1>
   <nav>
-    <a href="#bio">Bio</a>
-    <a href="#artifact1">Artifact 1</a>
-    <a href="#artifact2">Artifact 2</a>
-    <a href="#artifact3">Artifact 3</a>
-    <a href="#artifact4">Artifact 4</a>
-    <a href="#artifact5">Feedback</a>
+    <a href="#bio" class="nav-link active">Bio</a>
+    <a href="#artifact1" class="nav-link">Artifact 1</a>
+    <a href="#artifact2" class="nav-link">Artifact 2</a>
+    <a href="#artifact3" class="nav-link">Artifact 3</a>
+    <a href="#artifact4" class="nav-link">Artifact 4</a>
+    <a href="#artifact5" class="nav-link">Feedback</a>
   </nav>
 </header>
 
 <main>
-  <!-- Professional Bio Section -->
   <section id="bio">
     <h2>Professional Bio</h2>
     <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, an AI and Data Analytics professional pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of experience, I specialize in leveraging technology to deliver intelligent, ethical, and impactful AI solutions.</p>
@@ -137,7 +176,6 @@
     <p><strong>Contact:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a> | <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/naga-venkata" target="_blank" rel="noopener">GitHub</a></p>
   </section>
 
-  <!-- Artifact 1 -->
   <section id="artifact1">
     <h2>Artifact 1: AI Lab - No-Code Chatbot Assistant Development</h2>
     <h3>Objective</h3>
@@ -169,8 +207,9 @@
       <li>Deployment and monitoring</li>
     </ol>
 
-    <h3>Sample JSON Snippet</h3>
-    <pre><code>{
+    <button class="collapsible">Show/Hide Sample JSON Snippet</button>
+    <div class="content">
+      <pre><code>{
   "intents": [
     {
       "name": "greeting",
@@ -179,6 +218,7 @@
     }
   ]
 }</code></pre>
+    </div>
 
     <h3>Outcomes & Learnings</h3>
     <ul>
@@ -188,7 +228,6 @@
     </ul>
   </section>
 
-  <!-- Artifact 2 -->
   <section id="artifact2">
     <h2>Artifact 2: Evolution of Artificial Intelligence and Machine Learning Timeline</h2>
     <h3>Objective</h3>
@@ -215,7 +254,6 @@
     </ul>
   </section>
 
-  <!-- Artifact 3 -->
   <section id="artifact3">
     <h2>Artifact 3: SchoolAI - AI-Assisted Learning Platform</h2>
 
@@ -239,8 +277,9 @@
       <li>Continuous testing and iterative improvements</li>
     </ol>
 
-    <h3>Sample Python Code - Recommendation System</h3>
-    <pre><code>import pandas as pd
+    <button class="collapsible">Show/Hide Sample Python Code - Recommendation System</button>
+    <div class="content">
+      <pre><code>import pandas as pd
 from surprise import Dataset, Reader, KNNBasic
 
 ratings_dict = {
@@ -260,6 +299,7 @@ algo.fit(trainset)
 pred = algo.predict(9, 2)
 print(f"Predicted rating for user 9 on item 2: {pred.est}")
 </code></pre>
+    </div>
 
     <h3>Outcomes</h3>
     <ul>
@@ -278,7 +318,6 @@ print(f"Predicted rating for user 9 on item 2: {pred.est}")
     </ul>
   </section>
 
-  <!-- Artifact 4 -->
   <section id="artifact4">
     <h2>Artifact 4: Data Challenge Scenarios – Addressing Quality, Privacy, and Bias in Machine Learning</h2>
 
@@ -291,7 +330,9 @@ print(f"Predicted rating for user 9 on item 2: {pred.est}")
       <li>Solutions: Imputation, normalization, outlier removal</li>
       <li>Tools: Python (pandas, numpy, sklearn)</li>
     </ul>
-    <pre><code>import pandas as pd
+    <button class="collapsible">Show/Hide Python Code - Data Quality</button>
+    <div class="content">
+      <pre><code>import pandas as pd
 import numpy as np
 from scipy import stats
 from sklearn.preprocessing import MinMaxScaler
@@ -305,6 +346,7 @@ data = data[(z_scores < 3).all(axis=1)]
 scaler = MinMaxScaler()
 data[['income', 'age']] = scaler.fit_transform(data[['income', 'age']])
 </code></pre>
+    </div>
 
     <h3>Scenario 2: Privacy & Security</h3>
     <ul>
@@ -312,7 +354,9 @@ data[['income', 'age']] = scaler.fit_transform(data[['income', 'age']])
       <li>Solutions: Data anonymization, AES encryption, role-based access</li>
       <li>Tools: Python cryptography library</li>
     </ul>
-    <pre><code>from cryptography.fernet import Fernet
+    <button class="collapsible">Show/Hide Python Code - AES Encryption</button>
+    <div class="content">
+      <pre><code>from cryptography.fernet import Fernet
 
 key = Fernet.generate_key()
 cipher_suite = Fernet(key)
@@ -322,6 +366,7 @@ encrypted_data = cipher_suite.encrypt(sensitive_data)
 decrypted_data = cipher_suite.decrypt(encrypted_data)
 print(decrypted_data.decode())
 </code></pre>
+    </div>
 
     <h3>Scenario 3: Bias and Fairness</h3>
     <ul>
@@ -329,7 +374,9 @@ print(decrypted_data.decode())
       <li>Solutions: SMOTE oversampling, bias auditing, threshold adjustments</li>
       <li>Tools: imbalanced-learn, AIF360</li>
     </ul>
-    <pre><code>from imblearn.over_sampling import SMOTE
+    <button class="collapsible">Show/Hide Python Code - SMOTE Oversampling</button>
+    <div class="content">
+      <pre><code>from imblearn.over_sampling import SMOTE
 from collections import Counter
 
 X = data.drop('target', axis=1)
@@ -340,12 +387,12 @@ sm = SMOTE(random_state=42)
 X_res, y_res = sm.fit_resample(X, y)
 print('Resampled dataset shape %s' % Counter(y_res))
 </code></pre>
+    </div>
 
     <h3>Reflection</h3>
     <p>This artifact demonstrates my commitment to creating trustworthy AI systems by addressing data quality, privacy, and bias challenges with technical and ethical rigor.</p>
   </section>
 
-  <!-- Artifact 5 -->
   <section id="artifact5">
     <h2>Artifact 5: Professional Portfolio Feedback and Reflection</h2>
 
@@ -397,6 +444,58 @@ print('Resampled dataset shape %s' % Counter(y_res))
 <footer style="text-align:center; padding: 20px; background:#0f2027; color:#aad4ff;">
   <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
 </footer>
+
+<script>
+  // Smooth scroll navigation
+  document.querySelectorAll('nav a.nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      // Remove active class from all links
+      document.querySelectorAll('nav a.nav-link').forEach(a => a.classList.remove('active'));
+      // Add active to clicked
+      link.classList.add('active');
+
+      const targetId = link.getAttribute('href').slice(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Highlight nav on scroll
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 80;
+    const sections = document.querySelectorAll('main section');
+    let currentId = '';
+    for (const section of sections) {
+      if (scrollPos >= section.offsetTop) {
+        currentId = section.id;
+      }
+    }
+    if (currentId) {
+      document.querySelectorAll('nav a.nav-link').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href').slice(1) === currentId);
+      });
+    }
+  });
+
+  // Collapsible code blocks
+  document.querySelectorAll('.collapsible').forEach(button => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('active');
+      const content = button.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
