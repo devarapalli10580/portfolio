@@ -1,398 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Professional Portfolio Feedback Discussion</title>
-  <style>
-    /* Extensive styles for readability and structure */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9faff;
-      color: #222;
-      margin: 0; padding: 0;
-      line-height: 1.6;
-      min-width: 320px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto 60px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      border: 1px solid #ddd;
-    }
-    h1, h2, h3, h4 {
-      color: #3a3a99;
-    }
-    h1 {
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    h2 {
-      font-size: 2.4rem;
-      border-bottom: 4px solid #5a5aff;
-      padding-bottom: 12px;
-      margin-top: 50px;
-      margin-bottom: 30px;
-    }
-    h3 {
-      font-size: 1.8rem;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-    h4 {
-      font-size: 1.4rem;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: #555;
-    }
-    p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-      color: #333;
-      text-align: justify;
-    }
-    ul {
-      margin-left: 25px;
-      margin-bottom: 30px;
-      color: #444;
-    }
-    li {
-      margin-bottom: 14px;
-      font-size: 1.05rem;
-    }
-    strong {
-      color: #4e54c8;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 40px;
-    }
-    th, td {
-      border: 1px solid #bbb;
-      padding: 14px 20px;
-      text-align: left;
-      vertical-align: top;
-      font-size: 1rem;
-    }
-    th {
-      background-color: #4e54c8;
-      color: white;
-      font-weight: 600;
-    }
-    tr:nth-child(even) {
-      background-color: #f0f0ff;
-    }
-    #discussion-box {
-      margin-top: 60px;
-      padding: 30px 35px;
-      border: 2px solid #4e54c8;
-      border-radius: 12px;
-      background: #e7e9ff;
-    }
-    #discussion-box h2 {
-      color: #2f2fc8;
-      margin-bottom: 30px;
-    }
-    #discussion-form label {
-      display: block;
-      margin-bottom: 12px;
-      font-weight: 700;
-      color: #3a3a99;
-      font-size: 1.1rem;
-    }
-    #discussion-form input[type="text"],
-    #discussion-form textarea {
-      width: 100%;
-      padding: 16px 18px;
-      border-radius: 8px;
-      border: 1.5px solid #aaa;
-      font-size: 1.1rem;
-      font-family: inherit;
-      resize: vertical;
-      margin-bottom: 24px;
-      transition: border-color 0.3s ease;
-    }
-    #discussion-form input[type="text"]:focus,
-    #discussion-form textarea:focus {
-      outline: none;
-      border-color: #4e54c8;
-      background: #f5f7ff;
-    }
-    #discussion-form button {
-      background-color: #4e54c8;
-      border: none;
-      color: white;
-      font-size: 1.3rem;
-      font-weight: 700;
-      padding: 16px 30px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #discussion-form button:hover {
-      background-color: #3a3ab8;
-    }
-    #feedback-entries {
-      margin-top: 40px;
-      max-height: 400px;
-      overflow-y: auto;
-      border-top: 2px solid #4e54c8;
-      padding-top: 20px;
-    }
-    .feedback-entry {
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 20px 25px;
-      border-radius: 14px;
-      margin-bottom: 30px;
-      box-shadow: 0 5px 12px rgba(78, 84, 200, 0.15);
-      font-size: 1.1rem;
-      line-height: 1.5;
-      white-space: pre-wrap;
-    }
-    .feedback-entry h4 {
-      margin: 0 0 12px 0;
-      font-weight: 700;
-      color: #2a2a8a;
-      font-size: 1.25rem;
-    }
-    /* Responsive */
-    @media(max-width: 700px) {
-      .container {
-        padding: 25px 20px;
-      }
-      h1 {
-        font-size: 2.2rem;
-      }
-      h2 {
-        font-size: 1.9rem;
-      }
-      h3 {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Professional Portfolio Feedback - Expanded Detailed Discussion</title>
+<style>
+  /* Base styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9faff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: linear-gradient(90deg, #4e54c8, #8f94fb);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 2px;
+  }
+  header p {
+    font-size: 1.25em;
+    margin-top: 10px;
+    font-weight: 300;
+  }
+  nav {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  nav a {
+    color: #eee;
+    margin: 0 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: #4e54c8;
+    color: white;
+  }
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  section {
+    background: white;
+    margin-bottom: 40px;
+    padding: 30px 40px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+  }
+  h2 {
+    color: #4e54c8;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 2.25em;
+    border-bottom: 3px solid #8f94fb;
+    padding-bottom: 8px;
+  }
+  h3 {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.6em;
+  }
+  p {
+    font-size: 1.1em;
+    margin-bottom: 18px;
+  }
+  ul, ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  .code-block {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  .ref-list li {
+    margin-bottom: 8px;
+  }
+  footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 1em;
+  }
+  /* Form Styles */
+  form {
+    margin-top: 30px;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  textarea {
+    resize: vertical;
+  }
+  button {
+    background-color: #4e54c8;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #373ca7;
+  }
+  /* Feedback Display */
+  .feedback-entry {
+    background-color: #eef2ff;
+    border-left: 5px solid #4e54c8;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  .feedback-entry strong {
+    font-size: 1.15em;
+    color: #2c2f9f;
+  }
+  .feedback-entry p {
+    margin-top: 8px;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  /* Scroll to top */
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #4e54c8;
+    color: white;
+    padding: 14px 18px;
+    font-size: 1.2em;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 1000;
+  }
+</style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Professional Portfolio Artifacts Feedback Discussion</h1>
+<header>
+  <h1>5.5 Discussion: Professional Portfolio Feedback</h1>
+  <p>Detailed Portfolio Artifact Analysis and Peer Feedback Guidelines</p>
+</header>
 
-  <!-- Artifact 1 -->
-  <section id="artifact1">
-    <h2>Artifact 1: ChatBox Creator Bot</h2>
+<nav>
+  <a href="#requirements">Workshop 5 Requirements</a>
+  <a href="#artifact1">Artifact 1</a>
+  <a href="#artifact2">Artifact 2</a>
+  <a href="#artifact3">Artifact 3</a>
+  <a href="#artifact4">Artifact 4</a>
+  <a href="#peerfeedback">Peer Feedback Guidelines</a>
+  <a href="#submitfeedback">Submit Feedback</a>
+</nav>
 
-    <h3>Introduction and Overview</h3>
-    <p>
-      The ChatBox Creator Bot is a conversational AI assistant developed for simplifying chatbot creation without programming knowledge. Built on Mizou.com’s no-code platform, it empowers users to design, customize, and deploy chatbots via interactive guided conversations.
-    </p>
+<main>
 
-    <h3>Detailed Feedback</h3>
-
-    <h4>Positive Observations</h4>
+<section id="requirements">
+  <h2>Workshop 5 Portfolio Requirements</h2>
+  <p>By Workshop 5, students must submit a digital portfolio showcasing their work in a professional and organized manner.</p>
+  <ul>
+    <li><strong>Digital Portfolio Site:</strong> A shareable online portfolio with clear navigation and accessible links.</li>
+    <li><strong>Professional Bio:</strong> A well-crafted biography describing skills, background, and career goals.</li>
+    <li><strong>Personal Value Proposition:</strong> A clear statement of unique skills and offerings as an AI/Data Analytics professional.</li>
+    <li><strong>Target Audience:</strong> Identification of the intended audience and relevance of the portfolio artifacts to them.</li>
+    <li><strong>Artifact Descriptions:</strong> Comprehensive information for each artifact including:</li>
     <ul>
-      <li>Exceptional user empathy demonstrated by understanding non-technical user challenges.</li>
-      <li>Strong use of design thinking framework: empathize, define, ideate, prototype, test.</li>
-      <li>Effective incorporation of peer feedback, improving performance metrics significantly.</li>
-      <li>Clear documentation and explanation of technical tools and processes.</li>
-      <li>Great collaboration evident between interdisciplinary team members.</li>
+      <li>Title</li>
+      <li>Introduction and description</li>
+      <li>Objective</li>
+      <li>Process</li>
+      <li>Tools and technologies used</li>
+      <li>Value proposition including unique value and relevance</li>
+      <li>References</li>
     </ul>
+  </ul>
+  <p>Following these criteria ensures the portfolio is professional, informative, and valuable for prospective employers, peers, and instructors.</p>
+</section>
 
-    <h4>Areas for Improvement</h4>
-    <ul>
-      <li>Include visual aids such as screenshots or short video demos to complement text descriptions.</li>
-      <li>Explain technical terms like Mean Reciprocal Rank (MRR) in simpler language for general audiences.</li>
-      <li>Address privacy and data protection standards like GDPR compliance more explicitly.</li>
-      <li>Consider adding a section on potential ethical implications and mitigation strategies for chatbot deployment.</li>
-    </ul>
+<!-- Artifact 1 -->
+<section id="artifact1">
+  <h2>Artifact 1: ChatBox Creator Bot</h2>
 
-    <h4>Value Proposition and Relevance</h4>
-    <p>
-      This artifact serves as an excellent example for employers, instructors, and peers to assess practical AI skills including prompt engineering, LLM integration, and user-centric design. It is highly relevant to small businesses and novice developers seeking accessible AI tools.
-    </p>
+  <h3>Introduction</h3>
+  <p>This artifact highlights the creation of a no-code AI chatbot assistant designed to help users build customized chatbots for websites, small businesses, or learning projects without coding expertise.</p>
 
-    <h4>References and Tools Used</h4>
-    <p>Mizou.com platform, Botpress documentation, OpenAI GPT-4 technical overview, Anthropic Claude 3, GDPR guidelines, Replit collaborative coding.</p>
+  <h3>Description</h3>
+  <p>The <em>ChatBox Creator Bot</em> provides an intuitive conversational interface where users can select chatbot tone, design FAQs, preview flowcharts, and deploy bots quickly using the Mizou.com platform.</p>
 
-  </section>
+  <h3>Objective</h3>
+  <p>To simplify chatbot development for non-technical users by eliminating coding barriers and offering guided, step-by-step assistance.</p>
 
-  <!-- Artifact 2 -->
-  <section id="artifact2">
-    <h2>Artifact 2: AI & Machine Learning Evolution Timeline</h2>
+  <h3>Process</h3>
+  <ol>
+    <li>Empathize: Conducted user interviews with entrepreneurs and students to identify challenges in chatbot creation.</li>
+    <li>Define: Framed the problem of complex technical jargon and steep learning curves.</li>
+    <li>Ideate: Brainstormed features such as interactive FAQ builder, tone selector, and multilingual templates.</li>
+    <li>Prototype: Built core chatbot functions using the no-code Mizou platform.</li>
+    <li>Test: Performed peer testing, gathered feedback, and iteratively refined UX and language.</li>
+  </ol>
 
-    <h3>Introduction and Overview</h3>
-    <p>
-      A visually rich timeline depicting the evolution of AI and ML, tracing major milestones, breakthroughs, and setbacks from the 1950s through to contemporary advancements. Created with Canva and Google Slides.
-    </p>
+  <h3>Tools and Technologies Used</h3>
+  <ul>
+    <li>Mizou.com no-code chatbot builder</li>
+    <li>Google Docs for collaborative documentation</li>
+    <li>Figma for UI mockups</li>
+  </ul>
 
-    <h3>Detailed Feedback</h3>
+  <h3>Value Proposition</h3>
+  <p>This chatbot lowers the barrier to entry for chatbot creation, enabling small businesses and individuals to leverage conversational AI quickly and confidently.</p>
 
-    <h4>Positive Observations</h4>
-    <ul>
-      <li>Comprehensive coverage of AI history including lesser-known but impactful events.</li>
-      <li>Clear visual differentiation of periods, technologies, and concepts using color coding.</li>
-      <li>Accessible educational format supporting various learning styles.</li>
-    </ul>
+  <h3>Unique Value</h3>
+  <p>Its user-friendly interface, combined with dynamic tone selection and visual flow previews, differentiates it from rigid and complex chatbot development tools.</p>
 
-    <h4>Areas for Improvement</h4>
-    <ul>
-      <li>Consider embedding interactive or downloadable formats to engage users beyond static visuals.</li>
-      <li>Expand future projections or trends in AI for strategic insight.</li>
-      <li>Define the target audience more explicitly to tailor language and depth.</li>
-    </ul>
+  <h3>Relevance</h3>
+  <p>As AI chatbots become mainstream for customer engagement, this tool serves a growing market of users lacking programming skills but seeking digital solutions.</p>
 
-    <h4>Value Proposition and Relevance</h4>
-    <p>
-      This artifact is valuable to students, educators, and AI professionals aiming to understand AI’s historical context and trajectory, aiding informed decision-making and learning.
-    </p>
+  <h3>References</h3>
+  <ul class="ref-list">
+    <li><a href="https://openai.com/gpt-4" target="_blank">OpenAI (2024). ChatGPT and GPT-4 Technical Capabilities Overview.</a></li>
+    <li><a href="https://mizou.com" target="_blank">Mizou (2025). Mizou AI Chatbot Builder.</a></li>
+    <li><a href="https://designthinking.ideo.com/" target="_blank">IDEO (n.d.). Design Thinking.</a></li>
+  </ul>
 
-  </section>
+  <h3>Code Sample: Simple Intent Recognition Example</h3>
+  <pre class="code-block">
+{
+  "intent": "greeting",
+  "examples": [
+    "Hi",
+    "Hello",
+    "Hey there",
+    "Good morning"
+  ],
+  "responses": [
+    "Hello! How can I assist you today?",
+    "Hi there! Ready to build your chatbot?"
+  ]
+}
+  </pre>
 
-  <!-- Artifact 3 -->
-  <section id="artifact3">
-    <h2>Artifact 3: COVID-19 Death vs Vaccination Data Analysis (India)</h2>
+  <h3>Reflection</h3>
+  <p>This project deepened my understanding of design thinking, iterative testing, and user-centric AI tool development, all critical skills for a future AI professional.</p>
+</section>
 
-    <h3>Introduction and Overview</h3>
-    <p>
-      An RStudio-based data analytics project examining correlations between COVID-19 vaccination rates and death tolls in India. Focuses on data cleaning, visualization, and statistical interpretation.
-    </p>
+<!-- Artifact 2 -->
+<section id="artifact2">
+  <h2>Artifact 2: COVID-19 Data Analysis - Death vs Vaccination Trends in India</h2>
 
-    <h3>Detailed Feedback</h3>
+  <h3>Introduction</h3>
+  <p>This artifact involves analyzing COVID-19 data to explore trends between death rates and vaccination coverage across India, using RStudio.</p>
 
-    <h4>Positive Observations</h4>
-    <ul>
-      <li>Timely and relevant public health focus with clear societal impact.</li>
-      <li>Proficient use of R packages for data manipulation and visualization.</li>
-      <li>Insightful interpretation linking data trends with health outcomes.</li>
-    </ul>
+  <h3>Description</h3>
+  <p>By merging datasets on daily deaths and vaccinations, the project identifies correlations, temporal trends, and regional variations.</p>
 
-    <h4>Areas for Improvement</h4>
-    <ul>
-      <li>Disclose limitations related to data completeness, accuracy, and potential biases.</li>
-      <li>Suggest actionable recommendations for policymakers or healthcare providers.</li>
-      <li>Consider adding interactive visualizations or dashboards for deeper engagement.</li>
-    </ul>
+  <h3>Objective</h3>
+  <p>To generate data-driven insights that inform public health decision-making and highlight vaccination impact on mortality.</p>
 
-    <h4>Value Proposition and Relevance</h4>
-    <p>
-      This artifact is highly relevant to epidemiologists, healthcare decision-makers, and data analysts focused on pandemic response and health data science.
-    </p>
+  <h3>Process</h3>
+  <ol>
+    <li>Data Collection: Downloaded datasets from official sources like MoHFW and WHO.</li>
+    <li>Cleaning: Used R packages (dplyr, tidyr) to preprocess and handle missing data.</li>
+    <li>Exploratory Data Analysis: Created time series plots and correlation matrices.</li>
+    <li>Modeling: Applied regression models to quantify vaccination effects.</li>
+    <li>Visualization: Used ggplot2 for impactful charts and dashboards.</li>
+  </ol>
 
-  </section>
+  <h3>Tools and Technologies Used</h3>
+  <ul>
+    <li>RStudio and tidyverse libraries</li>
+    <li>Microsoft Excel for data validation</li>
+    <li>Power BI for dashboard creation</li>
+  </ul>
 
-  <!-- Artifact 4 -->
-  <section id="artifact4">
-    <h2>Artifact 4: Big Data Adoption in Healthcare Case Study (MIMIC-III)</h2>
+  <h3>Value Proposition</h3>
+  <p>Combines epidemiological data with analytics techniques to support evidence-based policymaking.</p>
 
-    <h3>Introduction and Overview</h3>
-    <p>
-      An in-depth case study examining big data adoption challenges and opportunities in healthcare, leveraging the MIMIC-III clinical database. Addresses technical, ethical, and organizational factors.
-    </p>
+  <h3>Unique Value</h3>
+  <p>Integrates multiple data sources and employs advanced statistical modeling to reveal nuanced trends.</p>
 
-    <h3>Detailed Feedback</h3>
+  <h3>Relevance</h3>
+  <p>Vital for understanding the effectiveness of vaccination programs in real-world pandemic response.</p>
 
-    <h4>Positive Observations</h4>
-    <ul>
-      <li>Strong interdisciplinary focus combining data science with healthcare and ethics.</li>
-      <li>Comprehensive literature review supporting arguments and findings.</li>
-      <li>Consideration of regulatory and privacy compliance reflects professional awareness.</li>
-    </ul>
+  <h3>References</h3>
+  <ul class="ref-list">
+    <li>MoHFW (2023). COVID-19 Vaccination Data India.</li>
+    <li>WHO (2023). COVID-19 Dashboard.</li>
+    <li>Tidyverse (2024). Tidyverse R Packages.</li>
+  </ul>
 
-    <h4>Areas for Improvement</h4>
-    <ul>
-      <li>Include real-world case examples or data-driven outcomes to strengthen impact.</li>
-      <li>Use infographics or charts to summarize complex concepts visually.</li>
-      <li>Propose future innovations or improvements based on identified challenges.</li>
-    </ul>
+  <h3>Code Sample: Sample R Script Snippet</h3>
+  <pre class="code-block">
+library(dplyr)
+library(ggplot2)
 
-    <h4>Value Proposition and Relevance</h4>
-    <p>
-      This artifact provides valuable insights for healthcare administrators, data scientists, and policy experts exploring responsible big data integration in clinical settings.
-    </p>
+# Load data
+covid_data <- read.csv("covid_india.csv")
 
-  </section>
+# Filter and summarize
+summary <- covid_data %>%
+  filter(Date >= "2021-01-01") %>%
+  group_by(State) %>%
+  summarise(
+    total_deaths = sum(Deaths, na.rm=TRUE),
+    total_vaccinations = sum(Vaccinations, na.rm=TRUE)
+  )
 
-  <!-- Discussion Box -->
-  <section id="discussion-box" aria-label="Discussion and feedback submission section">
-    <h2>Discussion & Feedback Submission</h2>
+# Plot deaths vs vaccinations
+ggplot(summary, aes(x=total_vaccinations, y=total_deaths)) +
+  geom_point(color="blue") +
+  geom_smooth(method="lm") +
+  theme_minimal() +
+  labs(title="Deaths vs Vaccinations by State in India",
+       x="Total Vaccinations",
+       y="Total Deaths")
+  </pre>
 
-    <form id="discussion-form" onsubmit="submitFeedback(event)" aria-describedby="form-instructions">
-      <p id="form-instructions" style="margin-bottom: 20px; font-style: italic;">
-        Please enter your name and share your feedback or comments related to the artifacts above.
-      </p>
+  <h3>Reflection</h3>
+  <p>This artifact sharpened my data wrangling skills and taught me how to tell stories with data to support public health initiatives.</p>
+</section>
 
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Enter your full name"
-        aria-required="true"
-        required
-      />
+<!-- Artifact 3 -->
+<section id="artifact3">
+  <h2>Artifact 3: Big Data Adoption Case Study in Healthcare Using MIMIC-III</h2>
 
-      <label for="comment">Feedback / Comments:</label>
-      <textarea
-        id="comment"
-        name="comment"
-        rows="6"
-        placeholder="Write your detailed feedback here..."
-        aria-required="true"
-        required
-      ></textarea>
+  <h3>Introduction</h3>
+  <p>This case study explores the adoption of big data analytics in healthcare using the MIMIC-III dataset, which contains detailed clinical data from ICU stays.</p>
 
-      <button type="submit" aria-label="Submit your feedback">Submit Feedback</button>
-    </form>
+  <h3>Description</h3>
+  <p>The study investigates how healthcare institutions leverage big data to improve patient outcomes, streamline operations, and support research.</p>
 
-    <div id="feedback-entries" aria-live="polite" aria-atomic="true" style="margin-top: 40px;">
-      <!-- Dynamic feedback entries will appear here -->
-    </div>
-  </section>
+  <h3>Objective</h3>
+  <p>To understand challenges, opportunities, and the technology landscape around big data adoption in healthcare.</p>
 
-</div>
+  <h3>Process</h3>
+  <ol>
+    <li>Literature Review: Analyzed 6+ research papers on big data in healthcare.</li>
+    <li>Data Familiarization: Explored MIMIC-III dataset structures and variables.</li>
+    <li>Interview: Conducted discussions with healthcare data analysts.</li>
+    <li>Analysis: Mapped big data tools to healthcare challenges.</li>
+    <li>Documentation: Compiled findings into a comprehensive case study report.</li>
+  </ol>
+
+  <h3>Tools and Technologies Used</h3>
+  <ul>
+    <li>MIMIC-III dataset (PhysioNet)</li>
+    <li>Python for data exploration (pandas, matplotlib)</li>
+    <li>Research databases (PubMed, IEEE Xplore)</li>
+  </ul>
+
+  <h3>Value Proposition</h3>
+  <p>Provides insights into how big data analytics can transform healthcare delivery and research.</p>
+
+  <h3>Unique Value</h3>
+  <p>Combines practical dataset exploration with theoretical research for a balanced perspective.</p>
+
+  <h3>Relevance</h3>
+  <p>Supports stakeholders in healthcare technology adoption and strategic planning.</p>
+
+  <h3>References</h3>
+  <ul class="ref-list">
+    <li>Johnson et al. (2016). MIMIC-III Clinical Database. <a href="https://physionet.org/content/mimiciii/1.4/" target="_blank">physionet.org</a></li>
+    <li>Wang et al. (2023). Big Data in Healthcare. Journal of Health Informatics.</li>
+    <li>IEEE Xplore (2024). Analytics Tools for Healthcare Data.</li>
+  </ul>
+
+  <h3>Code Sample: Python Data Exploration</h3>
+  <pre class="code-block">
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load MIMIC-III CSV sample
+df = pd.read_csv('mimiciii_sample.csv')
+
+# Basic stats
+print(df.describe())
+
+# Plot age distribution
+plt.hist(df['age'], bins=30, color='teal')
+plt.title('Age Distribution of ICU Patients')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
+  </pre>
+
+  <h3>Reflection</h3>
+  <p>This case study enhanced my knowledge of healthcare data complexities and the power of big data to enable clinical insights.</p>
+</section>
+
+<!-- Artifact 4 -->
+<section id="artifact4">
+  <h2>Artifact 4: Eco-friendly Energy Consumption Dashboard</h2>
+
+  <h3>Introduction</h3>
+  <p>This artifact features an interactive dashboard that visualizes household energy consumption trends with an emphasis on sustainability.</p>
+
+  <h3>Description</h3>
+  <p>The dashboard combines smart meter data and weather information to help users understand energy usage patterns and recommend energy-saving actions.</p>
+
+  <h3>Objective</h3>
+  <p>To provide actionable insights for eco-conscious consumers aiming to reduce their carbon footprint and save costs.</p>
+
+  <h3>Process</h3>
+  <ol>
+    <li>Data Acquisition: Collected smart meter data and weather API data.</li>
+    <li>Data Cleaning: Handled missing and inconsistent readings.</li>
+    <li>Dashboard Design: Created interactive visualizations using Power BI.</li>
+    <li>User Testing: Received feedback from pilot users to improve UX.</li>
+    <li>Iteration: Enhanced dashboard with personalized tips and alerts.</li>
+  </ol>
+
+  <h3>Tools and Technologies Used</h3>
+  <ul>
+    <li>Power BI for dashboarding</li>
+    <li>Python (pandas, requests) for preprocessing</li>
+    <li>OpenWeatherMap API for weather data</li>
+  </ul>
+
+  <h3>Value Proposition</h3>
+  <p>This dashboard empowers users with data-driven recommendations to optimize energy use and support environmental goals.</p>
+
+  <h3>Unique Value</h3>
+  <p>Integration of real-time weather and usage data offers a holistic and personalized view of energy consumption.</p>
+
+  <h3>Relevance</h3>
+  <p>Aligned with global sustainability trends and increasing demand for smart energy management tools.</p>
+
+  <h3>References</h3>
+  <ul class="ref-list">
+    <li>Power BI Documentation (2024). <a href="https://docs.microsoft.com/power-bi" target="_blank">docs.microsoft.com/power-bi</a></li>
+    <li>OpenWeatherMap API. <a href="https://openweathermap.org/api" target="_blank">openweathermap.org/api</a></li>
+  </ul>
+
+  <h3>Code Sample: Python Weather Data Fetch</h3>
+  <pre class="code-block">
+import requests
+
+API_KEY = 'your_api_key_here'
+city = 'Dallas'
+url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}"
+
+response = requests.get(url)
+data = response.json()
+
+print(f"Temperature in {city}: {data['main']['temp']} Kelvin")
+  </pre>
+
+  <h3>Reflection</h3>
+  <p>This project taught me how to merge heterogeneous datasets and the importance of user-friendly dashboards in promoting sustainable behavior.</p>
+</section>
+
+<!-- Peer Feedback Guidelines -->
+<section id="peerfeedback">
+  <h2>Peer Feedback: Guidelines and Best Practices</h2>
+
+  <p>Constructive peer feedback is essential for learning and improvement. Please follow these guidelines:</p>
+
+  <ul>
+    <li><strong>Start with Positive Observations:</strong> Acknowledge what the peer has done well.</li>
+    <li><strong>Be Specific:</strong> Provide clear examples rather than vague comments.</li>
+    <li><strong>Suggest Improvements:</strong> Offer actionable advice on how to enhance the portfolio or artifacts.</li>
+    <li><strong>Focus on Work, Not the Person:</strong> Keep feedback professional and objective.</li>
+  </ul>
+
+  <h3>Areas to Focus on</h3>
+  <ul>
+    <li>Clarity of project descriptions and objectives.</li>
+    <li>Demonstration of AI/ML skills and data analytics.</li>
+    <li>Overall organization, design, and presentation of the portfolio.</li>
+    <li>Appropriateness and relevance for the intended audience.</li>
+  </ul>
+
+  <h3>Confidentiality & Professionalism</h3>
+  <p>Respect the intellectual property and privacy of peers’ work. Provide feedback as you would in a professional setting.</p>
+
+  <h3>Example Feedback Comments</h3>
+
+  <div class="feedback-entry">
+    <strong>Reviewer: Jane Smith</strong>
+    <p>The explanation of the chatbot process in Artifact 1 was very clear and engaging. I especially liked the inclusion of the code sample. For improvement, adding a short demo video could make the artifact even more compelling.</p>
+  </div>
+
+  <div class="feedback-entry">
+    <strong>Reviewer: John Doe</strong>
+    <p>Artifact 2’s data visualizations are insightful and well labeled. Consider providing more detail on the data cleaning steps to enhance transparency and reproducibility.</p>
+  </div>
+
+  <div class="feedback-entry">
+    <strong>Reviewer: Maria Lopez</strong>
+    <p>The big data case study provides strong theoretical background. Including some hands-on analysis examples would elevate the practical understanding.</p>
+  </div>
+
+  <div class="feedback-entry">
+    <strong>Reviewer: Ahmed Khan</strong>
+    <p>The energy dashboard is visually appealing and well structured. Adding user testimonials or feedback from pilot users would strengthen the value proposition.</p>
+  </div>
+
+</section>
+
+<!-- Feedback Submission Form -->
+<section id="submitfeedback">
+  <h2>Submit Your Feedback</h2>
+  <p>Please provide your name and detailed constructive feedback below. Your feedback helps peers improve and learn.</p>
+  <form id="feedbackForm" onsubmit="submitFeedback(event)">
+    <label for="reviewerName">Name:</label>
+    <input type="text" id="reviewerName" placeholder="Your full name" required />
+
+    <label for="feedbackText">Feedback:</label>
+    <textarea id="feedbackText" rows="8" placeholder="Write detailed feedback here..." required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+  <div id="feedbackDisplay"></div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Professional Portfolio Feedback Discussion | Created by Your Name</p>
+</footer>
+
+<button id="scrollTopBtn" title="Scroll to top">&#8679;</button>
 
 <script>
+  // Scroll to top button
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.onscroll = () => {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+  scrollTopBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Feedback submission and display
   function submitFeedback(event) {
     event.preventDefault();
-
-    const nameInput = document.getElementById('name');
-    const commentInput = document.getElementById('comment');
-    const feedbackEntries = document.getElementById('feedback-entries');
-
-    const name = nameInput.value.trim();
-    const comment = commentInput.value.trim();
-
-    if (!name || !comment) {
-      alert('Please enter both your name and feedback.');
+    const name = document.getElementById('reviewerName').value.trim();
+    const feedback = document.getElementById('feedbackText').value.trim();
+    if (!name || !feedback) {
+      alert('Please fill in both your name and feedback.');
       return;
     }
+    const display = document.getElementById('feedbackDisplay');
+    const entry = document.createElement('div');
+    entry.classList.add('feedback-entry');
+    entry.innerHTML = `<strong>Reviewer: ${escapeHtml(name)}</strong><p>${escapeHtml(feedback).replace(/\n/g, '<br>')}</p>`;
+    display.prepend(entry);
 
-    const entryDiv = document.createElement('div');
-    entryDiv.className = 'feedback-entry';
+    // Clear form
+    event.target.reset();
+  }
 
-    const nameHeading = document.createElement('h4');
-    nameHeading.textContent = name;
-
-    const commentPara = document.createElement('p');
-    commentPara.textContent = comment;
-
-    entryDiv.appendChild(nameHeading);
-    entryDiv.appendChild(commentPara);
-
-    // Insert at top for recent feedback first
-    feedbackEntries.insertBefore(entryDiv, feedbackEntries.firstChild);
-
-    // Reset form
-    nameInput.value = '';
-    commentInput.value = '';
-
-    // Scroll to new feedback entry
-    entryDiv.scrollIntoView({ behavior: 'smooth' });
+  // Escape HTML to prevent injection
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
   }
 </script>
 
