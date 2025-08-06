@@ -5,1137 +5,329 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Portfolio Feedback & Discussion - Naga Venkata Satyanarayana Devarapalli</title>
 <style>
-  /* Reset & base styles */
-  * {
+  /* =======================
+     Reset and Base Styles
+  ========================= */
+  *, *::before, *::after {
     box-sizing: border-box;
   }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #eef4fb;
     margin: 0; padding: 0;
-    color: #2c3e50;
-    transition: background-color 0.3s, color 0.3s;
+    background: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
   }
-  body.dark {
-    background: #1e1e1e;
-    color: #ddd;
+  h1, h2, h3, h4 {
+    margin-top: 0;
+    color: #004080;
   }
+  a {
+    color: #004080;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+
+  /* =======================
+     Header Styles
+  ========================= */
   header {
-    background: linear-gradient(90deg, #005a9c, #0078d4);
-    padding: 30px 20px;
+    background-color: #004080;
     color: white;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-  }
-  body.dark header {
-    background: linear-gradient(90deg, #00305a, #004b80);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   }
   header h1 {
+    font-size: 1.8rem;
     margin: 0;
-    font-size: 2.8rem;
-    font-weight: 900;
-    letter-spacing: 1.4px;
   }
-  header p {
-    margin-top: 8px;
-    font-weight: 400;
-    font-size: 1.1rem;
-    color: #c6e0ff;
+  nav a {
+    margin-left: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
   }
-  main {
-    max-width: 1000px;
-    margin: 40px auto 80px;
-    padding: 0 20px;
-  }
-  h2.section-title {
-    color: #0078d4;
-    border-left: 6px solid #0078d4;
-    padding-left: 12px;
-    margin-bottom: 30px;
+  nav a[aria-current="page"] {
+    text-decoration: underline;
     font-weight: 700;
-    font-size: 2rem;
   }
-  body.dark h2.section-title {
-    color: #66aaff;
-    border-left-color: #66aaff;
+  nav a:focus {
+    outline: 2px dashed #ffcc00;
+    outline-offset: 3px;
   }
-  /* Feedback cards */
+
+  /* =======================
+     Main Content
+  ========================= */
+  main {
+    max-width: 960px;
+    margin: 6rem auto 3rem; /* leave space for fixed header */
+    padding: 0 1rem;
+  }
+  .section-title {
+    border-bottom: 3px solid #004080;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* =======================
+     Feedback Cards
+  ========================= */
   .feedback-card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
-    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1.8rem;
     overflow: hidden;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  }
-  body.dark .feedback-card {
-    background: #2a2a2a;
-    color: #ccc;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  }
-  .feedback-card:hover {
-    box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+    border: 1px solid #ddd;
   }
   .card-header {
-    background-color: #0078d4;
+    background-color: #004080;
     color: white;
-    padding: 22px 28px;
+    padding: 1rem 1.2rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     user-select: none;
   }
-  body.dark .card-header {
-    background-color: #004b80;
+  .card-header:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 2px;
   }
   .card-header h3 {
     margin: 0;
     font-weight: 700;
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
   .toggle-arrow {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     transition: transform 0.3s ease;
   }
   .card-header.active .toggle-arrow {
     transform: rotate(180deg);
   }
   .card-content {
-    padding: 28px 28px 35px 28px;
+    padding: 1rem 1.5rem;
+    background-color: #f0f8ff;
     display: none;
-    animation: fadeIn 0.4s ease forwards;
-    color: #2c3e50;
-    line-height: 1.5;
-  }
-  body.dark .card-content {
-    color: #ccc;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
   .feedback-section {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
   }
   .feedback-section strong {
-    color: #0078d4;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.05rem;
-  }
-  body.dark .feedback-section strong {
-    color: #66aaff;
-  }
-  .feedback-section p {
-    margin: 0;
+    color: #003366;
   }
   .suggestions {
-    background-color: #d4edda;
-    border-left: 5px solid #28a745;
-    padding: 12px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    color: #155724;
-  }
-  body.dark .suggestions {
-    background-color: #27472e;
-    border-color: #4caf50;
-    color: #a8d5a2;
+    background: #fff8dc;
+    border-left: 5px solid #ffcc00;
+    padding: 0.8rem 1.2rem;
+    font-style: italic;
+    color: #665500;
   }
 
-  /* Forms */
+  /* =======================
+     Form Styles
+  ========================= */
   form {
     background: white;
-    padding: 25px 30px;
-    border-radius: 14px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  body.dark form {
-    background: #2a2a2a;
-    color: #ccc;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
   }
   form h3 {
     margin-top: 0;
-    color: #0078d4;
-    margin-bottom: 18px;
-  }
-  body.dark form h3 {
-    color: #66aaff;
+    color: #004080;
   }
   label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 0.4rem;
     font-weight: 600;
-    color: #34495e;
+    margin-top: 1rem;
   }
-  body.dark label {
-    color: #aaa;
-  }
-  input[type="text"],
-  input[type="email"],
-  select,
-  textarea,
-  input[type="range"] {
+  input[type="text"], input[type="email"], select, textarea, input[type="range"] {
     width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    border: 1.8px solid #ddd;
-    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
     font-size: 1rem;
-    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    background: white;
-    color: #222;
-  }
-  body.dark input[type="text"],
-  body.dark input[type="email"],
-  body.dark select,
-  body.dark textarea,
-  body.dark input[type="range"] {
-    background: #444;
-    border-color: #666;
-    color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
   }
   input[type="text"]:focus,
   input[type="email"]:focus,
   select:focus,
-  textarea:focus {
-    border-color: #0078d4;
+  textarea:focus,
+  input[type="range"]:focus {
     outline: none;
+    border-color: #004080;
+    box-shadow: 0 0 4px #004080;
   }
   textarea {
-    min-height: 100px;
     resize: vertical;
+    min-height: 100px;
   }
-  input[type="range"] {
-    height: 24px;
-    cursor: pointer;
-  }
-  .range-value {
-    font-weight: 700;
-    color: #0078d4;
-    margin-top: -18px;
-    margin-bottom: 20px;
-    text-align: right;
-  }
-  body.dark .range-value {
-    color: #66aaff;
-  }
-  button {
-    background-color: #0078d4;
+  button[type="submit"] {
+    background-color: #004080;
     color: white;
-    padding: 14px 30px;
+    padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 12px;
+    border-radius: 4px;
+    margin-top: 1.5rem;
     cursor: pointer;
-    font-weight: 700;
     font-size: 1.1rem;
+    font-weight: 700;
     transition: background-color 0.3s ease;
   }
-  button:hover {
-    background-color: #005a9c;
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    background-color: #002d5a;
+    outline: none;
   }
-  body.dark button {
-    background-color: #004b80;
-  }
-  body.dark button:hover {
-    background-color: #00305a;
+  .range-value {
+    margin-top: 0.2rem;
+    font-weight: 700;
+    text-align: right;
+    color: #004080;
+    font-size: 0.9rem;
   }
 
-  /* Chatbot */
+  /* =======================
+     Chatbot Styles
+  ========================= */
   #chatbot {
     background: white;
-    max-width: 450px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9rem;
-    user-select: none;
-    z-index: 9999;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  body.dark #chatbot {
-    background: #2a2a2a;
-    color: #ccc;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 100%;
+    margin-bottom: 3rem;
   }
   #chatbot-header {
-    background: #0078d4;
+    background-color: #004080;
     color: white;
-    padding: 16px 20px;
-    font-weight: 700;
+    padding: 0.9rem 1.3rem;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
   }
-  body.dark #chatbot-header {
-    background: #004b80;
+  #chatbot-header:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 2px;
   }
   #chatbot-messages {
-    height: 300px;
-    padding: 15px;
+    max-height: 360px;
     overflow-y: auto;
-    background: #eef4fb;
-  }
-  body.dark #chatbot-messages {
-    background: #1e1e1e;
+    padding: 1rem 1.3rem;
+    font-size: 0.95rem;
+    background-color: #e9f1ff;
   }
   .message {
-    margin-bottom: 15px;
-    max-width: 85%;
-    padding: 12px 18px;
-    border-radius: 18px;
-    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    max-width: 75%;
+    clear: both;
   }
   .user-message {
-    background: #0078d4;
+    background-color: #004080;
     color: white;
-    align-self: flex-end;
-    border-bottom-right-radius: 4px;
+    float: right;
+    text-align: right;
   }
   .bot-message {
-    background: #d1e7fd;
-    color: #34495e;
-    align-self: flex-start;
-    border-bottom-left-radius: 4px;
+    background-color: #d0e0ff;
+    color: #004080;
+    float: left;
+    text-align: left;
   }
-  body.dark .bot-message {
-    background: #003b6f;
-    color: #b0d8ff;
-  }
-  #chatbot-input-container {
+  #chatbot-form {
     display: flex;
     border-top: 1px solid #ccc;
-  }
-  body.dark #chatbot-input-container {
-    border-color: #444;
+    padding: 0.6rem 1rem;
   }
   #chatbot-input {
     flex-grow: 1;
-    border: none;
-    padding: 14px 20px;
     font-size: 1rem;
-    border-radius: 0 0 0 16px;
-    background: white;
-    color: #222;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
   }
-  body.dark #chatbot-input {
-    background: #444;
-    color: #eee;
+  #chatbot-input:focus {
+    outline: none;
+    border-color: #004080;
+    box-shadow: 0 0 4px #004080;
   }
   #chatbot-send-btn {
-    background: #0078d4;
-    color: white;
+    margin-left: 0.8rem;
+    background-color: #004080;
     border: none;
-    padding: 14px 20px;
+    color: white;
+    padding: 0 1.2rem;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: 700;
     font-size: 1.1rem;
-    border-radius: 0 0 16px 0;
     transition: background-color 0.3s ease;
   }
-  #chatbot-send-btn:hover {
-    background-color: #005a9c;
-  }
-  body.dark #chatbot-send-btn {
-    background-color: #004b80;
-  }
-  body.dark #chatbot-send-btn:hover {
-    background-color: #00305a;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    main {
-      margin: 20px 15px 60px;
-      padding: 0 12px;
-    }
-    #chatbot {
-      max-width: 90vw;
-      right: 5vw;
-      bottom: 10px;
-    }
-  }
-
-  /* Feedback display area */
-  #submittedFeedback {
-    margin-top: -20px;
-    margin-bottom: 50px;
-  }
-  #submittedFeedback h3 {
-    color: #0078d4;
-    margin-bottom: 12px;
-  }
-  body.dark #submittedFeedback h3 {
-    color: #66aaff;
-  }
-  .feedback-entry {
-    background: #f7f9fc;
-    border-left: 4px solid #0078d4;
-    margin-bottom: 14px;
-    padding: 10px 18px;
-    border-radius: 6px;
-  }
-  body.dark .feedback-entry {
-    background: #333;
-    border-left-color: #66aaff;
-  }
-  .feedback-entry small {
-    color: #555;
-  }
-  body.dark .feedback-entry small {
-    color: #aaa;
-  }
-
-  /* Dark mode toggle button */
-  #darkModeToggle {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    background: #0078d4;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 700;
-    z-index: 11000;
-    transition: background-color 0.3s ease;
-  }
-  #darkModeToggle:hover {
-    background-color: #005a9c;
-  }
-  body.dark #darkModeToggle {
-    background: #004b80;
-  }
-  body.dark #darkModeToggle:hover {
-    background-color: #00305a;
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>Portfolio Feedback & Discussion</h1>
-  <p>Interactive Peer Review and Chatbot for Artifacts 1 to 4</p>
-</header>
-
-<button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode">🌙 Dark Mode</button>
-
-<main>
-
-  <h2 class="section-title">Artifact Feedback Summaries</h2>
-
-  <!-- Artifact Feedback Cards -->
-  <section class="feedback-card" id="artifact1">
-    <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content1" aria-label="Toggle feedback for Artifact 1">
-      <h3>Artifact 1: AI Lab Chatbot Assistant</h3>
-      <span class="toggle-arrow">&#9660;</span>
-    </div>
-    <div class="card-content" id="content1" aria-hidden="true">
-      <div class="feedback-section">
-        <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>The project description is clear, detailing the no-code chatbot development process with relevant tools and objectives. The inclusion of ethical considerations is commendable.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Demonstration of AI/ML Skills</strong>
-        <p>Exemplary use of Botpress and NLP concepts, alongside compliance with GDPR and HIPAA standards, showcases a strong understanding of AI implementation and ethical AI principles.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Overall Organization and Presentation</strong>
-        <p>The artifact is well-organized and easy to follow. Adding flowcharts or interaction demos could make the presentation even more engaging.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Appropriateness for Intended Audience</strong>
-        <p>The content is accessible to both technical and non-technical viewers, making it broadly relevant.</p>
-      </div>
-      <div class="suggestions">Suggestion: Include visuals like chatbot conversation flows or video demos to deepen user engagement.</div>
-    </div>
-  </section>
-
-  <section class="feedback-card" id="artifact2">
-    <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content2" aria-label="Toggle feedback for Artifact 2">
-      <h3>Artifact 2: AI & ML Evolution Timeline</h3>
-      <span class="toggle-arrow">&#9660;</span>
-    </div>
-    <div class="card-content" id="content2" aria-hidden="true">
-      <div class="feedback-section">
-        <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>The timeline is comprehensive and easy to understand, presenting key AI milestones clearly from the 1950s to modern day.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Demonstration of AI/ML Skills</strong>
-        <p>Shows broad knowledge of AI history and significant breakthroughs including recent advances in generative AI and ethical frameworks.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Overall Organization and Presentation</strong>
-        <p>Well segmented and logically ordered. The use of interactive timelines or infographics could boost user interaction.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Appropriateness for Intended Audience</strong>
-        <p>Ideal for students and professionals interested in AI’s evolution and trends.</p>
-      </div>
-      <div class="suggestions">Suggestion: Add interactive timeline graphics or videos to enhance the learning experience.</div>
-    </div>
-  </section>
-
-  <section class="feedback-card" id="artifact3">
-    <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content3" aria-label="Toggle feedback for Artifact 3">
-      <h3>Artifact 3: SchoolAI-Assisted Learning Experience</h3>
-      <span class="toggle-arrow">&#9660;</span>
-    </div>
-    <div class="card-content" id="content3" aria-hidden="true">
-      <div class="feedback-section">
-        <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>Clear articulation of project goals, tech stack, and implementation phases supported with code snippets.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Demonstration of AI/ML Skills</strong>
-        <p>Effective demonstration of using TensorFlow.js and custom datasets for real-time AI-assisted learning.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Overall Organization and Presentation</strong>
-        <p>Well structured with good narrative flow; adding user testimonials could enhance credibility.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Appropriateness for Intended Audience</strong>
-        <p>Great for educators, developers, and students interested in practical AI applications.</p>
-      </div>
-      <div class="suggestions">Suggestion: Include video demos or testimonials from users to provide real-world impact evidence.</div>
-    </div>
-  </section>
-
-  <section class="feedback-card" id="artifact4">
-    <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content4" aria-label="Toggle feedback for Artifact 4">
-      <h3>Artifact 4: AI & Cybersecurity Paper</h3>
-      <span class="toggle-arrow">&#9660;</span>
-    </div>
-    <div class="card-content" id="content4" aria-hidden="true">
-      <div class="feedback-section">
-        <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>The paper is concise, addressing key AI applications in cybersecurity with well-researched content and citations.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Demonstration of AI/ML Skills</strong>
-        <p>Good synthesis of AI models used for threat detection and defense strategies.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Overall Organization and Presentation</strong>
-        <p>Logical and academically sound; adding diagrams to explain models would improve reader understanding.</p>
-      </div>
-      <div class="feedback-section">
-        <strong>Appropriateness for Intended Audience</strong>
-        <p>Targets cybersecurity professionals and researchers effectively.</p>
-      </div>
-      <div class="suggestions">Suggestion: Include flowcharts or diagrams illustrating AI cybersecurity frameworks for visual impact.</div>
-    </div>
-  </section>
-
-  <!-- Discussion Form -->
-  <section>
-    <h2 class="section-title">Submit Your Discussion Feedback</h2>
-    <form id="discussionForm" aria-label="Submit discussion feedback">
-      <label for="artifactSelect">Select Artifact:</label>
-      <select id="artifactSelect" name="artifact" required>
-        <option value="" disabled selected>Select an artifact</option>
-        <option value="artifact1">Artifact 1: AI Lab Chatbot Assistant</option>
-        <option value="artifact2">Artifact 2: AI & ML Evolution Timeline</option>
-        <option value="artifact3">Artifact 3: SchoolAI-Assisted Learning Experience</option>
-        <option value="artifact4">Artifact 4: AI & Cybersecurity Paper</option>
-      </select>
-
-      <label for="feedbackText">Your Feedback:</label>
-      <textarea id="feedbackText" name="feedback" placeholder="Write your comments here..." required></textarea>
-
-      <button type="submit">Submit Feedback</button>
-    </form>
-
-    <div id="submittedFeedback" aria-live="polite" aria-relevant="additions">
-      <!-- Submitted comments will appear here -->
-    </div>
-  </section>
-
-  <!-- Rubric Feedback Form -->
-  <section>
-    <h2 class="section-title">Rubric Feedback</h2>
-    <form id="rubricForm" aria-label="Provide rubric ratings">
-      <label for="clarityRange">Clarity of Project Description: <span id="clarityValue" class="range-value">7</span></label>
-      <input type="range" id="clarityRange" name="clarity" min="0" max="10" value="7" />
-
-      <label for="skillsRange">Demonstration of AI/ML Skills: <span id="skillsValue" class="range-value">8</span></label>
-      <input type="range" id="skillsRange" name="skills" min="0" max="10" value="8" />
-
-      <label for="organizationRange">Overall Organization and Presentation: <span id="organizationValue" class="range-value">9</span></label>
-      <input type="range" id="organizationRange" name="organization" min="0" max="10" value="9" />
-
-      <label for="audienceRange">Appropriateness for Intended Audience: <span id="audienceValue" class="range-value">7</span></label>
-      <input type="range" id="audienceRange" name="audience" min="0" max="10" value="7" />
-
-      <button type="submit">Submit Rubric Ratings</button>
-    </form>
-  </section>
-
-  <!-- Export feedback button -->
-  <section style="text-align:center; margin-top: 20px;">
-    <button id="exportBtn" aria-label="Export all feedback as CSV">Export All Feedback as CSV</button>
-  </section>
-
-</main>
-
-<!-- Chatbot Widget -->
-<div id="chatbot" aria-live="polite" aria-atomic="true" aria-label="Chatbot for portfolio feedback">
-  <div id="chatbot-header" tabindex="0" role="button" aria-expanded="true" aria-controls="chatbot-messages" aria-label="Toggle chatbot window">
-    <span>Portfolio Feedback Chatbot</span>
-    <span id="chatbot-toggle-btn" aria-hidden="true">&#9650;</span>
-  </div>
-  <div id="chatbot-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
-  <div id="chatbot-input-container">
-    <input id="chatbot-input" type="text" aria-label="Type your message here" autocomplete="off" />
-    <button id="chatbot-send-btn" aria-label="Send message">Send</button>
-  </div>
-</div>
-
-<script>
-  // Toggle feedback cards
-  document.querySelectorAll('.card-header').forEach(header => {
-    header.addEventListener('click', () => toggleCard(header));
-    header.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleCard(e.currentTarget);
-      }
-    });
-  });
-
-  function toggleCard(header) {
-    const content = header.nextElementSibling;
-    const expanded = header.getAttribute('aria-expanded') === 'true';
-    header.setAttribute('aria-expanded', !expanded);
-    content.style.display = expanded ? 'none' : 'block';
-    content.setAttribute('aria-hidden', expanded);
-    header.classList.toggle('active');
-  }
-
-  // Update range value labels live
-  const ranges = [
-    {range: 'clarityRange', display: 'clarityValue'},
-    {range: 'skillsRange', display: 'skillsValue'},
-    {range: 'organizationRange', display: 'organizationValue'},
-    {range: 'audienceRange', display: 'audienceValue'}
-  ];
-  ranges.forEach(({range, display}) => {
-    const inputEl = document.getElementById(range);
-    const displayEl = document.getElementById(display);
-    inputEl.addEventListener('input', () => {
-      displayEl.textContent = inputEl.value;
-    });
-  });
-
-  // Dark mode toggle
-  const darkToggleBtn = document.getElementById('darkModeToggle');
-  const body = document.body;
-
-  // Load saved preference
-  if(localStorage.getItem('darkMode') === 'true'){
-    body.classList.add('dark');
-    darkToggleBtn.textContent = '☀️ Light Mode';
-    darkToggleBtn.setAttribute('aria-pressed', 'true');
-  }
-
-  darkToggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    localStorage.setItem('darkMode', isDark);
-    darkToggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    darkToggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-  });
-
-  // Discussion form submission and persistence
-  const discussionForm = document.getElementById('discussionForm');
-  const submittedFeedbackDiv = document.getElementById('submittedFeedback');
-
-  // Load saved feedback from localStorage
-  let savedFeedback = JSON.parse(localStorage.getItem('portfolioFeedback')) || {};
-
-  function renderSubmittedFeedback() {
-    submittedFeedbackDiv.innerHTML = '';
-    if(Object.keys(savedFeedback).length === 0){
-      submittedFeedbackDiv.innerHTML = '<p>No feedback submitted yet. Be the first to contribute!</p>';
-      return;
-    }
-    for(const artifactId in savedFeedback){
-      const feedbacks = savedFeedback[artifactId];
-      if(feedbacks.length === 0) continue;
-      // Find artifact name for display
-      const artifactSelect = discussionForm.artifact;
-      const artifactName = Array.from(artifactSelect.options).find(opt => opt.value === artifactId)?.text || artifactId;
-
-      const container = document.createElement('section');
-      container.setAttribute('aria-label', `Submitted feedback for ${artifactName}`);
-
-      const heading = document.createElement('h3');
-      heading.textContent = artifactName;
-      container.appendChild(heading);
-
-      feedbacks.forEach(entry => {
-        const div = document.createElement('div');
-        div.className = 'feedback-entry';
-        div.innerHTML = `<p>${entry.comment}</p><small>Submitted on ${new Date(entry.timestamp).toLocaleString()}</small>`;
-        container.appendChild(div);
-      });
-
-      submittedFeedbackDiv.appendChild(container);
-    }
-  }
-  renderSubmittedFeedback();
-
-  discussionForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const artifact = discussionForm.artifact.value;
-    const feedback = discussionForm.feedback.value.trim();
-
-    if(!artifact) {
-      alert('Please select an artifact.');
-      return;
-    }
-    if(feedback.length === 0){
-      alert('Please enter your feedback.');
-      return;
-    }
-
-    if(!savedFeedback[artifact]){
-      savedFeedback[artifact] = [];
-    }
-    savedFeedback[artifact].push({
-      comment: feedback,
-      timestamp: new Date().toISOString()
-    });
-    localStorage.setItem('portfolioFeedback', JSON.stringify(savedFeedback));
-
-    renderSubmittedFeedback();
-    alert('Thank you! Your feedback has been submitted.');
-
-    discussionForm.reset();
-  });
-
-  // Rubric feedback form handling
-  const rubricForm = document.getElementById('rubricForm');
-  // Load saved rubric scores from localStorage or default
-  let savedRubric = JSON.parse(localStorage.getItem('portfolioRubric')) || {
-    clarity: 7, skills: 8, organization: 9, audience: 7
-  };
-  // Set initial values
-  rubricForm.clarity.value = savedRubric.clarity;
-  rubricForm.skills.value = savedRubric.skills;
-  rubricForm.organization.value = savedRubric.organization;
-  rubricForm.audience.value = savedRubric.audience;
-  document.getElementById('clarityValue').textContent = savedRubric.clarity;
-  document.getElementById('skillsValue').textContent = savedRubric.skills;
-  document.getElementById('organizationValue').textContent = savedRubric.organization;
-  document.getElementById('audienceValue').textContent = savedRubric.audience;
-
-  rubricForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const rubricData = {
-      clarity: rubricForm.clarity.value,
-      skills: rubricForm.skills.value,
-      organization: rubricForm.organization.value,
-      audience: rubricForm.audience.value,
-      timestamp: new Date().toISOString()
-    };
-    localStorage.setItem('portfolioRubric', JSON.stringify(rubricData));
-    alert('Thank you! Your rubric ratings have been saved.');
-  });
-
-  // Export all feedback as CSV
-  const exportBtn = document.getElementById('exportBtn');
-  exportBtn.addEventListener('click', () => {
-    // Compose CSV content
-    let csvContent = 'Type,Artifact,Feedback,Clarity,Skills,Organization,Audience,Timestamp\n';
-
-    // Discussion feedback first
-    for(const artifact in savedFeedback){
-      for(const fb of savedFeedback[artifact]){
-        csvContent += `Comment,"${artifact}","${fb.comment.replace(/"/g,'""')}",,,,,"${fb.timestamp}"\n`;
-      }
-    }
-
-    // Rubric feedback
-    if(savedRubric){
-      csvContent += `Rubric,,,,${savedRubric.clarity},${savedRubric.skills},${savedRubric.organization},${savedRubric.audience},"${savedRubric.timestamp || ''}"\n`;
-    }
-
-    // Create downloadable link
-    const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'portfolio_feedback.csv';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
-
-  // Chatbot functionality (simple rule-based)
-  const chatbotHeader = document.getElementById('chatbot-header');
-  const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
-  const chatbotMessages = document.getElementById('chatbot-messages');
-  const chatbotInput = document.getElementById('chatbot-input');
-  const chatbotSendBtn = document.getElementById('chatbot-send-btn');
-
-  let chatbotOpen = true;
-
-  chatbotHeader.addEventListener('click', toggleChatbot);
-  chatbotHeader.addEventListener('keydown', e => {
-    if(e.key === 'Enter' || e.key ===```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portfolio Feedback & Discussion - Naga Venkata Satyanarayana Devarapalli</title>
-<style>
-  /* Reset & base styles */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #eef4fb;
-    margin: 0; padding: 0;
-    color: #2c3e50;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  body.dark {
-    background: #1e1e1e;
-    color: #ddd;
-  }
-  header {
-    background: linear-gradient(90deg, #005a9c, #0078d4);
-    padding: 30px 20px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-  }
-  body.dark header {
-    background: linear-gradient(90deg, #00305a, #004b80);
-  }
-  header h1 {
-    margin: 0;
-    font-size: 2.8rem;
-    font-weight: 900;
-    letter-spacing: 1.4px;
-  }
-  header p {
-    margin-top: 8px;
-    font-weight: 400;
-    font-size: 1.1rem;
-    color: #c6e0ff;
-  }
-  main {
-    max-width: 1000px;
-    margin: 40px auto 80px;
-    padding: 0 20px;
-  }
-  h2.section-title {
-    color: #0078d4;
-    border-left: 6px solid #0078d4;
-    padding-left: 12px;
-    margin-bottom: 30px;
-    font-weight: 700;
-    font-size: 2rem;
-  }
-  body.dark h2.section-title {
-    color: #66aaff;
-    border-left-color: #66aaff;
-  }
-  /* Feedback cards */
-  .feedback-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
-    margin-bottom: 30px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  }
-  body.dark .feedback-card {
-    background: #2a2a2a;
-    color: #ccc;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  }
-  .feedback-card:hover {
-    box-shadow: 0 14px 40px rgba(0,0,0,0.12);
-  }
-  .card-header {
-    background-color: #0078d4;
-    color: white;
-    padding: 22px 28px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-  }
-  body.dark .card-header {
-    background-color: #004b80;
-  }
-  .card-header h3 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.35rem;
-  }
-  .toggle-arrow {
-    font-size: 1.8rem;
-    transition: transform 0.3s ease;
-  }
-  .card-header.active .toggle-arrow {
-    transform: rotate(180deg);
-  }
-  .card-content {
-    padding: 28px 28px 35px 28px;
-    display: none;
-    animation: fadeIn 0.4s ease forwards;
-    color: #2c3e50;
-    line-height: 1.5;
-  }
-  body.dark .card-content {
-    color: #ccc;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .feedback-section {
-    margin-bottom: 20px;
-  }
-  .feedback-section strong {
-    color: #0078d4;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.05rem;
-  }
-  body.dark .feedback-section strong {
-    color: #66aaff;
-  }
-  .feedback-section p {
-    margin: 0;
-  }
-  .suggestions {
-    background-color: #d4edda;
-    border-left: 5px solid #28a745;
-    padding: 12px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    color: #155724;
-  }
-  body.dark .suggestions {
-    background-color: #27472e;
-    border-color: #4caf50;
-    color: #a8d5a2;
-  }
-
-  /* Forms */
-  form {
-    background: white;
-    padding: 25px 30px;
-    border-radius: 14px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  body.dark form {
-    background: #2a2a2a;
-    color: #ccc;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-  }
-  form h3 {
-    margin-top: 0;
-    color: #0078d4;
-    margin-bottom: 18px;
-  }
-  body.dark form h3 {
-    color: #66aaff;
-  }
-  label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #34495e;
-  }
-  body.dark label {
-    color: #aaa;
-  }
-  input[type="text"],
-  input[type="email"],
-  select,
-  textarea,
-  input[type="range"] {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    border: 1.8px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    background: white;
-    color: #222;
-  }
-  body.dark input[type="text"],
-  body.dark input[type="email"],
-  body.dark select,
-  body.dark textarea,
-  body.dark input[type="range"] {
-    background: #444;
-    border-color: #666;
-    color: #eee;
-  }
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  select:focus,
-  textarea:focus {
-    border-color: #0078d4;
+  #chatbot-send-btn:hover,
+  #chatbot-send-btn:focus {
+    background-color: #002d5a;
     outline: none;
   }
-  textarea {
-    min-height: 100px;
-    resize: vertical;
-  }
-  input[type="range"] {
-    height: 24px;
-    cursor: pointer;
-  }
-  .range-value {
-    font-weight: 700;
-    color: #0078d4;
-    margin-top: -18px;
-    margin-bottom: 20px;
-    text-align: right;
-  }
-  body.dark .range-value {
-    color: #66aaff;
-  }
-  button {
-    background-color: #0078d4;
-    color: white;
-    padding: 14px 30px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #005a9c;
-  }
-  body.dark button {
-    background-color: #004b80;
-  }
-  body.dark button:hover {
-    background-color: #00305a;
-  }
 
-  /* Feedback display area */
-  #submittedFeedback {
-    margin-top: -20px;
-    margin-bottom: 50px;
-  }
-  #submittedFeedback h3 {
-    color: #0078d4;
-    margin-bottom: 12px;
-  }
-  body.dark #submittedFeedback h3 {
-    color: #66aaff;
-  }
-  .feedback-entry {
-    background: #f7f9fc;
-    border-left: 4px solid #0078d4;
-    margin-bottom: 14px;
-    padding: 10px 18px;
-    border-radius: 6px;
-  }
-  body.dark .feedback-entry {
-    background: #333;
-    border-left-color: #66aaff;
-  }
-  .feedback-entry small {
-    color: #555;
-  }
-  body.dark .feedback-entry small {
-    color: #aaa;
-  }
-
-  /* Dark mode toggle button */
-  #darkModeToggle {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    background: #0078d4;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 700;
-    z-index: 11000;
-    transition: background-color 0.3s ease;
-  }
-  #darkModeToggle:hover {
-    background-color: #005a9c;
-  }
-  body.dark #darkModeToggle {
-    background: #004b80;
-  }
-  body.dark #darkModeToggle:hover {
-    background-color: #00305a;
+  /* =======================
+     Responsive
+  ========================= */
+  @media (max-width: 700px) {
+    header {
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+    nav {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin-left: 0;
+      margin-right: 1rem;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+    .feedback-card {
+      margin-bottom: 1.2rem;
+    }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Portfolio Feedback & Discussion</h1>
-  <p>Interactive Peer Review and Chatbot for Artifacts 1 to 4</p>
+<header role="banner">
+  <h1>Naga Venkata Satyanarayana Devarapalli</h1>
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="artifacts.html">Artifacts</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode">🌙 Dark Mode</button>
-
-<main>
-
+<main role="main" tabindex="-1">
   <h2 class="section-title">Artifact Feedback Summaries</h2>
 
-  <!-- Artifact Feedback Cards -->
+  <!-- Artifact 1 -->
   <section class="feedback-card" id="artifact1">
     <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content1" aria-label="Toggle feedback for Artifact 1">
       <h3>Artifact 1: AI Lab Chatbot Assistant</h3>
@@ -1144,24 +336,27 @@
     <div class="card-content" id="content1" aria-hidden="true">
       <div class="feedback-section">
         <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>The project description is clear, detailing the no-code chatbot development process with relevant tools and objectives. The inclusion of ethical considerations is commendable.</p>
+        <p>The project description clearly outlines the objectives, development environment, and use of no-code chatbot frameworks. It successfully bridges technical complexity and accessibility, allowing readers from varying backgrounds to understand the project scope and impact.</p>
       </div>
       <div class="feedback-section">
         <strong>Demonstration of AI/ML Skills</strong>
-        <p>Exemplary use of Botpress and NLP concepts, alongside compliance with GDPR and HIPAA standards, showcases a strong understanding of AI implementation and ethical AI principles.</p>
+        <p>Through the implementation of NLP intents and entities and compliance with GDPR and HIPAA, the artifact demonstrates a sound grasp of both AI technical skills and the ethical landscape critical in AI deployment.</p>
       </div>
       <div class="feedback-section">
         <strong>Overall Organization and Presentation</strong>
-        <p>The artifact is well-organized and easy to follow. Adding flowcharts or interaction demos could make the presentation even more engaging.</p>
+        <p>The use of structured documentation, screenshots, and deployment summaries enhances clarity. Adding flowcharts to illustrate conversation flows or interaction design would further enhance understanding.</p>
       </div>
       <div class="feedback-section">
         <strong>Appropriateness for Intended Audience</strong>
-        <p>The content is accessible to both technical and non-technical viewers, making it broadly relevant.</p>
+        <p>Designed with an interdisciplinary audience in mind, this artifact is relevant for AI developers, compliance officers, and end-users interested in chatbot technology and ethical AI applications.</p>
       </div>
-      <div class="suggestions">Suggestion: Include visuals like chatbot conversation flows or video demos to deepen user engagement.</div>
+      <div class="suggestions">
+        Suggestion: Consider embedding a demo video or interactive chatbot simulation to increase user engagement and provide experiential learning.
+      </div>
     </div>
   </section>
 
+  <!-- Artifact 2 -->
   <section class="feedback-card" id="artifact2">
     <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content2" aria-label="Toggle feedback for Artifact 2">
       <h3>Artifact 2: AI & ML Evolution Timeline</h3>
@@ -1170,24 +365,27 @@
     <div class="card-content" id="content2" aria-hidden="true">
       <div class="feedback-section">
         <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>The timeline is comprehensive and easy to understand, presenting key AI milestones clearly from the 1950s to modern day.</p>
+        <p>The timeline effectively condenses decades of AI development into an easily digestible format, highlighting significant milestones and trends.</p>
       </div>
       <div class="feedback-section">
         <strong>Demonstration of AI/ML Skills</strong>
-        <p>Shows broad knowledge of AI history and significant breakthroughs including recent advances in generative AI and ethical frameworks.</p>
+        <p>Insightful inclusion of generative AI breakthroughs and discussions on ethical AI frameworks demonstrates a comprehensive grasp of both the technology and societal implications.</p>
       </div>
       <div class="feedback-section">
         <strong>Overall Organization and Presentation</strong>
-        <p>Well segmented and logically ordered. The use of interactive timelines or infographics could boost user interaction.</p>
+        <p>The chronological segmentation facilitates logical flow, and the addition of interactive elements like clickable events or pop-up details could elevate user experience.</p>
       </div>
       <div class="feedback-section">
         <strong>Appropriateness for Intended Audience</strong>
-        <p>Ideal for students and professionals interested in AI’s evolution and trends.</p>
+        <p>The artifact is suitable for students, educators, and professionals seeking historical context and future trends in AI and ML.</p>
       </div>
-      <div class="suggestions">Suggestion: Add interactive timeline graphics or videos to enhance the learning experience.</div>
+      <div class="suggestions">
+        Suggestion: Adding multimedia resources such as video interviews with AI pioneers or timeline animations would enrich the learning experience.
+      </div>
     </div>
   </section>
 
+  <!-- Artifact 3 -->
   <section class="feedback-card" id="artifact3">
     <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content3" aria-label="Toggle feedback for Artifact 3">
       <h3>Artifact 3: SchoolAI-Assisted Learning Experience</h3>
@@ -1196,282 +394,327 @@
     <div class="card-content" id="content3" aria-hidden="true">
       <div class="feedback-section">
         <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>Clear articulation of project goals, tech stack, and implementation phases supported with code snippets.</p>
+        <p>The artifact succinctly conveys goals and technical approaches, supported by practical implementation details and code snippets that illustrate adaptive learning mechanisms.</p>
       </div>
       <div class="feedback-section">
         <strong>Demonstration of AI/ML Skills</strong>
-        <p>Effective demonstration of using TensorFlow.js and custom datasets for real-time AI-assisted learning.</p>
+        <p>Effective use of ML algorithms combined with cloud deployment exhibits hands-on proficiency in developing scalable AI applications for educational purposes.</p>
       </div>
       <div class="feedback-section">
         <strong>Overall Organization and Presentation</strong>
-        <p>Well structured with good narrative flow; adding user testimonials could enhance credibility.</p>
+        <p>Organized layout and inclusion of implementation phases aid comprehension. Further inclusion of UI designs or user journey maps could make it more comprehensive.</p>
       </div>
       <div class="feedback-section">
         <strong>Appropriateness for Intended Audience</strong>
-        <p>Great for educators, developers, and students interested in practical AI applications.</p>
+        <p>This artifact is particularly valuable to AI developers in education technology and academic stakeholders interested in personalized learning solutions.</p>
       </div>
-      <div class="suggestions">Suggestion: Include video demos or testimonials from users to provide real-world impact evidence.</div>
+      <div class="suggestions">
+        Suggestion: Incorporate testimonials or case study results to demonstrate real-world impact and user acceptance.
+      </div>
     </div>
   </section>
 
+  <!-- Artifact 4 -->
   <section class="feedback-card" id="artifact4">
     <div class="card-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content4" aria-label="Toggle feedback for Artifact 4">
-      <h3>Artifact 4: AI & Cybersecurity Paper</h3>
+      <h3>Artifact 4: Data Challenge Scenarios</h3>
       <span class="toggle-arrow">&#9660;</span>
     </div>
     <div class="card-content" id="content4" aria-hidden="true">
       <div class="feedback-section">
         <strong>Positive Observations: Clarity of Project Description</strong>
-        <p>The paper is concise, addressing key AI applications in cybersecurity with well-researched content and citations.</p>
+        <p>The artifact addresses complex data quality and ethical challenges systematically, making intricate topics approachable through clear explanations and relevant code examples.</p>
       </div>
       <div class="feedback-section">
         <strong>Demonstration of AI/ML Skills</strong>
-        <p>Good synthesis of AI models used for threat detection and defense strategies.</p>
+        <p>Shows advanced understanding through use of data balancing (SMOTE), encryption techniques, and bias auditing, critical for trustworthy AI development.</p>
       </div>
       <div class="feedback-section">
         <strong>Overall Organization and Presentation</strong>
-        <p>Logical and academically sound; adding diagrams to explain models would improve reader understanding.</p>
+        <p>The structured approach to discussing problems and solutions enhances clarity. Additional visualizations such as bias detection graphs could improve engagement.</p>
       </div>
       <div class="feedback-section">
         <strong>Appropriateness for Intended Audience</strong>
-        <p>Targets cybersecurity professionals and researchers effectively.</p>
+        <p>Highly relevant for AI researchers, data scientists, and ethics professionals focusing on data governance and model fairness.</p>
       </div>
-      <div class="suggestions">Suggestion: Include flowcharts or diagrams illustrating AI cybersecurity frameworks for visual impact.</div>
+      <div class="suggestions">
+        Suggestion: Expanding on ethical case studies and adding interactive bias detection demos would provide deeper insight.
+      </div>
     </div>
   </section>
 
-  <!-- Discussion Form -->
-  <section>
-    <h2 class="section-title">Submit Your Discussion Feedback</h2>
-    <form id="discussionForm" aria-label="Submit discussion feedback">
-      <label for="artifactSelect">Select Artifact:</label>
-      <select id="artifactSelect" name="artifact" required>
-        <option value="" disabled selected>Select an artifact</option>
-        <option value="artifact1">Artifact 1: AI Lab Chatbot Assistant</option>
-        <option value="artifact2">Artifact 2: AI & ML Evolution Timeline</option>
-        <option value="artifact3">Artifact 3: SchoolAI-Assisted Learning Experience</option>
-        <option value="artifact4">Artifact 4: AI & Cybersecurity Paper</option>
-      </select>
-
-      <label for="feedbackText">Your Feedback:</label>
-      <textarea id="feedbackText" name="feedback" placeholder="Write your comments here..." required></textarea>
-
-      <button type="submit">Submit Feedback</button>
-    </form>
-
-    <div id="submittedFeedback" aria-live="polite" aria-relevant="additions">
-      <!-- Submitted comments will appear here -->
-    </div>
+  <!-- Additional sections (About Author, Skills, Future Plans) -->
+  <section id="about-author" style="margin-top:3rem;">
+    <h2 class="section-title">About the Author</h2>
+    <p><strong>Naga Venkata Satyanarayana Devarapalli</strong> is a graduate student specializing in Artificial Intelligence and Data Analytics. With a passion for responsible AI, Satya combines technical expertise with ethical awareness in all portfolio projects.</p>
+    <p>Satya’s background includes hands-on experience in chatbot development, machine learning, and data ethics. This portfolio represents a comprehensive journey through key AI competencies developed over the course of studies.</p>
   </section>
+
+  <section id="skills" style="margin-top:3rem;">
+    <h2 class="section-title">Skills & Technologies Used</h2>
+    <ul>
+      <li>Natural Language Processing (NLP) with no-code chatbot frameworks</li>
+      <li>Machine Learning Algorithms and Data Balancing (SMOTE)</li>
+      <li>Ethical AI practices including GDPR & HIPAA compliance</li>
+      <li>Cloud Deployments and Scalable Architecture</li>
+      <li>Interactive UI/UX Design and Accessibility Standards</li>
+      <li>JavaScript, HTML5, CSS3 for dynamic frontend experiences</li>
+    </ul>
+  </section>
+
+  <section id="future-plans" style="margin-top:3rem;">
+    <h2 class="section-title">Future Plans</h2>
+    <p>Future expansions of this portfolio will include:</p>
+    <ul>
+      <li>Embedding real-time interactive demos for chatbot and AI models</li>
+      <li>Adding video walkthroughs and tutorials for each artifact</li>
+      <li>Integrating AI-powered analytics to track feedback and improvement trends</li>
+      <li>Building a community discussion forum for peer learning and collaboration</li>
+    </ul>
+  </section>
+
+  <!-- Feedback Submission Form -->
+  <h2 class="section-title" style="margin-top:4rem;">Submit Your Feedback / Discussion Comment</h2>
+  <form id="discussionForm" aria-label="Submit your feedback or discussion comment" novalidate>
+    <h3>Discussion Form</h3>
+    <label for="participantName">Your Name:</label>
+    <input type="text" id="participantName" name="participantName" placeholder="Enter your full name" required aria-required="true" aria-describedby="nameHelp" />
+    <small id="nameHelp" style="color:#555;">Please provide your full name.</small>
+
+    <label for="participantEmail" style="margin-top:1rem;">Your Email:</label>
+    <input type="email" id="participantEmail" name="participantEmail" placeholder="Enter your email address" required aria-required="true" aria-describedby="emailHelp" />
+    <small id="emailHelp" style="color:#555;">We will never share your email.</small>
+
+    <label for="artifactSelect" style="margin-top:1rem;">Select Artifact:</label>
+    <select id="artifactSelect" name="artifactSelect" required aria-required="true" aria-describedby="artifactHelp">
+      <option value="" disabled selected>Select an artifact</option>
+      <option value="Artifact 1">Artifact 1: AI Lab Chatbot</option>
+      <option value="Artifact 2">Artifact 2: AI & ML Evolution Timeline</option>
+      <option value="Artifact 3">Artifact 3: SchoolAI-Assisted Learning</option>
+      <option value="Artifact 4">Artifact 4: Data Challenge Scenarios</option>
+    </select>
+    <small id="artifactHelp" style="color:#555;">Choose which artifact your feedback is about.</small>
+
+    <label for="commentText" style="margin-top:1rem;">Your Feedback / Comment:</label>
+    <textarea id="commentText" name="commentText" placeholder="Write your feedback or discussion comment here..." rows="6" required aria-required="true" aria-describedby="commentHelp"></textarea>
+    <small id="commentHelp" style="color:#555;">Be constructive and respectful.</small>
+
+    <button type="submit" aria-label="Submit feedback form">Submit Feedback</button>
+  </form>
 
   <!-- Rubric Feedback Form -->
-  <section>
-    <h2 class="section-title">Rubric Feedback</h2>
-    <form id="rubricForm" aria-label="Provide rubric ratings">
-      <label for="clarityRange">Clarity of Project Description: <span id="clarityValue" class="range-value">7</span></label>
-      <input type="range" id="clarityRange" name="clarity" min="0" max="10" value="7" />
+  <h2 class="section-title" style="margin-top:4rem;">Rubric Feedback Form</h2>
+  <form id="rubricForm" aria-label="Rate the feedback based on rubric criteria" novalidate>
+    <h3>Rubric Feedback</h3>
 
-      <label for="skillsRange">Demonstration of AI/ML Skills: <span id="skillsValue" class="range-value">8</span></label>
-      <input type="range" id="skillsRange" name="skills" min="0" max="10" value="8" />
+    <label for="clarityRange">Clarity of Project Description:</label>
+    <input type="range" id="clarityRange" name="clarityRange" min="0" max="10" value="8" step="1" aria-valuemin="0" aria-valuemax="10" aria-valuenow="8" />
+    <div class="range-value" id="clarityValue" aria-live="polite">8</div>
 
-      <label for="organizationRange">Overall Organization and Presentation: <span id="organizationValue" class="range-value">9</span></label>
-      <input type="range" id="organizationRange" name="organization" min="0" max="10" value="9" />
+    <label for="skillsRange" style="margin-top:1rem;">Demonstration of AI/ML Skills:</label>
+    <input type="range" id="skillsRange" name="skillsRange" min="0" max="10" value="8" step="1" aria-valuemin="0" aria-valuemax="10" aria-valuenow="8" />
+    <div class="range-value" id="skillsValue" aria-live="polite">8</div>
 
-      <label for="audienceRange">Appropriateness for Intended Audience: <span id="audienceValue" class="range-value">7</span></label>
-      <input type="range" id="audienceRange" name="audience" min="0" max="10" value="7" />
+    <label for="presentationRange" style="margin-top:1rem;">Overall Organization and Presentation:</label>
+    <input type="range" id="presentationRange" name="presentationRange" min="0" max="10" value="8" step="1" aria-valuemin="0" aria-valuemax="10" aria-valuenow="8" />
+    <div class="range-value" id="presentationValue" aria-live="polite">8</div>
 
-      <button type="submit">Submit Rubric Ratings</button>
+    <label for="audienceRange" style="margin-top:1rem;">Appropriateness for Intended Audience:</label>
+    <input type="range" id="audienceRange" name="audienceRange" min="0" max="10" value="8" step="1" aria-valuemin="0" aria-valuemax="10" aria-valuenow="8" />
+    <div class="range-value" id="audienceValue" aria-live="polite">8</div>
+
+    <button type="submit" aria-label="Submit rubric feedback">Submit Rubric Feedback</button>
+  </form>
+
+  <!-- Chatbot Section -->
+  <h2 class="section-title" style="margin-top:4rem;">Classroom Chatbot</h2>
+  <p>Ask questions about the portfolio or artifacts and get instant replies.</p>
+
+  <div id="chatbot" aria-label="Chatbot conversation window" role="region" aria-live="polite">
+    <div id="chatbot-header" tabindex="0" role="button" aria-expanded="true" aria-controls="chatbot-messages" aria-label="Toggle chatbot conversation window">
+      <span>Portfolio Chatbot</span>
+      <span id="chatbot-toggle">&#9650;</span>
+    </div>
+    <div id="chatbot-messages" role="log" aria-atomic="false" aria-relevant="additions" tabindex="0">
+      <div class="bot-message">Hello! I’m here to help with any questions about the portfolio artifacts. Ask away!</div>
+    </div>
+    <form id="chatbot-form" aria-label="Send message to chatbot" style="display:flex; border-top:1px solid #ccc;">
+      <input type="text" id="chatbot-input" placeholder="Type your question here..." aria-label="Chatbot input" autocomplete="off" required />
+      <button type="submit" id="chatbot-send-btn" aria-label="Send message">Send</button>
     </form>
-  </section>
-
-  <!-- Export feedback button -->
-  <section style="text-align:center; margin-top: 20px;">
-    <button id="exportBtn" aria-label="Export all feedback as CSV">Export All Feedback as CSV</button>
-  </section>
+  </div>
 
 </main>
 
 <script>
-  // Toggle feedback cards open/close
-  document.querySelectorAll('.card-header').forEach(header => {
-    header.addEventListener('click', () => toggleCard(header));
-    header.addEventListener('keydown', e => {
+  // =========== Artifact feedback expand/collapse =============
+  const cards = document.querySelectorAll('.card-header');
+  cards.forEach(card => {
+    card.addEventListener('click', () => toggleCard(card));
+    card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        toggleCard(e.currentTarget);
+        toggleCard(card);
       }
     });
   });
-  function toggleCard(header) {
-    const content = header.nextElementSibling;
-    const expanded = header.getAttribute('aria-expanded') === 'true';
-    header.setAttribute('aria-expanded', !expanded);
-    content.style.display = expanded ? 'none' : 'block';
-    content.setAttribute('aria-hidden', expanded);
-    header.classList.toggle('active');
+  function toggleCard(card) {
+    const content = card.nextElementSibling;
+    const isExpanded = card.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+      card.setAttribute('aria-expanded', 'false');
+      content.setAttribute('aria-hidden', 'true');
+      card.classList.remove('active');
+      content.style.display = 'none';
+    } else {
+      card.setAttribute('aria-expanded', 'true');
+      content.setAttribute('aria-hidden', 'false');
+      card.classList.add('active');
+      content.style.display = 'block';
+    }
   }
 
-  // Update range value labels live
+  // =========== Range sliders show value dynamically ==========
   const ranges = [
-    {range: 'clarityRange', display: 'clarityValue'},
-    {range: 'skillsRange', display: 'skillsValue'},
-    {range: 'organizationRange', display: 'organizationValue'},
-    {range: 'audienceRange', display: 'audienceValue'}
+    {input: 'clarityRange', display: 'clarityValue'},
+    {input: 'skillsRange', display: 'skillsValue'},
+    {input: 'presentationRange', display: 'presentationValue'},
+    {input: 'audienceRange', display: 'audienceValue'}
   ];
-  ranges.forEach(({range, display}) => {
-    const inputEl = document.getElementById(range);
-    const displayEl = document.getElementById(display);
-    inputEl.addEventListener('input', () => {
-      displayEl.textContent = inputEl.value;
+  ranges.forEach(({input, display}) => {
+    const slider = document.getElementById(input);
+    const output = document.getElementById(display);
+    output.textContent = slider.value;
+    slider.addEventListener('input', () => {
+      output.textContent = slider.value;
+      slider.setAttribute('aria-valuenow', slider.value);
     });
   });
 
-  // Dark mode toggle
-  const darkToggleBtn = document.getElementById('darkModeToggle');
-  const body = document.body;
-
-  // Load saved preference
-  if(localStorage.getItem('darkMode') === 'true'){
-    body.classList.add('dark');
-    darkToggleBtn.textContent = '☀️ Light Mode';
-    darkToggleBtn.setAttribute('aria-pressed', 'true');
-  }
-
-  darkToggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    localStorage.setItem('darkMode', isDark);
-    darkToggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    darkToggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-  });
-
-  // Discussion form submission and persistence
+  // =========== Discussion form submission with validation =========
   const discussionForm = document.getElementById('discussionForm');
-  const submittedFeedbackDiv = document.getElementById('submittedFeedback');
-
-  // Load saved feedback from localStorage
-  let savedFeedback = JSON.parse(localStorage.getItem('portfolioFeedback')) || {};
-
-  function renderSubmittedFeedback() {
-    submittedFeedbackDiv.innerHTML = '';
-    if(Object.keys(savedFeedback).length === 0){
-      submittedFeedbackDiv.innerHTML = '<p>No feedback submitted yet. Be the first to contribute!</p>';
-      return;
-    }
-    for(const artifactId in savedFeedback){
-      const feedbacks = savedFeedback[artifactId];
-      if(feedbacks.length === 0) continue;
-      // Find artifact name for display
-      const artifactSelect = discussionForm.artifact;
-      const artifactName = Array.from(artifactSelect.options).find(opt => opt.value === artifactId)?.text || artifactId;
-
-      const container = document.createElement('section');
-      container.setAttribute('aria-label', `Submitted feedback for ${artifactName}`);
-
-      const heading = document.createElement('h3');
-      heading.textContent = artifactName;
-      container.appendChild(heading);
-
-      feedbacks.forEach(entry => {
-        const div = document.createElement('div');
-        div.className = 'feedback-entry';
-        div.innerHTML = `<p>${entry.comment}</p><small>Submitted on ${new Date(entry.timestamp).toLocaleString()}</small>`;
-        container.appendChild(div);
-      });
-
-      submittedFeedbackDiv.appendChild(container);
-    }
-  }
-  renderSubmittedFeedback();
-
   discussionForm.addEventListener('submit', e => {
     e.preventDefault();
-    const artifact = discussionForm.artifact.value;
-    const feedback = discussionForm.feedback.value.trim();
+    const name = discussionForm.participantName.value.trim();
+    const email = discussionForm.participantEmail.value.trim();
+    const artifact = discussionForm.artifactSelect.value;
+    const comment = discussionForm.commentText.value.trim();
 
-    if(!artifact) {
+    // Simple email regex for validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name) {
+      alert('Please enter your full name.');
+      discussionForm.participantName.focus();
+      return;
+    }
+    if (!email || !emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      discussionForm.participantEmail.focus();
+      return;
+    }
+    if (!artifact) {
       alert('Please select an artifact.');
+      discussionForm.artifactSelect.focus();
       return;
     }
-    if(feedback.length === 0){
-      alert('Please enter your feedback.');
+    if (!comment) {
+      alert('Please enter your feedback or comment.');
+      discussionForm.commentText.focus();
       return;
     }
 
-    if(!savedFeedback[artifact]){
-      savedFeedback[artifact] = [];
-    }
-    savedFeedback[artifact].push({
-      comment: feedback,
-      timestamp: new Date().toISOString()
-    });
-    localStorage.setItem('portfolioFeedback', JSON.stringify(savedFeedback));
-
-    renderSubmittedFeedback();
-    alert('Thank you! Your feedback has been submitted.');
-
+    alert(`Thank you, ${name}! Your feedback for ${artifact} has been submitted.`);
     discussionForm.reset();
   });
 
-  // Rubric feedback form handling
+  // =========== Rubric feedback form submission ===========
   const rubricForm = document.getElementById('rubricForm');
-  // Load saved rubric scores from localStorage or default
-  let savedRubric = JSON.parse(localStorage.getItem('portfolioRubric')) || {
-    clarity: 7, skills: 8, organization: 9, audience: 7
-  };
-  // Set initial values
-  rubricForm.clarity.value = savedRubric.clarity;
-  rubricForm.skills.value = savedRubric.skills;
-  rubricForm.organization.value = savedRubric.organization;
-  rubricForm.audience.value = savedRubric.audience;
-  document.getElementById('clarityValue').textContent = savedRubric.clarity;
-  document.getElementById('skillsValue').textContent = savedRubric.skills;
-  document.getElementById('organizationValue').textContent = savedRubric.organization;
-  document.getElementById('audienceValue').textContent = savedRubric.audience;
-
   rubricForm.addEventListener('submit', e => {
     e.preventDefault();
-    const rubricData = {
-      clarity: rubricForm.clarity.value,
-      skills: rubricForm.skills.value,
-      organization: rubricForm.organization.value,
-      audience: rubricForm.audience.value,
-      timestamp: new Date().toISOString()
-    };
-    localStorage.setItem('portfolioRubric', JSON.stringify(rubricData));
-    alert('Thank you! Your rubric ratings have been saved.');
+
+    const clarity = rubricForm.clarityRange.value;
+    const skills = rubricForm.skillsRange.value;
+    const presentation = rubricForm.presentationRange.value;
+    const audience = rubricForm.audienceRange.value;
+
+    alert(`Rubric feedback submitted.\n
+Clarity: ${clarity}/10
+Skills: ${skills}/10
+Presentation: ${presentation}/10
+Audience: ${audience}/10
+Thank you for your input!`);
+
+    rubricForm.reset();
+    // Reset sliders to default 8
+    ranges.forEach(({input, display}) => {
+      const slider = document.getElementById(input);
+      const output = document.getElementById(display);
+      slider.value = 8;
+      output.textContent = 8;
+      slider.setAttribute('aria-valuenow', 8);
+    });
   });
 
-  // Export all feedback as CSV
-  const exportBtn = document.getElementById('exportBtn');
-  exportBtn.addEventListener('click', () => {
-    // Compose CSV content
-    let csvContent = 'Type,Artifact,Feedback,Clarity,Skills,Organization,Audience,Timestamp\n';
+  // =========== Chatbot functionality ===========
+  const chatbotForm = document.getElementById('chatbot-form');
+  const chatbotInput = document.getElementById('chatbot-input');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+  const chatbotToggle = document.getElementById('chatbot-header');
+  const chatbotToggleArrow = document.getElementById('chatbot-toggle');
 
-    // Discussion feedback first
-    for(const artifact in savedFeedback){
-      for(const fb of savedFeedback[artifact]){
-        csvContent += `Comment,"${artifact}","${fb.comment.replace(/"/g,'""')}",,,,,"${fb.timestamp}"\n`;
-      }
-    }
-
-    // Rubric feedback
-    if(savedRubric){
-      csvContent += `Rubric,,,,${savedRubric.clarity},${savedRubric.skills},${savedRubric.organization},${savedRubric.audience},"${savedRubric.timestamp || ''}"\n`;
-    }
-
-    // Create downloadable link
-    const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'portfolio_feedback.csv';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+  chatbotToggle.addEventListener('click', () => {
+    const isCollapsed = chatbotMessages.style.display === 'none' || chatbotMessages.style.display === '';
+    chatbotMessages.style.display = isCollapsed ? 'block' : 'none';
+    chatbotForm.style.display = isCollapsed ? 'flex' : 'none';
+    chatbotToggle.setAttribute('aria-expanded', isCollapsed);
+    chatbotToggleArrow.innerHTML = isCollapsed ? '&#9650;' : '&#9660;';
   });
+
+  chatbotForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const userMsg = chatbotInput.value.trim();
+    if (!userMsg) return;
+
+    appendMessage(userMsg, 'user-message');
+    chatbotInput.value = '';
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    setTimeout(() => {
+      const botReply = generateBotReply(userMsg.toLowerCase());
+      appendMessage(botReply, 'bot-message');
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }, 700);
+  });
+
+  function appendMessage(text, className) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'message ' + className;
+    msgDiv.textContent = text;
+    chatbotMessages.appendChild(msgDiv);
+  }
+
+  function generateBotReply(input) {
+    if (/artifact\s*1|chatbot|ai lab/.test(input)) {
+      return "Artifact 1 is an AI Lab Chatbot Assistant demonstrating no-code chatbot creation, NLP, and ethical AI compliance.";
+    }
+    if (/artifact\s*2|timeline|ai evolution|ml evolution/.test(input)) {
+      return "Artifact 2 is a detailed timeline showcasing the evolution of AI and machine learning from the 1950s to current breakthroughs.";
+    }
+    if (/artifact\s*3|schoolai|learning experience|adaptive learning/.test(input)) {
+      return "Artifact 3 focuses on SchoolAI-Assisted Learning, applying machine learning for personalized education and cloud deployment.";
+    }
+    if (/artifact\s*4|data challenge|bias|smote|privacy/.test(input)) {
+      return "Artifact 4 tackles Data Challenge Scenarios, addressing data quality, privacy, bias, and ethical AI techniques.";
+    }
+    if (/feedback|rubric/.test(input)) {
+      return "You can submit your feedback using the forms above: the Discussion Form for comments and the Rubric Feedback Form for scoring.";
+    }
+    if (/hello|hi|hey/.test(input)) {
+      return "Hello! Feel free to ask me about the portfolio artifacts or how to submit feedback.";
+    }
+    return "Sorry, I didn't understand that. You can ask me about any Artifact (1-4) or how to submit feedback.";
+  }
 </script>
 
 </body>
