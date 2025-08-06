@@ -2,361 +2,563 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI & Data Analytics Portfolio - Naga Venkata Satyanarayana Devarapalli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Assignment 5.5 - Professional Portfolio Feedback | Naga Venkata Satyanarayana Devarapalli</title>
 <style>
-/* ========== GLOBAL STYLES ========== */
-* {margin:0;padding:0;box-sizing:border-box;}
-body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background:#f9fbfd;color:#333;line-height:1.6;
-  transition:background 0.5s ease,color 0.5s ease;
-  scroll-behavior:smooth;
-}
-h1,h2,h3,h4 {margin-bottom:0.8rem;font-weight:bold;}
-section {padding:3rem 1rem;max-width:1200px;margin:auto;}
-a {text-decoration:none;color:inherit;}
-img {max-width:100%;border-radius:10px;}
-button {cursor:pointer;}
-/* ========== HEADER ========== */
-header {
-  position:sticky;top:0;z-index:1000;background:#005bbb;color:#fff;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:1rem 2rem;box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
-header h1 {font-size:1.5rem;}
-nav ul {display:flex;gap:1rem;list-style:none;}
-nav a {color:#fff;font-weight:600;padding:0.5rem 0.8rem;border-radius:4px;}
-nav a:hover {background:rgba(255,255,255,0.2);}
-#darkModeToggle {
-  background:#fff;color:#005bbb;border:none;
-  padding:0.5rem 1rem;border-radius:20px;font-weight:bold;
-}
-@media(max-width:768px){
-  nav ul{flex-direction:column;gap:0.5rem;}
-}
-/* ========== HERO SECTION ========== */
-#home {
-  background:linear-gradient(135deg,#66a6ff,#89f7fe);color:#003366;
-  text-align:center;padding:4rem 1rem;
-}
-#home h2 {font-size:2.8rem;margin-bottom:0.5rem;}
-#home p {font-size:1.3rem;}
-.hero-img {
-  margin-top:2rem;display:flex;justify-content:center;
-}
-.hero-img img {
-  width:180px;height:180px;object-fit:cover;border-radius:50%;
-  box-shadow:0 6px 18px rgba(0,0,0,0.2);
-}
-/* ========== SECTION TITLES ========== */
-.section-title {
-  font-size:2rem;color:#003366;margin-bottom:1rem;
-  border-left:6px solid #66a6ff;padding-left:0.5rem;
-}
-/* ========== BIO & VALUE ========== */
-.card {
-  background:#fff;border-radius:10px;padding:2rem;margin-bottom:2rem;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-}
-/* ========== TARGET AUDIENCE ========== */
-#target-audience ul {list-style:disc;margin-left:2rem;margin-top:1rem;}
-/* ========== ARTIFACTS ========== */
-.artifact {
-  background:#fff;margin-bottom:2rem;border-radius:10px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-}
-.artifact-header {
-  background:#66a6ff;color:#fff;padding:1rem;font-size:1.3rem;
-  font-weight:bold;display:flex;justify-content:space-between;align-items:center;
-  cursor:pointer;
-}
-.artifact-content {display:none;padding:1.5rem;}
-.artifact.active .artifact-content {display:block;}
-.artifact-content p {margin-bottom:0.8rem;}
-.artifact-content ul {margin:0.5rem 0 0.5rem 1.5rem;}
-/* ========== FEEDBACK SECTION ========== */
-#feedback {
-  background:#fff;border-radius:10px;padding:2rem;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-}
-form label {display:block;font-weight:bold;margin-top:1rem;}
-input,textarea,select {
-  width:100%;padding:0.7rem;margin-top:0.3rem;
-  border:1px solid #ccc;border-radius:6px;
-}
-button.submit-btn {
-  margin-top:1rem;background:#005bbb;color:#fff;
-  padding:0.8rem 1.5rem;border:none;border-radius:6px;font-size:1rem;
-}
-button.submit-btn:hover {background:#004299;}
-#exportBtn {
-  background:#28a745;color:#fff;margin-top:1rem;padding:0.8rem 1.5rem;
-  border:none;border-radius:6px;font-size:1rem;
-}
-.rubric-group {margin-top:1rem;}
-.rubric-group label {display:block;margin-bottom:0.3rem;}
-input[type="range"] {width:100%;}
-/* ========== CHATBOT ========== */
-#chatbot {
-  position:fixed;bottom:20px;right:20px;width:320px;height:420px;
-  display:flex;flex-direction:column;border:2px solid #005bbb;
-  border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.2);
-  overflow:hidden;
-}
-#chatbot-header {background:#005bbb;color:#fff;padding:0.8rem;text-align:center;font-weight:bold;}
-#chatbot-messages {flex:1;padding:0.8rem;overflow-y:auto;background:#f0f5ff;}
-.message {margin-bottom:0.5rem;padding:0.5rem;border-radius:6px;max-width:80%;}
-.bot {background:#005bbb;color:#fff;align-self:flex-start;}
-.user {background:#dbe7ff;color:#003366;align-self:flex-end;}
-#chatbot-input-area {display:flex;padding:0.5rem;}
-#chatbot-input {flex:1;padding:0.5rem;border:1px solid #ccc;border-radius:6px;}
-#chatbot-send {
-  background:#005bbb;color:#fff;border:none;padding:0.5rem 1rem;margin-left:0.5rem;border-radius:6px;
-}
-/* ========== DARK MODE ========== */
-body.dark {background:#121212;color:#eee;}
-body.dark header {background:#1e1e1e;}
-body.dark nav a:hover {background:#333;}
-body.dark #home {background:#1e1e1e;color:#fff;}
-body.dark .card,body.dark .artifact,body.dark #feedback {background:#1f1f1f;color:#ddd;}
-body.dark #chatbot {background:#1f1f1f;}
-body.dark #chatbot-header {background:#333;}
-/* ========== FOOTER ========== */
-footer {
-  text-align:center;padding:1rem;background:#005bbb;color:#fff;
-  margin-top:3rem;
-}
-footer a {color:#fff;font-weight:bold;margin:0 0.5rem;}
-/* Responsive chatbot */
-@media(max-width:768px){
-  #chatbot{width:90%;right:5%;}
-}
+  /* Reset & Base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f7f9fc;
+    color: #222;
+    line-height: 1.6;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  a {
+    color: #005bbb;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+  /* Header */
+  header {
+    background: #005bbb;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0; padding: 0;
+  }
+  nav li {
+    display: inline;
+  }
+  nav a {
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover, nav a.active {
+    background: #f5a623;
+    color: #003366;
+  }
+  /* Dark mode button */
+  #darkModeToggle {
+    background: white;
+    color: #005bbb;
+    border: none;
+    padding: 0.4rem 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #darkModeToggle:hover {
+    background: #f5a623;
+    color: #003366;
+  }
+  /* Sections */
+  h2.section-title {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 0.8rem;
+    border-left: 6px solid #66a6ff;
+    padding-left: 0.5rem;
+  }
+  h3 {
+    margin-top: 1.5rem;
+    color: #005bbb;
+  }
+  h4 {
+    margin-top: 1rem;
+    color: #1a3c82;
+  }
+  p, ul {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  ul {
+    padding-left: 1.2rem;
+  }
+  blockquote {
+    border-left: 5px solid #f5a623;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #555;
+    background: #fff8e1;
+    margin: 2rem 0;
+    border-radius: 6px;
+  }
+  /* Footer */
+  footer {
+    background: #005bbb;
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+  footer a {
+    color: white;
+    font-weight: bold;
+    margin: 0 0.5rem;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  /* Dark mode styles */
+  body.dark {
+    background: #121212;
+    color: #ddd;
+  }
+  body.dark header {
+    background: #1e1e1e;
+  }
+  body.dark nav a:hover, body.dark nav a.active {
+    background: #f5a623;
+    color: #1e1e1e;
+  }
+  body.dark blockquote {
+    background: #3a3a00;
+    color: #ddd;
+    border-left-color: #f5a623;
+  }
+  body.dark footer {
+    background: #1e1e1e;
+  }
+  /* Responsive */
+  @media(max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+      background: #005bbb;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 150px;
+      padding: 1rem;
+      display: none;
+      border-radius: 0 0 0 10px;
+    }
+    nav ul.show {
+      display: flex;
+    }
+    #navToggle {
+      display: inline-block;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Feedback Search and Export Section */
+  #feedbackSearch {
+    margin: 1rem 0 1.5rem 0;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 2px solid #005bbb;
+  }
+  #exportCsvBtn {
+    background: #f5a623;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #003366;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease;
+  }
+  #exportCsvBtn:hover {
+    background: #e59400;
+  }
+  .feedback-article {
+    margin-bottom: 2rem;
+    border-left: 4px solid #66a6ff;
+    padding-left: 1rem;
+    background: #e8f0fe;
+    border-radius: 6px;
+  }
+  .feedback-article h4 {
+    margin-top: 0;
+    color: #004a99;
+  }
+  .feedback-section {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .author-bio {
+    background: #dbe9ff;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-top: 3rem;
+    color: #003366;
+  }
+  .author-bio h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #005bbb;
+    padding-bottom: 0.2rem;
+  }
+  .author-bio ul {
+    list-style: disc inside;
+    margin: 0.5rem 0 0 0;
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>AI Portfolio</h1>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#bio">Bio</a></li>
-      <li><a href="#value-proposition">Value Proposition</a></li>
-      <li><a href="#target-audience">Audience</a></li>
-      <li><a href="#artifacts">Artifacts</a></li>
-      <li><a href="#feedback">Feedback</a></li>
+<header role="banner">
+  <h1>AI & Data Analytics Portfolio</h1>
+  <nav role="navigation" aria-label="Primary Navigation">
+    <button id="navToggle" aria-expanded="false" aria-controls="primaryMenu" aria-label="Toggle menu" style="display:none;">☰</button>
+    <ul id="primaryMenu">
+      <li><a href="http://127.0.0.1:7000/index.html" target="_self">Home</a></li>
+      <li><a href="http://127.0.0.1:7000/bio.html" target="_self">Bio</a></li>
+      <li><a href="http://127.0.0.1:7000/artifact1.html" target="_self">Artifact 1</a></li>
+      <li><a href="http://127.0.0.1:7000/artifact2.html" target="_self">Artifact 2</a></li>
+      <li><a href="http://127.0.0.1:7000/artifact3.html" target="_self">Artifact 3</a></li>
+      <li><a href="http://127.0.0.1:7000/artifact4.html" target="_self">Artifact 4</a></li>
+      <li><a href="http://127.0.0.1:7000/artifact5.html" target="_self" class="active" aria-current="page">Artifact 5</a></li>
+      <li><a href="https://devarapalli10580.github.io/portfolio/" target="_blank" rel="noopener">GitHub Portfolio</a></li>
     </ul>
   </nav>
-  <button id="darkModeToggle">Dark Mode</button>
+  <button id="darkModeToggle" aria-pressed="false" aria-label="Toggle dark mode">Dark Mode</button>
 </header>
 
-<section id="home">
-  <h2>Welcome to My Professional Portfolio</h2>
-  <p>Showcasing AI & Data Analytics expertise and inviting your feedback for continuous improvement.</p>
-  <div class="hero-img"><img src="https://via.placeholder.com/180" alt="Profile Photo"></div>
-</section>
+<main class="container" role="main" tabindex="0" aria-label="Assignment 5.5 Professional Portfolio Feedback">
 
-<section id="bio" class="card">
-  <h2 class="section-title">About Me</h2>
-  <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student specializing in Artificial Intelligence and Data Analytics at Indiana Wesleyan University. I have a strong foundation in machine learning, natural language processing, data governance, and ethical AI deployment. My goal is to design AI systems that combine technical innovation with compliance and fairness principles.</p>
-</section>
+  <h2 class="section-title">Assignment 5.5: Professional Portfolio Feedback Discussion</h2>
 
-<section id="value-proposition" class="card">
-  <h2 class="section-title">Personal Value Proposition</h2>
-  <p>I integrate cutting-edge AI techniques with practical business problem-solving. My unique value lies in delivering solutions that are ethical, scalable, and impactful. Through a combination of technical mastery and compliance knowledge (GDPR, HIPAA), I ensure that AI products are trustworthy and aligned with regulatory standards.</p>
-</section>
+  <section aria-labelledby="overviewHeading">
+    <h3 id="overviewHeading">1. Overview</h3>
+    <p>By Workshop 5, I have developed a digital professional portfolio that showcases my expertise and projects in AI and Data Analytics. The portfolio is accessible online with view-only access for peer review and includes a well-structured professional bio, value proposition, and detailed artifacts highlighting my skills and experience.</p>
+  </section>
 
-<section id="target-audience" class="card">
-  <h2 class="section-title">Target Audience</h2>
-  <p>This portfolio is designed for:</p>
-  <ul>
-    <li><strong>Academic Evaluators:</strong> Professors and peers assessing AI competency.</li>
-    <li><strong>Industry Recruiters:</strong> Looking for AI developers with strong ethical awareness.</li>
-    <li><strong>Compliance Officers:</strong> Interested in trustworthy AI frameworks.</li>
-    <li><strong>Tech Enthusiasts:</strong> Exploring AI artifacts with practical applications.</li>
-  </ul>
-</section>
+  <section aria-labelledby="componentsHeading">
+    <h3 id="componentsHeading">2. Portfolio Components Summary</h3>
+    <h4>Professional Bio</h4>
+    <p>Concise background presenting my role as an AI & Data Analytics graduate student, highlighting skills and experience.</p>
+    <h4>Personal Value Proposition</h4>
+    <p>Demonstrates ability to apply AI and data analytics to solve real-world problems ethically and effectively.</p>
+  </section>
 
-<section id="artifacts">
-  <h2 class="section-title">Portfolio Artifacts</h2>
+  <section aria-labelledby="targetAudienceHeading">
+    <h3 id="targetAudienceHeading">3. Target Audience</h3>
+    <p>The portfolio targets:</p>
+    <ul>
+      <li>Hiring managers and recruiters in AI/ML and data science.</li>
+      <li>Technical leads seeking practical skills in AI ethics and governance.</li>
+      <li>Academics and professionals interested in advanced AI techniques and ethical AI.</li>
+    </ul>
+  </section>
 
-  <!-- Artifact Template -->
-  <div class="artifact">
-    <div class="artifact-header">Artifact 1: AI Lab Chatbot <span>▼</span></div>
-    <div class="artifact-content">
-      <p><strong>Introduction:</strong> Intelligent chatbot for AI lab queries using NLP frameworks.</p>
-      <p><strong>Objective:</strong> Enhance lab efficiency and user engagement through automated Q&A.</p>
-      <p><strong>Description:</strong> Built using Rasa and Python, integrated with a no-code UI for non-technical staff.</p>
-      <p><strong>Process:</strong></p>
-      <ul><li>Data preprocessing</li><li>Intent-entity training</li><li>Deployment on cloud</li></ul>
-      <p><strong>Tools & Tech:</strong> Rasa, Python, Flask, No-code platform.</p>
-      <p><strong>Value Proposition:</strong> Reduces response time and improves lab support scalability.</p>
-      <p><strong>References:</strong> GDPR guidelines, HIPAA compliance docs.</p>
+  <section aria-labelledby="artifactSummaryHeading">
+    <h3 id="artifactSummaryHeading">4. Artifact Summaries</h3>
+
+    <article aria-labelledby="artifact1Heading">
+      <h4 id="artifact1Heading">Artifact 1: AI Chatbot Development</h4>
+      <ul>
+        <li><strong>Introduction:</strong> Developed AI chatbot showing NLP and conversational design.</li>
+        <li><strong>Objective:</strong> Showcase AI-driven user interaction skills.</li>
+        <li><strong>Process:</strong> Dialog flows, NLP API integration, error handling.</li>
+        <li><strong>Tools:</strong> Python, Dialogflow, JavaScript.</li>
+        <li><strong>Value Proposition:</strong> Demonstrates conversational AI competency.</li>
+        <li><strong>Unique Value:</strong> Interactive demo included.</li>
+        <li><strong>Relevance:</strong> For chatbot development roles.</li>
+      </ul>
+    </article>
+
+    <article aria-labelledby="artifact2Heading">
+      <h4 id="artifact2Heading">Artifact 2: Interactive Timeline Visualization</h4>
+      <ul>
+        <li><strong>Introduction:</strong> Created dynamic timeline using data visualization principles.</li>
+        <li><strong>Objective:</strong> Illustrate data storytelling and visualization skills.</li>
+        <li><strong>Process:</strong> Data collection, D3.js, responsive design.</li>
+        <li><strong>Tools:</strong> JavaScript, D3.js, HTML/CSS.</li>
+        <li><strong>Value Proposition:</strong> Turns raw data into compelling visuals.</li>
+        <li><strong>Unique Value:</strong> Responsive, user-friendly UI.</li>
+        <li><strong>Relevance:</strong> Data visualization and analytics roles.</li>
+      </ul>
+    </article>
+
+    <article aria-labelledby="artifact3Heading">
+      <h4 id="artifact3Heading">Artifact 3: Adaptive Learning Model</h4>
+      <ul>
+        <li><strong>Introduction:</strong> Designed model for personalized learning paths.</li>
+        <li><strong>Objective:</strong> Demonstrate ML application in education.</li>
+        <li><strong>Process:</strong> Preprocessing, feature engineering, model training/testing.</li>
+        <li><strong>Tools:</strong> Python, scikit-learn, Pandas.</li>
+        <li><strong>Value Proposition:</strong> Applied ML skills for education solutions.</li>
+        <li><strong>Unique Value:</strong> Real data-driven adaptive model.</li>
+        <li><strong>Relevance:</strong> AI in education and personalized learning.</li>
+      </ul>
+    </article>
+
+    <article aria-labelledby="artifact4Heading">
+      <h4 id="artifact4Heading">Artifact 4: Data Challenge Scenarios</h4>
+      <ul>
+        <li><strong>Introduction:</strong> Solved data quality, privacy, and bias challenges in ML workflows.</li>
+        <li><strong>Objective:</strong> Demonstrate solving key AI data challenges.</li>
+        <li><strong>Process:</strong> Imputation, normalization, encryption, SMOTE, fairness audits.</li>
+        <li><strong>Tools:</strong> Python, Pandas, scikit-learn, cryptography, AIF360.</li>
+        <li><strong>Value Proposition:</strong> Technical and ethical AI expertise.</li>
+        <li><strong>Unique Value:</strong> Code snippets and compliance discussion.</li>
+        <li><strong>Relevance:</strong> ML engineering, data governance, ethical AI roles.</li>
+      </ul>
+    </article>
+
+  </section>
+
+  <section aria-labelledby="feedbackApproachHeading">
+    <h3 id="feedbackApproachHeading">5. Peer Feedback Approach and Reflection</h3>
+    <p>In reviewing peers’ portfolios, I will:</p>
+    <ul>
+      <li>Highlight strengths with examples.</li>
+      <li>Offer actionable suggestions for improvement.</li>
+      <li>Focus feedback on work, maintain professionalism and confidentiality.</li>
+      <li>Use feedback to improve my own portfolio.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="checklistHeading">
+    <h3 id="checklistHeading">6. Feedback Checklist Focus Areas</h3>
+    <ul>
+      <li>Clarity of descriptions</li>
+      <li>Demonstration of AI/ML skills</li>
+      <li>Organization and presentation</li>
+      <li>Audience appropriateness</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="conclusionHeading">
+    <h3 id="conclusionHeading">7. Conclusion</h3>
+    <p>Peer feedback is essential to refine professional portfolios and enhance career readiness. Sharing and reviewing work strengthens understanding and professionalism in AI and Data Analytics.</p>
+  </section>
+
+  <!-- New Portfolio Artifact Feedback Section -->
+  <section aria-labelledby="portfolioFeedbackHeading">
+    <h2 id="portfolioFeedbackHeading" class="section-title">Portfolio Artifact Feedback</h2>
+
+    <p><strong>By Naga Venkata Satyanarayana Devarapalli</strong></p>
+
+    <input
+      type="search"
+      id="feedbackSearch"
+      placeholder="Search feedback by keywords..."
+      aria-label="Search feedback by keywords"
+    />
+    <button id="exportCsvBtn" aria-label="Export all feedback to CSV">Export All Feedback to CSV</button>
+
+    <div id="feedbackContainer">
+
+      <article class="feedback-article" data-keywords="artifact 1 ai lab chatbot assistant clear project description technical non-technical audiences ai ml implementation nlp intents gdpr hipaa compliance documentation deployment ethical">
+        <h4>Artifact 1: AI Lab Chatbot Assistant</h4>
+        <div class="feedback-section">
+          <strong>Positive Observations:</strong>
+          <ul>
+            <li>Clear project description bridging technical and non-technical audiences.</li>
+            <li>Strong AI/ML implementation demonstrated through NLP intents and GDPR/HIPAA compliance.</li>
+            <li>Effective documentation and deployment summaries.</li>
+            <li>Good ethical considerations integrated into development.</li>
+          </ul>
+        </div>
+        <div class="feedback-section">
+          <strong>Suggestions for Improvement:</strong>
+          <ul>
+            <li>Embed demo videos or interactive chatbot simulations to boost engagement.</li>
+            <li>Add flowcharts illustrating conversation flow and architecture.</li>
+            <li>Consider multi-language support for broader accessibility.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feedback-article" data-keywords="artifact 2 ai history timeline concise comprehensive timeline ai milestones generative ai breakthroughs ethical frameworks chronological segmentation learning">
+        <h4>Artifact 2: AI History Timeline</h4>
+        <div class="feedback-section">
+          <strong>Positive Observations:</strong>
+          <ul>
+            <li>Concise yet comprehensive timeline highlighting AI milestones.</li>
+            <li>Good coverage of generative AI breakthroughs and ethical frameworks.</li>
+            <li>Logical chronological segmentation supports learning.</li>
+          </ul>
+        </div>
+        <div class="feedback-section">
+          <strong>Suggestions for Improvement:</strong>
+          <ul>
+            <li>Add multimedia content such as video interviews or timeline animations.</li>
+            <li>Include interactive clickable events for enhanced UX.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feedback-article" data-keywords="artifact 3 adaptive learning ai solution clear project goals practical implementation code snippets ml algorithms cloud deployment scalability organized phases">
+        <h4>Artifact 3: Adaptive Learning AI Solution</h4>
+        <div class="feedback-section">
+          <strong>Positive Observations:</strong>
+          <ul>
+            <li>Clear project goals and practical implementation with code snippets.</li>
+            <li>Strong use of ML algorithms and cloud deployment for scalability.</li>
+            <li>Organized structure with phases aiding understanding.</li>
+          </ul>
+        </div>
+        <div class="feedback-section">
+          <strong>Suggestions for Improvement:</strong>
+          <ul>
+            <li>Add UI designs or user journey maps for completeness.</li>
+            <li>Include testimonials or case study results for real-world impact.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="feedback-article" data-keywords="artifact 4 ethical ai data quality challenges complex explanation smote encryption bias auditing techniques structured clarity engagement">
+        <h4>Artifact 4: Ethical AI and Data Quality Challenges</h4>
+        <div class="feedback-section">
+          <strong>Positive Observations:</strong>
+          <ul>
+            <li>Clear explanation of complex data quality and ethical issues.</li>
+            <li>Advanced use of SMOTE, encryption, and bias auditing techniques.</li>
+            <li>Structured approach enhances clarity and engagement.</li>
+          </ul>
+        </div>
+        <div class="feedback-section">
+          <strong>Suggestions for Improvement:</strong>
+          <ul>
+            <li>Expand on ethical case studies with interactive bias detection demos.</li>
+            <li>Add visual bias detection graphs and dashboards.</li>
+          </ul>
+        </div>
+      </article>
+
     </div>
-  </div>
 
-  <div class="artifact">
-    <div class="artifact-header">Artifact 2: AI Timeline Visualization <span>▼</span></div>
-    <div class="artifact-content">
-      <p><strong>Introduction:</strong> An interactive timeline illustrating AI milestones.</p>
-      <p><strong>Objective:</strong> Provide an educational tool for understanding AI evolution.</p>
-      <p><strong>Description:</strong> Highlights breakthroughs in neural networks, deep learning, and ethics frameworks.</p>
-      <p><strong>Tools & Tech:</strong> D3.js, HTML, CSS, JavaScript.</p>
-      <p><strong>Value Proposition:</strong> Simplifies complex AI history for students and professionals.</p>
-    </div>
-  </div>
+    <section class="author-bio" aria-label="About the author">
+      <h3>About the Author</h3>
+      <p><strong>Naga Venkata Satyanarayana Devarapalli</strong> is a graduate student specializing in Artificial Intelligence and Data Analytics. Passionate about responsible AI, Satya blends technical skills with ethical awareness across all portfolio projects.</p>
+      <p><strong>Expertise includes:</strong></p>
+      <ul>
+        <li>Natural Language Processing with no-code chatbot frameworks</li>
+        <li>Machine Learning Algorithms and Data Balancing (SMOTE)</li>
+        <li>Ethical AI practices including GDPR and HIPAA compliance</li>
+        <li>Cloud deployments and scalable architectures</li>
+        <li>Interactive UI/UX design and accessibility standards</li>
+        <li>Frontend technologies: JavaScript, HTML5, CSS3</li>
+      </ul>
+      <p>Future plans include embedding real-time demos, video tutorials, AI-powered analytics, and a community forum for peer collaboration.</p>
+    </section>
 
-  <div class="artifact">
-    <div class="artifact-header">Artifact 3: Adaptive Learning System <span>▼</span></div>
-    <div class="artifact-content">
-      <p><strong>Introduction:</strong> AI-driven personalized learning solution.</p>
-      <p><strong>Objective:</strong> Tailor course content dynamically based on learner performance.</p>
-      <p><strong>Tools & Tech:</strong> TensorFlow, Flask, Cloud deployment.</p>
-    </div>
-  </div>
+  </section>
 
-  <div class="artifact">
-    <div class="artifact-header">Artifact 4: AI Ethics Dashboard <span>▼</span></div>
-    <div class="artifact-content">
-      <p><strong>Introduction:</strong> A dashboard to monitor AI fairness and compliance.</p>
-      <p><strong>Objective:</strong> Increase trust in AI systems via transparency.</p>
-      <p><strong>Tools & Tech:</strong> Python, Plotly, Dash.</p>
-    </div>
-  </div>
-</section>
-
-<section id="feedback">
-  <h2 class="section-title">Submit Your Feedback</h2>
-  <form id="feedbackForm">
-    <label>Name:</label><input type="text" id="name" required />
-    <label>Email:</label><input type="email" id="email" required />
-    <label>Artifact:</label>
-    <select id="artifactSelect" required>
-      <option value="">Select</option>
-      <option>Artifact 1</option>
-      <option>Artifact 2</option>
-      <option>Artifact 3</option>
-      <option>Artifact 4</option>
-    </select>
-    <label>Feedback:</label><textarea id="comment" rows="4" required></textarea>
-
-    <!-- Rubric -->
-    <div class="rubric-group">
-      <label>Clarity of Project Description (1-10)</label>
-      <input type="range" min="1" max="10" id="clarity" />
-    </div>
-    <div class="rubric-group">
-      <label>Demonstration of AI/ML Skills (1-10)</label>
-      <input type="range" min="1" max="10" id="skills" />
-    </div>
-    <div class="rubric-group">
-      <label>Organization & Presentation (1-10)</label>
-      <input type="range" min="1" max="10" id="organization" />
-    </div>
-    <div class="rubric-group">
-      <label>Audience Appropriateness (1-10)</label>
-      <input type="range" min="1" max="10" id="audience" />
-    </div>
-
-    <button type="submit" class="submit-btn">Submit Feedback</button>
-  </form>
-  <button id="exportBtn">Export Feedback to CSV</button>
-</section>
-
-<!-- Chatbot -->
-<div id="chatbot">
-  <div id="chatbot-header">Chatbot Assistant</div>
-  <div id="chatbot-messages"></div>
-  <div id="chatbot-input-area">
-    <input type="text" id="chatbot-input" placeholder="Ask about portfolio..." />
-    <button id="chatbot-send">Send</button>
-  </div>
-</div>
-
-<footer>
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | 
-    <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Email</a>
-  </p>
-</footer>
+</main>
 
 <script>
-// ========== DARK MODE ==========
-document.getElementById('darkModeToggle').addEventListener('click',()=>{
-  document.body.classList.toggle('dark');
-});
-
-// ========== ARTIFACT TOGGLE ==========
-document.querySelectorAll('.artifact-header').forEach(header=>{
-  header.addEventListener('click',()=>{
-    const parent=header.parentElement;
-    parent.classList.toggle('active');
+  // Dark mode toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    let pressed = darkModeToggle.getAttribute('aria-pressed') === 'true';
+    darkModeToggle.setAttribute('aria-pressed', !pressed);
+    darkModeToggle.textContent = !pressed ? 'Light Mode' : 'Dark Mode';
   });
-});
 
-// ========== FEEDBACK STORAGE & EXPORT ==========
-let feedbackData=[];
-document.getElementById('feedbackForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const data={
-    name:document.getElementById('name').value,
-    email:document.getElementById('email').value,
-    artifact:document.getElementById('artifactSelect').value,
-    comment:document.getElementById('comment').value,
-    clarity:document.getElementById('clarity').value,
-    skills:document.getElementById('skills').value,
-    organization:document.getElementById('organization').value,
-    audience:document.getElementById('audience').value
-  };
-  feedbackData.push(data);
-  localStorage.setItem('feedback',JSON.stringify(feedbackData));
-  alert('Feedback submitted!');
-  e.target.reset();
-});
-document.getElementById('exportBtn').addEventListener('click',()=>{
-  let csv='Name,Email,Artifact,Comment,Clarity,Skills,Organization,Audience\n';
-  feedbackData.forEach(f=>{
-    csv+=`${f.name},${f.email},${f.artifact},${f.comment},${f.clarity},${f.skills},${f.organization},${f.audience}\n`;
+  // Responsive nav toggle for smaller screens
+  const navToggle = document.getElementById('navToggle');
+  const primaryMenu = document.getElementById('primaryMenu');
+  if(navToggle){
+    navToggle.style.display = 'inline-block';
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      primaryMenu.classList.toggle('show');
+    });
+  }
+
+  // Search Feedback functionality
+  const feedbackSearch = document.getElementById('feedbackSearch');
+  const feedbackContainer = document.getElementById('feedbackContainer');
+
+  feedbackSearch.addEventListener('input', () => {
+    const query = feedbackSearch.value.toLowerCase();
+    const articles = feedbackContainer.querySelectorAll('.feedback-article');
+    articles.forEach(article => {
+      const keywords = article.getAttribute('data-keywords').toLowerCase();
+      if (keywords.includes(query)) {
+        article.style.display = '';
+      } else {
+        article.style.display = 'none';
+      }
+    });
   });
-  const blob=new Blob([csv],{type:'text/csv'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;a.download='feedback.csv';a.click();
-});
 
-// ========== CHATBOT ==========
-const chatbotResponses={
-  hello:"Hi! How can I help you?",
-  artifacts:"We have 4 artifacts: AI Chatbot, AI Timeline, Adaptive Learning, and Ethics Dashboard.",
-  feedback:"Submit feedback in the Feedback section below.",
-  rubric:"Rubric scores range from 1 to 10 across clarity, skills, organization, and audience fit.",
-  bio:"I am Naga Venkata Satyanarayana Devarapalli, AI & Data Analytics graduate student.",
-  default:"I didn't understand. Ask about artifacts, feedback, or bio."
-};
-document.getElementById('chatbot-send').addEventListener('click',sendMessage);
-document.getElementById('chatbot-input').addEventListener('keypress',e=>{
-  if(e.key==='Enter') sendMessage();
-});
-function sendMessage(){
-  const input=document.getElementById('chatbot-input');
-  const text=input.value.trim();
-  if(!text)return;
-  addMessage(text,'user');
-  input.value='';
-  const reply=getBotReply(text);
-  setTimeout(()=>addMessage(reply,'bot'),500);
-}
-function addMessage(text,type){
-  const div=document.createElement('div');
-  div.className=`message ${type}`;
-  div.textContent=text;
-  document.getElementById('chatbot-messages').appendChild(div);
-  div.scrollIntoView({behavior:"smooth"});
-}
-function getBotReply(text){
-  const key=text.toLowerCase();
-  return chatbotResponses[key]||chatbotResponses.default;
-}
+  // Export feedback to CSV
+  const exportCsvBtn = document.getElementById('exportCsvBtn');
+
+  exportCsvBtn.addEventListener('click', () => {
+    const articles = feedbackContainer.querySelectorAll('.feedback-article');
+    let csvContent = 'Artifact,Observation Type,Feedback\n';
+
+    articles.forEach(article => {
+      if (article.style.display === 'none') return; // Skip hidden filtered out
+
+      const artifactTitle = article.querySelector('h4').textContent.trim();
+      const positiveSection = article.querySelectorAll('.feedback-section')[0];
+      const suggestionsSection = article.querySelectorAll('.feedback-section')[1];
+
+      // Helper to parse list items
+      function getListItems(section){
+        return Array.from(section.querySelectorAll('ul > li')).map(li => li.textContent.trim());
+      }
+
+      const positives = getListItems(positiveSection);
+      const suggestions = getListItems(suggestionsSection);
+
+      positives.forEach(item => {
+        csvContent += `"${artifactTitle}","Positive Observation","${item.replace(/"/g, '""')}"\n`;
+      });
+      suggestions.forEach(item => {
+        csvContent += `"${artifactTitle}","Suggestion for Improvement","${item.replace(/"/g, '""')}"\n`;
+      });
+    });
+
+    // Download CSV
+    const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'portfolio_feedback.csv';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
 </script>
+
 </body>
 </html>
