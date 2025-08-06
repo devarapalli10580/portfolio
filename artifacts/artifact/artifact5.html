@@ -1,245 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Artifact 5: Advanced AI Project - Naga Venkata Satyanarayana Devarapalli</title>
-<style>
-  /* Reset and base styling */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9fafb;
-    color: #2c3e50;
-    line-height: 1.6;
-  }
-  a {
-    color: #f4a261; /* warm orange */
-    text-decoration: none;
-  }
-  a:hover, a:focus {
-    text-decoration: underline;
-  }
-  header, footer {
-    background-color: #264653; /* dark teal */
-    color: #f4f1de;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1.5rem;
-  }
-  header nav ul li a {
-    font-weight: 600;
-    padding: 0.3rem 0.8rem;
-    border-radius: 5px;
-  }
-  header nav ul li a:hover,
-  header nav ul li a.active {
-    background-color: #f4a261;
-    color: #264653;
-  }
-  main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  }
-  h1, h2, h3 {
-    color: #264653;
-  }
-  p, ul, ol {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-  ul, ol {
-    margin-left: 1.5rem;
-  }
-  blockquote {
-    border-left: 5px solid #f4a261;
-    background-color: #fff3e0;
-    padding-left: 1rem;
-    font-style: italic;
-    color: #7f4e1f;
-    margin: 2rem 0;
-  }
-  pre, code {
-    background-color: #e9f0ef;
-    padding: 1rem 1.2rem;
-    border-radius: 6px;
-    font-family: 'Courier New', Courier, monospace;
-    overflow-x: auto;
-    color: #264653;
-    margin-bottom: 1.5rem;
-  }
-  /* Responsive */
-  @media (max-width: 600px) {
-    header, footer {
-      flex-direction: column;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Portfolio Feedback Discussion</title>
+  <style>
+    /* Extensive styles for readability and structure */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9faff;
+      color: #222;
+      margin: 0; padding: 0;
+      line-height: 1.6;
+      min-width: 320px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto 60px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
+    h1, h2, h3, h4 {
+      color: #3a3a99;
+    }
+    h1 {
+      font-size: 3rem;
       text-align: center;
-      gap: 0.7rem;
+      margin-bottom: 40px;
     }
-    header nav ul {
-      flex-direction: column;
-      gap: 1rem;
+    h2 {
+      font-size: 2.4rem;
+      border-bottom: 4px solid #5a5aff;
+      padding-bottom: 12px;
+      margin-top: 50px;
+      margin-bottom: 30px;
     }
-  }
-</style>
+    h3 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    h4 {
+      font-size: 1.4rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #555;
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: #333;
+      text-align: justify;
+    }
+    ul {
+      margin-left: 25px;
+      margin-bottom: 30px;
+      color: #444;
+    }
+    li {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+    strong {
+      color: #4e54c8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 14px 20px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 1rem;
+    }
+    th {
+      background-color: #4e54c8;
+      color: white;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f0f0ff;
+    }
+    #discussion-box {
+      margin-top: 60px;
+      padding: 30px 35px;
+      border: 2px solid #4e54c8;
+      border-radius: 12px;
+      background: #e7e9ff;
+    }
+    #discussion-box h2 {
+      color: #2f2fc8;
+      margin-bottom: 30px;
+    }
+    #discussion-form label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: #3a3a99;
+      font-size: 1.1rem;
+    }
+    #discussion-form input[type="text"],
+    #discussion-form textarea {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 8px;
+      border: 1.5px solid #aaa;
+      font-size: 1.1rem;
+      font-family: inherit;
+      resize: vertical;
+      margin-bottom: 24px;
+      transition: border-color 0.3s ease;
+    }
+    #discussion-form input[type="text"]:focus,
+    #discussion-form textarea:focus {
+      outline: none;
+      border-color: #4e54c8;
+      background: #f5f7ff;
+    }
+    #discussion-form button {
+      background-color: #4e54c8;
+      border: none;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 16px 30px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #discussion-form button:hover {
+      background-color: #3a3ab8;
+    }
+    #feedback-entries {
+      margin-top: 40px;
+      max-height: 400px;
+      overflow-y: auto;
+      border-top: 2px solid #4e54c8;
+      padding-top: 20px;
+    }
+    .feedback-entry {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 20px 25px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 12px rgba(78, 84, 200, 0.15);
+      font-size: 1.1rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+    .feedback-entry h4 {
+      margin: 0 0 12px 0;
+      font-weight: 700;
+      color: #2a2a8a;
+      font-size: 1.25rem;
+    }
+    /* Responsive */
+    @media(max-width: 700px) {
+      .container {
+        padding: 25px 20px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.9rem;
+      }
+      h3 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="logo" tabindex="0" aria-label="Site Logo and Title"><strong>Naga Venkata Satyanarayana Devarapalli</strong></div>
-  <nav aria-label="Primary Navigation">
+<div class="container">
+  <h1>Professional Portfolio Artifacts Feedback Discussion</h1>
+
+  <!-- Artifact 1 -->
+  <section id="artifact1">
+    <h2>Artifact 1: ChatBox Creator Bot</h2>
+
+    <h3>Introduction and Overview</h3>
+    <p>
+      The ChatBox Creator Bot is a conversational AI assistant developed for simplifying chatbot creation without programming knowledge. Built on Mizou.com’s no-code platform, it empowers users to design, customize, and deploy chatbots via interactive guided conversations.
+    </p>
+
+    <h3>Detailed Feedback</h3>
+
+    <h4>Positive Observations</h4>
     <ul>
-      <li><a href="../index.html" role="link" tabindex="0">Home</a></li>
-      <li><a href="../bio.html" role="link" tabindex="0">Bio</a></li>
-      <li><a href="artifact1.html" role="link" tabindex="0">Artifact 1</a></li>
-      <li><a href="artifact2.html" role="link" tabindex="0">Artifact 2</a></li>
-      <li><a href="artifact3.html" role="link" tabindex="0">Artifact 3</a></li>
-      <li><a href="artifact4.html" role="link" tabindex="0">Artifact 4</a></li>
-      <li><a href="artifact5.html" role="link" tabindex="0" class="active" aria-current="page">Artifact 5</a></li>
+      <li>Exceptional user empathy demonstrated by understanding non-technical user challenges.</li>
+      <li>Strong use of design thinking framework: empathize, define, ideate, prototype, test.</li>
+      <li>Effective incorporation of peer feedback, improving performance metrics significantly.</li>
+      <li>Clear documentation and explanation of technical tools and processes.</li>
+      <li>Great collaboration evident between interdisciplinary team members.</li>
     </ul>
-  </nav>
-</header>
 
-<main role="main" tabindex="0">
-
-  <section aria-label="Introduction to Artifact 5">
-    <h1>Artifact 5: Advanced AI Project – Predictive Maintenance with Machine Learning</h1>
-    <p>This artifact details the development and deployment of an AI-powered predictive maintenance system designed to reduce downtime and optimize operational efficiency in industrial settings.</p>
-  </section>
-
-  <section aria-label="Project Overview and Objectives">
-    <h2>Project Overview and Objectives</h2>
-    <p>The project aimed to create an intelligent system capable of:</p>
+    <h4>Areas for Improvement</h4>
     <ul>
-      <li>Predicting equipment failures before they occur.</li>
-      <li>Scheduling maintenance proactively to minimize disruption.</li>
-      <li>Reducing maintenance costs by avoiding unnecessary inspections.</li>
-      <li>Providing real-time insights and alerts for operators and maintenance teams.</li>
+      <li>Include visual aids such as screenshots or short video demos to complement text descriptions.</li>
+      <li>Explain technical terms like Mean Reciprocal Rank (MRR) in simpler language for general audiences.</li>
+      <li>Address privacy and data protection standards like GDPR compliance more explicitly.</li>
+      <li>Consider adding a section on potential ethical implications and mitigation strategies for chatbot deployment.</li>
     </ul>
-    <p>This solution was developed for a manufacturing plant to enhance productivity and reliability.</p>
+
+    <h4>Value Proposition and Relevance</h4>
+    <p>
+      This artifact serves as an excellent example for employers, instructors, and peers to assess practical AI skills including prompt engineering, LLM integration, and user-centric design. It is highly relevant to small businesses and novice developers seeking accessible AI tools.
+    </p>
+
+    <h4>References and Tools Used</h4>
+    <p>Mizou.com platform, Botpress documentation, OpenAI GPT-4 technical overview, Anthropic Claude 3, GDPR guidelines, Replit collaborative coding.</p>
+
   </section>
 
-  <section aria-label="Data Collection and Preprocessing">
-    <h2>Data Collection and Preprocessing</h2>
-    <p>The system was built on extensive sensor data from machinery, including vibration, temperature, pressure, and operational metrics. Key steps included:</p>
-    <ol>
-      <li>Data integration from multiple IoT sensors and historical maintenance logs.</li>
-      <li>Cleaning and handling missing or inconsistent data points.</li>
-      <li>Feature engineering to extract meaningful signals such as rolling averages, thresholds, and anomaly scores.</li>
-      <li>Balancing datasets to handle class imbalance in failure events.</li>
-    </ol>
-  </section>
+  <!-- Artifact 2 -->
+  <section id="artifact2">
+    <h2>Artifact 2: AI & Machine Learning Evolution Timeline</h2>
 
-  <section aria-label="Machine Learning Model Development">
-    <h2>Machine Learning Model Development</h2>
-    <p>Several machine learning models were evaluated for predictive accuracy and interpretability, including:</p>
+    <h3>Introduction and Overview</h3>
+    <p>
+      A visually rich timeline depicting the evolution of AI and ML, tracing major milestones, breakthroughs, and setbacks from the 1950s through to contemporary advancements. Created with Canva and Google Slides.
+    </p>
+
+    <h3>Detailed Feedback</h3>
+
+    <h4>Positive Observations</h4>
     <ul>
-      <li><strong>Random Forest Classifier:</strong> Effective for handling non-linear relationships and feature importance analysis.</li>
-      <li><strong>Gradient Boosting Machines (XGBoost):</strong> Provided superior performance with hyperparameter tuning.</li>
-      <li><strong>Long Short-Term Memory (LSTM) Networks:</strong> Captured temporal dependencies in sensor data for sequential prediction.</li>
+      <li>Comprehensive coverage of AI history including lesser-known but impactful events.</li>
+      <li>Clear visual differentiation of periods, technologies, and concepts using color coding.</li>
+      <li>Accessible educational format supporting various learning styles.</li>
     </ul>
-    <p>The best model was selected based on cross-validation scores and business requirements.</p>
 
-    <pre><code># Example Python snippet: Training a Random Forest model for failure prediction
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
-
-# Assume X and y are preprocessed feature matrix and target vector
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-model = RandomForestClassifier(n_estimators=100, random_state=42)
-model.fit(X_train, y_train)
-
-y_pred = model.predict(X_test)
-print(classification_report(y_test, y_pred))
-</code></pre>
-  </section>
-
-  <section aria-label="System Architecture and Deployment">
-    <h2>System Architecture and Deployment</h2>
-    <p>The predictive maintenance system architecture included:</p>
+    <h4>Areas for Improvement</h4>
     <ul>
-      <li>Data ingestion pipeline using Apache Kafka for real-time sensor streaming.</li>
-      <li>Preprocessing and feature extraction with Apache Spark.</li>
-      <li>Model serving through RESTful APIs built with Flask.</li>
-      <li>Interactive dashboards built with Power BI and Grafana for visualization.</li>
-      <li>Alert notification system integrated with SMS and email.</li>
+      <li>Consider embedding interactive or downloadable formats to engage users beyond static visuals.</li>
+      <li>Expand future projections or trends in AI for strategic insight.</li>
+      <li>Define the target audience more explicitly to tailor language and depth.</li>
     </ul>
-    <p>The solution was deployed on cloud infrastructure (AWS), ensuring scalability and fault tolerance.</p>
+
+    <h4>Value Proposition and Relevance</h4>
+    <p>
+      This artifact is valuable to students, educators, and AI professionals aiming to understand AI’s historical context and trajectory, aiding informed decision-making and learning.
+    </p>
+
   </section>
 
-  <section aria-label="Results and Impact">
-    <h2>Results and Impact</h2>
-    <p>Key outcomes from the project included:</p>
+  <!-- Artifact 3 -->
+  <section id="artifact3">
+    <h2>Artifact 3: COVID-19 Death vs Vaccination Data Analysis (India)</h2>
+
+    <h3>Introduction and Overview</h3>
+    <p>
+      An RStudio-based data analytics project examining correlations between COVID-19 vaccination rates and death tolls in India. Focuses on data cleaning, visualization, and statistical interpretation.
+    </p>
+
+    <h3>Detailed Feedback</h3>
+
+    <h4>Positive Observations</h4>
     <ul>
-      <li>Reduced unplanned downtime by 30%, saving substantial costs.</li>
-      <li>Improved maintenance scheduling efficiency by 40%.</li>
-      <li>Enabled proactive decision-making with actionable insights.</li>
-      <li>Enhanced equipment lifespan through timely interventions.</li>
+      <li>Timely and relevant public health focus with clear societal impact.</li>
+      <li>Proficient use of R packages for data manipulation and visualization.</li>
+      <li>Insightful interpretation linking data trends with health outcomes.</li>
     </ul>
-  </section>
 
-  <section aria-label="Challenges and Lessons Learned">
-    <h2>Challenges and Lessons Learned</h2>
-    <p>During the project, several challenges were encountered:</p>
+    <h4>Areas for Improvement</h4>
     <ul>
-      <li><strong>Data Quality:</strong> Variability and noise in sensor data required advanced filtering and validation.</li>
-      <li><strong>Integration Complexity:</strong> Merging real-time streams with historical logs demanded robust architecture design.</li>
-      <li><strong>Model Interpretability:</strong> Balancing performance with explainability for maintenance engineers.</li>
+      <li>Disclose limitations related to data completeness, accuracy, and potential biases.</li>
+      <li>Suggest actionable recommendations for policymakers or healthcare providers.</li>
+      <li>Consider adding interactive visualizations or dashboards for deeper engagement.</li>
     </ul>
-    <p>These challenges fostered valuable skills in data engineering, system design, and stakeholder communication.</p>
+
+    <h4>Value Proposition and Relevance</h4>
+    <p>
+      This artifact is highly relevant to epidemiologists, healthcare decision-makers, and data analysts focused on pandemic response and health data science.
+    </p>
+
   </section>
 
-  <section aria-label="Future Enhancements">
-    <h2>Future Enhancements</h2>
+  <!-- Artifact 4 -->
+  <section id="artifact4">
+    <h2>Artifact 4: Big Data Adoption in Healthcare Case Study (MIMIC-III)</h2>
+
+    <h3>Introduction and Overview</h3>
+    <p>
+      An in-depth case study examining big data adoption challenges and opportunities in healthcare, leveraging the MIMIC-III clinical database. Addresses technical, ethical, and organizational factors.
+    </p>
+
+    <h3>Detailed Feedback</h3>
+
+    <h4>Positive Observations</h4>
     <ul>
-      <li>Incorporate advanced deep learning techniques like Transformers for improved sequence modeling.</li>
-      <li>Integrate augmented reality (AR) for maintenance support guided by AI insights.</li>
-      <li>Expand to predictive maintenance for other asset classes.</li>
-      <li>Enhance user interfaces with AI-powered chatbots for maintenance queries.</li>
+      <li>Strong interdisciplinary focus combining data science with healthcare and ethics.</li>
+      <li>Comprehensive literature review supporting arguments and findings.</li>
+      <li>Consideration of regulatory and privacy compliance reflects professional awareness.</li>
     </ul>
-  </section>
 
-  <section aria-label="Contact Information">
-    <h2>Contact Information</h2>
-    <p>For any questions or collaboration inquiries, please reach out:</p>
+    <h4>Areas for Improvement</h4>
     <ul>
-      <li>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></li>
-      <li>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer">github.com/naga-venkata</a></li>
+      <li>Include real-world case examples or data-driven outcomes to strengthen impact.</li>
+      <li>Use infographics or charts to summarize complex concepts visually.</li>
+      <li>Propose future innovations or improvements based on identified challenges.</li>
     </ul>
+
+    <h4>Value Proposition and Relevance</h4>
+    <p>
+      This artifact provides valuable insights for healthcare administrators, data scientists, and policy experts exploring responsible big data integration in clinical settings.
+    </p>
+
   </section>
 
-</main>
+  <!-- Discussion Box -->
+  <section id="discussion-box" aria-label="Discussion and feedback submission section">
+    <h2>Discussion & Feedback Submission</h2>
 
-<footer>
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli &mdash;
-    <a href="../index.html">Home</a> | 
-    <a href="../bio.html">Bio</a> | 
-    <a href="artifact1.html">Artifact 1</a> | 
-    <a href="artifact2.html">Artifact 2</a> | 
-    <a href="artifact3.html">Artifact 3</a> | 
-    <a href="artifact4.html">Artifact 4</a> | 
-    <a href="artifact5.html" aria-current="page" class="active">Artifact 5</a>
-  </p>
-</footer>
+    <form id="discussion-form" onsubmit="submitFeedback(event)" aria-describedby="form-instructions">
+      <p id="form-instructions" style="margin-bottom: 20px; font-style: italic;">
+        Please enter your name and share your feedback or comments related to the artifacts above.
+      </p>
+
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your full name"
+        aria-required="true"
+        required
+      />
+
+      <label for="comment">Feedback / Comments:</label>
+      <textarea
+        id="comment"
+        name="comment"
+        rows="6"
+        placeholder="Write your detailed feedback here..."
+        aria-required="true"
+        required
+      ></textarea>
+
+      <button type="submit" aria-label="Submit your feedback">Submit Feedback</button>
+    </form>
+
+    <div id="feedback-entries" aria-live="polite" aria-atomic="true" style="margin-top: 40px;">
+      <!-- Dynamic feedback entries will appear here -->
+    </div>
+  </section>
+
+</div>
+
+<script>
+  function submitFeedback(event) {
+    event.preventDefault();
+
+    const nameInput = document.getElementById('name');
+    const commentInput = document.getElementById('comment');
+    const feedbackEntries = document.getElementById('feedback-entries');
+
+    const name = nameInput.value.trim();
+    const comment = commentInput.value.trim();
+
+    if (!name || !comment) {
+      alert('Please enter both your name and feedback.');
+      return;
+    }
+
+    const entryDiv = document.createElement('div');
+    entryDiv.className = 'feedback-entry';
+
+    const nameHeading = document.createElement('h4');
+    nameHeading.textContent = name;
+
+    const commentPara = document.createElement('p');
+    commentPara.textContent = comment;
+
+    entryDiv.appendChild(nameHeading);
+    entryDiv.appendChild(commentPara);
+
+    // Insert at top for recent feedback first
+    feedbackEntries.insertBefore(entryDiv, feedbackEntries.firstChild);
+
+    // Reset form
+    nameInput.value = '';
+    commentInput.value = '';
+
+    // Scroll to new feedback entry
+    entryDiv.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
