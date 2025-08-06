@@ -1,548 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio Discussion & Feedback | Extended Version</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Professional Portfolio & Feedback Dashboard | Naga Venkata Satyanarayana Devarapalli</title>
 <style>
-/* ==============================================
-   RESET & BASE STYLES
-============================================== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #f4f8fc;
-  color: #2c3e50;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-button { cursor: pointer; }
+  /* Basic Reset */
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0; padding:0;
+    background: #f0f4f8;
+    color: #2c3e50;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(90deg, #005a9c, #0078d4);
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  }
+  header h1 {
+    font-weight: 900;
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+  }
+  header p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+  }
+  section {
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  }
+  section h2 {
+    color: #0078d4;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-left: 6px solid #0078d4;
+    padding-left: 12px;
+  }
 
-/* ==============================================
-   THEME TOGGLE
-============================================== */
-body.dark-mode {
-  background: #121212;
-  color: #f4f4f4;
-}
-body.dark-mode header, body.dark-mode nav {
-  background: #1f1f1f;
-}
-body.dark-mode .feedback-container,
-body.dark-mode form,
-body.dark-mode .card {
-  background: #1f1f1f;
-  color: #f4f4f4;
-}
-body.dark-mode input, body.dark-mode textarea, body.dark-mode select {
-  background: #222;
-  color: #fff;
-  border: 1px solid #444;
-}
-#theme-toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: #0078d4;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  border: none;
-}
+  /* Profile Section */
+  #profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  #profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  #profile .bio {
+    flex: 1 1 400px;
+  }
+  #profile .bio h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #005a9c;
+  }
+  #profile .bio p {
+    font-size: 1.05rem;
+    margin-top: 10px;
+    color: #333;
+  }
+  #profile .links {
+    margin-top: 15px;
+  }
+  #profile .links a {
+    color: #0078d4;
+    font-weight: 600;
+    margin-right: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  #profile .links a:hover {
+    color: #004f8d;
+  }
 
-/* ==============================================
-   HEADER STYLES
-============================================== */
-header {
-  background: linear-gradient(90deg, #005a9c, #0078d4);
-  padding: 20px;
-  text-align: center;
-  color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-header h1 { font-size: 2.4rem; margin-bottom: 8px; }
-header p { font-size: 1rem; color: #d9e9fa; }
+  /* Artifact feedback containers */
+  .feedback-container {
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    margin-bottom: 28px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    background: #fafafa;
+  }
+  .feedback-container:hover {
+    box-shadow: 0 14px 38px rgba(0,0,0,0.12);
+  }
+  .artifact-header {
+    background: #0078d4;
+    color: white;
+    padding: 18px 26px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .artifact-header .toggle-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  .artifact-header.active .toggle-icon {
+    transform: rotate(180deg);
+  }
+  .feedback-content {
+    padding: 22px 28px 35px;
+    display: none;
+    color: #2c3e50;
+  }
+  .feedback-category {
+    margin-bottom: 18px;
+  }
+  .feedback-category strong {
+    display: block;
+    color: #0078d4;
+    font-size: 1.1rem;
+    margin-bottom: 7px;
+    letter-spacing: 0.02em;
+  }
+  .feedback-category p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .suggestions {
+    background: #d4edda;
+    border-left: 5px solid #28a745;
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: #155724;
+    font-weight: 600;
+    font-size: 1rem;
+  }
 
-/* ==============================================
-   NAVIGATION BAR
-============================================== */
-nav {
-  display: flex;
-  justify-content: center;
-  background: #0078d4;
-  padding: 10px;
-  gap: 15px;
-  position: sticky;
-  top: 75px;
-  z-index: 999;
-}
-nav a {
-  color: white;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-nav a:hover { background: #005fa3; }
+  /* Discussion & Feedback Forms */
+  form {
+    background: #fff;
+    padding: 22px 28px;
+    border-radius: 14px;
+    box-shadow: 0 7px 26px rgba(0,0,0,0.06);
+    margin-bottom: 35px;
+  }
+  form h3 {
+    margin-top: 0;
+    font-size: 1.7rem;
+    color: #0078d4;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 7px;
+    font-size: 1rem;
+    color: #34495e;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d0d7de;
+    border-radius: 9px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: #0078d4;
+    outline: none;
+    box-shadow: 0 0 6px #99c2ffaa;
+  }
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  button {
+    background: #0078d4;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #005a9c;
+  }
 
-/* ==============================================
-   MAIN CONTENT
-============================================== */
-main { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-.section-title {
-  color: #0078d4;
-  border-left: 6px solid #0078d4;
-  padding-left: 12px;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  font-weight: bold;
-}
+  /* Discussion & Feedback Feed */
+  #discussion-feed, #feedback-feed {
+    margin-top: 18px;
+  }
+  .card {
+    background: #fefefe;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border-left: 6px solid #0078d4;
+    animation: fadeInUp 0.4s ease forwards;
+  }
+  .card h4 {
+    margin: 0 0 6px;
+    font-size: 1.2rem;
+    color: #005a9c;
+  }
+  .card span {
+    font-size: 0.85rem;
+    color: #555;
+    font-style: italic;
+  }
+  .card p {
+    font-size: 1rem;
+    margin-top: 6px;
+    white-space: pre-line;
+  }
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 
-/* ==============================================
-   SEARCH BAR
-============================================== */
-#search-bar {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 10px;
-}
-#search-input {
-  flex: 1;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-#clear-search {
-  background: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  cursor: pointer;
-}
+  /* Leaderboard Section */
+  #leaderboard {
+    max-width: 350px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+  #leaderboard h2 {
+    margin-top: 0;
+  }
+  #leaderboard ol {
+    padding-left: 20px;
+  }
+  #leaderboard li {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #0078d4;
+  }
 
-/* ==============================================
-   ARTIFACT FEEDBACK
-============================================== */
-.feedback-container {
-  background: #fff;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  overflow: hidden;
-}
-.artifact-header {
-  background: #0078d4;
-  color: white;
-  padding: 16px;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-.artifact-header:hover { background: #005fa3; }
-.artifact-header .toggle-icon { font-size: 1.5rem; transition: transform 0.3s; }
-.feedback-content { display: none; padding: 15px 20px; }
-.feedback-category { margin-bottom: 12px; }
-.feedback-category strong {
-  color: #0078d4;
-  display: block;
-  margin-bottom: 6px;
-}
-.suggestions {
-  background: #e8f8e8;
-  border-left: 5px solid #3c763d;
-  padding: 10px;
-  font-weight: 600;
-  border-radius: 6px;
-}
+  /* Analytics Section */
+  #analytics {
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+  }
+  #analytics canvas {
+    max-width: 100%;
+    height: 280px;
+    margin-bottom: 35px;
+  }
+  #analytics h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: #0078d4;
+    font-size: 1.7rem;
+    text-align: center;
+  }
 
-/* ==============================================
-   FORMS
-============================================== */
-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  margin-bottom: 25px;
-}
-form h3 { margin-top: 0; color: #0078d4; font-size: 1.4rem; }
-label { display: block; font-weight: 600; margin: 10px 0 6px; }
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1.8px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-textarea { min-height: 90px; }
-button {
-  background: #0078d4;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-button:hover { background: #005fa3; }
-
-/* ==============================================
-   DISCUSSION FEED
-============================================== */
-#discussion-feed, #feedback-feed { margin-top: 20px; }
-.card {
-  background: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  border-left: 5px solid #0078d4;
-  animation: fadeIn 0.4s ease forwards;
-}
-.card h4 { margin: 0 0 5px; color: #0078d4; font-size: 1.1rem; }
-.card span { font-size: 0.85rem; color: #666; }
-.card p { margin: 10px 0 0; font-size: 1rem; color: #333; }
-.reply-btn, .like-btn {
-  background: transparent;
-  border: none;
-  color: #0078d4;
-  font-weight: 600;
-  margin-right: 10px;
-  cursor: pointer;
-}
-.reply-section {
-  margin-left: 20px;
-  border-left: 3px solid #ccc;
-  padding-left: 10px;
-  margin-top: 10px;
-}
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(15px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* ==============================================
-   CHATBOT
-============================================== */
-#chatbot {
-  background: white;
-  width: 340px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  font-size: 0.9rem;
-  z-index: 10000;
-}
-#chatbot-header {
-  background: #0078d4;
-  color: white;
-  padding: 14px;
-  font-weight: 700;
-  text-align: center;
-}
-#chatbot-messages {
-  height: 250px;
-  padding: 10px;
-  overflow-y: auto;
-  background: #eef4fb;
-  display: flex;
-  flex-direction: column;
-}
-.message {
-  margin-bottom: 12px;
-  padding: 10px 14px;
-  border-radius: 14px;
-  max-width: 80%;
-}
-.user-message {
-  background: #0078d4;
-  color: white;
-  align-self: flex-end;
-}
-.bot-message {
-  background: #d1e7fd;
-  color: #333;
-  align-self: flex-start;
-}
-#chatbot-form {
-  display: flex;
-  border-top: 1px solid #ccc;
-}
-#chatbot-input {
-  flex: 1;
-  border: none;
-  padding: 10px;
-  font-size: 1rem;
-}
-#chatbot-send-btn {
-  background: #0078d4;
-  color: white;
-  border: none;
-  padding: 0 16px;
-  cursor: pointer;
-  font-weight: 700;
-}
+  /* Responsive */
+  @media (max-width: 900px) {
+    #profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #profile .bio {
+      flex: unset;
+    }
+    #leaderboard {
+      max-width: 100%;
+      margin-top: 30px;
+    }
+  }
 </style>
 </head>
 <body>
 
-<button id="theme-toggle">🌙 Dark Mode</button>
-
 <header>
-  <h1>Portfolio Discussion & Feedback</h1>
-  <p>Discuss Artifacts, Share Views, and Interact via Chatbot</p>
+  <h1>Naga Venkata Satyanarayana Devarapalli's Portfolio & Feedback Dashboard</h1>
+  <p>Explore artifacts, share your insights, and track community engagement</p>
 </header>
 
-<nav>
-  <a href="#artifacts">Artifacts</a>
-  <a href="#discussion-section">Discussion</a>
-  <a href="#feedback-section">Feedback</a>
-</nav>
-
 <main>
-  <!-- ARTIFACT FEEDBACK -->
-  <section id="artifacts">
-    <h2 class="section-title">Artifact Feedback Overview</h2>
-    <!-- Reuse previous artifacts -->
-    <!-- (Keeping content but expanded for clarity & ARIA roles) -->
-    <!-- ... (same as before, with more comments & aria tags) -->
-  </section>
-
-  <!-- DISCUSSION -->
-  <section id="discussion-section">
-    <h2 class="section-title">Discussion Forum</h2>
-    <div id="search-bar">
-      <input type="text" id="search-input" placeholder="Search comments...">
-      <button id="clear-search">Clear</button>
+  <!-- Profile Section -->
+  <section id="profile-section" aria-label="Portfolio owner's profile">
+    <h2>About Me</h2>
+    <div id="profile">
+      <img src="https://i.pravatar.cc/140?img=7" alt="Portrait of Naga Venkata Satyanarayana Devarapalli" />
+      <div class="bio">
+        <h3>Naga Venkata Satyanarayana Devarapalli</h3>
+        <p>Graduate student in Artificial Intelligence – Data Analytics at Indiana Wesleyan University, passionate about leveraging AI and Machine Learning to solve real-world problems. Experienced in data visualization, NLP, and ethical AI practices.</p>
+        <div class="links">
+          <a href="mailto:tone_satya@yahoo.co.in" aria-label="Send email to Naga Venkata Satyanarayana Devarapalli">Email</a>
+          <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile of Naga">LinkedIn</a>
+          <a href="https://github.com/naga-venkata" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile of Naga">GitHub</a>
+        </div>
+      </div>
     </div>
-    <form id="discussionForm">
-      <h3>Post a Comment</h3>
-      <label>Your Name:</label>
-      <input type="text" id="name" required>
-      <label>Select Artifact:</label>
-      <select id="artifact" required>
-        <option value="">Select</option>
-        <option value="Artifact 1">Artifact 1</option>
-        <option value="Artifact 2">Artifact 2</option>
-        <option value="Artifact 3">Artifact 3</option>
-        <option value="Artifact 4">Artifact 4</option>
-      </select>
-      <label>Your Comment:</label>
-      <textarea id="comment" required></textarea>
-      <button type="submit">Post Comment</button>
-    </form>
-    <button id="download-csv">📥 Download Comments CSV</button>
-    <div id="discussion-feed"></div>
   </section>
 
-  <!-- FEEDBACK -->
-  <section id="feedback-section">
-    <h2 class="section-title">Overall Experience Feedback</h2>
-    <form id="feedbackForm">
-      <h3>Submit Your Feedback</h3>
-      <label>Your Name:</label>
-      <input type="text" id="fb-name" required>
-      <label>Your Experience:</label>
-      <textarea id="fb-experience" required></textarea>
-      <button type="submit">Submit Feedback</button>
+  <!-- Artifacts Feedback Section -->
+  <section aria-label="Feedback on portfolio artifacts">
+    <h2>Artifacts Feedback Overview</h2>
+
+    <!-- Artifact 1 -->
+    <div class="feedback-container" id="artifact1">
+      <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content1" aria-label="Toggle feedback for Artifact 1">
+        Artifact 1: AI Lab Chatbot Assistant
+        <span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="feedback-content" id="content1" aria-hidden="true">
+        <div class="feedback-category">
+          <strong>Clarity of Project Description</strong>
+          <p>The project is clearly presented, explaining chatbot functionalities, development workflow, and tool choices thoroughly.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Demonstration of AI/ML Skills</strong>
+          <p>Demonstrates applied AI through chatbot NLP and ethical considerations well-integrated.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Overall Organization and Presentation</strong>
+          <p>Well-segmented and easy to follow. Could include flowcharts for better visual understanding.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Appropriateness for Intended Audience</strong>
+          <p>Accessible to technical and non-technical audiences alike with clear explanations.</p>
+        </div>
+        <div class="suggestions">Suggestions: Add real user conversation examples and flow diagrams for more engagement.</div>
+      </div>
+    </div>
+
+    <!-- Artifact 2 -->
+    <div class="feedback-container" id="artifact2">
+      <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content2" aria-label="Toggle feedback for Artifact 2">
+        Artifact 2: AI & ML Evolution Timeline
+        <span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="feedback-content" id="content2" aria-hidden="true">
+        <div class="feedback-category">
+          <strong>Clarity of Project Description</strong>
+          <p>Chronological, well-explained timeline of AI/ML advancements with major milestones.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Demonstration of AI/ML Skills</strong>
+          <p>Shows solid knowledge of AI history and technical growth points.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Overall Organization and Presentation</strong>
+          <p>Informative but could be enhanced by interactive or visual timeline elements.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Appropriateness for Intended Audience</strong>
+          <p>Suited for academic and professional learners, language is clear and approachable.</p>
+        </div>
+        <div class="suggestions">Suggestions: Include multimedia timelines and videos for richer user experience.</div>
+      </div>
+    </div>
+
+    <!-- Artifact 3 -->
+    <div class="feedback-container" id="artifact3">
+      <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content3" aria-label="Toggle feedback for Artifact 3">
+        Artifact 3: SchoolAI-Assisted Learning Experience
+        <span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="feedback-content" id="content3" aria-hidden="true">
+        <div class="feedback-category">
+          <strong>Clarity of Project Description</strong>
+          <p>Clear objectives and process of AI-assisted learning platform with examples.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Demonstration of AI/ML Skills</strong>
+          <p>Shows applied ML algorithms in educational context well.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Overall Organization and Presentation</strong>
+          <p>Good structure, use of code snippets and case studies aids understanding.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Appropriateness for Intended Audience</strong>
+          <p>Appropriate for AI experts and education professionals, blending tech and pedagogy.</p>
+        </div>
+        <div class="suggestions">Suggestions: Add UI screenshots and usability studies to highlight user experience.</div>
+      </div>
+    </div>
+
+    <!-- Artifact 4 -->
+    <div class="feedback-container" id="artifact4">
+      <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content4" aria-label="Toggle feedback for Artifact 4">
+        Artifact 4: Data Challenge Scenarios
+        <span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="feedback-content" id="content4" aria-hidden="true">
+        <div class="feedback-category">
+          <strong>Clarity of Project Description</strong>
+          <p>Identifies key data challenges clearly with actionable examples.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Demonstration of AI/ML Skills</strong>
+          <p>Strong use of code snippets showing data preprocessing and ethical AI handling.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Overall Organization and Presentation</strong>
+          <p>Clean layout, accessible to data scientists and ethicists.</p>
+        </div>
+        <div class="feedback-category">
+          <strong>Appropriateness for Intended Audience</strong>
+          <p>Focuses on AI practitioners and ethical AI communities.</p>
+        </div>
+        <div class="suggestions">Suggestions: Deepen fairness metrics and bias audit case studies in future.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discussion and Feedback Forms -->
+  <section aria-label="Discussion and Feedback Forms">
+    <h2>Join the Discussion & Provide Feedback</h2>
+
+    <!-- Discussion Form -->
+    <form id="discussionForm" aria-label="Post discussion comment">
+      <h3>Post a Discussion Comment</h3>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="artifact">Select Artifact</label>
+      <select id="artifact" name="artifact" required>
+        <option value="" disabled selected>Select an artifact</option>
+        <option value="Artifact 1">Artifact 1: AI Lab Chatbot</option>
+        <option value="Artifact 2">Artifact 2: AI & ML Timeline</option>
+        <option value="Artifact 3">Artifact 3: SchoolAI Learning</option>
+        <option value="Artifact 4">Artifact 4: Data Challenge Scenarios</option>
+      </select>
+
+      <label for="comment">Your Comment</label>
+      <textarea id="comment" name="comment" placeholder="Write your feedback or discussion comment..." required></textarea>
+
+      <button type="submit">Submit Comment</button>
     </form>
-    <div id="feedback-feed"></div>
+
+    <!-- Discussion Feed -->
+    <section id="discussion-feed" aria-live="polite" aria-relevant="additions" aria-label="Discussion comments feed">
+      <h3>Discussion Comments</h3>
+      <!-- Comments inserted here dynamically -->
+    </section>
+  </section>
+
+  <!-- Analytics Dashboard -->
+  <section id="analytics" aria-label="Feedback Analytics Dashboard">
+    <h2>Analytics Dashboard</h2>
+    <h3>Comments by Artifact</h3>
+    <canvas id="commentsByArtifactChart" role="img" aria-label="Bar chart showing number of comments by artifact"></canvas>
+
+    <h3>Comments Over Time</h3>
+    <canvas id="commentsOverTimeChart" role="img" aria-label="Line chart showing comments submitted over time"></canvas>
+  </section>
+
+  <!-- Leaderboard -->
+  <section id="leaderboard-section" aria-label="Top contributors leaderboard">
+    <h2>Top Contributors</h2>
+    <div id="leaderboard">
+      <ol id="topContributorsList">
+        <!-- Top commenters populated here -->
+      </ol>
+    </div>
   </section>
 </main>
 
-<!-- CHATBOT -->
-<div id="chatbot">
-  <div id="chatbot-header">Portfolio Chatbot</div>
-  <div id="chatbot-messages">
-    <div class="bot-message">Hi! Ask me about any Artifact, Feedback, or Features.</div>
-  </div>
-  <form id="chatbot-form">
-    <input type="text" id="chatbot-input" placeholder="Type your question..." required>
-    <button id="chatbot-send-btn">Send</button>
-  </form>
-</div>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-/* ==============================================
-   THEME TOGGLE
-============================================== */
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  themeToggle.textContent = document.body.classList.contains('dark-mode')
-    ? '☀️ Light Mode'
-    : '🌙 Dark Mode';
-});
-
-/* ==============================================
-   COLLAPSIBLE ARTIFACT CONTENT
-============================================== */
-document.querySelectorAll('.artifact-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector('.toggle-icon');
-    const isVisible = content.style.display === 'block';
-    content.style.display = isVisible ? 'none' : 'block';
-    icon.style.transform = isVisible ? 'rotate(0)' : 'rotate(180deg)';
-  });
-});
-
-/* ==============================================
-   DISCUSSION LOGIC WITH LOCAL STORAGE
-============================================== */
-let discussions = JSON.parse(localStorage.getItem('discussions')) || [];
-
-const discussionForm = document.getElementById('discussionForm');
-const discussionFeed = document.getElementById('discussion-feed');
-
-function renderDiscussions(filter = '') {
-  discussionFeed.innerHTML = '';
-  discussions
-    .filter(d => d.comment.toLowerCase().includes(filter.toLowerCase()))
-    .forEach((d, index) => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <h4>${d.name}</h4>
-        <span>${d.artifact}</span>
-        <p>${d.comment}</p>
-        <button class="like-btn" data-index="${index}">👍 ${d.likes}</button>
-        <button class="reply-btn" data-index="${index}">Reply</button>
-        <div class="reply-section">${d.replies.map(r => `<p><strong>${r.name}:</strong> ${r.text}</p>`).join('')}</div>
-      `;
-      discussionFeed.prepend(card);
+  // Handle artifact feedback toggles
+  document.querySelectorAll('.artifact-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', !expanded);
+      content.style.display = expanded ? 'none' : 'block';
+      content.setAttribute('aria-hidden', expanded);
+      header.classList.toggle('active');
     });
-}
+    header.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        header.click();
+      }
+    });
+  });
 
-discussionForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const artifact = document.getElementById('artifact').value;
-  const comment = document.getElementById('comment').value.trim();
-  if (!name || !artifact || !comment) return;
+  // In-memory data store for comments
+  const comments = [];
 
-  discussions.push({ name, artifact, comment, likes: 0, replies: [] });
-  localStorage.setItem('discussions', JSON.stringify(discussions));
-  renderDiscussions();
-  discussionForm.reset();
-});
-
-discussionFeed.addEventListener('click', e => {
-  if (e.target.classList.contains('like-btn')) {
-    const idx = e.target.dataset.index;
-    discussions[idx].likes++;
-    localStorage.setItem('discussions', JSON.stringify(discussions));
-    renderDiscussions();
-  } else if (e.target.classList.contains('reply-btn')) {
-    const idx = e.target.dataset.index;
-    const replyText = prompt('Enter your reply:');
-    if (replyText) {
-      discussions[idx].replies.push({ name: 'Anonymous', text: replyText });
-      localStorage.setItem('discussions', JSON.stringify(discussions));
-      renderDiscussions();
-    }
+  // Utilities
+  function formatDate(date) {
+    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
   }
-});
 
-renderDiscussions();
+  // Render discussion comments feed
+  function renderComments() {
+    const feed = document.getElementById('discussion-feed');
+    feed.innerHTML = '<h3>Discussion Comments</h3>';
+    if (comments.length === 0) {
+      const p = document.createElement('p');
+      p.textContent = 'No comments yet. Be the first to share your thoughts!';
+      feed.appendChild(p);
+      return;
+    }
+    comments.slice().reverse().forEach(({name, artifact, comment, timestamp}) => {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.setAttribute('tabindex', '0');
+      card.innerHTML = `<h4>${artifact} - <em>${name}</em></h4><span>${formatDate(timestamp)}</span><p>${comment}</p>`;
+      feed.appendChild(card);
+    });
+  }
 
-/* ==============================================
-   SEARCH FEATURE
-============================================== */
-document.getElementById('search-input').addEventListener('input', e => {
-  renderDiscussions(e.target.value);
-});
-document.getElementById('clear-search').addEventListener('click', () => {
-  document.getElementById('search-input').value = '';
-  renderDiscussions();
-});
+  // Leaderboard generation
+  function updateLeaderboard() {
+    // Count comments per user
+    const counts = {};
+    comments.forEach(c => {
+      counts[c.name] = (counts[c.name] || 0) + 1;
+    });
+    // Sort descending
+    const sorted = Object.entries(counts).sort((a,b) => b[1] - a[1]);
+    // Render top 5
+    const list = document.getElementById('topContributorsList');
+    list.innerHTML = '';
+    if (sorted.length === 0) {
+      list.innerHTML = '<li>No contributors yet.</li>';
+      return;
+    }
+    sorted.slice(0,5).forEach(([name, count], idx) => {
+      const li = document.createElement('li');
+      li.textContent = `${name} — ${count} comment${count > 1 ? 's' : ''}`;
+      list.appendChild(li);
+    });
+  }
 
-/* ==============================================
-   DOWNLOAD DISCUSSION AS CSV
-============================================== */
-document.getElementById('download-csv').addEventListener('click', () => {
-  const csv = discussions.map(d => `${d.name},${d.artifact},${d.comment}`).join('\n');
-  const blob = new Blob([csv], { type: 'text/csv' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'discussions.csv';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-});
+  // Chart.js charts setup
+  let commentsByArtifactChart, commentsOverTimeChart;
+  function updateCharts() {
+    const artifacts = ['Artifact 1', 'Artifact 2', 'Artifact 3', 'Artifact 4'];
+    // Count comments per artifact
+    const artifactCounts = artifacts.map(artifact =>
+      comments.filter(c => c.artifact === artifact).length
+    );
 
-/* ==============================================
-   FEEDBACK LOGIC
-============================================== */
-const feedbackForm = document.getElementById('feedbackForm');
-const feedbackFeed = document.getElementById('feedback-feed');
-feedbackForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const name = document.getElementById('fb-name').value.trim();
-  const experience = document.getElementById('fb-experience').value.trim();
-  if (!name || !experience) return;
+    // Prepare data for comments over time (day granularity)
+    const countsByDay = {};
+    comments.forEach(({timestamp}) => {
+      const day = timestamp.toISOString().split('T')[0];
+      countsByDay[day] = (countsByDay[day] || 0) + 1;
+    });
+    const days = Object.keys(countsByDay).sort();
+    const counts = days.map(d => countsByDay[d]);
 
-  const feedbackCard = document.createElement('div');
-  feedbackCard.classList.add('card');
-  feedbackCard.innerHTML = `<h4>${name}</h4><span>Overall Feedback</span><p>${experience}</p>`;
-  feedbackFeed.prepend(feedbackCard);
-  feedbackForm.reset();
-});
+    // Destroy old charts if exist
+    if (commentsByArtifactChart) commentsByArtifactChart.destroy();
+    if (commentsOverTimeChart) commentsOverTimeChart.destroy();
 
-/* ==============================================
-   CHATBOT LOGIC (Extended)
-============================================== */
-const chatbotForm = document.getElementById('chatbot-form');
-const chatbotInput = document.getElementById('chatbot-input');
-const chatbotMessages = document.getElementById('chatbot-messages');
+    // Comments by Artifact Bar Chart
+    const ctx1 = document.getElementById('commentsByArtifactChart').getContext('2d');
+    commentsByArtifactChart = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: artifacts,
+        datasets: [{
+          label: 'Number of Comments',
+          data: artifactCounts,
+          backgroundColor: 'rgba(0,120,212,0.7)',
+          borderColor: 'rgba(0,120,212,1)',
+          borderWidth: 1,
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true, precision: 0 },
+        },
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Comments by Artifact' }
+        }
+      }
+    });
 
-chatbotForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const userText = chatbotInput.value.trim();
-  if (!userText) return;
+    // Comments Over Time Line Chart
+    const ctx2 = document.getElementById('commentsOverTimeChart').getContext('2d');
+    commentsOverTimeChart = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: days,
+        datasets: [{
+          label: 'Comments',
+          data: counts,
+          fill: true,
+          backgroundColor: 'rgba(0,120,212,0.2)',
+          borderColor: 'rgba(0,120,212,0.8)',
+          borderWidth: 2,
+          tension: 0.3,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true, precision: 0 },
+          x: { ticks: { maxRotation: 45, minRotation: 45 } }
+        },
+        plugins: {
+          legend: { display: true },
+          title: { display: true, text: 'Comments Over Time' }
+        }
+      }
+    });
+  }
 
-  addMessage(userText, 'user-message');
-  chatbotInput.value = '';
-  setTimeout(() => {
-    const botReply = getBotReply(userText.toLowerCase());
-    addMessage(botReply, 'bot-message');
-  }, 500);
-});
+  // Form Submission Handling
+  const form = document.getElementById('discussionForm');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const artifact = form.artifact.value;
+    const comment = form.comment.value.trim();
 
-function addMessage(text, className) {
-  const msgDiv = document.createElement('div');
-  msgDiv.className = `message ${className}`;
-  msgDiv.textContent = text;
-  chatbotMessages.appendChild(msgDiv);
-  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-}
+    if (!name || !artifact || !comment) {
+      alert('Please fill all fields before submitting.');
+      return;
+    }
 
-function getBotReply(input) {
-  if (input.includes('artifact 1')) return 'Artifact 1 is about AI Lab Chatbot with NLP and ethics.';
-  if (input.includes('artifact 2')) return 'Artifact 2 covers AI & ML Evolution Timeline.';
-  if (input.includes('artifact 3')) return 'Artifact 3 focuses on AI-assisted personalized learning.';
-  if (input.includes('artifact 4')) return 'Artifact 4 addresses Data Challenge Scenarios.';
-  if (input.includes('how to post')) return 'Go to the Discussion section, fill the form, and click Post Comment.';
-  if (input.includes('download')) return 'You can download comments as CSV with the Download button below the discussion form.';
-  return 'Ask me about Artifacts, posting, or downloading data!';
-}
+    const newComment = {
+      name,
+      artifact,
+      comment,
+      timestamp: new Date()
+    };
+    comments.push(newComment);
+
+    // Clear form
+    form.reset();
+
+    // Re-render discussion feed, leaderboard, and charts
+    renderComments();
+    updateLeaderboard();
+    updateCharts();
+
+    // Focus first input for smooth UX
+    form.name.focus();
+  });
+
+  // Initialize UI
+  renderComments();
+  updateLeaderboard();
+  updateCharts();
 </script>
+
 </body>
 </html>
