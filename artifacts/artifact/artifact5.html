@@ -3,153 +3,183 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</title>
+<title>Professional Portfolio Feedback - Artifacts 1 to 4 | Naga Venkata Satyanarayana Devarapalli</title>
 <style>
   /* Reset */
   *, *::before, *::after {
     box-sizing: border-box;
   }
+
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; background: #f9f9f9; color: #333;
+    margin: 0; padding: 0;
+    background: #e9f0f7;
+    color: #34495e;
     line-height: 1.6;
   }
+
   header {
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    padding: 20px 0;
+    background: linear-gradient(90deg, #2c3e50, #2980b9);
+    color: #ecf0f1;
+    padding: 25px 20px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 999;
   }
   header h1 {
-    margin: 0;
-    font-size: 2.4rem;
+    font-weight: 800;
+    font-size: 2.3rem;
     letter-spacing: 1.2px;
+    margin: 0;
   }
-  nav {
-    margin-top: 12px;
-  }
-  nav a {
-    color: #aad4ff;
-    margin: 0 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  nav a:hover, nav a.active {
-    color: #fff;
-    text-decoration: underline;
+  header p {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #b0c7dc;
   }
 
   main {
-    max-width: 1100px;
-    margin: 40px auto 80px auto;
-    padding: 0 20px;
+    max-width: 960px;
+    margin: 40px auto 60px;
+    padding: 0 15px;
+  }
+
+  h2.section-title {
+    color: #2980b9;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-left: 6px solid #2980b9;
+    padding-left: 15px;
+    user-select: none;
+  }
+
+  /* Feedback container */
+  .feedback-container {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
   }
-  section {
-    margin-bottom: 50px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+  .feedback-container:hover {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
   }
-  section:last-child {
-    border-bottom: none;
+
+  /* Artifact header - clickable for toggle */
+  .artifact-header {
+    background: #2980b9;
+    color: white;
+    padding: 18px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
   }
-  h2 {
-    border-left: 6px solid #0f527e;
-    padding-left: 12px;
-    color: #0f527e;
-    margin-bottom: 16px;
-    font-size: 2rem;
-  }
-  h3 {
-    color: #205375;
-    margin-top: 25px;
-    margin-bottom: 12px;
+  .artifact-header h3 {
+    margin: 0;
     font-size: 1.4rem;
   }
-  p {
-    margin-bottom: 14px;
+  .artifact-header .toggle-icon {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
   }
-  ul, ol {
-    margin-left: 1.3rem;
-    margin-bottom: 14px;
-  }
-  ul li, ol li {
-    margin-bottom: 8px;
-  }
-  a {
-    color: #205375;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  a:hover {
-    text-decoration: underline;
+  .artifact-header.active .toggle-icon {
+    transform: rotate(180deg);
   }
 
-  /* Code styling */
-  pre {
-    background: #f4f4f4;
-    padding: 15px;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-    font-size: 0.9rem;
-    margin-bottom: 16px;
-  }
-  code {
-    font-family: Consolas, monospace;
-  }
-
-  /* Collapsible code block */
-  .collapsible {
-    background-color: #205375;
-    color: white;
-    cursor: pointer;
-    padding: 10px 15px;
-    width: 100%;
-    border: none;
-    border-radius: 6px;
-    text-align: left;
-    outline: none;
-    font-size: 1rem;
-    margin-bottom: 8px;
-  }
-  .collapsible:hover {
-    background-color: #143d59;
-  }
-  .active, .collapsible:active {
-    background-color: #0f2a3d;
-  }
-  .content {
-    padding: 0 15px 15px 15px;
+  /* Feedback content - collapsible */
+  .feedback-content {
+    padding: 20px 25px 30px;
     display: none;
-    overflow: hidden;
-    background-color: #f9f9f9;
-    border-radius: 0 0 6px 6px;
-    border: 1px solid #ddd;
-    margin-bottom: 25px;
+    animation: fadeInContent 0.5s ease forwards;
+    color: #2c3e50;
+  }
+  @keyframes fadeInContent {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Feedback categories */
+  .feedback-category {
+    margin-bottom: 18px;
+  }
+  .feedback-category strong {
+    display: block;
+    color: #2980b9;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+  }
+  .feedback-category p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Suggestions styled differently */
+  .suggestions {
+    background: #dff0d8;
+    border-left: 5px solid #3c763d;
+    padding: 12px 15px;
+    border-radius: 6px;
+    color: #3c763d;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+  }
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 160px;
+    background-color: #2980b9;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 10px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    font-size: 0.85rem;
+  }
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  /* Tooltip arrow */
+  .tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* bottom of tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2980b9 transparent transparent transparent;
   }
 
   /* Responsive */
-  @media (max-width: 720px) {
-    header h1 {
-      font-size: 1.8rem;
+  @media (max-width: 600px) {
+    .artifact-header h3 {
+      font-size: 1.15rem;
     }
     main {
-      margin: 20px 15px 50px 15px;
-      padding: 15px;
-    }
-    nav a {
-      margin: 0 8px;
-      font-size: 0.9rem;
+      margin: 20px 15px 50px;
+      padding: 0 10px;
     }
   }
 </style>
@@ -157,341 +187,145 @@
 <body>
 
 <header>
-  <h1>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</h1>
-  <nav>
-    <a href="#bio" class="nav-link active">Bio</a>
-    <a href="#artifact1" class="nav-link">Artifact 1</a>
-    <a href="#artifact2" class="nav-link">Artifact 2</a>
-    <a href="#artifact3" class="nav-link">Artifact 3</a>
-    <a href="#artifact4" class="nav-link">Artifact 4</a>
-    <a href="#artifact5" class="nav-link">Feedback</a>
-  </nav>
+  <h1>Professional Portfolio Feedback</h1>
+  <p>Artifacts 1 to 4 Review by Naga Venkata Satyanarayana Devarapalli</p>
 </header>
 
 <main>
-  <section id="bio">
-    <h2>Professional Bio</h2>
-    <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, an AI and Data Analytics professional pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of experience, I specialize in leveraging technology to deliver intelligent, ethical, and impactful AI solutions.</p>
-    <p><strong>Core Skills:</strong> Python, R, SQL, Machine Learning (Scikit-learn, TensorFlow), Data Visualization (Power BI, Tableau), Big Data (Hadoop, Spark), Cloud Platforms (AWS, Azure).</p>
-    <p><strong>Contact:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a> | <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/naga-venkata" target="_blank" rel="noopener">GitHub</a></p>
-  </section>
 
-  <section id="artifact1">
-    <h2>Artifact 1: AI Lab - No-Code Chatbot Assistant Development</h2>
-    <h3>Objective</h3>
-    <p>Build an AI chatbot using no-code platforms to demonstrate efficiency, usability, and rapid deployment of conversational AI.</p>
+  <h2 class="section-title">Artifact Feedback Overview</h2>
 
-    <h3>Project Overview</h3>
-    <p>This project leverages Botpress and Dialogflow to create an accessible chatbot that automates FAQs and provides personalized interaction, designed for non-technical users.</p>
-
-    <h3>Tools & Technologies</h3>
-    <ul>
-      <li>Botpress, Dialogflow</li>
-      <li>Mizou AI for API integration</li>
-      <li>Chatbase for analytics and performance monitoring</li>
-    </ul>
-
-    <h3>Key Features</h3>
-    <ul>
-      <li>Personalized greetings</li>
-      <li>FAQ automation with fallback handling</li>
-      <li>Multi-channel deployment (websites, social media)</li>
-      <li>GDPR and HIPAA compliant data handling</li>
-    </ul>
-
-    <h3>Development Workflow</h3>
-    <ol>
-      <li>Requirement analysis and platform selection</li>
-      <li>Conversation design and intent setup</li>
-      <li>Training and iterative testing</li>
-      <li>Deployment and monitoring</li>
-    </ol>
-
-    <button class="collapsible">Show/Hide Sample JSON Snippet</button>
-    <div class="content">
-      <pre><code>{
-  "intents": [
-    {
-      "name": "greeting",
-      "examples": ["Hello", "Hi", "Hey"],
-      "responses": ["Hello! How can I assist you today?"]
-    }
-  ]
-}</code></pre>
+  <div class="feedback-container" id="artifact1">
+    <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content1" aria-label="Toggle feedback for Artifact 1">
+      <h3>Artifact 1: AI Lab Chatbot Assistant</h3>
+      <span class="toggle-icon">&#9660;</span>
     </div>
-
-    <h3>Outcomes & Learnings</h3>
-    <ul>
-      <li>Enhanced understanding of chatbot design and NLP</li>
-      <li>Experience with no-code AI tool deployment</li>
-      <li>Importance of ethical and privacy standards in AI</li>
-    </ul>
-  </section>
-
-  <section id="artifact2">
-    <h2>Artifact 2: Evolution of Artificial Intelligence and Machine Learning Timeline</h2>
-    <h3>Objective</h3>
-    <p>To present a detailed timeline highlighting key milestones from AI's inception to present-day breakthroughs.</p>
-
-    <h3>AI Milestones (Selected)</h3>
-    <ul>
-      <li>1943: First artificial neuron model by McCulloch & Pitts</li>
-      <li>1956: Dartmouth Conference — birth of AI</li>
-      <li>1986: Backpropagation revolutionizes neural networks</li>
-      <li>2012: AlexNet ignites Deep Learning boom</li>
-      <li>2023: Generative AI mainstream adoption</li>
-      <li>2025: AI governance and ethical frameworks established globally</li>
-    </ul>
-
-    <h3>Key Learnings</h3>
-    <p>The timeline illustrates AI's rapid evolution driven by computational advances, data availability, and algorithmic innovations transitioning from symbolic AI to modern generative models.</p>
-
-    <h3>Future Trends</h3>
-    <ul>
-      <li>Mandatory AI governance and ethical standards</li>
-      <li>Expansion of Explainable AI (XAI) methods</li>
-      <li>Generative AI integrated into enterprise and creative workflows</li>
-    </ul>
-  </section>
-
-  <section id="artifact3">
-    <h2>Artifact 3: SchoolAI - AI-Assisted Learning Platform</h2>
-
-    <h3>Objective</h3>
-    <p>Develop an adaptive AI-driven platform to personalize student learning experiences and support educators with actionable insights.</p>
-
-    <h3>Technologies & Tools</h3>
-    <ul>
-      <li>Machine Learning: Decision Trees, Reinforcement Learning</li>
-      <li>Languages: Python (scikit-learn, TensorFlow), JavaScript (React.js)</li>
-      <li>Databases: PostgreSQL, MongoDB</li>
-      <li>Cloud Hosting: AWS</li>
-    </ul>
-
-    <h3>Implementation Highlights</h3>
-    <ol>
-      <li>Collaborated with educators to gather requirements</li>
-      <li>Data collection and preprocessing ensuring privacy</li>
-      <li>Adaptive algorithms customizing content delivery</li>
-      <li>User-friendly dashboards for students and teachers</li>
-      <li>Continuous testing and iterative improvements</li>
-    </ol>
-
-    <button class="collapsible">Show/Hide Sample Python Code - Recommendation System</button>
-    <div class="content">
-      <pre><code>import pandas as pd
-from surprise import Dataset, Reader, KNNBasic
-
-ratings_dict = {
-    "itemID": [1, 1, 1, 2, 2, 3],
-    "userID": [9, 32, 2, 45, 32, 9],
-    "rating": [3, 2, 4, 5, 3, 4]
-}
-df = pd.DataFrame(ratings_dict)
-
-reader = Reader(rating_scale=(1, 5))
-data = Dataset.load_from_df(df[['userID', 'itemID', 'rating']], reader)
-
-algo = KNNBasic()
-trainset = data.build_full_trainset()
-algo.fit(trainset)
-
-pred = algo.predict(9, 2)
-print(f"Predicted rating for user 9 on item 2: {pred.est}")
-</code></pre>
+    <div class="feedback-content" id="content1" aria-hidden="true">
+      <div class="feedback-category">
+        <strong>Clarity of Project Description <span class="tooltip" aria-label="Tooltip: How clearly the project is described"><sup>?</sup><span class="tooltip-text">How clearly the project is described</span></span></strong>
+        <p>The project is presented with excellent clarity, explaining the purpose and functionalities of the no-code chatbot. The step-by-step development workflow and tool choices are clearly laid out, making it easy to follow.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Demonstration of AI/ML Skills <span class="tooltip" aria-label="Tooltip: Showcasing applied AI and machine learning skills"><sup>?</sup><span class="tooltip-text">Showcasing applied AI and machine learning skills</span></span></strong>
+        <p>The artifact showcases practical AI skills by using chatbot platforms and integrating NLP capabilities effectively. Usage of analytics and ethical considerations highlights advanced understanding of AI deployment.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Overall Organization and Presentation</strong>
+        <p>The content is organized logically with well-segmented sections. Collapsible code snippets keep the information digestible. The design could be enhanced with diagrams for visual learners.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Appropriateness for Intended Audience</strong>
+        <p>The presentation is balanced for both technical and non-technical stakeholders, making the artifact accessible to a broad audience. Simple explanations complement the technical details well.</p>
+      </div>
+      <div class="feedback-category suggestions">
+        Suggestions for Improvement: Consider adding conversational flow diagrams and real user interaction examples to enrich understanding and engagement.
+      </div>
     </div>
+  </div>
 
-    <h3>Outcomes</h3>
-    <ul>
-      <li>25% increase in student engagement</li>
-      <li>18% improvement in learning retention</li>
-      <li>Actionable educator insights for targeted interventions</li>
-      <li>12% reduction in dropout rates</li>
-    </ul>
-
-    <h3>Challenges & Mitigations</h3>
-    <ul>
-      <li>Privacy: FERPA compliance and data anonymization</li>
-      <li>Bias: Fairness audits and bias mitigation</li>
-      <li>Scalability: Cloud auto-scaling infrastructure</li>
-      <li>User Adoption: Training and documentation</li>
-    </ul>
-  </section>
-
-  <section id="artifact4">
-    <h2>Artifact 4: Data Challenge Scenarios – Addressing Quality, Privacy, and Bias in Machine Learning</h2>
-
-    <h3>Objective</h3>
-    <p>Demonstrate the ability to identify and solve real-world data challenges affecting AI model accuracy, fairness, and compliance.</p>
-
-    <h3>Scenario 1: Data Quality</h3>
-    <ul>
-      <li>Challenges: Missing data, duplicates, outliers</li>
-      <li>Solutions: Imputation, normalization, outlier removal</li>
-      <li>Tools: Python (pandas, numpy, sklearn)</li>
-    </ul>
-    <button class="collapsible">Show/Hide Python Code - Data Quality</button>
-    <div class="content">
-      <pre><code>import pandas as pd
-import numpy as np
-from scipy import stats
-from sklearn.preprocessing import MinMaxScaler
-
-data = pd.read_csv('financial_data.csv')
-data['income'].fillna(data['income'].mean(), inplace=True)
-data['occupation'].fillna(data['occupation'].mode()[0], inplace=True)
-data.drop_duplicates(inplace=True)
-z_scores = np.abs(stats.zscore(data.select_dtypes(include=[np.number])))
-data = data[(z_scores < 3).all(axis=1)]
-scaler = MinMaxScaler()
-data[['income', 'age']] = scaler.fit_transform(data[['income', 'age']])
-</code></pre>
+  <div class="feedback-container" id="artifact2">
+    <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content2" aria-label="Toggle feedback for Artifact 2">
+      <h3>Artifact 2: AI & ML Evolution Timeline</h3>
+      <span class="toggle-icon">&#9660;</span>
     </div>
-
-    <h3>Scenario 2: Privacy & Security</h3>
-    <ul>
-      <li>Challenges: Protecting sensitive healthcare data under GDPR and HIPAA</li>
-      <li>Solutions: Data anonymization, AES encryption, role-based access</li>
-      <li>Tools: Python cryptography library</li>
-    </ul>
-    <button class="collapsible">Show/Hide Python Code - AES Encryption</button>
-    <div class="content">
-      <pre><code>from cryptography.fernet import Fernet
-
-key = Fernet.generate_key()
-cipher_suite = Fernet(key)
-
-sensitive_data = b"Patient PHI data"
-encrypted_data = cipher_suite.encrypt(sensitive_data)
-decrypted_data = cipher_suite.decrypt(encrypted_data)
-print(decrypted_data.decode())
-</code></pre>
+    <div class="feedback-content" id="content2" aria-hidden="true">
+      <div class="feedback-category">
+        <strong>Clarity of Project Description</strong>
+        <p>The timeline provides a comprehensive and chronological overview of AI and ML evolution. The inclusion of key milestones from inception to current trends makes the narrative complete and informative.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Demonstration of AI/ML Skills</strong>
+        <p>The artifact reflects a deep understanding of AI’s historical and technical development, highlighting crucial breakthroughs and their impacts on modern AI technologies.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Overall Organization and Presentation</strong>
+        <p>Use of bullet points and date stamps helps readers quickly grasp the progression. Visual enhancements such as interactive timelines or infographics would improve engagement.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Appropriateness for Intended Audience</strong>
+        <p>The content suits academic audiences, industry professionals, and learners seeking foundational AI knowledge, with language accessibility maintained throughout.</p>
+      </div>
+      <div class="feedback-category suggestions">
+        Suggestions for Improvement: Integrate multimedia content like videos or interactive timelines to create a dynamic learning experience and increase user engagement.
+      </div>
     </div>
+  </div>
 
-    <h3>Scenario 3: Bias and Fairness</h3>
-    <ul>
-      <li>Challenges: Class imbalance and bias in hiring datasets</li>
-      <li>Solutions: SMOTE oversampling, bias auditing, threshold adjustments</li>
-      <li>Tools: imbalanced-learn, AIF360</li>
-    </ul>
-    <button class="collapsible">Show/Hide Python Code - SMOTE Oversampling</button>
-    <div class="content">
-      <pre><code>from imblearn.over_sampling import SMOTE
-from collections import Counter
-
-X = data.drop('target', axis=1)
-y = data['target']
-
-print('Original dataset shape %s' % Counter(y))
-sm = SMOTE(random_state=42)
-X_res, y_res = sm.fit_resample(X, y)
-print('Resampled dataset shape %s' % Counter(y_res))
-</code></pre>
+  <div class="feedback-container" id="artifact3">
+    <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content3" aria-label="Toggle feedback for Artifact 3">
+      <h3>Artifact 3: SchoolAI-Assisted Learning Experience</h3>
+      <span class="toggle-icon">&#9660;</span>
     </div>
+    <div class="feedback-content" id="content3" aria-hidden="true">
+      <div class="feedback-category">
+        <strong>Clarity of Project Description</strong>
+        <p>The case study clearly explains the objectives, technologies, and implementation process of the AI learning platform, providing concrete examples and outcomes.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Demonstration of AI/ML Skills</strong>
+        <p>The project effectively applies machine learning techniques in an educational context, demonstrating knowledge of adaptive algorithms and user-centric design.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Overall Organization and Presentation</strong>
+        <p>The artifact is well-structured with clear code snippets and use-case descriptions, facilitating comprehension for both technical and educational stakeholders.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Appropriateness for Intended Audience</strong>
+        <p>The feedback targets both AI practitioners and education professionals, bridging technical complexity with pedagogical goals successfully.</p>
+      </div>
+      <div class="feedback-category suggestions">
+        Suggestions for Improvement: Emphasize user experience and accessibility features more prominently, including interface screenshots or usability studies.
+      </div>
+    </div>
+  </div>
 
-    <h3>Reflection</h3>
-    <p>This artifact demonstrates my commitment to creating trustworthy AI systems by addressing data quality, privacy, and bias challenges with technical and ethical rigor.</p>
-  </section>
+  <div class="feedback-container" id="artifact4">
+    <div class="artifact-header" tabindex="0" role="button" aria-expanded="false" aria-controls="content4" aria-label="Toggle feedback for Artifact 4">
+      <h3>Artifact 4: Data Challenge Scenarios</h3>
+      <span class="toggle-icon">&#9660;</span>
+    </div>
+    <div class="feedback-content" id="content4" aria-hidden="true">
+      <div class="feedback-category">
+        <strong>Clarity of Project Description</strong>
+        <p>The artifact successfully identifies key challenges like data quality, privacy, and bias, explaining the scenarios with relevant examples and actionable solutions.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Demonstration of AI/ML Skills</strong>
+        <p>The use of Python code snippets and frameworks illustrates strong technical expertise in data preprocessing, privacy enforcement, and fairness mitigation.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Overall Organization and Presentation</strong>
+        <p>The material is organized with a clean layout and readable code blocks, making it accessible to data scientists and ethical AI professionals.</p>
+      </div>
+      <div class="feedback-category">
+        <strong>Appropriateness for Intended Audience</strong>
+        <p>The artifact addresses the needs of AI/ML practitioners, data governance specialists, and AI ethicists effectively.</p>
+      </div>
+      <div class="feedback-category suggestions">
+        Suggestions for Improvement: Future versions could explore deeper fairness metrics and case studies on bias audits to strengthen the ethical perspective.
+      </div>
+    </div>
+  </div>
 
-  <section id="artifact5">
-    <h2>Artifact 5: Professional Portfolio Feedback and Reflection</h2>
-
-    <h3>Summary of Feedback</h3>
-    <ul>
-      <li><strong>Artifact 1:</strong> Strong chatbot implementation with suggestions for multi-language support and deeper interaction design.</li>
-      <li><strong>Artifact 2:</strong> Comprehensive AI timeline praised, with recommendations to add interactive multimedia content.</li>
-      <li><strong>Artifact 3:</strong> Robust AI learning platform; advised to incorporate UX research and accessibility features.</li>
-      <li><strong>Artifact 4:</strong> Detailed data challenge handling recognized; encouraged to explore advanced fairness frameworks.</li>
-    </ul>
-
-    <h3>Strengths</h3>
-    <ul>
-      <li>Technical expertise in AI and data analytics</li>
-      <li>Strong emphasis on ethical AI and privacy compliance</li>
-      <li>Clear, detailed documentation and communication</li>
-      <li>Effective real-world applications of AI concepts</li>
-    </ul>
-
-    <h3>Areas for Improvement</h3>
-    <ul>
-      <li>Add interactivity and live demos in portfolio</li>
-      <li>Include UX and accessibility considerations</li>
-      <li>Highlight teamwork and collaboration experiences</li>
-      <li>Update portfolio continuously with latest skills and projects</li>
-    </ul>
-
-    <h3>Action Plan</h3>
-    <ol>
-      <li>Develop interactive timelines and chatbot demos using JavaScript frameworks</li>
-      <li>Conduct user experience research and accessibility audits</li>
-      <li>Document collaboration and teamwork stories in future artifacts</li>
-      <li>Engage with AI ethics communities and incorporate new learnings</li>
-    </ol>
-
-    <h3>Final Thoughts</h3>
-    <p>This feedback process has provided invaluable insights that motivate me to enhance my portfolio’s depth, interactivity, and ethical focus while continuing to grow as an AI professional.</p>
-
-    <h3>Contact</h3>
-    <p>If you have further feedback or questions, please connect with me:</p>
-    <ul>
-      <li>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></li>
-      <li>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener">github.com/naga-venkata</a></li>
-    </ul>
-  </section>
 </main>
 
-<footer style="text-align:center; padding: 20px; background:#0f2027; color:#aad4ff;">
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
-</footer>
-
 <script>
-  // Smooth scroll navigation
-  document.querySelectorAll('nav a.nav-link').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      // Remove active class from all links
-      document.querySelectorAll('nav a.nav-link').forEach(a => a.classList.remove('active'));
-      // Add active to clicked
-      link.classList.add('active');
+  // Toggle expand/collapse of feedback content
+  document.querySelectorAll('.artifact-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isExpanded = header.classList.toggle('active');
 
-      const targetId = link.getAttribute('href').slice(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 70,
-          behavior: 'smooth'
-        });
-      }
+      content.style.display = isExpanded ? 'block' : 'none';
+      header.setAttribute('aria-expanded', isExpanded);
+      content.setAttribute('aria-hidden', !isExpanded);
     });
-  });
 
-  // Highlight nav on scroll
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY + 80;
-    const sections = document.querySelectorAll('main section');
-    let currentId = '';
-    for (const section of sections) {
-      if (scrollPos >= section.offsetTop) {
-        currentId = section.id;
-      }
-    }
-    if (currentId) {
-      document.querySelectorAll('nav a.nav-link').forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href').slice(1) === currentId);
-      });
-    }
-  });
-
-  // Collapsible code blocks
-  document.querySelectorAll('.collapsible').forEach(button => {
-    button.addEventListener('click', () => {
-      button.classList.toggle('active');
-      const content = button.nextElementSibling;
-      if (content.style.display === 'block') {
-        content.style.display = 'none';
-      } else {
-        content.style.display = 'block';
+    // Support keyboard interaction (Enter, Space)
+    header.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        header.click();
       }
     });
   });
