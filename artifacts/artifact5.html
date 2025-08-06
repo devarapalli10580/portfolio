@@ -2,453 +2,361 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portfolio Artifact Feedback - Naga Venkata Satyanarayana Devarapalli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI & Data Analytics Portfolio - Naga Venkata Satyanarayana Devarapalli</title>
 <style>
-  /* Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f0f4f8; color: #222; line-height: 1.5;
-    min-height: 100vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  h1, h2, h3 {
-    color: #2a3e60;
-  }
-  header {
-    background: linear-gradient(135deg, #4a90e2, #007acc);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-  }
-  main {
-    max-width: 960px;
-    margin: 2rem auto 4rem;
-    padding: 0 1rem;
-  }
-  /* Section Titles */
-  .section-title {
-    border-left: 6px solid #007acc;
-    padding-left: 0.6rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1.1px;
-  }
-
-  /* Feedback Card Styles */
-  .feedback-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  .feedback-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 18px rgb(0 0 0 / 0.15);
-  }
-  .card-header {
-    padding: 1rem 1.5rem;
-    font-weight: 700;
-    font-size: 1.2rem;
-    background: #007acc;
-    color: white;
-    border-radius: 12px 12px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .toggle-icon {
-    font-size: 1.6rem;
-    user-select: none;
-    transition: transform 0.3s ease;
-  }
-  .expanded .toggle-icon {
-    transform: rotate(180deg);
-  }
-  .card-content {
-    padding: 1rem 1.5rem;
-    display: none;
-    animation: fadeIn 0.4s ease forwards;
-  }
-  .expanded .card-content {
-    display: block;
-  }
-
-  /* Positive and Suggestion Sections */
-  .feedback-section {
-    margin-bottom: 1rem;
-  }
-  .feedback-section strong {
-    display: block;
-    margin-bottom: 0.3rem;
-    color: #004080;
-  }
-  .feedback-positive {
-    background: #d6f5d6;
-    border-left: 6px solid #27a327;
-    padding: 0.8rem 1rem;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 1rem;
-  }
-  .feedback-suggestion {
-    background: #fff0cc;
-    border-left: 6px solid #cc9a00;
-    padding: 0.8rem 1rem;
-    border-radius: 0 8px 8px 0;
-  }
-
-  /* Author Section */
-  #author-info {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-    margin-bottom: 2rem;
-  }
-  #author-info h2 {
-    margin-bottom: 1rem;
-  }
-
-  /* Filter input */
-  #filterInput {
-    width: 100%;
-    max-width: 360px;
-    padding: 0.7rem 1rem;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 2px solid #007acc;
-    transition: border-color 0.3s ease;
-  }
-  #filterInput:focus {
-    outline: none;
-    border-color: #005a9c;
-    box-shadow: 0 0 6px #007acc99;
-  }
-
-  /* Dark Mode */
-  body.dark {
-    background: #121622;
-    color: #ddd;
-  }
-  body.dark header {
-    background: linear-gradient(135deg, #1f2a43, #15203d);
-    box-shadow: 0 4px 12px rgb(0 0 0 / 0.8);
-  }
-  body.dark .feedback-card {
-    background: #1e2738;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 0.9);
-  }
-  body.dark .card-header {
-    background: #003366;
-    color: #aad8ff;
-  }
-  body.dark .feedback-positive {
-    background: #264d26;
-    border-left-color: #5ab85a;
-    color: #c8f5c8;
-  }
-  body.dark .feedback-suggestion {
-    background: #4e4500;
-    border-left-color: #cdbb00;
-    color: #f3eb99;
-  }
-  body.dark #filterInput {
-    background: #223047;
-    border-color: #5599ff;
-    color: #c8d6ff;
-  }
-  body.dark #filterInput:focus {
-    border-color: #aaccff;
-    box-shadow: 0 0 8px #aaccffcc;
-  }
-  body.dark #author-info {
-    background: #1e2738;
-    box-shadow: 0 4px 15px rgb(0 0 0 / 0.9);
-  }
-
-  /* Dark Mode Toggle Button */
-  #darkToggleBtn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #007acc;
-    border: none;
-    color: white;
-    font-weight: 700;
-    padding: 0.8rem 1.3rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgb(0 122 204 / 0.7);
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-  }
-  #darkToggleBtn:hover {
-    background: #005a9c;
-  }
-
-  /* Export CSV Button */
-  #exportCSVBtn {
-    background: #27a327;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.3rem;
-    border-radius: 8px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgb(39 163 39 / 0.7);
-    margin-bottom: 2rem;
-    transition: background-color 0.3s ease;
-  }
-  #exportCSVBtn:hover {
-    background: #1e7e1e;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .card-header {
-      font-size: 1rem;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .toggle-icon {
-      margin-top: 0.3rem;
-      align-self: flex-end;
-    }
-  }
-
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+/* ========== GLOBAL STYLES ========== */
+* {margin:0;padding:0;box-sizing:border-box;}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background:#f9fbfd;color:#333;line-height:1.6;
+  transition:background 0.5s ease,color 0.5s ease;
+  scroll-behavior:smooth;
+}
+h1,h2,h3,h4 {margin-bottom:0.8rem;font-weight:bold;}
+section {padding:3rem 1rem;max-width:1200px;margin:auto;}
+a {text-decoration:none;color:inherit;}
+img {max-width:100%;border-radius:10px;}
+button {cursor:pointer;}
+/* ========== HEADER ========== */
+header {
+  position:sticky;top:0;z-index:1000;background:#005bbb;color:#fff;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2rem;box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+header h1 {font-size:1.5rem;}
+nav ul {display:flex;gap:1rem;list-style:none;}
+nav a {color:#fff;font-weight:600;padding:0.5rem 0.8rem;border-radius:4px;}
+nav a:hover {background:rgba(255,255,255,0.2);}
+#darkModeToggle {
+  background:#fff;color:#005bbb;border:none;
+  padding:0.5rem 1rem;border-radius:20px;font-weight:bold;
+}
+@media(max-width:768px){
+  nav ul{flex-direction:column;gap:0.5rem;}
+}
+/* ========== HERO SECTION ========== */
+#home {
+  background:linear-gradient(135deg,#66a6ff,#89f7fe);color:#003366;
+  text-align:center;padding:4rem 1rem;
+}
+#home h2 {font-size:2.8rem;margin-bottom:0.5rem;}
+#home p {font-size:1.3rem;}
+.hero-img {
+  margin-top:2rem;display:flex;justify-content:center;
+}
+.hero-img img {
+  width:180px;height:180px;object-fit:cover;border-radius:50%;
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+/* ========== SECTION TITLES ========== */
+.section-title {
+  font-size:2rem;color:#003366;margin-bottom:1rem;
+  border-left:6px solid #66a6ff;padding-left:0.5rem;
+}
+/* ========== BIO & VALUE ========== */
+.card {
+  background:#fff;border-radius:10px;padding:2rem;margin-bottom:2rem;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+/* ========== TARGET AUDIENCE ========== */
+#target-audience ul {list-style:disc;margin-left:2rem;margin-top:1rem;}
+/* ========== ARTIFACTS ========== */
+.artifact {
+  background:#fff;margin-bottom:2rem;border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+.artifact-header {
+  background:#66a6ff;color:#fff;padding:1rem;font-size:1.3rem;
+  font-weight:bold;display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;
+}
+.artifact-content {display:none;padding:1.5rem;}
+.artifact.active .artifact-content {display:block;}
+.artifact-content p {margin-bottom:0.8rem;}
+.artifact-content ul {margin:0.5rem 0 0.5rem 1.5rem;}
+/* ========== FEEDBACK SECTION ========== */
+#feedback {
+  background:#fff;border-radius:10px;padding:2rem;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+form label {display:block;font-weight:bold;margin-top:1rem;}
+input,textarea,select {
+  width:100%;padding:0.7rem;margin-top:0.3rem;
+  border:1px solid #ccc;border-radius:6px;
+}
+button.submit-btn {
+  margin-top:1rem;background:#005bbb;color:#fff;
+  padding:0.8rem 1.5rem;border:none;border-radius:6px;font-size:1rem;
+}
+button.submit-btn:hover {background:#004299;}
+#exportBtn {
+  background:#28a745;color:#fff;margin-top:1rem;padding:0.8rem 1.5rem;
+  border:none;border-radius:6px;font-size:1rem;
+}
+.rubric-group {margin-top:1rem;}
+.rubric-group label {display:block;margin-bottom:0.3rem;}
+input[type="range"] {width:100%;}
+/* ========== CHATBOT ========== */
+#chatbot {
+  position:fixed;bottom:20px;right:20px;width:320px;height:420px;
+  display:flex;flex-direction:column;border:2px solid #005bbb;
+  border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.2);
+  overflow:hidden;
+}
+#chatbot-header {background:#005bbb;color:#fff;padding:0.8rem;text-align:center;font-weight:bold;}
+#chatbot-messages {flex:1;padding:0.8rem;overflow-y:auto;background:#f0f5ff;}
+.message {margin-bottom:0.5rem;padding:0.5rem;border-radius:6px;max-width:80%;}
+.bot {background:#005bbb;color:#fff;align-self:flex-start;}
+.user {background:#dbe7ff;color:#003366;align-self:flex-end;}
+#chatbot-input-area {display:flex;padding:0.5rem;}
+#chatbot-input {flex:1;padding:0.5rem;border:1px solid #ccc;border-radius:6px;}
+#chatbot-send {
+  background:#005bbb;color:#fff;border:none;padding:0.5rem 1rem;margin-left:0.5rem;border-radius:6px;
+}
+/* ========== DARK MODE ========== */
+body.dark {background:#121212;color:#eee;}
+body.dark header {background:#1e1e1e;}
+body.dark nav a:hover {background:#333;}
+body.dark #home {background:#1e1e1e;color:#fff;}
+body.dark .card,body.dark .artifact,body.dark #feedback {background:#1f1f1f;color:#ddd;}
+body.dark #chatbot {background:#1f1f1f;}
+body.dark #chatbot-header {background:#333;}
+/* ========== FOOTER ========== */
+footer {
+  text-align:center;padding:1rem;background:#005bbb;color:#fff;
+  margin-top:3rem;
+}
+footer a {color:#fff;font-weight:bold;margin:0 0.5rem;}
+/* Responsive chatbot */
+@media(max-width:768px){
+  #chatbot{width:90%;right:5%;}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Portfolio Artifact Feedback</h1>
-  <p>By Naga Venkata Satyanarayana Devarapalli</p>
+  <h1>AI Portfolio</h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#value-proposition">Value Proposition</a></li>
+      <li><a href="#target-audience">Audience</a></li>
+      <li><a href="#artifacts">Artifacts</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+    </ul>
+  </nav>
+  <button id="darkModeToggle">Dark Mode</button>
 </header>
 
-<main>
+<section id="home">
+  <h2>Welcome to My Professional Portfolio</h2>
+  <p>Showcasing AI & Data Analytics expertise and inviting your feedback for continuous improvement.</p>
+  <div class="hero-img"><img src="https://via.placeholder.com/180" alt="Profile Photo"></div>
+</section>
 
-  <input type="search" id="filterInput" placeholder="Search feedback by keywords..." aria-label="Search feedback summaries" />
+<section id="bio" class="card">
+  <h2 class="section-title">About Me</h2>
+  <p>I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a graduate student specializing in Artificial Intelligence and Data Analytics at Indiana Wesleyan University. I have a strong foundation in machine learning, natural language processing, data governance, and ethical AI deployment. My goal is to design AI systems that combine technical innovation with compliance and fairness principles.</p>
+</section>
 
-  <button id="exportCSVBtn" aria-label="Export all feedback as CSV">Export All Feedback to CSV</button>
+<section id="value-proposition" class="card">
+  <h2 class="section-title">Personal Value Proposition</h2>
+  <p>I integrate cutting-edge AI techniques with practical business problem-solving. My unique value lies in delivering solutions that are ethical, scalable, and impactful. Through a combination of technical mastery and compliance knowledge (GDPR, HIPAA), I ensure that AI products are trustworthy and aligned with regulatory standards.</p>
+</section>
 
-  <!-- Feedback Cards -->
-  <section id="feedbackContainer" aria-live="polite" aria-relevant="additions removals">
-    <!-- Example Feedback Card: Duplicate and fill for each artifact -->
-    <article class="feedback-card" tabindex="0" data-keywords="chatbot nlp gdpr hipaa ai lab" aria-expanded="false" aria-controls="feedback1-content">
-      <header class="card-header" role="button" aria-pressed="false" aria-controls="feedback1-content" id="feedback1-header">
-        Artifact 1: AI Lab Chatbot Assistant
-        <span class="toggle-icon" aria-hidden="true">&#9660;</span>
-      </header>
-      <div id="feedback1-content" class="card-content" aria-labelledby="feedback1-header" hidden>
-        <section class="feedback-section feedback-positive" aria-label="Positive observations">
-          <strong>Positive Observations:</strong>
-          <ul>
-            <li>Clear project description bridging technical and non-technical audiences.</li>
-            <li>Strong AI/ML implementation demonstrated through NLP intents and GDPR/HIPAA compliance.</li>
-            <li>Effective documentation and deployment summaries.</li>
-            <li>Good ethical considerations integrated into development.</li>
-          </ul>
-        </section>
-        <section class="feedback-section feedback-suggestion" aria-label="Suggestions">
-          <strong>Suggestions for Improvement:</strong>
-          <ul>
-            <li>Embed demo videos or interactive chatbot simulations to boost engagement.</li>
-            <li>Add flowcharts illustrating conversation flow and architecture.</li>
-            <li>Consider multi-language support for broader accessibility.</li>
-          </ul>
-        </section>
-      </div>
-    </article>
+<section id="target-audience" class="card">
+  <h2 class="section-title">Target Audience</h2>
+  <p>This portfolio is designed for:</p>
+  <ul>
+    <li><strong>Academic Evaluators:</strong> Professors and peers assessing AI competency.</li>
+    <li><strong>Industry Recruiters:</strong> Looking for AI developers with strong ethical awareness.</li>
+    <li><strong>Compliance Officers:</strong> Interested in trustworthy AI frameworks.</li>
+    <li><strong>Tech Enthusiasts:</strong> Exploring AI artifacts with practical applications.</li>
+  </ul>
+</section>
 
-    <article class="feedback-card" tabindex="0" data-keywords="timeline history ai ml ethics generative" aria-expanded="false" aria-controls="feedback2-content">
-      <header class="card-header" role="button" aria-pressed="false" aria-controls="feedback2-content" id="feedback2-header">
-        Artifact 2: AI History Timeline
-        <span class="toggle-icon" aria-hidden="true">&#9660;</span>
-      </header>
-      <div id="feedback2-content" class="card-content" aria-labelledby="feedback2-header" hidden>
-        <section class="feedback-section feedback-positive" aria-label="Positive observations">
-          <strong>Positive Observations:</strong>
-          <ul>
-            <li>Concise yet comprehensive timeline highlighting AI milestones.</li>
-            <li>Good coverage of generative AI breakthroughs and ethical frameworks.</li>
-            <li>Logical chronological segmentation supports learning.</li>
-          </ul>
-        </section>
-        <section class="feedback-section feedback-suggestion" aria-label="Suggestions">
-          <strong>Suggestions for Improvement:</strong>
-          <ul>
-            <li>Add multimedia content such as video interviews or timeline animations.</li>
-            <li>Include interactive clickable events for enhanced UX.</li>
-          </ul>
-        </section>
-      </div>
-    </article>
+<section id="artifacts">
+  <h2 class="section-title">Portfolio Artifacts</h2>
 
-    <article class="feedback-card" tabindex="0" data-keywords="adaptive learning ml algorithms cloud edtech ai" aria-expanded="false" aria-controls="feedback3-content">
-      <header class="card-header" role="button" aria-pressed="false" aria-controls="feedback3-content" id="feedback3-header">
-        Artifact 3: Adaptive Learning AI Solution
-        <span class="toggle-icon" aria-hidden="true">&#9660;</span>
-      </header>
-      <div id="feedback3-content" class="card-content" aria-labelledby="feedback3-header" hidden>
-        <section class="feedback-section feedback-positive" aria-label="Positive observations">
-          <strong>Positive Observations:</strong>
-          <ul>
-            <li>Clear project goals and practical implementation with code snippets.</li>
-            <li>Strong use of ML algorithms and cloud deployment for scalability.</li>
-            <li>Organized structure with phases aiding understanding.</li>
-          </ul>
-        </section>
-        <section class="feedback-section feedback-suggestion" aria-label="Suggestions">
-          <strong>Suggestions for Improvement:</strong>
-          <ul>
-            <li>Add UI designs or user journey maps for completeness.</li>
-            <li>Include testimonials or case study results for real-world impact.</li>
-          </ul>
-        </section>
-      </div>
-    </article>
+  <!-- Artifact Template -->
+  <div class="artifact">
+    <div class="artifact-header">Artifact 1: AI Lab Chatbot <span>▼</span></div>
+    <div class="artifact-content">
+      <p><strong>Introduction:</strong> Intelligent chatbot for AI lab queries using NLP frameworks.</p>
+      <p><strong>Objective:</strong> Enhance lab efficiency and user engagement through automated Q&A.</p>
+      <p><strong>Description:</strong> Built using Rasa and Python, integrated with a no-code UI for non-technical staff.</p>
+      <p><strong>Process:</strong></p>
+      <ul><li>Data preprocessing</li><li>Intent-entity training</li><li>Deployment on cloud</li></ul>
+      <p><strong>Tools & Tech:</strong> Rasa, Python, Flask, No-code platform.</p>
+      <p><strong>Value Proposition:</strong> Reduces response time and improves lab support scalability.</p>
+      <p><strong>References:</strong> GDPR guidelines, HIPAA compliance docs.</p>
+    </div>
+  </div>
 
-    <article class="feedback-card" tabindex="0" data-keywords="data ethics bias smote encryption fairness ai" aria-expanded="false" aria-controls="feedback4-content">
-      <header class="card-header" role="button" aria-pressed="false" aria-controls="feedback4-content" id="feedback4-header">
-        Artifact 4: Ethical AI and Data Quality Challenges
-        <span class="toggle-icon" aria-hidden="true">&#9660;</span>
-      </header>
-      <div id="feedback4-content" class="card-content" aria-labelledby="feedback4-header" hidden>
-        <section class="feedback-section feedback-positive" aria-label="Positive observations">
-          <strong>Positive Observations:</strong>
-          <ul>
-            <li>Clear explanation of complex data quality and ethical issues.</li>
-            <li>Advanced use of SMOTE, encryption, and bias auditing techniques.</li>
-            <li>Structured approach enhances clarity and engagement.</li>
-          </ul>
-        </section>
-        <section class="feedback-section feedback-suggestion" aria-label="Suggestions">
-          <strong>Suggestions for Improvement:</strong>
-          <ul>
-            <li>Expand on ethical case studies with interactive bias detection demos.</li>
-            <li>Add visual bias detection graphs and dashboards.</li>
-          </ul>
-        </section>
-      </div>
-    </article>
-  </section>
+  <div class="artifact">
+    <div class="artifact-header">Artifact 2: AI Timeline Visualization <span>▼</span></div>
+    <div class="artifact-content">
+      <p><strong>Introduction:</strong> An interactive timeline illustrating AI milestones.</p>
+      <p><strong>Objective:</strong> Provide an educational tool for understanding AI evolution.</p>
+      <p><strong>Description:</strong> Highlights breakthroughs in neural networks, deep learning, and ethics frameworks.</p>
+      <p><strong>Tools & Tech:</strong> D3.js, HTML, CSS, JavaScript.</p>
+      <p><strong>Value Proposition:</strong> Simplifies complex AI history for students and professionals.</p>
+    </div>
+  </div>
 
-  <!-- Author Section -->
-  <section id="author-info" tabindex="0" aria-label="Author Information">
-    <h2>About the Author</h2>
-    <p><strong>Naga Venkata Satyanarayana Devarapalli</strong> is a graduate student specializing in Artificial Intelligence and Data Analytics. Passionate about responsible AI, Satya blends technical skills with ethical awareness across all portfolio projects.</p>
-    <p>Expertise includes:</p>
-    <ul>
-      <li>Natural Language Processing with no-code chatbot frameworks</li>
-      <li>Machine Learning Algorithms and Data Balancing (SMOTE)</li>
-      <li>Ethical AI practices including GDPR and HIPAA compliance</li>
-      <li>Cloud deployments and scalable architectures</li>
-      <li>Interactive UI/UX design and accessibility standards</li>
-      <li>Frontend technologies: JavaScript, HTML5, CSS3</li>
-    </ul>
-    <p>Future plans include embedding real-time demos, video tutorials, AI-powered analytics, and a community forum for peer collaboration.</p>
-  </section>
-</main>
+  <div class="artifact">
+    <div class="artifact-header">Artifact 3: Adaptive Learning System <span>▼</span></div>
+    <div class="artifact-content">
+      <p><strong>Introduction:</strong> AI-driven personalized learning solution.</p>
+      <p><strong>Objective:</strong> Tailor course content dynamically based on learner performance.</p>
+      <p><strong>Tools & Tech:</strong> TensorFlow, Flask, Cloud deployment.</p>
+    </div>
+  </div>
 
-<button id="darkToggleBtn" aria-pressed="false" aria-label="Toggle dark mode">Dark Mode</button>
+  <div class="artifact">
+    <div class="artifact-header">Artifact 4: AI Ethics Dashboard <span>▼</span></div>
+    <div class="artifact-content">
+      <p><strong>Introduction:</strong> A dashboard to monitor AI fairness and compliance.</p>
+      <p><strong>Objective:</strong> Increase trust in AI systems via transparency.</p>
+      <p><strong>Tools & Tech:</strong> Python, Plotly, Dash.</p>
+    </div>
+  </div>
+</section>
+
+<section id="feedback">
+  <h2 class="section-title">Submit Your Feedback</h2>
+  <form id="feedbackForm">
+    <label>Name:</label><input type="text" id="name" required />
+    <label>Email:</label><input type="email" id="email" required />
+    <label>Artifact:</label>
+    <select id="artifactSelect" required>
+      <option value="">Select</option>
+      <option>Artifact 1</option>
+      <option>Artifact 2</option>
+      <option>Artifact 3</option>
+      <option>Artifact 4</option>
+    </select>
+    <label>Feedback:</label><textarea id="comment" rows="4" required></textarea>
+
+    <!-- Rubric -->
+    <div class="rubric-group">
+      <label>Clarity of Project Description (1-10)</label>
+      <input type="range" min="1" max="10" id="clarity" />
+    </div>
+    <div class="rubric-group">
+      <label>Demonstration of AI/ML Skills (1-10)</label>
+      <input type="range" min="1" max="10" id="skills" />
+    </div>
+    <div class="rubric-group">
+      <label>Organization & Presentation (1-10)</label>
+      <input type="range" min="1" max="10" id="organization" />
+    </div>
+    <div class="rubric-group">
+      <label>Audience Appropriateness (1-10)</label>
+      <input type="range" min="1" max="10" id="audience" />
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Feedback</button>
+  </form>
+  <button id="exportBtn">Export Feedback to CSV</button>
+</section>
+
+<!-- Chatbot -->
+<div id="chatbot">
+  <div id="chatbot-header">Chatbot Assistant</div>
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input-area">
+    <input type="text" id="chatbot-input" placeholder="Ask about portfolio..." />
+    <button id="chatbot-send">Send</button>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | 
+    <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Email</a>
+  </p>
+</footer>
 
 <script>
-  // Toggle each feedback card expand/collapse
-  document.querySelectorAll('.card-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const card = header.parentElement;
-      const content = card.querySelector('.card-content');
-      const expanded = card.classList.toggle('expanded');
-      content.hidden = !expanded;
+// ========== DARK MODE ==========
+document.getElementById('darkModeToggle').addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+});
 
-      // Accessibility
-      card.setAttribute('aria-expanded', expanded);
-      header.setAttribute('aria-pressed', expanded);
-    });
+// ========== ARTIFACT TOGGLE ==========
+document.querySelectorAll('.artifact-header').forEach(header=>{
+  header.addEventListener('click',()=>{
+    const parent=header.parentElement;
+    parent.classList.toggle('active');
   });
+});
 
-  // Keyboard support for toggling cards via Enter or Space key
-  document.querySelectorAll('.feedback-card').forEach(card => {
-    card.addEventListener('keydown', e => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        card.querySelector('.card-header').click();
-      }
-    });
+// ========== FEEDBACK STORAGE & EXPORT ==========
+let feedbackData=[];
+document.getElementById('feedbackForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const data={
+    name:document.getElementById('name').value,
+    email:document.getElementById('email').value,
+    artifact:document.getElementById('artifactSelect').value,
+    comment:document.getElementById('comment').value,
+    clarity:document.getElementById('clarity').value,
+    skills:document.getElementById('skills').value,
+    organization:document.getElementById('organization').value,
+    audience:document.getElementById('audience').value
+  };
+  feedbackData.push(data);
+  localStorage.setItem('feedback',JSON.stringify(feedbackData));
+  alert('Feedback submitted!');
+  e.target.reset();
+});
+document.getElementById('exportBtn').addEventListener('click',()=>{
+  let csv='Name,Email,Artifact,Comment,Clarity,Skills,Organization,Audience\n';
+  feedbackData.forEach(f=>{
+    csv+=`${f.name},${f.email},${f.artifact},${f.comment},${f.clarity},${f.skills},${f.organization},${f.audience}\n`;
   });
+  const blob=new Blob([csv],{type:'text/csv'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='feedback.csv';a.click();
+});
 
-  // Dark mode toggle
-  const darkToggleBtn = document.getElementById('darkToggleBtn');
-  darkToggleBtn.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
-    darkToggleBtn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-    darkToggleBtn.setAttribute('aria-pressed', isDark);
-  });
-
-  // Filter feedback cards by keywords
-  const filterInput = document.getElementById('filterInput');
-  filterInput.addEventListener('input', () => {
-    const filterText = filterInput.value.toLowerCase();
-    const cards = document.querySelectorAll('.feedback-card');
-    cards.forEach(card => {
-      const keywords = card.getAttribute('data-keywords');
-      if(keywords.toLowerCase().includes(filterText)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-
-  // Export feedback summaries as CSV
-  document.getElementById('exportCSVBtn').addEventListener('click', () => {
-    const cards = document.querySelectorAll('.feedback-card');
-    let csvContent = 'Artifact,Type,Feedback\n';
-    cards.forEach(card => {
-      const artifactName = card.querySelector('.card-header').textContent.trim();
-      const positiveSection = card.querySelector('.feedback-positive');
-      const suggestionSection = card.querySelector('.feedback-suggestion');
-
-      // Extract positive feedback lines
-      let positiveText = '';
-      if(positiveSection) {
-        positiveText = Array.from(positiveSection.querySelectorAll('li')).map(li => li.textContent.trim()).join(' | ');
-      }
-      // Extract suggestions
-      let suggestionText = '';
-      if(suggestionSection) {
-        suggestionText = Array.from(suggestionSection.querySelectorAll('li')).map(li => li.textContent.trim()).join(' | ');
-      }
-
-      csvContent += `"${artifactName}","Positive","${positiveText}"\n`;
-      csvContent += `"${artifactName}","Suggestions","${suggestionText}"\n`;
-    });
-
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'artifact_feedback.csv';
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
+// ========== CHATBOT ==========
+const chatbotResponses={
+  hello:"Hi! How can I help you?",
+  artifacts:"We have 4 artifacts: AI Chatbot, AI Timeline, Adaptive Learning, and Ethics Dashboard.",
+  feedback:"Submit feedback in the Feedback section below.",
+  rubric:"Rubric scores range from 1 to 10 across clarity, skills, organization, and audience fit.",
+  bio:"I am Naga Venkata Satyanarayana Devarapalli, AI & Data Analytics graduate student.",
+  default:"I didn't understand. Ask about artifacts, feedback, or bio."
+};
+document.getElementById('chatbot-send').addEventListener('click',sendMessage);
+document.getElementById('chatbot-input').addEventListener('keypress',e=>{
+  if(e.key==='Enter') sendMessage();
+});
+function sendMessage(){
+  const input=document.getElementById('chatbot-input');
+  const text=input.value.trim();
+  if(!text)return;
+  addMessage(text,'user');
+  input.value='';
+  const reply=getBotReply(text);
+  setTimeout(()=>addMessage(reply,'bot'),500);
+}
+function addMessage(text,type){
+  const div=document.createElement('div');
+  div.className=`message ${type}`;
+  div.textContent=text;
+  document.getElementById('chatbot-messages').appendChild(div);
+  div.scrollIntoView({behavior:"smooth"});
+}
+function getBotReply(text){
+  const key=text.toLowerCase();
+  return chatbotResponses[key]||chatbotResponses.default;
+}
 </script>
-
 </body>
 </html>
