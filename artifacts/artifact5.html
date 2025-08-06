@@ -1,535 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Naga Venkata Satyanarayana Devarapalli | Professional Portfolio - Expanded</title>
-<style>
-  /* Same styling as before - omitted here for brevity */
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      letter-spacing: 1.2px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #aad4ff;
+      margin: 0 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px 60px 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 50px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      border-left: 6px solid #0f527e;
+      padding-left: 12px;
+      color: #0f527e;
+      margin-bottom: 16px;
+      font-size: 2rem;
+    }
+    h3 {
+      color: #205375;
+      margin-top: 20px;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+    p {
+      margin-bottom: 14px;
+    }
+    ul, ol {
+      margin-left: 1.3rem;
+      margin-bottom: 14px;
+    }
+    ul li, ol li {
+      margin-bottom: 8px;
+    }
+    a {
+      color: #205375;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code, pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      main {
+        margin: 15px;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>Naga Venkata Satyanarayana Devarapalli</h1>
+  <h1>Naga Venkata Satyanarayana Devarapalli - Professional Portfolio</h1>
   <nav>
-    <a href="#home">Home</a>
     <a href="#bio">Bio</a>
     <a href="#artifact1">Artifact 1</a>
     <a href="#artifact2">Artifact 2</a>
     <a href="#artifact3">Artifact 3</a>
     <a href="#artifact4">Artifact 4</a>
-    <a href="#artifact5">Artifact 5</a>
+    <a href="#artifact5">Feedback</a>
   </nav>
 </header>
 
 <main>
-  <!-- Home and Bio sections as before -->
+  <!-- Professional Bio Section -->
+  <section id="bio">
+    <h2>Professional Bio</h2>
+    <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, an AI and Data Analytics professional pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of experience, I specialize in leveraging technology to deliver intelligent, ethical, and impactful AI solutions.</p>
+    <p><strong>Core Skills:</strong> Python, R, SQL, Machine Learning (Scikit-learn, TensorFlow), Data Visualization (Power BI, Tableau), Big Data (Hadoop, Spark), Cloud Platforms (AWS, Azure).</p>
+    <p><strong>Contact:</strong> <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a> | <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/naga-venkata" target="_blank" rel="noopener">GitHub</a></p>
+  </section>
 
+  <!-- Artifact 1 -->
   <section id="artifact1">
-    <h2>Artifact 1: AI Lab Chatbot – No-Code Chatbot Assistant Development</h2>
-    <p><strong>Objective:</strong> To build a scalable, multi-channel AI chatbot using no-code platforms with seamless user experience and strong backend integration.</p>
+    <h2>Artifact 1: AI Lab - No-Code Chatbot Assistant Development</h2>
+    <h3>Objective</h3>
+    <p>Build an AI chatbot using no-code platforms to demonstrate efficiency, usability, and rapid deployment of conversational AI.</p>
 
-    <h3>1. Architecture Overview</h3>
-    <p>The chatbot architecture integrates several components:</p>
+    <h3>Project Overview</h3>
+    <p>This project leverages Botpress and Dialogflow to create an accessible chatbot that automates FAQs and provides personalized interaction, designed for non-technical users.</p>
+
+    <h3>Tools & Technologies</h3>
     <ul>
-      <li><strong>Frontend:</strong> Web widget & social media messenger integration.</li>
-      <li><strong>Bot Engine:</strong> Botpress handles conversational flows and context management.</li>
-      <li><strong>NLP Service:</strong> Dialogflow provides intent recognition, entity extraction, and language understanding.</li>
-      <li><strong>API Layer:</strong> Mizou AI APIs supply external data and trigger backend processes.</li>
-      <li><strong>Analytics:</strong> Chatbase collects user interaction metrics for continuous optimization.</li>
+      <li>Botpress, Dialogflow</li>
+      <li>Mizou AI for API integration</li>
+      <li>Chatbase for analytics and performance monitoring</li>
     </ul>
 
-    <h3>2. Detailed Conversation Flow JSON</h3>
+    <h3>Key Features</h3>
+    <ul>
+      <li>Personalized greetings</li>
+      <li>FAQ automation with fallback handling</li>
+      <li>Multi-channel deployment (websites, social media)</li>
+      <li>GDPR and HIPAA compliant data handling</li>
+    </ul>
+
+    <h3>Development Workflow</h3>
+    <ol>
+      <li>Requirement analysis and platform selection</li>
+      <li>Conversation design and intent setup</li>
+      <li>Training and iterative testing</li>
+      <li>Deployment and monitoring</li>
+    </ol>
+
+    <h3>Sample JSON Snippet</h3>
     <pre><code>{
   "intents": [
     {
       "name": "greeting",
-      "examples": ["Hello", "Hi", "Hey", "Good morning"],
-      "responses": ["Hello! How can I assist you today?", "Hi there! What can I do for you?"]
-    },
-    {
-      "name": "faq_hours",
-      "examples": ["What are your working hours?", "When are you open?", "Office hours"],
-      "responses": ["Our office hours are Monday to Friday, 9 AM to 6 PM."]
-    },
-    {
-      "name": "fallback",
-      "examples": [],
-      "responses": ["Sorry, I didn't understand that. Could you please rephrase?"]
-    }
-  ],
-  "entities": [
-    {
-      "name": "time",
-      "values": ["morning", "afternoon", "evening"]
-    }
-  ],
-  "flows": [
-    {
-      "name": "greeting_flow",
-      "triggers": ["greeting"],
-      "steps": [
-        { "type": "say", "text": "Hello! Welcome to AI Lab Chatbot." },
-        { "type": "say", "text": "How can I assist you today?" }
-      ]
+      "examples": ["Hello", "Hi", "Hey"],
+      "responses": ["Hello! How can I assist you today?"]
     }
   ]
-}
-</code></pre>
+}</code></pre>
 
-    <h3>3. NLP Intent Matching and Webhook Integration</h3>
-    <p>We used Dialogflow’s webhook feature to call a backend service that provides dynamic responses.</p>
-    <pre><code>const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-app.use(bodyParser.json());
-
-app.post('/webhook', (req, res) => {
-  const intent = req.body.queryResult.intent.displayName;
-
-  if(intent === 'get_weather') {
-    const city = req.body.queryResult.parameters.city;
-    // Call weather API (mocked here)
-    const weather = `The weather in ${city} is sunny with 25°C.`;
-    res.json({
-      fulfillmentText: weather
-    });
-  } else {
-    res.json({ fulfillmentText: "I am not sure how to help with that." });
-  }
-});
-
-app.listen(3000, () => console.log('Webhook server is running on port 3000'));
-</code></pre>
-
-    <h3>4. Multi-Channel Deployment</h3>
-    <p>The chatbot was deployed on:</p>
+    <h3>Outcomes & Learnings</h3>
     <ul>
-      <li>Corporate website as a floating chat widget</li>
-      <li>Facebook Messenger page integration</li>
-      <li>WhatsApp Business API via Twilio</li>
-    </ul>
-    <p>Each channel required specific configuration for webhook URLs and authentication tokens.</p>
-
-    <h3>5. Analytics and Monitoring</h3>
-    <p>Chatbase integration allowed us to monitor:</p>
-    <ul>
-      <li>User engagement metrics (sessions, queries)</li>
-      <li>Common user intents and drop-offs</li>
-      <li>Chatbot response latency and errors</li>
-    </ul>
-
-    <h3>6. Ethical Considerations</h3>
-    <p>Ensured compliance with GDPR by:</p>
-    <ul>
-      <li>Prompting users for consent before data collection</li>
-      <li>Implementing data anonymization techniques</li>
-      <li>Using secure HTTPS endpoints for all data transmissions</li>
-    </ul>
-
-    <h3>7. Outcomes</h3>
-    <ul>
-      <li>Achieved 85% intent recognition accuracy after iterative training</li>
-      <li>Reduced customer query resolution time by 30%</li>
-      <li>Enabled non-technical staff to update chatbot content via no-code tools</li>
-    </ul>
-
-    <h3>8. Reflection</h3>
-    <p>This project deepened my understanding of conversational AI design and the importance of balancing user experience with technical feasibility.</p>
-
-    <h3>9. Additional Sample: Dialogflow Fulfillment Code (Node.js)</h3>
-    <pre><code>const { WebhookClient } = require('dialogflow-fulfillment');
-
-exports.dialogflowWebhook = (req, res) => {
-  const agent = new WebhookClient({ request: req, response: res });
-
-  function welcome(agent) {
-    agent.add('Welcome to the AI Lab Chatbot!');
-  }
-
-  function fallback(agent) {
-    agent.add('I didn\'t understand that. Can you say it again?');
-  }
-
-  function getFaqHours(agent) {
-    agent.add('Our working hours are Monday to Friday, 9 AM to 6 PM.');
-  }
-
-  let intentMap = new Map();
-  intentMap.set('Default Welcome Intent', welcome);
-  intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('faq_hours', getFaqHours);
-
-  agent.handleRequest(intentMap);
-};
-</code></pre>
-
-    <h3>10. References & Tools</h3>
-    <ul>
-      <li><a href="https://botpress.com" target="_blank" rel="noopener">Botpress</a></li>
-      <li><a href="https://dialogflow.cloud.google.com" target="_blank" rel="noopener">Dialogflow</a></li>
-      <li><a href="https://chatbase.com" target="_blank" rel="noopener">Chatbase</a></li>
-      <li><a href="https://mizou.ai" target="_blank" rel="noopener">Mizou AI</a></li>
+      <li>Enhanced understanding of chatbot design and NLP</li>
+      <li>Experience with no-code AI tool deployment</li>
+      <li>Importance of ethical and privacy standards in AI</li>
     </ul>
   </section>
-<section id="artifact2">
-  <h2>Artifact 2: Evolution of Artificial Intelligence and Machine Learning (1950 - 2025)</h2>
-  
-  <p><strong>Objective:</strong> To document and analyze the historical milestones that shaped AI and ML, understanding how technological advances influenced modern AI solutions.</p>
 
-  <h3>1. Comprehensive AI & ML Timeline Highlights</h3>
-  <ul>
-    <li><strong>1943:</strong> McCulloch & Pitts propose the first artificial neuron model — foundation of neural networks.</li>
-    <li><strong>1950:</strong> Alan Turing introduces the Turing Test, setting a benchmark for machine intelligence.</li>
-    <li><strong>1956:</strong> Dartmouth Conference officially coins “Artificial Intelligence.”</li>
-    <li><strong>1966:</strong> ELIZA chatbot by Joseph Weizenbaum demonstrates early NLP capabilities.</li>
-    <li><strong>1986:</strong> Backpropagation algorithm advances training of multi-layer neural networks.</li>
-    <li><strong>1997:</strong> IBM Deep Blue defeats chess champion Garry Kasparov — milestone in AI chess playing.</li>
-    <li><strong>2012:</strong> AlexNet revolutionizes image classification with deep learning.</li>
-    <li><strong>2018:</strong> BERT transforms NLP with context-aware embeddings.</li>
-    <li><strong>2023:</strong> Generative AI models like ChatGPT mainstream conversational AI.</li>
-    <li><strong>2025:</strong> Global AI regulations, including EU AI Act, enforce ethical AI usage.</li>
-  </ul>
+  <!-- Artifact 2 -->
+  <section id="artifact2">
+    <h2>Artifact 2: Evolution of Artificial Intelligence and Machine Learning Timeline</h2>
+    <h3>Objective</h3>
+    <p>To present a detailed timeline highlighting key milestones from AI's inception to present-day breakthroughs.</p>
 
-  <h3>2. Extended Timeline with Context</h3>
-  <p>This timeline demonstrates how AI evolved from theoretical concepts to practical solutions across various domains:</p>
-  <ol>
-    <li><strong>Symbolic AI Era (1950s-1980s):</strong> AI systems based on logic and rules, such as expert systems.</li>
-    <li><strong>Machine Learning Era (1990s-2010s):</strong> Algorithms that learn patterns from data, including SVM, decision trees.</li>
-    <li><strong>Deep Learning Boom (2010s-present):</strong> Neural networks with many layers enabled by GPUs and big data.</li>
-    <li><strong>Generative AI and Ethical AI (2020s):</strong> Text, image, and video generation models; focus on fairness and transparency.</li>
-  </ol>
+    <h3>AI Milestones (Selected)</h3>
+    <ul>
+      <li>1943: First artificial neuron model by McCulloch & Pitts</li>
+      <li>1956: Dartmouth Conference — birth of AI</li>
+      <li>1986: Backpropagation revolutionizes neural networks</li>
+      <li>2012: AlexNet ignites Deep Learning boom</li>
+      <li>2023: Generative AI mainstream adoption</li>
+      <li>2025: AI governance and ethical frameworks established globally</li>
+    </ul>
 
-  <h3>3. Sample Visualization: AI Timeline Using Python Matplotlib</h3>
-  <pre><code>import matplotlib.pyplot as plt
-import pandas as pd
+    <h3>Key Learnings</h3>
+    <p>The timeline illustrates AI's rapid evolution driven by computational advances, data availability, and algorithmic innovations transitioning from symbolic AI to modern generative models.</p>
 
-# Data preparation
-events = {
-    "Year": [1943, 1950, 1956, 1966, 1986, 1997, 2012, 2018, 2023, 2025],
-    "Event": [
-        "Artificial neuron model",
-        "Turing Test",
-        "AI coined at Dartmouth",
-        "ELIZA chatbot",
-        "Backpropagation algorithm",
-        "Deep Blue chess win",
-        "AlexNet deep learning",
-        "BERT NLP model",
-        "Generative AI rise",
-        "AI Regulation enforcement"
-    ]
-}
+    <h3>Future Trends</h3>
+    <ul>
+      <li>Mandatory AI governance and ethical standards</li>
+      <li>Expansion of Explainable AI (XAI) methods</li>
+      <li>Generative AI integrated into enterprise and creative workflows</li>
+    </ul>
+  </section>
 
-df = pd.DataFrame(events)
+  <!-- Artifact 3 -->
+  <section id="artifact3">
+    <h2>Artifact 3: SchoolAI - AI-Assisted Learning Platform</h2>
 
-plt.figure(figsize=(12,6))
-plt.scatter(df['Year'], [1]*len(df), color='blue')
-for i, txt in enumerate(df['Event']):
-    plt.annotate(txt, (df['Year'][i], 1), textcoords="offset points", xytext=(0,10), ha='center')
+    <h3>Objective</h3>
+    <p>Develop an adaptive AI-driven platform to personalize student learning experiences and support educators with actionable insights.</p>
 
-plt.yticks([])
-plt.title('Key Milestones in AI and ML History (1943-2025)')
-plt.xlabel('Year')
-plt.show()
-</code></pre>
+    <h3>Technologies & Tools</h3>
+    <ul>
+      <li>Machine Learning: Decision Trees, Reinforcement Learning</li>
+      <li>Languages: Python (scikit-learn, TensorFlow), JavaScript (React.js)</li>
+      <li>Databases: PostgreSQL, MongoDB</li>
+      <li>Cloud Hosting: AWS</li>
+    </ul>
 
-  <h3>4. Reflection & Future Trends</h3>
-  <p>Understanding this evolution is essential for:</p>
-  <ul>
-    <li>Anticipating the next AI breakthroughs and their applications.</li>
-    <li>Recognizing ethical concerns emerging alongside AI capabilities.</li>
-    <li>Informing policy and regulatory frameworks for responsible AI deployment.</li>
-  </ul>
-  <p><strong>Future AI Trends include:</strong></p>
-  <ul>
-    <li>Explainable AI (XAI) becoming standard in regulated industries.</li>
-    <li>AI-augmented human creativity and decision-making.</li>
-    <li>Integration of AI with Internet of Things (IoT) for smart environments.</li>
-  </ul>
+    <h3>Implementation Highlights</h3>
+    <ol>
+      <li>Collaborated with educators to gather requirements</li>
+      <li>Data collection and preprocessing ensuring privacy</li>
+      <li>Adaptive algorithms customizing content delivery</li>
+      <li>User-friendly dashboards for students and teachers</li>
+      <li>Continuous testing and iterative improvements</li>
+    </ol>
 
-  <h3>5. References & Tools Used</h3>
-  <ul>
-    <li><a href="https://www.aaai.org" target="_blank" rel="noopener">AAAI - Association for the Advancement of AI</a></li>
-    <li><a href="https://dl.acm.org/doi/10.1145/259191.259195" target="_blank" rel="noopener">Turing's 1950 paper</a></li>
-    <li><a href="https://arxiv.org/abs/1409.0473" target="_blank" rel="noopener">AlexNet paper</a></li>
-    <li><a href="https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html" target="_blank" rel="noopener">BERT Model</a></li>
-  </ul>
-</section>
-<section id="artifact3">
-  <h2>Artifact 3: SchoolAI – AI-Assisted Personalized Learning Experience</h2>
-
-  <p><strong>Objective:</strong> Design and deploy an adaptive AI learning platform to tailor education based on student needs and enhance engagement.</p>
-
-  <h3>1. Project Background</h3>
-  <p>The platform aims to:</p>
-  <ul>
-    <li>Analyze student data to personalize learning paths.</li>
-    <li>Provide real-time feedback to educators.</li>
-    <li>Improve student motivation through interactive AI tools.</li>
-  </ul>
-
-  <h3>2. Technologies Used</h3>
-  <ul>
-    <li>Machine Learning: Decision Trees, Collaborative Filtering, Reinforcement Learning</li>
-    <li>Programming: Python (scikit-learn, TensorFlow), JavaScript (React.js)</li>
-    <li>Database: PostgreSQL for structured data, MongoDB for logs and events</li>
-    <li>Cloud: AWS EC2 & S3 for hosting and storage</li>
-  </ul>
-
-  <h3>3. Data Processing & Model Development</h3>
-  <p>Sample code demonstrating a collaborative filtering recommendation model using the Surprise library:</p>
-  <pre><code>import pandas as pd
+    <h3>Sample Python Code - Recommendation System</h3>
+    <pre><code>import pandas as pd
 from surprise import Dataset, Reader, KNNBasic
-from surprise.model_selection import train_test_split
-from surprise import accuracy
 
-# Sample data: user-item-rating
 ratings_dict = {
-    'itemID': [1, 1, 1, 2, 2, 3, 4],
-    'userID': [9, 32, 2, 45, 32, 9, 15],
-    'rating': [3, 2, 4, 5, 3, 4, 4]
+    "itemID": [1, 1, 1, 2, 2, 3],
+    "userID": [9, 32, 2, 45, 32, 9],
+    "rating": [3, 2, 4, 5, 3, 4]
 }
-
 df = pd.DataFrame(ratings_dict)
 
-# Define rating scale
 reader = Reader(rating_scale=(1, 5))
-
-# Load dataset from dataframe
 data = Dataset.load_from_df(df[['userID', 'itemID', 'rating']], reader)
 
-# Split data into train and test
-trainset, testset = train_test_split(data, test_size=0.25, random_state=42)
-
-# Instantiate and train KNN model
-algo = KNNBasic(k=2, sim_options={'name': 'cosine', 'user_based': True})
+algo = KNNBasic()
+trainset = data.build_full_trainset()
 algo.fit(trainset)
 
-# Test model and compute accuracy
-predictions = algo.test(testset)
-print("RMSE:", accuracy.rmse(predictions))
-
-# Predict rating for user 9 on item 2
 pred = algo.predict(9, 2)
 print(f"Predicted rating for user 9 on item 2: {pred.est}")
 </code></pre>
 
-  <h3>4. Frontend UI Design Snippet (React)</h3>
-  <pre><code>import React, { useState, useEffect } from 'react';
+    <h3>Outcomes</h3>
+    <ul>
+      <li>25% increase in student engagement</li>
+      <li>18% improvement in learning retention</li>
+      <li>Actionable educator insights for targeted interventions</li>
+      <li>12% reduction in dropout rates</li>
+    </ul>
 
-function StudentDashboard() {
-  const [recommendations, setRecommendations] = useState([]);
+    <h3>Challenges & Mitigations</h3>
+    <ul>
+      <li>Privacy: FERPA compliance and data anonymization</li>
+      <li>Bias: Fairness audits and bias mitigation</li>
+      <li>Scalability: Cloud auto-scaling infrastructure</li>
+      <li>User Adoption: Training and documentation</li>
+    </ul>
+  </section>
 
-  useEffect(() => {
-    fetch('/api/recommendations?userId=9')
-      .then(res => res.json())
-      .then(data => setRecommendations(data));
-  }, []);
+  <!-- Artifact 4 -->
+  <section id="artifact4">
+    <h2>Artifact 4: Data Challenge Scenarios – Addressing Quality, Privacy, and Bias in Machine Learning</h2>
 
-  return (
-    &lt;div className="dashboard"&gt;
-      &lt;h2&gt;Recommended Learning Materials&lt;/h2&gt;
-      &lt;ul&gt;
-        {recommendations.map(item => (
-          &lt;li key={item.id}&gt;{item.title} - Rating: {item.rating}&lt;/li&gt;
-        ))}
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  );
-}
+    <h3>Objective</h3>
+    <p>Demonstrate the ability to identify and solve real-world data challenges affecting AI model accuracy, fairness, and compliance.</p>
 
-export default StudentDashboard;
-</code></pre>
-
-  <h3>5. Deployment Automation (AWS CLI snippet)</h3>
-  <pre><code># Upload frontend build to S3 bucket
-aws s3 sync ./build s3://schoolai-frontend --delete
-
-# Deploy backend Lambda function
-aws lambda update-function-code --function-name schoolai-backend \
-  --zip-file fileb://backend.zip
-</code></pre>
-
-  <h3>6. Outcomes & Metrics</h3>
-  <ul>
-    <li>Student engagement increased by 25% based on session duration.</li>
-    <li>Retention rates improved by 18% compared to control groups.</li>
-    <li>Dropout rates reduced by 12% in pilot schools.</li>
-  </ul>
-
-  <h3>7. Challenges and Solutions</h3>
-  <ul>
-    <li><strong>Data Privacy:</strong> FERPA compliance via data anonymization and secure access.</li>
-    <li><strong>Algorithm Bias:</strong> Continuous bias audits and fairness adjustments.</li>
-    <li><strong>Scalability:</strong> Cloud auto-scaling and load balancing on AWS.</li>
-    <li><strong>User Adoption:</strong> Training sessions and detailed documentation.</li>
-  </ul>
-
-  <h3>8. Reflection</h3>
-  <p>This artifact taught me the complexities of integrating AI in education — balancing technical innovation with ethical and user-centered design.</p>
-
-  <h3>9. References</h3>
-  <ul>
-    <li><a href="https://surprise.readthedocs.io/en/stable/" target="_blank" rel="noopener">Surprise Library Documentation</a></li>
-    <li><a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener">React Official Docs</a></li>
-    <li><a href="https://aws.amazon.com/cli/" target="_blank" rel="noopener">AWS CLI</a></li>
-  </ul>
-</section>
-<section id="artifact4">
-  <h2>Artifact 4: Data Challenge Scenarios – Addressing Data Quality, Privacy, and Bias in Machine Learning</h2>
-
-  <p><strong>Objective:</strong> To demonstrate practical solutions for common data challenges in ML workflows ensuring data integrity, privacy, and fairness.</p>
-
-  <h3>1. Scenario 1: Data Quality Issues</h3>
-  <p><strong>Challenges:</strong> Missing data, duplicates, outliers in a financial dataset.</p>
-  <p><strong>Solutions:</strong> Data imputation, normalization, outlier removal.</p>
-
-  <pre><code>import pandas as pd
+    <h3>Scenario 1: Data Quality</h3>
+    <ul>
+      <li>Challenges: Missing data, duplicates, outliers</li>
+      <li>Solutions: Imputation, normalization, outlier removal</li>
+      <li>Tools: Python (pandas, numpy, sklearn)</li>
+    </ul>
+    <pre><code>import pandas as pd
 import numpy as np
 from scipy import stats
 from sklearn.preprocessing import MinMaxScaler
 
-# Load dataset
 data = pd.read_csv('financial_data.csv')
-
-# Impute missing numerical values
 data['income'].fillna(data['income'].mean(), inplace=True)
-
-# Impute missing categorical values
 data['occupation'].fillna(data['occupation'].mode()[0], inplace=True)
-
-# Remove duplicates
 data.drop_duplicates(inplace=True)
-
-# Detect and remove outliers using Z-score
 z_scores = np.abs(stats.zscore(data.select_dtypes(include=[np.number])))
 data = data[(z_scores < 3).all(axis=1)]
-
-# Normalize numerical columns
 scaler = MinMaxScaler()
 data[['income', 'age']] = scaler.fit_transform(data[['income', 'age']])
 </code></pre>
 
-  <h3>2. Scenario 2: Privacy and Security Compliance</h3>
-  <p><strong>Challenges:</strong> Protecting sensitive healthcare data under GDPR/HIPAA.</p>
-  <p><strong>Solutions:</strong> Data anonymization, encryption, access control.</p>
+    <h3>Scenario 2: Privacy & Security</h3>
+    <ul>
+      <li>Challenges: Protecting sensitive healthcare data under GDPR and HIPAA</li>
+      <li>Solutions: Data anonymization, AES encryption, role-based access</li>
+      <li>Tools: Python cryptography library</li>
+    </ul>
+    <pre><code>from cryptography.fernet import Fernet
 
-  <pre><code>from cryptography.fernet import Fernet
-
-# Generate encryption key (store securely)
 key = Fernet.generate_key()
 cipher_suite = Fernet(key)
 
-# Encrypt sensitive data
 sensitive_data = b"Patient PHI data"
 encrypted_data = cipher_suite.encrypt(sensitive_data)
-
-# Decrypt data example
 decrypted_data = cipher_suite.decrypt(encrypted_data)
 print(decrypted_data.decode())
 </code></pre>
 
-  <h3>3. Scenario 3: Mitigating Bias and Ensuring Fairness</h3>
-  <p><strong>Challenges:</strong> Class imbalance, algorithmic bias in hiring data.</p>
-  <p><strong>Solutions:</strong> SMOTE for oversampling minority class, fairness metrics evaluation.</p>
-
-  <pre><code>from imblearn.over_sampling import SMOTE
+    <h3>Scenario 3: Bias and Fairness</h3>
+    <ul>
+      <li>Challenges: Class imbalance and bias in hiring datasets</li>
+      <li>Solutions: SMOTE oversampling, bias auditing, threshold adjustments</li>
+      <li>Tools: imbalanced-learn, AIF360</li>
+    </ul>
+    <pre><code>from imblearn.over_sampling import SMOTE
 from collections import Counter
-from sklearn.model_selection import train_test_split
 
 X = data.drop('target', axis=1)
 y = data['target']
 
-print('Original dataset shape:', Counter(y))
-
-smote = SMOTE(random_state=42)
-X_resampled, y_resampled = smote.fit_resample(X, y)
-
-print('Resampled dataset shape:', Counter(y_resampled))
+print('Original dataset shape %s' % Counter(y))
+sm = SMOTE(random_state=42)
+X_res, y_res = sm.fit_resample(X, y)
+print('Resampled dataset shape %s' % Counter(y_res))
 </code></pre>
 
-  <h3>4. Fairness Audit with IBM AIF360 (Example)</h3>
-  <pre><code>from aif360.datasets import BinaryLabelDataset
-from aif360.metrics import BinaryLabelDatasetMetric
+    <h3>Reflection</h3>
+    <p>This artifact demonstrates my commitment to creating trustworthy AI systems by addressing data quality, privacy, and bias challenges with technical and ethical rigor.</p>
+  </section>
 
-# Convert to AIF360 dataset
-dataset = BinaryLabelDataset(df=data, label_names=['target'], protected_attribute_names=['gender'])
+  <!-- Artifact 5 -->
+  <section id="artifact5">
+    <h2>Artifact 5: Professional Portfolio Feedback and Reflection</h2>
 
-# Calculate fairness metric - Disparate Impact
-metric = BinaryLabelDatasetMetric(dataset, privileged_groups=[{'gender': 1}], unprivileged_groups=[{'gender': 0}])
-print("Disparate Impact:", metric.disparate_impact())
-</code></pre>
+    <h3>Summary of Feedback</h3>
+    <ul>
+      <li><strong>Artifact 1:</strong> Strong chatbot implementation with suggestions for multi-language support and deeper interaction design.</li>
+      <li><strong>Artifact 2:</strong> Comprehensive AI timeline praised, with recommendations to add interactive multimedia content.</li>
+      <li><strong>Artifact 3:</strong> Robust AI learning platform; advised to incorporate UX research and accessibility features.</li>
+      <li><strong>Artifact 4:</strong> Detailed data challenge handling recognized; encouraged to explore advanced fairness frameworks.</li>
+    </ul>
 
-  <h3>5. Summary of Tools and Techniques</h3>
-  <ul>
-    <li>Python Libraries: pandas, numpy, scipy, scikit-learn, imbalanced-learn, cryptography, AIF360</li>
-    <li>Techniques: Imputation, normalization, outlier removal, encryption, SMOTE oversampling, fairness metrics</li>
-  </ul>
+    <h3>Strengths</h3>
+    <ul>
+      <li>Technical expertise in AI and data analytics</li>
+      <li>Strong emphasis on ethical AI and privacy compliance</li>
+      <li>Clear, detailed documentation and communication</li>
+      <li>Effective real-world applications of AI concepts</li>
+    </ul>
 
-  <h3>6. Reflection</h3>
-  <p>This artifact reinforced the critical nature of data quality and fairness in AI systems. I learned to balance technical fixes with ethical considerations and compliance requirements.</p>
+    <h3>Areas for Improvement</h3>
+    <ul>
+      <li>Add interactivity and live demos in portfolio</li>
+      <li>Include UX and accessibility considerations</li>
+      <li>Highlight teamwork and collaboration experiences</li>
+      <li>Update portfolio continuously with latest skills and projects</li>
+    </ul>
 
-  <h3>7. References</h3>
-  <ul>
-    <li><a href="https://imbalanced-learn.org/stable/" target="_blank" rel="noopener">Imbalanced-learn Library</a></li>
-    <li><a href="https://aif360.mybluemix.net/" target="_blank" rel="noopener">IBM AI Fairness 360 Toolkit</a></li>
-    <li><a href="https://cryptography.io/en/latest/" target="_blank" rel="noopener">Python Cryptography Library</a></li>
-  </ul>
-</section>
-<section id="artifact5">
-  <h2>Artifact 5: Professional Portfolio Feedback and Reflection</h2>
+    <h3>Action Plan</h3>
+    <ol>
+      <li>Develop interactive timelines and chatbot demos using JavaScript frameworks</li>
+      <li>Conduct user experience research and accessibility audits</li>
+      <li>Document collaboration and teamwork stories in future artifacts</li>
+      <li>Engage with AI ethics communities and incorporate new learnings</li>
+    </ol>
 
-  <p><strong>Objective:</strong> To analyze and reflect upon feedback received on my portfolio artifacts, identify strengths and areas for improvement, and outline future development goals.</p>
+    <h3>Final Thoughts</h3>
+    <p>This feedback process has provided invaluable insights that motivate me to enhance my portfolio’s depth, interactivity, and ethical focus while continuing to grow as an AI professional.</p>
 
-  <h3>1. Summary of Feedback Received</h3>
-  <ul>
-    <li><strong>Artifact 1 (AI Lab Chatbot):</strong> Recognized for practical implementation of no-code AI tools, user-friendly design, and ethical compliance (GDPR/HIPAA). Suggested to expand on multi-language support and conversational depth.</li>
-    <li><strong>Artifact 2 (AI Evolution Timeline):</strong> Praised for comprehensive coverage and clear visualization of AI milestones. Recommended to integrate interactive timeline visualizations or embedded multimedia for enhanced engagement.</li>
-    <li><strong>Artifact 3 (SchoolAI Learning Platform):</strong> Commended for real-world applicability and technical depth in adaptive learning algorithms. Feedback highlighted the opportunity to include user experience research and accessibility considerations.</li>
-    <li><strong>Artifact 4 (Data Challenges in ML):</strong> Appreciated for thoroughness in addressing data quality, privacy, and bias with technical solutions. Reviewer suggested deeper exploration of emerging fairness frameworks and case studies on unintended bias mitigation.</li>
-  </ul>
-
-  <h3>2. Reflection on Strengths</h3>
-  <ul>
-    <li><strong>Technical Rigor:</strong> The portfolio demonstrates strong command over AI and data analytics tools and programming languages.</li>
-    <li><strong>Ethical Awareness:</strong> Consistent emphasis on privacy, security, and fairness shows commitment to responsible AI development.</li>
-    <li><strong>Clear Documentation:</strong> Detailed explanations and code snippets help communicate complex concepts effectively to diverse audiences.</li>
-    <li><strong>Applied Learning:</strong> Projects illustrate application of theoretical concepts in practical, impactful scenarios.</li>
-  </ul>
-
-  <h3>3. Areas for Improvement</h3>
-  <ul>
-    <li><strong>Enhanced Interactivity:</strong> Incorporate more interactive elements such as live demos, embedded videos, or interactive charts to engage viewers.</li>
-    <li><strong>Expanded UX/UI Focus:</strong> Include user experience research outcomes and accessibility features in future projects.</li>
-    <li><strong>Broader Collaboration:</strong> Highlight teamwork experiences and cross-functional collaboration to showcase soft skills.</li>
-    <li><strong>Continuous Updates:</strong> Keep portfolio current with latest AI developments and personal skill growth.</li>
-  </ul>
-
-  <h3>4. Action Plan for Future Portfolio Development</h3>
-  <ol>
-    <li>Develop interactive web components for AI timelines and chatbot demos using JavaScript frameworks.</li>
-    <li>Conduct formal user testing and accessibility audits for AI-powered applications.</li>
-    <li>Document collaboration stories and team project contributions in new artifacts.</li>
-    <li>Engage with AI ethics communities and integrate learnings into portfolio reflections.</li>
-  </ol>
-
-  <h3>5. Final Thoughts</h3>
-  <p>This feedback process has been invaluable in helping me critically evaluate my professional portfolio. I am motivated to enhance the depth, interactivity, and user-centered focus of my work while maintaining a strong ethical foundation. I look forward to applying these insights in future AI and data analytics projects, and to continue growing as a responsible, innovative practitioner.</p>
-
-  <h3>6. Contact Information</h3>
-  <p>If you would like to discuss my portfolio or provide additional feedback, please reach out:</p>
-  <ul>
-    <li>Email: tone_satya@yahoo.co.in</li>
-    <li>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></li>
-    <li>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener">github.com/naga-venkata</a></li>
-  </ul>
-</section>
+    <h3>Contact</h3>
+    <p>If you have further feedback or questions, please connect with me:</p>
+    <ul>
+      <li>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank" rel="noopener">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></li>
+      <li>GitHub: <a href="https://github.com/naga-venkata" target="_blank" rel="noopener">github.com/naga-venkata</a></li>
+    </ul>
+  </section>
 </main>
 
-<footer>
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli</p>
+<footer style="text-align:center; padding: 20px; background:#0f2027; color:#aad4ff;">
+  <p>© 2025 Naga Venkata Satyanarayana Devarapalli. All rights reserved.</p>
 </footer>
 
 </body>
