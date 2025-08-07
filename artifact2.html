@@ -2,159 +2,302 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Artifact 2 - AI/ML Timeline Presentation</title>
-<link rel="stylesheet" href="../css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Artifact 2: Comprehensive AI & ML Timeline | Naga Venkata Satyanarayana Devarapalli</title>
 <style>
+  /* Reset and base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
   body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background: #f7f9fb;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAFAFA;
+    color: #2C3E50;
+    line-height: 1.75;
+    font-size: 16px;
   }
+  a {
+    color: #F39C12;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Header */
   header {
-    background: linear-gradient(90deg, #00695c, #43a047, #ff9800);
-    color: white;
-    padding: 15px;
-    text-align: center;
-  }
-  nav ul {
+    background-color: #223344;
+    padding: 1.2rem 3rem;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(34, 51, 68, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  header h1 {
+    color: #E6F4EA;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
   nav a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px 15px;
+    color: #E6F4EA;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
   }
-  nav a:hover {
-    background: #004d40;
-    border-radius: 5px;
+  nav a:hover,
+  nav a:focus {
+    border-bottom-color: #F39C12;
+    color: #F39C12;
+    outline-offset: 2px;
+    outline-color: #F39C12;
   }
-  .timeline-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  nav a[aria-current="page"] {
+    border-bottom-color: #F39C12;
+    color: #F39C12;
+    cursor: default;
   }
-  .timeline-container h1 {
+  /* Main container */
+  main {
+    max-width: 900px;
+    margin: 3rem auto 5rem;
+    padding: 0 2rem;
+  }
+  /* Artifact section */
+  .artifact-section {
+    background-color: #E6F4EA;
+    padding: 3rem 3rem 4rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(34, 51, 68, 0.12);
+  }
+  .artifact-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    color: #223344;
+    font-weight: 800;
+    letter-spacing: 0.05em;
     text-align: center;
-    color: #00695c;
   }
-  .timeline {
-    margin-top: 30px;
+  .artifact-section h3 {
+    font-size: 2.1rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.2rem;
+    color: #223344;
+    font-weight: 700;
+    border-left: 8px solid #F39C12;
+    padding-left: 18px;
   }
-  .timeline ul {
-    list-style: none;
-    padding: 0;
+  .artifact-section p, 
+  .artifact-section ul {
+    font-size: 1.15rem;
+    color: #3a4a56;
+    line-height: 1.85;
+    text-align: justify;
   }
-  .timeline ul li {
-    background: #e0f2f1;
-    margin: 15px 0;
-    padding: 15px;
-    border-left: 6px solid #00796b;
-    border-radius: 8px;
+  ul {
+    padding-left: 2.5rem;
+    list-style-type: disc;
   }
-  .timeline ul li strong {
-    color: #004d40;
-    font-size: 18px;
+  ul li {
+    margin-bottom: 1rem;
   }
+  /* Timeline list */
+  .timeline-item {
+    margin-bottom: 1.3rem;
+  }
+  .timeline-year {
+    font-weight: 700;
+    color: #F39C12;
+    margin-right: 0.6rem;
+  }
+  /* Footer */
   footer {
+    background-color: #223344;
+    padding: 2rem 3rem;
     text-align: center;
-    padding: 20px;
-    background: #004d40;
-    color: white;
-    margin-top: 40px;
+    font-size: 1rem;
+    color: #E6F4EA;
+    box-shadow: 0 -4px 20px rgba(34, 51, 68, 0.35);
+    user-select: none;
   }
   footer a {
-    color: #ff9800;
+    color: #F39C12;
+    font-weight: 600;
+    margin: 0 10px;
     text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  footer a:hover, footer a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      padding: 0 1rem;
+    }
+    .artifact-section {
+      padding: 2rem 1.5rem 3rem;
+    }
+    .artifact-section h2 {
+      font-size: 2.1rem;
+    }
+    .artifact-section h3 {
+      font-size: 1.7rem;
+    }
   }
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header>
-  <h1>Artifact 2: Evolution of Artificial Intelligence and Machine Learning</h1>
-  <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../bio.html">Bio</a></li>
-      <li><a href="artifact1.html">Artifact 1</a></li>
-      <li><a href="artifact2.html" class="active">Artifact 2</a></li>
-      <li><a href="artifact3.html">Artifact 3</a></li>
-      <li><a href="artifact4.html">Artifact 4</a></li>
-      <li><a href="artifact5.html">Artifact 5</a></li>
-    </ul>
+<header role="banner">
+  <h1 tabindex="0">Naga Venkata Satyanarayana Devarapalli</h1>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="bio.html" tabindex="0">Bio</a>
+    <a href="artifact1.html" tabindex="0">Artifact 1</a>
+    <a href="artifact2.html" tabindex="0" aria-current="page">Artifact 2</a>
+    <a href="artifact3.html" tabindex="0">Artifact 3</a>
+    <a href="artifact4.html" tabindex="0">Artifact 4</a>
+    <a href="artifact5.html" tabindex="0">Artifact 5</a>
+    <a href="feedback.html" tabindex="0">Feedback</a>
   </nav>
 </header>
 
-<!-- MAIN CONTENT -->
-<div class="timeline-container">
-  <h1>Comprehensive AI & ML Timeline (1950s – 2025)</h1>
-  <p>This timeline highlights key breakthroughs that shaped the evolution of Artificial Intelligence (AI) and Machine Learning (ML). It demonstrates how AI moved from theoretical concepts to real-world innovations impacting all industries.</p>
+<main>
+  <section class="artifact-section" aria-labelledby="artifact2-title">
+    <h2 id="artifact2-title">Artifact 2: Comprehensive AI & ML Timeline (1950s – 2025)</h2>
 
-  <div class="timeline">
+    <h3>1. Project Overview</h3>
+    <p>
+      This artifact is a detailed and researched timeline outlining the critical breakthroughs and paradigm shifts that have propelled the fields of Artificial Intelligence (AI) and Machine Learning (ML) from their inception in the mid-20th century to present-day innovations. It maps the journey from foundational theoretical frameworks to widespread real-world applications, highlighting how AI has grown into a transformative technology influencing multiple industries.
+    </p>
+    <p>
+      The timeline serves not only as an educational tool but also as a demonstration of my ability to curate complex historical and technical information, presenting it in a clear, coherent, and engaging manner tailored for both technical and non-technical audiences.
+    </p>
+
+    <h3>2. Objective</h3>
+    <p>
+      The objective of this artifact is to:
+    </p>
     <ul>
-      <li><strong>1943:</strong> McCulloch & Pitts propose the first artificial neuron model.</li>
-      <li><strong>1950:</strong> Alan Turing publishes “Computing Machinery and Intelligence” introducing the Turing Test.</li>
-      <li><strong>1956:</strong> Dartmouth Conference marks the birth of AI as a field.</li>
-      <li><strong>1959:</strong> Arthur Samuel coins the term “Machine Learning.”</li>
-      <li><strong>1966:</strong> ELIZA, an early chatbot, is created by Joseph Weizenbaum.</li>
-      <li><strong>1972:</strong> First industrial robot introduced on assembly lines.</li>
-      <li><strong>1980:</strong> Rise of Expert Systems in business and healthcare.</li>
-      <li><strong>1986:</strong> Backpropagation algorithm revolutionizes neural networks.</li>
-      <li><strong>1997:</strong> IBM’s Deep Blue defeats chess champion Garry Kasparov.</li>
-      <li><strong>2000:</strong> AI integrates into consumer products like speech recognition.</li>
-      <li><strong>2006:</strong> Geoffrey Hinton popularizes the concept of Deep Learning.</li>
-      <li><strong>2011:</strong> IBM Watson wins Jeopardy, showcasing NLP capabilities.</li>
-      <li><strong>2012:</strong> AlexNet wins ImageNet, igniting the Deep Learning boom.</li>
-      <li><strong>2014:</strong> Chatbots and AI assistants like Siri and Alexa rise.</li>
-      <li><strong>2016:</strong> AlphaGo defeats Go champion Lee Sedol, using reinforcement learning.</li>
-      <li><strong>2018:</strong> BERT (Google) transforms NLP with contextual embeddings.</li>
-      <li><strong>2020:</strong> AI accelerates COVID-19 vaccine development with predictive modeling.</li>
-      <li><strong>2022:</strong> OpenAI launches ChatGPT, revolutionizing human-AI interaction.</li>
-      <li><strong>2023:</strong> Generative AI becomes mainstream in text, image, and video generation.</li>
-      <li><strong>2024:</strong> Ethical AI and bias mitigation dominate research priorities.</li>
-      <li><strong>2025:</strong> AI regulation frameworks like EU AI Act take global effect.</li>
+      <li>Showcase comprehensive knowledge of AI and ML history through key milestones.</li>
+      <li>Demonstrate strong research, synthesis, and communication skills.</li>
+      <li>Help viewers understand the technological and societal evolution of AI.</li>
+      <li>Highlight important breakthroughs that underpin current AI capabilities.</li>
+      <li>Reflect on the ethical and regulatory challenges emerging alongside technological growth.</li>
     </ul>
-  </div>
 
-  <h2>Key Learnings from the Timeline</h2>
+    <h3>3. Detailed Timeline of Milestones</h3>
+    <ul>
+      <li class="timeline-item"><span class="timeline-year">1943:</span> Warren McCulloch and Walter Pitts publish a paper proposing the first conceptual model of artificial neurons, laying the groundwork for neural network research.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1950:</span> Alan Turing publishes “Computing Machinery and Intelligence,” proposing the Turing Test to evaluate a machine's ability to exhibit intelligent behavior indistinguishable from a human.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1956:</span> The Dartmouth Summer Research Project on Artificial Intelligence convenes, formally establishing AI as an academic discipline.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1959:</span> Arthur Samuel coins the term “Machine Learning,” highlighting machines’ ability to learn from data rather than relying on explicit programming.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1966:</span> Joseph Weizenbaum develops ELIZA, one of the first chatbots, which uses pattern matching and substitution methodology to simulate human conversation.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1972:</span> The introduction of the first industrial robots in manufacturing, marking AI’s practical application in automating repetitive tasks.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1980:</span> Expert systems gain popularity, utilizing rule-based AI to support complex decision-making in healthcare, finance, and engineering.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1986:</span> The backpropagation algorithm is popularized, enabling multi-layer neural networks to be effectively trained, which revitalizes interest in neural networks.</li>
+
+      <li class="timeline-item"><span class="timeline-year">1997:</span> IBM’s Deep Blue defeats world chess champion Garry Kasparov in a historic event demonstrating AI's strategic reasoning capabilities.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2000:</span> AI technologies become embedded in consumer products, such as speech recognition software and recommendation engines.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2006:</span> Geoffrey Hinton and collaborators popularize deep learning techniques, leading to breakthroughs in image and speech recognition.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2011:</span> IBM Watson wins the game show Jeopardy!, showcasing advanced natural language processing and information retrieval techniques.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2012:</span> AlexNet wins the ImageNet competition, significantly advancing computer vision by reducing error rates through convolutional neural networks.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2014:</span> Virtual assistants like Apple’s Siri and Amazon’s Alexa become widely used, demonstrating mainstream acceptance of conversational AI.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2016:</span> AlphaGo defeats Lee Sedol, the world champion of the board game Go, using deep reinforcement learning techniques previously thought infeasible.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2018:</span> Google introduces BERT, revolutionizing natural language understanding with contextual embeddings that improve AI’s grasp of human language nuances.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2020:</span> AI accelerates COVID-19 vaccine development and epidemiological modeling, demonstrating its critical role in global health emergencies.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2022:</span> OpenAI launches ChatGPT, a generative language model that transforms human-AI conversational interaction, with wide-ranging implications for communication and productivity.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2023:</span> Generative AI technologies become mainstream, expanding beyond text to include images, audio, and video generation, disrupting creative industries.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2024:</span> Research prioritizes ethical AI development, focusing on mitigating bias, enhancing fairness, and improving transparency in AI systems.</li>
+
+      <li class="timeline-item"><span class="timeline-year">2025:</span> Governments implement regulatory frameworks like the EU AI Act to ensure responsible, safe, and accountable AI deployment worldwide.</li>
+    </ul>
+
+    <h3>4. In-Depth Analysis and Impact</h3>
+    <p>
+      This timeline not only catalogues key events but also illustrates how AI transitioned through several distinct phases:
+    </p>
+    <ul>
+      <li><strong>Symbolic AI and Rule-Based Systems:</strong> Early efforts focused on logic and hand-coded rules but faced scalability issues.</li>
+      <li><strong>Machine Learning Emergence:</strong> Shifted focus to data-driven approaches, enabling systems to learn patterns from examples.</li>
+      <li><strong>Deep Learning Revolution:</strong> Leveraged large datasets and powerful GPUs to train deep neural networks, vastly improving AI performance.</li>
+      <li><strong>Generative AI and Natural Language Understanding:</strong> Recent advances have enabled AI to create human-like text, images, and engage in nuanced conversations.</li>
+    </ul>
+    <p>
+      Each phase brought transformative applications, such as expert systems aiding medical diagnosis, AI mastering complex games, and generative models enabling new forms of creativity. The timeline underscores the interplay between algorithmic advances, hardware improvements, and availability of big data.
+    </p>
+
+    <h3>5. Skills Demonstrated</h3>
+    <ul>
+      <li>Comprehensive research of AI/ML academic literature and industry milestones.</li>
+      <li>Critical evaluation of technology trends and their societal impact.</li>
+      <li>Ability to communicate complex technical developments to diverse audiences.</li>
+      <li>Integration of ethical considerations alongside technological achievements.</li>
+      <li>Designing engaging, educational visual content.</li>
+    </ul>
+
+    <h3>6. Tools & Technologies Used</h3>
+    <ul>
+      <li><strong>PowerPoint & Canva:</strong> For timeline design, graphics, and visual storytelling.</li>
+      <li><strong>Academic Journals & Books:</strong> Sources for verifying milestone accuracy and significance.</li>
+      <li><strong>Web Technologies (HTML/CSS):</strong> To integrate the artifact seamlessly into the online professional portfolio.</li>
+    </ul>
+
+    <h3>7. Reflection</h3>
+    <p>
+      Creating this timeline deepened my appreciation of AI’s complex evolution and highlighted the importance of historical context in understanding current trends. I learned how to present technical content effectively for various audiences and gained insight into balancing enthusiasm for innovation with responsibility towards ethical and regulatory challenges.
+    </p>
+    <p>
+      This artifact stands as a testament to my dedication to lifelong learning and commitment to advancing AI in a thoughtful, impactful way. I am confident that this timeline will support my professional narrative and serve as a valuable resource for peers and mentors alike.
+    </p>
+  </section>
+</main>
+
+<footer role="contentinfo">
   <p>
-    The evolution of AI reflects rapid advancements driven by computational power, big data, and algorithmic innovation. The timeline highlights the transition from symbolic AI to machine learning, deep learning, and now generative AI.
-  </p>
-
-  <h2>Future Trends</h2>
-  <ul>
-    <li>AI Governance and Regulation will become mandatory.</li>
-    <li>Generative AI will be integrated into enterprise operations.</li>
-    <li>Explainable AI (XAI) will become standard in compliance-heavy sectors.</li>
-  </ul>
-
-  <blockquote>
-    “Understanding the past of AI helps us build a responsible and innovative future.”
-  </blockquote>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli |
-    <a href="../index.html">Home</a> |
-    <a href="../bio.html">Bio</a>
+    &copy; 2025 Naga Venkata Satyanarayana Devarapalli |
+    <a href="index.html" tabindex="0">Home</a> |
+    <a href="bio.html" tabindex="0">Bio</a> |
+    <a href="artifact1.html" tabindex="0">Artifact 1</a> |
+    <a href="artifact2.html" tabindex="0" aria-current="page">Artifact 2</a> |
+    <a href="artifact3.html" tabindex="0">Artifact 3</a> |
+    <a href="artifact4.html" tabindex="0">Artifact 4</a> |
+    <a href="artifact5.html" tabindex="0">Artifact 5</a> |
+    <a href="feedback.html" tabindex="0">Feedback</a>
   </p>
 </footer>
-
 </body>
 </html>

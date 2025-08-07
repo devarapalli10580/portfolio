@@ -3,114 +3,234 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About Me – Naga Venkata Satyanarayana Devarapalli</title>
-<link rel="stylesheet" href="css/style.css" />
+<title>Bio | Naga Venkata Satyanarayana Devarapalli</title>
 <style>
-/* Additional styling for Bio page if needed */
-.bio-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #264653;
-}
-.bio-content {
-  max-width: 1000px;
-  margin: 2rem auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  line-height: 1.7;
-}
-.bio-content h2 {
-  color: #2a9d8f;
-  margin-top: 1.5rem;
-}
-.bio-content ul {
-  margin: 1rem 0 1.5rem 1.5rem;
-}
+  /* Reset and base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAFAFA;
+    color: #2C3E50;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a {
+    color: #F39C12;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Header */
+  header {
+    background-color: #223344;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(34, 51, 68, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  header h1 {
+    color: #E6F4EA;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: #E6F4EA;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+  }
+  nav a:hover,
+  nav a:focus {
+    border-bottom-color: #F39C12;
+    color: #F39C12;
+    outline-offset: 2px;
+    outline-color: #F39C12;
+  }
+  /* Main container */
+  main {
+    max-width: 900px;
+    margin: 3rem auto 5rem;
+    padding: 0 2rem;
+  }
+  /* Bio Section */
+  .bio-section {
+    background-color: #E6F4EA;
+    padding: 3rem 3rem 4rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(34, 51, 68, 0.12);
+  }
+  .bio-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  .bio-section p {
+    font-size: 1.2rem;
+    color: #3a4a56;
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+  }
+  /* Subsection headings */
+  .bio-section h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 700;
+    border-left: 8px solid #F39C12;
+    padding-left: 18px;
+  }
+  /* Skills & values list */
+  ul.skills-list {
+    list-style-type: disc;
+    padding-left: 2.5rem;
+    color: #3a4a56;
+    font-weight: 500;
+  }
+  ul.skills-list li {
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+  }
+  /* Footer */
+  footer {
+    background-color: #223344;
+    padding: 2rem 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #E6F4EA;
+    box-shadow: 0 -4px 20px rgba(34, 51, 68, 0.35);
+    user-select: none;
+  }
+  footer a {
+    color: #F39C12;
+    font-weight: 600;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  footer a:hover, footer a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      padding: 0 1rem;
+    }
+    .bio-section {
+      padding: 2rem 1.5rem 3rem;
+    }
+    .bio-section h2 {
+      font-size: 2.1rem;
+    }
+    .bio-section h3 {
+      font-size: 1.7rem;
+    }
+  }
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header>
-  <div class="logo">Naga V. S. Devarapalli</div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bio.html" class="active">Bio</a></li>
-      <li><a href="artifacts/artifact1.html">Artifact 1</a></li>
-      <li><a href="artifacts/artifact2.html">Artifact 2</a></li>
-      <li><a href="artifacts/artifact3.html">Artifact 3</a></li>
-      <li><a href="artifacts/artifact4.html">Artifact 4</a></li>
-      <li><a href="artifacts/artifact5.html">Artifact 5</a></li>
-    </ul>
+<header role="banner">
+  <h1 tabindex="0">Naga Venkata Satyanarayana Devarapalli</h1>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="bio.html" tabindex="0" aria-current="page">Bio</a>
+    <a href="artifact1.html" tabindex="0">Artifact 1</a>
+    <a href="artifact2.html" tabindex="0">Artifact 2</a>
+    <a href="artifact3.html" tabindex="0">Artifact 3</a>
+    <a href="artifact4.html" tabindex="0">Artifact 4</a>
+    <a href="artifact5.html" tabindex="0">Artifact 5</a>
+    <a href="feedback.html" tabindex="0">Feedback</a>
   </nav>
 </header>
 
-<!-- BIO MAIN CONTENT -->
-<section class="bio-content">
-  <h1 class="bio-header">About Me</h1>
-  <p>Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a passionate AI and Data Analytics professional currently pursuing a Master of Science in Artificial Intelligence – Data Analytics at Indiana Wesleyan University. With over 12 years of experience in data-driven roles, my mission is to leverage technology to create intelligent solutions for real-world challenges.</p>
+<main>
+  <section class="bio-section" aria-labelledby="bio-title">
+    <h2 id="bio-title">About Me</h2>
+    <p>
+      Hello! I am <strong>Naga Venkata Satyanarayana Devarapalli</strong>, a passionate and dedicated student focused on Artificial Intelligence, Data Analytics, and Machine Learning. My journey in this exciting field is driven by curiosity, continuous learning, and the desire to create impactful solutions that can transform industries and improve lives.
+    </p>
+    <p>
+      Over the course of my studies at Indiana Wesleyan University (IWU), I have honed my skills in programming, data science, and AI methodologies through both theoretical learning and practical projects. I am committed to expanding my expertise and applying innovative techniques to solve real-world problems.
+    </p>
 
-  <!-- Education -->
-  <h2>Education</h2>
-  <ul>
-    <li><strong>M.S. in Artificial Intelligence – Data Analytics</strong>, Indiana Wesleyan University (In Progress)</li>
-    <li>Bachelor's Degree in Computer Science</li>
-    <li>Certifications:
-      <ul>
-        <li>Google Cloud Certified – Professional Data Engineer</li>
-        <li>IBM AI Engineering Professional Certificate</li>
-        <li>Microsoft Certified: Azure AI Fundamentals</li>
-      </ul>
-    </li>
-  </ul>
+    <h3>Educational Background</h3>
+    <p>
+      I am currently enrolled in a comprehensive AI and Machine Learning program that covers foundational concepts and advanced topics such as deep learning, neural networks, and big data analytics. This education equips me with the tools and knowledge necessary to excel in this rapidly evolving technology landscape.
+    </p>
 
-  <!-- Skills -->
-  <h2>Core Skills</h2>
-  <ul>
-    <li>Programming: Python, R, SQL, JavaScript</li>
-    <li>Machine Learning: Scikit-learn, TensorFlow, Keras</li>
-    <li>Data Visualization: Power BI, Tableau, ggplot2</li>
-    <li>Big Data: Hadoop, Spark</li>
-    <li>Databases: MySQL, PostgreSQL, MongoDB</li>
-    <li>Cloud: AWS, Azure</li>
-  </ul>
+    <h3>Technical Skills</h3>
+    <ul class="skills-list">
+      <li><strong>Programming Languages:</strong> Python, R, SQL</li>
+      <li><strong>Machine Learning Frameworks:</strong> Scikit-learn, TensorFlow, Keras</li>
+      <li><strong>Data Visualization Tools:</strong> Power BI, Tableau, Matplotlib</li>
+      <li><strong>Big Data Technologies:</strong> Hadoop, Spark</li>
+      <li><strong>Cloud Platforms:</strong> Amazon Web Services (AWS), Microsoft Azure</li>
+      <li><strong>Database Management:</strong> MySQL, PostgreSQL</li>
+    </ul>
 
-  <!-- Experience -->
-  <h2>Professional Experience</h2>
-  <h3>Senior Data Analyst – Tech Solutions Inc. (2018–2024)</h3>
-  <ul>
-    <li>Designed interactive dashboards for sales analytics improving forecasting accuracy by 20%.</li>
-    <li>Built machine learning models for predictive insights in business operations.</li>
-  </ul>
+    <h3>Professional Aspirations</h3>
+    <p>
+      My goal is to become a skilled AI practitioner capable of designing and deploying intelligent systems that optimize processes and provide actionable insights. I am passionate about applying AI ethically and responsibly, ensuring fairness, transparency, and positive societal impact.
+    </p>
+    <p>
+      I aspire to work in dynamic, collaborative environments where innovation and continuous learning are encouraged. Whether in healthcare, finance, education, or industry, I want to contribute by harnessing data and AI to solve complex challenges.
+    </p>
 
-  <h3>Business Intelligence Specialist – Global Finance Corp. (2014–2018)</h3>
-  <ul>
-    <li>Automated data workflows reducing manual processing time by 35%.</li>
-    <li>Developed customer segmentation models for targeted marketing.</li>
-  </ul>
+    <h3>Core Values and Strengths</h3>
+    <ul class="skills-list">
+      <li>Strong analytical and critical thinking skills</li>
+      <li>Effective communicator and team collaborator</li>
+      <li>Commitment to ethical AI and responsible technology use</li>
+      <li>Adaptability and eagerness to learn new technologies</li>
+      <li>Problem-solving mindset with attention to detail</li>
+    </ul>
 
-  <!-- Contact -->
-  <h2>Contact & Social Links</h2>
-  <p>Email: <a href="mailto:tone_satya@yahoo.co.in">tone_satya@yahoo.co.in</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/naga-venkata-satyanarayana-devarapalli" target="_blank">linkedin.com/in/naga-venkata-satyanarayana-devarapalli</a></p>
-  <p>GitHub: <a href="https://github.com/naga-venkata" target="_blank">github.com/naga-venkata</a></p>
-</section>
+    <h3>Outside the Classroom</h3>
+    <p>
+      Beyond academics, I enjoy participating in AI communities, attending workshops, and exploring the latest research in machine learning. I also engage in coding challenges and contribute to open-source projects to sharpen my skills.
+    </p>
+    <p>
+      When not immersed in technology, I value spending time with family and friends, exploring nature, and pursuing creative outlets like writing and photography.
+    </p>
+  </section>
+</main>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Naga Venkata Satyanarayana Devarapalli | 
-    <a href="index.html">Home</a> | 
-    <a href="bio.html">Bio</a> | 
-    <a href="artifacts/artifact1.html">Artifact 1</a> | 
-    <a href="artifacts/artifact2.html">Artifact 2</a> | 
-    <a href="artifacts/artifact3.html">Artifact 3</a> | 
-    <a href="artifacts/artifact4.html">Artifact 4</a> | 
-    <a href="artifacts/artifact5.html">Artifact 5</a>
+<footer role="contentinfo">
+  <p>
+    &copy; 2025 Naga Venkata Satyanarayana Devarapalli |
+    <a href="index.html" tabindex="0">Home</a> |
+    <a href="bio.html" tabindex="0" aria-current="page">Bio</a> |
+    <a href="artifact1.html" tabindex="0">Artifact 1</a> |
+    <a href="artifact2.html" tabindex="0">Artifact 2</a> |
+    <a href="artifact3.html" tabindex="0">Artifact 3</a> |
+    <a href="artifact4.html" tabindex="0">Artifact 4</a> |
+    <a href="artifact5.html" tabindex="0">Artifact 5</a> |
+    <a href="feedback.html" tabindex="0">Feedback</a>
   </p>
 </footer>
-
 </body>
 </html>

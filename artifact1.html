@@ -1,102 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artifact 1 - AI Lab: No-Code Chatbot Development</title>
-<link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Artifact 1: AI Lab Chatbot | Naga Venkata Satyanarayana Devarapalli</title>
+<style>
+  /* Reset and base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAFAFA;
+    color: #2C3E50;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a {
+    color: #F39C12;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Header */
+  header {
+    background-color: #223344;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(34, 51, 68, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  header h1 {
+    color: #E6F4EA;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: #E6F4EA;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+  }
+  nav a:hover,
+  nav a:focus {
+    border-bottom-color: #F39C12;
+    color: #F39C12;
+    outline-offset: 2px;
+    outline-color: #F39C12;
+  }
+  /* Main container */
+  main {
+    max-width: 900px;
+    margin: 3rem auto 5rem;
+    padding: 0 2rem;
+  }
+  /* Artifact section */
+  .artifact-section {
+    background-color: #E6F4EA;
+    padding: 3rem 3rem 4rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(34, 51, 68, 0.12);
+  }
+  .artifact-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  .artifact-section h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 700;
+    border-left: 8px solid #F39C12;
+    padding-left: 18px;
+  }
+  .artifact-section p, 
+  .artifact-section ul,
+  .artifact-section pre {
+    font-size: 1.1rem;
+    color: #3a4a56;
+    line-height: 1.7;
+  }
+  ul {
+    padding-left: 2.5rem;
+    list-style-type: disc;
+  }
+  ul li {
+    margin-bottom: 0.7rem;
+  }
+  pre {
+    background-color: #fff3e0;
+    border-left: 5px solid #F39C12;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: Consolas, 'Courier New', monospace;
+    margin: 1rem 0;
+  }
+  /* Images */
+  .artifact-images {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .artifact-images img {
+    max-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(34, 51, 68, 0.15);
+    transition: transform 0.3s ease;
+  }
+  .artifact-images img:hover,
+  .artifact-images img:focus {
+    transform: scale(1.05);
+    outline: none;
+  }
+  /* Footer */
+  footer {
+    background-color: #223344;
+    padding: 2rem 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #E6F4EA;
+    box-shadow: 0 -4px 20px rgba(34, 51, 68, 0.35);
+    user-select: none;
+  }
+  footer a {
+    color: #F39C12;
+    font-weight: 600;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  footer a:hover, footer a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      padding: 0 1rem;
+    }
+    .artifact-section {
+      padding: 2rem 1.5rem 3rem;
+    }
+    .artifact-section h2 {
+      font-size: 2.1rem;
+    }
+    .artifact-section h3 {
+      font-size: 1.7rem;
+    }
+    .artifact-images img {
+      max-width: 100%;
+    }
+  }
+</style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header>
-  <nav>
-    <div class="logo">Naga Venkata Satyanarayana Devarapalli</div>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../bio.html">Bio</a></li>
-      <li><a href="artifact1.html" class="active">Artifact 1</a></li>
-      <li><a href="artifact2.html">Artifact 2</a></li>
-      <li><a href="artifact3.html">Artifact 3</a></li>
-      <li><a href="artifact4.html">Artifact 4</a></li>
-      <li><a href="artifact5.html">Artifact 5</a></li>
-    </ul>
+<header role="banner">
+  <h1 tabindex="0">Naga Venkata Satyanarayana Devarapalli</h1>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="bio.html" tabindex="0">Bio</a>
+    <a href="artifact1.html" tabindex="0" aria-current="page">Artifact 1</a>
+    <a href="artifact2.html" tabindex="0">Artifact 2</a>
+    <a href="artifact3.html" tabindex="0">Artifact 3</a>
+    <a href="artifact4.html" tabindex="0">Artifact 4</a>
+    <a href="artifact5.html" tabindex="0">Artifact 5</a>
+    <a href="feedback.html" tabindex="0">Feedback</a>
   </nav>
 </header>
 
-<!-- MAIN CONTENT -->
-<section class="bio-section">
-  <h1>Artifact 1: AI Lab - No-Code Chatbot Assistant Development</h1>
+<main>
+  <section class="artifact-section" aria-labelledby="artifact1-title">
+    <h2 id="artifact1-title">Artifact 1: AI Lab Chatbot - No-Code Chatbot Assistant Development</h2>
 
-  <p><strong>Objective:</strong> This project demonstrates expertise in building an AI chatbot using <em>no-code platforms</em>, showcasing efficiency, usability, and quick deployment strategies.</p>
+    <h3>1. Project Overview</h3>
+    <p>
+      This artifact represents the practical development of an AI chatbot using no-code platforms, specifically Botpress and Dialogflow, with additional integrations from Mizou AI and Chatbase. The goal was to create an intelligent assistant that automates responses to frequent questions and enhances user engagement within educational or business environments.
+    </p>
+    <p>
+      The chatbot allows users with limited programming experience to quickly deploy AI-powered conversational agents, demonstrating how no-code solutions democratize AI development.
+    </p>
 
-  <h2>1. Project Overview</h2>
-  <p>This artifact represents a practical approach to creating an AI chatbot using no-code tools like Botpress and Dialogflow. The purpose is to enable non-technical users to adopt conversational AI for business and educational purposes.</p>
+    <h3>2. Objective</h3>
+    <p>
+      The objective of this project was to showcase proficiency in building AI chatbots without traditional coding by leveraging user-friendly platforms. It aims to demonstrate:
+    </p>
+    <ul>
+      <li>Rapid prototyping and deployment of functional chatbots.</li>
+      <li>Effective handling of common user interactions.</li>
+      <li>Integration of NLP capabilities for natural conversation flow.</li>
+      <li>Awareness and application of ethical and compliance standards.</li>
+    </ul>
 
-  <h2>2. Tools & Technologies Used</h2>
-  <ul>
-    <li><strong>Botpress:</strong> For building conversation flows.</li>
-    <li><strong>Dialogflow:</strong> NLP-powered chatbot with Google AI capabilities.</li>
-    <li><strong>Mizou AI:</strong> For API integration and advanced logic.</li>
-    <li><strong>Chatbase:</strong> Analytics for monitoring performance.</li>
-  </ul>
+    <h3>3. Tools & Technologies Used</h3>
+    <ul>
+      <li><strong>Botpress:</strong> Open-source platform to design conversation flows visually.</li>
+      <li><strong>Dialogflow:</strong> Google's NLP platform for intent recognition and entity extraction.</li>
+      <li><strong>Mizou AI:</strong> API integration to extend chatbot logic and capabilities.</li>
+      <li><strong>Chatbase:</strong> Analytics platform to monitor chatbot interactions and improve performance.</li>
+      <li><strong>HTML/CSS:</strong> Embedding and customizing chatbot UI on web pages.</li>
+      <li><strong>GitHub:</strong> Version control and repository hosting.</li>
+    </ul>
 
-  <h2>3. Key Features Implemented</h2>
-  <ol>
-    <li><strong>Greeting & Introduction:</strong> Personalized welcome messages.</li>
-    <li><strong>FAQ Automation:</strong> Automated answers for frequently asked questions.</li>
-    <li><strong>Fallback Responses:</strong> Handling unrecognized inputs.</li>
-    <li><strong>Multi-Channel Integration:</strong> Deployed on websites and social media.</li>
-  </ol>
+    <h3>4. Key Features Implemented</h3>
+    <ul>
+      <li><strong>Greeting & Introduction:</strong> The chatbot welcomes users with personalized messages, setting a friendly tone.</li>
+      <li><strong>FAQ Automation:</strong> Automatically answers frequently asked questions, reducing response time.</li>
+      <li><strong>Fallback Responses:</strong> Handles unrecognized inputs gracefully with helpful prompts.</li>
+      <li><strong>Multi-Channel Integration:</strong> Deployment on websites and social media platforms to reach a broad audience.</li>
+      <li><strong>Analytics Integration:</strong> Uses Chatbase to track and analyze user interactions for continual improvement.</li>
+    </ul>
 
-  <h2>4. Development Workflow</h2>
-  <p>The development process included:</p>
-  <ul>
-    <li>Requirement analysis and scope definition.</li>
-    <li>Platform selection (Botpress/Dialogflow).</li>
-    <li>Conversation design and intent setup.</li>
-    <li>Training and testing with real queries.</li>
-    <li>Deployment and monitoring.</li>
-  </ul>
+    <h3>5. Development Workflow</h3>
+    <ol>
+      <li><strong>Requirement Analysis:</strong> Defined scope and use cases for the chatbot.</li>
+      <li><strong>Platform Selection:</strong> Evaluated Botpress and Dialogflow for suitability.</li>
+      <li><strong>Conversation Design:</strong> Created dialogue flows, intents, and entities based on user queries.</li>
+      <li><strong>Training & Testing:</strong> Conducted multiple rounds of training with real user inputs to improve accuracy.</li>
+      <li><strong>Deployment:</strong> Embedded chatbot on a website and tested multi-channel responses.</li>
+      <li><strong>Monitoring & Optimization:</strong> Leveraged Chatbase analytics for performance tuning.</li>
+    </ol>
 
-  <blockquote>
-    "No-code AI solutions are powerful tools for democratizing artificial intelligence, making advanced technology accessible to everyone."
-  </blockquote>
-
-  <h2>5. Sample Code Snippet (JSON for Chatbot Intent)</h2>
-  <pre>
-{
+    <h3>6. Sample Code Snippet (JSON for Chatbot Intent)</h3>
+    <pre>{
   "intents": [
     {
       "name": "greeting",
-      "examples": ["Hello", "Hi", "Hey"],
-      "responses": ["Hello! How can I assist you today?"]
+      "examples": ["Hello", "Hi", "Hey", "Good morning"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! What can I help you with?"]
+    },
+    {
+      "name": "faq_hours",
+      "examples": ["What are your working hours?", "When are you open?", "Business hours?"],
+      "responses": ["We operate Monday to Friday, 9 AM to 6 PM."]
     }
   ]
-}
-  </pre>
+}</pre>
 
-  <h2>6. Outcomes & Learnings</h2>
-  <ul>
-    <li>Improved understanding of chatbot architecture and NLP basics.</li>
-    <li>Developed practical knowledge in no-code platforms.</li>
-    <li>Learned techniques for optimizing user interactions using analytics.</li>
-  </ul>
+    <h3>7. Outcomes & Learnings</h3>
+    <ul>
+      <li>Developed hands-on experience with no-code AI chatbot platforms.</li>
+      <li>Improved understanding of conversational AI architectures and NLP basics.</li>
+      <li>Learned how to analyze chatbot interaction data to enhance user experience.</li>
+      <li>Gained skills in cross-platform deployment and integration.</li>
+      <li>Appreciated the importance of balancing rapid development with ethical considerations.</li>
+    </ul>
 
-  <h2>7. Ethical & Compliance Considerations</h2>
-  <p>Ensured GDPR and HIPAA compliance by anonymizing data and seeking user consent before storing conversations. Security protocols were followed to safeguard user information.</p>
+    <h3>8. Ethical & Compliance Considerations</h3>
+    <p>
+      Ensuring user privacy and compliance was a priority throughout development. The chatbot:
+    </p>
+    <ul>
+      <li>Adheres to GDPR and HIPAA standards by anonymizing data collection.</li>
+      <li>Seeks user consent before storing personal conversation data.</li>
+      <li>Implements secure data handling protocols to protect sensitive information.</li>
+      <li>Provides clear disclaimers about data usage and user rights.</li>
+    </ul>
 
-  <h2>8. Reflection</h2>
-  <p>This project emphasized usability and inclusivity, enabling non-technical stakeholders to leverage AI without coding. It highlighted the balance between rapid development and maintaining ethical AI standards.</p>
-</section>
+    <h3>9. Reflection</h3>
+    <p>
+      This project was a valuable learning experience that highlighted how no-code AI platforms can empower users without programming backgrounds to build impactful AI tools. It taught me the importance of intuitive design, ethical AI use, and ongoing optimization based on real user data.
+    </p>
+    <p>
+      I realized that chatbot success depends not only on technical accuracy but also on user trust and engagement, which comes from transparency and respectful data handling. This balance between innovation and responsibility will guide my future AI projects.
+    </p>
 
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 Naga Venkata Satyanarayana Devarapalli | 
-    <a href="../index.html">Home</a> | 
-    <a href="../bio.html">Bio</a>
+    <h3>10. Project Screenshots</h3>
+    <div class="artifact-images" aria-label="Screenshots of AI Lab Chatbot interface">
+      <img src="images/chatbot-interface1.png" alt="Botpress conversation flow editor showing intents and dialogue nodes" />
+      <img src="images/chatbot-interface2.png" alt="Chatbot live interface embedded on a web page displaying a welcome message" />
+      <img src="images/chatbot-interface3.png" alt="Chatbase dashboard showing analytics data for chatbot user interactions" />
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <p>
+    &copy; 2025 Naga Venkata Satyanarayana Devarapalli |
+    <a href="index.html" tabindex="0">Home</a> |
+    <a href="bio.html" tabindex="0">Bio</a> |
+    <a href="artifact1.html" tabindex="0" aria-current="page">Artifact 1</a> |
+    <a href="artifact2.html" tabindex="0">Artifact 2</a> |
+    <a href="artifact3.html" tabindex="0">Artifact 3</a> |
+    <a href="artifact4.html" tabindex="0">Artifact 4</a> |
+    <a href="artifact5.html" tabindex="0">Artifact 5</a> |
+    <a href="feedback.html" tabindex="0">Feedback</a>
   </p>
 </footer>
-
 </body>
 </html>

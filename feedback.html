@@ -1,0 +1,314 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio Review Checklist & Feedback | Naga Venkata Satyanarayana Devarapalli</title>
+<style>
+  /* Reset and base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAFAFA;
+    color: #2C3E50;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a {
+    color: #F39C12;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Header */
+  header {
+    background-color: #223344;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(34, 51, 68, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  header h1 {
+    color: #E6F4EA;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: #E6F4EA;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+  }
+  nav a:hover,
+  nav a:focus,
+  nav a[aria-current="page"] {
+    border-bottom-color: #F39C12;
+    color: #F39C12;
+    outline-offset: 2px;
+    outline-color: #F39C12;
+  }
+  /* Main container */
+  main {
+    max-width: 900px;
+    margin: 3rem auto 5rem;
+    padding: 0 2rem;
+  }
+  /* Feedback form section */
+  section.feedback-section {
+    background-color: #E6F4EA;
+    padding: 3rem 3rem 4rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(34, 51, 68, 0.12);
+  }
+  section.feedback-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  section.feedback-section h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 700;
+    border-left: 8px solid #F39C12;
+    padding-left: 18px;
+  }
+  label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 0.6rem;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .checkbox-group {
+    margin-bottom: 1.5rem;
+  }
+  textarea {
+    width: 100%;
+    min-height: 80px;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  button {
+    background-color: #F39C12;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 2rem auto 0;
+  }
+  button:hover,
+  button:focus {
+    background-color: #c67e0a;
+    outline: none;
+  }
+  .instructions {
+    font-style: italic;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #3a4a56;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      padding: 0 1rem;
+    }
+    section.feedback-section {
+      padding: 2rem 1.5rem 3rem;
+    }
+    section.feedback-section h2 {
+      font-size: 2.1rem;
+    }
+    section.feedback-section h3 {
+      font-size: 1.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header role="banner">
+  <h1 tabindex="0">Naga Venkata Satyanarayana Devarapalli</h1>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="bio.html" tabindex="0">Bio</a>
+    <a href="artifact1.html" tabindex="0">Artifact 1</a>
+    <a href="artifact2.html" tabindex="0">Artifact 2</a>
+    <a href="artifact3.html" tabindex="0">Artifact 3</a>
+    <a href="artifact4.html" tabindex="0">Artifact 4</a>
+    <a href="artifact5.html" tabindex="0">Artifact 5</a>
+    <a href="feedback.html" tabindex="0" aria-current="page">Feedback</a>
+  </nav>
+</header>
+
+<main>
+  <section class="feedback-section" aria-labelledby="feedback-title">
+    <h2 id="feedback-title">Portfolio Review Checklist & Feedback</h2>
+
+    <p class="instructions">
+      Please evaluate each criterion below by checking the box if it is met. Use the comment boxes to provide constructive feedback. Your insights help improve the portfolio quality.
+    </p>
+
+    <form id="reviewForm" action="#" method="POST" aria-label="Portfolio Review Feedback Form">
+
+      <section aria-labelledby="overall-title">
+        <h3 id="overall-title">Overall Portfolio</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="url_accessible" /> The portfolio is accessible through the URL.</label>
+          <label><input type="checkbox" name="links_working" /> Links in the portfolio work as designed.</label>
+          <label><input type="checkbox" name="bio_present" /> A professional bio is included somewhere in the portfolio.</label>
+          <label><input type="checkbox" name="personal_value" /> Personal Value Proposition clearly stated (unique value as AI/ML student and future leader).</label>
+          <label><input type="checkbox" name="target_audience" /> Target audience identified and portfolio relevance explained.</label>
+        </div>
+        <label for="overall_comments">Comments / Suggestions</label>
+        <textarea id="overall_comments" name="overall_comments" placeholder="Your feedback on the overall portfolio..."></textarea>
+      </section>
+
+      <section aria-labelledby="artifact1-title">
+        <h3 id="artifact1-title">Artifact 1: AI & ML Timelines from Residency</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="artifact1_title" /> Artifact title is clearly stated.</label>
+          <label><input type="checkbox" name="artifact1_intro" /> Introduction is clear and informative.</label>
+          <label><input type="checkbox" name="artifact1_description" /> Description thoroughly explains the artifact.</label>
+          <label><input type="checkbox" name="artifact1_objective" /> Objectives are well defined.</label>
+          <label><input type="checkbox" name="artifact1_process" /> Process/methodology is detailed.</label>
+          <label><input type="checkbox" name="artifact1_tools" /> Tools and technologies used are listed.</label>
+          <label><input type="checkbox" name="artifact1_value" /> Value proposition of the artifact is articulated.</label>
+          <label><input type="checkbox" name="artifact1_unique" /> Unique value of the artifact is highlighted.</label>
+          <label><input type="checkbox" name="artifact1_relevance" /> Relevance to AI/ML competencies is clear.</label>
+          <label><input type="checkbox" name="artifact1_references" /> References (if used) are properly cited.</label>
+        </div>
+        <label for="artifact1_comments">Comments / Suggestions</label>
+        <textarea id="artifact1_comments" name="artifact1_comments" placeholder="Your feedback on Artifact 1..."></textarea>
+      </section>
+
+      <section aria-labelledby="artifact2-title">
+        <h3 id="artifact2-title">Artifact 2: Class Learning Showcase</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="artifact2_title" /> Artifact title is clearly stated.</label>
+          <label><input type="checkbox" name="artifact2_intro" /> Introduction is clear and informative.</label>
+          <label><input type="checkbox" name="artifact2_description" /> Description thoroughly explains the artifact.</label>
+          <label><input type="checkbox" name="artifact2_objective" /> Objectives are well defined.</label>
+          <label><input type="checkbox" name="artifact2_process" /> Process/methodology is detailed.</label>
+          <label><input type="checkbox" name="artifact2_tools" /> Tools and technologies used are listed.</label>
+          <label><input type="checkbox" name="artifact2_value" /> Value proposition of the artifact is articulated.</label>
+          <label><input type="checkbox" name="artifact2_unique" /> Unique value of the artifact is highlighted.</label>
+          <label><input type="checkbox" name="artifact2_relevance" /> Relevance to AI/ML competencies is clear.</label>
+          <label><input type="checkbox" name="artifact2_references" /> References (if used) are properly cited.</label>
+        </div>
+        <label for="artifact2_comments">Comments / Suggestions</label>
+        <textarea id="artifact2_comments" name="artifact2_comments" placeholder="Your feedback on Artifact 2..."></textarea>
+      </section>
+
+      <section aria-labelledby="artifact3-title">
+        <h3 id="artifact3-title">Artifact 3: Class Learning Showcase</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="artifact3_title" /> Artifact title is clearly stated.</label>
+          <label><input type="checkbox" name="artifact3_intro" /> Introduction is clear and informative.</label>
+          <label><input type="checkbox" name="artifact3_description" /> Description thoroughly explains the artifact.</label>
+          <label><input type="checkbox" name="artifact3_objective" /> Objectives are well defined.</label>
+          <label><input type="checkbox" name="artifact3_process" /> Process/methodology is detailed.</label>
+          <label><input type="checkbox" name="artifact3_tools" /> Tools and technologies used are listed.</label>
+          <label><input type="checkbox" name="artifact3_value" /> Value proposition of the artifact is articulated.</label>
+          <label><input type="checkbox" name="artifact3_unique" /> Unique value of the artifact is highlighted.</label>
+          <label><input type="checkbox" name="artifact3_relevance" /> Relevance to AI/ML competencies is clear.</label>
+          <label><input type="checkbox" name="artifact3_references" /> References (if used) are properly cited.</label>
+        </div>
+        <label for="artifact3_comments">Comments / Suggestions</label>
+        <textarea id="artifact3_comments" name="artifact3_comments" placeholder="Your feedback on Artifact 3..."></textarea>
+      </section>
+
+      <section aria-labelledby="artifact4-title">
+        <h3 id="artifact4-title">Artifact 4: Data Challenge Scenarios</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="artifact4_title" /> Artifact title is clearly stated.</label>
+          <label><input type="checkbox" name="artifact4_intro" /> Introduction is clear and informative.</label>
+          <label><input type="checkbox" name="artifact4_description" /> Description thoroughly explains the artifact.</label>
+          <label><input type="checkbox" name="artifact4_objective" /> Objectives are well defined.</label>
+          <label><input type="checkbox" name="artifact4_process" /> Process/methodology is detailed.</label>
+          <label><input type="checkbox" name="artifact4_tools" /> Tools and technologies used are listed.</label>
+          <label><input type="checkbox" name="artifact4_value" /> Value proposition of the artifact is articulated.</label>
+          <label><input type="checkbox" name="artifact4_unique" /> Unique value of the artifact is highlighted.</label>
+          <label><input type="checkbox" name="artifact4_relevance" /> Relevance to AI/ML competencies is clear.</label>
+          <label><input type="checkbox" name="artifact4_references" /> References (if used) are properly cited.</label>
+        </div>
+        <label for="artifact4_comments">Comments / Suggestions</label>
+        <textarea id="artifact4_comments" name="artifact4_comments" placeholder="Your feedback on Artifact 4..."></textarea>
+      </section>
+
+      <section aria-labelledby="artifact5-title">
+        <h3 id="artifact5-title">Artifact 5: Model Training & Optimization</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="artifact5_title" /> Artifact title is clearly stated.</label>
+          <label><input type="checkbox" name="artifact5_intro" /> Introduction is clear and informative.</label>
+          <label><input type="checkbox" name="artifact5_description" /> Description thoroughly explains the artifact.</label>
+          <label><input type="checkbox" name="artifact5_objective" /> Objectives are well defined.</label>
+          <label><input type="checkbox" name="artifact5_process" /> Process/methodology is detailed.</label>
+          <label><input type="checkbox" name="artifact5_tools" /> Tools and technologies used are listed.</label>
+          <label><input type="checkbox" name="artifact5_value" /> Value proposition of the artifact is articulated.</label>
+          <label><input type="checkbox" name="artifact5_unique" /> Unique value of the artifact is highlighted.</label>
+          <label><input type="checkbox" name="artifact5_relevance" /> Relevance to AI/ML competencies is clear.</label>
+          <label><input type="checkbox" name="artifact5_references" /> References (if used) are properly cited.</label>
+        </div>
+        <label for="artifact5_comments">Comments / Suggestions</label>
+        <textarea id="artifact5_comments" name="artifact5_comments" placeholder="Your feedback on Artifact 5..."></textarea>
+      </section>
+
+      <button type="submit" aria-label="Submit your review and feedback">Submit Review</button>
+
+    </form>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <p>
+    &copy; 2025 Naga Venkata Satyanarayana Devarapalli |
+    <a href="index.html" tabindex="0">Home</a> |
+    <a href="bio.html" tabindex="0">Bio</a> |
+    <a href="artifact1.html" tabindex="0">Artifact 1</a> |
+    <a href="artifact2.html" tabindex="0">Artifact 2</a> |
+    <a href="artifact3.html" tabindex="0">Artifact 3</a> |
+    <a href="artifact4.html" tabindex="0">Artifact 4</a> |
+    <a href="artifact5.html" tabindex="0">Artifact 5</a> |
+    <a href="feedback.html" tabindex="0" aria-current="page">Feedback</a>
+  </p>
+</footer>
+</body>
+</html>
