@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LightGBM: Predicting Student Performance | Naga Venkata Satyanarayana Devarapalli</title>
+<style>
+  /* Reset and base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAFAFA;
+    color: #2C3E50;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a {
+    color: #F39C12;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Header */
+  header {
+    background-color: #223344;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px rgba(34, 51, 68, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  header h1 {
+    color: #E6F4EA;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: #E6F4EA;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+  }
+  nav a:hover,
+  nav a:focus,
+  nav a[aria-current="page"] {
+    border-bottom-color: #F39C12;
+    color: #F39C12;
+    outline-offset: 2px;
+    outline-color: #F39C12;
+  }
+  /* Main container */
+  main {
+    max-width: 900px;
+    margin: 3rem auto 5rem;
+    padding: 0 2rem;
+  }
+  /* Artifact section */
+  .artifact-section {
+    background-color: #E6F4EA;
+    padding: 3rem 3rem 4rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(34, 51, 68, 0.12);
+  }
+  .artifact-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  .artifact-section h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #223344;
+    font-weight: 700;
+    border-left: 8px solid #F39C12;
+    padding-left: 18px;
+  }
+  .artifact-section p,
+  .artifact-section ul,
+  .artifact-section ol {
+    font-size: 1.1rem;
+    color: #3a4a56;
+    line-height: 1.7;
+  }
+  ul, ol {
+    padding-left: 2.5rem;
+  }
+  ul li, ol li {
+    margin-bottom: 0.7rem;
+  }
+  /* Decision tree diagram */
+  .tree-diagram {
+    background-color: #fff3e0;
+    border-left: 5px solid #F39C12;
+    padding: 1.2rem 1.8rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 1rem;
+    color: #3a4a56;
+    margin: 1rem 0 1.6rem;
+    white-space: pre;
+    line-height: 1.6;
+  }
+  /* References */
+  .references {
+    font-size: 1rem;
+    color: #3a4a56;
+    line-height: 1.75;
+    padding-left: 2rem;
+    text-indent: -2rem;
+    list-style: none;
+  }
+  .references li {
+    margin-bottom: 1rem;
+  }
+  /* Footer */
+  footer {
+    background-color: #223344;
+    padding: 2rem 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #E6F4EA;
+    box-shadow: 0 -4px 20px rgba(34, 51, 68, 0.35);
+    user-select: none;
+  }
+  footer a {
+    color: #F39C12;
+    font-weight: 600;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  footer a:hover, footer a:focus {
+    color: #c67e0a;
+    outline: none;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      padding: 0 1rem;
+    }
+    .artifact-section {
+      padding: 2rem 1.5rem 3rem;
+    }
+    .artifact-section h2 {
+      font-size: 2.1rem;
+    }
+    .artifact-section h3 {
+      font-size: 1.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header role="banner">
+  <h1 tabindex="0">Naga Venkata Satyanarayana Devarapalli</h1>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="bio.html" tabindex="0">Bio</a>
+    <a href="artifact1.html" tabindex="0">Artifact 1</a>
+    <a href="artifact2.html" tabindex="0">Artifact 2</a>
+    <a href="artifact3.html" tabindex="0">Artifact 3</a>
+    <a href="artifact4.html" tabindex="0">Artifact 4</a>
+    <a href="artifact5.html" tabindex="0">Artifact 5</a>
+    <a href="feedback.html" tabindex="0">Feedback</a>
+    <a href="lightgbm-project.html" tabindex="0" aria-current="page">LightGBM Project</a>
+  </nav>
+</header>
+
+<main>
+  <section class="artifact-section" aria-labelledby="project-title">
+    <h2 id="project-title">Applying LightGBM to Predict Student Performance in the Education Sector</h2>
+
+    <h3>Introduction</h3>
+    <p>
+      The education sector plays a critical role in shaping individual success and societal development; however, many institutions face ongoing challenges in ensuring consistent student performance and retention. A significant issue in this domain is identifying students at risk of underperforming before their academic outcomes decline. Research in learning analytics shows that large volumes of student data—such as attendance, grades, and engagement—can be used to detect patterns associated with academic success or failure. Predictive modeling has therefore become increasingly relevant in education, enabling institutions to shift from reactive to proactive decision-making by identifying at-risk students early and providing timely support interventions (Alkan et al., 2025).
+    </p>
+    <p>
+      This project focuses on applying a decision tree-based machine learning model, specifically LightGBM (Light Gradient Boosting Machine), to predict student performance. In today's data-driven educational environment, machine learning models are valuable tools for analyzing structured student data and uncovering hidden relationships between variables. Decision tree-based algorithms are particularly well-suited for this task due to their interpretability, efficiency, and ability to handle both numerical and categorical data (Matzavela &amp; Alepis, 2021). Furthermore, advanced ensemble techniques such as LightGBM improve predictive accuracy by iteratively learning from errors and capturing complex patterns in student behavior, making them highly effective for classification problems in education (Seo et al., 2024).
+    </p>
+    <p>
+      The primary focus of this project is to explore the application of decision tree-based models to the real-world challenge of predicting student performance in the education sector. The goal is to demonstrate how these models can support data-driven decision-making, enable early intervention strategies, and improve overall student outcomes. While the project emphasizes conceptual understanding, it also highlights the practical implications of decision tree-based classification techniques for addressing complex educational challenges.
+    </p>
+
+    <h3>Business Problem: Predicting At-Risk Students in Educational Institutions</h3>
+    <p>
+      Educational institutions face a persistent challenge in identifying students who are at risk of underperforming or failing courses before it is too late to intervene. Traditionally, student performance issues are recognized only after midterm or final exam results, leaving limited time for corrective action.
+    </p>
+    <p>
+      The core problem is: <strong>Institutions lack a proactive, data-driven system to detect early warning signs of academic risk among students.</strong>
+    </p>
+    <p>This issue arises due to multiple factors:</p>
+    <ul>
+      <li>Large class sizes make individual monitoring difficult</li>
+      <li>Student performance depends on multiple variables (attendance, engagement, prior grades, etc.)</li>
+      <li>Early warning signals are often subtle and overlooked</li>
+    </ul>
+
+    <h3>Context</h3>
+    <p>
+      Modern educational systems generate large amounts of student data, including:
+    </p>
+    <ul>
+      <li>Attendance records</li>
+      <li>Assignment submissions</li>
+      <li>Exam scores</li>
+      <li>Learning management system (LMS) activity</li>
+    </ul>
+    <p>
+      However, this data is often underutilized and not systematically analyzed to predict future performance.
+    </p>
+
+    <h3>Significance of the Problem</h3>
+    <p>Failure to identify at-risk students early leads to:</p>
+    <ul>
+      <li>Increased dropout rates</li>
+      <li>Lower academic success and graduation rates</li>
+      <li>Reduced institutional reputation</li>
+      <li>Financial and emotional impact on students</li>
+    </ul>
+    <p>On the other hand, early identification enables timely interventions, such as:</p>
+    <ul>
+      <li>Academic tutoring</li>
+      <li>Personalized mentoring</li>
+      <li>Counseling support</li>
+    </ul>
+
+    <h3>Business Objective</h3>
+    <p>
+      The goal is to: <strong>Develop a predictive system that identifies students at risk of underperforming early in the academic term, enabling educators to take proactive, targeted actions.</strong>
+    </p>
+    <p>Solving this problem helps:</p>
+    <ul>
+      <li>Improve student outcomes and retention</li>
+      <li>Enable data-driven decision-making in education</li>
+      <li>Optimize resource allocation for student support services</li>
+    </ul>
+
+    <h3>AI Solution: Decision Tree-Based Model</h3>
+    <p>
+      To address the problem of identifying students at risk of underperforming, this project uses LightGBM (Light Gradient Boosting Machine), a decision tree-based model widely used in predictive modeling for its speed, interpretability, and ability to handle structured data with both numerical and categorical variables. LightGBM works by splitting the student dataset into smaller subsets based on feature values, aiming to maximize class purity and group students with similar behavioral and academic patterns.
+    </p>
+    <p>
+      <strong>LightGBM</strong> is a highly efficient gradient boosting method that builds decision trees sequentially, with each new tree correcting the errors made by the previous one. It offers native support for categorical features and has proven to be highly effective for classification problems involving academic and demographic data (Ke et al., 2017).
+    </p>
+    <p>
+      In this project, student data such as attendance rate, assignment submission rate, LMS login frequency, quiz and midterm scores, prior-semester GPA, course load, financial aid status, and first-generation student indicator will serve as input features to predict whether a student is at risk of underperforming.
+    </p>
+
+    <h3>Why This Model Is a Good Fit</h3>
+    <p>
+      Predicting student performance isn't straightforward because it depends on many factors like study habits, attendance, and background. These factors don't follow simple patterns, which makes model selection important. For this project, a decision tree-based model like LightGBM is a strong choice because it can handle these complex relationships effectively.
+    </p>
+    <p>
+      Student performance doesn't always increase in a predictable way. For example, studying more hours doesn't always guarantee better results—other factors like stress or attendance can change the outcome. Decision tree models handle this well by breaking the data into smaller groups based on conditions, instead of forcing a straight-line relationship like some basic models do. This helps uncover patterns that might otherwise be missed.
+    </p>
+    <p>
+      Another key advantage is interpretability. In education, it's important to understand why a prediction is made. Teachers and administrators need clear explanations before taking action. Even though LightGBM is more advanced, it still allows us to see which factors matter most, such as attendance or previous grades. This makes the results easier to trust and apply in real situations.
+    </p>
+    <p>
+      LightGBM also works well with the type of data used in this project. Student data is usually structured in tables and includes both numerical values (like scores) and categorical information (like gender or school type). Unlike some models that require extra preprocessing, LightGBM can handle this mix more naturally, saving time and reducing complexity.
+    </p>
+    <p>
+      In addition, it performs well with larger datasets and many features. It is designed to learn efficiently while avoiding overfitting, which is important when dealing with real-world data that may not always be perfect. It is also faster and more efficient compared to traditional methods, making it practical for both academic and real-world use.
+    </p>
+    <p>
+      You can think of a decision tree like a series of "if–then" questions that help narrow down a final decision. It starts with a single main question and keeps breaking it down into smaller decisions until it reaches a conclusion. Here is a simple example for predicting student performance:
+    </p>
+    <div class="tree-diagram" role="img" aria-label="Decision tree diagram for predicting student performance">
+            [Do they study more than 3 hours?]
+                  /        \
+               Yes          No
+              /              \
+     [Is attendance above 80%?]   [Were previous grades good?]
+            /    \            /      \
+         Yes     No       Yes       No
+         /        \        /          \
+      High     Medium  Medium       Low
+   Performance   Performance  Performance   Performance</div>
+
+    <h3>Value Add for the Organization</h3>
+    <p>Using LightGBM to predict student performance provides meaningful benefits that enhance decision-making, reduce costs, and improve operational efficiency in educational institutions:</p>
+    <ul>
+      <li><strong>Supports Data-Driven Decision-Making:</strong> The model generates predictions that help educators and administrators identify students at risk of underperforming. These insights enable timely decisions such as assigning academic support, modifying teaching strategies, or initiating counseling, ensuring interventions are proactive rather than reactive.</li>
+      <li><strong>Cost Savings and Better Resource Utilization:</strong> By focusing support services (tutoring, mentoring, counseling) only on students who truly need them, the institution avoids unnecessary spending on broad, non-targeted programs. Additionally, improving student retention reduces financial losses associated with dropouts and re-enrollment processes.</li>
+      <li><strong>Improved Accuracy Over Traditional Methods:</strong> Traditional approaches rely on manual monitoring or basic rule-based systems, which may miss complex patterns. LightGBM captures nonlinear relationships and interactions between multiple factors (attendance, grades, demographics), leading to more accurate and reliable predictions.</li>
+      <li><strong>Increased Operational Efficiency:</strong> Automating the identification of at-risk students reduces the manual effort required by faculty and staff to track performance. This allows educators to spend more time on intervention and teaching rather than data analysis.</li>
+      <li><strong>Enhanced Student Outcomes and Institutional Performance:</strong> With accurate predictions and timely interventions, students are more likely to improve academically, leading to higher pass rates, better retention, and improved graduation rates—key performance indicators for any educational institution.</li>
+    </ul>
+
+    <h3>Summary of Process and Outcomes</h3>
+    <p>The project follows these key steps:</p>
+    <ol>
+      <li><strong>Data Collection and Feature Selection:</strong> Student-related data such as attendance, assignment submission, LMS activity, quiz and midterm scores, GPA, course load, financial aid status, and first-gen status are identified as the major input features for the project. These features are considered for representing various academic, behavioral, and demographic factors related to student performance.</li>
+      <li><strong>Model Development:</strong> The project utilizes a LightGBM machine learning model based on decision trees to predict a student's underperformance. This machine learning model has been selected because of its efficiency in handling structured data with mixed data types.</li>
+      <li><strong>Prediction and Analysis:</strong> The model analyzes patterns in student data and makes predictions about academic risk by establishing links between various factors. This enables the system to identify academically at-risk students more efficiently compared to traditional observation methods.</li>
+      <li><strong>Outcomes and Interpretation:</strong> The end result is a predictive system that can aid in early intervention and effective institutional decision-making. By early identification of at-risk students, the project can aid in improving strategies for supporting students, maximizing resource utilization, improving academic performance, and increasing graduation rates.</li>
+    </ol>
+
+    <h3>Conclusion</h3>
+    <p>
+      This project demonstrates the value of applying LightGBM to predict student performance in educational institutions. By analyzing academic and behavioral indicators such as attendance, assignment submissions, LMS activity, quiz scores, prior GPA, and demographic factors, the model enables institutions to identify at-risk students early—shifting from reactive to proactive decision-making.
+    </p>
+    <p>
+      LightGBM is particularly well-suited for this challenge due to its efficiency, interpretability, and ability to handle structured data with mixed types. Its capacity to capture complex nonlinear relationships ensures more accurate and reliable predictions than traditional manual monitoring methods.
+    </p>
+    <p>
+      Early identification empowers educators to deliver timely interventions such as tutoring, mentoring, and counseling, directly improving student retention rates and graduation outcomes. Institutions also benefit from optimized resource allocation and reduced dropout-related costs.
+    </p>
+    <p>
+      With responsible deployment—guided by strong data privacy standards and proven bias mitigation practices—this predictive system offers a practical, scalable solution to one of education's most persistent and critical challenges.
+    </p>
+
+    <h3>References</h3>
+    <ul class="references">
+      <li>Alkan, B. B., Kuzucuk, S., Alkan, N., &amp; Sinan, A. (2025). Using machine learning to predict student outcomes for early intervention and formative assessment. <em>Scientific Reports, 15</em>, 39797. <a href="https://doi.org/10.1038/s41598-025-23409-w" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41598-025-23409-w</a></li>
+      <li>Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., Ye, Q., &amp; Liu, T. Y. (2017). LightGBM: A highly efficient gradient boosting decision tree. <em>Advances in Neural Information Processing Systems, 30</em>, 3146–3154.</li>
+      <li>Matzavela, V., &amp; Alepis, E. (2021). Decision tree learning through a predictive model for student academic performance in intelligent m-learning environments. <em>Computers and Education: Artificial Intelligence, 2</em>, 100035. <a href="https://doi.org/10.1016/j.caeai.2021.100035" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.caeai.2021.100035</a></li>
+      <li>Seo, E.-Y., Yang, J., Lee, J.-E., &amp; So, G. (2024). Predictive modelling of student dropout risk: Practical insights from a South Korean distance university. <em>Heliyon, 10</em>(11), e30960. <a href="https://doi.org/10.1016/j.heliyon.2024.e30960" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.heliyon.2024.e30960</a></li>
+      <li>Shaikhanova, A., Kuznetsov, O., Iklassova, K., Tokkuliyeva, A., &amp; Sugurova, L. (2025). Interpretable predictive modeling for educational equity: A workload-aware decision support system for early identification of at-risk students. <em>Big Data and Cognitive Computing, 9</em>(11), 297. <a href="https://doi.org/10.3390/bdcc9110297" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/bdcc9110297</a></li>
+    </ul>
+
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <p>
+    &copy; 2025 Naga Venkata Satyanarayana Devarapalli |
+    <a href="index.html" tabindex="0">Home</a> |
+    <a href="bio.html" tabindex="0">Bio</a> |
+    <a href="artifact1.html" tabindex="0">Artifact 1</a> |
+    <a href="artifact2.html" tabindex="0">Artifact 2</a> |
+    <a href="artifact3.html" tabindex="0">Artifact 3</a> |
+    <a href="artifact4.html" tabindex="0">Artifact 4</a> |
+    <a href="artifact5.html" tabindex="0">Artifact 5</a> |
+    <a href="feedback.html" tabindex="0">Feedback</a> |
+    <a href="lightgbm-project.html" tabindex="0" aria-current="page">LightGBM Project</a>
+  </p>
+</footer>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
